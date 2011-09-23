@@ -1,0 +1,73 @@
+\documentclass[a4paper, 11pt]{report}
+
+\usepackage[latin1]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{makeidx}
+\usepackage[pdfborder=0]{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{\Huge\textbf{Elaborato\\di\\Sistemi Informativi e Servizi in Rete}\\ \vspace{1cm} \huge Negozio di vendita on-line di Magliette Personalizzate}
+\date{A.A. 2011--2012}
+
+\begin{document}
+\maketitle
+
+\textbf{UTENTI}:
+\begin{itemize}
+	\item \textbf{Amministratore}
+		\begin{itemize}
+			\item gestione account operai azienda
+			\item pagina degli ordini di diverso tipo:
+				\begin{itemize}
+					\item evasi (affidati al corriere: con ID di spedizione rilasciato dal corriere)
+					\item non evasi (in stampa)
+					\item non ancora gestiti
+				\end{itemize}
+			ogni ordine con i seguenti dati:
+				\begin{itemize}
+					\item data/ora dell'ordine e chi ha effettuato l'ordine
+					\item data/ora presa in carico dall'operaio stampatore dell'ordine e chi lo ha
+					preso in carico
+					\item data/ora spedizione (affidamento al corriere)
+					\item SERVIZI: data/ora di consegna dell'ordine
+					\item SERVIZI: registro dei contatti con dati dell'operaio e dell'utente che ha
+					effettuato l'ordine
+				\end{itemize}
+		\end{itemize}
+	\item \textbf{Operaio Stampatore}\\
+	L'operaio stampatore si occupa anche del confezionamento della maglietta da affidare al corriere.
+		\begin{itemize}
+			\item pagina degli ordini non ancora gestiti da cui può scegliere un ordine da prendere 
+			in carico (può però avere più di un ordine in carico)
+			\item pagina degli ordini che ha in carico (operazione di: chiusura dell'ordine e di evasione
+			ordine (affido al corriere))\\
+			SERVIZI: ID spedizione dal corriere 
+			\item ? annullamento dell'ordine da parte dell'operaio per problemi ? [vedere se mettere 
+			anche questo]
+		\end{itemize}
+	\item \textbf{Utente Registrato}
+		\begin{itemize}
+			\item pagina del catalogo dei prodotti e pagine che visualizza anche l'utente non registrato
+			\item pagina creazione/personalizzazione della maglietta (? multiordine ? [vedere se mettere
+			questo]
+			\item pagina della lista degli ordini effettuati e stato ordine con contenuti
+			\item pagina di annullamento dell'ordine fino a che non è stato preso in carico dall'operaio
+			\item SERVIZI: modulo di contatto utente - operaio stampatore anonimo l'uno con l'altro,
+			ma l'amministratore può vedere, per eventuali problemi
+		\end{itemize}
+	\item \textbf{Utente: Home Page}
+		\begin{itemize}
+			\item pagina del catalogo dei prodotti
+			\item pagina per la possibilità di registrazione
+			\item pagina di presentazione dell'azienda: chi siamo, dove siamo, cosa facciamo
+			\item pagina di informazioni sulle spedizioni genericamente: tempi di spedizioni, costi 
+			di spedizione
+		\end{itemize}
+\end{itemize}
+
+Il pagamento delle magliette avviene solamente Cash al corriere.
+
+Poi vediamo cosa aggiugere di altro in base a cosa ci dice il Profe.
+
+\end{document}
