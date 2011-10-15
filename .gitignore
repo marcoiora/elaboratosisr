@@ -1,0 +1,8 @@
+# File generati da LaTeX
+*.log
+*.aux
+*.toc
+*.out
+
+# PDF finale di LaTeX
+*.pdf
