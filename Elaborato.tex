@@ -7,6 +7,8 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{colortbl}
+\usepackage{multirow}
+
 
 \title{\Huge\textbf{Elaborato\\di\\Sistemi Informativi e Servizi in Rete}\\ \vspace{1cm} \huge Negozio di vendita on-line di Magliette Personalizzate}
 \author{\textit{Iora Marco} Matricola: 65574\and \textit{Lorenzi Roberta} Matricola: 72361\and \textit{Piccinelli Andrea} Matricola: 83392}
@@ -111,22 +113,15 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & \begin{description} 
-			\item Registrazione
-			\item Login
-			\item Consultazione Magliette disponibili
-			\item Consultazione Stampe disponibili
-			\item Consultazione Pagine Informative
-		\end{description}\\
+		Casi d'uso rilevanti &  ""Registrazione""\\
+		& ""Login""\\ 
+		& ""Consultazione Magliette disponibili""\\
+		& ""Consultazione Stampe disponibili""\\ 
+		& ""Consultazione Pagine Informative""\\
 		\hline
-	\end{tabular}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
-		\hline
-		Oggetti in lettura & \begin{description}
-			\item Maglietta
-			\item Stampa
-			\item Pagina
-		\end{description}\\
+		Oggetti in lettura & Maglietta\\ 
+		& Stampa\\ 
+		& Pagina\\
 		\hline
 		Oggetti in scrittura & Utente \\
 		\hline
@@ -142,23 +137,17 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Descrizione & Gruppo di utenti che accedono al sito con delle credenziali quali username e
 		password, opportunamente definite in una precedente registrazione.\\
 		\hline
-		Dati profilo & \begin{description}
-			\item Username
-			\item Password
-		\end{description}\\
+		Dati profilo & Username\\
+		& Password\\
 		\hline
 		Super-Gruppo & \\
 		\hline
-		Sotto-Gruppi & \begin{description}
-			\item Cliente
-			\item Operaio Stampatore
-			\item Amministratore
-		\end{description}\\
+		Sotto-Gruppi & Cliente\\
+		& Operaio Stampatore\\ 
+		& Amministratore\\
 		\hline
-		Casi d'uso rilevanti & \begin{description}
-			\item Logout
-			\item Modifica Account
-		\end{description}\\
+		Casi d'uso rilevanti & ""Logout""\\
+		& ""Modifica Account""\\
 		\hline
 		Oggetti in lettura & \\
 		\hline
@@ -176,45 +165,37 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Descrizione & Gruppo di utenti che accedono al sito in qualità di clienti e pertanto hanno la
 		possibilità di acquistare i prodotti offerti dall'azienda\\
 		\hline
-	\end{tabular}
-\end{center}
-\begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
-		\hline
-		Dati profilo & \begin{description}
-			\item Nome
-			\item Cognome
-			\item Indirizzo
-			\item Telefono
-			\item Codice Fiscale
-			\item E-mail
-		\end{description}\\
+		Dati profilo & Nome\\ 
+		& Cognome\\ 
+		& Indirizzo\\
+		& Telefono\\ 
+		&Codice Fiscale\\ 
+		&E-mail\\
 		\hline
 		Super-Gruppo & Utente Registrato\\
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & \begin{description}
-			\item Personalizzazione dei Prodotti / Magliette
-			\item Modifica - Conferma Carrello
-			\item Aggiunta prodotto al Carrello
-			\item Visione del Dettaglio dell'Ordine
-			\item Annulla Ordine
-			\item Consultazione Pagine di Informazione
-		\end{description}\\
+		Casi d'uso rilevanti & ""Personalizzazione dei Prodotti / Magliette""\\
+		& ""Modifica - Conferma Carrello""\\
+		& ""Aggiunta prodotto al Carrello""\\ 
+		& ""Visione del Dettaglio dell'Ordine""\\ 
+		& ""Annulla Ordine""\\
+		& ""Consultazione Pagine di Informazione""\\
 		\hline
-		Oggetti in lettura & \begin{description}
-			\item Maglietta
-			\item Stampa
-			\item Pagina
-		\end{description}\\
+		Oggetti in lettura & Maglietta\\
+		& Stampa\\ 
+		& Pagina\\
 		\hline
-		Oggetto in scrittura & \begin{description}
-			\item Personalizzazione
-			\item Riga Ordine
-			\item Ordine
-			\item Stampa
-		\end{description}\\
+	\end{tabular}
+\end{center}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		Oggetto in scrittura & Personalizzazione\\ 
+		& Riga Ordine\\
+		& Ordine\\ 
+		& Stampa\\
 		\hline
 	\end{tabular}
 \end{center}
@@ -233,17 +214,13 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppo & \\
 		\hline
-		Casi d'uso rilevanti & \begin{description}
-			\item Prendere in carico un ordine
-			\item Conferma spedizione dell'ordine
-		\end{description}\\
+		Casi d'uso rilevanti & Prendere in carico un ordine\\
+		& Conferma spedizione dell'ordine\\
 		\hline
-		Oggetti in lettura & \begin{description}
-			\item Maglietta
-			\item Stampa
-			\item Personalizzazione
-			\item Riga Ordine
-		\end{description}\\
+		Oggetti in lettura & Maglietta\\
+		& Stampa\\
+		& Personalizzazione\\
+		& Riga Ordine\\
 		\hline
 		Oggetti in scrittura & Ordine\\
 		\hline
@@ -267,31 +244,25 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-	\end{tabular}
+		Casi d'uso rilevanti & Creazione - Modifica - Cancellazione Account Utente\\
+			& Inserimento - Modifica - Cancellazione Pagine Informative\\
+			& Inserimento - Modifica - Cancellazione Maglietta\\
+			& Inserimento - Modifica - Cancellazione Stampa\\
+			& Visualizzazione dettagli Ordine\\
+		\hline
+			\end{tabular}
 \end{center}
 \begin{center}
 	\begin{tabular}{|l|p{0.7\columnwidth}|}
 		\hline
-		Casi d'uso rilevanti & \begin{description}
-			\item Creazione - Modifica - Cancellazione Account Utente
-			\item Inserimento - Modifica - Cancellazione Pagine Informative
-			\item Inserimento - Modifica - Cancellazione Maglietta
-			\item Inserimento - Modifica - Cancellazione Stampa
-			\item Visualizzazione dettagli Ordine
-		\end{description}\\
+		Oggetti in lettura & Ordine\\
+			& Riga Ordine\\
+			& Personalizzazione\\
 		\hline
-		Oggetti in lettura & \begin{description}
-			\item Ordine
-			\item Riga Ordine
-			\item Personalizzazione
-		\end{description}\\
-		\hline
-		Oggetti in scrittuta & \begin{description}
-			\item Maglietta [Inserimento - Modifica - Cancellazione]
-			\item Stampa [Inserimento - Modifica - Cancellazione]
-			\item Utente [Inserimento - Modifica - Cancellazione]
-			\item Pagina [Inserimento - Modifica - Cancellazione]
-		\end{description}\\
+		Oggetti in scrittuta & Maglietta [Inserimento - Modifica - Cancellazione]\\
+			& Stampa [Inserimento - Modifica - Cancellazione]\\
+			& Utente [Inserimento - Modifica - Cancellazione]\\
+			& Pagina [Inserimento - Modifica - Cancellazione]\\
 		\hline
 	\end{tabular}
 \end{center}	
@@ -300,11 +271,426 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \newpage
 \section{Diagrammi dei Casi d'Uso}
 
+\subsubsection{Utente non Registrato}
+\begin{center}
+	\includegraphics[height=4.5cm]{Immagini/CasoUtenteNonRegistrato.jpg}\\
+\end{center}
+
+\subsubsection{Utente Registrato}
+\begin{center}
+	\includegraphics[height=4.5cm]{Immagini/CasoUtenteRegistrato.jpg}\\
+\end{center}
+
+\subsubsection{Cliente}
+\begin{center}
+	\includegraphics[height=6cm]{Immagini/CasoCliente.jpg}\\
+\end{center}
+
+\subsubsection{Operaio Stampatore}
+\begin{center}
+	\includegraphics[height=4.5cm]{Immagini/CasoOperaioStampatore.jpg}\\
+\end{center}
+
+\subsubsection{Amministratore}
+\begin{center}
+	\includegraphics[height=8cm]{Immagini/CasoAmministratore.jpg}\\
+\end{center}
+
 \newpage
 \section{Dizionario dei Dati}
+Descrizione dei principali oggetti informativi individuati duranti l'analisi dei requisiti.
+\\
+\subsubsection{Stampa:}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Stampa}\\
+		\hline
+		Sinonimi & Disegno \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \\
+		\hline
+		Proprietà & OID: chiave univoca dell'entità considerata\\
+		& Nome(string): nome descrittivo della stampa\\
+		& Descrizione(text): Descrizione dettagliata della stampa\\
+		& Tumbnail(blob-image): anteprima della stampa\\
+		& ImmagineHD(blob-image): immagine a grandezza reale della stampa\\
+		& Prezzo(float)\\
+		\hline
+		Relazioni & Stampa-Maglietta\\
+		& Stampa-Personalizzazione\\
+		& Stampa-Utente ? \\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection{Maglietta:}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Maglietta}\\
+		\hline
+		Sinonimi & T-shirt \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \\
+		\hline
+		Proprietà & OID: chiave univoca dell'entità considerata\\
+		& Nome(string): nome descrittivo della maglietta\\
+		& Descrizione(text): Descrizione dettagliata della maglietta\\
+		& Manica(string): descrizione del tipo di manica della maglietta\\
+		& Collo(string): descrizione del tipo di collo della maglietta(Es: con bottoni o senza)\\
+		& StampabileFronte(boolean): possibilità di stampa sul fronte della maglietta\\
+		& StampabileDietro(boolean): possibilità di stampa sul dietro della maglietta\\
+		& Materiale(string): tipo di materiale di cui è composta la maglietta\\
+		& DimensioneFronte(string): dimensione della stampa posta sul fronte della maglietta\\
+		& DimensioneDietro(string): dimensione della stampa posta sul dietro della maglietta\\
+		& Prezzo(float)\\
+		\hline
+		Relazioni & Maglietta-Colore\\
+		& Maglietta-Taglia\\
+		& Maglietta-Sesso\\
+		& Maglietta-Foto\\
+		& Maglietta-Stampa\\
+		& Maglietta-Personalizzazione\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection{Personalizzazione:}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Personalizzazione}\\
+		\hline
+		Sinonimi & Prodotto Completo, Prodotto, Configurazione \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \\
+		\hline
+		Proprietà & OID: chiave univoca dell'entità considerata\\
+		& DimensioneFronte(string): dimensione del fronte scelta\\
+		& DimensioneDietro(string): dimensione del dietro scelta\\
+		\hline
+		Relazioni & Personalizzazione-Maglietta\\
+		& Personalizzazione-Stampa\\
+		& Personalizzazione-Colore\\
+		& Personalizzazione-Taglia\\
+		& Personalizzazione-Sesso\\
+		& Personalizzazione-RigaOrdine\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection{Riga di un Ordine:}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{RigaOrdine}\\
+		\hline
+		Sinonimi & Riga Carrello \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \\
+		\hline
+		Proprietà & OID: chiave univoca dell'entità considerata\\
+		& PrezzoSingolo(float): prezzo della singolo pezzo della riga dell'ordine\\
+		& Quantità(intero): quantità ordinata di un singolo pezzo per riga dell'ordine\\
+		& PrezzoTotale(float)\\
+		\hline
+		Relazioni & RigaOrdine-Personalizzazione\\
+		& RigaOrdine-Ordine\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection{Ordine:}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Ordine}\\
+		\hline
+		Sinonimi & Carrello \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \\
+		\hline
+		Proprietà & OID: chiave univova dell'entità considerata\\
+		& DataOraConferma(date): data e ora di conferma dell'ordine da parte dell'utente\\
+		& DataOraPresaInCarico(date): data e ora di presa in carico dell'ordine da parte di un operaio
+		stampatore\\
+		& DataOraSpedizione(date): data e ora della consegna dell'ordine allo spedizioniere\\
+		& PrezzoTotale(float): prezzo totale dell'ordine\\
+		& SpeseSpedizione(float)\\
+		& Stato(string): descrizione dello stato dell'ordine\\
+		\hline
+		Relazioni & Ordine-Cliente\\
+		& Ordine-Operaio\\
+		& Ordine-RigaOrdine\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection{Pagina:}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Pagina}\\
+		\hline
+		Sinonimi & Pagina Informativa \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \\
+		\hline
+		Proprietà & OID: chiave univoca dell'entità considerata\\
+		& Titolo(string)\\
+		& TestoHTML(string)\\
+		\hline
+		Relazioni & Stampa-Maglietta\\
+		& Stampa-Personalizzazione\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{tabular}
+\end{center}
 
 \newpage
 \section{Specifica delle Site View}
+\subsection{Site View Pubblica}
+
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
+		\hline
+		\rowcolor[gray]{.9} Site View & \textbf{Pubblica}\\
+		\hline
+		Descrizione & \\
+		\hline
+		Gruppi d'Utente & Utente non Registrato\\
+		\hline
+		Caso d'Uso & Login\\
+		& Registrazione\\
+		& Visualizzazione Maglietta\\
+		& Visualizzazione Stampa\\
+		& Visualizzazione Pagine Informative\\
+		& \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Prodotti}\\
+		\hline
+		Nome Area & Prodotti\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Maglietta con tutte le relazioni composte e Stampa\\
+		\hline
+		Priorità & \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Informazioni}\\
+		\hline
+		Nome Area & Informazioni\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Pagine Informative\\
+		\hline
+		Priorità & \\
+		\hline
+	\end{tabular}
+\end{center}        
+
+\subsection{Site View Cliente}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
+		\hline
+		\rowcolor[gray]{.9} Site View & \textbf{Cliente}\\
+		\hline
+		Descrizione & \\
+		\hline
+		Gruppi d'Utente & Utente Registrato: Cliente\\
+		\hline
+		Caso d'Uso & Logout\\
+		& Modifica Account\\
+		& Visualizzazione Maglietta\\
+		& Visualizzazione Stampa\\
+		& Visualizzazione Pagine Informative\\
+		& Personalizzaizone Maglietta\\
+		& Modifica - Conferma Carrello\\
+		& Aggiunta prodotto al Carrello\\
+		& Visione del Dettaglio dell'Ordine\\
+		& Annulla Ordine\\
+		& \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Prodotti}\\
+		\hline
+		Nome Area & Prodotti\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Maglietta con tutte le relazioni composte, Stampa, Personalizzazione, Ordine\\
+		\hline
+		Priorità & Alta\\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Informazioni}\\
+		\hline
+		Nome Area & Informazioni\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Pagine Informative\\
+		\hline
+		Priorità & Bassa\\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Ordini}\\
+		\hline
+		Nome Area & Ordini\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Ordine, Maglietta, Personalizzazione, Stampa\\
+		\hline
+		Priorità & Alta\\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Site View Stampatore}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
+		\hline
+		\rowcolor[gray]{.9} Site View & \textbf{Stampatore}\\
+		\hline
+		Descrizione & \\
+		\hline
+		Gruppi d'Utente & Utente Registrato: Operaio Stampatore\\
+		\hline
+		Caso d'Uso & Logout\\
+		& Modifica Account\\
+		& Prendere in carico un ordine\\
+		& Conferma spedizione dell'ordine\\
+		& \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Stampatore}\\
+		\hline
+		Nome Area & Stampatore\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Ordine, Personalizzazione, Maglietta, Stampa, Cliente\\
+		\hline
+		Priorità & Alta\\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Site View Amministrazione}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
+		\hline
+		\rowcolor[gray]{.9} Site View & \textbf{Amministrazione}\\
+		\hline
+		Descrizione & \\
+		\hline
+		Gruppi d'Utente & Utente Registrato: Amministratore\\
+		\hline
+		Caso d'Uso & Logout\\
+		& Modifica Account\\
+		& Creazione-Modifica-Cancellazione Account Utente\\
+		& Inserimento-Modifica-Cancellazione Pagine Informative\\
+		& Inserimento-Modifica-Cancellazione Maglietta\\
+		& Inserimento-Modifica-Cancellazione Stampa\\
+		& Visualizzazione dettagli Ordine\\
+		& \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Account}\\
+		\hline
+		Nome Area & Account\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Utente\\
+		\hline
+		Priorità & \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Informazioni}\\
+		\hline
+		Nome Area & Informazioni\\
+		\hline
+		Descrizione Area &\\
+		\hline
+		Oggetti & Pagina\\
+		\hline
+		Priorità & \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Prodotti}\\
+		\hline
+		Nome Area & Prodotti\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Maglietta, Stampa\\
+		\hline
+		Priorità & \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Map: Ordini}\\
+		\hline
+		Nome Area & Ordini\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Utente, Ordine, Personalizzazione, Maglietta, Stampa\\
+		\hline
+		Priorità & \\
+		\hline
+	\end{tabular}
+\end{center}
 
 \newpage
 \section{Linee guida dello Stile Grafico}
