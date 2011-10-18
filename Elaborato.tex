@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{colortbl}
 \usepackage{multirow}
+\usepackage{longtable}
 
 
 \title{\Huge\textbf{Elaborato\\di\\Sistemi Informativi e Servizi in Rete}\\ \vspace{1cm} \huge Negozio di vendita on-line di Magliette Personalizzate}
@@ -103,7 +104,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 
 \subsubsection{Gruppo Utente non Registrato:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Utente non Registrato}\\
 		\hline
@@ -127,12 +128,12 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Oggetti in scrittura & Utente [Inserimento] \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
 \subsubsection{Gruppo Utente Registrato:}
 \begin{center}	
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Utente Registrato}\\
 		\hline
@@ -155,12 +156,12 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Oggetti in scrittura & Utente [Modifica]\\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
 \subsubsection{Gruppo Cliente:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Cliente}\\
 		\hline
@@ -190,22 +191,17 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Oggetti in lettura & Maglietta\\
 		& Pagina\\
 		\hline
-	\end{tabular}
-\end{center}
-\begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
-		\hline
 		Oggetto in scrittura & Personalizzazione [Inserimento - Cancellazione]\\ 
 		& Riga Ordine [Inserimento - Modifica - Cancellazione]\\
 		& Ordine [Inserimento - Modifica]\\ 
 		& Stampa [Inserimento]\\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
 \subsubsection{Gruppo Operaio Stampatore:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Operaio Stampatore}\\
 		\hline
@@ -227,12 +223,12 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Oggetti in scrittura & Ordine [Modifica]\\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 		
 \subsubsection{Gruppo Amministratore:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Amministratore}\\
 		\hline
@@ -253,11 +249,6 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 			& ""Inserimento - Modifica - Cancellazione Stampa""\\
 			& ""Visualizzazione dettagli Ordine""\\
 		\hline
-			\end{tabular}
-\end{center}
-\begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
-		\hline
 		Oggetti in lettura & Ordine\\
 			& Riga Ordine\\
 			& Personalizzazione\\
@@ -267,7 +258,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 			& Utente [Inserimento - Modifica - Cancellazione]\\
 			& Pagina [Inserimento - Modifica - Cancellazione]\\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}	
 		
 		
@@ -305,7 +296,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 \\
 \subsubsection{Stampa:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Stampa}\\
 		\hline
@@ -339,12 +330,13 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sotto-concetti & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsubsection{Maglietta:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Maglietta}\\
 		\hline
@@ -378,11 +370,6 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& Materiale(string): tipo di materiale di cui è composta la maglietta (Es: cotone, sintetico, etc..)\\
 		& DimensioneFronte(float): dimensione della stampa posta sul fronte della maglietta\\
 		\hline
-	\end{tabular}
-\end{center}
-\begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
-		\hline
 		& DimensioneRetro(float): dimensione della stampa posta sul dietro della maglietta\\
 		& Prezzo(float)\\
 		\hline
@@ -404,12 +391,13 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sotto-concetti & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsubsection{Personalizzazione:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Personalizzazione}\\
 		\hline
@@ -443,12 +431,13 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sotto-concetti & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsubsection{Riga di un Ordine:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{RigaOrdine}\\
 		\hline
@@ -475,12 +464,13 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sotto-concetti & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsubsection{Ordine:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Ordine}\\
 		\hline
@@ -511,12 +501,13 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sotto-concetti & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsubsection{Pagina:}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Pagina}\\
 		\hline
@@ -539,7 +530,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sotto-concetti & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
 \newpage
@@ -547,7 +538,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 \subsection{Site View Pubblica}
 
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
 		\hline
@@ -560,11 +551,11 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Gruppi d'Utente & Utente non Registrato\\
 		\hline
-		Caso d'Uso & Login\\
-		& Registrazione\\
-		& Consultazione Magliette disponibili\\
-		& Consultazione Stampe diponibili\\
-		& Consultazione Pagine Informative\\
+		Caso d'Uso & ""Login""\\
+		& ""Registrazione""\\
+		& ""Consultazione Magliette disponibili""\\
+		& ""Consultazione Stampe diponibili""\\
+		& ""Consultazione Pagine Informative""\\
 		& \\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Prodotti}\\
@@ -588,18 +579,24 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Priorità & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}        
 
+\newpage
 \subsection{Site View Cliente}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
 		\hline
 		\rowcolor[gray]{.9} Site View & \textbf{Cliente}\\
 		\hline
-		Descrizione & \\
+		Descrizione & Site view riservata ai clienti del negozio che hanno effettuato login. I clienti
+		possono consultare il catalogo dei prodotti (magliette e stampe), personalizzare ed ordinare
+		le magliette desiderate. Possono sempre verificare lo stato dei propri ordini sia in gestione
+		che già evasi. Inoltre possono accedere al proprio profilo per la modifica ed effettuare il 
+		logout dal sito. Infine, così come i visitatori, i clienti possono sempre visualizzare le 
+		pagine informative dell'azienda.\\
 		\hline
 		Gruppi d'Utente & Utente Registrato: Cliente\\
 		\hline
@@ -619,7 +616,11 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Web Market\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & Permette la consultazione del catalogo, la selezione di una maglietta e 
+		la sua ""configurazione"", con in particolare la possibilità di scegliere le eventuali stampe
+		tra le disponibili o inviare al sistema le proprie mediante upload. E' possibile in questo 
+		modo comporre il proprio carrello della spesa e, una volta definitivo, darne conferma 
+		trasformandolo in un ordine.\\
 		\hline
 		Oggetti & Maglietta con tutte le relazioni composte, Stampa, Personalizzazione, Ordine\\
 		\hline
@@ -629,7 +630,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Informazioni\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & Permette di visualizzare le pagine informative predisposte dall'amministratore.\\
 		\hline
 		Oggetti & Pagine Informative\\
 		\hline
@@ -639,7 +640,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Ordini\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & Il cliente, mediante questa area, può verificare lo stato e, più in generale, 
+		l'archivio storico dei suoi ordini. Per ordini già confermati dal clienti, ma non ancora 
+		presi in carico, esiste qui la possibilità di annullarli.\\
 		\hline
 		Oggetti & Ordine, Maglietta, Personalizzazione, Stampa\\
 		\hline
@@ -649,24 +652,27 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Account\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & All'interno di quest'area l'utente può controllare ed eventualmente modificare
+		i propri dati identificativi ed anagrafici.\\
 		\hline
 		Oggetti & Utente\\
 		\hline
 		Priorità & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsection{Site View Stampatore}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
 		\hline
 		\rowcolor[gray]{.9} Site View & \textbf{Stampatore}\\
 		\hline
-		Descrizione & \\
+		Descrizione & Site view dedicata all'operaio stampatore che può, in queste pagine, gestire 
+		direttamente gli ordini dei clienti.\\
 		\hline
 		Gruppi d'Utente & Utente Registrato: Operaio Stampatore\\
 		\hline
@@ -680,7 +686,10 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Ordini\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & Tramite le pagine di quest'area, è possibile visualizzare l'elenco degli 
+		ordini in attesa di essere gestiti uniti a quelli già presi in carico dall'operaio stampatore
+		che ha effettuato login. L'utente può visualizzare il dettaglio dei singoli ordini e gestirne
+		lo stato, dalla presa in carico alla spedizione.\\
 		\hline
 		Oggetti & Ordine, Personalizzazione, Maglietta, Stampa, Cliente\\
 		\hline
@@ -690,29 +699,34 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Account\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & All'interno di quest'area l'utente può controllare ed eventualmente modificare
+		i propri dati identificativi\\
 		\hline
 		Oggetti & Utente\\
 		\hline
 		Priorità & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
+\newpage
 \subsection{Site View Amministrazione}
 \begin{center}
-	\begin{tabular}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		\rowcolor[gray]{.7} \multicolumn{2}{|c|}{\textbf{Presentazione della Site View}}\\
 		\hline
 		\rowcolor[gray]{.9} Site View & \textbf{Amministrazione}\\
 		\hline
-		Descrizione & \\
+		Descrizione & Site view dedicata all'amministratore del sistema che ha la responsabilità della
+		gestione del catalogo, degli account utente, delle pagine informative e della verifica degli 
+		ordini. Per ognuna delle risorse che gestisce, infatti, sono presenti pagine che ne permettono
+		creazione, modifica e cancellazione. Gli ordini, invece, sono esclusivamente visualizzabili 
+		in ogni loro dettaglio e non è permessa alcuna modifica.\\
 		\hline
 		Gruppi d'Utente & Utente Registrato: Amministratore\\
 		\hline
 		Caso d'Uso & Logout\\
-		& Modifica Account\\
 		& Creazione-Modifica-Cancellazione Account Utente\\
 		& Inserimento-Modifica-Cancellazione Pagine Informative\\
 		& Inserimento-Modifica-Cancellazione Maglietta\\
@@ -724,7 +738,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Accounts\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & All'interno di quest'area l'utente può controllare ed eventualmente modificare 
+		i dati identificativi ed anagrafici di qualsiasi utente registrato del sistema. Inoltre può
+		inserire nuovi utenti o cancellarne di esistenti.\\
 		\hline
 		Oggetti & Utente\\
 		\hline
@@ -734,7 +750,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Informazioni\\
 		\hline
-		Descrizione Area &\\
+		Descrizione Area & All'interno di quest'area l'utente può verificare ed eventualmente modificare 
+		i contenuti delle pagine informative dell'azienda. Inoltre può
+		inserire nuove pagine o cancellarne di esistenti. \\
 		\hline
 		Oggetti & Pagina\\
 		\hline
@@ -744,7 +762,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Prodotti\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & All'interno di quest'area l'utente può consultare ed eventualmente modificare 
+		l'offerta di prodotti dell'azienda. Inoltre può inserire nuove magliette e stampe o 
+		cancellarne di esistenti. \\
 		\hline
 		Oggetti & Maglietta, Stampa\\
 		\hline
@@ -754,13 +774,15 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Nome Area & Gestione Archivio Ordini\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & All'interno di quest'area l'utente può controllare l'archivio di tutti gli
+		ordini effettuati dai clienti visualizzando tra l'altro anche chi ha gestito ogni singolo 
+		ordine e i tempi di lavorazione.\\
 		\hline
 		Oggetti & Utente, Ordine, Personalizzazione, Maglietta, Stampa\\
 		\hline
 		Priorità & \\
 		\hline
-	\end{tabular}
+	\end{longtable}
 \end{center}
 
 \newpage
