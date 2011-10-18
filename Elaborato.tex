@@ -29,33 +29,36 @@
 
 \section{Descrizione Generale del Sito}
 \subsection{Scenario}
-Si vuole mettere a disposizione di potenziali clienti un \textit{negozio virtuale} in cui potranno
-acquistare capi di abbigliamento (magliette), seguendoli durante tutti i passi della realizzazione 
-(personalizzazione delle stampe e creazione magliette, effettuare un ordine e controllo dello stesso).\\
-Con questo sito, quindi, i potenziali clienti potranno sia visualizzare il catalogo delle tipologie
-di magliette possibili e delle stampe presenti, sia creare o personalizzare le proprie magliette 
-secondo le proprie preferenze ed esigenze con l'invio di file scelti dall'utente, sia effettuare 
+Si vuole mettere a disposizione di potenziali clienti un \textit{negozio virtuale} in cui possono
+acquistare capi di abbigliamento (magliette), con particolare attenzione a tutti i passi dell'ordine:
+personalizzazione delle stampe e creazione magliette, conferma di un ordine e controllo dello stesso.\\
+Con questo sito, quindi, i potenziali clienti possono sia visualizzare i cataloghi delle tipologie
+di magliette e delle stampe disponibili, sia creare o personalizzare le magliette 
+secondo le proprie preferenze ed esigenze, anche con l'invio di file scelti dall'utente, sia effettuare 
 l'ordine e monitorarlo fino alla consegna.\\
-Questo sito è fruito anche dal personale interno all'azienda ed in particolare agli addetti allo 
-stampaggio e confezionamento delle magliette. Questi potranno sia visualizzare gli ordini effettuati dai
+Questo sito è fruito anche dal personale interno all'azienda ed in particolare dagli addetti allo 
+stampaggio e confezionamento delle magliette. Questi possono sia visualizzare gli ordini effettuati dai
 clienti finali e prenderli in carico, sia visualizzare gli ordini già presi in carico e non ancora
-finiti, sia evadere l'ordine (cioè affidarlo al corriere) inserendo l'identificativo di tracciabilità
+evasi, sia evadere l'ordine (cioè affidarlo al corriere) inserendo l'identificativo di tracciabilità
 della spedizione dato dal corriere.\\
-L'azienda incarica una società esterna per la spedizione della merce ai propri clienti.
+L'azienda incarica una società esterna per la spedizione della merce ai propri clienti.\\
+Infine, il sito prevede pagine dedicate all'amministratore tramite le quali può gestire gli account 
+sia degli operai stampatori che dei clienti finali, le pagine informative sull'azienda, il catalogo
+dei prodotti, nonchè visualizzare tutti gli ordini salvati nel sistema.
 
 \subsection{Progettazione dell'ipertesto}
 I visitatori accedono inizialmente alla sezione pubblica del sito, dove possono visualizzare le 
 informazioni sull'azienda, sui prodotti (magliette e stampe) e sulla spedizione (tempi e costi)
 muovendosi fra le varie pagine del sito.\\
-Se vogliono personalizzare o ordinare i prodotti, i clienti devono registrarsi e quindi effettuare il 
-login per accedere alla sezione privata del sito.\\
-Gli operai stampatori inizialmente accederanno alla sezione pubblica del sito e quindi dovranno
-effettuale il login per accedere alla loro sezione privata. In questa sezione si muoveranno fra le 
-varie pagine del sito per poter visualizzare gli ordini e informazioni particolari.\\
+Se vogliono personalizzare o ordinare i prodotti, i visitatori devono registrarsi e quindi effettuare il 
+login per accedere alla sezione privata del sito e diventare a tutti gli effetti clienti.\\
+Gli operai stampatori inizialmente accedono anch'essi alla sezione pubblica del sito e quindi devono
+effettuale il login per accedere alla sezione privata riservata a loro. In questa sezione si muoveranno fra le 
+varie pagine del sito per poter visualizzare gli ordini e gestirli.\\
 In qualità di amministratore del portale, l'azienda avrà il compito sia di gestire gli utenti registrati
 e gli operai stampatori, inserendone di nuovi oppure cancellando utenti esistenti, sia inserire o 
-modificare le informazioni relative ai prodotti in vendita.\\
-Gli utenti registrati e gli operai stampatori possono accedere alla propria sezione privata per 
+modificare le informazioni relative ai prodotti in vendita e all'azienda stessa.\\
+Gli utenti registrati e gli operai stampatori nella propria sezione privata possono inoltre 
 modificare i propri dati.
 
 \newpage
@@ -64,30 +67,29 @@ Vengono esposte le categorie di utenti che faranno uso del sistema. Distinguiamo
 categorie principali:
 \begin{itemize}
 	\item \textit{Utente non Registrato o Generico}, che accede al sito come un qualunque utente che 
-	naviga in rete senza aver effettuato la registrazione. Può accedere alle sole pagine pubbliche 
+	naviga in rete senza aver effettuato il login. Può accedere alle sole pagine pubbliche 
 	del sito: potrà quindi visualizzare le pagine di presentazione dell'azienda e di infomazioni 
-	generali, consultare il catalogo dei prodotti venduti dall'azienda. Può comunque iscriversi al 
+	generali e consultare il catalogo dei prodotti venduti dall'azienda. Può comunque iscriversi al 
 	sistema tramite registrazione.
 	\item \textit{Utente Registrato}, che accede al sito in qualità di utente iscritto con credenziali
 	quali username e password, opportunamente definite in fase di registrazione. Avendo completato
-	la registrazione ha diritto ad accedere anche alla parte privata del sito usufruendo anche di 
-	particolari servizi.
+	la registrazione ha diritto ad accedere anche alla parte privata del sito usufruendo dei servizi
+	a lui dedicati.
 \end{itemize}
-L'utente registrato, a sua volta, si divide in:
+Vi sono tre distinte categorie di Utenti Registrati:
 \begin{itemize}
-	\item \textit{Cliente}, è un gruppo di utentie che accedono al sito in qualità di clienti e 
+	\item \textit{Cliente}, è un gruppo di utenti che accedono al sito in qualità di clienti e 
 	pertanto hanno la possibilità di acquistare i prodotti offerti dall'azienda.\\
 	Può consultare le pagine di presentazione dell'azienda e di informazioni
 	generali. Oltre alla consultazione del catalogo dei prodotti offerti dall'azienda, può anche 
 	personalizzare le magliette e procedere all'acquisto delle stesse. Durante tutto l'iter di 
-	acquisto, il cliente potrà sempre controllare tutti gli stadi del proprio ordine.
+	acquisto, il cliente potrà sempre controllare tutte le informazioni di stato dei propri ordini.
 	\item \textit{Operaio Stampatore} è un gruppo di utenti che operano per l'azienda soddisfacendo 
 	gli ordini dei clienti.\\
-	Può accedere ad una sezione a lui riservata in cui potrà decidere
-	di prendere in carico uno o più ordini e/o confermare la spedizione dell'ordine, cioè l'affidamento
-	al corriere.
+	Può accedere ad una sezione a lui riservata in cui può prendere in carico uno o più ordini e,
+	dopo il confezionamento, confermare la spedizione dell'ordine, cioè l'affidamento al corriere.
 	\item \textit{Amministratore}: utente interno all'azienda che si occupa della gestione degli 
-	account degli altri utenti registrati, dirige la gestione del catalogo e delle pagine informative.
+	account degli altri utenti registrati, del catalogo e delle pagine informative.
 	Può inoltre visualizzare il dettaglio di tutti gli ordini inseriti nel sistema.
 \end{itemize}
 
@@ -105,7 +107,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Utente non Registrato}\\
 		\hline
-		Descrizione & Gruppo di utenti che accedono al sito senza aver effettuato la registrazione\\
+		Descrizione & Gruppo di utenti che accedono al sito senza aver effettuato il login\\
 		\hline
 		Dati profilo & \\
 		\hline
@@ -123,7 +125,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		& Stampa\\ 
 		& Pagina\\
 		\hline
-		Oggetti in scrittura & Utente \\
+		Oggetti in scrittura & Utente [Inserimento] \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -134,8 +136,8 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Utente Registrato}\\
 		\hline
-		Descrizione & Gruppo di utenti che accedono al sito con delle credenziali quali username e
-		password, opportunamente definite in una precedente registrazione.\\
+		Descrizione & Gruppo di utenti che hanno effettuato il login al sito con delle credenziali 
+		(username e password), opportunamente definite in una precedente registrazione.\\
 		\hline
 		Dati profilo & Username\\
 		& Password\\
@@ -151,7 +153,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Oggetti in lettura & \\
 		\hline
-		Oggetti in scrittura & Utente\\
+		Oggetti in scrittura & Utente [Modifica]\\
 		\hline
 	\end{tabular}
 \end{center}
@@ -176,15 +178,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & ""Personalizzazione dei Prodotti / Magliette""\\
-		& ""Modifica - Conferma Carrello""\\
+		Casi d'uso rilevanti & ""Personalizzazione dei Prodotti""\\
 		& ""Aggiunta prodotto al Carrello""\\ 
-		& ""Visione del Dettaglio dell'Ordine""\\ 
+		& ""Modifica - Conferma Carrello""\\
+		& ""Visualizzazione Dettaglio dell'Ordine""\\ 
 		& ""Annulla Ordine""\\
-		& ""Consultazione Pagine di Informazione""\\
+		& ""Consultazione Magliette disponibili""\\
+		& ""Consultazione Stampe disponibili""\\
+		& ""Consultazione Pagine Informative""\\
 		\hline
 		Oggetti in lettura & Maglietta\\
-		& Stampa\\ 
 		& Pagina\\
 		\hline
 	\end{tabular}
@@ -192,10 +195,10 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \begin{center}
 	\begin{tabular}{|l|p{0.7\columnwidth}|}
 		\hline
-		Oggetto in scrittura & Personalizzazione\\ 
-		& Riga Ordine\\
-		& Ordine\\ 
-		& Stampa\\
+		Oggetto in scrittura & Personalizzazione [Inserimento - Cancellazione]\\ 
+		& Riga Ordine [Inserimento - Modifica - Cancellazione]\\
+		& Ordine [Inserimento - Modifica]\\ 
+		& Stampa [Inserimento]\\
 		\hline
 	\end{tabular}
 \end{center}
@@ -214,15 +217,15 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppo & \\
 		\hline
-		Casi d'uso rilevanti & Prendere in carico un ordine\\
-		& Conferma spedizione dell'ordine\\
+		Casi d'uso rilevanti & ""Presa in carico Ordine""\\
+		& ""Conferma spedizione dell'Ordine""\\
 		\hline
 		Oggetti in lettura & Maglietta\\
 		& Stampa\\
 		& Personalizzazione\\
 		& Riga Ordine\\
 		\hline
-		Oggetti in scrittura & Ordine\\
+		Oggetti in scrittura & Ordine [Modifica]\\
 		\hline
 	\end{tabular}
 \end{center}
@@ -234,7 +237,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\rowcolor[gray]{.7} \textbf{Nome Gruppo}	& \textbf{Amministratore}\\
 		\hline
 		Descrizione & Utente interno dell'azienda che si occupa della gestione degli account degli altri
-		utenti registrati, dirige la gestione del catalogo (inserimento, modifica, cancellazione
+		utenti registrati, del catalogo (inserimento, modifica, cancellazione
 		prodotti) e delle pagine informative. Può inoltre visualizzare il dettaglio di tutti gli 
 		ordini inseriti nel sistema.\\
 		\hline
@@ -244,11 +247,11 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & Creazione - Modifica - Cancellazione Account Utente\\
-			& Inserimento - Modifica - Cancellazione Pagine Informative\\
-			& Inserimento - Modifica - Cancellazione Maglietta\\
-			& Inserimento - Modifica - Cancellazione Stampa\\
-			& Visualizzazione dettagli Ordine\\
+		Casi d'uso rilevanti & ""Creazione - Modifica - Cancellazione Account Utente""\\
+			& ""Inserimento - Modifica - Cancellazione Pagine Informative""\\
+			& ""Inserimento - Modifica - Cancellazione Maglietta""\\
+			& ""Inserimento - Modifica - Cancellazione Stampa""\\
+			& ""Visualizzazione dettagli Ordine""\\
 		\hline
 			\end{tabular}
 \end{center}
@@ -283,7 +286,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 
 \subsubsection{Cliente}
 \begin{center}
-	\includegraphics[height=6cm]{Immagini/CasoCliente.jpg}\\
+	\includegraphics[height=6.5cm]{Immagini/CasoCliente.jpg}\\
 \end{center}
 
 \subsubsection{Operaio Stampatore}
@@ -308,20 +311,27 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi & Disegno \\
 		\hline
-		Descrizione & \\
+		Descrizione & Prototipo di disegno disponibile per essere impresso sulle magliette in vendita
+		ai clienti.\\
 		\hline
-		Istanze Campione & \\
+		Istanze Campione & ""Gioconda"": Stampa raffigurante la Gioconda di Leonardo da Vinci\\
+		& ""Logo Ubuntu"": Stampa raffigurante il logo di Ubuntu\\
 		\hline
 		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& Nome(string): nome descrittivo della stampa\\
-		& Descrizione(text): Descrizione dettagliata della stampa\\
-		& Tumbnail(blob-image): anteprima della stampa\\
-		& ImmagineHD(blob-image): immagine a grandezza reale della stampa\\
-		& Prezzo(float)\\
+		& Nome(string): nome identificativo della stampa con il quale questa viene riferita sui 
+		documenti (ordine, DDT, fattura)\\
+		& Descrizione(text): descrizione dettagliata della stampa con accezioni commerciali e 
+		spiegazioni inerenti al disegno, quali ad esempio artista che lo ha realizzato, anno, etc..\\
+		& Anteprima(blob-image): anteprima della stampa\\
+		& ImmagineHD(blob-image): immagine a grandezza reale della stampa a uso esclusivo degli operai
+		stampatori per la realizzazione delle magliette personalizzate\\
+		& PrezzoBase(float): prezzo finale della stampa a dimensione massima\\
 		\hline
-		Relazioni & Stampa-Maglietta\\
-		& Stampa-Personalizzazione\\
-		& Stampa-Utente ? \\
+		Relazioni & Stampa-Maglietta (stampa sul fronte)\\
+		& Stampa-Maglietta (stampa sul retro)\\
+		& Stampa-Personalizzazione (stampa sul fronte)\\
+		& Stampa-Personalizzazione (stampa sul retro)\\
+		& Stampa-Utente\\
 		\hline
 		Componenti & \\
 		\hline
@@ -340,30 +350,55 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi & T-shirt \\
 		\hline
-		Descrizione & \\
+		Descrizione & Tipo di maglietta disponibile per la personalizzazione in una o più dele sue
+		caratteristiche e per l'acquisto. Le caratteristiche della maglietta sono la disponibilità
+		in diverse taglie, colori e sesso e la possibilità di avere già associate o meno una o due 
+		stampe. Può inoltre essere o meno personalizzabile con stampe scelte dal cliente su fronte 
+		e/o retro indipendentemente.\\
 		\hline
-		Istanze Campione & \\
+		Istanze Campione & ""StilistaOne PE2011"": Maglietta manica corta di cotone, collezione 
+		Primavera-Estate 2011 by StilistaOne, disponibile nelle taglie S e M, nei colori rosso,
+		fucsia e verde a strisce blu orizzontali, taglio femminile.\\
+		& ""Maglietta Styling AI2010"": Maglietta sintetica manica lunga, collezione Autunno-Inverno
+		2010 by Styling, nera, disponibile nelle taglie XS, S, M, L, XL e XXL, nei tagli maschile e 
+		femminile. Presenta ""Logo Styling"" in stampa piccola anteriore e stampa ""Paesaggio natalizio""
+		sul retro.\\
 		\hline
 		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& Nome(string): nome descrittivo della maglietta\\
-		& Descrizione(text): Descrizione dettagliata della maglietta\\
-		& Manica(string): descrizione del tipo di manica della maglietta\\
-		& Collo(string): descrizione del tipo di collo della maglietta(Es: con bottoni o senza)\\
-		& StampabileFronte(boolean): possibilità di stampa sul fronte della maglietta\\
-		& StampabileDietro(boolean): possibilità di stampa sul dietro della maglietta\\
-		& Materiale(string): tipo di materiale di cui è composta la maglietta\\
-		& DimensioneFronte(string): dimensione della stampa posta sul fronte della maglietta\\
-		& DimensioneDietro(string): dimensione della stampa posta sul dietro della maglietta\\
+		& Nome(string): nome descrittivo della maglietta con il quale questa viene riferita sui
+		documenti (ordine, DDT, fattura)\\
+		& Descrizione(text): descrizione dettagliata della maglietta con accezioni commerciali e 
+		spiegazioni enerenti la maglietta\\
+		& Manica(string): tipo di manica della maglietta (lunga, corta, tre-quarti, senza maniche)\\
+		& Collo(string): tipo di collo della maglietta (Es: collo a V, girocollo, etc..)\\
+		& StampabileFronte(boolean): possibilità di scelta di una stampa sul fronte della maglietta
+		in fase di personalizzazione\\
+		& StampabileRetro(boolean): possibilità di scelta di una stampa sul Retro della maglietta
+		in fase di personalizzazione\\
+		& Materiale(string): tipo di materiale di cui è composta la maglietta (Es: cotone, sintetico, etc..)\\
+		& DimensioneFronte(float): dimensione della stampa posta sul fronte della maglietta\\
+		\hline
+	\end{tabular}
+\end{center}
+\begin{center}
+	\begin{tabular}{|l|p{0.7\columnwidth}|}
+		\hline
+		& DimensioneRetro(float): dimensione della stampa posta sul dietro della maglietta\\
 		& Prezzo(float)\\
 		\hline
 		Relazioni & Maglietta-Colore\\
 		& Maglietta-Taglia\\
 		& Maglietta-Sesso\\
 		& Maglietta-Foto\\
-		& Maglietta-Stampa\\
+		& Maglietta-Stampa (stampa sul fronte)\\
+		& Maglietta-Stampa (stampa sul retro)\\
 		& Maglietta-Personalizzazione\\
 		\hline
-		Componenti & \\
+		Componenti & Colore\\
+		& Taglia\\
+		& Sesso\\
+		& Foto\\
+		& Stampa\\
 		\hline
 		Super-concetti & \\
 		\hline
@@ -380,22 +415,29 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi & Prodotto Completo, Prodotto, Configurazione \\
 		\hline
-		Descrizione & \\
+		Descrizione & Configurazione di una maglietta avente tutte le caratteristiche definite incluse
+		le eventuali stampe, adatta ad essere ordinata.\\
 		\hline
-		Istanze Campione & \\
+		Istanze Campione & T-shirt classica colore verde, taglia M, da uomo, senza stampe\\
+		& Polo manica lunga rosa, taglia L, da uomo, con stampa sul retro ""Logo Rugby Brescia""\\
 		\hline
 		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& DimensioneFronte(string): dimensione del fronte scelta\\
-		& DimensioneDietro(string): dimensione del dietro scelta\\
+		& DimensioneFronte(float): dimensione della stampa scelta del fronte\\
+		& DimensioneRetro(float): dimensione della stampa scelta del retro\\
 		\hline
 		Relazioni & Personalizzazione-Maglietta\\
-		& Personalizzazione-Stampa\\
+		& Personalizzazione-Stampa (stampa sul fronte)\\
+		& Personalizzazione-Stampa (stampa sul retro)\\
 		& Personalizzazione-Colore\\
 		& Personalizzazione-Taglia\\
 		& Personalizzazione-Sesso\\
 		& Personalizzazione-RigaOrdine\\
 		\hline
-		Componenti & \\
+		Componenti & Maglietta\\
+		& Stampa\\
+		& Taglia\\
+		& Colore\\
+		& Sesso\\
 		\hline
 		Super-concetti & \\
 		\hline
@@ -412,19 +454,22 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi & Riga Carrello \\
 		\hline
-		Descrizione & \\
+		Descrizione & Elemento base di un ordine o carrello. Ogni riga d'ordine contiene una 
+		personalizzazione dell'utente e ne specifica la quantità desiderata-\\
 		\hline
-		Istanze Campione & \\
+		Istanze Campione & 5 ""Maglietta Styling AI2010"" colore nero, taglia L, sesso M\\
+		& 2 ""StilistaOne PE2011"" + ""Gioconda"" fronte dimensione grande, colore rosso, taglia M,
+		sesso F\\
 		\hline
 		Proprietà & OID: chiave univoca dell'entità considerata\\
 		& PrezzoSingolo(float): prezzo della singolo pezzo della riga dell'ordine\\
-		& Quantità(intero): quantità ordinata di un singolo pezzo per riga dell'ordine\\
+		& Quantità(integer): quantità ordinata di un singolo pezzo per riga dell'ordine\\
 		& PrezzoTotale(float)\\
 		\hline
 		Relazioni & RigaOrdine-Personalizzazione\\
 		& RigaOrdine-Ordine\\
 		\hline
-		Componenti & \\
+		Componenti & Personalizzazione\\
 		\hline
 		Super-concetti & \\
 		\hline
@@ -441,24 +486,26 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi & Carrello \\
 		\hline
-		Descrizione & \\
+		Descrizione & Insieme di righe d'ordine pronte per l'acquisto o acquistate\\
 		\hline
-		Istanze Campione & \\
+		Istanze Campione & n° ordine 13 di Mario Rossi del 15/09/2011 ore 10.15; stato: IN STAMPA. 
+		Preso in carico il 17/09/2011 ore 11.15 da Addetto15\\
+		& n° ordine 42 di Federica Bianchi del 19/10/2011 ore 17.19; stato: CARRELLO/PREORDINE.\\
 		\hline
 		Proprietà & OID: chiave univova dell'entità considerata\\
-		& DataOraConferma(date): data e ora di conferma dell'ordine da parte dell'utente\\
-		& DataOraPresaInCarico(date): data e ora di presa in carico dell'ordine da parte di un operaio
+		& DataOraConferma(timestamp): data e ora di conferma dell'ordine da parte dell'utente\\
+		& DataOraPresaInCarico(timestamp): data e ora di presa in carico dell'ordine da parte di un operaio
 		stampatore\\
-		& DataOraSpedizione(date): data e ora della consegna dell'ordine allo spedizioniere\\
+		& DataOraSpedizione(timestamp): data e ora della consegna dell'ordine allo spedizioniere\\
 		& PrezzoTotale(float): prezzo totale dell'ordine\\
 		& SpeseSpedizione(float)\\
-		& Stato(string): descrizione dello stato dell'ordine\\
+		& Stato(string): descrizione dello stato dell'ordine (ES: in stampa, in spedizione, etc..)\\
 		\hline
-		Relazioni & Ordine-Cliente\\
-		& Ordine-Operaio\\
+		Relazioni & Ordine-Utente (Cliente)\\
+		& Ordine-Utente (Operaio Stampatore)\\
 		& Ordine-RigaOrdine\\
 		\hline
-		Componenti & \\
+		Componenti & RigaOrdine\\
 		\hline
 		Super-concetti & \\
 		\hline
@@ -475,16 +522,16 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi & Pagina Informativa \\
 		\hline
-		Descrizione & \\
+		Descrizione & Pagina web statica per rappresentazione delle informazioni al pubblico\\
 		\hline
-		Istanze Campione & \\
+		Istanze Campione & Pagina descrittiva dell'azienda\\
+		& Pagina dei contatti\\
 		\hline
 		Proprietà & OID: chiave univoca dell'entità considerata\\
 		& Titolo(string)\\
-		& TestoHTML(string)\\
+		& TestoHTML(text)\\
 		\hline
-		Relazioni & Stampa-Maglietta\\
-		& Stampa-Personalizzazione\\
+		Relazioni & \\
 		\hline
 		Componenti & \\
 		\hline
@@ -506,32 +553,36 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		\rowcolor[gray]{.9} Site View & \textbf{Pubblica}\\
 		\hline
-		Descrizione & \\
+		Descrizione & Site view che contiene le pagine dedicate agli utenti visitatori non registrati
+		o non loggati al sito. Tramite un menù si possono consultare i prodotti (magliette e stampe)
+		disponibili e le pagine informative. C'è inoltre un apposito form per effettuare il login se
+		l'utente possiede già le credenziali o registrarsi come nuovo utente.\\
 		\hline
 		Gruppi d'Utente & Utente non Registrato\\
 		\hline
 		Caso d'Uso & Login\\
 		& Registrazione\\
-		& Visualizzazione Maglietta\\
-		& Visualizzazione Stampa\\
-		& Visualizzazione Pagine Informative\\
+		& Consultazione Magliette disponibili\\
+		& Consultazione Stampe diponibili\\
+		& Consultazione Pagine Informative\\
 		& \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Prodotti}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Prodotti}\\
 		\hline
 		Nome Area & Prodotti\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & Permette di sfogliare il catalogo, individuare un particolare prodotto e
+		quindi consultare i dettagli dei singoli prodotti offerti.\\
 		\hline
 		Oggetti & Maglietta con tutte le relazioni composte e Stampa\\
 		\hline
 		Priorità & \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Informazioni}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Informazioni}\\
 		\hline
 		Nome Area & Informazioni\\
 		\hline
-		Descrizione Area & \\
+		Descrizione Area & Permette di visualizzare le pagine informative predisposte dall'amministratore. \\
 		\hline
 		Oggetti & Pagine Informative\\
 		\hline
@@ -554,27 +605,27 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Caso d'Uso & Logout\\
 		& Modifica Account\\
-		& Visualizzazione Maglietta\\
-		& Visualizzazione Stampa\\
-		& Visualizzazione Pagine Informative\\
-		& Personalizzaizone Maglietta\\
-		& Modifica - Conferma Carrello\\
+		& Consultazione Magliette disponibili\\
+		& Consultazione Stampe disponibili\\
+		& Consultazione Pagine Informative\\
+		& Personalizzazione dei Prodotti\\
 		& Aggiunta prodotto al Carrello\\
-		& Visione del Dettaglio dell'Ordine\\
+		& Modifica - Conferma Carrello\\
+		& Consultazione Dettaglio dell'Ordine\\
 		& Annulla Ordine\\
 		& \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Prodotti}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Web Market}\\
 		\hline
-		Nome Area & Prodotti\\
+		Nome Area & Web Market\\
 		\hline
 		Descrizione Area & \\
 		\hline
 		Oggetti & Maglietta con tutte le relazioni composte, Stampa, Personalizzazione, Ordine\\
 		\hline
-		Priorità & Alta\\
+		Priorità & \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Informazioni}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Informazioni}\\
 		\hline
 		Nome Area & Informazioni\\
 		\hline
@@ -582,9 +633,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Oggetti & Pagine Informative\\
 		\hline
-		Priorità & Bassa\\
+		Priorità & \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Ordini}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Ordini}\\
 		\hline
 		Nome Area & Ordini\\
 		\hline
@@ -592,7 +643,17 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Oggetti & Ordine, Maglietta, Personalizzazione, Stampa\\
 		\hline
-		Priorità & Alta\\
+		Priorità & \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Account}\\
+		\hline
+		Nome Area & Gestione Account\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Utente\\
+		\hline
+		Priorità & \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -615,15 +676,25 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& Conferma spedizione dell'ordine\\
 		& \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Stampatore}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Ordini}\\
 		\hline
-		Nome Area & Stampatore\\
+		Nome Area & Gestione Ordini\\
 		\hline
 		Descrizione Area & \\
 		\hline
 		Oggetti & Ordine, Personalizzazione, Maglietta, Stampa, Cliente\\
 		\hline
-		Priorità & Alta\\
+		Priorità & \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Account}\\
+		\hline
+		Nome Area & Gestione Account\\
+		\hline
+		Descrizione Area & \\
+		\hline
+		Oggetti & Utente\\
+		\hline
+		Priorità & \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -646,12 +717,12 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& Inserimento-Modifica-Cancellazione Pagine Informative\\
 		& Inserimento-Modifica-Cancellazione Maglietta\\
 		& Inserimento-Modifica-Cancellazione Stampa\\
-		& Visualizzazione dettagli Ordine\\
+		& Visualizzazione Dettagli Ordine\\
 		& \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Account}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Accounts}\\
 		\hline
-		Nome Area & Account\\
+		Nome Area & Gestione Accounts\\
 		\hline
 		Descrizione Area & \\
 		\hline
@@ -659,9 +730,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Priorità & \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Informazioni}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Informazioni}\\
 		\hline
-		Nome Area & Informazioni\\
+		Nome Area & Gestione Informazioni\\
 		\hline
 		Descrizione Area &\\
 		\hline
@@ -669,9 +740,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Priorità & \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Prodotti}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Prodotti}\\
 		\hline
-		Nome Area & Prodotti\\
+		Nome Area & Gestione Prodotti\\
 		\hline
 		Descrizione Area & \\
 		\hline
@@ -679,9 +750,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Priorità & \\
 		\hline
-		\rowcolor[gray]{.9} & \textbf{Site View Map: Ordini}\\
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Archivio Ordini}\\
 		\hline
-		Nome Area & Ordini\\
+		Nome Area & Gestione Archivio Ordini\\
 		\hline
 		Descrizione Area & \\
 		\hline
@@ -694,63 +765,5 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 
 \newpage
 \section{Linee guida dello Stile Grafico}
-
-\newpage
-\textbf{UTENTI}:
-\begin{itemize}
-	\item \textbf{Amministratore}
-		\begin{itemize}
-			\item gestione account operai azienda
-			\item pagina degli ordini di diverso tipo:
-				\begin{itemize}
-					\item evasi (affidati al corriere: con ID di spedizione rilasciato dal corriere)
-					\item non evasi (in stampa)
-					\item non ancora gestiti
-				\end{itemize}
-			ogni ordine con i seguenti dati:
-				\begin{itemize}
-					\item data/ora dell'ordine e chi ha effettuato l'ordine
-					\item data/ora presa in carico dall'operaio stampatore dell'ordine e chi lo ha
-					preso in carico
-					\item data/ora spedizione (affidamento al corriere)
-					\item SERVIZI: data/ora di consegna dell'ordine
-					\item SERVIZI: registro dei contatti con dati dell'operaio e dell'utente che ha
-					effettuato l'ordine
-				\end{itemize}
-		\end{itemize}
-	\item \textbf{Operaio Stampatore}\\
-	L'operaio stampatore si occupa anche del confezionamento della maglietta da affidare al corriere.
-		\begin{itemize}
-			\item pagina degli ordini non ancora gestiti da cui può scegliere un ordine da prendere 
-			in carico (può però avere più di un ordine in carico)
-			\item pagina degli ordini che ha in carico (operazione di: chiusura dell'ordine e di evasione
-			ordine (affido al corriere))\\
-			SERVIZI: ID spedizione dal corriere 
-			\item ? annullamento dell'ordine da parte dell'operaio per problemi ? [vedere se mettere 
-			anche questo]
-		\end{itemize}
-	\item \textbf{Utente Registrato}
-		\begin{itemize}
-			\item pagina del catalogo dei prodotti e pagine che visualizza anche l'utente non registrato
-			\item pagina creazione/personalizzazione della maglietta (? multiordine ? [vedere se mettere
-			questo]
-			\item pagina della lista degli ordini effettuati e stato ordine con contenuti
-			\item pagina di annullamento dell'ordine fino a che non è stato preso in carico dall'operaio
-			\item SERVIZI: modulo di contatto utente - operaio stampatore anonimo l'uno con l'altro,
-			ma l'amministratore può vedere, per eventuali problemi
-		\end{itemize}
-	\item \textbf{Utente: Home Page}
-		\begin{itemize}
-			\item pagina del catalogo dei prodotti
-			\item pagina per la possibilità di registrazione
-			\item pagina di presentazione dell'azienda: chi siamo, dove siamo, cosa facciamo
-			\item pagina di informazioni sulle spedizioni genericamente: tempi di spedizioni, costi 
-			di spedizione
-		\end{itemize}
-\end{itemize}
-
-Il pagamento delle magliette avviene solamente Cash al corriere.
-
-Poi vediamo cosa aggiugere di altro in base a cosa ci dice il Profe.
 
 \end{document}
