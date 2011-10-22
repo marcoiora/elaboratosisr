@@ -1,0 +1,60 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="0" id="sv1#area1#page1" name="Magliette">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page1#inu1" name="Colori Disponibili" entity="ent2" distinct="true" displayAttributes="ent2#att13 ent2#att12 ent2#att14" linkOrder="sv1#area1#page1#inu1#ln16">
+      <Link id="sv1#area1#page1#inu1#ln16" name="Link16" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <IndexUnit gr:x="0" gr:y="90" id="sv1#area1#page1#inu2" name="Taglie Disponibili" entity="ent3" distinct="true" displayAttributes="ent3#att16 ent3#att15" linkOrder="sv1#area1#page1#inu2#ln17">
+      <Link id="sv1#area1#page1#inu2#ln17" name="Link17" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <IndexUnit gr:x="0" gr:y="180" id="sv1#area1#page1#inu3" name="Sessi Disponibili" entity="ent4" distinct="true" displayAttributes="ent4#att18 ent4#att17" linkOrder="sv1#area1#page1#inu3#ln18">
+      <Link id="sv1#area1#page1#inu3#ln18" name="Link18" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <IndexUnit gr:x="196" gr:y="76" id="sv1#area1#page1#inu5" name="Magliette" entity="ent1" displayAttributes="ent1#att2">
+      <Selector id="sv1#area1#page1#inu5#su10" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond8" name="colore" predicate="in" implied="true" role="rel1#role2"/>
+        <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond9" name="taglia" predicate="in" implied="true" role="rel3#role6"/>
+        <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond10" name="sesso" predicate="in" implied="true" role="rel4#role8"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page1#inu1">
+          <layout:Link link="sv1#area1#page1#inu1#ln16"/>
+          <layout:Attribute attribute="ent2#att13"/>
+          <layout:Attribute attribute="ent2#att12"/>
+          <layout:Attribute attribute="ent2#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page1#inu2">
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Link link="sv1#area1#page1#inu2#ln17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page1#inu3">
+          <layout:Attribute attribute="ent4#att18"/>
+          <layout:Attribute attribute="ent4#att17"/>
+          <layout:Link link="sv1#area1#page1#inu3#ln18"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page1#inu5">
+          <layout:Attribute attribute="ent1#att2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

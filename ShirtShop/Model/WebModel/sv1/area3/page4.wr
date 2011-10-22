@@ -1,0 +1,48 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="365" gr:y="0" id="sv1#area3#page4" name="Registrazione" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page4#enu3" name="Form Registrazione" linkOrder="sv1#area3#page4#enu3#ln3">
+      <Field id="sv1#area3#page4#enu3#fld5" name="username" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld6" name="password" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld7" name="nome" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld8" name="cognome" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld9" name="email" type="string" modifiable="true"/>
+      <Link id="sv1#area3#page4#enu3#ln3" name="Crea" to="sv1#area3#cru1" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par5" name="cognome_cognome" source="sv1#area3#page4#enu3#fld8" target="sv1#area3#cru1.ent10#att44"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par6" name="email_email" source="sv1#area3#page4#enu3#fld9" target="sv1#area3#cru1.email"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par7" name="_Group.oid(defaultGroup)" blank="true" target="sv1#area3#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par8" name="_indirizzo" target="sv1#area3#cru1.ent10#att45" source="sv1#area3#page4#enu3#fld10"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par9" name="nome_nome" source="sv1#area3#page4#enu3#fld7" target="sv1#area3#cru1.ent10#att43"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par10" name="password_password" source="sv1#area3#page4#enu3#fld6" target="sv1#area3#cru1.password"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par11" name="username_userName" source="sv1#area3#page4#enu3#fld5" target="sv1#area3#cru1.userName"/>
+      </Link>
+      <Field id="sv1#area3#page4#enu3#fld10" name="indirizzo" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area3#page4#enu3">
+          <layout:Link link="sv1#area3#page4#enu3#ln3"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld5"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld6"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld7"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld8"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld9"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld10"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

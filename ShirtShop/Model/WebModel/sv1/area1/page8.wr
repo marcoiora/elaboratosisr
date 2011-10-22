@@ -1,0 +1,28 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="452" gr:y="472" id="sv1#area1#page8" name="Stampa">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv1#area1#page8#dau3" name="Stampa" entity="ent6">
+      <Selector id="sv1#area1#page8#dau3#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page8#dau3#su9#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page8#dau3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
