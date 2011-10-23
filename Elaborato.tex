@@ -172,8 +172,8 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		& Cognome\\ 
 		& Indirizzo\\
 		& Telefono\\ 
-		&Codice Fiscale\\ 
-		&E-mail\\
+		& Codice Fiscale\\ 
+		& E-mail\\
 		\hline
 		Super-Gruppo & Utente Registrato\\
 		\hline
@@ -191,7 +191,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Oggetti in lettura & Maglietta\\
 		& Pagina\\
 		\hline
-		Oggetto in scrittura & Personalizzazione [Inserimento - Cancellazione]\\ 
+		Oggetto in scrittura & Configurazione [Inserimento - Cancellazione]\\ 
 		& Riga Ordine [Inserimento - Modifica - Cancellazione]\\
 		& Ordine [Inserimento - Modifica]\\ 
 		& Stampa [Inserimento]\\
@@ -207,7 +207,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Descrizione & Gruppo di utenti che operano per l'azienda soddisfando gli ordini dei clienti\\
 		\hline
-		Dati profilo & \\
+		Dati profilo & Matricola\\
 		\hline
 		Super-Gruppo & Utente Registrato \\
 		\hline
@@ -218,7 +218,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Oggetti in lettura & Maglietta\\
 		& Stampa\\
-		& Personalizzazione\\
+		& Configurazione\\
 		& Riga Ordine\\
 		\hline
 		Oggetti in scrittura & Ordine [Modifica]\\
@@ -251,7 +251,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Oggetti in lettura & Ordine\\
 			& Riga Ordine\\
-			& Personalizzazione\\
+			& Configurazione\\
 		\hline
 		Oggetti in scrittuta & Maglietta [Inserimento - Modifica - Cancellazione]\\
 			& Stampa [Inserimento - Modifica - Cancellazione]\\
@@ -318,11 +318,11 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		stampatori per la realizzazione delle magliette personalizzate\\
 		& PrezzoBase(float): prezzo finale della stampa a dimensione massima\\
 		\hline
-		Relazioni & Stampa-Maglietta (stampa sul fronte)\\
-		& Stampa-Maglietta (stampa sul retro)\\
-		& Stampa-Personalizzazione (stampa sul fronte)\\
-		& Stampa-Personalizzazione (stampa sul retro)\\
-		& Stampa-Utente\\
+		Relazioni & Stampa-Template (stampa sul fronte)\\
+		& Stampa-Template (stampa sul retro)\\
+		& Stampa-Configurazione (stampa sul fronte)\\
+		& Stampa-Configurazione (stampa sul retro)\\
+		& Stampa-Cliente\\
 		\hline
 		Componenti & \\
 		\hline
@@ -364,22 +364,17 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& Manica(string): tipo di manica della maglietta (lunga, corta, tre-quarti, senza maniche)\\
 		& Collo(string): tipo di collo della maglietta (Es: collo a V, girocollo, etc..)\\
 		& StampabileFronte(boolean): possibilità di scelta di una stampa sul fronte della maglietta
-		in fase di personalizzazione\\
+		in fase di configurazione\\
 		& StampabileRetro(boolean): possibilità di scelta di una stampa sul Retro della maglietta
-		in fase di personalizzazione\\
+		in fase di configurazione\\
 		& Materiale(string): tipo di materiale di cui è composta la maglietta (Es: cotone, sintetico, etc..)\\
-		& DimensioneFronte(float): dimensione della stampa posta sul fronte della maglietta\\
-		\hline
-		& DimensioneRetro(float): dimensione della stampa posta sul dietro della maglietta\\
 		& Prezzo(float)\\
 		\hline
 		Relazioni & Maglietta-Colore\\
 		& Maglietta-Taglia\\
 		& Maglietta-Sesso\\
 		& Maglietta-Foto\\
-		& Maglietta-Stampa (stampa sul fronte)\\
-		& Maglietta-Stampa (stampa sul retro)\\
-		& Maglietta-Personalizzazione\\
+		& Maglietta-Configurazione\\
 		\hline
 		Componenti & Colore\\
 		& Taglia\\
@@ -389,17 +384,17 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Super-concetti & \\
 		\hline
-		Sotto-concetti & \\
+		Sotto-concetti & Template\\
 		\hline
 	\end{longtable}
 \end{center}
 
 \newpage
-\subsubsection{Personalizzazione:}
+\subsubsection{Configurazione:}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Personalizzazione}\\
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Configurazione}\\
 		\hline
 		Sinonimi & Prodotto Completo, Prodotto, Configurazione \\
 		\hline
@@ -413,13 +408,13 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& DimensioneFronte(float): dimensione della stampa scelta del fronte\\
 		& DimensioneRetro(float): dimensione della stampa scelta del retro\\
 		\hline
-		Relazioni & Personalizzazione-Maglietta\\
-		& Personalizzazione-Stampa (stampa sul fronte)\\
-		& Personalizzazione-Stampa (stampa sul retro)\\
-		& Personalizzazione-Colore\\
-		& Personalizzazione-Taglia\\
-		& Personalizzazione-Sesso\\
-		& Personalizzazione-RigaOrdine\\
+		Relazioni & Configurazione-Maglietta\\
+		& Configurazione-Stampa (stampa sul fronte)\\
+		& Configurazione-Stampa (stampa sul retro)\\
+		& Configurazione-Colore\\
+		& Configurazione-Taglia\\
+		& Configurazione-Sesso\\
+		& Configurazione-RigaOrdine\\
 		\hline
 		Componenti & Maglietta\\
 		& Stampa\\
@@ -444,7 +439,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Sinonimi & Riga Carrello \\
 		\hline
 		Descrizione & Elemento base di un ordine o carrello. Ogni riga d'ordine contiene una 
-		personalizzazione dell'utente e ne specifica la quantità desiderata-\\
+		configurazione dell'utente e ne specifica la quantità desiderata.\\
 		\hline
 		Istanze Campione & 5 ""Maglietta Styling AI2010"" colore nero, taglia L, sesso M\\
 		& 2 ""StilistaOne PE2011"" + ""Gioconda"" fronte dimensione grande, colore rosso, taglia M,
@@ -455,10 +450,10 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& Quantità(integer): quantità ordinata di un singolo pezzo per riga dell'ordine\\
 		& PrezzoTotale(float)\\
 		\hline
-		Relazioni & RigaOrdine-Personalizzazione\\
+		Relazioni & RigaOrdine-Configurazione\\
 		& RigaOrdine-Ordine\\
 		\hline
-		Componenti & Personalizzazione\\
+		Componenti & Configurazione\\
 		\hline
 		Super-concetti & \\
 		\hline
@@ -557,6 +552,17 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		& ""Consultazione Stampe diponibili""\\
 		& ""Consultazione Pagine Informative""\\
 		& \\
+		\hline
+		\rowcolor[gray]{.9} & \textbf{Site View Area: Home Page}\\
+		\hline
+		Nome Area & Home Page\\
+		\hline
+		Descrizione Area & Area principale, punto di partenza per navigare il sito. Da questa è possibile
+		visualizzare le ultime offerte, effettuare il login o registrarsi come nuovo utente.\\
+		\hline
+		Oggetti & Maglietta specializzazione Template\\
+		\hline
+		Priorità & \\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Prodotti}\\
 		\hline
