@@ -1,0 +1,27 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="819" gr:y="304" id="sv4#area6" name="Gestione Prodotti" landmark="true" landmarks="sv4#area6#page24" defaultPage="sv4#area6#page24">
+  <OperationUnits>
+    <ParameterCollectorUnit gr:x="73" gr:y="898" id="sv4#area6#pcu1" name="Parameter Collector1" linkOrder="sv4#area6#pcu1#ln34 sv4#area6#pcu1#ln36 sv4#area6#pcu1#ln41">
+      <CollectorParameter id="sv4#area6#pcu1#pcp1" name="maglietta_oid"/>
+      <Link id="sv4#area6#pcu1#ln34" name="Link34" to="sv4#area6#page17#seu4" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#pcu1#ln34#par69" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#pcu1#pcp1" target="sv4#area6#page17#seu4#su14#rcond1.ent1#att1"/>
+      </Link>
+      <Link id="sv4#area6#pcu1#ln36" name="Link36" to="sv4#area6#page17#seu5" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#pcu1#ln36#par70" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#pcu1#pcp1" target="sv4#area6#page17#seu5#su15#rcond3.ent1#att1"/>
+      </Link>
+      <OKLink id="sv4#area6#pcu1#oln19" name="OKLink19" to="sv4#area6#page17" automaticCoupling="true"/>
+      <Link id="sv4#area6#pcu1#ln41" name="Link41" to="sv4#area6#page17#enu6" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#pcu1#ln41#par79" name="maglietta_oid_PASSING" source="sv4#area6#pcu1#pcp1" passing="true"/>
+      </Link>
+    </ParameterCollectorUnit>
+    <CreateUnit id="sv4#area6#cru5" name="Salva e Nuova Foto" gr:x="393" gr:y="1128" entity="ent5">
+      <OKLink id="sv4#area6#cru5#oln20" name="OKLink20" to="sv4#area6#pcu1" gr:bendpoints="-139,-157,177,72">
+        <LinkParameter id="sv4#area6#cru5#oln20#par92" name="maglietta_oid_PASSING_maglietta_oid" sourceLinkParameter="sv4#area6#page17#enu6#ln45#par91" target="sv4#area6#pcu1#pcp1"/>
+      </OKLink>
+      <KOLink id="sv4#area6#cru5#kln12" name="KOLink12" to="sv4#page16" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit gr:x="413" gr:y="988" id="sv4#area6#cru6" name="Salva Foto e Fine" entity="ent5">
+      <OKLink id="sv4#area6#cru6#oln21" name="OKLink21" to="sv4#area6#page24" automaticCoupling="true"/>
+      <KOLink id="sv4#area6#cru6#kln11" name="KOLink11" to="sv4#page16" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</Area>

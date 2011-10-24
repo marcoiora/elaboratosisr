@@ -13,8 +13,9 @@
         <AttributesCondition id="sv1#area3#page3#dau2#su3#acond3" name="AttCondition2" predicate="eq" booleanOperator="or" implied="false" attributes="ent11#att42" value="True"/>
       </Selector>
     </DataUnit>
-    <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" entity="ent13" displayAttributes="ent1#att2 ent1#att3" maxResults="4">
+    <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" entity="ent13" displayAttributes="ent1#att2 ent1#att3" maxResults="4" linkOrder="sv1#area3#page3#mdu2#ln17">
       <SortAttribute attribute="ent1#att1" order="descending"/>
+      <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true"/>
     </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>
@@ -29,6 +30,7 @@
         <layout:Unit unitId="sv1#area3#page3#mdu2">
           <layout:Attribute attribute="ent1#att2"/>
           <layout:Attribute attribute="ent1#att3"/>
+          <layout:Link link="sv1#area3#page3#mdu2#ln17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
@@ -50,4 +52,8 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <layout:UnitConfiguration unitType="DataUnit" layout:unitLayout="WRDefault/Normal" layout:frameLayout="None">
+    <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+    <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+  </layout:UnitConfiguration>
 </Page>

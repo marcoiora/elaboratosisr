@@ -1,0 +1,71 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="33" gr:y="1028" id="sv4#area6#page17" name="Aggiungi Fotografie">
+  <ContentUnits>
+    <EntryUnit gr:x="136" gr:y="5" id="sv4#area6#page17#enu6" name="Inserisci Fotografia" linkOrder="sv4#area6#page17#enu6#ln45 sv4#area6#page17#enu6#ln46">
+      <SelectionField id="sv4#area6#page17#enu6#sfld1" name="Colore" type="string"/>
+      <SelectionField id="sv4#area6#page17#enu6#sfld2" name="Sesso" type="string"/>
+      <Field id="sv4#area6#page17#enu6#fld17" name="Fotografia" type="blob" modifiable="true" contentType="image"/>
+      <Field id="sv4#area6#page17#enu6#fld24" name="Commento" type="text" modifiable="true" contentType="text/html"/>
+      <Link id="sv4#area6#page17#enu6#ln45" name="Salva e Nuova Foto" to="sv4#area6#cru5" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par80" name="Colore_Colore.oid(FotoToColore)" source="sv4#area6#page17#enu6#sfld1" target="sv4#area6#cru5.rel6#role11.ent2#att12"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par81" name="Commento_commento" source="sv4#area6#page17#enu6#fld24" target="sv4#area6#cru5.ent5#att20"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par82" name="Fotografia_immagine" source="sv4#area6#page17#enu6#fld17" target="sv4#area6#cru5.ent5#att21"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par83" name="_immagine [file name]" target="sv4#area6#cru5.ent5#att21_name" blank="true"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par84" name="_Maglietta.oid(FotoToMaglietta)" sourceLinkParameter="sv4#area6#pcu1#ln41#par79" target="sv4#area6#cru5.rel5#role10.ent1#att1"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par85" name="Sesso_Sesso.oid(FotoToSesso)" source="sv4#area6#page17#enu6#sfld2" target="sv4#area6#cru5.rel7#role13.ent4#att17"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln45#par91" name="maglietta_oid_PASSING" sourceLinkParameter="sv4#area6#pcu1#ln41#par79" passing="true"/>
+      </Link>
+      <Link id="sv4#area6#page17#enu6#ln46" name="Salva e Fine" to="sv4#area6#cru6" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page17#enu6#ln46#par86" name="Colore_Colore.oid(FotoToColore)" source="sv4#area6#page17#enu6#sfld1" target="sv4#area6#cru6.rel6#role11.ent2#att12"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln46#par87" name="Commento_commento" source="sv4#area6#page17#enu6#fld24" target="sv4#area6#cru6.ent5#att20"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln46#par88" name="Fotografia_immagine" source="sv4#area6#page17#enu6#fld17" target="sv4#area6#cru6.ent5#att21"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln46#par89" name="maglietta_oid_PASSING_Maglietta.oid(FotoToMaglietta)" sourceLinkParameter="sv4#area6#pcu1#ln41#par79" target="sv4#area6#cru6.rel5#role10.ent1#att1"/>
+        <LinkParameter id="sv4#area6#page17#enu6#ln46#par90" name="Sesso_Sesso.oid(FotoToSesso)" source="sv4#area6#page17#enu6#sfld2" target="sv4#area6#cru6.rel7#role13.ent4#att17"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv4#area6#page17#seu4" name="Colore" entity="ent2" distinctAttributes="ent2#att12 ent2#att13">
+      <Selector id="sv4#area6#page17#seu4#su14" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page17#seu4#su14#rcond1" name="Maglietta" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv4#area6#page17#seu4#ln20" name="Link20" to="sv4#area6#page17#enu6" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page17#seu4#ln20#par41" name="nome_Colore [label]" source="ent2#att13Array" target="sv4#area6#page17#enu6#sfld1_label"/>
+        <LinkParameter id="sv4#area6#page17#seu4#ln20#par44" name="oid_Colore [output]" source="ent2#att12Array" target="sv4#area6#page17#enu6#sfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="111" id="sv4#area6#page17#seu5" name="Sesso" entity="ent4" distinctAttributes="ent4#att17 ent4#att18">
+      <Selector id="sv4#area6#page17#seu5#su15" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page17#seu5#su15#rcond3" name="Maglietta" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv4#area6#page17#seu5#ln23" name="Link23" to="sv4#area6#page17#enu6" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page17#seu5#ln23#par45" name="_Sesso - Preselection" blank="true" target="sv4#area6#page17#enu6#sfld2_presel"/>
+        <LinkParameter id="sv4#area6#page17#seu5#ln23#par57" name="nome_Sesso [label]" source="ent4#att18Array" target="sv4#area6#page17#enu6#sfld2_label"/>
+        <LinkParameter id="sv4#area6#page17#seu5#ln23#par58" name="oid_Sesso [output]" source="ent4#att17Array" target="sv4#area6#page17#enu6#sfld2_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page17#enu6">
+          <layout:Field field="sv4#area6#page17#enu6#sfld1"/>
+          <layout:Field field="sv4#area6#page17#enu6#sfld2"/>
+          <layout:Field field="sv4#area6#page17#enu6#fld17"/>
+          <layout:Field field="sv4#area6#page17#enu6#fld24"/>
+          <layout:Link link="sv4#area6#page17#enu6#ln45"/>
+          <layout:Link link="sv4#area6#page17#enu6#ln46"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

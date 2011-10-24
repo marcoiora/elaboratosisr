@@ -1,54 +1,52 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="0" id="sv1#area1#page1" name="Magliette">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="4" gr:y="0" id="sv1#area1#page1" name="Catalogo Magliette" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page1#inu1" name="Colori Disponibili" entity="ent2" distinct="true" displayAttributes="ent2#att13 ent2#att12 ent2#att14" linkOrder="sv1#area1#page1#inu1#ln16">
-      <Link id="sv1#area1#page1#inu1#ln16" name="Link16" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
-    </IndexUnit>
-    <IndexUnit gr:x="0" gr:y="90" id="sv1#area1#page1#inu2" name="Taglie Disponibili" entity="ent3" distinct="true" displayAttributes="ent3#att16 ent3#att15" linkOrder="sv1#area1#page1#inu2#ln17">
-      <Link id="sv1#area1#page1#inu2#ln17" name="Link17" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
-    </IndexUnit>
-    <IndexUnit gr:x="0" gr:y="180" id="sv1#area1#page1#inu3" name="Sessi Disponibili" entity="ent4" distinct="true" displayAttributes="ent4#att18 ent4#att17" linkOrder="sv1#area1#page1#inu3#ln18">
-      <Link id="sv1#area1#page1#inu3#ln18" name="Link18" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
-    </IndexUnit>
-    <IndexUnit gr:x="196" gr:y="76" id="sv1#area1#page1#inu5" name="Magliette" entity="ent1" displayAttributes="ent1#att2">
+    <IndexUnit gr:x="192" gr:y="82" id="sv1#area1#page1#inu5" name="Magliette" entity="ent1" displayAttributes="ent1#att2" linkOrder="sv1#area1#page1#inu5#ln6">
       <Selector id="sv1#area1#page1#inu5#su10" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond8" name="colore" predicate="in" implied="true" role="rel1#role2"/>
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond9" name="taglia" predicate="in" implied="true" role="rel3#role6"/>
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond10" name="sesso" predicate="in" implied="true" role="rel4#role8"/>
       </Selector>
+      <Link id="sv1#area1#page1#inu5#ln6" name="Dettagli ..." to="sv1#area1#page2#dau1" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
+    <MultiChoiceIndexUnit gr:x="0" gr:y="190" id="sv1#area1#page1#mciu1" name="Sessi Disponibili" entity="ent4" displayAttributes="ent4#att18" linkOrder="sv1#area1#page1#mciu1#ln1">
+      <Link id="sv1#area1#page1#mciu1#ln1" name="Filtra Sesso" to="sv1#area1#page1#inu5" type="normal" validate="true" automaticCoupling="true"/>
+    </MultiChoiceIndexUnit>
+    <MultiChoiceIndexUnit gr:x="0" gr:y="100" id="sv1#area1#page1#mciu2" name="Taglie Disponibili" entity="ent3" linkOrder="sv1#area1#page1#mciu2#ln4" displayAttributes="ent3#att16">
+      <Link id="sv1#area1#page1#mciu2#ln4" name="Filtra Taglia" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiChoiceIndexUnit>
+    <MultiChoiceIndexUnit gr:x="0" gr:y="0" id="sv1#area1#page1#mciu3" name="Colori Disponibili" entity="ent2" displayAttributes="ent2#att13" linkOrder="sv1#area1#page1#mciu3#ln7" customDescriptor="false">
+      <Link id="sv1#area1#page1#mciu3#ln7" name="Filtra colori" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiChoiceIndexUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv1#area1#page1#inu1">
-          <layout:Link link="sv1#area1#page1#inu1#ln16"/>
+        <layout:Unit unitId="sv1#area1#page1#mciu3">
           <layout:Attribute attribute="ent2#att13"/>
-          <layout:Attribute attribute="ent2#att12"/>
-          <layout:Attribute attribute="ent2#att14"/>
+          <layout:Link link="sv1#area1#page1#mciu3#ln7"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
-        <layout:Unit unitId="sv1#area1#page1#inu2">
+        <layout:Unit unitId="sv1#area1#page1#mciu2">
+          <layout:Link link="sv1#area1#page1#mciu2#ln4"/>
           <layout:Attribute attribute="ent3#att16"/>
-          <layout:Attribute attribute="ent3#att15"/>
-          <layout:Link link="sv1#area1#page1#inu2#ln17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
-        <layout:Unit unitId="sv1#area1#page1#inu3">
+        <layout:Unit unitId="sv1#area1#page1#mciu1">
+          <layout:Link link="sv1#area1#page1#mciu1#ln1"/>
           <layout:Attribute attribute="ent4#att18"/>
-          <layout:Attribute attribute="ent4#att17"/>
-          <layout:Link link="sv1#area1#page1#inu3#ln18"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>
     <layout:Row>
+      <layout:Cell/>
       <layout:Cell>
         <layout:Unit unitId="sv1#area1#page1#inu5">
           <layout:Attribute attribute="ent1#att2"/>
+          <layout:Link link="sv1#area1#page1#inu5#ln6"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
@@ -57,4 +55,9 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <layout:UnitConfiguration unitType="MultiChoiceIndexUnit" layout:unitLayout="WRDefault/Normal" layout:frameLayout="None">
+    <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+    <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+    <layout:LayoutParameter name="select-all" value="true" type="unit"/>
+  </layout:UnitConfiguration>
 </Page>

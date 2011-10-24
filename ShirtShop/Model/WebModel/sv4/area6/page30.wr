@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="373" gr:y="328" id="sv4#area6#page30" name="Tipi collo" layout:pageLayout="WRDefault/Autocomplete">
+  <ContentUnits>
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page30#inu14" name="Tipi collo" entity="ent1" displayAttributes="ent1#att5" distinct="true" ajaxEnableExpandedLinks="false">
+      <Selector id="sv4#area6#page30#inu14#su25" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area6#page30#inu14#su25#acond2" name="collo" predicate="contains" booleanOperator="or" implied="false" attributes="ent1#att5" ignoreCase="true"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:CustomLocation name="source">
+    <layout:Unit unitId="sv4#area6#page30#inu14">
+      <layout:Attribute attribute="ent1#att5"/>
+    </layout:Unit>
+  </layout:CustomLocation>
+  <layout:UnitConfiguration unitType="IndexUnit" layout:unitLayout="WRDefault/Autocomplete"/>
+</Page>

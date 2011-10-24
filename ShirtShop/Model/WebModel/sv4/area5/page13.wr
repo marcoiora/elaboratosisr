@@ -1,0 +1,38 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="198" gr:y="228" id="sv4#area5#page13" name="Nuova Informazione">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#area5#page13#enu1" name="Inserisci dati informazione" linkOrder="sv4#area5#page13#enu1#ln21">
+      <Field id="sv4#area5#page13#enu1#fld1" name="Titolo" type="string" modifiable="true"/>
+      <Field id="sv4#area5#page13#enu1#fld2" name="Testo" type="text" modifiable="true" contentType="text/html"/>
+      <Field id="sv4#area5#page13#enu1#fld11" name="Home" type="boolean" modifiable="true"/>
+      <Link id="sv4#area5#page13#enu1#ln21" name="Salva" to="sv4#area5#cru2" type="normal" validate="true">
+        <LinkParameter id="sv4#area5#page13#enu1#ln21#par13" name="Home_home" source="sv4#area5#page13#enu1#fld11" target="sv4#area5#cru2.ent11#att42"/>
+        <LinkParameter id="sv4#area5#page13#enu1#ln21#par14" name="Testo_testoHTML" source="sv4#area5#page13#enu1#fld2" target="sv4#area5#cru2.ent11#att48"/>
+        <LinkParameter id="sv4#area5#page13#enu1#ln21#par15" name="Titolo_titolo" source="sv4#area5#page13#enu1#fld1" target="sv4#area5#cru2.ent11#att47"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area5#page13#enu1">
+          <layout:Field field="sv4#area5#page13#enu1#fld1"/>
+          <layout:Field field="sv4#area5#page13#enu1#fld2"/>
+          <layout:Field field="sv4#area5#page13#enu1#fld11"/>
+          <layout:Link link="sv4#area5#page13#enu1#ln21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

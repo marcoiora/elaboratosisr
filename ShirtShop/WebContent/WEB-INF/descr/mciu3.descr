@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.MultiChoiceIndexUnitService" name="Colori Disponibili">
+  <MaxResults/>
+  <Query entity="ent2">
+    <Output id="att12" name="oid"/>
+    <Output id="att13" name="nome"/>
+    <HQL>select a_colore.oid, a_colore.nome from Colore a_colore</HQL>
+  </Query>
+  <WRValidation links="ln7"/>
+</Descriptor>

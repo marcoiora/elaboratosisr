@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DBMetaData driverMajorVersion="10" driverMinorVersion="5" driverVersion="10.5.3.0 - (802917)" productVersion="10.5.3.0 - (802917)" identifierQuoteString="&quot;" transactionLevel="Read Committed" driverName="Apache Derby Network Client JDBC Driver" productName="Apache Derby">
+  <Schema name="APP"/>
+  <Schema name="NULLID"/>
+  <Schema name="SQLJ"/>
+  <Schema name="SYSCAT"/>
+  <Schema name="SYSCS_DIAG"/>
+  <Schema name="SYSCS_UTIL"/>
+  <Schema name="SYSFUN"/>
+  <Schema name="SYSPROC"/>
+  <Schema name="SYSSTAT"/>
+  <Table schema="APP" ignoreIndexes="false" name="CLIENTE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="COGNOME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="INDIRIZZO" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="COLORE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="VALOREESADECIMALE" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="CONFIGURAZIONE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="DIMENSIONEFRONTE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="DIMENSIONERETRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID_2" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="SESSO_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="TAGLIA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="COLORE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="RIGAORDINE_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="FOTO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="COMMENTO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="IMMAGINE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="COLORE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="SESSO_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="GROUP" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="GROUPNAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MODULE_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="GROUP_MODULE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MODULE_OID" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="10000" decimalDigits="0" name="DESCRIZIONE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MANICA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="COLLO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="STAMPABILEFRONTE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="STAMPABILERETRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MATERIALE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="PREZZO" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_COLORE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="COLORE_OID" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_SESSO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="SESSO_OID" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_TAGLIA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="TAGLIA_OID" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="MODULE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MODULEID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MODULENAME" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="ORDINE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP" size="26" decimalDigits="6" name="DATAORACONFERMA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP" size="26" decimalDigits="6" name="DATAORAPRESAINCARICO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="TIMESTAMP" size="26" decimalDigits="6" name="DATAORASPEDIZIONE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="PREZZOTOTALE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="SPESESPEDIZIONE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="STATO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="CLIENTE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPATORE_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="PAGINA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="TITOLO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="2005" indexed="unknown" autoIncrement="false" type="CLOB" size="10000" decimalDigits="0" name="TESTOHTML" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="HOME" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="RIGAORDINE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="PREZZOSINGOLO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="QUANTITA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="PREZZOTOTALE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="ORDINE_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="SESSO" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="STAMPA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="DESCRIZIONE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="ANTEPRIMA" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="IMMAGINEHD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="PREZZOBASE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="CLIENTE_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="STAMPATORE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MATRICOLA" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="TAGLIA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="TEMA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="TEMA_STAMPA" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="TEMA_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID" primaryKey="true" notNull="true"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="TEMPLATE" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="DIMENSIONEFRONTE" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="DIMENSIONERETRO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID_2" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="USER" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="USERNAME" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="PASSWORD" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="EMAIL" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="USER_GROUP" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
+  </Table>
+</DBMetaData>
