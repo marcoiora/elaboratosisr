@@ -181,15 +181,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & ""Personalizzazione dei Prodotti""\\
-		& ""Aggiunta prodotto al Carrello""\\
-		& ""Visualizza Carrello""\\
-		& ""Modifica - Conferma Carrello""\\
-		& ""Visualizzazione Dettaglio dell'Ordine""\\ 
-		& ""Annulla Ordine""\\
-		& ""Consultazione Magliette disponibili""\\
+		Casi d'uso rilevanti & ""Consultazione Magliette disponibili""\\
 		& ""Consultazione Stampe disponibili""\\
 		& ""Consultazione Pagine Informative""\\
+		& ""Personalizzazione dei Prodotti""\\
+		& ""Aggiunta prodotto al Carrello""\\
+		& ""Visualizza - Modifica - Cancella Carrello""\\
+		& ""Conferma Carrello""\\
+		& ""Visualizzazione Dettaglio dell'Ordine""\\ 
+		& ""Annulla Ordine""\\
+		
 		\hline
 		Oggetti in lettura & Maglietta\\
 		& Pagina\\
@@ -246,9 +247,13 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & ""Creazione - Modifica - Cancellazione Account Utente""\\
+		Casi d'uso rilevanti & ""Consultazione elenco Utenti""\\
+			& ""Creazione - Modifica - Cancellazione Account Utente""\\
+			& ""Consultazione elenco Pagine Informative""\\
 			& ""Inserimento - Modifica - Cancellazione Pagine Informative""\\
+			& ""Consultazione elenco Magliette""\\
 			& ""Inserimento - Modifica - Cancellazione Maglietta""\\
+			& ""Consultazione elenco Stampe""\\
 			& ""Inserimento - Modifica - Cancellazione Stampa""\\
 			& ""Visualizzazione dettagli Ordine""\\
 		\hline
@@ -391,6 +396,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
+\newpage
 \subsection{Utente Registrato}
 \begin{center}
 	\includegraphics[height=4.5cm]{Immagini/CasoUtenteRegistrato.jpg}\\
@@ -438,9 +444,73 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
+\newpage
 \subsection{Cliente}
 \begin{center}
 	\includegraphics[height=6.5cm]{Immagini/CasoCliente.jpg}\\
+\end{center}
+
+\subsubsection{Consultazione Magliette disponibili}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Magliette disponibili\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione del Catalogo Magliette
+		\item Il sistema mostra l'elenco con dati sommari delle magliette disponibili, permette all'utente
+		di filtrare la selezione o di visualizzare tutti i dettagli di una singola maglietta
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Stampe disponibili}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Stampe disponibili\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione del Catalogo Stampe
+		\item Il sistema mostra l'elenco con dati sommari delle stampe disponibili, permette all'utente
+		di filtrare la selezione o di visualizzare tutti i dettagli di una singola stampa
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Pagine Informative\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione delle Pagine Informative
+		\item Il sistema mostra l'elenco con dati sommari delle pagine informative e permette all'utente
+		di visualizzare tutti i dettagli di una pagina informativa
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
 \end{center}
 
 \subsubsection{Personalizzazione dei Prodotti}
@@ -478,7 +548,6 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 	\end{longtable}
 \end{center}
-
 
 \subsubsection{Aggiunta prodotto al carrello}
 \begin{center}
@@ -625,69 +694,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
-\subsubsection{Consultazione Magliette disponibili}
-\begin{center}
-	\begin{longtable}{|l|p{0.7\columnwidth}|}
-		\hline
-		\textbf{Nome}	& Consultazione Magliette disponibili\\
-		\hline
-		\textbf{Attore} & Cliente\\
-		\hline
-		\textbf{Precondizione} & \\
-		\hline
-		\textbf{Postcondizione} & \\
-		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
-		la consultazione del Catalogo Magliette
-		\item Il sistema mostra l'elenco con dati sommari delle magliette disponibili, permette all'utente
-		di filtrare la selezione o di visualizzare tutti i dettagli di una singola maglietta
-		\end{enumerate}\\
-		\hline
-	\end{longtable}
-\end{center}
-
-\subsubsection{Consultazione Stampe disponibili}
-\begin{center}
-	\begin{longtable}{|l|p{0.7\columnwidth}|}
-		\hline
-		\textbf{Nome}	& Consultazione Stampe disponibili\\
-		\hline
-		\textbf{Attore} & Cliente\\
-		\hline
-		\textbf{Precondizione} & \\
-		\hline
-		\textbf{Postcondizione} & \\
-		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
-		la consultazione del Catalogo Stampe
-		\item Il sistema mostra l'elenco con dati sommari delle stampe disponibili, permette all'utente
-		di filtrare la selezione o di visualizzare tutti i dettagli di una singola stampa
-		\end{enumerate}\\
-		\hline
-	\end{longtable}
-\end{center}
-
-\subsubsection{Consultazione Pagine Informative}
-\begin{center}
-	\begin{longtable}{|l|p{0.7\columnwidth}|}
-		\hline
-		\textbf{Nome}	& Consultazione Pagine Informative\\
-		\hline
-		\textbf{Attore} & Cliente\\
-		\hline
-		\textbf{Precondizione} & \\
-		\hline
-		\textbf{Postcondizione} & \\
-		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
-		la consultazione delle Pagine Informative
-		\item Il sistema mostra l'elenco con dati sommari delle pagine informative e permette all'utente
-		di visualizzare tutti i dettagli di una pagina informativa
-		\end{enumerate}\\
-		\hline
-	\end{longtable}
-\end{center}
-
+\newpage
 \subsection{Operaio Stampatore}
 \begin{center}
 	\includegraphics[height=4.5cm]{Immagini/CasoOperaioStampatore.jpg}\\
@@ -703,9 +710,12 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Precondizione} & \\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & Cambio di stato dell'ordine preso in carico dell'utente\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item 
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente visualizza l'elenco degli 
+		ordini direttamente dalla sua pagina principale e ne sceglie uno che ha ancora come stato 'Da
+		gestire' e ne da conferma
+		\item Il sistema cambia lo stato dell'ordine a 'In gestione'
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -719,19 +729,43 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Operaio Stampatore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & L'utente ha preso in gestione un ordine\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & Cambio di stato dell'ordine affidato alla spedizione\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente dall'elenco degli ordini che
+		in gestione, sceglie quello che ha affidato al corriere
+		\item Il sistema cambia lo stato dell'ordine a 'In spedizione'
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
 \end{center}
 
+\newpage
 \subsection{Amministratore}
 \begin{center}
 	\includegraphics[height=8cm]{Immagini/CasoAmministratore.jpg}\\
+\end{center}
+
+\subsubsection{Consultazione elenco Utenti}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione elenco Utenti\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		consultazione dell'elenco degli utenti registrati a sistema
+		\item Il sistema mostra l'elenco con dati sommari degli utenti e permette all'utente di 
+		visualizzare tutti i dettagli di un singolo utente registrato
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
 \end{center}
 
 \subsubsection{Creazione Account Utente}
@@ -742,12 +776,25 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Utenti\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & Nuovo utente creato con credenziali di accesso al sistema\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		creazione di un nuovo utente con credenziali di accesso al sistema
+		\item Il sistema mostra il modulo di registrazione chiedendo innanzitutto a quale gruppo si 
+		vuole che il nuovo utente appartenga e, di conseguenza, i dati per la registrazione
+		\item L'utente compila la maschera in tutti i suoi campi e conferma l'inserimento
+		\item Il sistema, dopo opportuna verifica, salva i dati del nuovo utente nel relativo gruppo 
+		di appartenenza
+		\item L'utente viene reindirizzato alla schermata di consultazione dell'elenco degli utenti 
+		registrati
 		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{4.(a)} Il sistema verifica che non
+		tutti i campi sono compilati
+		\item Torna al punto 3.
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -760,11 +807,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Utenti\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & I nuovi dati di un utente sono salvati\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'amministratore invoca la funzionalità per la 
+		modifica dei dati di un utente registrato a sistema 
+		\item Il sistema mostra all'amministratore i dati attualmente presenti dell'utente selezionato
+		\item L'amministratore modifica i dati possibili e salva la sua modifica effettuata
+		\item Il sistema salva i nuovi dati e reindirizza l'utente alla schermata di consultazione dell'elenco degli utenti 
+		registrati
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -778,11 +830,36 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
+		\textbf{Precondizione} & Consultazione elenco Utenti\\
+		\hline
+		\textbf{Postcondizione} & I dati di un utente vengono cancellati dal sistema\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		cancellazione di un utente registrato selezionato e ne da conferma
+		\item Il sistema cancella l'utente selezionato e reidirizza l'utente alla schermata di 
+		consultazione dell'elenco degli utenti registrati
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione elenco Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione elenco Pagine Informative\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
 		\textbf{Precondizione} & \\
 		\hline
 		\textbf{Postcondizione} & \\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		consultazione dell'elenco delle pagine informative inserite a sistema
+		\item Il sistema mostra l'elenco con dati sommari delle pagine inforamtive e permette all'utente di 
+		visualizzare tutti i dettagli di
+		una pagina informativa
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -796,12 +873,24 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Pagine Informative\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & Nuova pagina informativa creata\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		inserimento di una nuova pagina informativa 
+		\item Il sistema mostra il modulo per l'inserimento dei dati della pagina informativa che si
+		vuole realizzare
+		\item L'utente compila la maschera in tutti i suoi campi  e conferma l'inserimento
+		\item Il sistema, dopo opportuna verifica, salva i dati della nuova pagina 
+		\item L'utente viene reindirizzato alla schermata di consultazione dell'elenco delle pagine 
+		informativa
 		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{4.(a)} Il sistema verifica che non
+		tutti i campi sono compilati
+		\item Torna al punto 3.
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -814,11 +903,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Pagine Informative\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & I nuovi dati di una pagina informativa sono salvati \\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la 
+		modifica dei dati di una pagina informativa
+		\item Il sistema mostra all'utente i dati attualmente presenti della pagina informativa
+		\item L'utente modifica i dati possibili e salva la sua modifica effettuata
+		\item Il sistema salva i nuovi dati e reindirizza l'utente alla schermata di consultazione dell'elenco delle 
+		pagine informative
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -832,11 +926,35 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
+		\textbf{Precondizione} & Consultazione elenco Pagine Informative\\
+		\hline
+		\textbf{Postcondizione} & I dati di una pagina informativa vengono cancellati dal sistema\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		cancellazione di una pagina informativa selezionata e ne da conferma
+		\item Il sistema cancella la pagina informativa selezionata e reindirizza l'utente alla 
+		schermata di consultazione dell'elenco delle pagine informative
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione elenco Magliette}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione elenco Magliette\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
 		\textbf{Precondizione} & \\
 		\hline
 		\textbf{Postcondizione} & \\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		consultazione dell'elenco delle magliette
+		\item Il sistema mostra l'elenco con dati sommari delle magliette e permette all'utente di
+		visualizzare tutti i dettagli di una singola maglietta
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -850,12 +968,23 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Magliette\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & Nuova maglietta creata\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		inserimento di una nuova maglietta
+		\item Il sistema mostra il modulo per l'inserimento dei dati della maglietta che si vuole 
+		inserire
+		\item L'utente compila la maschera in tutti i suoi campi e conferma l'inserimento
+		\item Il sistema, dopo opportuna verifica, salva i dati della nuova maglietta
+		\item L'utente viene reindirizzato alla schermata di consultazione dell'elenco delle magliette
 		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{4.(a)} Il sistema verifica che non 
+		tutti i campi sono compilati
+		\item Torna al punto 3.
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -868,11 +997,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Magliette\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & I nuovi dati di una maglietta sono salvati\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		modifica dei dati di una maglietta 
+		\item Il sistema mostra all'utente i dati attualmente presenti della maglietta
+		\item L'utente modifica i dati possibili e salva la sua modifica effettuata
+		\item Il sistema salva la modifica e reindirizza l'utente alla schermata di consultazione 
+		dell'elenco delle magliette
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -886,11 +1020,35 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
+		\textbf{Precondizione} & Consultazione elenco Magliette\\
+		\hline
+		\textbf{Postcondizione} & I dati di una maglietta vengono cancellati dal sistema\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		cancellazione di una maglietta selezionata e ne da conferma
+		\item Il sistema cancella la maglietta selezionata e reindirizza l'utente alla schermata di
+		consultazione dell'elenco delle magliette
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione elenco Stampe}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione elenco Stampe\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
 		\textbf{Precondizione} & \\
 		\hline
 		\textbf{Postcondizione} & \\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		consultazione dell'elenco delle stampe inserite a sistema
+		\item Il sistema mostra l'elenco con dati sommari delle stampe e permette all'utente di 
+		visualizzare tutti i dettagli di una stampa
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -904,12 +1062,22 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco stampe\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & Nuova stampa inserita\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		inserimento di una nuova stampa
+		\item Il sistema mostra il modulo per l'inserimento dei dati della stampa
+		\item L'utente compila la maschera in tutti i suoi campi e conferma l'inserimento
+		\item Il sistema, dopo opportuna verifica, salva i dati della nuova stampa
+		\item L'utente viene reindirizzato alla schermata di consultazione dell'elenco delle stampe
 		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{4.(a)} Il sistema verifica che non
+		tutti i campi sono compilati
+		\item Torna al punto 3.
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -922,11 +1090,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione dell'elenco Stampe\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & I nuovi dati di una stampa sono salvati\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		modifica dei dati di una stampa
+		\item Il sistema mostra all'utente i dati attualmente presenti della stampa
+		\item L'utente modifica i dati possibili e salva la sua modifica effettuata
+		\item Il sistema salva i nuovi dati e reindirizza l'utente alla schermata di consultazione
+		dell'elenco delle stampe
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -940,11 +1113,14 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Consultazione elenco Stampe\\
 		\hline
-		\textbf{Postcondizione} & \\
+		\textbf{Postcondizione} & I dati di una stampa vengono cancellati dal sistema\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		cancellazione di una stampa e ne da conferma
+		\item Il sistema cancella la stampa selezionata e reindirizza l'utente alla schermata di 
+		consultazione dell'elenco delle stampe
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -962,7 +1138,10 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Postcondizione} & \\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		visualizzazione del dettaglio degli ordini
+		\item Il sistema mostra l'elenco con dati sommari degli ordini e permette all'utente di 
+		visualizzare tutti i dettagli di un singolo ordine
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
