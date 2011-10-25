@@ -3,36 +3,5 @@
     <LogoutUnit gr:x="160" gr:y="10" id="sv4#lou1" name="Logout" siteView="sv1" landmark="true">
       <KOLink id="sv4#lou1#kln1" name="KOLink1" to="sv4#page11" automaticCoupling="true" gr:bendpoints="-66,18,115,10"/>
     </LogoutUnit>
-    <ParameterCollectorUnit gr:x="670" gr:y="520" id="sv4#pcu2" name="Parameter Collector2" linkOrder="sv4#pcu2#ln53 sv4#pcu2#ln54 sv4#pcu2#ln56 sv4#pcu2#ln58 sv4#pcu2#ln59 sv4#pcu2#ln60">
-      <CollectorParameter id="sv4#pcu2#pcp2" name="maglietta_oid"/>
-      <Link id="sv4#pcu2#ln50" name="Link50" to="sv4#opg3#seu6" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln50#par98" name="maglietta_oid_Maglietta [oid]" source="sv4#pcu2#pcp2" target="sv4#opg3#seu6#su27#rcond4.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln51" name="Link51" to="sv4#opg3#dcnu1" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln51#par99" name="maglietta_oid_KeyCondition12 [oid] [Maglietta] [Target]" source="sv4#pcu2#pcp2" target="sv4#opg3#dcnu1#su23#kcond12.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln53" name="Link53" to="sv4#opg3#seu7" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln53#par100" name="maglietta_oid_Maglietta [oid]" source="sv4#pcu2#pcp2" target="sv4#opg3#seu7#su30#rcond5.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln54" name="Link54" to="sv4#opg3#dcnu2" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln54#par101" name="maglietta_oid_KeyCondition19 [oid] [Maglietta] [Source]" source="sv4#pcu2#pcp2" target="sv4#opg3#dcnu2#su28#kcond19.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln56" name="Link56" to="sv4#opg3#seu8" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln56#par102" name="maglietta_oid_Maglietta [oid]" source="sv4#pcu2#pcp2" target="sv4#opg3#seu8#su31#rcond6.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln58" name="Link58" to="sv4#opg3#dcnu3" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln58#par103" name="maglietta_oid_KeyCondition21 [oid] [Maglietta] [Source]" source="sv4#pcu2#pcp2" target="sv4#opg3#dcnu3#su32#kcond21.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln59" name="Link59" to="sv4#opg3#dlu2" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln59#par104" name="maglietta_oid_Maglietta [oid]" source="sv4#pcu2#pcp2" target="sv4#opg3#dlu2#su35#rcond7.ent1#att1"/>
-      </Link>
-      <Link id="sv4#pcu2#ln60" name="Link60" to="sv4#opg3#dlu3" type="transport" validate="true">
-        <LinkParameter id="sv4#pcu2#ln60#par105" name="maglietta_oid_KeyCondition24 [oid]" source="sv4#pcu2#pcp2" target="sv4#opg3#dlu3#su36#kcond24.ent1#att1"/>
-      </Link>
-      <OKLink id="sv4#pcu2#oln28" name="OKLink28" to="sv4#opg3#dcnu1" automaticCoupling="true" gr:bendpoints="-296,179,302,-151"/>
-    </ParameterCollectorUnit>
-    <NoOpOperationUnit gr:x="360" gr:y="1040" id="sv4#opu1" name="NoOpOperationUnit1" linkOrder="sv4#opu1#ln61">
-      <Link id="sv4#opu1#ln61" name="Link61" to="sv4#page16" automaticCoupling="true" type="transport" validate="true"/>
-    </NoOpOperationUnit>
   </OperationUnits>
 </SiteView>

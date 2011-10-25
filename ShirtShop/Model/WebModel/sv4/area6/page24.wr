@@ -1,9 +1,7 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="22" gr:y="0" id="sv4#area6#page24" name="Gestione Prodotti" landmark="true" linkOrder="sv4#area6#page24#ln37">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="746" gr:y="448" id="sv4#area6#page24" name="Gestione Prodotti" landmark="true" linkOrder="sv4#area6#page24#ln37">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="1" id="sv4#area6#page24#inu4" name="Magliette" entity="ent1" displayAttributes="ent1#att2" linkOrder="sv4#area6#page24#inu4#ln49">
-      <Link id="sv4#area6#page24#inu4#ln49" name="Elimina" to="sv4#pcu2" type="normal" validate="true">
-        <LinkParameter id="sv4#area6#page24#inu4#ln49#par97" name="oid_maglietta_oid" source="data[].ent1#att1" target="sv4#pcu2#pcp2"/>
-      </Link>
+    <IndexUnit gr:x="0" gr:y="1" id="sv4#area6#page24#inu4" name="Magliette" entity="ent1" displayAttributes="ent1#att2" linkOrder="sv4#area6#page24#inu4#ln86">
+      <Link id="sv4#area6#page24#inu4#ln86" name="Elimina/Disattiva" to="sv4#area6#page18#dau10" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
     <IndexUnit gr:x="80" gr:y="0" id="sv4#area6#page24#inu7" name="Stampe" entity="ent6" displayAttributes="ent6#att23"/>
     <IndexUnit gr:x="150" gr:y="0" id="sv4#area6#page24#inu9" name="Proposte" entity="ent13" displayAttributes="ent1#att2 rel22#role43.ent6#att23 rel23#role45.ent6#att23"/>
@@ -13,7 +11,7 @@
       <layout:Cell>
         <layout:Unit unitId="sv4#area6#page24#inu4">
           <layout:Attribute attribute="ent1#att2"/>
-          <layout:Link link="sv4#area6#page24#inu4#ln49"/>
+          <layout:Link link="sv4#area6#page24#inu4#ln86"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>

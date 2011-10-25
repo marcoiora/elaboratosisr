@@ -15,6 +15,8 @@
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="NOME" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="COGNOME" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="INDIRIZZO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="ISACTIVE" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_CLIENTE_USER" foreignTableName="USER" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="COLORE" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -32,6 +34,13 @@
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="TAGLIA_OID" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="COLORE_OID" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="RIGAORDINE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="COLORE_OID" foreignColumnName="OID" name="FK_CONFIGURAZIONE_COLORE" foreignTableName="COLORE" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="MAGLIETTA_OID" foreignColumnName="OID" name="FK_CONFIGURAZIONE_MAGLIETTA" foreignTableName="MAGLIETTA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="RIGAORDINE_OID" foreignColumnName="OID" name="FK_CONFIGURAZIONE_RIGAORDINE" foreignTableName="RIGAORDINE" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="SESSO_OID" foreignColumnName="OID" name="FK_CONFIGURAZIONE_SESSO" foreignTableName="SESSO" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="STAMPA_OID_2" foreignColumnName="OID" name="FK_CONFIGURAZIONE_STAMPA" foreignTableName="STAMPA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="STAMPA_OID" foreignColumnName="OID" name="FK_CONFIGURAZIONE_STAMPA_2" foreignTableName="STAMPA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="TAGLIA_OID" foreignColumnName="OID" name="FK_CONFIGURAZIONE_TAGLIA" foreignTableName="TAGLIA" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="FOTO" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -40,15 +49,21 @@
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="COLORE_OID" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="SESSO_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="COLORE_OID" foreignColumnName="OID" name="FK_FOTO_COLORE" foreignTableName="COLORE" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="MAGLIETTA_OID" foreignColumnName="OID" name="FK_FOTO_MAGLIETTA" foreignTableName="MAGLIETTA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="SESSO_OID" foreignColumnName="OID" name="FK_FOTO_SESSO" foreignTableName="SESSO" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="GROUP" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="GROUPNAME" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MODULE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="MODULE_OID" foreignColumnName="OID" name="FK_GROUP_MODULE" foreignTableName="MODULE" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="GROUP_MODULE" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MODULE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_GROUP_MODULE_GROUP" foreignTableName="GROUP" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="MODULE_OID" foreignColumnName="OID" name="FK_GROUP_MODULE_MODULE" foreignTableName="MODULE" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -60,18 +75,25 @@
     <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="STAMPABILERETRO" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MATERIALE" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="PREZZO" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="ISACTIVE" primaryKey="false" notNull="false"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_COLORE" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="COLORE_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="COLORE_OID" foreignColumnName="OID" name="FK_MAGLIETTA_COLORE_COLORE" foreignTableName="COLORE" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="MAGLIETTA_OID" foreignColumnName="OID" name="FK_MAGLIETTA_COLORE_MAGLIETTA" foreignTableName="MAGLIETTA" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_SESSO" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="SESSO_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="MAGLIETTA_OID" foreignColumnName="OID" name="FK_MAGLIETTA_SESSO_MAGLIETTA" foreignTableName="MAGLIETTA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="SESSO_OID" foreignColumnName="OID" name="FK_MAGLIETTA_SESSO_SESSO" foreignTableName="SESSO" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_TAGLIA" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="TAGLIA_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="MAGLIETTA_OID" foreignColumnName="OID" name="FK_MAGLIETTA_TAGLIA_MAGLIETTA" foreignTableName="MAGLIETTA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="TAGLIA_OID" foreignColumnName="OID" name="FK_MAGLIETTA_TAGLIA_TAGLIA" foreignTableName="TAGLIA" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="MODULE" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -88,6 +110,8 @@
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="STATO" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="CLIENTE_OID" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPATORE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="CLIENTE_OID" foreignColumnName="USER_OID" name="FK_ORDINE_CLIENTE" foreignTableName="CLIENTE" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="STAMPATORE_OID" foreignColumnName="USER_OID" name="FK_ORDINE_STAMPATORE" foreignTableName="STAMPATORE" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="PAGINA" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -101,6 +125,7 @@
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="QUANTITA" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="PREZZOTOTALE" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="ORDINE_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="ORDINE_OID" foreignColumnName="OID" name="FK_RIGAORDINE_ORDINE" foreignTableName="ORDINE" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="SESSO" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -114,10 +139,13 @@
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="IMMAGINEHD" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="PREZZOBASE" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="CLIENTE_OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="5" indexed="unknown" autoIncrement="false" type="SMALLINT" size="5" decimalDigits="0" name="ISACTIVE" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="CLIENTE_OID" foreignColumnName="USER_OID" name="FK_STAMPA_CLIENTE" foreignTableName="CLIENTE" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="STAMPATORE" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="MATRICOLA" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_STAMPATORE_USER" foreignTableName="USER" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="TAGLIA" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -130,6 +158,8 @@
   <Table schema="APP" ignoreIndexes="false" name="TEMA_STAMPA" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="TEMA_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="STAMPA_OID" foreignColumnName="OID" name="FK_TEMA_STAMPA_STAMPA" foreignTableName="STAMPA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="TEMA_OID" foreignColumnName="OID" name="FK_TEMA_STAMPA_TEMA" foreignTableName="TEMA" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="TEMPLATE" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="MAGLIETTA_OID" primaryKey="true" notNull="true"/>
@@ -137,6 +167,9 @@
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="52" decimalDigits="0" name="DIMENSIONERETRO" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="STAMPA_OID_2" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="MAGLIETTA_OID" foreignColumnName="OID" name="FK_TEMPLATE_MAGLIETTA" foreignTableName="MAGLIETTA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="STAMPA_OID_2" foreignColumnName="OID" name="FK_TEMPLATE_STAMPA_2" foreignTableName="STAMPA" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="STAMPA_OID" foreignColumnName="OID" name="FK_TEMPLATE_STAMPA" foreignTableName="STAMPA" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="USER" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="true" notNull="true"/>
@@ -144,9 +177,16 @@
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="PASSWORD" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="EMAIL" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_USER_GROUP" foreignTableName="GROUP" foreignSchemaName="APP"/>
   </Table>
   <Table schema="APP" ignoreIndexes="false" name="USER_GROUP" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="USER_OID" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="GROUP_OID" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_USER_GROUP_GROUP" foreignTableName="GROUP" foreignSchemaName="APP"/>
+    <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_USER_GROUP_USER" foreignTableName="USER" foreignSchemaName="APP"/>
+  </Table>
+  <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_NUMEROCONFIGURAZIONI" type="VIEW" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="DER_ATTR" primaryKey="false" notNull="false"/>
   </Table>
 </DBMetaData>

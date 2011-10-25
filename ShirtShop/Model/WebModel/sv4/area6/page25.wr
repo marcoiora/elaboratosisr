@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="156" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="724" gr:y="604" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
   <ContentUnits>
     <EntryUnit gr:x="152" gr:y="121" id="sv4#area6#page25#enu5" name="Inserisci dati maglietta" linkOrder="sv4#area6#page25#enu5#ln35 sv4#area6#page25#enu5#ln38 sv4#area6#page25#enu5#ln42 sv4#area6#page25#enu5#ln43">
       <Field id="sv4#area6#page25#enu5#fld15" name="Nome" type="string" modifiable="true"/>
