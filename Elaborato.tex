@@ -10,8 +10,10 @@
 \usepackage{multirow}
 \usepackage{longtable}
 
+\setcounter{tocdepth}{4}
 
-\title{\Huge\textbf{Elaborato\\di\\Sistemi Informativi e Servizi in Rete}\\ \vspace{1cm} \huge Negozio di vendita on-line di Magliette Personalizzate}
+
+\title{\Huge\textbf{Elaborato\\di\\Sistemi Informativi e Servizi in Rete}\\ \vspace{1cm} \huge ShirtShop: Negozio di vendita on-line di Magliette Personalizzate}
 \author{\textit{Iora Marco} Matricola: 65574\and \textit{Lorenzi Roberta} Matricola: 72361\and \textit{Piccinelli Andrea} Matricola: 83392}
 \date{A.A. 2011--2012}
 
@@ -102,7 +104,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 
 \subsection{Schede dei Gruppi di Utenti}
 
-\subsubsection{Gruppo Utente non Registrato:}
+\subsubsection{Gruppo Utente non Registrato}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -131,7 +133,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
-\subsubsection{Gruppo Utente Registrato:}
+\subsubsection{Gruppo Utente Registrato}
 \begin{center}	
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -159,7 +161,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
-\subsubsection{Gruppo Cliente:}
+\subsubsection{Gruppo Cliente}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -180,7 +182,8 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Sotto-Gruppi & \\
 		\hline
 		Casi d'uso rilevanti & ""Personalizzazione dei Prodotti""\\
-		& ""Aggiunta prodotto al Carrello""\\ 
+		& ""Aggiunta prodotto al Carrello""\\
+		& ""Visualizza Carrello""\\
 		& ""Modifica - Conferma Carrello""\\
 		& ""Visualizzazione Dettaglio dell'Ordine""\\ 
 		& ""Annulla Ordine""\\
@@ -199,7 +202,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
-\subsubsection{Gruppo Operaio Stampatore:}
+\subsubsection{Gruppo Operaio Stampatore}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -226,7 +229,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 		
-\subsubsection{Gruppo Amministratore:}
+\subsubsection{Gruppo Amministratore}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -265,29 +268,704 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \newpage
 \section{Diagrammi dei Casi d'Uso}
 
-\subsubsection{Utente non Registrato}
+\subsection{Utente non Registrato}
 \begin{center}
 	\includegraphics[height=4.5cm]{Immagini/CasoUtenteNonRegistrato.jpg}\\
 \end{center}
 
-\subsubsection{Utente Registrato}
+\subsubsection{Registrazione}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Registrazione\\
+		\hline
+		\textbf{Attore} & Utente non Registrato\\
+		\hline
+		\textbf{Precondizione} & L'utente non possiede credenziali di accesso per il sistema\\
+		\hline
+		\textbf{Postcondizione} & L'utente possiede credenziali di accesso per il sistema e può 
+		effettuare il login\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di registrazione
+		\item Il sistema mostra il modulo di registrazione chiedendo username, password, e-mail, nome, 
+		cognome, indirizzo, codice fiscale, telefono
+		\item L'utente compila la maschera in tutti i suoi campi e conferma l'inserimento
+		\item Il sistema, dopo opportuna verifica, salva i dati del nuovo utente
+		\item L'utente viene reindirizzato alla schermata principale del sistema
+		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description}\item{4.(a)} Il sitema verifica che non 
+		tutti i campi sono compilati oppure che lo username è già in uso
+		\item Torna a 3.
+		\end{description}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Login}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Login\\
+		\hline
+		\textbf{Attore} & Utente non Registrato\\
+		\hline
+		\textbf{Precondizione} & L'utente possiede le credenziale di accesso per il sistema\\
+		\hline
+		\textbf{Postcondizione} & L'utente è riconosciuto dal sistema come utente registrato\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente immette le credenziali di accesso
+		\item Il sistema, dopo opportuna verifica, reindirizza l'utente alla propria schermata principale
+		come utente registrato
+		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{2.(a)} Il sistema verifica che le 
+		credenziali immesse non sono corrette
+		\item Torna a 1.
+		\end{description}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+
+\subsubsection{Consultazione Magliette disponibili}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Magliette disponibili\\
+		\hline
+		\textbf{Attore} & Utente non Registrato\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione del Catalogo Magliette
+		\item Il sistema mostra l'elenco con dati sommari delle magliette disponibili, permette all'utente
+		di filtrare la selezione o di visualizzare tutti i dettagli di una singola maglietta
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Stampe disponibili}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Stampe disponibili\\
+		\hline
+		\textbf{Attore} & Utente non Registrato\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione del Catalogo Stampe
+		\item Il sistema mostra l'elenco con dati sommari delle stampe disponibili, permette all'utente
+		di filtrare la selezione o di visualizzare tutti i dettagli di una singola stampa
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Pagine Informative\\
+		\hline
+		\textbf{Attore} & Utente non Registrato\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione delle Pagine Informative
+		\item Il sistema mostra l'elenco con dati sommari delle pagine informative e permette all'utente
+		di visualizzare tutti i dettagli di una pagina informativa
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Utente Registrato}
 \begin{center}
 	\includegraphics[height=4.5cm]{Immagini/CasoUtenteRegistrato.jpg}\\
 \end{center}
 
-\subsubsection{Cliente}
+\subsubsection{Logout}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Logout\\
+		\hline
+		\textbf{Attore} & Utente Registrato\\
+		\hline
+		\textbf{Precondizione} & L'utente è loggato al sistema\\
+		\hline
+		\textbf{Postcondizione} & L'utente non è loggato al sistema\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per il 
+		logout dal sistema
+		\item Il sistema reindirizza l'utente alla schermata principale come utente non registrato
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Modifica Account}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Modifica Account\\
+		\hline
+		\textbf{Attore} & Utente Registrato\\
+		\hline
+		\textbf{Precondizione} & L'utente è loggato al sistema\\
+		\hline
+		\textbf{Postcondizione} & I nuovi dati dell'utente sono salvati\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la modifica dei propri dati immessi in fase di registrazione
+		\item Il sistema mostra all'utente i dati attualmente presenti
+		\item L'utente modifica i dati possibili e salva la modifica effettuata
+		\item Il sistema reindirizza l'utente alla schermata principale opportuna
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsection{Cliente}
 \begin{center}
 	\includegraphics[height=6.5cm]{Immagini/CasoCliente.jpg}\\
 \end{center}
 
-\subsubsection{Operaio Stampatore}
+\subsubsection{Personalizzazione dei Prodotti}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Personalizzazione dei Prodotti\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & Tramite la consultazione delle Magliette disponibili, l'utente 
+		consulta il dettaglio di una maglietta\\
+		\hline
+		\textbf{Postcondizione} & L'utente realizza la propria configurazione personalizzata\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		configurazione prodotto
+		\item Il sistema chiede di selezionare uno tra i colori disponibili, una tra le taglie disponibili
+		ed il sesso della maglietta
+		\item L'utente effettua le sue scelte e ne da conferma
+		\item Se la maglietta è stampabile, il sistema visualizza il catalogo delle stampe e permette
+		la scelta della stampa sul fronte e/o retro
+		\item L'utente effettua la scelta della/e stampa/e e ne da conferma
+		\item Il sistema salva la nuova configurazione realizzata e ne mostra la scheda all'utente
+		\end{enumerate}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{4.(a)} Se la maglietta non è 
+		stampabile né fronte né retro, torna a 6.
+		\end{description}\\
+		\hline
+		\textbf{Scenario Alternativo} & \begin{description} \item{5.(a)} L'utente aggiunge una o due
+		stampe personali, le seleziona per la stampa sul fronte e/o retro e ne da conferma
+		\item Torna a 6.
+		\end{description}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+
+\subsubsection{Aggiunta prodotto al carrello}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Aggiunta prodotto al carrello\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & L'utente ha realizzato una personalizzazione di prodotti\\
+		\hline
+		\textbf{Postcondizione} & La configurazione viene aggiunta al carrello\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item Quando l'utente visualizza la scheda 
+		della configurazione, invoca la funzionalità di aggiunta a carrello specificando la quantità
+		di magliette così configurate che desidera
+		\item Il sistema mostra il carrello con elencate in ogni riga tutte le configurazioni aggiunte
+		dall'utente con la quantità scelta e il prezzo totale di riga
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Visualizza Carrello}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Visualizza Carrello\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & L'utente ha prodotti nel carrello\\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la 
+		visualizzazione del carrello
+		\item Il sistema mostra il carrello con elencate in ogni riga tutte le configurazioni aggiunte
+		dall'utente con la quantità scelta e il prezzo totale di riga
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Modifica Carrello}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Modifica Carrello\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & L'utente visualizza il carrello\\
+		\hline
+		\textbf{Postcondizione} & Modifica della quantità a carrello del prodotto\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item Quando l'utente visualizza il carrello
+		può modificare la quantità di ogni singola riga e ne da conferma
+		\item Il sistema salva la nuova riga di carrello e ne ricalcola il prezzo totale
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Cancella Carrello}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Cancella Carrello\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & L'utente visualizza il carrello\\
+		\hline
+		\textbf{Postcondizione} & Cancellazione di una riga a carrello\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item Quando l'utente visualizza il carrello
+		può cancellare singolarmente ogni riga e ne da conferma
+		\item Il sistema cancella la riga selezionata dal carrello e mostra il carrello con elencate
+		in ogni riga le configurazioni rimaste
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Conferma Carrello come Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Conferma Carrello come Ordine\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & L'utente visualizza il carrello\\
+		\hline
+		\textbf{Postcondizione} & Il carrello diventa un ordine non più modificabile\\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		conferma del carrello come ordine e ne da conferma
+		\item Il sistema conferma l'ordine che non potrà più essere modificabile
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Visualizzazione Dettaglio dell'Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Visualizzazione Dettaglio dell'Ordine\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & Conferma carrello come ordine\\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
+		visualizzazione dei dettagli dell'ordine
+		\item Il sistema mostra l'ordine con elencate in ogni riga le configurazioni scelte dall'utente
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Annulla Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Annulla Ordine\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & Visualizzazione dettagli dell'ordine\\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di
+		annullamento dell'intero ordine e ne da conferma
+		\item Il sistema cancella l'intero ordine e redireziona il cliente alla propria pagina 
+		principale
+		\end{enumerate}\\
+		\hline		
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Magliette disponibili}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Magliette disponibili\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione del Catalogo Magliette
+		\item Il sistema mostra l'elenco con dati sommari delle magliette disponibili, permette all'utente
+		di filtrare la selezione o di visualizzare tutti i dettagli di una singola maglietta
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Stampe disponibili}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Stampe disponibili\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione del Catalogo Stampe
+		\item Il sistema mostra l'elenco con dati sommari delle stampe disponibili, permette all'utente
+		di filtrare la selezione o di visualizzare tutti i dettagli di una singola stampa
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Consultazione Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Consultazione Pagine Informative\\
+		\hline
+		\textbf{Attore} & Cliente\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		la consultazione delle Pagine Informative
+		\item Il sistema mostra l'elenco con dati sommari delle pagine informative e permette all'utente
+		di visualizzare tutti i dettagli di una pagina informativa
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Operaio Stampatore}
 \begin{center}
 	\includegraphics[height=4.5cm]{Immagini/CasoOperaioStampatore.jpg}\\
 \end{center}
 
-\subsubsection{Amministratore}
+\subsubsection{Presa in carico Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Presa in carico Ordine\\
+		\hline
+		\textbf{Attore} & Operaio Stampatore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item 
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Conferma spedizione dell'Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Conferma spedizione dell'Ordine\\
+		\hline
+		\textbf{Attore} & Operaio Stampatore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Amministratore}
 \begin{center}
 	\includegraphics[height=8cm]{Immagini/CasoAmministratore.jpg}\\
+\end{center}
+
+\subsubsection{Creazione Account Utente}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Creazione Account Utente\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Modifica Account Utente}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Modifica Account Utente\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Cancellazione Account Utente}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Cancellazione Account Utente\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Inserimento Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Inserimento Pagine Informative\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Modifica Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Modifica Pagine Informative\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Cancellazione Pagine Informative}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Cancellazione Pagine Informative\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Inserimento Maglietta}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Inserimento Maglietta\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Modifica Maglietta}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Modifica Maglietta\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Cancellazione Maglietta}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Cancellazione Maglietta\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Inserimento Stampa}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Inserimento Stampa\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Modifica Stampa}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Modifica Stampa\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Cancellazione Stampa}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Cancellazione Stampa\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Visualizzazione dettagli Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Visualizzazione dettagli Ordine\\
+		\hline
+		\textbf{Attore} & Amministratore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
 \end{center}
 
 \newpage
