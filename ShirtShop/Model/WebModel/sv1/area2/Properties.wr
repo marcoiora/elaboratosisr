@@ -1,3 +1,3 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="940" gr:y="530" id="sv1#area2" name="Informazioni" landmark="true">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="920" gr:y="130" id="sv1#area2" name="Informazioni" landmark="true" defaultPage="sv1#area2#page10">
   <OperationUnits/>
 </Area>

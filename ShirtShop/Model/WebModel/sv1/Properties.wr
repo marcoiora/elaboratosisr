@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Visitatore" landmarks="sv1#area1 sv1#area2 sv1#area3" homePage="sv1#area3#page3">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Pubblica" landmarks="sv1#area1 sv1#area2 sv1#area3" homePage="sv1#area3#page3">
   <OperationUnits>
     <LoginUnit gr:x="280" gr:y="20" id="sv1#lgu1" name="LoginUnit">
       <KOLink id="sv1#lgu1#kln2" name="KOLink1" to="sv1#area3#page3"/>

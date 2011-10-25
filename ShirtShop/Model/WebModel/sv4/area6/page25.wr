@@ -1,0 +1,95 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="724" gr:y="604" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
+  <ContentUnits>
+    <EntryUnit gr:x="152" gr:y="121" id="sv4#area6#page25#enu5" name="Inserisci dati maglietta" linkOrder="sv4#area6#page25#enu5#ln35 sv4#area6#page25#enu5#ln38 sv4#area6#page25#enu5#ln42 sv4#area6#page25#enu5#ln43">
+      <Field id="sv4#area6#page25#enu5#fld15" name="Nome" type="string" modifiable="true"/>
+      <Field id="sv4#area6#page25#enu5#fld16" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
+      <Field id="sv4#area6#page25#enu5#fld18" name="Manica" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteMinChars="1" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln38" ajaxAutocompleteIndicator="true" preloaded="true"/>
+      <Field id="sv4#area6#page25#enu5#fld19" name="Collo" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln42" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" preloaded="true"/>
+      <Field id="sv4#area6#page25#enu5#fld20" name="Permetti Stampa Fronte" type="boolean" modifiable="true" preloaded="false"/>
+      <Field id="sv4#area6#page25#enu5#fld21" name="Permetti Stampa Retro" type="boolean" modifiable="true"/>
+      <Field id="sv4#area6#page25#enu5#fld22" name="Materiale" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln43" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" preloaded="true"/>
+      <Field id="sv4#area6#page25#enu5#fld23" name="Prezzo" type="float" modifiable="true"/>
+      <MultiSelectionField id="sv4#area6#page25#enu5#msfld1" name="Taglie disponibili" type="string"/>
+      <MultiSelectionField id="sv4#area6#page25#enu5#msfld2" name="Sessi disponibili" type="string"/>
+      <MultiSelectionField id="sv4#area6#page25#enu5#msfld3" name="Colori disponibili" type="string"/>
+      <Link id="sv4#area6#page25#enu5#ln35" name="Salva" to="sv4#area6#opg1#cru3" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par30" name="Collo_collo" source="sv4#area6#page25#enu5#fld19" target="sv4#area6#opg1#cru3.ent1#att5"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par31" name="Descrizione_descrizione" source="sv4#area6#page25#enu5#fld16" target="sv4#area6#opg1#cru3.ent1#att3"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par32" name="Manica_manica" source="sv4#area6#page25#enu5#fld18" target="sv4#area6#opg1#cru3.ent1#att4"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par33" name="Materiale_materiale" source="sv4#area6#page25#enu5#fld22" target="sv4#area6#opg1#cru3.ent1#att8"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par34" name="Nome_nome" source="sv4#area6#page25#enu5#fld15" target="sv4#area6#opg1#cru3.ent1#att2"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par35" name="Prezzo_prezzo" source="sv4#area6#page25#enu5#fld23" target="sv4#area6#opg1#cru3.ent1#att9"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par36" name="Permetti Stampa Fronte_stampabileFronte" source="sv4#area6#page25#enu5#fld20" target="sv4#area6#opg1#cru3.ent1#att6"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par37" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page25#enu5#fld21" target="sv4#area6#opg1#cru3.ent1#att7"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par38" name="Colori disponibili_PASSING" source="sv4#area6#page25#enu5#msfld3" passing="true"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par39" name="Sessi disponibili_PASSING" source="sv4#area6#page25#enu5#msfld2" passing="true"/>
+        <LinkParameter id="sv4#area6#page25#enu5#ln35#par40" name="Taglie disponibili_PASSING" source="sv4#area6#page25#enu5#msfld1" passing="true"/>
+      </Link>
+      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12">
+        <LinkParameter id="sv4#area6#page25#enu5#ln38#par59" name="Manica_manica" source="sv4#area6#page25#enu5#fld18" target="sv4#area6#page28#inu12#su24#acond1"/>
+      </Link>
+      <Link id="sv4#area6#page25#enu5#ln42" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14">
+        <LinkParameter id="sv4#area6#page25#enu5#ln42#par61" name="Collo_collo" source="sv4#area6#page25#enu5#fld19" target="sv4#area6#page30#inu14#su25#acond2"/>
+      </Link>
+      <Link id="sv4#area6#page25#enu5#ln43" name="Materiale" to="sv4#area6#page31#inu15" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15">
+        <LinkParameter id="sv4#area6#page25#enu5#ln43#par62" name="Materiale_materiale" source="sv4#area6#page25#enu5#fld22" target="sv4#area6#page31#inu15#su26#acond4"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="49" id="sv4#area6#page25#seu1" name="Taglie" entity="ent3" distinct="false" distinctAttributes="ent3#att15 ent3#att16">
+      <SortAttribute attribute="ent3#att15" order="ascending"/>
+      <Link id="sv4#area6#page25#seu1#ln29" name="Link29" to="sv4#area6#page25#enu5" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page25#seu1#ln29#par24" name="oid_Taglie disponibili [label]" source="ent3#att16Array" target="sv4#area6#page25#enu5#msfld1_label"/>
+        <LinkParameter id="sv4#area6#page25#seu1#ln29#par25" name="nome_Taglie disponibili [output]" source="ent3#att15Array" target="sv4#area6#page25#enu5#msfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="102" gr:y="0" id="sv4#area6#page25#seu2" name="Colori disponibili" entity="ent2" distinctAttributes="ent2#att12 ent2#att13">
+      <Link id="sv4#area6#page25#seu2#ln30" name="Link30" to="sv4#area6#page25#enu5" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page25#seu2#ln30#par26" name="oid_Colori disponibili [label]" source="ent2#att13Array" target="sv4#area6#page25#enu5#msfld3_label"/>
+        <LinkParameter id="sv4#area6#page25#seu2#ln30#par27" name="nome_Colori disponibili [output]" source="ent2#att12Array" target="sv4#area6#page25#enu5#msfld3_output"/>
+      </Link>
+      <SortAttribute attribute="ent2#att13" order="ascending"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="171" id="sv4#area6#page25#seu3" name="Sessi disponibili" entity="ent4" distinctAttributes="ent4#att17 ent4#att18">
+      <Link id="sv4#area6#page25#seu3#ln31" name="Link31" to="sv4#area6#page25#enu5" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page25#seu3#ln31#par28" name="oid_Sessi disponibili [label]" source="ent4#att18Array" target="sv4#area6#page25#enu5#msfld2_label"/>
+        <LinkParameter id="sv4#area6#page25#seu3#ln31#par29" name="nome_Sessi disponibili [output]" source="ent4#att17Array" target="sv4#area6#page25#enu5#msfld2_output"/>
+      </Link>
+      <SortAttribute attribute="ent4#att18" order="ascending"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page25#enu5">
+          <layout:Field field="sv4#area6#page25#enu5#fld15"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld16"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld18"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld19"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld20"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld21"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld22"/>
+          <layout:Field field="sv4#area6#page25#enu5#fld23"/>
+          <layout:Field field="sv4#area6#page25#enu5#msfld1"/>
+          <layout:Field field="sv4#area6#page25#enu5#msfld2"/>
+          <layout:Field field="sv4#area6#page25#enu5#msfld3"/>
+          <layout:Link link="sv4#area6#page25#enu5#ln35"/>
+          <layout:Link link="sv4#area6#page25#enu5#ln38"/>
+          <layout:Link link="sv4#area6#page25#enu5#ln42"/>
+          <layout:Link link="sv4#area6#page25#enu5#ln43"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

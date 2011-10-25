@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="510" gr:y="146" id="sv1#area1#page9" name="Dettaglio Proposta">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv1#area1#page9#dau4" name="Template" entity="ent13">
+      <Selector id="sv1#area1#page9#dau4#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page9#dau4#su4#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page9#dau4#ln10" name="Link10" to="sv1#area1#page9#dau5" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page9#dau4#ln10#par1" name="oid_KeyCondition4 [oid]" source="data.ent1#att1" target="sv1#area1#page9#dau5#su5#kcond4.ent1#att1"/>
+      </Link>
+      <Link id="sv1#area1#page9#dau4#ln11" name="Link11" to="sv1#area1#page9#dau6" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page9#dau4#ln11#par2" name="TemplateToStampaFronte.oid_KeyCondition5 [oid]" source="data.rel22#role43_ent6#att22" target="sv1#area1#page9#dau6#su6#kcond5.ent6#att22"/>
+      </Link>
+      <Link id="sv1#area1#page9#dau4#ln12" name="Link12" to="sv1#area1#page9#dau7" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page9#dau4#ln12#par12" name="TemplateToStampaRetro.oid_KeyCondition6 [oid]" source="data.rel23#role45_ent6#att22" target="sv1#area1#page9#dau7#su7#kcond6.ent6#att22"/>
+      </Link>
+    </DataUnit>
+    <DataUnit gr:x="130" gr:y="2" id="sv1#area1#page9#dau5" name="Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att8 ent1#att9" linkOrder="sv1#area1#page9#dau5#ln13">
+      <Selector id="sv1#area1#page9#dau5#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page9#dau5#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page9#dau5#ln13" name="Dettaglio maglietta" to="sv1#area1#page2#dau1" automaticCoupling="true" type="normal" validate="true"/>
+    </DataUnit>
+    <DataUnit gr:x="10" gr:y="142" id="sv1#area1#page9#dau6" name="Stampa fronte" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27" linkOrder="sv1#area1#page9#dau6#ln14">
+      <Selector id="sv1#area1#page9#dau6#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page9#dau6#su6#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page9#dau6#ln14" name="Dettaglio stampa" to="sv1#area1#page8#dau3" automaticCoupling="true" type="normal" validate="true"/>
+    </DataUnit>
+    <DataUnit gr:x="130" gr:y="142" id="sv1#area1#page9#dau7" name="Stampa retro" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27" linkOrder="sv1#area1#page9#dau7#ln15">
+      <Selector id="sv1#area1#page9#dau7#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page9#dau7#su7#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page9#dau7#ln15" name="Dettaglio stampa" to="sv1#area1#page8#dau3" automaticCoupling="true" type="normal" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page9#dau4"/>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page9#dau5">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Link link="sv1#area1#page9#dau5#ln13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page9#dau6">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att24"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+          <layout:Link link="sv1#area1#page9#dau6#ln14"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page9#dau7">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att24"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+          <layout:Link link="sv1#area1#page9#dau7#ln15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

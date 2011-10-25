@@ -1,0 +1,150 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="121" gr:y="0" id="sv4#area6#page18" name="Eliminazione Maglietta">
+  <ContentUnits>
+    <DataUnit gr:x="165" gr:y="0" id="sv4#area6#page18#dau10" name="Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10">
+      <Selector id="sv4#area6#page18#dau10#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#page18#dau10#su54#kcond38" name="KeyCondition38" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area6#page18#dau10#ln87" name="Link87" to="sv4#area6#page18#mdu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#area6#page18#dau10#ln88" name="Link88" to="sv4#area6#page18#mdu3" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#area6#page18#dau10#ln89" name="Link89" to="sv4#area6#page18#mdu4" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#area6#page18#dau10#ln90" name="Link90" to="sv4#area6#page18#mdu5" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#area6#page18#dau10#ln95" name="Link95" to="sv4#area6#page18#mathu2" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page18#dau10#ln95#par137" name="numeroConfigurazioni_numero_configurazioni" source="data.ent1#att55" target="sv4#area6#page18#mathu2#mathv3"/>
+        <LinkParameter id="sv4#area6#page18#dau10#ln95#par139" name="oid_PASSING" source="data.ent1#att1" passing="true"/>
+      </Link>
+    </DataUnit>
+    <MultiDataUnit gr:x="0" gr:y="5" id="sv4#area6#page18#mdu1" name="Colori disponibili" entity="ent2" displayAttributes="ent2#att13 ent2#att14">
+      <Selector id="sv4#area6#page18#mdu1#su55" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page18#mdu1#su55#rcond15" name="Maglietta" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+    </MultiDataUnit>
+    <MultiDataUnit gr:x="0" gr:y="105" id="sv4#area6#page18#mdu3" name="Sessi disponibili" entity="ent4" displayAttributes="ent4#att18">
+      <Selector id="sv4#area6#page18#mdu3#su56" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page18#mdu3#su56#rcond16" name="Maglietta" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+    </MultiDataUnit>
+    <MultiDataUnit gr:x="0" gr:y="205" id="sv4#area6#page18#mdu4" name="Taglie disponibili" entity="ent3" displayAttributes="ent3#att16">
+      <Selector id="sv4#area6#page18#mdu4#su57" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page18#mdu4#su57#rcond17" name="Maglietta" predicate="in" implied="false" role="rel3#role5"/>
+      </Selector>
+    </MultiDataUnit>
+    <MultiDataUnit gr:x="130" gr:y="205" id="sv4#area6#page18#mdu5" name="Foto" entity="ent5" displayAttributes="ent5#att20 ent5#att21 rel6#role11.ent2#att13 rel7#role13.ent4#att18">
+      <Selector id="sv4#area6#page18#mdu5#su58" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page18#mdu5#su58#rcond18" name="Maglietta" predicate="in" implied="false" role="rel5#role9"/>
+      </Selector>
+    </MultiDataUnit>
+    <MathUnit gr:x="294" gr:y="5" id="sv4#area6#page18#mathu2" name="MathUnit2" resultType="boolean" defaultExpression="numero_configurazioni &gt; 0">
+      <MathVariable id="sv4#area6#page18#mathu2#mathv3" name="numero_configurazioni"/>
+      <Link id="sv4#area6#page18#mathu2#ln96" name="Link96" to="sv4#area6#switch4" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page18#mathu2#ln96#par138" name="Result_Switch" source="result" target="sv4#area6#switch4.switch"/>
+        <LinkParameter id="sv4#area6#page18#mathu2#ln96#par140" name="oid_PASSING" sourceLinkParameter="sv4#area6#page18#dau10#ln95#par139" passing="true"/>
+      </Link>
+    </MathUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page18#dau10">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Attribute attribute="ent1#att10"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page18#mdu1">
+          <layout:Attribute attribute="ent2#att13"/>
+          <layout:Attribute attribute="ent2#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page18#mdu3">
+          <layout:Attribute attribute="ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page18#mdu4">
+          <layout:Attribute attribute="ent3#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page18#mdu5">
+          <layout:Attribute attribute="ent5#att20"/>
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Attribute attribute="rel6#role11.ent2#att13"/>
+          <layout:Attribute attribute="rel7#role13.ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:SubPage pageId="sv4#area6#page18#alt1#page19">
+          <layout:Grid>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv4#area6#page18#alt1#page19#gctu1">
+                  <layout:Link link="sv4#area6#page18#alt1#page19#gctu1#ln97"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+        <layout:SubPage pageId="sv4#area6#page18#alt1#page20">
+          <layout:Grid>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv4#area6#page18#alt1#page20#dau11">
+                  <layout:Link link="sv4#area6#page18#alt1#page20#dau11#ln100"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative gr:x="264" gr:y="115" id="sv4#area6#page18#alt1" name="Alternative1" defaultPage="sv4#area6#page18#alt1#page19">
+    <Page gr:x="0" gr:y="0" id="sv4#area6#page18#alt1#page19" name="Elimina">
+      <ContentUnits>
+        <NoOpContentUnit gr:x="-1" gr:y="-1" id="sv4#area6#page18#alt1#page19#gctu1" name="NoOpContentUnit1" linkOrder="sv4#area6#page18#alt1#page19#gctu1#ln97">
+          <Link id="sv4#area6#page18#alt1#page19#gctu1#ln97" name="Elimina" to="sv4#area6#opg4#pcu4" type="normal" validate="true">
+            <LinkParameter id="sv4#area6#page18#alt1#page19#gctu1#ln97#par143" name="oid_PASSING_maglietta_oid" sourceLinkParameter="sv4#area6#switch4#oln43#par141" target="sv4#area6#opg4#pcu4#pcp3"/>
+          </Link>
+        </NoOpContentUnit>
+      </ContentUnits>
+    </Page>
+    <Page gr:x="31" gr:y="141" id="sv4#area6#page18#alt1#page20" name="Disattiva">
+      <ContentUnits>
+        <DataUnit gr:x="-1" gr:y="-1" id="sv4#area6#page18#alt1#page20#dau11" name="Maglietta" entity="ent1" linkOrder="sv4#area6#page18#alt1#page20#dau11#ln100">
+          <Selector id="sv4#area6#page18#alt1#page20#dau11#su60" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv4#area6#page18#alt1#page20#dau11#su60#kcond40" name="KeyCondition40" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv4#area6#page18#alt1#page20#dau11#ln100" name="Disattiva" to="sv4#area6#mfu2" type="normal" validate="true">
+            <LinkParameter id="sv4#area6#page18#alt1#page20#dau11#ln100#par145" name="false_isactive" sourceValue="false" target="sv4#area6#mfu2.ent1#att10"/>
+            <LinkParameter id="sv4#area6#page18#alt1#page20#dau11#ln100#par146" name="oid_KeyCondition39 [oid]" source="data.ent1#att1" target="sv4#area6#mfu2#su59#kcond39.ent1#att1"/>
+          </Link>
+        </DataUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+</Page>

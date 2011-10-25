@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1127" gr:y="616" id="sv4#area6#page31" name="Materiali" layout:pageLayout="WRDefault/Autocomplete">
+  <ContentUnits>
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page31#inu15" name="Materiali" entity="ent1" displayAttributes="ent1#att8" distinct="true" ajaxEnableExpandedLinks="false">
+      <Selector id="sv4#area6#page31#inu15#su26" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area6#page31#inu15#su26#acond4" name="materiale" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att8" ignoreCase="true"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:UnitConfiguration unitType="IndexUnit" layout:unitLayout="WRDefault/Autocomplete"/>
+  <layout:CustomLocation name="source">
+    <layout:Unit unitId="sv4#area6#page31#inu15">
+      <layout:Attribute attribute="ent1#att8"/>
+    </layout:Unit>
+  </layout:CustomLocation>
+</Page>

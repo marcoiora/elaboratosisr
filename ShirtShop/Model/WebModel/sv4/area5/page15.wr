@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="26" gr:y="379" id="sv4#area5#page15" name="Cancella Informazione" linkOrder="sv4#area5#page15#ln24">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv4#area5#page15#dau9" name="Dettaglio Informazione" entity="ent11">
+      <Selector id="sv4#area5#page15#dau9#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area5#page15#dau9#su11#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area5#page15#dau9#ln25" name="Link25" to="sv4#area5#dlu1" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area5#page15#dau9"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area5#page15#ln24" name="Elimina" to="sv4#area5#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+</Page>

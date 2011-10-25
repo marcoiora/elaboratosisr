@@ -1,0 +1,55 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="730" gr:y="940" id="sv4#area6#opg1" name="Salva nuova maglietta" transaction="true">
+  <OperationUnits>
+    <CreateUnit gr:x="0" gr:y="3" id="sv4#area6#opg1#cru3" name="Salva maglietta" entity="ent1">
+      <OKLink id="sv4#area6#opg1#cru3#oln36" name="OKLink36" to="sv4#area6#opg1#cnu1">
+        <LinkParameter id="sv4#area6#opg1#cru3#oln36#par123" name="oid_KeyCondition13 [oid] [Maglietta] [Source]" source="ent1#att1Array" target="sv4#area6#opg1#cnu1#su48#kcond32.ent1#att1"/>
+        <LinkParameter id="sv4#area6#opg1#cru3#oln36#par124" name="Colori disponibili_PASSING_KeyCondition14 [oid] [Colore] [Target]" sourceLinkParameter="sv4#area6#page25#enu5#ln35#par38" target="sv4#area6#opg1#cnu1#su49#kcond33.ent2#att12"/>
+        <LinkParameter id="sv4#area6#opg1#cru3#oln36#par126" name="Sessi disponibili_PASSING" sourceLinkParameter="sv4#area6#page25#enu5#ln35#par39" passing="true"/>
+        <LinkParameter id="sv4#area6#opg1#cru3#oln36#par127" name="Taglie disponibili_PASSING" sourceLinkParameter="sv4#area6#page25#enu5#ln35#par40" passing="true"/>
+      </OKLink>
+      <KOLink id="sv4#area6#opg1#cru3#kln33" name="KOLink33" to="sv4#area6#opg1#opu3" automaticCoupling="true"/>
+    </CreateUnit>
+    <ConnectUnit id="sv4#area6#opg1#cnu1" name="Maglietta_Colore" gr:x="147" gr:y="0" relationship="rel1#role1">
+      <SourceSelector id="sv4#area6#opg1#cnu1#su48" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#opg1#cnu1#su48#kcond32" name="KeyCondition13" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv4#area6#opg1#cnu1#su49" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#opg1#cnu1#su49#kcond33" name="KeyCondition14" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv4#area6#opg1#cnu1#oln37" name="OKLink37" to="sv4#area6#opg1#cnu5">
+        <LinkParameter id="sv4#area6#opg1#cnu1#oln37#par128" name="Source oid [Maglietta]_KeyCondition15 [oid] [Maglietta] [Source]" source="sourceent1#att1" target="sv4#area6#opg1#cnu5#su50#kcond34.ent1#att1"/>
+        <LinkParameter id="sv4#area6#opg1#cnu1#oln37#par129" name="Taglie disponibili_PASSING_KeyCondition16 [oid] [Taglia] [Target]" sourceLinkParameter="sv4#area6#opg1#cru3#oln36#par127" target="sv4#area6#opg1#cnu5#su51#kcond35.ent3#att15"/>
+        <LinkParameter id="sv4#area6#opg1#cnu1#oln37#par131" name="Sessi disponibili_PASSING" sourceLinkParameter="sv4#area6#opg1#cru3#oln36#par126" passing="true"/>
+      </OKLink>
+      <KOLink id="sv4#area6#opg1#cnu1#kln34" name="KOLink34" to="sv4#area6#opg1#opu3" automaticCoupling="true"/>
+    </ConnectUnit>
+    <ConnectUnit id="sv4#area6#opg1#cnu5" name="Maglietta_Taglia" gr:x="297" gr:y="1" relationship="rel3#role5">
+      <SourceSelector id="sv4#area6#opg1#cnu5#su50" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#opg1#cnu5#su50#kcond34" name="KeyCondition15" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv4#area6#opg1#cnu5#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#opg1#cnu5#su51#kcond35" name="KeyCondition16" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv4#area6#opg1#cnu5#oln38" name="OKLink38" to="sv4#area6#opg1#cnu6">
+        <LinkParameter id="sv4#area6#opg1#cnu5#oln38#par132" name="Source oid [Maglietta]_KeyCondition17 [oid] [Maglietta] [Source]" source="sourceent1#att1" target="sv4#area6#opg1#cnu6#su52#kcond36.ent1#att1"/>
+        <LinkParameter id="sv4#area6#opg1#cnu5#oln38#par133" name="Sessi disponibili_PASSING_KeyCondition18 [oid] [Sesso] [Target]" sourceLinkParameter="sv4#area6#opg1#cnu1#oln37#par131" target="sv4#area6#opg1#cnu6#su53#kcond37.ent4#att17"/>
+      </OKLink>
+      <KOLink id="sv4#area6#opg1#cnu5#kln35" name="KOLink35" to="sv4#area6#opg1#opu3" automaticCoupling="true"/>
+    </ConnectUnit>
+    <ConnectUnit id="sv4#area6#opg1#cnu6" name="Maglietta_Sesso" gr:x="447" gr:y="1" relationship="rel4#role7">
+      <SourceSelector id="sv4#area6#opg1#cnu6#su52" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#opg1#cnu6#su52#kcond36" name="KeyCondition17" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv4#area6#opg1#cnu6#su53" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#opg1#cnu6#su53#kcond37" name="KeyCondition18" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv4#area6#opg1#cnu6#oln39" name="OKLink39" to="sv4#area6#pcu1">
+        <LinkParameter id="sv4#area6#opg1#cnu6#oln39#par134" name="Source oid [Maglietta]_maglietta_oid" source="sourceent1#att1" target="sv4#area6#pcu1#pcp1"/>
+      </OKLink>
+      <KOLink id="sv4#area6#opg1#cnu6#kln36" name="KOLink36" to="sv4#area6#opg1#opu3" automaticCoupling="true"/>
+    </ConnectUnit>
+    <NoOpOperationUnit gr:x="2" gr:y="141" id="sv4#area6#opg1#opu3" name="NoOpOperationUnit3" linkOrder="sv4#area6#opg1#opu3#ln83">
+      <Link id="sv4#area6#opg1#opu3#ln83" name="Link83" to="sv4#page16" automaticCoupling="true" type="transport" validate="true"/>
+    </NoOpOperationUnit>
+  </OperationUnits>
+</OperationGroup>
