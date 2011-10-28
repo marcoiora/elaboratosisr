@@ -185,8 +185,4 @@
     <ForeignKey localColumnName="GROUP_OID" foreignColumnName="OID" name="FK_USER_GROUP_GROUP" foreignTableName="GROUP" foreignSchemaName="APP"/>
     <ForeignKey localColumnName="USER_OID" foreignColumnName="OID" name="FK_USER_GROUP_USER" foreignTableName="USER" foreignSchemaName="APP"/>
   </Table>
-  <Table schema="APP" ignoreIndexes="false" name="MAGLIETTA_NUMEROCONFIGURAZIONI" type="VIEW" refreshed="true">
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="OID" primaryKey="false" notNull="false"/>
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INTEGER" size="10" decimalDigits="0" name="DER_ATTR" primaryKey="false" notNull="false"/>
-  </Table>
 </DBMetaData>
