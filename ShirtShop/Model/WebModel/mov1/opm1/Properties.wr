@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="300" gr:y="0" id="mov1#opm1" name="Elimina Maglietta">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="50" gr:y="0" id="mov1#opm1" name="Elimina Maglietta">
   <OperationUnits>
     <InputCollectorUnit gr:x="450" gr:y="0" id="mov1#opm1#icu1" name="Input Collector" linkOrder="mov1#opm1#icu1#ln106 mov1#opm1#icu1#ln107 mov1#opm1#icu1#ln108 mov1#opm1#icu1#ln109">
       <OKLink id="mov1#opm1#icu1#oln18" name="OKLink18" to="mov1#opm1#opg2#dcnu7" automaticCoupling="true" gr:bendpoints="-198,162,224,-146"/>
