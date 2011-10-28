@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.IndexUnitService" name="Fotografie">
+  <MaxResults/>
+  <Query entity="ent5">
+    <Input id="p0" param="rcond31.att1" type="integer" implied="false" expandStyle="in"/>
+    <Output id="att19" name="oid"/>
+    <Output id="att21" name="immagine" blob="true"/>
+    <Output id="att20" name="commento"/>
+    <Output id="role11$att13" name="fotoToColore_nome" useId="true"/>
+    <Output id="role13$att18" name="fotoToSesso_nome" useId="true"/>
+    <HQL>select a_foto.oid, a_foto.immagineRef, a_foto.commento, a_colore_role11.nome, a_sesso_role13.nome from Foto a_foto left join a_foto.fotoToColore a_colore_role11 left join a_foto.fotoToSesso a_sesso_role13
+      <Where defaultPolicy="fill" allImplied="false">(({[p0](a_foto.fotoToMaglietta.oid in(?))}))</Where>
+    </HQL>
+  </Query>
+</Descriptor>

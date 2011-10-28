@@ -1,0 +1,36 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="330" gr:y="100" id="mov1#opm2" name="Salva Maglietta">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="70" gr:y="60" id="mov1#opm2#icu2" name="Input Collector">
+      <InputCollectorParameter id="mov1#opm2#icu2#icp1" name="nome"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp2" name="taglie"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp4" name="manica"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp5" name="sessi"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp6" name="descrizione"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp7" name="colori"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp8" name="stampabileFronte"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp9" name="prezzo"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp10" name="collo"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp11" name="isactive"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp12" name="materiale"/>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp13" name="stampabileRetro"/>
+      <OKLink id="mov1#opm2#icu2#oln5" to="mov1#opm2#opg3#cru4" validate="true" name="Salva">
+        <LinkParameter id="mov1#opm2#icu2#oln5#par60" source="mov1#opm2#icu2#icp7" name="Colori disponibili_PASSING" passing="true"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par55" source="mov1#opm2#icu2#icp8" name="Permetti Stampa Fronte_stampabileFronte" target="mov1#opm2#opg3#cru4.ent1#att6"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par53" source="mov1#opm2#icu2#icp1" name="Nome_nome" target="mov1#opm2#opg3#cru4.ent1#att2"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par51" source="mov1#opm2#icu2#icp4" name="Manica_manica" target="mov1#opm2#opg3#cru4.ent1#att4"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par65" name="true_isactive" target="mov1#opm2#opg3#cru4.ent1#att10" source="mov1#opm2#icu2#icp11"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par64" source="mov1#opm2#icu2#icp2" name="Taglie disponibili_PASSING" passing="true"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par63" source="mov1#opm2#icu2#icp5" name="Sessi disponibili_PASSING" passing="true"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par52" source="mov1#opm2#icu2#icp12" name="Materiale_materiale" target="mov1#opm2#opg3#cru4.ent1#att8"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par54" source="mov1#opm2#icu2#icp9" name="Prezzo_prezzo" target="mov1#opm2#opg3#cru4.ent1#att9"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par56" source="mov1#opm2#icu2#icp13" name="Permetti Stampa Retro_stampabileRetro" target="mov1#opm2#opg3#cru4.ent1#att7"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par49" source="mov1#opm2#icu2#icp10" name="Collo_collo" target="mov1#opm2#opg3#cru4.ent1#att5"/>
+        <LinkParameter id="mov1#opm2#icu2#oln5#par50" source="mov1#opm2#icu2#icp6" name="Descrizione_descrizione" target="mov1#opm2#opg3#cru4.ent1#att3"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="640" gr:y="260" id="mov1#opm2#okcu2" name="OK Collector">
+      <OutputCollectorParameter id="mov1#opm2#okcu2#ocp3" name="Source oid [Maglietta]"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov1#opm2#kocu3" name="KO Collector" gr:x="320" gr:y="270"/>
+  </OperationUnits>
+</OperationModule>
