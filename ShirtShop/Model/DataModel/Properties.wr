@@ -98,7 +98,7 @@
   </Relationship>
   <Entity gr:x="440" gr:y="360" id="ent5" name="Foto" duration="persistent" attributeOrder="ent5#att19 ent5#att20 ent5#att21" gr:hideAttributes="false" db:database="db1" db:table="FOTO">
     <Attribute id="ent5#att19" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent5#att20" name="commento" type="string" db:column="COMMENTO"/>
+    <Attribute id="ent5#att20" name="commento" type="text" db:column="COMMENTO" contentType="text/html"/>
     <Attribute id="ent5#att21" name="immagine" type="blob" contentType="image" db:column="IMMAGINE"/>
   </Entity>
   <Relationship id="rel5" name="Maglietta_Foto" sourceEntity="ent1" targetEntity="ent5" db:database="db1" db:table="FOTO">
@@ -128,10 +128,10 @@
   <Entity gr:x="-80" gr:y="40" id="ent6" name="Stampa" duration="persistent" attributeOrder="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49" gr:hideAttributes="false" db:database="db1" db:table="STAMPA">
     <Attribute id="ent6#att22" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent6#att23" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent6#att24" name="descrizione" type="string" db:column="DESCRIZIONE" contentType="text/html"/>
-    <Attribute id="ent6#att25" name="anteprima" type="string" db:column="ANTEPRIMA"/>
-    <Attribute id="ent6#att26" name="immagineHD" type="string" db:column="IMMAGINEHD"/>
-    <Attribute id="ent6#att27" name="prezzoBase" type="string" db:column="PREZZOBASE"/>
+    <Attribute id="ent6#att24" name="descrizione" type="text" db:column="DESCRIZIONE" contentType="text/html"/>
+    <Attribute id="ent6#att25" name="anteprima" type="blob" db:column="ANTEPRIMA" contentType="image"/>
+    <Attribute id="ent6#att26" name="immagineHD" type="blob" db:column="IMMAGINEHD" contentType="image"/>
+    <Attribute id="ent6#att27" name="prezzoBase" type="float" db:column="PREZZOBASE"/>
     <Attribute id="ent6#att49" name="isactive" type="boolean" db:column="ISACTIVE"/>
   </Entity>
   <Entity gr:x="50" gr:y="660" id="ent7" name="Configurazione" duration="persistent" attributeOrder="ent7#att28 ent7#att29 ent7#att30" gr:hideAttributes="false" db:database="db1" db:table="CONFIGURAZIONE">
@@ -189,8 +189,8 @@
   </Relationship>
   <Entity gr:x="600" gr:y="610" id="ent8" name="RigaOrdine" duration="persistent" attributeOrder="ent8#att31 ent8#att32 ent8#att33 ent8#att34" gr:hideAttributes="false" db:database="db1" db:table="RIGAORDINE">
     <Attribute id="ent8#att31" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent8#att32" name="prezzoSingolo" type="string" db:column="PREZZOSINGOLO"/>
-    <Attribute id="ent8#att33" name="quantita" type="string" db:column="QUANTITA"/>
+    <Attribute id="ent8#att32" name="prezzoSingolo" type="float" db:column="PREZZOSINGOLO"/>
+    <Attribute id="ent8#att33" name="quantita" type="integer" db:column="QUANTITA"/>
     <Attribute id="ent8#att34" name="prezzoTotale" type="float" db:column="PREZZOTOTALE"/>
   </Entity>
   <Relationship id="rel17" name="RigaOrdine_Configurazione" sourceEntity="ent8" targetEntity="ent7" db:database="db1" db:table="CONFIGURAZIONE">
@@ -201,7 +201,7 @@
       <db:JoinColumn attribute="ent7#att28" name="OID"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41" gr:hideAttributes="false" db:database="db1" db:table="ORDINE">
+  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att58" gr:hideAttributes="false" db:database="db1" db:table="ORDINE">
     <Attribute id="ent9#att35" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="DATAORACONFERMA"/>
     <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="DATAORAPRESAINCARICO"/>
@@ -209,6 +209,7 @@
     <Attribute id="ent9#att39" name="prezzoTotale" type="float" db:column="PREZZOTOTALE"/>
     <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="SPESESPEDIZIONE"/>
     <Attribute id="ent9#att41" name="stato" type="string" db:column="STATO"/>
+    <Attribute id="ent9#att58" name="tracking" type="string"/>
   </Entity>
   <Relationship id="rel18" name="Ordine_RigaOrdine" sourceEntity="ent9" targetEntity="ent8" db:database="db1" db:table="RIGAORDINE">
     <RelationshipRole1 id="rel18#role35" name="OrdineToRigaOrdine" maxCard="N">
@@ -218,7 +219,7 @@
       <db:JoinColumn attribute="ent8#att31" name="OID"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="430" gr:y="-80" id="ent10" name="Cliente" duration="persistent" attributeOrder="ent10#att43 ent10#att44 ent10#att45 ent10#att50" gr:hideAttributes="false" db:database="db1" db:table="CLIENTE">
+  <Entity gr:x="430" gr:y="-80" id="ent10" name="Cliente" duration="persistent" attributeOrder="ent10#att43 ent10#att44 ent10#att45 ent10#att50 ent10#att55 ent10#att56" gr:hideAttributes="false" db:database="db1" db:table="CLIENTE">
     <Attribute id="ent10#att43" name="nome" type="string" db:column="NOME"/>
     <Attribute id="ent10#att44" name="cognome" type="string" db:column="COGNOME"/>
     <Attribute id="ent10#att45" name="indirizzo" type="string" db:column="INDIRIZZO"/>
@@ -226,6 +227,8 @@
       <db:JoinColumn attribute="userOID" name="USER_OID"/>
     </Generalization>
     <Attribute id="ent10#att50" name="isactive" type="boolean" db:column="ISACTIVE"/>
+    <Attribute id="ent10#att55" name="telefono" type="string"/>
+    <Attribute id="ent10#att56" name="codiceFiscale" type="string"/>
   </Entity>
   <Entity gr:x="1140" gr:y="260" id="ent11" name="Pagina" duration="persistent" attributeOrder="ent11#att46 ent11#att47 ent11#att48 ent11#att42" gr:hideAttributes="false" db:database="db1" db:table="PAGINA">
     <Attribute id="ent11#att46" key="true" name="oid" type="integer" db:column="OID"/>

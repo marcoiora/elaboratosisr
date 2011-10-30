@@ -144,10 +144,10 @@
           <layout:Field field="sv4#area6#page33#enu10#fld54"/>
           <layout:Field field="sv4#area6#page33#enu10#fld55"/>
           <layout:Field field="sv4#area6#page33#enu10#fld56"/>
+          <layout:Field field="sv4#area6#page33#enu10#fld25"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld13"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld14"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld15"/>
-          <layout:Field field="sv4#area6#page33#enu10#fld25"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>

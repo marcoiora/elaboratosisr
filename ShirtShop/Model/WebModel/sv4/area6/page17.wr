@@ -64,13 +64,13 @@
     <layout:Row>
       <layout:Cell>
         <layout:Unit unitId="sv4#area6#page17#enu6">
-          <layout:Field field="sv4#area6#page17#enu6#sfld1"/>
-          <layout:Field field="sv4#area6#page17#enu6#sfld2"/>
-          <layout:Field field="sv4#area6#page17#enu6#fld17"/>
-          <layout:Field field="sv4#area6#page17#enu6#fld24"/>
           <layout:Link link="sv4#area6#page17#enu6#ln45"/>
           <layout:Link link="sv4#area6#page17#enu6#ln46"/>
           <layout:Link link="sv4#area6#page17#enu6#ln85"/>
+          <layout:Field field="sv4#area6#page17#enu6#fld17"/>
+          <layout:Field field="sv4#area6#page17#enu6#fld24"/>
+          <layout:Field field="sv4#area6#page17#enu6#sfld1"/>
+          <layout:Field field="sv4#area6#page17#enu6#sfld2"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
