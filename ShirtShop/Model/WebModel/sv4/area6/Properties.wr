@@ -1,6 +1,6 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="810" gr:y="-150" id="sv4#area6" name="Gestione Prodotti" landmark="true" landmarks="sv4#area6#page24" defaultPage="sv4#area6#page24">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="939" gr:y="159" id="sv4#area6" name="Gestione Prodotti" landmark="true" defaultPage="sv4#area6#page24" landmarks="sv4#area6#page27 sv4#area6#page29 sv4#area6#page32">
   <OperationUnits>
-    <ParameterCollectorUnit gr:x="830" gr:y="1260" id="sv4#area6#pcu1" name="Parameter Collector1" linkOrder="sv4#area6#pcu1#ln34 sv4#area6#pcu1#ln36 sv4#area6#pcu1#ln41">
+    <ParameterCollectorUnit gr:x="697" gr:y="931" id="sv4#area6#pcu1" name="Parameter Collector1" linkOrder="sv4#area6#pcu1#ln34 sv4#area6#pcu1#ln36 sv4#area6#pcu1#ln41">
       <CollectorParameter id="sv4#area6#pcu1#pcp1" name="maglietta_oid"/>
       <Link id="sv4#area6#pcu1#ln34" name="Link34" to="sv4#area6#page17#seu4" type="transport" validate="true">
         <LinkParameter id="sv4#area6#pcu1#ln34#par69" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#pcu1#pcp1" target="sv4#area6#page17#seu4#su14#rcond1.ent1#att1"/>
@@ -13,32 +13,25 @@
         <LinkParameter id="sv4#area6#pcu1#ln41#par79" name="maglietta_oid_PASSING" source="sv4#area6#pcu1#pcp1" passing="true"/>
       </Link>
     </ParameterCollectorUnit>
-    <CreateUnit id="sv4#area6#cru5" name="Salva e Nuova Foto" gr:x="1150" gr:y="1490" entity="ent5">
+    <CreateUnit id="sv4#area6#cru5" name="Salva e Nuova Foto" gr:x="1017" gr:y="1161" entity="ent5">
       <OKLink id="sv4#area6#cru5#oln20" name="OKLink20" to="sv4#area6#pcu1" gr:bendpoints="-139,-157,177,72">
         <LinkParameter id="sv4#area6#cru5#oln20#par92" name="maglietta_oid_PASSING_maglietta_oid" sourceLinkParameter="sv4#area6#page17#enu6#ln45#par91" target="sv4#area6#pcu1#pcp1"/>
       </OKLink>
       <KOLink id="sv4#area6#cru5#kln12" name="KOLink12" to="sv4#page16" automaticCoupling="true"/>
     </CreateUnit>
-    <CreateUnit gr:x="1170" gr:y="1350" id="sv4#area6#cru6" name="Salva Foto e Fine" entity="ent5">
-      <OKLink id="sv4#area6#cru6#oln21" name="OKLink21" to="sv4#area6#page24" automaticCoupling="true"/>
+    <CreateUnit gr:x="1037" gr:y="1021" id="sv4#area6#cru6" name="Salva Foto e Fine" entity="ent5">
       <KOLink id="sv4#area6#cru6#kln11" name="KOLink11" to="sv4#page16" automaticCoupling="true"/>
+      <OKLink id="sv4#area6#cru6#oln21" name="OKLink21" to="sv4#area6#page27" automaticCoupling="true"/>
     </CreateUnit>
-    <SwitchUnit gr:x="692" gr:y="182" id="sv4#area6#switch4" name="Elimina o Disattiva">
-      <Case value="true"/>
-      <Case value="false"/>
-      <OKLink id="sv4#area6#switch4#oln43" name="OKLink43" to="sv4#area6#page18#alt1#page19#gctu1" code="false">
-        <LinkParameter id="sv4#area6#switch4#oln43#par141" name="oid_PASSING" sourceLinkParameter="sv4#area6#page18#mathu2#ln96#par140" passing="true"/>
+    <ModuleInstanceUnit gr:x="553" gr:y="683" id="sv4#area6#miu1" name="Salva Maglietta" moduleId="mov1#opm3">
+      <OKLink id="sv4#area6#miu1#oln6" to="sv4#area6#pcu1" name="OKLink39">
+        <LinkParameter id="sv4#area6#miu1#oln6#par67" source="mov1#opm2#okcu2#ocp3" name="Source oid [Maglietta]_maglietta_oid" target="sv4#area6#pcu1#pcp1"/>
       </OKLink>
-      <OKLink id="sv4#area6#switch4#oln44" name="OKLink44" to="sv4#area6#page18#alt1#page20#dau11" code="true">
-        <LinkParameter id="sv4#area6#switch4#oln44#par144" name="oid_PASSING_KeyCondition40 [oid]" sourceLinkParameter="sv4#area6#page18#mathu2#ln96#par140" target="sv4#area6#page18#alt1#page20#dau11#su60#kcond40.ent1#att1"/>
-      </OKLink>
-    </SwitchUnit>
-    <ModifyUnit gr:x="702" gr:y="302" id="sv4#area6#mfu2" name="Disattiva Maglietta" entity="ent1">
-      <Selector id="sv4#area6#mfu2#su59" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv4#area6#mfu2#su59#kcond39" name="KeyCondition39" predicate="in" implied="false"/>
-      </Selector>
-      <OKLink id="sv4#area6#mfu2#oln45" name="OKLink45" to="sv4#area6#page24" automaticCoupling="true"/>
-      <KOLink id="sv4#area6#mfu2#kln37" name="KOLink37" to="sv4#page16" automaticCoupling="true"/>
-    </ModifyUnit>
+      <KOLink id="sv4#area6#miu1#kln22" name="KOLink22" to="sv4#page16" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="423" gr:y="453" id="sv4#area6#miu2" name="Salva Maglietta" moduleId="mov1#opm3">
+      <OKLink id="sv4#area6#miu2#oln31" name="OKLink31" to="sv4#area6#page27" automaticCoupling="true"/>
+      <KOLink id="sv4#area6#miu2#kln28" name="KOLink28" to="sv4#page16" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </Area>

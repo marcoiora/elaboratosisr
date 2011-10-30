@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv4#area6#page27" name="Gestione Magliette" landmark="true" linkOrder="sv4#area6#page27#ln114">
+  <ContentUnits>
+    <IndexUnit id="sv4#area6#page27#inu17" name="Magliette" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att2 ent1#att10" linkOrder="sv4#area6#page27#inu17#ln113">
+      <SortAttribute attribute="ent1#att10" order="descending"/>
+      <SortAttribute attribute="ent1#att2" order="ascending"/>
+      <Link id="sv4#area6#page27#inu17#ln113" name="dettagli" to="sv4#area6#page33#seu16" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page27#inu17#ln113#par173" name="oid_KeyCondition28 [oid]" source="data[].ent1#att1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page27#inu17">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att10"/>
+          <layout:Link link="sv4#area6#page27#inu17#ln113"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area6#page27#ln114" name="Nuova Maglietta" to="sv4#area6#page25" automaticCoupling="true" type="normal" validate="true"/>
+</Page>
