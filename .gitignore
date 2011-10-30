@@ -6,3 +6,5 @@
 
 # PDF finale di LaTeX
 *.pdf
+
+/Elaborato.synctex.gz
