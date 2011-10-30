@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="591" gr:y="275" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="809" gr:y="303" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
   <ContentUnits>
-    <EntryUnit gr:x="152" gr:y="121" id="sv4#area6#page25#enu5" name="Inserisci dati maglietta" linkOrder="sv4#area6#page25#enu5#ln35 sv4#area6#page25#enu5#ln38 sv4#area6#page25#enu5#ln42 sv4#area6#page25#enu5#ln43">
+    <EntryUnit gr:x="82" gr:y="122" id="sv4#area6#page25#enu5" name="Inserisci dati maglietta" linkOrder="sv4#area6#page25#enu5#ln35 sv4#area6#page25#enu5#ln38 sv4#area6#page25#enu5#ln42 sv4#area6#page25#enu5#ln43">
       <Field id="sv4#area6#page25#enu5#fld15" name="Nome" type="string" modifiable="true"/>
       <Field id="sv4#area6#page25#enu5#fld16" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
       <Field id="sv4#area6#page25#enu5#fld18" name="Manica" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteMinChars="1" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln38" ajaxAutocompleteIndicator="true" preloaded="true"/>
@@ -36,21 +36,21 @@
         <LinkParameter id="sv4#area6#page25#enu5#ln43#par62" name="Materiale_materiale" source="sv4#area6#page25#enu5#fld22" target="sv4#area6#page31#inu15#su26#acond4"/>
       </Link>
     </EntryUnit>
-    <SelectorUnit gr:x="0" gr:y="49" id="sv4#area6#page25#seu1" name="Taglie" entity="ent3" distinct="false" distinctAttributes="ent3#att15 ent3#att16">
+    <SelectorUnit gr:x="110" gr:y="2" id="sv4#area6#page25#seu1" name="Taglie" entity="ent3" distinct="false" distinctAttributes="ent3#att15 ent3#att16">
       <SortAttribute attribute="ent3#att15" order="ascending"/>
       <Link id="sv4#area6#page25#seu1#ln29" name="Link29" to="sv4#area6#page25#enu5" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page25#seu1#ln29#par24" name="oid_Taglie disponibili [label]" source="ent3#att16Array" target="sv4#area6#page25#enu5#msfld1_label"/>
         <LinkParameter id="sv4#area6#page25#seu1#ln29#par25" name="nome_Taglie disponibili [output]" source="ent3#att15Array" target="sv4#area6#page25#enu5#msfld1_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="102" gr:y="0" id="sv4#area6#page25#seu2" name="Colori disponibili" entity="ent2" distinctAttributes="ent2#att12 ent2#att13">
+    <SelectorUnit gr:x="190" gr:y="0" id="sv4#area6#page25#seu2" name="Colori disponibili" entity="ent2" distinctAttributes="ent2#att12 ent2#att13">
       <Link id="sv4#area6#page25#seu2#ln30" name="Link30" to="sv4#area6#page25#enu5" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page25#seu2#ln30#par26" name="oid_Colori disponibili [label]" source="ent2#att13Array" target="sv4#area6#page25#enu5#msfld3_label"/>
         <LinkParameter id="sv4#area6#page25#seu2#ln30#par27" name="nome_Colori disponibili [output]" source="ent2#att12Array" target="sv4#area6#page25#enu5#msfld3_output"/>
       </Link>
       <SortAttribute attribute="ent2#att13" order="ascending"/>
     </SelectorUnit>
-    <SelectorUnit gr:x="0" gr:y="171" id="sv4#area6#page25#seu3" name="Sessi disponibili" entity="ent4" distinctAttributes="ent4#att17 ent4#att18">
+    <SelectorUnit gr:x="0" gr:y="2" id="sv4#area6#page25#seu3" name="Sessi disponibili" entity="ent4" distinctAttributes="ent4#att17 ent4#att18">
       <Link id="sv4#area6#page25#seu3#ln31" name="Link31" to="sv4#area6#page25#enu5" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page25#seu3#ln31#par28" name="oid_Sessi disponibili [label]" source="ent4#att18Array" target="sv4#area6#page25#enu5#msfld2_label"/>
         <LinkParameter id="sv4#area6#page25#seu3#ln31#par29" name="nome_Sessi disponibili [output]" source="ent4#att17Array" target="sv4#area6#page25#enu5#msfld2_output"/>

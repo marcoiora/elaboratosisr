@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="3" gr:y="173" id="sv4#area6#page33" name="Dettaglio Maglietta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2" gr:y="313" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln56 sv4#area6#page33#ln63">
   <ContentUnits>
-    <EntryUnit id="sv4#area6#page33#enu10" name="Modifica dati" gr:x="174" gr:y="134" linkOrder="sv4#area6#page33#enu10#ln137 sv4#area6#page33#enu10#ln138 sv4#area6#page33#enu10#ln139 sv4#area6#page33#enu10#ln48">
+    <EntryUnit id="sv4#area6#page33#enu10" name="Modifica dati" gr:x="283" gr:y="134" linkOrder="sv4#area6#page33#enu10#ln137 sv4#area6#page33#enu10#ln138 sv4#area6#page33#enu10#ln139 sv4#area6#page33#enu10#ln48">
       <Field id="sv4#area6#page33#enu10#fld49" name="Nome" type="string" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page33#enu10#fld50" name="Descrizione" type="text" modifiable="true" contentType="text/html" preloaded="true"/>
       <Field id="sv4#area6#page33#enu10#fld51" name="Manica" ajaxAutocompleteEnabled="true" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" type="string" modifiable="true" preloaded="true" ajaxAutocompleteLink="sv4#area6#page33#enu10#ln137"/>
@@ -34,9 +34,11 @@
         <LinkParameter id="sv4#area6#page33#enu10#ln48#par162" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page33#enu10#fld54" target="sv4#area6#miu2.mov1#opm3#icu3#icp25"/>
         <LinkParameter id="sv4#area6#page33#enu10#ln48#par170" name="Taglie disponibili_taglie" source="sv4#area6#page33#enu10#msfld13" target="sv4#area6#miu2.mov1#opm3#icu3#icp15"/>
         <LinkParameter id="sv4#area6#page33#enu10#ln48#par176" name="oid_PASSING_oid" sourceLinkParameter="sv4#area6#page33#seu16#ln126#par171" target="sv4#area6#miu2.mov1#opm3#icu3#icp26"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par206" name="Attiva_isactive" source="sv4#area6#page33#enu10#fld25" target="sv4#area6#miu2.mov1#opm3#icu3#icp23"/>
       </Link>
+      <Field id="sv4#area6#page33#enu10#fld25" name="Attiva" type="boolean" modifiable="true" preloaded="true"/>
     </EntryUnit>
-    <SelectorUnit id="sv4#area6#page33#seu16" entity="ent1" gr:x="4" gr:y="114" name="Maglietta">
+    <SelectorUnit id="sv4#area6#page33#seu16" entity="ent1" gr:x="113" gr:y="114" name="Maglietta">
       <Link id="sv4#area6#page33#seu16#ln126" name="Link124" to="sv4#area6#page33#enu10" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par161" name="collo_Collo" source="ent1#att5Array" target="sv4#area6#page33#enu10#fld52_slot"/>
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par163" name="manica_Manica" source="ent1#att4Array" target="sv4#area6#page33#enu10#fld51_slot"/>
@@ -47,6 +49,7 @@
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par168" name="stampabileRetro_Permetti Stampa Retro" source="ent1#att7Array" target="sv4#area6#page33#enu10#fld54_slot"/>
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par169" name="prezzo_Prezzo" source="ent1#att9Array" target="sv4#area6#page33#enu10#fld56_slot"/>
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par171" name="oid_PASSING" source="ent1#att1Array" passing="true"/>
+        <LinkParameter id="sv4#area6#page33#seu16#ln126#par205" name="isactive_Attiva" source="ent1#att10Array" target="sv4#area6#page33#enu10#fld25_slot"/>
       </Link>
       <Selector id="sv4#area6#page33#seu16#su61" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#area6#page33#seu16#su61#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
@@ -54,16 +57,25 @@
       <Link id="sv4#area6#page33#seu16#ln129" name="Link129" to="sv4#area6#page33#seu18" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#area6#page33#seu16#ln133" name="Link133" to="sv4#area6#page33#seu19" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#area6#page33#seu16#ln135" name="Link135" to="sv4#area6#page33#seu22" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv4#area6#page33#seu16#ln140" name="Link140" to="sv4#area6#page33#inu23" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="-49,0,-53,-260;-48,128,-52,-132;-48,229,-52,-31"/>
+      <Link id="sv4#area6#page33#seu16#ln140" name="Link140" to="sv4#area6#page33#inu23" type="transport" validate="true" gr:bendpoints="-49,0,-53,-260;-48,128,-52,-132;-48,229,-52,-31">
+        <LinkParameter id="sv4#area6#page33#seu16#ln140#par199" name="oid_maglietta [oid]" source="ent1#att1Array" target="sv4#area6#page33#inu23#su66#rcond31.ent1#att1"/>
+        <LinkParameter id="sv4#area6#page33#seu16#ln140#par200" name="oid_PASSING" source="ent1#att1Array" passing="true"/>
+      </Link>
+      <Link id="sv4#area6#page33#seu16#ln51" name="Link51" to="sv4#area6#stu1" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page33#seu16#ln51#par204" name="oid_maglietta_oid" source="ent1#att1Array" target="sv4#area6#stu1.ctx1"/>
+      </Link>
+      <Link id="sv4#area6#page33#seu16#ln75" name="Link75" to="sv4#area6#miu3" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page33#seu16#ln75#par223" name="oid_oid" source="ent1#att1Array" target="sv4#area6#miu3.mov1#opm1#icu1#icp3"/>
+      </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="62" gr:y="0" id="sv4#area6#page33#seu17" name="Colori" entity="ent2">
+    <SelectorUnit gr:x="171" gr:y="0" id="sv4#area6#page33#seu17" name="Colori" entity="ent2">
       <SortAttribute attribute="ent2#att13" order="ascending"/>
       <Link id="sv4#area6#page33#seu17#ln128" name="Link128" to="sv4#area6#page33#enu10" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#seu17#ln128#par174" name="nome_Colori disponibili [label]" source="ent2#att13Array" target="sv4#area6#page33#enu10#msfld15_label"/>
         <LinkParameter id="sv4#area6#page33#seu17#ln128#par175" name="oid_Colori disponibili [output]" source="ent2#att12Array" target="sv4#area6#page33#enu10#msfld15_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="0" gr:y="248" id="sv4#area6#page33#seu18" name="Colori Maglietta" entity="ent2">
+    <SelectorUnit gr:x="109" gr:y="248" id="sv4#area6#page33#seu18" name="Colori Maglietta" entity="ent2">
       <Selector id="sv4#area6#page33#seu18#su62" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#area6#page33#seu18#su62#rcond28" name="Maglietta" predicate="in" implied="false" role="rel1#role1"/>
       </Selector>
@@ -71,7 +83,7 @@
         <LinkParameter id="sv4#area6#page33#seu18#ln130#par48" name="oid_Colori disponibili - Preselection" source="ent2#att12Array" target="sv4#area6#page33#enu10#msfld15_presel"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="122" gr:y="249" id="sv4#area6#page33#seu19" name="Taglie Maglietta" entity="ent3">
+    <SelectorUnit gr:x="231" gr:y="249" id="sv4#area6#page33#seu19" name="Taglie Maglietta" entity="ent3">
       <Selector id="sv4#area6#page33#seu19#su63" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#area6#page33#seu19#su63#rcond29" name="Maglietta" predicate="in" implied="false" role="rel3#role5"/>
       </Selector>
@@ -79,21 +91,21 @@
         <LinkParameter id="sv4#area6#page33#seu19#ln134#par181" name="oid_Taglie disponibili - Preselection" source="ent3#att15Array" target="sv4#area6#page33#enu10#msfld13_presel"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="142" gr:y="1" id="sv4#area6#page33#seu20" name="Taglie" entity="ent3">
+    <SelectorUnit gr:x="251" gr:y="1" id="sv4#area6#page33#seu20" name="Taglie" entity="ent3">
       <SortAttribute attribute="ent3#att15" order="ascending"/>
       <Link id="sv4#area6#page33#seu20#ln131" name="Link131" to="sv4#area6#page33#enu10" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#seu20#ln131#par177" name="nome_Taglie disponibili [label]" source="ent3#att16Array" target="sv4#area6#page33#enu10#msfld13_label"/>
         <LinkParameter id="sv4#area6#page33#seu20#ln131#par178" name="oid_Taglie disponibili [output]" source="ent3#att15Array" target="sv4#area6#page33#enu10#msfld13_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="222" gr:y="1" id="sv4#area6#page33#seu21" name="Sessi" entity="ent4">
+    <SelectorUnit gr:x="331" gr:y="1" id="sv4#area6#page33#seu21" name="Sessi" entity="ent4">
       <SortAttribute attribute="ent4#att18" order="ascending"/>
       <Link id="sv4#area6#page33#seu21#ln132" name="Link132" to="sv4#area6#page33#enu10" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#seu21#ln132#par179" name="nome_Sessi disponibili [label]" source="ent4#att18Array" target="sv4#area6#page33#enu10#msfld14_label"/>
         <LinkParameter id="sv4#area6#page33#seu21#ln132#par180" name="oid_Sessi disponibili [output]" source="ent4#att17Array" target="sv4#area6#page33#enu10#msfld14_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="242" gr:y="251" id="sv4#area6#page33#seu22" name="Sessi Maglietta" entity="ent4">
+    <SelectorUnit gr:x="351" gr:y="251" id="sv4#area6#page33#seu22" name="Sessi Maglietta" entity="ent4">
       <Selector id="sv4#area6#page33#seu22#su64" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#area6#page33#seu22#su64#rcond30" name="Maglietta" predicate="in" implied="false" role="rel4#role7"/>
       </Selector>
@@ -101,16 +113,29 @@
         <LinkParameter id="sv4#area6#page33#seu22#ln136#par182" name="oid_Sessi disponibili - Preselection" source="ent4#att17Array" target="sv4#area6#page33#enu10#msfld14_presel"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit gr:x="4" gr:y="364" id="sv4#area6#page33#inu23" name="Fotografie" entity="ent5" displayAttributes="ent5#att21 ent5#att20 rel6#role11.ent2#att13 rel7#role13.ent4#att18" customDescriptor="false">
+    <IndexUnit gr:x="113" gr:y="364" id="sv4#area6#page33#inu23" name="Fotografie" entity="ent5" displayAttributes="ent5#att21 ent5#att20 rel6#role11.ent2#att13 rel7#role13.ent4#att18" customDescriptor="false" linkOrder="sv4#area6#page33#inu23#ln49">
       <Selector id="sv4#area6#page33#inu23#su66" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#area6#page33#inu23#su66#rcond31" name="maglietta" predicate="in" implied="false" role="rel5#role9"/>
       </Selector>
+      <Link id="sv4#area6#page33#inu23#ln49" name="Elimina" to="sv4#area6#dlu2" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page33#inu23#ln49#par201" name="oid_KeyCondition38 [oid]" source="data[].ent5#att19" target="sv4#area6#dlu2#su44#kcond38.ent5#att19"/>
+        <LinkParameter id="sv4#area6#page33#inu23#ln49#par202" name="oid_PASSING" sourceLinkParameter="sv4#area6#page33#seu16#ln140#par200" passing="true"/>
+      </Link>
     </IndexUnit>
+    <GetUnit gr:x="0" gr:y="44" id="sv4#area6#page33#gtu4" name="Get Maglietta" contextParameters="ctx1">
+      <Link id="sv4#area6#page33#gtu4#ln60" name="Link60" to="sv4#area6#page33#seu16" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page33#gtu4#ln60#par212" name="maglietta_oid_KeyCondition28 [oid]" source="sv4#area6#page33#gtu4.ctx1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
         <layout:Unit unitId="sv4#area6#page33#enu10">
+          <layout:Link link="sv4#area6#page33#enu10#ln137"/>
+          <layout:Link link="sv4#area6#page33#enu10#ln138"/>
+          <layout:Link link="sv4#area6#page33#enu10#ln139"/>
+          <layout:Link link="sv4#area6#page33#enu10#ln48"/>
           <layout:Field field="sv4#area6#page33#enu10#fld49"/>
           <layout:Field field="sv4#area6#page33#enu10#fld50"/>
           <layout:Field field="sv4#area6#page33#enu10#fld51"/>
@@ -122,10 +147,7 @@
           <layout:Field field="sv4#area6#page33#enu10#msfld13"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld14"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld15"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln137"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln138"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln139"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln48"/>
+          <layout:Field field="sv4#area6#page33#enu10#fld25"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>
@@ -136,8 +158,11 @@
           <layout:Attribute attribute="ent5#att20"/>
           <layout:Attribute attribute="rel6#role11.ent2#att13"/>
           <layout:Attribute attribute="rel7#role13.ent4#att18"/>
+          <layout:Link link="sv4#area6#page33#inu23#ln49"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>
   </layout:Grid>
+  <Link id="sv4#area6#page33#ln56" name="Aggiungi fotografia" to="sv4#area6#page17" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv4#area6#page33#ln63" name="Elimina" to="sv4#area6#miu3" automaticCoupling="true" type="normal" validate="true"/>
 </Page>

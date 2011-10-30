@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="290" gr:y="3" id="sv4#area6#page32" name="Gestione Proposte" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="406" gr:y="3" id="sv4#area6#page32" name="Gestione Proposte" landmark="true">
   <ContentUnits>
     <IndexUnit id="sv4#area6#page32#inu19" name="Proposte" gr:x="0" gr:y="0" entity="ent13" displayAttributes="ent1#att2 rel22#role43.ent6#att23 rel23#role45.ent6#att23"/>
   </ContentUnits>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="463" gr:y="3" id="sv4#area6#page24" name="Gestione Prodotti" landmark="false" linkOrder="sv4#area6#page24#ln111">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="579" gr:y="3" id="sv4#area6#page24" name="Gestione Prodotti" landmark="false" linkOrder="sv4#area6#page24#ln111">
   <ContentUnits>
     <IndexUnit id="sv4#area6#page24#inu20" name="Magliette" gr:x="0" gr:y="2" entity="ent1" displayAttributes="ent1#att2 ent1#att10" linkOrder="sv4#area6#page24#inu20#ln112">
       <SortAttribute attribute="ent1#att10" order="descending"/>

@@ -1,9 +1,8 @@
 <OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="50" gr:y="0" id="mov1#opm1" name="Elimina Maglietta">
   <OperationUnits>
-    <InputCollectorUnit gr:x="450" gr:y="0" id="mov1#opm1#icu1" name="Input Collector" linkOrder="mov1#opm1#icu1#ln106 mov1#opm1#icu1#ln107 mov1#opm1#icu1#ln108 mov1#opm1#icu1#ln109">
-      <OKLink id="mov1#opm1#icu1#oln18" name="OKLink18" to="mov1#opm1#opg2#dcnu7" automaticCoupling="true" gr:bendpoints="-198,162,224,-146"/>
+    <InputCollectorUnit gr:x="450" gr:y="0" id="mov1#opm1#icu1" name="Input Collector">
       <InputCollectorParameter id="mov1#opm1#icu1#icp3" name="oid"/>
-      <Link id="mov1#opm1#icu1#ln98" name="Link98" to="mov1#opm1#opg2#seu13" type="transport" validate="true" gr:bendpoints="-422,1,1,-174">
+      <Link id="mov1#opm1#icu1#ln98" name="Link98" to="mov1#opm1#opg2#seu13" type="transport" validate="true" gr:bendpoints="-251,53,-39,-154">
         <LinkParameter id="mov1#opm1#icu1#ln98#par99" name="oid_Maglietta [oid]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#seu13#su33#rcond24.ent1#att1"/>
       </Link>
       <Link id="mov1#opm1#icu1#ln99" name="Link99" to="mov1#opm1#opg2#seu14" type="transport" validate="true" gr:bendpoints="-262,31,1,-144">
@@ -12,32 +11,36 @@
       <Link id="mov1#opm1#icu1#ln100" name="Link100" to="mov1#opm1#opg2#seu15" type="transport" validate="true">
         <LinkParameter id="mov1#opm1#icu1#ln100#par105" name="oid_Maglietta [oid]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#seu15#su54#rcond26.ent1#att1"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln101" name="Link101" to="mov1#opm1#opg2#dcnu7" type="transport" validate="true" gr:bendpoints="-548,-20,-126,-328;-547,204,-125,-104">
+      <Link id="mov1#opm1#icu1#ln101" name="Link101" to="mov1#opm1#opg2#dcnu7" type="transport" validate="true" gr:bendpoints="-519,4,-305,-352;-518,447,-304,91;-295,443,-81,87">
         <LinkParameter id="mov1#opm1#icu1#ln101#par101" name="oid_KeyCondition12 [oid] [Maglietta] [Target]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#dcnu7#su32#kcond18.ent1#att1"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln104" name="Link104" to="mov1#opm1#opg2#dlu6" type="transport" validate="true">
+      <Link id="mov1#opm1#icu1#ln104" name="Link104" to="mov1#opm1#opg2#dlu6" type="transport" validate="true" gr:bendpoints="462,112,218,-240;461,472,217,120;281,477,37,125">
         <LinkParameter id="mov1#opm1#icu1#ln104#par108" name="oid_Maglietta [oid]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#dlu6#su57#rcond27.ent1#att1"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln105" name="Link105" to="mov1#opm1#opg2#dlu7" type="transport" validate="true">
+      <Link id="mov1#opm1#icu1#ln105" name="Link105" to="mov1#opm1#opg2#dlu7" type="transport" validate="true" gr:bendpoints="448,117,82,-235;450,325,84,-27">
         <LinkParameter id="mov1#opm1#icu1#ln105#par109" name="oid_KeyCondition24 [oid]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#dlu7#su58#kcond23.ent1#att1"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln106" name="Link106" to="mov1#opm1#opg2#dcnu8" type="transport" validate="true" gr:bendpoints="-567,-37,-305,-345;-559,420,-297,112;-372,417,-110,109">
+      <Link id="mov1#opm1#icu1#ln106" name="Link106" to="mov1#opm1#opg2#dcnu8" type="transport" validate="true" gr:bendpoints="-530,-16,-476,-372;-531,460,-477,104;-224,460,-170,104">
         <LinkParameter id="mov1#opm1#icu1#ln106#par104" name="oid_KeyCondition19 [oid] [Maglietta] [Source]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#dcnu8#su34#kcond19.ent1#att1"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln107" name="Link107" to="mov1#opm1#opg2#dcnu9" type="transport" validate="true" gr:bendpoints="272,13,382,-295;278,423,388,115;49,425,159,117">
+      <Link id="mov1#opm1#icu1#ln107" name="Link107" to="mov1#opm1#opg2#dcnu9" type="transport" validate="true" gr:bendpoints="478,107,380,-249;477,483,379,127;198,491,100,135">
         <LinkParameter id="mov1#opm1#icu1#ln107#par106" name="oid_KeyCondition21 [oid] [Maglietta] [Source]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#dcnu9#su55#kcond21.ent1#att1"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln108" name="Link108" to="mov1#opm1#kocu1" type="transport" validate="true" gr:bendpoints="333,-16,505,-547;342,616,514,85;-52,611,120,80">
+      <Link id="mov1#opm1#icu1#ln108" name="Link108" to="mov1#opm1#kocu1" type="transport" validate="true" gr:bendpoints="498,99,670,-561;496,703,668,43;-52,611,120,80">
         <LinkParameter id="mov1#opm1#icu1#ln108#par110" name="oid_oid" source="mov1#opm1#icu1#icp3" target="mov1#opm1#kocu1#ocp2"/>
       </Link>
-      <Link id="mov1#opm1#icu1#ln109" name="Link109" to="mov1#opm1#okcu1" type="transport" validate="true" gr:bendpoints="305,4,128,-516;310,520,133,0">
+      <Link id="mov1#opm1#icu1#ln109" name="Link109" to="mov1#opm1#okcu1" type="transport" validate="true" gr:bendpoints="488,104,311,-547;490,652,313,1">
         <LinkParameter id="mov1#opm1#icu1#ln109#par111" name="oid_oid" source="mov1#opm1#icu1#icp3" target="mov1#opm1#okcu1#ocp1"/>
       </Link>
+      <Link id="mov1#opm1#icu1#ln61" name="Link61" to="mov1#opm1#opg2#seu6" type="transport" validate="true" gr:bendpoints="-434,40,-22,-176">
+        <LinkParameter id="mov1#opm1#icu1#ln61#par30" name="oid_Maglietta [oid]" source="mov1#opm1#icu1#icp3" target="mov1#opm1#opg2#seu6#su16#rcond4.ent1#att1"/>
+      </Link>
+      <OKLink id="mov1#opm1#icu1#oln38" name="OKLink38" to="mov1#opm1#opg2#seu6" automaticCoupling="true" gr:bendpoints="-486,19,-74,-197"/>
     </InputCollectorUnit>
-    <OKCollectorUnit gr:x="630" gr:y="520" id="mov1#opm1#okcu1" name="OK Collector1">
+    <OKCollectorUnit gr:x="630" gr:y="650" id="mov1#opm1#okcu1" name="OK Collector1">
       <OutputCollectorParameter id="mov1#opm1#okcu1#ocp1" name="oid"/>
     </OKCollectorUnit>
-    <KOCollectorUnit gr:x="280" gr:y="530" id="mov1#opm1#kocu1" name="KO Collector1">
+    <KOCollectorUnit gr:x="280" gr:y="660" id="mov1#opm1#kocu1" name="KO Collector1">
       <OutputCollectorParameter id="mov1#opm1#kocu1#ocp2" name="oid"/>
     </KOCollectorUnit>
   </OperationUnits>

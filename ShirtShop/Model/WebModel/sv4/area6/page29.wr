@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="150" gr:y="1" id="sv4#area6#page29" name="Gestione Stampe" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="266" gr:y="1" id="sv4#area6#page29" name="Gestione Stampe" landmark="true">
   <ContentUnits>
     <IndexUnit id="sv4#area6#page29#inu18" name="Stampe" gr:x="0" gr:y="0" entity="ent6" displayAttributes="ent6#att23"/>
   </ContentUnits>
