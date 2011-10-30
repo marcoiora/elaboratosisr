@@ -99,7 +99,7 @@ Vi sono tre distinte categorie di Utenti Registrati:
 \subsection{Gerarchia dei Gruppi di Utenti}
 Nella figura seguente sono riportare le relazioni che intercorrono fra i vari utenti appena descritti.
 \begin{center}
-	\includegraphics[height=9cm]{Immagini/GerarchiaUtenti.jpg}\\
+	\includegraphics[height=15cm]{Immagini/GerarchiaUtenti.jpg}\\
 \end{center}
 
 \subsection{Schede dei Gruppi di Utenti}
@@ -118,15 +118,17 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti &  ""Registrazione""\\
-		& ""Login""\\ 
-		& ""Consultazione Magliette disponibili""\\
-		& ""Consultazione Stampe disponibili""\\ 
-		& ""Consultazione Pagine Informative""\\
+		Casi d'uso rilevanti &  \begin{description} \item ""Registrazione""
+		\item ""Login""
+		\item ""Consultazione Magliette disponibili""
+		\item ""Consultazione Stampe disponibili""
+		\item ""Consultazione Pagine Informative""
+		\end{description}\\
 		\hline
-		Oggetti in lettura & Maglietta\\ 
-		& Stampa\\ 
-		& Pagina\\
+		Oggetti in lettura & \begin{description} \item Maglietta
+		\item Stampa
+		\item Pagina
+		\end{description}\\
 		\hline
 		Oggetti in scrittura & Utente [Inserimento] \\
 		\hline
@@ -142,17 +144,20 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Descrizione & Gruppo di utenti che hanno effettuato il login al sito con delle credenziali 
 		(username e password), opportunamente definite in una precedente registrazione.\\
 		\hline
-		Dati profilo & Username\\
-		& Password\\
+		Dati profilo & \begin{description} \item Username
+		\item Password
+		\end{description}\\
 		\hline
 		Super-Gruppo & \\
 		\hline
-		Sotto-Gruppi & Cliente\\
-		& Operaio Stampatore\\ 
-		& Amministratore\\
+		Sotto-Gruppi & \begin{description} \item Cliente
+		\item Operaio Stampatore
+		\item Amministratore
+		\end{description}\\
 		\hline
-		Casi d'uso rilevanti & ""Logout""\\
-		& ""Modifica Account""\\
+		Casi d'uso rilevanti & \begin{description} \item ""Logout""
+		\item ""Modifica Account""
+		\end{description}\\
 		\hline
 		Oggetti in lettura & \\
 		\hline
@@ -170,35 +175,38 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		Descrizione & Gruppo di utenti che accedono al sito in qualità di clienti e pertanto hanno la
 		possibilità di acquistare i prodotti offerti dall'azienda\\
 		\hline
-		Dati profilo & Nome\\ 
-		& Cognome\\ 
-		& Indirizzo\\
-		& Telefono\\ 
-		& Codice Fiscale\\ 
-		& E-mail\\
+		Dati profilo & \begin{description} \item Nome
+		\item Cognome
+		\item Indirizzo
+		\item Telefono
+		\item Codice Fiscale
+		\item E-mail
+		\end{description}\\
 		\hline
 		Super-Gruppo & Utente Registrato\\
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & ""Consultazione Magliette disponibili""\\
-		& ""Consultazione Stampe disponibili""\\
-		& ""Consultazione Pagine Informative""\\
-		& ""Personalizzazione dei Prodotti""\\
-		& ""Aggiunta prodotto al Carrello""\\
-		& ""Visualizza - Modifica - Cancella Carrello""\\
-		& ""Conferma Carrello""\\
-		& ""Visualizzazione Dettaglio dell'Ordine""\\ 
-		& ""Annulla Ordine""\\
-		
+		Casi d'uso rilevanti & \begin{description} \item ""Consultazione Magliette disponibili""
+		\item ""Consultazione Stampe disponibili""
+		\item ""Consultazione Pagine Informative""
+		\item ""Personalizzazione dei Prodotti""
+		\item ""Aggiunta prodotto al Carrello""
+		\item ""Visualizza - Modifica - Cancella Carrello""
+		\item ""Conferma Carrello""
+		\item ""Visualizzazione dell'Ordine""
+		\item ""Annulla Ordine""
+		\end{description}\\
 		\hline
-		Oggetti in lettura & Maglietta\\
-		& Pagina\\
+		Oggetti in lettura & \begin{description} \item Maglietta
+		\item Pagina
+		\end{description}\\
 		\hline
-		Oggetto in scrittura & Configurazione [Inserimento - Cancellazione]\\ 
-		& Riga Ordine [Inserimento - Modifica - Cancellazione]\\
-		& Ordine [Inserimento - Modifica]\\ 
-		& Stampa [Inserimento]\\
+		Oggetto in scrittura & \begin{description} \item Configurazione [Inserimento - Cancellazione]
+		\item Riga Ordine [Inserimento - Modifica - Cancellazione]
+		\item Ordine [Inserimento - Modifica - Cancellazione]
+		\item Stampa [Inserimento]
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -217,13 +225,17 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppo & \\
 		\hline
-		Casi d'uso rilevanti & ""Presa in carico Ordine""\\
-		& ""Conferma spedizione dell'Ordine""\\
+		Casi d'uso rilevanti & \begin{description} \item ""Visualizzazione Ordini 'Da Gestire'""
+		\item ""Presa in carico Ordine""
+		\item ""Visualizzazione Ordini 'In Gestione'""
+		\item ""Evasione dell'Ordine""
+		\end{description}\\
 		\hline
-		Oggetti in lettura & Maglietta\\
-		& Stampa\\
-		& Configurazione\\
-		& Riga Ordine\\
+		Oggetti in lettura & \begin{description} \item Maglietta
+		\item Stampa
+		\item Configurazione
+		\item Riga Ordine
+		\end{description}\\
 		\hline
 		Oggetti in scrittura & Ordine [Modifica]\\
 		\hline
@@ -247,24 +259,27 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		Sotto-Gruppi & \\
 		\hline
-		Casi d'uso rilevanti & ""Consultazione elenco Utenti""\\
-			& ""Creazione - Modifica - Cancellazione Account Utente""\\
-			& ""Consultazione elenco Pagine Informative""\\
-			& ""Inserimento - Modifica - Cancellazione Pagine Informative""\\
-			& ""Consultazione elenco Magliette""\\
-			& ""Inserimento - Modifica - Cancellazione Maglietta""\\
-			& ""Consultazione elenco Stampe""\\
-			& ""Inserimento - Modifica - Cancellazione Stampa""\\
-			& ""Visualizzazione dettagli Ordine""\\
+		Casi d'uso rilevanti & \begin{description} \item ""Consultazione elenco Utenti""
+			\item ""Creazione - Modifica - Cancellazione Account Utente""
+			\item ""Consultazione elenco Pagine Informative""
+			\item ""Inserimento - Modifica - Cancellazione Pagine Informative""
+			\item ""Consultazione elenco Magliette""
+			\item ""Inserimento - Modifica - Cancellazione Maglietta""
+			\item ""Consultazione elenco Stampe""
+			\item ""Inserimento - Modifica - Cancellazione Stampa""
+			\item ""Visualizzazione elenco Ordini""
+			\end{description}\\
 		\hline
-		Oggetti in lettura & Ordine\\
-			& Riga Ordine\\
-			& Configurazione\\
+		Oggetti in lettura & \begin{description} \item Ordine
+			\item Riga Ordine
+			\item Configurazione
+			\end{description}\\
 		\hline
-		Oggetti in scrittuta & Maglietta [Inserimento - Modifica - Cancellazione]\\
-			& Stampa [Inserimento - Modifica - Cancellazione]\\
-			& Utente [Inserimento - Modifica - Cancellazione]\\
-			& Pagina [Inserimento - Modifica - Cancellazione]\\
+		Oggetti in scrittuta & \begin{description} \item Maglietta [Inserimento - Modifica - Cancellazione]
+			\item Stampa [Inserimento - Modifica - Cancellazione]
+			\item Utente [Inserimento - Modifica - Cancellazione]
+			\item Pagina [Inserimento - Modifica - Cancellazione]
+			\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}	
@@ -410,7 +425,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Utente Registrato\\
 		\hline
-		\textbf{Precondizione} & L'utente è loggato al sistema\\
+		\textbf{Precondizione} & \\
 		\hline
 		\textbf{Postcondizione} & L'utente non è loggato al sistema\\
 		\hline
@@ -430,7 +445,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Utente Registrato\\
 		\hline
-		\textbf{Precondizione} & L'utente è loggato al sistema\\
+		\textbf{Precondizione} & \\
 		\hline
 		\textbf{Postcondizione} & I nuovi dati dell'utente sono salvati\\
 		\hline
@@ -447,7 +462,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \newpage
 \subsection{Cliente}
 \begin{center}
-	\includegraphics[height=6.5cm]{Immagini/CasoCliente.jpg}\\
+	\includegraphics[height=17cm]{Immagini/CasoCliente.jpg}\\
 \end{center}
 
 \subsubsection{Consultazione Magliette disponibili}
@@ -549,20 +564,20 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 	\end{longtable}
 \end{center}
 
-\subsubsection{Aggiunta prodotto al carrello}
+\subsubsection{Aggiunta prodotto al Carrello}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\textbf{Nome}	& Aggiunta prodotto al carrello\\
+		\textbf{Nome}	& Aggiunta prodotto al Carrello\\
 		\hline
 		\textbf{Attore} & Cliente\\
 		\hline
-		\textbf{Precondizione} & L'utente ha realizzato una personalizzazione di prodotti\\
+		\textbf{Precondizione} & L'utente ha realizzato una personalizzazione dei prodotti\\
 		\hline
 		\textbf{Postcondizione} & La configurazione viene aggiunta al carrello\\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item Quando l'utente visualizza la scheda 
-		della configurazione, invoca la funzionalità di aggiunta a carrello specificando la quantità
+		della configurazione appena effettuata, invoca la funzionalità di aggiunta a carrello specificando la quantità
 		di magliette così configurate che desidera
 		\item Il sistema mostra il carrello con elencate in ogni riga tutte le configurazioni aggiunte
 		dall'utente con la quantità scelta e il prezzo totale di riga
@@ -606,7 +621,9 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item Quando l'utente visualizza il carrello
 		può modificare la quantità di ogni singola riga e ne da conferma
-		\item Il sistema salva la nuova riga di carrello e ne ricalcola il prezzo totale
+		\item Il sistema salva la nuova riga di carrello e ne ricalcola il prezzo totale e mostra il 
+		carrello con elencate in ogni riga le configurazioni aggiunte dall'utente con la quantità
+		scelta e il prezzo totale di riga
 		\end{enumerate}\\
 		\hline		
 	\end{longtable}
@@ -627,17 +644,17 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\textbf{Scenario Principale} & \begin{enumerate} \item Quando l'utente visualizza il carrello
 		può cancellare singolarmente ogni riga e ne da conferma
 		\item Il sistema cancella la riga selezionata dal carrello e mostra il carrello con elencate
-		in ogni riga le configurazioni rimaste
+		in ogni riga le configurazioni rimaste con la quantità scelta e il prezzo totale di riga
 		\end{enumerate}\\
 		\hline		
 	\end{longtable}
 \end{center}
 
-\subsubsection{Conferma Carrello come Ordine}
+\subsubsection{Conferma Carrello}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\textbf{Nome}	& Conferma Carrello come Ordine\\
+		\textbf{Nome}	& Conferma Carrello\\
 		\hline
 		\textbf{Attore} & Cliente\\
 		\hline
@@ -647,27 +664,30 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
 		conferma del carrello come ordine e ne da conferma
-		\item Il sistema conferma l'ordine che non potrà più essere modificabile
+		\item Il sistema conferma l'ordine che non potrà più essere modificato. Viene mostrato l'ordine
+		salvato con stato posto a ""Da Gestire"", con elencate in ogni riga le configurazioni scelte 
+		dall'utente con quantità e prezzo totale di riga e prezzo totale ordine
 		\end{enumerate}\\
 		\hline		
 	\end{longtable}
 \end{center}
 
-\subsubsection{Visualizzazione Dettaglio dell'Ordine}
+\subsubsection{Visualizzazione dell'Ordine}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\textbf{Nome}	& Visualizzazione Dettaglio dell'Ordine\\
+		\textbf{Nome}	& Visualizzazione dell'Ordine\\
 		\hline
 		\textbf{Attore} & Cliente\\
 		\hline
-		\textbf{Precondizione} & Conferma carrello come ordine\\
+		\textbf{Precondizione} & Conferma carrello\\
 		\hline
 		\textbf{Postcondizione} & \\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
-		visualizzazione dei dettagli dell'ordine
+		visualizzazione dell'ordine
 		\item Il sistema mostra l'ordine con elencate in ogni riga le configurazioni scelte dall'utente
+		con quantità e prezzo totale di riga, prezzo totale e stato dell'ordine
 		\end{enumerate}\\
 		\hline		
 	\end{longtable}
@@ -681,7 +701,8 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Cliente\\
 		\hline
-		\textbf{Precondizione} & Visualizzazione dettagli dell'ordine\\
+		\textbf{Precondizione} & Visualizzazione dell'ordine e stato dell'ordine diverso da ""In Gestione""
+		ed ""Evaso""\\
 		\hline
 		\textbf{Postcondizione} & \\
 		\hline
@@ -697,7 +718,28 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \newpage
 \subsection{Operaio Stampatore}
 \begin{center}
-	\includegraphics[height=4.5cm]{Immagini/CasoOperaioStampatore.jpg}\\
+	\includegraphics[height=5cm]{Immagini/CasoOperaioStampatore.jpg}\\
+\end{center}
+
+\subsubsection{Visualizzazione Ordini ""Da Gestire""}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Visualizzazione Ordini ""Da Gestire""\\
+		\hline
+		\textbf{Attore} & Operaio Stampatore\\
+		\hline
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		consultazione dell'elenco degli ordini ancora da gestire
+		\item Il sistema mostra l'elenco con i dati sommari degli ordini ancora da gestire e permette
+		all'utente di visualizzare tutti i dettagli di un singolo ordine
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
 \end{center}
 
 \subsubsection{Presa in carico Ordine}
@@ -708,34 +750,54 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Operaio Stampatore\\
 		\hline
-		\textbf{Precondizione} & \\
+		\textbf{Precondizione} & Visualizzazione Ordini ""Da Gestire""\\
 		\hline
 		\textbf{Postcondizione} & Cambio di stato dell'ordine preso in carico dell'utente\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente visualizza l'elenco degli 
-		ordini direttamente dalla sua pagina principale e ne sceglie uno che ha ancora come stato 'Da
-		gestire' e ne da conferma
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		presa in gestione di un ordine scelto dall'elenco e ne da conferma
 		\item Il sistema cambia lo stato dell'ordine a 'In gestione'
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
 \end{center}
 
-\subsubsection{Conferma spedizione dell'Ordine}
+\subsubsection{Visualizzazione Ordini ""In Gestione""}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\textbf{Nome}	& Conferma spedizione dell'Ordine\\
+		\textbf{Nome}	& Visualizzazione Ordini ""In Gestione""\\
 		\hline
 		\textbf{Attore} & Operaio Stampatore\\
 		\hline
-		\textbf{Precondizione} & L'utente ha preso in gestione un ordine\\
+		\textbf{Precondizione} & \\
+		\hline
+		\textbf{Postcondizione} & \\
+		\hline
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
+		consultazione dell'elenco degli ordini in gestione
+		\item Il sistema mostra l'elenco con i dati sommari degli ordini in gestione e permette all'utente
+		di visualizzare tutti i dettagli di un singolo ordine
+		\end{enumerate}\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Evasione dell'Ordine}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\textbf{Nome}	& Evasione dell'Ordine\\
+		\hline
+		\textbf{Attore} & Operaio Stampatore\\
+		\hline
+		\textbf{Precondizione} & Visualizzazione Ordini ""In Gestione""\\
 		\hline
 		\textbf{Postcondizione} & Cambio di stato dell'ordine affidato alla spedizione\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente dall'elenco degli ordini che
-		in gestione, sceglie quello che ha affidato al corriere
-		\item Il sistema cambia lo stato dell'ordine a 'In spedizione'
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per 
+		l'evasione di un ordine scelto dall'elenco, inserisce il numero di spedizione e ne da conferma
+		\item Il sistema cambia lo stato dell'ordine a ""Evaso""
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -744,7 +806,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \newpage
 \subsection{Amministratore}
 \begin{center}
-	\includegraphics[height=8cm]{Immagini/CasoAmministratore.jpg}\\
+	\includegraphics[height=20cm]{Immagini/CasoAmministratore.jpg}\\
 \end{center}
 
 \subsubsection{Consultazione elenco Utenti}
@@ -778,7 +840,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Precondizione} & Consultazione elenco Utenti\\
 		\hline
-		\textbf{Postcondizione} & Nuovo utente creato con credenziali di accesso al sistema\\
+		\textbf{Postcondizione} & Nuovo utente inserito con credenziali di accesso al sistema\\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
 		creazione di un nuovo utente con credenziali di accesso al sistema
@@ -811,10 +873,10 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Postcondizione} & I nuovi dati di un utente sono salvati\\
 		\hline
-		\textbf{Scenario Principale} & \begin{enumerate} \item L'amministratore invoca la funzionalità per la 
+		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la 
 		modifica dei dati di un utente registrato a sistema 
-		\item Il sistema mostra all'amministratore i dati attualmente presenti dell'utente selezionato
-		\item L'amministratore modifica i dati possibili e salva la sua modifica effettuata
+		\item Il sistema mostra all'utente i dati attualmente presenti dell'utente selezionato
+		\item L'utente modifica i dati possibili e salva la sua modifica effettuata
 		\item Il sistema salva i nuovi dati e reindirizza l'utente alla schermata di consultazione dell'elenco degli utenti 
 		registrati
 		\end{enumerate}\\
@@ -830,7 +892,9 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & Consultazione elenco Utenti\\
+		\textbf{Precondizione} & Consultazione elenco Utenti e l'utente selezionato non è presente in
+		alcuna configurazione creata, o non ha inserito alcuna stampa personale, o non ha preso in 
+		carico alcun ordine\\
 		\hline
 		\textbf{Postcondizione} & I dati di un utente vengono cancellati dal sistema\\
 		\hline
@@ -839,6 +903,11 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\item Il sistema cancella l'utente selezionato e reidirizza l'utente alla schermata di 
 		consultazione dell'elenco degli utenti registrati
 		\end{enumerate}\\
+		\hline
+		\textbf{Note} & Se l'utente registrato da cancellare è presente in almeno una qualche 
+		configurazione o ha inserito almeno una stampa o ha preso in carico degli ordini, per poter
+		fare in modo che non acceda più al sistema, è necessario disattivare l'account dell'utente 
+		scelto agendo sull'attributo 'isActive'\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -856,10 +925,9 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\textbf{Postcondizione} & \\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
-		consultazione dell'elenco delle pagine informative inserite a sistema
-		\item Il sistema mostra l'elenco con dati sommari delle pagine inforamtive e permette all'utente di 
-		visualizzare tutti i dettagli di
-		una pagina informativa
+		consultazione dell'elenco delle Pagine Informative
+		\item Il sistema mostra l'elenco con dati sommari delle pagine informative e permette all'utente 
+		di visualizzare tutti i dettagli di una pagina informativa
 		\end{enumerate}\\
 		\hline
 	\end{longtable}
@@ -875,16 +943,16 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Precondizione} & Consultazione elenco Pagine Informative\\
 		\hline
-		\textbf{Postcondizione} & Nuova pagina informativa creata\\
+		\textbf{Postcondizione} & Nuova pagina informativa inserita\\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità di 
 		inserimento di una nuova pagina informativa 
 		\item Il sistema mostra il modulo per l'inserimento dei dati della pagina informativa che si
 		vuole realizzare
 		\item L'utente compila la maschera in tutti i suoi campi  e conferma l'inserimento
-		\item Il sistema, dopo opportuna verifica, salva i dati della nuova pagina 
+		\item Il sistema, dopo opportuna verifica, salva i dati della nuova pagina informativa
 		\item L'utente viene reindirizzato alla schermata di consultazione dell'elenco delle pagine 
-		informativa
+		informative
 		\end{enumerate}\\
 		\hline
 		\textbf{Scenario Alternativo} & \begin{description} \item{4.(a)} Il sistema verifica che non
@@ -910,6 +978,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la 
 		modifica dei dati di una pagina informativa
 		\item Il sistema mostra all'utente i dati attualmente presenti della pagina informativa
+		selezionata
 		\item L'utente modifica i dati possibili e salva la sua modifica effettuata
 		\item Il sistema salva i nuovi dati e reindirizza l'utente alla schermata di consultazione dell'elenco delle 
 		pagine informative
@@ -1002,10 +1071,10 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\textbf{Postcondizione} & I nuovi dati di una maglietta sono salvati\\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
-		modifica dei dati di una maglietta 
-		\item Il sistema mostra all'utente i dati attualmente presenti della maglietta
+		modifica dei dati di una maglietta
+		\item Il sistema mostra all'utente i dati attualmente presenti della maglietta selezionata
 		\item L'utente modifica i dati possibili e salva la sua modifica effettuata
-		\item Il sistema salva la modifica e reindirizza l'utente alla schermata di consultazione 
+		\item Il sistema salva i nuovi dati e reindirizza l'utente alla schermata di consultazione 
 		dell'elenco delle magliette
 		\end{enumerate}\\
 		\hline
@@ -1020,7 +1089,8 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & Consultazione elenco Magliette\\
+		\textbf{Precondizione} & Consultazione elenco Magliette e la maglietta scelta non è presente
+		in alcuna configurazione creata\\
 		\hline
 		\textbf{Postcondizione} & I dati di una maglietta vengono cancellati dal sistema\\
 		\hline
@@ -1029,6 +1099,10 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\item Il sistema cancella la maglietta selezionata e reindirizza l'utente alla schermata di
 		consultazione dell'elenco delle magliette
 		\end{enumerate}\\
+		\hline
+		\textbf{Note} & Se la maglietta da cancellare è presente in almeno una qualche configurazione, 
+		per poter fare in modo che non venga più visualizzata dagli utenti finali (utente non 
+		registrato e cliente), è necessario disattivarla agendo sul suo attributo 'isActive'\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -1046,7 +1120,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\textbf{Postcondizione} & \\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
-		consultazione dell'elenco delle stampe inserite a sistema
+		consultazione dell'elenco delle Stampe
 		\item Il sistema mostra l'elenco con dati sommari delle stampe e permette all'utente di 
 		visualizzare tutti i dettagli di una stampa
 		\end{enumerate}\\
@@ -1062,7 +1136,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & Consultazione elenco stampe\\
+		\textbf{Precondizione} & Consultazione elenco Stampe\\
 		\hline
 		\textbf{Postcondizione} & Nuova stampa inserita\\
 		\hline
@@ -1113,7 +1187,8 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
-		\textbf{Precondizione} & Consultazione elenco Stampe\\
+		\textbf{Precondizione} & Consultazione elenco Stampe e la stampa scelta non è presente in 
+		alcuna configurazione creata o non è stata inserita da un utente\\
 		\hline
 		\textbf{Postcondizione} & I dati di una stampa vengono cancellati dal sistema\\
 		\hline
@@ -1123,14 +1198,19 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		consultazione dell'elenco delle stampe
 		\end{enumerate}\\
 		\hline
+		\textbf{Note} & Se la stampa da cancellare è presente in almeno una qualche configurazione o 
+		è stata inserita da un utente, per poter fare in modo che non venga più visualizzata dagli 
+		utenti finali (utente non registrato e cliente), è necessario disattivarla agendo sul suo
+		attributo 'isActive'\\
+		\hline
 	\end{longtable}
 \end{center}
 
-\subsubsection{Visualizzazione dettagli Ordine}
+\subsubsection{Visualizzazione elenco Ordini}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\textbf{Nome}	& Visualizzazione dettagli Ordine\\
+		\textbf{Nome}	& Visualizzazione elenco Ordini\\
 		\hline
 		\textbf{Attore} & Amministratore\\
 		\hline
@@ -1139,7 +1219,7 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 		\textbf{Postcondizione} & \\
 		\hline
 		\textbf{Scenario Principale} & \begin{enumerate} \item L'utente invoca la funzionalità per la
-		visualizzazione del dettaglio degli ordini
+		visualizzazione degli ordini
 		\item Il sistema mostra l'elenco con dati sommari degli ordini e permette all'utente di 
 		visualizzare tutti i dettagli di un singolo ordine
 		\end{enumerate}\\
@@ -1151,7 +1231,75 @@ Nella figura seguente sono riportare le relazioni che intercorrono fra i vari ut
 \section{Dizionario dei Dati}
 Descrizione dei principali oggetti informativi individuati duranti l'analisi dei requisiti.
 \\
-\subsubsection{Stampa:}
+\subsection{Cliente}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Cliente}\\
+		\hline
+		Sinonimi &  \\
+		\hline
+		Descrizione & Utente che accede al sito con credenziali in qualità di cliente e pertanto ha
+		la possibilità di acquistare i prodotti offerti dall'azienda\\
+		\hline
+		Istanze Campione & \begin{description} \item Mario Rossi - Via Milano,3 25100 Brescia - Tel:
+		030 123456789 - C.F: MRARSS78B22D959S - e-mail: mario.rossi@mail.com
+		\item Camilla Bianchi - Via Trieste, 230 30760 Bari - Tel: 0798 990921 - C.F: CMLBNC65N88F860K
+		- e-mail: camillina@yahoo.it
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item Nome(string)
+		\item Cognome (string)
+		\item Indirizzo (string)
+		\item Telefono (string)
+		\item Codice Fiscale (string)
+		\item E-mail (string)
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Cliente - Stampa
+		\item Cliente - Ordine
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & User\\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Operaio Stampatore}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Operaio Stampatore}\\
+		\hline
+		Sinonimi &  Operaio, Stampatore\\
+		\hline
+		Descrizione & Utente che opera per l'azienda soddisfando gli ordini dei clienti\\
+		\hline
+		Istanze Campione & \begin{description} \item Matricola: 86F9OL1
+		\item Matricola: 89200LL3
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item Matricola (string): identificativo univoco di riconoscimento
+		dell'operaio stampatore
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Operaio Stampatore - Ordine
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & User\\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Stampa}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -1162,24 +1310,29 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione & Prototipo di disegno disponibile per essere impresso sulle magliette in vendita
 		ai clienti.\\
 		\hline
-		Istanze Campione & ""Gioconda"": Stampa raffigurante la Gioconda di Leonardo da Vinci\\
-		& ""Logo Ubuntu"": Stampa raffigurante il logo di Ubuntu\\
+		Istanze Campione & \begin{description} \item ""Gioconda"": Stampa raffigurante la Gioconda di Leonardo da Vinci
+		\item ""Logo Ubuntu"": Stampa raffigurante il logo di Ubuntu
+		\end{description}\\
 		\hline
-		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& Nome(string): nome identificativo della stampa con il quale questa viene riferita sui 
-		documenti (ordine, DDT, fattura)\\
-		& Descrizione(text): descrizione dettagliata della stampa con accezioni commerciali e 
-		spiegazioni inerenti al disegno, quali ad esempio artista che lo ha realizzato, anno, etc..\\
-		& Anteprima(blob-image): anteprima della stampa\\
-		& ImmagineHD(blob-image): immagine a grandezza reale della stampa a uso esclusivo degli operai
-		stampatori per la realizzazione delle magliette personalizzate\\
-		& PrezzoBase(float): prezzo finale della stampa a dimensione massima\\
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Nome(string): nome identificativo della stampa con il quale questa viene riferita sui 
+		documenti (ordine, DDT, fattura)
+		\item Descrizione(text): descrizione dettagliata della stampa con accezioni commerciali e 
+		spiegazioni inerenti al disegno, quali ad esempio artista che lo ha realizzato, anno, etc..
+		\item Anteprima(blob-image): anteprima della stampa
+		\item ImmagineHD(blob-image): immagine a grandezza reale della stampa a uso esclusivo degli operai
+		stampatori per la realizzazione delle magliette personalizzate
+		\item PrezzoBase(float): prezzo finale della stampa a dimensione massima
+		\item isActive(boolean): se true la stampa è visualizzabile dagli utenti finali
+		\end{description}\\
 		\hline
-		Relazioni & Stampa-Template (stampa sul fronte)\\
-		& Stampa-Template (stampa sul retro)\\
-		& Stampa-Configurazione (stampa sul fronte)\\
-		& Stampa-Configurazione (stampa sul retro)\\
-		& Stampa-Cliente\\
+		Relazioni & \begin{description} \item Stampa-Template (stampa sul fronte)
+		\item Stampa-Template (stampa sul retro)
+		\item Stampa-Configurazione (stampa sul fronte)
+		\item Stampa-Configurazione (stampa sul retro)
+		\item Stampa-Cliente
+		\item Stampa-Tema
+		\end{description}\\
 		\hline
 		Componenti & \\
 		\hline
@@ -1190,94 +1343,27 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 	\end{longtable}
 \end{center}
 
-\newpage
-\subsubsection{Maglietta:}
+\subsection{Tema}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Maglietta}\\
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Tema}\\
 		\hline
-		Sinonimi & T-shirt \\
+		Sinonimi &  \\
 		\hline
-		Descrizione & Tipo di maglietta disponibile per la personalizzazione in una o più dele sue
-		caratteristiche e per l'acquisto. Le caratteristiche della maglietta sono la disponibilità
-		in diverse taglie, colori e sesso e la possibilità di avere già associate o meno una o due 
-		stampe. Può inoltre essere o meno personalizzabile con stampe scelte dal cliente su fronte 
-		e/o retro indipendentemente.\\
+		Descrizione & \\
 		\hline
-		Istanze Campione & ""StilistaOne PE2011"": Maglietta manica corta di cotone, collezione 
-		Primavera-Estate 2011 by StilistaOne, disponibile nelle taglie S e M, nei colori rosso,
-		fucsia e verde a strisce blu orizzontali, taglio femminile.\\
-		& ""Maglietta Styling AI2010"": Maglietta sintetica manica lunga, collezione Autunno-Inverno
-		2010 by Styling, nera, disponibile nelle taglie XS, S, M, L, XL e XXL, nei tagli maschile e 
-		femminile. Presenta ""Logo Styling"" in stampa piccola anteriore e stampa ""Paesaggio natalizio""
-		sul retro.\\
+		Istanze Campione & \begin{description} \item Tema: Animali
+		\item Tema: Natale
+		\end{description}\\
 		\hline
-		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& Nome(string): nome descrittivo della maglietta con il quale questa viene riferita sui
-		documenti (ordine, DDT, fattura)\\
-		& Descrizione(text): descrizione dettagliata della maglietta con accezioni commerciali e 
-		spiegazioni enerenti la maglietta\\
-		& Manica(string): tipo di manica della maglietta (lunga, corta, tre-quarti, senza maniche)\\
-		& Collo(string): tipo di collo della maglietta (Es: collo a V, girocollo, etc..)\\
-		& StampabileFronte(boolean): possibilità di scelta di una stampa sul fronte della maglietta
-		in fase di configurazione\\
-		& StampabileRetro(boolean): possibilità di scelta di una stampa sul Retro della maglietta
-		in fase di configurazione\\
-		& Materiale(string): tipo di materiale di cui è composta la maglietta (Es: cotone, sintetico, etc..)\\
-		& Prezzo(float)\\
+		Proprietà & \begin{description} \item Nome (string)
+		\end{description}\\
 		\hline
-		Relazioni & Maglietta-Colore\\
-		& Maglietta-Taglia\\
-		& Maglietta-Sesso\\
-		& Maglietta-Foto\\
-		& Maglietta-Configurazione\\
+		Relazioni & \begin{description} \item Tema - Stampa
+		\end{description}\\
 		\hline
-		Componenti & Colore\\
-		& Taglia\\
-		& Sesso\\
-		& Foto\\
-		& Stampa\\
-		\hline
-		Super-concetti & \\
-		\hline
-		Sotto-concetti & Template\\
-		\hline
-	\end{longtable}
-\end{center}
-
-\newpage
-\subsubsection{Configurazione:}
-\begin{center}
-	\begin{longtable}{|l|p{0.7\columnwidth}|}
-		\hline
-		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Configurazione}\\
-		\hline
-		Sinonimi & Prodotto Completo, Prodotto, Configurazione \\
-		\hline
-		Descrizione & Configurazione di una maglietta avente tutte le caratteristiche definite incluse
-		le eventuali stampe, adatta ad essere ordinata.\\
-		\hline
-		Istanze Campione & T-shirt classica colore verde, taglia M, da uomo, senza stampe\\
-		& Polo manica lunga rosa, taglia L, da uomo, con stampa sul retro ""Logo Rugby Brescia""\\
-		\hline
-		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& DimensioneFronte(float): dimensione della stampa scelta del fronte\\
-		& DimensioneRetro(float): dimensione della stampa scelta del retro\\
-		\hline
-		Relazioni & Configurazione-Maglietta\\
-		& Configurazione-Stampa (stampa sul fronte)\\
-		& Configurazione-Stampa (stampa sul retro)\\
-		& Configurazione-Colore\\
-		& Configurazione-Taglia\\
-		& Configurazione-Sesso\\
-		& Configurazione-RigaOrdine\\
-		\hline
-		Componenti & Maglietta\\
-		& Stampa\\
-		& Taglia\\
-		& Colore\\
-		& Sesso\\
+		Componenti & \\
 		\hline
 		Super-concetti & \\
 		\hline
@@ -1286,8 +1372,269 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 	\end{longtable}
 \end{center}
 
-\newpage
-\subsubsection{Riga di un Ordine:}
+\subsection{Maglietta}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Maglietta}\\
+		\hline
+		Sinonimi & T-shirt \\
+		\hline
+		Descrizione & Tipo di maglietta disponibile per la personalizzazione in una o più delle sue
+		caratteristiche e per l'acquisto. Le caratteristiche della maglietta sono la disponibilità
+		in diverse taglie, colori e sesso e la possibilità di avere già associate o meno una o due 
+		stampe. Può inoltre essere o meno personalizzabile con stampe scelte dal cliente su fronte 
+		e/o retro indipendentemente.\\
+		\hline
+		Istanze Campione & \begin{description} \item ""StilistaOne PE2011"": Maglietta manica corta 
+		di cotone, collezione Primavera-Estate 2011 by StilistaOne, disponibile nelle taglie S e M, 
+		nei colori rosso, fucsia e verde a strisce blu orizzontali, taglio femminile.
+		\item ""Maglietta Styling AI2010"": Maglietta sintetica manica lunga, collezione Autunno-Inverno
+		2010 by Styling, nera, disponibile nelle taglie XS, S, M, L, XL e XXL, nei tagli maschile e 
+		femminile. Presenta ""Logo Styling"" in stampa piccola anteriore e stampa ""Paesaggio natalizio""
+		sul retro.
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Nome(string): nome descrittivo della maglietta con il quale questa viene riferita sui
+		documenti (ordine, DDT, fattura)
+		\item Descrizione(text): descrizione dettagliata della maglietta con accezioni commerciali e 
+		spiegazioni inerenti la maglietta
+		\item Manica(string): tipo di manica della maglietta (Es:lunga, corta, tre-quarti, senza maniche)
+		\item Collo(string): tipo di collo della maglietta (Es: collo a V, girocollo, etc..)
+		\item StampabileFronte(boolean): possibilità di scelta di una stampa sul fronte della maglietta
+		in fase di configurazione
+		\item StampabileRetro(boolean): possibilità di scelta di una stampa sul retro della maglietta
+		in fase di configurazione
+		\item Materiale(string): tipo di materiale di cui è composta la maglietta (Es: cotone, sintetico, etc..)
+		\item Prezzo(float)
+		\item isActive(boolean): se true la maglietta è visualizzata dagli utenti finali
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Maglietta-Colore
+		\item Maglietta-Taglia
+		\item Maglietta-Sesso
+		\item Maglietta-Foto
+		\item Maglietta-Configurazione
+		\end{description}\\
+		\hline
+		Componenti & \begin{description} \item Colore
+		\item Taglia
+		\item Sesso
+		\item Foto
+		\item Stampa
+		\end{description}\\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & Template\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Colore}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Colore}\\
+		\hline
+		Sinonimi &  \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \begin{description} \item Rosso FF0000
+		\item Verde pastello 82FFCA
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Nome (string) 
+		\item ValoreEsadecimale (string)
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Colore - Maglietta
+		\item Colore - Foto
+		\item Colore - Configurazione
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Sesso}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Sesso}\\
+		\hline
+		Sinonimi &  \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \begin{description} \item Femmina
+		\item Maschio
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item Nome (string)
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Sesso - Foto
+		\item Sesso - Maglietta
+		\item Sesso - Configurazione
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Taglia}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Taglia}\\
+		\hline
+		Sinonimi &  \\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \begin{description} \item Small
+		\item Extra Large
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item Nome (string)
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Taglia - Configurazione
+		\item Taglia - Maglietta
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Foto}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Foto}\\
+		\hline
+		Sinonimi &  Immagine esempio\\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \begin{description} \item Immagine della maglietta maniche corte, 
+		girocollo, colore rosso, sesso femmina
+		\item Immagine dalla maglietta maniche lunghe, collo a V, colore verde, sesso maschio
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item Commento (text)
+		\item Immagine (blob-image)
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Foto - Colore
+		\item Foto - Sesso
+		\item Foto - Maglietta
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Template}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Template}\\
+		\hline
+		Sinonimi &  Offerta, Proposta\\
+		\hline
+		Descrizione & \\
+		\hline
+		Istanze Campione & \begin{description} \item 
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item DimensioneFronte (float)
+		\item DimensionRetro (float)
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Template - Stampa (stampa sul fronte)
+		\item Template - Stampa (stampa sul retro)
+		\end{description}\\
+		\hline
+		Componenti & \\
+		\hline
+		Super-concetti & Maglietta\\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Configurazione}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Configurazione}\\
+		\hline
+		Sinonimi & Prodotto Completo, Personalizzazione \\
+		\hline
+		Descrizione & Configurazione di una maglietta avente tutte le caratteristiche definite incluse
+		le eventuali stampe, adatta ad essere ordinata.\\
+		\hline
+		Istanze Campione & \begin{description} \item T-shirt classica colore verde, taglia M, da uomo,
+		senza stampe
+		\item Polo manica lunga rosa, taglia L, da uomo, con stampa sul retro ""Logo Rugby Brescia""
+		\end{description}\\
+		\hline
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item DimensioneFronte(float): dimensione della stampa scelta del fronte
+		\item DimensioneRetro(float): dimensione della stampa scelta del retro
+		\end{description}\\
+		\hline
+		Relazioni & \begin{description} \item Configurazione-Maglietta
+		\item Configurazione-Stampa (stampa sul fronte)
+		\item Configurazione-Stampa (stampa sul retro)
+		\item Configurazione-Colore
+		\item Configurazione-Taglia
+		\item Configurazione-Sesso
+		\item Configurazione-RigaOrdine
+		\end{description}\\
+		\hline
+		Componenti & \begin{description} \item Maglietta
+		\item Stampa
+		\item Taglia
+		\item Colore
+		\item Sesso
+		\end{description}\\
+		\hline
+		Super-concetti & \\
+		\hline
+		Sotto-concetti & \\
+		\hline
+	\end{longtable}
+\end{center}
+
+
+\subsection{Riga di un Ordine}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -1298,17 +1645,21 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione & Elemento base di un ordine o carrello. Ogni riga d'ordine contiene una 
 		configurazione dell'utente e ne specifica la quantità desiderata.\\
 		\hline
-		Istanze Campione & 5 ""Maglietta Styling AI2010"" colore nero, taglia L, sesso M\\
-		& 2 ""StilistaOne PE2011"" + ""Gioconda"" fronte dimensione grande, colore rosso, taglia M,
-		sesso F\\
+		Istanze Campione & \begin{description} \item 5 ""Maglietta Styling AI2010"" colore nero, 
+		taglia L, da uomo
+		\item 2 ""StilistaOne PE2011"" + ""Gioconda"" fronte dimensione grande, colore rosso, taglia M,
+		da donna
+		\end{description}\\
 		\hline
-		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& PrezzoSingolo(float): prezzo della singolo pezzo della riga dell'ordine\\
-		& Quantità(integer): quantità ordinata di un singolo pezzo per riga dell'ordine\\
-		& PrezzoTotale(float)\\
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item PrezzoSingolo(float): prezzo della singolo pezzo della riga dell'ordine
+		\item Quantità(integer): quantità ordinata di un singolo pezzo per riga dell'ordine
+		\item PrezzoTotale(float)
+		\end{description}\\
 		\hline
-		Relazioni & RigaOrdine-Configurazione\\
-		& RigaOrdine-Ordine\\
+		Relazioni & \begin{description} \item RigaOrdine-Configurazione
+		\item RigaOrdine-Ordine
+		\end{description}\\
 		\hline
 		Componenti & Configurazione\\
 		\hline
@@ -1319,8 +1670,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 	\end{longtable}
 \end{center}
 
-\newpage
-\subsubsection{Ordine:}
+\subsection{Ordine}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -1330,22 +1680,26 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione & Insieme di righe d'ordine pronte per l'acquisto o acquistate\\
 		\hline
-		Istanze Campione & n° ordine 13 di Mario Rossi del 15/09/2011 ore 10.15; stato: IN STAMPA. 
-		Preso in carico il 17/09/2011 ore 11.15 da Addetto15\\
-		& n° ordine 42 di Federica Bianchi del 19/10/2011 ore 17.19; stato: CARRELLO/PREORDINE.\\
+		Istanze Campione & \begin{description} \item n° ordine 13 di Mario Rossi del 15/09/2011 ore 
+		10.15; stato: IN GESTIONE. Preso in carico il 17/09/2011 ore 11.15 da Addetto15
+		\item n° ordine 42 di Federica Bianchi del 19/10/2011 ore 17.19; stato: CARRELLO/PREORDINE.
+		\end{description}\\
 		\hline
-		Proprietà & OID: chiave univova dell'entità considerata\\
-		& DataOraConferma(timestamp): data e ora di conferma dell'ordine da parte dell'utente\\
-		& DataOraPresaInCarico(timestamp): data e ora di presa in carico dell'ordine da parte di un operaio
-		stampatore\\
-		& DataOraSpedizione(timestamp): data e ora della consegna dell'ordine allo spedizioniere\\
-		& PrezzoTotale(float): prezzo totale dell'ordine\\
-		& SpeseSpedizione(float)\\
-		& Stato(string): descrizione dello stato dell'ordine (ES: in stampa, in spedizione, etc..)\\
+		Proprietà & \begin{description} \item OID: chiave univova dell'entità considerata
+		\item DataOraConferma(timestamp): data e ora di conferma dell'ordine da parte dell'utente
+		\item DataOraPresaInCarico(timestamp): data e ora di presa in carico dell'ordine da parte di
+		un operaio stampatore
+		\item DataOraSpedizione(timestamp): data e ora della consegna dell'ordine allo spedizioniere
+		\item PrezzoTotale(float): prezzo totale dell'ordine
+		\item SpeseSpedizione(float)
+		\item Stato(string): descrizione dello stato dell'ordine
+		\item Tracking(string): numero della spedizione
+		\end{description}\\
 		\hline
-		Relazioni & Ordine-Utente (Cliente)\\
-		& Ordine-Utente (Operaio Stampatore)\\
-		& Ordine-RigaOrdine\\
+		Relazioni & \begin{description} \item Ordine-Utente (Cliente)
+		\item Ordine-Utente (Operaio Stampatore)
+		\item Ordine-RigaOrdine
+		\end{description}\\
 		\hline
 		Componenti & RigaOrdine\\
 		\hline
@@ -1356,8 +1710,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 	\end{longtable}
 \end{center}
 
-\newpage
-\subsubsection{Pagina:}
+\subsection{Pagina}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
@@ -1367,12 +1720,15 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione & Pagina web statica per rappresentazione delle informazioni al pubblico\\
 		\hline
-		Istanze Campione & Pagina descrittiva dell'azienda\\
-		& Pagina dei contatti\\
+		Istanze Campione & \begin{description} \item Pagina descrittiva dell'azienda
+		\item Pagina dei contatti
+		\end{description}\\
 		\hline
-		Proprietà & OID: chiave univoca dell'entità considerata\\
-		& Titolo(string)\\
-		& TestoHTML(text)\\
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Titolo(string)
+		\item TestoHTML(text)
+		\item Home(boolean): se true la pagina informativa verrà visualizzata nella Home Page
+		\end{description}\\
 		\hline
 		Relazioni & \\
 		\hline
@@ -1399,16 +1755,16 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione & Site view che contiene le pagine dedicate agli utenti visitatori non registrati
 		o non loggati al sito. Tramite un menù si possono consultare i prodotti (magliette e stampe)
 		disponibili e le pagine informative. C'è inoltre un apposito form per effettuare il login se
-		l'utente possiede già le credenziali o registrarsi come nuovo utente.\\
+		l'utente possiede già le credenziali e la possibilità di registrarsi come nuovo utente.\\
 		\hline
 		Gruppi d'Utente & Utente non Registrato\\
 		\hline
-		Caso d'Uso & ""Login""\\
-		& ""Registrazione""\\
-		& ""Consultazione Magliette disponibili""\\
-		& ""Consultazione Stampe diponibili""\\
-		& ""Consultazione Pagine Informative""\\
-		& \\
+		Caso d'Uso & \begin{description} \item ""Registrazione""
+		\item ""Login""
+		\item ""Consultazione Magliette disponibili""
+		\item ""Consultazione Stampe diponibili""
+		\item ""Consultazione Pagine Informative""
+		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Home Page}\\
 		\hline
@@ -1428,7 +1784,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione Area & Permette di sfogliare il catalogo, individuare un particolare prodotto e
 		quindi consultare i dettagli dei singoli prodotti offerti.\\
 		\hline
-		Oggetti & Maglietta con tutte le relazioni composte e Stampa\\
+		Oggetti & Maglietta con tutte le relazioni composte e la specializzazione Template e Stampa\\
 		\hline
 		Priorità & \\
 		\hline
@@ -1463,17 +1819,18 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Gruppi d'Utente & Utente Registrato: Cliente\\
 		\hline
-		Caso d'Uso & Logout\\
-		& Modifica Account\\
-		& Consultazione Magliette disponibili\\
-		& Consultazione Stampe disponibili\\
-		& Consultazione Pagine Informative\\
-		& Personalizzazione dei Prodotti\\
-		& Aggiunta prodotto al Carrello\\
-		& Modifica - Conferma Carrello\\
-		& Consultazione Dettaglio dell'Ordine\\
-		& Annulla Ordine\\
-		& \\
+		Caso d'Uso & \begin{description} \item Logout
+		\item Modifica Account
+		\item Consultazione Magliette disponibili
+		\item Consultazione Stampe disponibili
+		\item Consultazione Pagine Informative
+		\item Personalizzazione dei Prodotti
+		\item Aggiunta prodotto al Carrello
+		\item Visualizzazione - Modifica - Conferma Carrello
+		\item Conferma Carrello
+		\item Visualizzazione dell'Ordine
+		\item Annulla Ordine
+		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Web Market}\\
 		\hline
@@ -1485,7 +1842,8 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		modo comporre il proprio carrello della spesa e, una volta definitivo, darne conferma 
 		trasformandolo in un ordine.\\
 		\hline
-		Oggetti & Maglietta con tutte le relazioni composte, Stampa, Personalizzazione, Ordine\\
+		Oggetti & Maglietta con tutte le relazioni composte e la specializzazione Template, Stampa, 
+		Configurazione, Ordine\\
 		\hline
 		Priorità & \\
 		\hline
@@ -1507,7 +1865,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		l'archivio storico dei suoi ordini. Per ordini già confermati dal clienti, ma non ancora 
 		presi in carico, esiste qui la possibilità di annullarli.\\
 		\hline
-		Oggetti & Ordine, Maglietta, Personalizzazione, Stampa\\
+		Oggetti & Ordine, Maglietta, Configurazione, Stampa\\
 		\hline
 		Priorità & \\
 		\hline
@@ -1539,22 +1897,24 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Gruppi d'Utente & Utente Registrato: Operaio Stampatore\\
 		\hline
-		Caso d'Uso & Logout\\
-		& Modifica Account\\
-		& Prendere in carico un ordine\\
-		& Conferma spedizione dell'ordine\\
-		& \\
+		Caso d'Uso & \begin{description} \item Logout
+		\item Modifica Account
+		\item Visualizzazione Ordini ""Da Gestire"" 
+		\item Prendere in carico un ordine
+		\item Visualizzazione Ordini ""In Gestione""
+		\item Conferma spedizione dell'ordine
+		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Ordini}\\
 		\hline
 		Nome Area & Gestione Ordini\\
 		\hline
 		Descrizione Area & Tramite le pagine di quest'area, è possibile visualizzare l'elenco degli 
-		ordini in attesa di essere gestiti uniti a quelli già presi in carico dall'operaio stampatore
+		ordini in attesa di essere gestiti e quelli già presi in carico dall'operaio stampatore
 		che ha effettuato login. L'utente può visualizzare il dettaglio dei singoli ordini e gestirne
 		lo stato, dalla presa in carico alla spedizione.\\
 		\hline
-		Oggetti & Ordine, Personalizzazione, Maglietta, Stampa, Cliente\\
+		Oggetti & Ordine, Configurazione, Maglietta, Stampa, Cliente\\
 		\hline
 		Priorità & \\
 		\hline
@@ -1589,13 +1949,17 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Gruppi d'Utente & Utente Registrato: Amministratore\\
 		\hline
-		Caso d'Uso & Logout\\
-		& Creazione-Modifica-Cancellazione Account Utente\\
-		& Inserimento-Modifica-Cancellazione Pagine Informative\\
-		& Inserimento-Modifica-Cancellazione Maglietta\\
-		& Inserimento-Modifica-Cancellazione Stampa\\
-		& Visualizzazione Dettagli Ordine\\
-		& \\
+		Caso d'Uso & \begin{description} \item Logout
+		\item Consultazione elenco Utenti
+		\item Creazione-Modifica-Cancellazione Account Utente
+		\item Consultazione elenco Pagine Informative
+		\item Inserimento-Modifica-Cancellazione Pagine Informative
+		\item Consultazione elenco Magliette
+		\item Inserimento-Modifica-Cancellazione Maglietta
+		\item Consultazione elenco Stampe
+		\item Inserimento-Modifica-Cancellazione Stampa
+		\item Visualizzazione Dettagli Ordine
+		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Accounts}\\
 		\hline
@@ -1641,7 +2005,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		ordini effettuati dai clienti visualizzando tra l'altro anche chi ha gestito ogni singolo 
 		ordine e i tempi di lavorazione.\\
 		\hline
-		Oggetti & Utente, Ordine, Personalizzazione, Maglietta, Stampa\\
+		Oggetti & Utente, Ordine, Configurazione, Maglietta, Stampa\\
 		\hline
 		Priorità & \\
 		\hline
