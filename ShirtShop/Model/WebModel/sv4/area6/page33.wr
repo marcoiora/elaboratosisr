@@ -22,19 +22,19 @@
         <LinkParameter id="sv4#area6#page33#enu10#ln139#par47" name="Collo_collo" source="sv4#area6#page33#enu10#fld52" target="sv4#area6#page30#inu14#su25#acond2"/>
       </Link>
       <Link id="sv4#area6#page33#enu10#ln48" name="Salva" to="sv4#area6#miu2" type="normal" validate="true">
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par152" name="Collo_collo" source="sv4#area6#page33#enu10#fld52" target="sv4#area6#miu2.mov1#opm3#icu3#icp22"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par153" name="Colori disponibili_colori" source="sv4#area6#page33#enu10#msfld15" target="sv4#area6#miu2.mov1#opm3#icu3#icp19"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par154" name="Descrizione_descrizione" source="sv4#area6#page33#enu10#fld50" target="sv4#area6#miu2.mov1#opm3#icu3#icp18"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par155" name="Manica_manica" source="sv4#area6#page33#enu10#fld51" target="sv4#area6#miu2.mov1#opm3#icu3#icp16"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par156" name="Materiale_materiale" source="sv4#area6#page33#enu10#fld55" target="sv4#area6#miu2.mov1#opm3#icu3#icp24"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par157" name="Nome_nome" source="sv4#area6#page33#enu10#fld49" target="sv4#area6#miu2.mov1#opm3#icu3#icp14"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par158" name="Prezzo_prezzo" source="sv4#area6#page33#enu10#fld56" target="sv4#area6#miu2.mov1#opm3#icu3#icp21"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par159" name="Sessi disponibili_sessi" source="sv4#area6#page33#enu10#msfld14" target="sv4#area6#miu2.mov1#opm3#icu3#icp17"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par160" name="Permetti Stampa Fronte_stampabileFronte" source="sv4#area6#page33#enu10#fld53" target="sv4#area6#miu2.mov1#opm3#icu3#icp20"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par162" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page33#enu10#fld54" target="sv4#area6#miu2.mov1#opm3#icu3#icp25"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par170" name="Taglie disponibili_taglie" source="sv4#area6#page33#enu10#msfld13" target="sv4#area6#miu2.mov1#opm3#icu3#icp15"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par176" name="oid_PASSING_oid" sourceLinkParameter="sv4#area6#page33#seu16#ln126#par171" target="sv4#area6#miu2.mov1#opm3#icu3#icp26"/>
-        <LinkParameter id="sv4#area6#page33#enu10#ln48#par206" name="Attiva_isactive" source="sv4#area6#page33#enu10#fld25" target="sv4#area6#miu2.mov1#opm3#icu3#icp23"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par152" name="Collo_collo" source="sv4#area6#page33#enu10#fld52" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp79"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par153" name="Colori disponibili_colori" source="sv4#area6#page33#enu10#msfld15" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp76"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par154" name="Descrizione_descrizione" source="sv4#area6#page33#enu10#fld50" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp75"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par155" name="Manica_manica" source="sv4#area6#page33#enu10#fld51" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp73"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par156" name="Materiale_materiale" source="sv4#area6#page33#enu10#fld55" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp81"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par157" name="Nome_nome" source="sv4#area6#page33#enu10#fld49" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp71"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par158" name="Prezzo_prezzo" source="sv4#area6#page33#enu10#fld56" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp78"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par159" name="Sessi disponibili_sessi" source="sv4#area6#page33#enu10#msfld14" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp74"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par160" name="Permetti Stampa Fronte_stampabileFronte" source="sv4#area6#page33#enu10#fld53" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp77"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par162" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page33#enu10#fld54" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp82"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par170" name="Taglie disponibili_taglie" source="sv4#area6#page33#enu10#msfld13" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp72"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par176" name="oid_PASSING_oid" sourceLinkParameter="sv4#area6#page33#seu16#ln126#par171" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp83"/>
+        <LinkParameter id="sv4#area6#page33#enu10#ln48#par206" name="Attiva_isactive" source="sv4#area6#page33#enu10#fld25" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp80"/>
       </Link>
       <Field id="sv4#area6#page33#enu10#fld25" name="Attiva" type="boolean" modifiable="true" preloaded="true"/>
     </EntryUnit>
@@ -65,7 +65,7 @@
         <LinkParameter id="sv4#area6#page33#seu16#ln51#par204" name="oid_maglietta_oid" source="ent1#att1Array" target="sv4#area6#stu1.ctx1"/>
       </Link>
       <Link id="sv4#area6#page33#seu16#ln75" name="Link75" to="sv4#area6#miu3" type="transport" validate="true">
-        <LinkParameter id="sv4#area6#page33#seu16#ln75#par223" name="oid_oid" source="ent1#att1Array" target="sv4#area6#miu3.mov1#opm1#icu1#icp3"/>
+        <LinkParameter id="sv4#area6#page33#seu16#ln75#par223" name="oid_oid" source="ent1#att1Array" target="sv4#area6#miu3.mov1#mpkg1#opm9#icu10#icp68"/>
       </Link>
     </SelectorUnit>
     <SelectorUnit gr:x="171" gr:y="0" id="sv4#area6#page33#seu17" name="Colori" entity="ent2">

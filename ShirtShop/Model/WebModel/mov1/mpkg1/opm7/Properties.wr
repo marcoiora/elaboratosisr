@@ -1,0 +1,85 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm7" name="Salva Template" gr:x="0" gr:y="130">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm7#icu7" name="Input Collector" gr:x="-40" gr:y="-100">
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp42" name="nome"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp43" name="taglie"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp44" name="manica"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp45" name="sessi"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp46" name="descrizione"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp47" name="colori"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp48" name="stampabileFronte"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp49" name="prezzo"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp50" name="collo"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp51" name="isactive"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp52" name="materiale"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp53" name="stampabileRetro"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp54" name="oid"/>
+      <Link id="mov1#mpkg1#opm7#icu7#ln53" name="Link18" to="mov1#mpkg1#opm7#inn8" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln53#par32" name="oid_Input" source="mov1#mpkg1#opm7#icu7#icp54" target="mov1#mpkg1#opm7#inn8.isnotnull"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln54" name="Link26" to="mov1#mpkg1#opm7#opg10#mfu8" type="transport" validate="true" gr:bendpoints="141,-81,-187,0">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par33" name="collo_collo" source="mov1#mpkg1#opm7#icu7#icp50" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att5"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par34" name="descrizione_descrizione" source="mov1#mpkg1#opm7#icu7#icp46" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att3"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par35" name="isactive_isactive" source="mov1#mpkg1#opm7#icu7#icp51" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att10"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par36" name="manica_manica" source="mov1#mpkg1#opm7#icu7#icp44" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att4"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par37" name="materiale_materiale" source="mov1#mpkg1#opm7#icu7#icp52" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att8"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par38" name="nome_nome" source="mov1#mpkg1#opm7#icu7#icp42" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att2"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par39" name="prezzo_prezzo" source="mov1#mpkg1#opm7#icu7#icp49" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att9"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par40" name="stampabileFronte_stampabileFronte" source="mov1#mpkg1#opm7#icu7#icp48" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att6"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par42" name="stampabileRetro_stampabileRetro" source="mov1#mpkg1#opm7#icu7#icp53" target="mov1#mpkg1#opm7#opg10#mfu8.ent1#att7"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par49" name="dimensioneFronte_dimensioneFronte" source="mov1#mpkg1#opm7#icu7#icp55" target="mov1#mpkg1#opm7#opg10#mfu8.ent13#att51"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par50" name="dimensioneRetro_dimensioneRetro" source="mov1#mpkg1#opm7#icu7#icp56" target="mov1#mpkg1#opm7#opg10#mfu8.ent13#att52"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par51" name="stampaFronte_oid_Stampa.oid(TemplateToStampaFronte)" source="mov1#mpkg1#opm7#icu7#icp57" target="mov1#mpkg1#opm7#opg10#mfu8.rel22#role43.ent6#att22"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln54#par52" name="stampaRetro_oid_Stampa.oid(TemplateToStampaRetro)" source="mov1#mpkg1#opm7#icu7#icp58" target="mov1#mpkg1#opm7#opg10#mfu8.rel23#role45.ent6#att22"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln55" name="Link32" to="mov1#mpkg1#opm7#opg11#cru7" type="transport" validate="true" gr:bendpoints="141,84,-181,-1">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par53" name="collo_collo" source="mov1#mpkg1#opm7#icu7#icp50" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att5"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par54" name="descrizione_descrizione" source="mov1#mpkg1#opm7#icu7#icp46" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att3"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par55" name="isactive_isactive" source="mov1#mpkg1#opm7#icu7#icp51" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att10"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par56" name="manica_manica" source="mov1#mpkg1#opm7#icu7#icp44" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att4"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par60" name="materiale_materiale" source="mov1#mpkg1#opm7#icu7#icp52" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att8"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par63" name="nome_nome" source="mov1#mpkg1#opm7#icu7#icp42" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att2"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par66" name="prezzo_prezzo" source="mov1#mpkg1#opm7#icu7#icp49" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att9"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par68" name="stampabileFronte_stampabileFronte" source="mov1#mpkg1#opm7#icu7#icp48" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att6"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par71" name="stampabileRetro_stampabileRetro" source="mov1#mpkg1#opm7#icu7#icp53" target="mov1#mpkg1#opm7#opg11#cru7.ent1#att7"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par72" name="dimensioneFronte_dimensioneFronte" source="mov1#mpkg1#opm7#icu7#icp55" target="mov1#mpkg1#opm7#opg11#cru7.ent13#att51"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par73" name="dimensioneRetro_dimensioneRetro" source="mov1#mpkg1#opm7#icu7#icp56" target="mov1#mpkg1#opm7#opg11#cru7.ent13#att52"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par74" name="stampaFronte_oid_Stampa.oid(TemplateToStampaFronte)" source="mov1#mpkg1#opm7#icu7#icp57" target="mov1#mpkg1#opm7#opg11#cru7.rel22#role43.ent6#att22"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln55#par75" name="stampaRetro_oid_Stampa.oid(TemplateToStampaRetro)" source="mov1#mpkg1#opm7#icu7#icp58" target="mov1#mpkg1#opm7#opg11#cru7.rel23#role45.ent6#att22"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln57" name="Link33" to="mov1#mpkg1#opm7#opg11#cnu3" type="transport" validate="true" gr:bendpoints="137,236,-347,73;374,238,-110,75">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln57#par76" name="colori_KeyCondition14 [oid] [Colore] [Target]" source="mov1#mpkg1#opm7#icu7#icp47" target="mov1#mpkg1#opm7#opg11#cnu3#su31#kcond21.ent2#att12"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln61" name="Link37" to="mov1#mpkg1#opm7#opg11#cnu4" type="transport" validate="true" gr:bendpoints="124,246,-505,83;509,201,-120,107">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln61#par77" name="taglie_KeyCondition16 [oid] [Taglia] [Target]" source="mov1#mpkg1#opm7#icu7#icp43" target="mov1#mpkg1#opm7#opg11#cnu4#su33#kcond23.ent3#att15"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln62" name="Link39" to="mov1#mpkg1#opm7#opg11#cnu5" type="transport" validate="true" gr:bendpoints="115,254,-664,91;664,260,-93,97">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln62#par78" name="sessi_KeyCondition18 [oid] [Sesso] [Target]" source="mov1#mpkg1#opm7#icu7#icp45" target="mov1#mpkg1#opm7#opg11#cnu5#su35#kcond25.ent4#att17"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln65" name="Link40" to="mov1#mpkg1#opm7#opg10#rcnu5" type="transport" validate="true" gr:bendpoints="136,-284,-308,-108;356,-283,-88,-107">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln65#par83" name="colori_KeyCondition33 [oid] [Colore] [ConnectTarget]" source="mov1#mpkg1#opm7#icu7#icp47" target="mov1#mpkg1#opm7#opg10#rcnu5#su22#kcond15.ent2#att12"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln66" name="Link44" to="mov1#mpkg1#opm7#opg10#rcnu6" type="transport" validate="true" gr:bendpoints="133,-291,-461,-115;430,-292,-164,-116">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln66#par84" name="taglie_KeyCondition35 [oid] [Taglia] [ConnectTarget]" source="mov1#mpkg1#opm7#icu7#icp43" target="mov1#mpkg1#opm7#opg10#rcnu6#su27#kcond17.ent3#att15"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln67" name="Link47" to="mov1#mpkg1#opm7#opg10#rcnu7" type="transport" validate="true" gr:bendpoints="129,-305,-615,-129;596,-303,-148,-127">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln67#par89" name="sessi_KeyCondition37 [oid] [Sesso] [ConnectTarget]" source="mov1#mpkg1#opm7#icu7#icp45" target="mov1#mpkg1#opm7#opg10#rcnu7#su29#kcond19.ent4#att17"/>
+      </Link>
+      <OKLink id="mov1#mpkg1#opm7#icu7#oln8" name="OKLink33" to="mov1#mpkg1#opm7#inn8" automaticCoupling="true" gr:bendpoints="79,13,-89,16"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp55" name="dimensioneFronte"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp56" name="dimensioneRetro"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp57" name="stampaFronte_oid"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp58" name="stampaRetro_oid"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#mpkg1#opm7#okcu8" name="OK Collector" gr:x="850" gr:y="0">
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#okcu8#ocp3" name="oid"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov1#mpkg1#opm7#kocu7" name="KO Collector" gr:x="500" gr:y="10"/>
+    <IsNotNullUnit id="mov1#mpkg1#opm7#inn8" name="modify or save new?" gr:x="120" gr:y="20">
+      <OKLink id="mov1#mpkg1#opm7#inn8#oln9" name="OKLink25" to="mov1#mpkg1#opm7#opg10#mfu8">
+        <LinkParameter id="mov1#mpkg1#opm7#inn8#oln9#par93" name="Input Value_KeyCondition31 [oid]" source="inputValue" target="mov1#mpkg1#opm7#opg10#mfu8#su20#kcond13.ent1#att1"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#opm7#inn8#kln16" name="KOLink23" to="mov1#mpkg1#opm7#opg11#cru7" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

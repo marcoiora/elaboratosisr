@@ -1,0 +1,43 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm12#opg18" name="Salva Modifiche" transaction="true" gr:x="270" gr:y="-210">
+  <OperationUnits>
+    <ModifyUnit id="mov1#mpkg1#opm12#opg18#mfu10" name="Maglietta" gr:x="0" gr:y="9" entity="ent1">
+      <Selector id="mov1#mpkg1#opm12#opg18#mfu10#su87" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#mfu10#su87#kcond57" name="KeyCondition31" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm12#opg18#mfu10#oln65" name="OKLink27" to="mov1#mpkg1#opm12#opg18#rcnu9" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm12#opg18#mfu10#kln58" name="KOLink24" to="mov1#mpkg1#opm12#kocu12" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ReconnectUnit id="mov1#mpkg1#opm12#opg18#rcnu9" name="Maglietta_Colore" gr:x="112" gr:y="0" relationship="rel1#role1">
+      <SourceSelector id="mov1#mpkg1#opm12#opg18#rcnu9#su88" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#rcnu9#su88#kcond58" name="KeyCondition32" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#mpkg1#opm12#opg18#rcnu9#su89" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#rcnu9#su89#kcond59" name="KeyCondition33" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#mpkg1#opm12#opg18#rcnu9#oln66" name="OKLink28" to="mov1#mpkg1#opm12#opg18#rcnu10" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm12#opg18#rcnu9#kln59" name="KOLink25" to="mov1#mpkg1#opm12#kocu12" automaticCoupling="true"/>
+    </ReconnectUnit>
+    <ReconnectUnit id="mov1#mpkg1#opm12#opg18#rcnu10" name="Maglietta_Taglia" gr:x="262" gr:y="0" relationship="rel3#role5">
+      <SourceSelector id="mov1#mpkg1#opm12#opg18#rcnu10#su90" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#rcnu10#su90#kcond60" name="KeyCondition34" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#mpkg1#opm12#opg18#rcnu10#su91" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#rcnu10#su91#kcond61" name="KeyCondition35" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#mpkg1#opm12#opg18#rcnu10#oln67" name="OKLink29" to="mov1#mpkg1#opm12#opg18#rcnu11" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm12#opg18#rcnu10#kln60" name="KOLink26" to="mov1#mpkg1#opm12#kocu12" automaticCoupling="true"/>
+    </ReconnectUnit>
+    <ReconnectUnit id="mov1#mpkg1#opm12#opg18#rcnu11" name="Maglietta_Sesso" gr:x="412" gr:y="0" relationship="rel4#role7">
+      <SourceSelector id="mov1#mpkg1#opm12#opg18#rcnu11#su92" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#rcnu11#su92#kcond62" name="KeyCondition36" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#mpkg1#opm12#opg18#rcnu11#su93" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm12#opg18#rcnu11#su93#kcond63" name="KeyCondition37" predicate="in" implied="false"/>
+      </TargetSelector>
+      <KOLink id="mov1#mpkg1#opm12#opg18#rcnu11#kln61" name="KOLink27" to="mov1#mpkg1#opm12#kocu12" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm12#opg18#rcnu11#oln68" name="OKLink30" to="mov1#mpkg1#opm12#okcu14">
+        <LinkParameter id="mov1#mpkg1#opm12#opg18#rcnu11#oln68#par284" name="Source oid [Maglietta]_Source oid [Maglietta]" source="sourceent1#att1" target="mov1#mpkg1#opm12#okcu14#ocp11"/>
+      </OKLink>
+    </ReconnectUnit>
+  </OperationUnits>
+</OperationGroup>

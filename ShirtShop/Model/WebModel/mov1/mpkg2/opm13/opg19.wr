@@ -1,0 +1,18 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="-10" id="mov1#mpkg2#opm13#opg19" name="Operation Group 19" transaction="true">
+  <OperationUnits>
+    <SelectorUnit id="mov1#mpkg2#opm13#opg19#seu43" name="Carrello" gr:x="0" gr:y="0" entity="ent9">
+      <Selector id="mov1#mpkg2#opm13#opg19#seu43#su95" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#opm13#opg19#seu43#su95#rcond35" name="Cliente" predicate="in" implied="false" role="rel19#role38"/>
+        <AttributesCondition id="mov1#mpkg2#opm13#opg19#seu43#su95#acond8" name="AttCondition7" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="carrello"/>
+      </Selector>
+      <Link id="mov1#mpkg2#opm13#opg19#seu43#ln215" name="Link213" to="mov1#mpkg2#opm13#inn15" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#opm13#opg19#seu43#ln215#par291" name="oid_Input" source="ent9#att35Array" target="mov1#mpkg2#opm13#inn15.isnotnull"/>
+      </Link>
+    </SelectorUnit>
+    <CreateUnit id="mov1#mpkg2#opm13#opg19#cru14" name="Carrello" gr:x="410" gr:y="20" entity="ent9">
+      <OKLink id="mov1#mpkg2#opm13#opg19#cru14#oln72" name="OKLink71" to="mov1#mpkg2#opm13#okcu16">
+        <LinkParameter id="mov1#mpkg2#opm13#opg19#cru14#oln72#par292" name="oid_ordine_oid" source="ent9#att35Array" target="mov1#mpkg2#opm13#okcu16#ocp12"/>
+      </OKLink>
+    </CreateUnit>
+  </OperationUnits>
+</OperationGroup>

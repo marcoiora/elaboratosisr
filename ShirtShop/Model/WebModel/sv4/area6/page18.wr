@@ -9,13 +9,13 @@
       <Field id="sv4#area6#page18#enu7#fld36" name="Prezzo (a dimensione piena)" type="float" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page18#enu7#fld37" name="Attiva" type="boolean" modifiable="true" preloaded="true" ajaxEventEnabled="false"/>
       <Link id="sv4#area6#page18#enu7#ln91" name="Salva" to="sv4#area6#miu4" type="normal" validate="true">
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par225" name="Immagine anteprima/web_anteprima" source="sv4#area6#page18#enu7#fld34" target="sv4#area6#miu4.mov1#opm2#icu2#icp4"/>
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par226" name="Descrizione_descrizione" source="sv4#area6#page18#enu7#fld27" target="sv4#area6#miu4.mov1#opm2#icu2#icp2"/>
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par227" name="Immagine per stampa_immagineHd" source="sv4#area6#page18#enu7#fld35" target="sv4#area6#miu4.mov1#opm2#icu2#icp5"/>
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par228" name="Attiva_isActive" source="sv4#area6#page18#enu7#fld37" target="sv4#area6#miu4.mov1#opm2#icu2#icp9"/>
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par229" name="Nome_nome" source="sv4#area6#page18#enu7#fld26" target="sv4#area6#miu4.mov1#opm2#icu2#icp1"/>
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par230" name="Prezzo (a dimensione piena)_prezzo" source="sv4#area6#page18#enu7#fld36" target="sv4#area6#miu4.mov1#opm2#icu2#icp8"/>
-        <LinkParameter id="sv4#area6#page18#enu7#ln91#par231" name="Tema_temi" source="sv4#area6#page18#enu7#msfld7" target="sv4#area6#miu4.mov1#opm2#icu2#icp6"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par225" name="Immagine anteprima/web_anteprima" source="sv4#area6#page18#enu7#fld34" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp61"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par226" name="Descrizione_descrizione" source="sv4#area6#page18#enu7#fld27" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp60"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par227" name="Immagine per stampa_immagineHd" source="sv4#area6#page18#enu7#fld35" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp62"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par228" name="Attiva_isActive" source="sv4#area6#page18#enu7#fld37" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp66"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par229" name="Nome_nome" source="sv4#area6#page18#enu7#fld26" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp59"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par230" name="Prezzo (a dimensione piena)_prezzo" source="sv4#area6#page18#enu7#fld36" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp65"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par231" name="Tema_temi" source="sv4#area6#page18#enu7#msfld7" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp63"/>
       </Link>
     </EntryUnit>
     <SelectorUnit id="sv4#area6#page18#seu9" name="Temi disponibili" gr:x="9" gr:y="0" entity="ent14" distinctAttributes="ent14#att54 ent14#att53">

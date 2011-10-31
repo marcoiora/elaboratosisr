@@ -1,0 +1,31 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm11" name="Elimina Stampa" gr:x="290" gr:y="60">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm11#icu12" name="Input Collector" gr:x="0" gr:y="98">
+      <InputCollectorParameter id="mov1#mpkg1#opm11#icu12#icp70" name="oid"/>
+      <Link id="mov1#mpkg1#opm11#icu12#ln141" name="Link121" to="mov1#mpkg1#opm11#opg16#seu26" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln141#par147" name="oid_Stampa fronte [oid]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#seu26#su74#rcond19.ent6#att22"/>
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln141#par148" name="oid_Stampa retro [oid]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#seu26#su74#rcond24.ent6#att22"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm11#icu12#ln156" name="Link122" to="mov1#mpkg1#opm11#opg16#seu27" type="transport" validate="true" gr:bendpoints="148,-154,-318,-118;420,-156,-46,-120">
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln156#par149" name="oid_StampaFronte [oid]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#seu27#su75#rcond25.ent6#att22"/>
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln156#par150" name="oid_StampaRetro [oid]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#seu27#su75#rcond26.ent6#att22"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm11#icu12#ln157" name="Link124" to="mov1#mpkg1#opm11#opg16#seu28" type="transport" validate="true" gr:bendpoints="148,-163,-506,-151;564,-170,-90,-138">
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln157#par151" name="oid_Stampa [oid]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#seu28#su76#rcond27.ent6#att22"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm11#icu12#ln158" name="Link127" to="mov1#mpkg1#opm11#opg16#dcnu7" type="transport" validate="true" gr:bendpoints="163,201,-467,100;546,196,-84,95">
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln158#par183" name="oid_KeyCondition55 [oid] [Stampa] [Source]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#dcnu7#su77#kcond49.ent6#att22"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm11#icu12#ln159" name="Link141" to="mov1#mpkg1#opm11#opg16#dlu8" type="transport" validate="true" gr:bendpoints="150,212,-628,115;648,216,-130,119">
+        <LinkParameter id="mov1#mpkg1#opm11#icu12#ln159#par184" name="oid_KeyCondition24 [oid]" source="mov1#mpkg1#opm11#icu12#icp70" target="mov1#mpkg1#opm11#opg16#dlu8#su73#kcond48.ent6#att22"/>
+      </Link>
+      <OKLink id="mov1#mpkg1#opm11#icu12#oln51" name="OKLink60" to="mov1#mpkg1#opm11#opg16#inn12" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#mpkg1#opm11#okcu13" name="OK Collector1" gr:x="660" gr:y="380">
+      <OutputCollectorParameter id="mov1#mpkg1#opm11#okcu13#ocp9" name="oid"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov1#mpkg1#opm11#kocu11" name="KO Collector1" gr:x="530" gr:y="380">
+      <OutputCollectorParameter id="mov1#mpkg1#opm11#kocu11#ocp10" name="oid"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

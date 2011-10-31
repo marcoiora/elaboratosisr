@@ -1,0 +1,53 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm8" name="Salva Stampa" gr:x="0" gr:y="60">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm8#icu8" name="Input Collector" gr:x="-10" gr:y="-10">
+      <Link id="mov1#mpkg1#opm8#icu8#ln68" name="Link86" to="mov1#mpkg1#opm8#inn9" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln68#par96" name="oid_Input" source="mov1#mpkg1#opm8#icu8#icp64" target="mov1#mpkg1#opm8#inn9.isnotnull"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp59" name="nome"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp60" name="descrizione"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp61" name="anteprima"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp62" name="immagineHd"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp63" name="temi"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp64" name="oid"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp65" name="prezzo"/>
+      <OKLink id="mov1#mpkg1#opm8#icu8#oln18" name="OKLink41" to="mov1#mpkg1#opm8#inn9" automaticCoupling="true" gr:bendpoints="74,12,-90,17"/>
+      <Link id="mov1#mpkg1#opm8#icu8#ln69" name="Link87" to="mov1#mpkg1#opm8#opg13#cru8" type="transport" validate="true" gr:bendpoints="169,133,-135,0">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par97" name="anteprima_anteprima" source="mov1#mpkg1#opm8#icu8#icp61" target="mov1#mpkg1#opm8#opg13#cru8.ent6#att25"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par98" name="cliente_oid_Cliente.oid(StampaToCliente)" source="mov1#mpkg1#opm8#icu8#icp67" target="mov1#mpkg1#opm8#opg13#cru8.rel21#role42.userOID"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par99" name="descrizione_descrizione" source="mov1#mpkg1#opm8#icu8#icp60" target="mov1#mpkg1#opm8#opg13#cru8.ent6#att24"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par100" name="immagineHd_immagineHD" source="mov1#mpkg1#opm8#icu8#icp62" target="mov1#mpkg1#opm8#opg13#cru8.ent6#att26"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par101" name="isActive_isactive" source="mov1#mpkg1#opm8#icu8#icp66" target="mov1#mpkg1#opm8#opg13#cru8.ent6#att49"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par102" name="nome_nome" source="mov1#mpkg1#opm8#icu8#icp59" target="mov1#mpkg1#opm8#opg13#cru8.ent6#att23"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln69#par103" name="prezzo_prezzoBase" source="mov1#mpkg1#opm8#icu8#icp65" target="mov1#mpkg1#opm8#opg13#cru8.ent6#att27"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm8#icu8#ln74" name="Link88" to="mov1#mpkg1#opm8#opg13#cnu6" type="transport" validate="true" gr:bendpoints="136,217,-324,83;374,216,-86,82">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln74#par104" name="temi_KeyCondition14 [oid] [Tema] [Target]" source="mov1#mpkg1#opm8#icu8#icp63" target="mov1#mpkg1#opm8#opg13#cnu6#su40#kcond31.ent14#att53"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm8#icu8#ln77" name="Link89" to="mov1#mpkg1#opm8#opg12#mfu9" type="transport" validate="true" gr:bendpoints="154,-183,-151,8">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par105" name="anteprima_anteprima" source="mov1#mpkg1#opm8#icu8#icp61" target="mov1#mpkg1#opm8#opg12#mfu9.ent6#att25"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par106" name="cliente_oid_Cliente.oid(StampaToCliente)" source="mov1#mpkg1#opm8#icu8#icp67" target="mov1#mpkg1#opm8#opg12#mfu9.rel21#role42.userOID"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par107" name="descrizione_descrizione" source="mov1#mpkg1#opm8#icu8#icp60" target="mov1#mpkg1#opm8#opg12#mfu9.ent6#att24"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par108" name="immagineHd_immagineHD" source="mov1#mpkg1#opm8#icu8#icp62" target="mov1#mpkg1#opm8#opg12#mfu9.ent6#att26"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par109" name="isActive_isactive" source="mov1#mpkg1#opm8#icu8#icp66" target="mov1#mpkg1#opm8#opg12#mfu9.ent6#att49"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par110" name="nome_nome" source="mov1#mpkg1#opm8#icu8#icp59" target="mov1#mpkg1#opm8#opg12#mfu9.ent6#att23"/>
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln77#par111" name="prezzo_prezzoBase" source="mov1#mpkg1#opm8#icu8#icp65" target="mov1#mpkg1#opm8#opg12#mfu9.ent6#att27"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm8#icu8#ln78" name="Link90" to="mov1#mpkg1#opm8#opg12#rcnu8" type="transport" validate="true" gr:bendpoints="102,-294,-338,-99;361,-283,-79,-105">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln78#par112" name="temi_KeyCondition33 [oid] [Tema] [ConnectTarget]" source="mov1#mpkg1#opm8#icu8#icp63" target="mov1#mpkg1#opm8#opg12#rcnu8#su38#kcond29.ent14#att53"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp66" name="isActive"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp67" name="cliente_oid"/>
+    </InputCollectorUnit>
+    <IsNotNullUnit id="mov1#mpkg1#opm8#inn9" name="modify or save new?" gr:x="140" gr:y="40">
+      <OKLink id="mov1#mpkg1#opm8#inn9#oln22" name="OKLink25" to="mov1#mpkg1#opm8#opg12#mfu9">
+        <LinkParameter id="mov1#mpkg1#opm8#inn9#oln22#par113" name="Input Value_KeyCondition31 [oid]" source="inputValue" target="mov1#mpkg1#opm8#opg12#mfu9#su36#kcond26.ent6#att22"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#opm8#inn9#kln26" name="KOLink23" to="mov1#mpkg1#opm8#opg13#cru8" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit id="mov1#mpkg1#opm8#okcu9" name="OK Collector" gr:x="530" gr:y="30">
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#okcu9#ocp4" name="stampa_oid"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov1#mpkg1#opm8#kocu8" name="KO Collector" gr:x="350" gr:y="40"/>
+  </OperationUnits>
+</OperationModule>

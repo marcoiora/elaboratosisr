@@ -9,13 +9,13 @@
       <Field id="sv4#area6#page21#enu11#fld46" name="Prezzo (a dimensione piena)" type="float" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page21#enu11#fld47" name="Attiva" ajaxEventEnabled="false" type="boolean" modifiable="true" preloaded="true"/>
       <Link id="sv4#area6#page21#enu11#ln143" name="Salva" to="sv4#area6#miu7" type="normal" validate="true">
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par259" name="Immagine anteprima/web_anteprima" source="sv4#area6#page21#enu11#fld44" target="sv4#area6#miu7.mov1#opm2#icu2#icp4"/>
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par260" name="Descrizione_descrizione" source="sv4#area6#page21#enu11#fld43" target="sv4#area6#miu7.mov1#opm2#icu2#icp2"/>
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par261" name="Immagine per stampa_immagineHd" source="sv4#area6#page21#enu11#fld45" target="sv4#area6#miu7.mov1#opm2#icu2#icp5"/>
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par262" name="Attiva_isActive" source="sv4#area6#page21#enu11#fld47" target="sv4#area6#miu7.mov1#opm2#icu2#icp9"/>
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par263" name="Nome_nome" source="sv4#area6#page21#enu11#fld42" target="sv4#area6#miu7.mov1#opm2#icu2#icp1"/>
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par264" name="Prezzo (a dimensione piena)_prezzo" source="sv4#area6#page21#enu11#fld46" target="sv4#area6#miu7.mov1#opm2#icu2#icp8"/>
-        <LinkParameter id="sv4#area6#page21#enu11#ln143#par265" name="Tema_temi" source="sv4#area6#page21#enu11#msfld8" target="sv4#area6#miu7.mov1#opm2#icu2#icp6"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par259" name="Immagine anteprima/web_anteprima" source="sv4#area6#page21#enu11#fld44" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp61"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par260" name="Descrizione_descrizione" source="sv4#area6#page21#enu11#fld43" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp60"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par261" name="Immagine per stampa_immagineHd" source="sv4#area6#page21#enu11#fld45" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp62"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par262" name="Attiva_isActive" source="sv4#area6#page21#enu11#fld47" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp66"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par263" name="Nome_nome" source="sv4#area6#page21#enu11#fld42" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp59"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par264" name="Prezzo (a dimensione piena)_prezzo" source="sv4#area6#page21#enu11#fld46" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp65"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par265" name="Tema_temi" source="sv4#area6#page21#enu11#msfld8" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp63"/>
       </Link>
       <Field id="sv4#area6#page21#enu11#fld78" name="Cliente" type="string" modifiable="false" preloaded="true"/>
     </EntryUnit>
@@ -52,10 +52,10 @@
         <LinkParameter id="sv4#area6#page21#seu12#ln103#par242" name="oid_stampa_oid" source="ent6#att22Array" target="sv4#area6#stu3.ctx3"/>
       </Link>
       <Link id="sv4#area6#page21#seu12#ln142" name="Link142" to="sv4#area6#miu7" type="transport" validate="true">
-        <LinkParameter id="sv4#area6#page21#seu12#ln142#par258" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu7.mov1#opm2#icu2#icp7"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln142#par258" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp64"/>
       </Link>
       <Link id="sv4#area6#page21#seu12#ln144" name="Link144" to="sv4#area6#miu8" type="transport" validate="true">
-        <LinkParameter id="sv4#area6#page21#seu12#ln144#par266" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu8.mov1#opm4#icu5#icp11"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln144#par266" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu8.mov1#mpkg1#opm11#icu12#icp70"/>
       </Link>
     </SelectorUnit>
     <GetUnit gr:x="0" gr:y="111" id="sv4#area6#page21#gtu1" name="Get Stampa" contextParameters="ctx3">

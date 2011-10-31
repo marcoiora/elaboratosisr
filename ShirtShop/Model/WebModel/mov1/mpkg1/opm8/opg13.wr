@@ -1,0 +1,20 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm8#opg13" name="Salva nuova stampa" transaction="true" gr:x="290" gr:y="140">
+  <OperationUnits>
+    <CreateUnit id="mov1#mpkg1#opm8#opg13#cru8" name="Stampa" gr:x="0" gr:y="10" entity="ent6">
+      <OKLink id="mov1#mpkg1#opm8#opg13#cru8#oln25" name="OKLink36" to="mov1#mpkg1#opm8#opg13#cnu6" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm8#opg13#cru8#kln32" name="KOLink33" to="mov1#mpkg1#opm8#kocu8" automaticCoupling="true"/>
+    </CreateUnit>
+    <ConnectUnit id="mov1#mpkg1#opm8#opg13#cnu6" name="Stampa_Tema" gr:x="132" gr:y="0" relationship="rel24#role48">
+      <SourceSelector id="mov1#mpkg1#opm8#opg13#cnu6#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm8#opg13#cnu6#su39#kcond30" name="KeyCondition13" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#mpkg1#opm8#opg13#cnu6#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm8#opg13#cnu6#su40#kcond31" name="KeyCondition14" predicate="in" implied="false"/>
+      </TargetSelector>
+      <KOLink id="mov1#mpkg1#opm8#opg13#cnu6#kln33" name="KOLink34" to="mov1#mpkg1#opm8#kocu8" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm8#opg13#cnu6#oln26" name="OKLink43" to="mov1#mpkg1#opm8#okcu9">
+        <LinkParameter id="mov1#mpkg1#opm8#opg13#cnu6#oln26#par115" name="Source oid [Stampa]_stampa_oid" source="sourceent6#att22" target="mov1#mpkg1#opm8#okcu9#ocp4"/>
+      </OKLink>
+    </ConnectUnit>
+  </OperationUnits>
+</OperationGroup>

@@ -7,7 +7,7 @@
         <LinkParameter id="sv4#area6#page24#inu20#ln112#par172" name="oid_KeyCondition28 [oid]" source="data[].ent1#att1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
       </Link>
       <Selector id="sv4#area6#page24#inu20#su129" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv4#area6#page24#inu20#su129#kcond85" name="KeyCondition85" predicate="notIn" implied="false"/>
+        <KeyCondition id="sv4#area6#page24#inu20#su129#kcond85" name="KeyCondition85" predicate="notIn" implied="true"/>
       </Selector>
     </IndexUnit>
     <IndexUnit id="sv4#area6#page24#inu21" name="Stampe" gr:x="183" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att49" linkOrder="sv4#area6#page24#inu21#ln115">
