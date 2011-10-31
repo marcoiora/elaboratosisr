@@ -1243,21 +1243,22 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		la possibilità di acquistare i prodotti offerti dall'azienda\\
 		\hline
 		Istanze Campione & \begin{description} \item Mario Rossi - Via Milano,3 25100 Brescia - Tel:
-		030 123456789 - C.F: MRARSS78B22D959S - e-mail: mario.rossi@mail.com
+		030 123456789 - C.F: MRARSS78B22D959S - e-mail: mario.rossi@mail.com - username: mario -
+		password: 12345
 		\item Camilla Bianchi - Via Trieste, 230 30760 Bari - Tel: 0798 990921 - C.F: CMLBNC65N88F860K
-		- e-mail: camillina@yahoo.it
+		- e-mail: camillina@yahoo.it - username: camillina - password: cAm77
 		\end{description}\\
 		\hline
 		Proprietà & \begin{description} \item Nome(string)
 		\item Cognome (string)
 		\item Indirizzo (string)
 		\item Telefono (string)
-		\item Codice Fiscale (string)
-		\item E-mail (string)
+		\item CodiceFiscale (string)
+		\item isActive (boolean): se true l'account è attivo e l'utente può effettuare il login
 		\end{description}\\
 		\hline
 		Relazioni & \begin{description} \item Cliente - Stampa
-		\item Cliente - Ordine
+		\item Cliente - Ordine 
 		\end{description}\\
 		\hline
 		Componenti & \\
@@ -1279,15 +1280,18 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione & Utente che opera per l'azienda soddisfando gli ordini dei clienti\\
 		\hline
-		Istanze Campione & \begin{description} \item Matricola: 86F9OL1
-		\item Matricola: 89200LL3
+		Istanze Campione & \begin{description} \item Stampatore con matricola: 86F9OL1 - username: 
+		addettoA01 - password: 1299iT - e-mail: 86F9OL1@shirtshop.it
+		\item Stampatore con matricola: 89200LL3 - username: addetto134 - password: 122UVw - e-mail: 
+		89200LL3@shirtshop.it
 		\end{description}\\
 		\hline
 		Proprietà & \begin{description} \item Matricola (string): identificativo univoco di riconoscimento
 		dell'operaio stampatore
 		\end{description}\\
 		\hline
-		Relazioni & \begin{description} \item Operaio Stampatore - Ordine
+		Relazioni & \begin{description} \item Operaio Stampatore - Ordine : tramite questa relazione 
+		si identifica il legame fra l'ordine e lo stampatore che ne prende in carico la lavorazione
 		\end{description}\\
 		\hline
 		Componenti & \\
@@ -1349,15 +1353,17 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Tema}\\
 		\hline
-		Sinonimi &  \\
+		Sinonimi &  Categoria di Stampa\\
 		\hline
-		Descrizione & \\
+		Descrizione & Questa entità rappresenta le categorie in cui le stampe possono essere suddivise.
+		In particolare, una stampa può appartenere a una o più categorie.\\
 		\hline
 		Istanze Campione & \begin{description} \item Tema: Animali
 		\item Tema: Natale
 		\end{description}\\
 		\hline
-		Proprietà & \begin{description} \item Nome (string)
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata 
+		\item Nome (string)
 		\end{description}\\
 		\hline
 		Relazioni & \begin{description} \item Tema - Stampa
@@ -1382,17 +1388,15 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione & Tipo di maglietta disponibile per la personalizzazione in una o più delle sue
 		caratteristiche e per l'acquisto. Le caratteristiche della maglietta sono la disponibilità
-		in diverse taglie, colori e sesso e la possibilità di avere già associate o meno una o due 
-		stampe. Può inoltre essere o meno personalizzabile con stampe scelte dal cliente su fronte 
-		e/o retro indipendentemente.\\
+		in diverse taglie, colori e sesso. Può inoltre essere o meno personalizzabile con stampe 
+		scelte dal cliente su fronte e/o retro indipendentemente.\\
 		\hline
 		Istanze Campione & \begin{description} \item ""StilistaOne PE2011"": Maglietta manica corta 
 		di cotone, collezione Primavera-Estate 2011 by StilistaOne, disponibile nelle taglie S e M, 
 		nei colori rosso, fucsia e verde a strisce blu orizzontali, taglio femminile.
 		\item ""Maglietta Styling AI2010"": Maglietta sintetica manica lunga, collezione Autunno-Inverno
 		2010 by Styling, nera, disponibile nelle taglie XS, S, M, L, XL e XXL, nei tagli maschile e 
-		femminile. Presenta ""Logo Styling"" in stampa piccola anteriore e stampa ""Paesaggio natalizio""
-		sul retro.
+		femminile.
 		\end{description}\\
 		\hline
 		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
@@ -1438,9 +1442,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		\rowcolor[gray]{.7} \textbf{Nome}& \textbf{Colore}\\
 		\hline
-		Sinonimi &  \\
+		Sinonimi & \\
 		\hline
-		Descrizione & \\
+		Descrizione & Appartengono a questa entità i colori disponibili per le magliette\\
 		\hline
 		Istanze Campione & \begin{description} \item Rosso FF0000
 		\item Verde pastello 82FFCA
@@ -1473,13 +1477,14 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi &  \\
 		\hline
-		Descrizione & \\
+		Descrizione & Appartengono a questa entità i sessi disponibili per le magliette\\
 		\hline
 		Istanze Campione & \begin{description} \item Femmina
 		\item Maschio
 		\end{description}\\
 		\hline
-		Proprietà & \begin{description} \item Nome (string)
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Nome (string)
 		\end{description}\\
 		\hline
 		Relazioni & \begin{description} \item Sesso - Foto
@@ -1504,13 +1509,14 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi &  \\
 		\hline
-		Descrizione & \\
+		Descrizione & Appartengono a questa entità le taglie disponibili per le magliette\\
 		\hline
 		Istanze Campione & \begin{description} \item Small
 		\item Extra Large
 		\end{description}\\
 		\hline
-		Proprietà & \begin{description} \item Nome (string)
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Nome (string)
 		\end{description}\\
 		\hline
 		Relazioni & \begin{description} \item Taglia - Configurazione
@@ -1534,14 +1540,16 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi &  Immagine esempio\\
 		\hline
-		Descrizione & \\
+		Descrizione & Appartengono a questa entità le foto disponibili per le magliette. Ogni foto è
+		caratterizzata dal colore e dal sesso della maglietta che rappresenta.\\
 		\hline
-		Istanze Campione & \begin{description} \item Immagine della maglietta maniche corte, 
-		girocollo, colore rosso, sesso femmina
-		\item Immagine dalla maglietta maniche lunghe, collo a V, colore verde, sesso maschio
+		Istanze Campione & \begin{description} \item Immagine della maglietta ""StilistaOne PE2011"",
+		colore rosso, sesso femmina
+		\item Immagine dalla maglietta ""StilistaOne PE2011"", colore fucsia, sesso femmina
 		\end{description}\\
 		\hline
-		Proprietà & \begin{description} \item Commento (text)
+		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
+		\item Commento (text)
 		\item Immagine (blob-image)
 		\end{description}\\
 		\hline
@@ -1567,13 +1575,22 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Sinonimi &  Offerta, Proposta\\
 		\hline
-		Descrizione & \\
+		Descrizione & Un template è una specializzazione di maglietta che è preconfigurata con una o
+		due stampe già associate.\\
 		\hline
-		Istanze Campione & \begin{description} \item 
+		Istanze Campione & \begin{description} \item ""Offerta: StilistaOne PE2011 - Margherita"": 
+		Maglietta manica corta di cotone, collezione Primavera-Estate 2011 by StilistaOne, 
+		disponibile nella sola taglia M, nei colori rosso e blu, taglio femminile con stampa sul retro
+		di ""Prato in fiore""
+		\item ""Proposta: Maglietta Styling AI2010 - Natale"": Maglietta sintetica manica lunga, 
+		collezione Autunno-Inverno 2010 by Styling, nera, disponibile nelle taglie XS, S, M, L, XL e XXL,
+		nei tagli maschile e femminile con stampa sul fronte di ""Logo piccolo Renne""
 		\end{description}\\
 		\hline
-		Proprietà & \begin{description} \item DimensioneFronte (float)
-		\item DimensionRetro (float)
+		Proprietà & \begin{description} \item DimensioneFronte (float): numero compreso fra 0 e 1 che
+		indica il rapporto tra dimensione della stampa reale e quella della maglietta sul fronte
+		\item DimensionRetro (float): numero compreso fra 0 e 1 che indica il rapporto tra dimensione
+		della stampa reale e quella della maglietta sul retro
 		\end{description}\\
 		\hline
 		Relazioni & \begin{description} \item Template - Stampa (stampa sul fronte)
@@ -1606,8 +1623,10 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\end{description}\\
 		\hline
 		Proprietà & \begin{description} \item OID: chiave univoca dell'entità considerata
-		\item DimensioneFronte(float): dimensione della stampa scelta del fronte
-		\item DimensioneRetro(float): dimensione della stampa scelta del retro
+		\item DimensioneFronte(float): dimensione della stampa scelta del fronte espressa come rapporto
+		fra la dimensione reale dalla stampa e quella della maglietta
+		\item DimensioneRetro(float): dimensione della stampa scelta del retro espressa come rapporto
+		fra la dimensione reale dalla stampa e quella della maglietta
 		\end{description}\\
 		\hline
 		Relazioni & \begin{description} \item Configurazione-Maglietta
@@ -1647,7 +1666,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Istanze Campione & \begin{description} \item 5 ""Maglietta Styling AI2010"" colore nero, 
 		taglia L, da uomo
-		\item 2 ""StilistaOne PE2011"" + ""Gioconda"" fronte dimensione grande, colore rosso, taglia M,
+		\item 2 ""StilistaOne PE2011"" + ""Gioconda"" fronte dimensione 0.8, colore rosso, taglia M,
 		da donna
 		\end{description}\\
 		\hline
@@ -1681,7 +1700,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione & Insieme di righe d'ordine pronte per l'acquisto o acquistate\\
 		\hline
 		Istanze Campione & \begin{description} \item n° ordine 13 di Mario Rossi del 15/09/2011 ore 
-		10.15; stato: IN GESTIONE. Preso in carico il 17/09/2011 ore 11.15 da Addetto15
+		10.15; stato: IN GESTIONE. Preso in carico il 17/09/2011 ore 11.15 da XKL44537
 		\item n° ordine 42 di Federica Bianchi del 19/10/2011 ore 17.19; stato: CARRELLO/PREORDINE.
 		\end{description}\\
 		\hline
@@ -1696,8 +1715,8 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\item Tracking(string): numero della spedizione
 		\end{description}\\
 		\hline
-		Relazioni & \begin{description} \item Ordine-Utente (Cliente)
-		\item Ordine-Utente (Operaio Stampatore)
+		Relazioni & \begin{description} \item Ordine-Cliente
+		\item Ordine-Operaio Stampatore
 		\item Ordine-RigaOrdine
 		\end{description}\\
 		\hline
@@ -1753,16 +1772,16 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\rowcolor[gray]{.9} Site View & \textbf{Pubblica}\\
 		\hline
 		Descrizione & Site view che contiene le pagine dedicate agli utenti visitatori non registrati
-		o non loggati al sito. Tramite un menï¿½ si possono consultare i prodotti (magliette e stampe)
+		o non loggati al sito. Tramite un menù si possono consultare i prodotti (magliette e stampe)
 		disponibili e le pagine informative. C'è inoltre un apposito form per effettuare il login se
-		l'utente possiede giàle credenziali e la possibilità di registrarsi come nuovo utente.\\
+		l'utente possiede già le credenziali ed un altro per registrarsi come nuovo utente.\\
 		\hline
 		Gruppi d'Utente & Utente non Registrato\\
 		\hline
 		Caso d'Uso & \begin{description} \item ""Registrazione""
 		\item ""Login""
 		\item ""Consultazione Magliette disponibili""
-		\item ""Consultazione Stampe diponibili""
+		\item ""Consultazione Stampe disponibili""
 		\item ""Consultazione Pagine Informative""
 		\end{description}\\
 		\hline
@@ -1773,9 +1792,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione Area & Area principale, punto di partenza per navigare il sito. Da questa è possibile
 		visualizzare le ultime offerte, effettuare il login o registrarsi come nuovo utente.\\
 		\hline
-		Oggetti & Maglietta specializzazione Template\\
+		Oggetti & Template, Pagine Informative\\
 		\hline
-		Priorità & \\
+		Priorità & Media\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Prodotti}\\
 		\hline
@@ -1784,9 +1803,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione Area & Permette di sfogliare il catalogo, individuare un particolare prodotto e
 		quindi consultare i dettagli dei singoli prodotti offerti.\\
 		\hline
-		Oggetti & Maglietta con tutte le relazioni composte e la specializzazione Template e Stampa\\
+		Oggetti & Maglietta, Template, Stampa\\
 		\hline
-		Prioritïà & \\
+		Prioritïà & Alta\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Informazioni}\\
 		\hline
@@ -1794,9 +1813,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione Area & Permette di visualizzare le pagine informative predisposte dall'amministratore. \\
 		\hline
-		Oggetti & Pagine Informative\\
+		Oggetti & Pagina\\
 		\hline
-		Priorità &\\
+		Priorità & Bassa\\
 		\hline
 	\end{longtable}
 \end{center} 
@@ -1813,23 +1832,22 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione & Site view riservata ai clienti del negozio che hanno effettuato login. I clienti
 		possono consultare il catalogo dei prodotti (magliette e stampe), personalizzare ed ordinare
 		le magliette desiderate. Possono sempre verificare lo stato dei propri ordini sia in gestione
-		che già evasi. Inoltre possono accedere al proprio profilo per la modifica ed effettuare il 
+		che già evasi. Inoltre possono modificare i propri dati di registrazione ed effettuare il 
 		logout dal sito. Infine, così come i visitatori, i clienti possono sempre visualizzare le 
 		pagine informative dell'azienda.\\
 		\hline
 		Gruppi d'Utente & Utente Registrato: Cliente\\
 		\hline
-		Caso d'Uso & \begin{description} \item Logout
-		\item Modifica Account
-		\item Consultazione Magliette disponibili
-		\item Consultazione Stampe disponibili
-		\item Consultazione Pagine Informative
-		\item Personalizzazione dei Prodotti
-		\item Aggiunta prodotto al Carrello
-		\item Visualizzazione - Modifica - Conferma Carrello
-		\item Conferma Carrello
-		\item Visualizzazione dell'Ordine
-		\item Annulla Ordine
+		Caso d'Uso & \begin{description} \item ""Logout""
+		\item ""Modifica Account""
+		\item ""Consultazione Magliette disponibili""
+		\item ""Consultazione Stampe disponibili""
+		\item ""Consultazione Pagine Informative""
+		\item ""Personalizzazione dei Prodotti""
+		\item ""Aggiunta prodotto al Carrello""
+		\item ""Visualizzazione - Modifica - Conferma Carrello""
+		\item ""Visualizzazione dell'Ordine""
+		\item ""Annulla Ordine""
 		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Web Market}\\
@@ -1842,10 +1860,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		modo comporre il proprio carrello della spesa e, una volta definitivo, darne conferma 
 		trasformandolo in un ordine.\\
 		\hline
-		Oggetti & Maglietta con tutte le relazioni composte e la specializzazione Template, Stampa, 
-		Configurazione, Ordine\\
+		Oggetti & Maglietta, Template, Stampa, Configurazione, Ordine\\
 		\hline
-		Priorità & \\
+		Priorità & Alta\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Informazioni}\\
 		\hline
@@ -1853,9 +1870,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione Area & Permette di visualizzare le pagine informative predisposte dall'amministratore.\\
 		\hline
-		Oggetti & Pagine Informative\\
+		Oggetti & Pagina\\
 		\hline
-		Priorità & \\
+		Priorità & Bassa\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Ordini}\\
 		\hline
@@ -1867,7 +1884,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Oggetti & Ordine, Maglietta, Configurazione, Stampa\\
 		\hline
-		Priorità & \\
+		Priorità & Media\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Account}\\
 		\hline
@@ -1876,9 +1893,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione Area & All'interno di quest'area l'utente può controllare ed eventualmente modificare
 		i propri dati identificativi ed anagrafici.\\
 		\hline
-		Oggetti & Utente\\
+		Oggetti & Utente, Cliente\\
 		\hline
-		Priorità & \\
+		Priorità & Bassa\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -1897,12 +1914,12 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Gruppi d'Utente & Utente Registrato: Operaio Stampatore\\
 		\hline
-		Caso d'Uso & \begin{description} \item Logout
-		\item Modifica Account
-		\item Visualizzazione Ordini ""Da Gestire"" 
-		\item Prendere in carico un ordine
-		\item Visualizzazione Ordini ""In Gestione""
-		\item Conferma spedizione dell'ordine
+		Caso d'Uso & \begin{description} \item ""Logout""
+		\item ""Modifica Account""
+		\item ""Visualizzazione Ordini 'Da Gestire'"" 
+		\item ""Prendere in carico un ordine""
+		\item ""Visualizzazione Ordini 'In Gestione'""
+		\item ""Conferma spedizione dell'ordine""
 		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Ordini}\\
@@ -1914,9 +1931,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		che ha effettuato login. L'utente può visualizzare il dettaglio dei singoli ordini e gestirne
 		lo stato, dalla presa in carico alla spedizione.\\
 		\hline
-		Oggetti & Ordine, Configurazione, Maglietta, Stampa, Cliente\\
+		Oggetti & Ordine, RigaOrdine, Configurazione, Maglietta, Stampa, Cliente\\
 		\hline
-		Prioritï¿½ & \\
+		Priorità & Alta\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Account}\\
 		\hline
@@ -1925,9 +1942,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		Descrizione Area & All'interno di quest'area l'utente può controllare ed eventualmente modificare
 		i propri dati identificativi\\
 		\hline
-		Oggetti & Utente\\
+		Oggetti & Utente, Operaio Stampatore\\
 		\hline
-		Priorità & \\
+		Priorità & Bassa\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -1949,16 +1966,16 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Gruppi d'Utente & Utente Registrato: Amministratore\\
 		\hline
-		Caso d'Uso & \begin{description} \item Logout
-		\item Consultazione elenco Utenti
-		\item Creazione-Modifica-Cancellazione Account Utente
-		\item Consultazione elenco Pagine Informative
-		\item Inserimento-Modifica-Cancellazione Pagine Informative
-		\item Consultazione elenco Magliette
-		\item Inserimento-Modifica-Cancellazione Maglietta
-		\item Consultazione elenco Stampe
-		\item Inserimento-Modifica-Cancellazione Stampa
-		\item Visualizzazione Dettagli Ordine
+		Caso d'Uso & \begin{description} \item ""Logout""
+		\item ""Consultazione elenco Utenti""
+		\item ""Creazione-Modifica-Cancellazione Account Utente""
+		\item ""Consultazione elenco Pagine Informative""
+		\item ""Inserimento-Modifica-Cancellazione Pagine Informative""
+		\item ""Consultazione elenco Magliette""
+		\item ""Inserimento-Modifica-Cancellazione Maglietta""
+		\item ""Consultazione elenco Stampe""
+		\item ""Inserimento-Modifica-Cancellazione Stampa""
+		\item ""Visualizzazione Dettagli Ordine""
 		\end{description}\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Accounts}\\
@@ -1967,11 +1984,11 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione Area & All'interno di quest'area l'utente può controllare ed eventualmente modificare 
 		i dati identificativi ed anagrafici di qualsiasi utente registrato del sistema. Inoltre può
-		inserire nuovi utenti o cancellarne di esistenti.\\
+		inserire nuovi utenti o cancellarne/disabilitarne di esistenti.\\
 		\hline
-		Oggetti & Utente\\
+		Oggetti & Utente, Cliente, Operaio Stampatore\\
 		\hline
-		Priorità & \\
+		Priorità & Media\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Informazioni}\\
 		\hline
@@ -1983,7 +2000,7 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Oggetti & Pagina\\
 		\hline
-		Priorità & \\
+		Priorità & Bassa\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Prodotti}\\
 		\hline
@@ -1991,11 +2008,11 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		\hline
 		Descrizione Area & All'interno di quest'area l'utente può consultare ed eventualmente modificare 
 		l'offerta di prodotti dell'azienda. Inoltre può inserire nuove magliette e stampe o 
-		cancellarne di esistenti. \\
+		cancellarne/disabilitarne di esistenti. \\
 		\hline
-		Oggetti & Maglietta, Stampa\\
+		Oggetti & Maglietta, Stampa, Template\\
 		\hline
-		Priorità & \\
+		Priorità & Alta\\
 		\hline
 		\rowcolor[gray]{.9} & \textbf{Site View Area: Gestione Archivio Ordini}\\
 		\hline
@@ -2005,9 +2022,9 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 		ordini effettuati dai clienti visualizzando tra l'altro anche chi ha gestito ogni singolo 
 		ordine e i tempi di lavorazione.\\
 		\hline
-		Oggetti & Utente, Ordine, Configurazione, Maglietta, Stampa\\
+		Oggetti & Cliente, Operaio Stampatore, Ordine, RigaOrdine, Configurazione, Maglietta, Stampa\\
 		\hline
-		Priorità & \\
+		Priorità & Bassa\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -2016,5 +2033,88 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 \section{Linee guida dello Stile Grafico}
 
 \chapter{Progettazione Dati}
+
+\newpage
+\section{Schema completo dei dati}\
+Nella figura 2.1 è presentato lo schema dei dati completo per il portale dell'
+azienda ShirtShop.
+\begin{center}
+	\includegraphics[height=18cm]{Immagini/SchemaCompletoDati.png}
+	\textit{Fig. 2.1: Schema Completo dei Dati}
+\end{center}
+Nelle prossime sezioni vengono analizzati i sotto-schemi che compongono l'applicazione nella sua interezza.
+In particolare ci soffermiamo su:
+\begin{itemize}
+	\item Entità Core e relativo sotto-schema
+	\item Entità e relazioni di Interconnesione e relativo sotto-schema
+	\item Entità e relazioni di Accesso e relativo sotto-schema
+	\item Entità e relazioni di Personalizzazione e relativo sotto-schema
+\end{itemize}
+
+
+\section{Entità Core e sotto-schemi Core}
+Le entità Core rappresentano gli oggetti principali di una applicazione. Sono le entità che stanno al
+centro del dominio dei dati e che rappresentano i concetti fondamentali che l'applicazione si presta
+a gestire.\\
+Nel caso negozio ShirtShop, un ruolo centrale, dal punto di vista dei dati, è affidato alle seguenti
+entità:
+\begin{itemize}
+	\item Maglietta con Foto
+	\item Stampa
+	\item Pagina
+	\item Ordine con RigaOrdine
+\end{itemize}
+
+E' interessante specificare come sia stato scelto di includere nel sotto-schema core di \textit{Maglietta}
+solo il suo componente \textit{Foto}: questa scelta è dovuta alla decisione di considerare \textit{Colore},
+\textit{Sesso}, \textit{Taglia} come entità di accesso.\\
+La stessa motivazione fa si che \textit{Tema} non faccia parte del sotto-schema core di \textit{Stampa}.\\
+In figura 2.2 si riporta il diagramma-ER che rappresenta tutti i sotto-schemi Core
+individuati.
+
+\begin{center}
+	\includegraphics[height=16cm]{Immagini/Core.png}
+	\textit{Fig. 2.2: Sotto-schemi Core}
+\end{center}
+
+\section{Sotto-schema di Interconnessione}
+Il sotto-schema di Interconnessione è la parte di schema ER che lega le varie entità core.\\
+Nel nostro caso è composto dall'entità \textit{Configurazione} e dalle relazioni che la legano a 
+\textit{Maglietta}, \textit{Stampa} e \textit{RigaOrdine}.\\
+In figura 2.3 si riporta il diagramma-ER che rappresenta il sotto-schema di Interconnessione.
+\begin{center}
+	\includegraphics[height=19cm]{Immagini/Interconnessione.png}
+	\textit{Fig. 2.3: Sotto-schema di Interconnessione}
+\end{center}
+
+\section{Sotto-schemi di Accesso}
+Il sotto-schema di Accesso comprende le entità e le relazioni che permettono di accedere, filtrare, 
+consultare le entità core.\\
+Nel nostro caso per quanto riguarda l'accesso all'entità \textit{Maglietta} abbiamo considerato come
+entità di accesso \textit{Colore}, \textit{Sesso}, \textit{Taglia} e \textit{Template}.\\
+Si può invece accedere all'entità \textit{Stampa} tramite \textit{Template} \textit{Tema}.\\
+\textit{Ordine} e \textit{Pagina} sono entità d'accesso per sé stesse.\\
+E' interessante da notare che questo sotto-schema non rappresenta in maniera esaustiva le possibilità 
+di accesso alle entità core: ad esempio, \textit{Maglietta} può essere considerata anche entità d'accesso
+per se stessa, in quanto si prevedono filtri di consultazione basati su attributi interni di questa
+entità, come il materiale, il tipo di collo e il tipo di maniche.\\
+In figura 2.4 si riporta il diagramma-ER che rappresenta il sotto-scheam di Accesso.
+\begin{center}
+	\includegraphics[height=17cm]{Immagini/Accesso.png}
+	\textit{Fig. 2.4: Sotto-schemi di Accesso}
+\end{center}
+
+\section{Sotto-schema di Personalizzazione}
+Il sotto-schema di Personalizzazione comprende le entità e le relazioni che permettono di differenziare
+il comportamento dell'applicazione in base all'utente che interagisce.
+In particolare questo sotto-schema, oltre alle tabelle degli utenti, dei gruppi e dei moduli, contiene 
+le specializzazioni di utente in \textit{Cliente} e \textit{Stampatore} nonchè le relazioni con le 
+entità core \textit{Stampa} e \textit{Ordine} necessarie per mostrare all'utente i soli ordini e stampe
+di sua competenza.
+
+\begin{center}
+	\includegraphics[height=18cm]{Immagini/Personalizzazione.png}\\
+	\textit{Fig. 2.5: Sotto-schema di Personalizzazione}
+\end{center}
 
 \end{document}
