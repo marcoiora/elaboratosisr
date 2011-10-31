@@ -1,9 +1,9 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area2#page10" name="Informazioni">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv1#area2#page10#inu2" name="Informazioni" entity="ent11" displayAttributes="ent11#att47" linkOrder="sv1#area2#page10#inu2#ln16">
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area2#page10#inu2" name="Informazioni" linkOrder="sv1#area2#page10#inu2#ln16" displayAttributes="ent11#att47" entity="ent11">
       <Link id="sv1#area2#page10#inu2#ln16" name="Vedi dettagli" to="sv1#area2#page10#dau8" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
-    <DataUnit gr:x="136" gr:y="26" id="sv1#area2#page10#dau8" name="Dettaglio" entity="ent11" displayAttributes="ent11#att47 ent11#att48">
+    <DataUnit gr:x="136" gr:y="26" id="sv1#area2#page10#dau8" name="Dettaglio" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
       <Selector id="sv1#area2#page10#dau8#su8" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area2#page10#dau8#su8#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
       </Selector>

@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="4" gr:y="0" id="sv1#area1#page1" name="Catalogo Magliette" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="192" gr:y="82" id="sv1#area1#page1#inu5" name="Magliette" entity="ent1" displayAttributes="ent1#att2" linkOrder="sv1#area1#page1#inu5#ln6">
+    <IndexUnit gr:x="192" gr:y="82" id="sv1#area1#page1#inu5" name="Magliette" linkOrder="sv1#area1#page1#inu5#ln6" displayAttributes="ent1#att2" entity="ent1">
       <Selector id="sv1#area1#page1#inu5#su10" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond8" name="colore" predicate="in" implied="true" role="rel1#role2"/>
         <RelationshipRoleCondition id="sv1#area1#page1#inu5#su10#rcond9" name="taglia" predicate="in" implied="true" role="rel3#role6"/>
@@ -8,13 +8,13 @@
       </Selector>
       <Link id="sv1#area1#page1#inu5#ln6" name="Dettagli ..." to="sv1#area1#page2#dau1" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
-    <MultiChoiceIndexUnit gr:x="0" gr:y="190" id="sv1#area1#page1#mciu1" name="Sessi Disponibili" entity="ent4" displayAttributes="ent4#att18" linkOrder="sv1#area1#page1#mciu1#ln1">
+    <MultiChoiceIndexUnit gr:x="0" gr:y="190" id="sv1#area1#page1#mciu1" name="Sessi Disponibili" linkOrder="sv1#area1#page1#mciu1#ln1" displayAttributes="ent4#att18" entity="ent4">
       <Link id="sv1#area1#page1#mciu1#ln1" name="Filtra Sesso" to="sv1#area1#page1#inu5" type="normal" validate="true" automaticCoupling="true"/>
     </MultiChoiceIndexUnit>
-    <MultiChoiceIndexUnit gr:x="0" gr:y="100" id="sv1#area1#page1#mciu2" name="Taglie Disponibili" entity="ent3" linkOrder="sv1#area1#page1#mciu2#ln4" displayAttributes="ent3#att16">
+    <MultiChoiceIndexUnit gr:x="0" gr:y="100" id="sv1#area1#page1#mciu2" name="Taglie Disponibili" linkOrder="sv1#area1#page1#mciu2#ln4" displayAttributes="ent3#att16" entity="ent3">
       <Link id="sv1#area1#page1#mciu2#ln4" name="Filtra Taglia" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
     </MultiChoiceIndexUnit>
-    <MultiChoiceIndexUnit gr:x="0" gr:y="0" id="sv1#area1#page1#mciu3" name="Colori Disponibili" entity="ent2" displayAttributes="ent2#att13" linkOrder="sv1#area1#page1#mciu3#ln7" customDescriptor="false">
+    <MultiChoiceIndexUnit gr:x="0" gr:y="0" id="sv1#area1#page1#mciu3" name="Colori Disponibili" linkOrder="sv1#area1#page1#mciu3#ln7" customDescriptor="false" displayAttributes="ent2#att13" entity="ent2">
       <Link id="sv1#area1#page1#mciu3#ln7" name="Filtra colori" to="sv1#area1#page1#inu5" automaticCoupling="true" type="normal" validate="true"/>
     </MultiChoiceIndexUnit>
   </ContentUnits>

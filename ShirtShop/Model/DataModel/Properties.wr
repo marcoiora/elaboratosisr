@@ -46,11 +46,12 @@
       <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="local derby" type="Apache Derby" url="jdbc:derby://localhost:43210/shirtshop;create=true" username="shirtshop" password="shirtshop" cryptedPassword="false" jndiName="" connectionCount="5" runtimeType="" runtimeURL="" runtimeUsername="" runtimePassword="" runtimeCryptedPassword="" schema="APP"/>
+  <db:Database id="db1" name="local derby" type="Apache Derby" url="jdbc:derby://localhost:43210/shirtshop;create=true" username="shirtshop" password="shirtshop" cryptedPassword="false" jndiName="" connectionCount="5" runtimeType="" runtimeURL="" runtimeUsername="" runtimePassword="" runtimeCryptedPassword="" schema="APP">
+  </db:Database>
   <Entity gr:x="130" gr:y="180" id="ent1" name="Maglietta" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10" gr:hideAttributes="false" db:database="db1" db:table="MAGLIETTA">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent1#att2" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent1#att3" name="descrizione" type="text" db:column="DESCRIZIONE" db:clob="true" contentType="text/html"/>
+    <Attribute id="ent1#att3" name="descrizione" type="text" contentType="text/html" db:column="DESCRIZIONE" db:clob="true"/>
     <Attribute id="ent1#att4" name="manica" type="string" db:column="MANICA"/>
     <Attribute id="ent1#att5" name="collo" type="string" db:column="COLLO"/>
     <Attribute id="ent1#att6" name="stampabileFronte" type="boolean" db:column="STAMPABILEFRONTE"/>
@@ -98,7 +99,7 @@
   </Relationship>
   <Entity gr:x="440" gr:y="360" id="ent5" name="Foto" duration="persistent" attributeOrder="ent5#att19 ent5#att20 ent5#att21" gr:hideAttributes="false" db:database="db1" db:table="FOTO">
     <Attribute id="ent5#att19" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent5#att20" name="commento" type="text" db:column="COMMENTO" contentType="text/html"/>
+    <Attribute id="ent5#att20" name="commento" type="text" contentType="text/html" db:column="COMMENTO" db:clob="true"/>
     <Attribute id="ent5#att21" name="immagine" type="blob" contentType="image" db:column="IMMAGINE"/>
   </Entity>
   <Relationship id="rel5" name="Maglietta_Foto" sourceEntity="ent1" targetEntity="ent5" db:database="db1" db:table="FOTO">
@@ -128,9 +129,9 @@
   <Entity gr:x="-80" gr:y="40" id="ent6" name="Stampa" duration="persistent" attributeOrder="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49" gr:hideAttributes="false" db:database="db1" db:table="STAMPA">
     <Attribute id="ent6#att22" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent6#att23" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent6#att24" name="descrizione" type="text" db:column="DESCRIZIONE" contentType="text/html"/>
-    <Attribute id="ent6#att25" name="anteprima" type="blob" db:column="ANTEPRIMA" contentType="image"/>
-    <Attribute id="ent6#att26" name="immagineHD" type="blob" db:column="IMMAGINEHD" contentType="image"/>
+    <Attribute id="ent6#att24" name="descrizione" type="text" contentType="text/html" db:column="DESCRIZIONE" db:clob="true"/>
+    <Attribute id="ent6#att25" name="anteprima" type="blob" contentType="image" db:column="ANTEPRIMA"/>
+    <Attribute id="ent6#att26" name="immagineHD" type="blob" contentType="image" db:column="IMMAGINEHD"/>
     <Attribute id="ent6#att27" name="prezzoBase" type="float" db:column="PREZZOBASE"/>
     <Attribute id="ent6#att49" name="isactive" type="boolean" db:column="ISACTIVE"/>
   </Entity>
@@ -190,7 +191,7 @@
   <Entity gr:x="600" gr:y="610" id="ent8" name="RigaOrdine" duration="persistent" attributeOrder="ent8#att31 ent8#att32 ent8#att33 ent8#att34" gr:hideAttributes="false" db:database="db1" db:table="RIGAORDINE">
     <Attribute id="ent8#att31" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent8#att32" name="prezzoSingolo" type="float" db:column="PREZZOSINGOLO"/>
-    <Attribute id="ent8#att33" name="quantita" type="integer" db:column="QUANTITA"/>
+    <Attribute id="ent8#att33" name="quantita" type="string" db:column="QUANTITA"/>
     <Attribute id="ent8#att34" name="prezzoTotale" type="float" db:column="PREZZOTOTALE"/>
   </Entity>
   <Relationship id="rel17" name="RigaOrdine_Configurazione" sourceEntity="ent8" targetEntity="ent7" db:database="db1" db:table="CONFIGURAZIONE">
@@ -201,7 +202,7 @@
       <db:JoinColumn attribute="ent7#att28" name="OID"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att58" gr:hideAttributes="false" db:database="db1" db:table="ORDINE">
+  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41" gr:hideAttributes="false" db:database="db1" db:table="ORDINE">
     <Attribute id="ent9#att35" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="DATAORACONFERMA"/>
     <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="DATAORAPRESAINCARICO"/>
@@ -209,7 +210,6 @@
     <Attribute id="ent9#att39" name="prezzoTotale" type="float" db:column="PREZZOTOTALE"/>
     <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="SPESESPEDIZIONE"/>
     <Attribute id="ent9#att41" name="stato" type="string" db:column="STATO"/>
-    <Attribute id="ent9#att58" name="tracking" type="string"/>
   </Entity>
   <Relationship id="rel18" name="Ordine_RigaOrdine" sourceEntity="ent9" targetEntity="ent8" db:database="db1" db:table="RIGAORDINE">
     <RelationshipRole1 id="rel18#role35" name="OrdineToRigaOrdine" maxCard="N">
@@ -227,13 +227,13 @@
       <db:JoinColumn attribute="userOID" name="USER_OID"/>
     </Generalization>
     <Attribute id="ent10#att50" name="isactive" type="boolean" db:column="ISACTIVE"/>
-    <Attribute id="ent10#att55" name="telefono" type="string"/>
-    <Attribute id="ent10#att56" name="codiceFiscale" type="string"/>
+    <Attribute id="ent10#att55" name="telefono" type="string" db:column="TELEFONO"/>
+    <Attribute id="ent10#att56" name="codiceFiscale" type="string" db:column="CODICEFISCALE"/>
   </Entity>
   <Entity gr:x="1140" gr:y="260" id="ent11" name="Pagina" duration="persistent" attributeOrder="ent11#att46 ent11#att47 ent11#att48 ent11#att42" gr:hideAttributes="false" db:database="db1" db:table="PAGINA">
     <Attribute id="ent11#att46" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent11#att47" name="titolo" type="string" db:column="TITOLO"/>
-    <Attribute id="ent11#att48" name="testoHTML" type="text" db:column="TESTOHTML" db:clob="true" contentType="text/html"/>
+    <Attribute id="ent11#att48" name="testoHTML" type="text" contentType="text/html" db:column="TESTOHTML" db:clob="true"/>
     <Attribute id="ent11#att42" name="home" type="boolean" db:column="HOME"/>
   </Entity>
   <Relationship id="rel19" name="Ordine_Cliente" sourceEntity="ent9" targetEntity="ent10" gr:bendpoints="-313,-154,142,185" db:database="db1" db:table="ORDINE">

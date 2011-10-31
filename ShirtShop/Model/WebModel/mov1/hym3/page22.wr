@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym3#page22" name="Nuovo Tema" gr:x="300" gr:y="100">
+  <ContentUnits>
+    <EntryUnit id="mov1#hym3#page22#enu12" name="Nuovo Tema" linkOrder="mov1#hym3#page22#enu12#ln96" gr:x="-1" gr:y="-1" fieldOrder="mov1#hym3#page22#enu12#fld48">
+      <Field id="mov1#hym3#page22#enu12#fld48" name="Nome" type="string" modifiable="true"/>
+      <Link id="mov1#hym3#page22#enu12#ln96" name="Salva" to="mov1#hym3#cru8" type="normal" validate="true">
+        <LinkParameter id="mov1#hym3#page22#enu12#ln96#par241" name="Nome_nome" source="mov1#hym3#page22#enu12#fld48" target="mov1#hym3#cru8.ent14#att54"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#hym3#page22#enu12">
+          <layout:Field field="mov1#hym3#page22#enu12#fld48"/>
+          <layout:Link link="mov1#hym3#page22#enu12#ln96"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

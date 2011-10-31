@@ -1,8 +1,8 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page28" name="Tipi manica" gr:x="549" gr:y="203" layout:pageLayout="WRDefault/Autocomplete" ajaxEnabled="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page28" name="Tipi manica" gr:x="10" gr:y="606" layout:pageLayout="WRDefault/Autocomplete" ajaxEnabled="false">
   <ContentUnits>
-    <IndexUnit id="sv4#area6#page28#inu12" name="Tipi manica" gr:x="-1" gr:y="-1" entity="ent1" displayAttributes="ent1#att4" distinct="true" ajaxEnableExpandedLinks="false">
+    <IndexUnit id="sv4#area6#page28#inu12" name="Tipi manica" gr:x="-1" gr:y="-1" distinct="true" ajaxEnableExpandedLinks="false" displayAttributes="ent1#att4" entity="ent1">
       <Selector id="sv4#area6#page28#inu12#su24" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv4#area6#page28#inu12#su24#acond1" name="manica" predicate="contains" booleanOperator="or" implied="false" attributes="ent1#att4" ignoreCase="true"/>
+        <AttributesCondition id="sv4#area6#page28#inu12#su24#acond1" name="manica" predicate="contains" booleanOperator="or" implied="false" ignoreCase="true" attributes="ent1#att4"/>
       </Selector>
     </IndexUnit>
   </ContentUnits>

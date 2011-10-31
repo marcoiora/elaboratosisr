@@ -1,0 +1,58 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page18" name="Nuova Stampa" ajaxEnabled="true" gr:x="815" gr:y="288" linkOrder="sv4#area6#page18#ln83">
+  <ContentUnits>
+    <EntryUnit id="sv4#area6#page18#enu7" name="Inserisci dati Stampa" gr:x="0" gr:y="111" ajaxEnableExpandedLinks="true" linkOrder="sv4#area6#page18#enu7#ln91">
+      <Field id="sv4#area6#page18#enu7#fld26" name="Nome" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area6#page18#enu7#fld27" name="Descrizione" type="text" modifiable="true" contentType="text/html" preloaded="true"/>
+      <MultiSelectionField id="sv4#area6#page18#enu7#msfld7" name="Tema" type="string"/>
+      <Field id="sv4#area6#page18#enu7#fld34" name="Immagine anteprima/web" type="blob" modifiable="true" contentType="image" preloaded="true"/>
+      <Field id="sv4#area6#page18#enu7#fld35" name="Immagine per stampa" type="blob" modifiable="true" contentType="image" preloaded="true"/>
+      <Field id="sv4#area6#page18#enu7#fld36" name="Prezzo (a dimensione piena)" type="float" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area6#page18#enu7#fld37" name="Attiva" type="boolean" modifiable="true" preloaded="true" ajaxEventEnabled="false"/>
+      <Link id="sv4#area6#page18#enu7#ln91" name="Salva" to="sv4#area6#miu4" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par225" name="Immagine anteprima/web_anteprima" source="sv4#area6#page18#enu7#fld34" target="sv4#area6#miu4.mov1#opm2#icu2#icp4"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par226" name="Descrizione_descrizione" source="sv4#area6#page18#enu7#fld27" target="sv4#area6#miu4.mov1#opm2#icu2#icp2"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par227" name="Immagine per stampa_immagineHd" source="sv4#area6#page18#enu7#fld35" target="sv4#area6#miu4.mov1#opm2#icu2#icp5"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par228" name="Attiva_isActive" source="sv4#area6#page18#enu7#fld37" target="sv4#area6#miu4.mov1#opm2#icu2#icp9"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par229" name="Nome_nome" source="sv4#area6#page18#enu7#fld26" target="sv4#area6#miu4.mov1#opm2#icu2#icp1"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par230" name="Prezzo (a dimensione piena)_prezzo" source="sv4#area6#page18#enu7#fld36" target="sv4#area6#miu4.mov1#opm2#icu2#icp8"/>
+        <LinkParameter id="sv4#area6#page18#enu7#ln91#par231" name="Tema_temi" source="sv4#area6#page18#enu7#msfld7" target="sv4#area6#miu4.mov1#opm2#icu2#icp6"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv4#area6#page18#seu9" name="Temi disponibili" gr:x="9" gr:y="0" entity="ent14" distinctAttributes="ent14#att54 ent14#att53">
+      <Link id="sv4#area6#page18#seu9#ln64" name="Link31" to="sv4#area6#page18#enu7" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page18#seu9#ln64#par64" name="nome_Tema [label]" source="ent14#att54Array" target="sv4#area6#page18#enu7#msfld7_label"/>
+        <LinkParameter id="sv4#area6#page18#seu9#ln64#par65" name="oid_Tema [output]" source="ent14#att53Array" target="sv4#area6#page18#enu7#msfld7_output"/>
+      </Link>
+      <SortAttribute attribute="ent14#att54" order="ascending"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page18#enu7">
+          <layout:Field field="sv4#area6#page18#enu7#fld26"/>
+          <layout:Field field="sv4#area6#page18#enu7#fld27"/>
+          <layout:Field field="sv4#area6#page18#enu7#msfld7"/>
+          <layout:Field field="sv4#area6#page18#enu7#fld34"/>
+          <layout:Field field="sv4#area6#page18#enu7#fld35"/>
+          <layout:Field field="sv4#area6#page18#enu7#fld36"/>
+          <layout:Field field="sv4#area6#page18#enu7#fld37"/>
+          <layout:Link link="sv4#area6#page18#enu7#ln91"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area6#page18#ln83" name="Nuovo Tema" to="sv4#area6#miu5" type="normal" validate="true" gr:bendpoints="-136,196,112,-97" automaticCoupling="true"/>
+</Page>

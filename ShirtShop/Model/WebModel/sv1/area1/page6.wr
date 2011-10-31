@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="356" id="sv1#area1#page6" name="Catalogo Stampe" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page6#inu6" name="Temi" entity="ent14" displayAttributes="ent14#att54" linkOrder="sv1#area1#page6#inu6#ln8">
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page6#inu6" name="Temi" linkOrder="sv1#area1#page6#inu6#ln8" displayAttributes="ent14#att54" entity="ent14">
       <Link id="sv1#area1#page6#inu6#ln8" name="Filtra tema" to="sv1#area1#page6#inu8" type="normal" automaticCoupling="true" validate="true"/>
     </IndexUnit>
     <IndexUnit id="sv1#area1#page6#inu8" name="Stampe" linkOrder="sv1#area1#page6#inu8#ln5" gr:x="104" gr:y="4" entity="ent6" displayAttributes="ent6#att23 ent6#att25">

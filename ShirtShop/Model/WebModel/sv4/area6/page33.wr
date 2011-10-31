@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2" gr:y="313" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln56 sv4#area6#page33#ln63">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="226" gr:y="1036" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln56 sv4#area6#page33#ln63">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page33#enu10" name="Modifica dati" gr:x="283" gr:y="134" linkOrder="sv4#area6#page33#enu10#ln137 sv4#area6#page33#enu10#ln138 sv4#area6#page33#enu10#ln139 sv4#area6#page33#enu10#ln48">
       <Field id="sv4#area6#page33#enu10#fld49" name="Nome" type="string" modifiable="true" preloaded="true"/>
@@ -38,7 +38,7 @@
       </Link>
       <Field id="sv4#area6#page33#enu10#fld25" name="Attiva" type="boolean" modifiable="true" preloaded="true"/>
     </EntryUnit>
-    <SelectorUnit id="sv4#area6#page33#seu16" entity="ent1" gr:x="113" gr:y="114" name="Maglietta">
+    <SelectorUnit id="sv4#area6#page33#seu16" gr:x="113" gr:y="114" name="Maglietta" entity="ent1">
       <Link id="sv4#area6#page33#seu16#ln126" name="Link124" to="sv4#area6#page33#enu10" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par161" name="collo_Collo" source="ent1#att5Array" target="sv4#area6#page33#enu10#fld52_slot"/>
         <LinkParameter id="sv4#area6#page33#seu16#ln126#par163" name="manica_Manica" source="ent1#att4Array" target="sv4#area6#page33#enu10#fld51_slot"/>
@@ -113,7 +113,7 @@
         <LinkParameter id="sv4#area6#page33#seu22#ln136#par182" name="oid_Sessi disponibili - Preselection" source="ent4#att17Array" target="sv4#area6#page33#enu10#msfld14_presel"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit gr:x="113" gr:y="364" id="sv4#area6#page33#inu23" name="Fotografie" entity="ent5" displayAttributes="ent5#att21 ent5#att20 rel6#role11.ent2#att13 rel7#role13.ent4#att18" customDescriptor="false" linkOrder="sv4#area6#page33#inu23#ln49">
+    <IndexUnit gr:x="113" gr:y="364" id="sv4#area6#page33#inu23" name="Fotografie" customDescriptor="false" linkOrder="sv4#area6#page33#inu23#ln49" displayAttributes="ent5#att21 ent5#att20 rel6#role11.ent2#att13 rel7#role13.ent4#att18" entity="ent5">
       <Selector id="sv4#area6#page33#inu23#su66" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#area6#page33#inu23#su66#rcond31" name="maglietta" predicate="in" implied="false" role="rel5#role9"/>
       </Selector>

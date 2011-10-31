@@ -14,7 +14,7 @@
         <LinkParameter id="sv1#area1#page9#dau4#ln12#par12" name="TemplateToStampaRetro.oid_KeyCondition6 [oid]" source="data.rel23#role45_ent6#att22" target="sv1#area1#page9#dau7#su7#kcond6.ent6#att22"/>
       </Link>
     </DataUnit>
-    <DataUnit gr:x="130" gr:y="2" id="sv1#area1#page9#dau5" name="Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att8 ent1#att9" linkOrder="sv1#area1#page9#dau5#ln13">
+    <DataUnit gr:x="130" gr:y="2" id="sv1#area1#page9#dau5" name="Maglietta" linkOrder="sv1#area1#page9#dau5#ln13" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att8 ent1#att9" entity="ent1">
       <Selector id="sv1#area1#page9#dau5#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page9#dau5#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>

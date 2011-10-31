@@ -1,0 +1,55 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4#opg6" name="Elimina Maglietta" transaction="true" gr:x="220" gr:y="0">
+  <OperationUnits>
+    <DeleteUnit id="mov1#opm4#opg6#dlu4" name="Stampa" gr:x="542" gr:y="141" entity="ent6">
+      <Selector id="mov1#opm4#opg6#dlu4#su76" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#opg6#dlu4#su76#kcond54" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm4#opg6#dlu4#oln54" name="OKLink27" to="mov1#opm4#okcu5"/>
+      <KOLink id="mov1#opm4#opg6#dlu4#kln42" name="KOLink21" to="mov1#opm4#kocu4" automaticCoupling="true"/>
+    </DeleteUnit>
+    <SelectorUnit id="mov1#opm4#opg6#seu26" name="Configurazioni" gr:x="0" gr:y="8" entity="ent7">
+      <Link id="mov1#opm4#opg6#seu26#ln120" name="Link62" to="mov1#opm4#opg6#inn4" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#opg6#seu26#ln120#par247" name="oid_Input" source="ent7#att28Array" target="mov1#opm4#opg6#inn4.isnotnull"/>
+      </Link>
+      <Selector id="mov1#opm4#opg6#seu26#su77" defaultPolicy="fill" booleanOperator="or">
+        <RelationshipRoleCondition id="mov1#opm4#opg6#seu26#su77#rcond14" name="Stampa fronte" predicate="in" implied="false" role="rel11#role22"/>
+        <RelationshipRoleCondition id="mov1#opm4#opg6#seu26#su77#rcond15" name="Stampa retro" predicate="in" implied="false" role="rel12#role24"/>
+      </Selector>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov1#opm4#opg6#inn4" name="esistono configurazioni?" gr:x="30" gr:y="159" emptyStringAsNull="false">
+      <OKLink id="mov1#opm4#opg6#inn4#oln56" name="OKLink37" to="mov1#opm4#kocu4"/>
+      <KOLink id="mov1#opm4#opg6#inn4#kln49" name="KOLink49" to="mov1#opm4#opg6#inn5" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="202" gr:y="0" id="mov1#opm4#opg6#seu27" name="Template Attivi" entity="ent13" linkOrder="mov1#opm4#opg6#seu27#ln123">
+      <Selector id="mov1#opm4#opg6#seu27#su78" defaultPolicy="fill" booleanOperator="or" expression="( mov1#opm4#opg6#seu27#su78#rcond17 OR mov1#opm4#opg6#seu27#su78#rcond18 ) AND mov1#opm4#opg6#seu27#su78#acond6">
+        <RelationshipRoleCondition id="mov1#opm4#opg6#seu27#su78#rcond17" name="StampaFronte" predicate="in" implied="false" role="rel22#role44"/>
+        <RelationshipRoleCondition id="mov1#opm4#opg6#seu27#su78#rcond18" name="StampaRetro" predicate="in" implied="false" role="rel23#role46"/>
+        <AttributesCondition id="mov1#opm4#opg6#seu27#su78#acond6" name="isActive" predicate="eq" booleanOperator="or" implied="false" value="true" attributes="ent1#att10"/>
+      </Selector>
+      <Link id="mov1#opm4#opg6#seu27#ln123" name="Link123" to="mov1#opm4#opg6#inn5" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#opg6#seu27#ln123#par254" name="oid_Input" source="ent1#att1Array" target="mov1#opm4#opg6#inn5.isnotnull"/>
+      </Link>
+      <OKLink id="mov1#opm4#opg6#seu27#oln57" name="OKLink57" to="mov1#opm4#opg6#inn5" automaticCoupling="true" gr:bendpoints="-13,80,-18,-50"/>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="222" gr:y="160" id="mov1#opm4#opg6#inn5" name="esistono template?">
+      <OKLink id="mov1#opm4#opg6#inn5#oln58" name="OKLink58" to="mov1#opm4#kocu4" automaticCoupling="true"/>
+      <KOLink id="mov1#opm4#opg6#inn5#kln47" name="KOLink47" to="mov1#opm4#opg6#dcnu4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="382" gr:y="21" id="mov1#opm4#opg6#seu28" name="Temi" entity="ent14" linkOrder="mov1#opm4#opg6#seu28#ln125">
+      <Selector id="mov1#opm4#opg6#seu28#su79" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#opm4#opg6#seu28#su79#rcond19" name="Stampa" role="rel24#role48" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#opm4#opg6#seu28#ln125" name="Link125" to="mov1#opm4#opg6#dcnu4" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <DisconnectUnit gr:x="382" gr:y="141" id="mov1#opm4#opg6#dcnu4" name="StampaTema" relationship="rel24#role48">
+      <SourceSelector id="mov1#opm4#opg6#dcnu4#su80" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#opg6#dcnu4#su80#kcond55" name="KeyCondition55" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#opm4#opg6#dcnu4#su81" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#opg6#dcnu4#su81#kcond56" name="KeyCondition56" predicate="in" implied="false"/>
+      </TargetSelector>
+      <KOLink id="mov1#opm4#opg6#dcnu4#kln48" name="KOLink48" to="mov1#opm4#kocu4" automaticCoupling="true"/>
+      <OKLink id="mov1#opm4#opg6#dcnu4#oln59" name="OKLink59" to="mov1#opm4#opg6#dlu4" automaticCoupling="true"/>
+    </DisconnectUnit>
+  </OperationUnits>
+</OperationGroup>

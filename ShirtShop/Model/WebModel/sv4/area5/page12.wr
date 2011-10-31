@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="18" gr:y="225" id="sv4#area5#page12" name="Gestione Informazioni" landmark="true" linkOrder="sv4#area5#page12#ln19">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv4#area5#page12#inu3" name="Lista informazioni" entity="ent11" displayAttributes="ent11#att47 ent11#att42" linkOrder="sv4#area5#page12#inu3#ln22 sv4#area5#page12#inu3#ln27">
+    <IndexUnit gr:x="0" gr:y="0" id="sv4#area5#page12#inu3" name="Lista informazioni" linkOrder="sv4#area5#page12#inu3#ln22 sv4#area5#page12#inu3#ln27" displayAttributes="ent11#att47 ent11#att42" entity="ent11">
       <Link id="sv4#area5#page12#inu3#ln22" name="Cancella" to="sv4#area5#page15#dau9" automaticCoupling="true" type="normal" validate="true"/>
       <Link id="sv4#area5#page12#inu3#ln27" name="Modifica" to="sv4#area5#page14#enu4" type="normal" validate="true">
         <LinkParameter id="sv4#area5#page12#inu3#ln27#par16" name="home_Home" source="data[].ent11#att42" target="sv4#area5#page14#enu4#fld14_slot"/>

@@ -1,0 +1,98 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="715" gr:y="658" id="sv4#area6#page21" name="Dettaglio Stampa" linkOrder="sv4#area6#page21#ln102 sv4#area6#page21#ln145">
+  <ContentUnits>
+    <EntryUnit id="sv4#area6#page21#enu11" name="Dettaglio Stampa" ajaxEnableExpandedLinks="true" gr:x="117" gr:y="111" linkOrder="sv4#area6#page21#enu11#ln143">
+      <Field id="sv4#area6#page21#enu11#fld42" name="Nome" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area6#page21#enu11#fld43" name="Descrizione" type="text" modifiable="true" contentType="text/html" preloaded="true"/>
+      <MultiSelectionField id="sv4#area6#page21#enu11#msfld8" name="Tema" type="string"/>
+      <Field id="sv4#area6#page21#enu11#fld44" name="Immagine anteprima/web" type="blob" modifiable="true" contentType="image" preloaded="true"/>
+      <Field id="sv4#area6#page21#enu11#fld45" name="Immagine per stampa" type="blob" modifiable="true" contentType="image" preloaded="true"/>
+      <Field id="sv4#area6#page21#enu11#fld46" name="Prezzo (a dimensione piena)" type="float" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area6#page21#enu11#fld47" name="Attiva" ajaxEventEnabled="false" type="boolean" modifiable="true" preloaded="true"/>
+      <Link id="sv4#area6#page21#enu11#ln143" name="Salva" to="sv4#area6#miu7" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par259" name="Immagine anteprima/web_anteprima" source="sv4#area6#page21#enu11#fld44" target="sv4#area6#miu7.mov1#opm2#icu2#icp4"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par260" name="Descrizione_descrizione" source="sv4#area6#page21#enu11#fld43" target="sv4#area6#miu7.mov1#opm2#icu2#icp2"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par261" name="Immagine per stampa_immagineHd" source="sv4#area6#page21#enu11#fld45" target="sv4#area6#miu7.mov1#opm2#icu2#icp5"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par262" name="Attiva_isActive" source="sv4#area6#page21#enu11#fld47" target="sv4#area6#miu7.mov1#opm2#icu2#icp9"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par263" name="Nome_nome" source="sv4#area6#page21#enu11#fld42" target="sv4#area6#miu7.mov1#opm2#icu2#icp1"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par264" name="Prezzo (a dimensione piena)_prezzo" source="sv4#area6#page21#enu11#fld46" target="sv4#area6#miu7.mov1#opm2#icu2#icp8"/>
+        <LinkParameter id="sv4#area6#page21#enu11#ln143#par265" name="Tema_temi" source="sv4#area6#page21#enu11#msfld8" target="sv4#area6#miu7.mov1#opm2#icu2#icp6"/>
+      </Link>
+      <Field id="sv4#area6#page21#enu11#fld78" name="Cliente" type="string" modifiable="false" preloaded="true"/>
+    </EntryUnit>
+    <SelectorUnit id="sv4#area6#page21#seu10" name="Temi disponibili" gr:x="116" gr:y="0" entity="ent14" distinctAttributes="ent14#att54 ent14#att53">
+      <SortAttribute attribute="ent14#att54" order="ascending"/>
+      <Link id="sv4#area6#page21#seu10#ln92" name="Link92" to="sv4#area6#page21#enu11" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page21#seu10#ln92#par232" name="nome_Tema [label]" source="ent14#att54Array" target="sv4#area6#page21#enu11#msfld8_label"/>
+        <LinkParameter id="sv4#area6#page21#seu10#ln92#par233" name="oid_Tema [output]" source="ent14#att53Array" target="sv4#area6#page21#enu11#msfld8_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="239" gr:y="2" id="sv4#area6#page21#seu11" name="Temi Stampa" entity="ent14">
+      <Selector id="sv4#area6#page21#seu11#su59" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page21#seu11#su59#rcond5" name="Stampa" predicate="in" implied="false" role="rel24#role48"/>
+      </Selector>
+      <Link id="sv4#area6#page21#seu11#ln94" name="Link94" to="sv4#area6#page21#enu11" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page21#seu11#ln94#par234" name="oid_Tema - Preselection" source="ent14#att53Array" target="sv4#area6#page21#enu11#msfld8_presel"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="38" gr:y="1" id="sv4#area6#page21#seu12" name="Stampa" entity="ent6" distinctAttributes="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49 rel21#role42.ent10#att56">
+      <Selector id="sv4#area6#page21#seu12#su60" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#page21#seu12#su60#kcond47" name="KeyCondition47" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area6#page21#seu12#ln93" name="Link93" to="sv4#area6#page21#seu11" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="33,-50,-183,-50;98,-52,-118,-52;161,-52,-55,-52"/>
+      <Link id="sv4#area6#page21#seu12#ln95" name="Link95" to="sv4#area6#page21#enu11" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par235" name="isactive_Attiva" source="ent6#att49Array" target="sv4#area6#page21#enu11#fld47_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par236" name="descrizione_Descrizione" source="ent6#att24Array" target="sv4#area6#page21#enu11#fld43_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par237" name="anteprima_Immagine anteprima/web" source="ent6#att25Array" target="sv4#area6#page21#enu11#fld44_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par238" name="immagineHD_Immagine per stampa" source="ent6#att26Array" target="sv4#area6#page21#enu11#fld45_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par239" name="nome_Nome" source="ent6#att23Array" target="sv4#area6#page21#enu11#fld42_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par240" name="prezzoBase_Prezzo (a dimensione piena)" source="ent6#att27Array" target="sv4#area6#page21#enu11#fld46_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par379" name="StampaToCliente.codiceFiscale_Cliente" source="rel21#role42$ent10#att56Array" target="sv4#area6#page21#enu11#fld78_slot"/>
+      </Link>
+      <Link id="sv4#area6#page21#seu12#ln103" name="Link103" to="sv4#area6#stu3" type="transport" validate="true" gr:bendpoints="26,-55,-228,72">
+        <LinkParameter id="sv4#area6#page21#seu12#ln103#par242" name="oid_stampa_oid" source="ent6#att22Array" target="sv4#area6#stu3.ctx3"/>
+      </Link>
+      <Link id="sv4#area6#page21#seu12#ln142" name="Link142" to="sv4#area6#miu7" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page21#seu12#ln142#par258" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu7.mov1#opm2#icu2#icp7"/>
+      </Link>
+      <Link id="sv4#area6#page21#seu12#ln144" name="Link144" to="sv4#area6#miu8" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page21#seu12#ln144#par266" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu8.mov1#opm4#icu5#icp11"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="111" id="sv4#area6#page21#gtu1" name="Get Stampa" contextParameters="ctx3">
+      <Link id="sv4#area6#page21#gtu1#ln110" name="Link110" to="sv4#area6#page21#seu12" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page21#gtu1#ln110#par243" name="stampa_oid_KeyCondition47 [oid]" source="sv4#area6#page21#gtu1.ctx3" target="sv4#area6#page21#seu12#su60#kcond47.ent6#att22"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page21#enu11">
+          <layout:Link link="sv4#area6#page21#enu11#ln143"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld42"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld43"/>
+          <layout:Field field="sv4#area6#page21#enu11#msfld8"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld44"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld45"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld46"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld47"/>
+          <layout:Field field="sv4#area6#page21#enu11#fld78"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area6#page21#ln102" name="Nuovo Tema" to="sv4#area6#miu6" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv4#area6#page21#ln145" name="Elimina Stampa" to="sv4#area6#miu8" automaticCoupling="true" type="normal" validate="true"/>
+</Page>

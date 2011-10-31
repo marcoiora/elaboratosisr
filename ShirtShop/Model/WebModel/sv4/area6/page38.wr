@@ -1,0 +1,38 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1522" gr:y="1675" id="sv4#area6#page38" name="Cambia stampa retro" linkOrder="sv4#area6#page38#ln210">
+  <ContentUnits>
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page38#inu24" name="Stampe" entity="ent6" linkOrder="sv4#area6#page38#inu24#ln206" displayAttributes="ent6#att23 ent6#att25">
+      <Link id="sv4#area6#page38#inu24#ln206" name="seleziona" to="sv4#area6#mfu6" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page38#inu24#ln206#par392" name="oid_Stampa.oid(TemplateToStampaRetro)" source="data[].ent6#att22" target="sv4#area6#mfu6.rel23#role45.ent6#att22"/>
+      </Link>
+      <Selector id="sv4#area6#page38#inu24#su126" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area6#page38#inu24#su126#acond11" name="attive" predicate="eq" booleanOperator="or" implied="false" attributes="ent6#att49" value="true"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page38#inu24">
+          <layout:Link link="sv4#area6#page38#inu24#ln206"/>
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att25"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area6#page38#ln210" name="Rimuovi Stampa Retro" to="sv4#area6#mfu7" type="normal" validate="true">
+    <LinkParameter id="sv4#area6#page38#ln210#par396" name="$$NULL$$_Stampa.oid(TemplateToStampaRetro)" sourceValue="$$NULL$$" target="sv4#area6#mfu7.rel23#role45.ent6#att22"/>
+  </Link>
+</Page>

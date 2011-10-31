@@ -1,0 +1,106 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1025" gr:y="303" id="sv4#area6#page23" name="Nuova Proposta">
+  <ContentUnits>
+    <EntryUnit id="sv4#area6#page23#enu13" name="Inserisci dati proposta" gr:x="155" gr:y="122" fieldOrder="sv4#area6#page23#enu13#fld57 sv4#area6#page23#enu13#fld58 sv4#area6#page23#enu13#fld59 sv4#area6#page23#enu13#fld60 sv4#area6#page23#enu13#fld63 sv4#area6#page23#enu13#msfld9 sv4#area6#page23#enu13#msfld10 sv4#area6#page23#enu13#msfld11 sv4#area6#page23#enu13#sfld5 sv4#area6#page23#enu13#fld65 sv4#area6#page23#enu13#sfld6 sv4#area6#page23#enu13#fld66 sv4#area6#page23#enu13#fld64" linkOrder="sv4#area6#page23#enu13#ln165 sv4#area6#page23#enu13#ln179 sv4#area6#page23#enu13#ln180 sv4#area6#page23#enu13#ln181">
+      <Field id="sv4#area6#page23#enu13#fld57" name="Nome" type="string" modifiable="true"/>
+      <Field id="sv4#area6#page23#enu13#fld58" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
+      <Field id="sv4#area6#page23#enu13#fld59" name="Manica" ajaxAutocompleteEnabled="true" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" type="string" modifiable="true" preloaded="true" ajaxAutocompleteLink="sv4#area6#page23#enu13#ln179"/>
+      <Field id="sv4#area6#page23#enu13#fld60" name="Collo" ajaxAutocompleteEnabled="true" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" type="string" modifiable="true" preloaded="true" ajaxAutocompleteLink="sv4#area6#page23#enu13#ln181"/>
+      <Field id="sv4#area6#page23#enu13#fld63" name="Materiale" ajaxAutocompleteEnabled="true" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" type="string" modifiable="true" preloaded="true" ajaxAutocompleteLink="sv4#area6#page23#enu13#ln180"/>
+      <Field id="sv4#area6#page23#enu13#fld64" name="Prezzo" type="float" modifiable="true"/>
+      <MultiSelectionField id="sv4#area6#page23#enu13#msfld9" name="Taglie disponibili" type="string"/>
+      <MultiSelectionField id="sv4#area6#page23#enu13#msfld10" name="Sessi disponibili" type="string"/>
+      <MultiSelectionField id="sv4#area6#page23#enu13#msfld11" name="Colori disponibili" type="string"/>
+      <SelectionField id="sv4#area6#page23#enu13#sfld5" name="Stampa Fronte" type="string"/>
+      <SelectionField id="sv4#area6#page23#enu13#sfld6" name="Stampa Retro" type="string"/>
+      <Field id="sv4#area6#page23#enu13#fld65" name="Dimensione stampa fronte" type="float" modifiable="true"/>
+      <Field id="sv4#area6#page23#enu13#fld66" name="Dimensione stampa retro" type="float" modifiable="true"/>
+      <Link id="sv4#area6#page23#enu13#ln165" name="Salva" to="sv4#area6#miu9" type="normal" validate="true">
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par320" name="Collo_collo" source="sv4#area6#page23#enu13#fld60" target="sv4#area6#miu9.mov1#opm5#icu6#icp33"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par321" name="Colori disponibili_colori" source="sv4#area6#page23#enu13#msfld11" target="sv4#area6#miu9.mov1#opm5#icu6#icp30"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par322" name="Descrizione_descrizione" source="sv4#area6#page23#enu13#fld58" target="sv4#area6#miu9.mov1#opm5#icu6#icp29"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par323" name="Dimensione stampa fronte_dimensioneFronte" source="sv4#area6#page23#enu13#fld65" target="sv4#area6#miu9.mov1#opm5#icu6#icp38"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par324" name="Dimensione stampa retro_dimensioneRetro" source="sv4#area6#page23#enu13#fld66" target="sv4#area6#miu9.mov1#opm5#icu6#icp39"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par325" name="_isactive" target="sv4#area6#miu9.mov1#opm5#icu6#icp34" sourceValue="false"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par326" name="Manica_manica" source="sv4#area6#page23#enu13#fld59" target="sv4#area6#miu9.mov1#opm5#icu6#icp27"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par327" name="Materiale_materiale" source="sv4#area6#page23#enu13#fld63" target="sv4#area6#miu9.mov1#opm5#icu6#icp35"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par328" name="Nome_nome" source="sv4#area6#page23#enu13#fld57" target="sv4#area6#miu9.mov1#opm5#icu6#icp12"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par329" name="Prezzo_prezzo" source="sv4#area6#page23#enu13#fld64" target="sv4#area6#miu9.mov1#opm5#icu6#icp32"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par330" name="Sessi disponibili_sessi" source="sv4#area6#page23#enu13#msfld10" target="sv4#area6#miu9.mov1#opm5#icu6#icp28"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par331" name="false_stampabileFronte" sourceValue="false" target="sv4#area6#miu9.mov1#opm5#icu6#icp31"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par332" name="false_stampabileRetro" sourceValue="false" target="sv4#area6#miu9.mov1#opm5#icu6#icp36"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par333" name="Stampa Fronte_stampaFronte_oid" source="sv4#area6#page23#enu13#sfld5" target="sv4#area6#miu9.mov1#opm5#icu6#icp40"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par334" name="Stampa Retro_stampaRetro_oid" source="sv4#area6#page23#enu13#sfld6" target="sv4#area6#miu9.mov1#opm5#icu6#icp41"/>
+        <LinkParameter id="sv4#area6#page23#enu13#ln165#par335" name="Taglie disponibili_taglie" source="sv4#area6#page23#enu13#msfld9" target="sv4#area6#miu9.mov1#opm5#icu6#icp13"/>
+      </Link>
+      <Link id="sv4#area6#page23#enu13#ln179" name="Manica" to="sv4#area6#page28#inu12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12"/>
+      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15"/>
+      <Link id="sv4#area6#page23#enu13#ln181" name="Collo" to="sv4#area6#page30#inu14" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14"/>
+    </EntryUnit>
+    <SelectorUnit id="sv4#area6#page23#seu29" name="Taglie" gr:x="191" gr:y="0" distinct="false" distinctAttributes="ent3#att15 ent3#att16" entity="ent3">
+      <SortAttribute attribute="ent3#att15" order="ascending"/>
+      <Link id="sv4#area6#page23#seu29#ln149" name="Link149" to="sv4#area6#page23#enu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page23#seu29#ln149#par269" name="nome_Taglie disponibili [label]" source="ent3#att16Array" target="sv4#area6#page23#enu13#msfld9_label"/>
+        <LinkParameter id="sv4#area6#page23#seu29#ln149#par270" name="oid_Taglie disponibili [output]" source="ent3#att15Array" target="sv4#area6#page23#enu13#msfld9_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#area6#page23#seu30" name="Sessi disponibili" gr:x="81" gr:y="0" distinctAttributes="ent4#att17 ent4#att18" entity="ent4">
+      <SortAttribute attribute="ent4#att18" order="ascending"/>
+      <Link id="sv4#area6#page23#seu30#ln148" name="Link148" to="sv4#area6#page23#enu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page23#seu30#ln148#par267" name="nome_Sessi disponibili [label]" source="ent4#att18Array" target="sv4#area6#page23#enu13#msfld10_label"/>
+        <LinkParameter id="sv4#area6#page23#seu30#ln148#par268" name="oid_Sessi disponibili [output]" source="ent4#att17Array" target="sv4#area6#page23#enu13#msfld10_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#area6#page23#seu31" name="Colori disponibili" gr:x="265" gr:y="3" distinctAttributes="ent2#att12 ent2#att13" entity="ent2">
+      <SortAttribute attribute="ent2#att13" order="ascending"/>
+      <Link id="sv4#area6#page23#seu31#ln150" name="Link150" to="sv4#area6#page23#enu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page23#seu31#ln150#par271" name="nome_Colori disponibili [label]" source="ent2#att13Array" target="sv4#area6#page23#enu13#msfld11_label"/>
+        <LinkParameter id="sv4#area6#page23#seu31#ln150#par272" name="oid_Colori disponibili [output]" source="ent2#att12Array" target="sv4#area6#page23#enu13#msfld11_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="55" id="sv4#area6#page23#seu32" name="Stampa" entity="ent6">
+      <Link id="sv4#area6#page23#seu32#ln151" name="Link151" to="sv4#area6#page23#enu13" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page23#seu32#ln151#par273" name="nome_Stampa Fronte [label]" source="ent6#att23Array" target="sv4#area6#page23#enu13#sfld5_label"/>
+        <LinkParameter id="sv4#area6#page23#seu32#ln151#par274" name="oid_Stampa Fronte [output]" source="ent6#att22Array" target="sv4#area6#page23#enu13#sfld5_output"/>
+        <LinkParameter id="sv4#area6#page23#seu32#ln151#par275" name="nome_Stampa Retro [label]" source="ent6#att23Array" target="sv4#area6#page23#enu13#sfld6_label"/>
+        <LinkParameter id="sv4#area6#page23#seu32#ln151#par276" name="oid_Stampa Retro [output]" source="ent6#att22Array" target="sv4#area6#page23#enu13#sfld6_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page23#enu13">
+          <layout:Field field="sv4#area6#page23#enu13#fld57"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld58"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld59"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld60"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld63"/>
+          <layout:Field field="sv4#area6#page23#enu13#msfld9"/>
+          <layout:Field field="sv4#area6#page23#enu13#msfld10"/>
+          <layout:Field field="sv4#area6#page23#enu13#msfld11"/>
+          <layout:Field field="sv4#area6#page23#enu13#sfld5"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld65"/>
+          <layout:Field field="sv4#area6#page23#enu13#sfld6"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld66"/>
+          <layout:Field field="sv4#area6#page23#enu13#fld64"/>
+          <layout:Link link="sv4#area6#page23#enu13#ln165"/>
+          <layout:Link link="sv4#area6#page23#enu13#ln179"/>
+          <layout:Link link="sv4#area6#page23#enu13#ln180"/>
+          <layout:Link link="sv4#area6#page23#enu13#ln181"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

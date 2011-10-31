@@ -8,12 +8,12 @@
         <LinkParameter id="sv1#area3#page3#enu2#ln2#par4" name="password_Password" source="sv1#area3#page3#enu2#fld4" target="sv1#lgu1.password"/>
       </Link>
     </EntryUnit>
-    <DataUnit id="sv1#area3#page3#dau2" name="Informazioni Home" gr:x="184" gr:y="0" entity="ent11" displayAttributes="ent11#att47 ent11#att48">
+    <DataUnit id="sv1#area3#page3#dau2" name="Informazioni Home" gr:x="184" gr:y="0" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
       <Selector id="sv1#area3#page3#dau2#su3" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv1#area3#page3#dau2#su3#acond3" name="AttCondition2" predicate="eq" booleanOperator="or" implied="false" attributes="ent11#att42" value="True"/>
+        <AttributesCondition id="sv1#area3#page3#dau2#su3#acond3" name="AttCondition2" predicate="eq" booleanOperator="or" implied="false" value="True" attributes="ent11#att42"/>
       </Selector>
     </DataUnit>
-    <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" entity="ent13" displayAttributes="ent1#att2 ent1#att3" maxResults="4" linkOrder="sv1#area3#page3#mdu2#ln17">
+    <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" maxResults="4" linkOrder="sv1#area3#page3#mdu2#ln17" displayAttributes="ent1#att2 ent1#att3" entity="ent13">
       <SortAttribute attribute="ent1#att1" order="descending"/>
       <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true"/>
     </MultiDataUnit>

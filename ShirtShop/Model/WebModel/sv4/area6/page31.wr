@@ -1,8 +1,8 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="539" gr:y="363" id="sv4#area6#page31" name="Materiali" layout:pageLayout="WRDefault/Autocomplete">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="766" id="sv4#area6#page31" name="Materiali" layout:pageLayout="WRDefault/Autocomplete">
   <ContentUnits>
-    <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page31#inu15" name="Materiali" entity="ent1" displayAttributes="ent1#att8" distinct="true" ajaxEnableExpandedLinks="false">
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page31#inu15" name="Materiali" distinct="true" ajaxEnableExpandedLinks="false" displayAttributes="ent1#att8" entity="ent1">
       <Selector id="sv4#area6#page31#inu15#su26" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv4#area6#page31#inu15#su26#acond4" name="materiale" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att8" ignoreCase="true"/>
+        <AttributesCondition id="sv4#area6#page31#inu15#su26#acond4" name="materiale" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true" attributes="ent1#att8"/>
       </Selector>
     </IndexUnit>
   </ContentUnits>

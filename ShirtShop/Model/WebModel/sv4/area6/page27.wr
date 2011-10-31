@@ -1,12 +1,18 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="116" gr:y="0" id="sv4#area6#page27" name="Gestione Magliette" landmark="true" linkOrder="sv4#area6#page27#ln114">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="185" gr:y="0" id="sv4#area6#page27" name="Gestione Magliette" landmark="true" linkOrder="sv4#area6#page27#ln114">
   <ContentUnits>
-    <IndexUnit id="sv4#area6#page27#inu17" name="Magliette" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att2 ent1#att10" linkOrder="sv4#area6#page27#inu17#ln113">
+    <IndexUnit id="sv4#area6#page27#inu17" name="Magliette" gr:x="114" gr:y="0" linkOrder="sv4#area6#page27#inu17#ln113" displayAttributes="ent1#att2 ent1#att10" entity="ent1">
       <SortAttribute attribute="ent1#att10" order="descending"/>
       <SortAttribute attribute="ent1#att2" order="ascending"/>
       <Link id="sv4#area6#page27#inu17#ln113" name="dettagli" to="sv4#area6#page33#seu16" type="normal" validate="true">
         <LinkParameter id="sv4#area6#page27#inu17#ln113#par173" name="oid_KeyCondition28 [oid]" source="data[].ent1#att1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
       </Link>
+      <Selector id="sv4#area6#page27#inu17#su128" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#page27#inu17#su128#kcond84" name="KeyCondition84" predicate="notIn" implied="false"/>
+      </Selector>
     </IndexUnit>
+    <SelectorUnit gr:x="0" gr:y="8" id="sv4#area6#page27#seu49" name="Proposte" entity="ent13">
+      <Link id="sv4#area6#page27#seu49#ln242" name="Link242" to="sv4#area6#page27#inu17" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>

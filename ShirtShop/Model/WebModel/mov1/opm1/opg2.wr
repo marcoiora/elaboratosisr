@@ -10,7 +10,7 @@
       <OKLink id="mov1#opm1#opg2#dcnu7#oln12" name="OKLink23" to="mov1#opm1#opg2#dcnu8"/>
       <KOLink id="mov1#opm1#opg2#dcnu7#kln17" name="KOLink17" to="mov1#opm1#kocu1" automaticCoupling="true"/>
     </DisconnectUnit>
-    <SelectorUnit id="mov1#opm1#opg2#seu13" name="Colori Maglietta" gr:x="218" gr:y="0" entity="ent2" distinctAttributes="ent2#att12">
+    <SelectorUnit id="mov1#opm1#opg2#seu13" name="Colori Maglietta" gr:x="218" gr:y="0" distinctAttributes="ent2#att12" entity="ent2">
       <Selector id="mov1#opm1#opg2#seu13#su33" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov1#opm1#opg2#seu13#su33#rcond24" name="Maglietta" predicate="in" implied="false" role="rel1#role1"/>
       </Selector>
