@@ -1,4 +1,4 @@
-<WebModel xmlns:layout="http://www.webratio.com/2006/WebML/Layout" defaultLocale="lcl1" layout:style="WRDefault" control="bWFnbGlldHRhX29pZHN0YW1wYV9vaWR0ZW1wbGF0ZV9vaWRDb3VudHJ5SVNPQ3R4UGFyYW1Hcm91cEN0eFBhcmFt" homeSiteView="sv1" linkedResourceOrder="lr5 lr6 lr7" layout:pageLayout="WebRatio/Basic">
+<WebModel xmlns:layout="http://www.webratio.com/2006/WebML/Layout" defaultLocale="lcl1" layout:style="WRDefault" control="Y29uZmlndXJhemlvbmVfb2lkbWFnbGlldHRhX29pZHN0YW1wYV9vaWR0ZW1wbGF0ZV9vaWRDb3VudHJ5SVNPQ3R4UGFyYW0=" homeSiteView="sv1" linkedResourceOrder="lr5 lr6 lr7" layout:pageLayout="WebRatio/Basic">
   <Locale id="lcl1" country="US" language="en">
     <PatternConfiguration type="boolean" pattern="yes|no"/>
     <PatternConfiguration type="decimal" useNumberPattern="false" maxDecimal="3" minDecimal="0" minInteger="1" useThousandSeparator="true"/>
@@ -18,4 +18,5 @@
   <ContextParameter id="ctx1" name="maglietta_oid" type="integer"/>
   <ContextParameter id="ctx3" name="stampa_oid" type="integer"/>
   <ContextParameter id="ctx4" name="template_oid" type="integer"/>
+  <ContextParameter id="ctx2" name="configurazione_oid" type="string"/>
 </WebModel>

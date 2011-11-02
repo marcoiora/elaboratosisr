@@ -1,8 +1,16 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="153" gr:y="3" id="sv2#area8#page34" name="Le nostre proposte" landmark="true">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="161" gr:y="1" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv2#area8#page34#inu4" name="Proposte" entity="ent13" displayAttributes="ent1#att2 rel22#role43.ent6#att25 rel23#role45.ent6#att25"/>
+  </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page34#inu4">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="rel22#role43.ent6#att25"/>
+          <layout:Attribute attribute="rel23#role45.ent6#att25"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>

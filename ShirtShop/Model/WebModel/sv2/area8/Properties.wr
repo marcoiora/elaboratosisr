@@ -1,3 +1,124 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-590" gr:y="-260" id="sv2#area8" name="Web Market" landmark="true" defaultPage="sv2#area8#page22" landmarks="sv2#area8#page34 sv2#area8#page35">
-  <OperationUnits/>
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-1060" gr:y="-2270" id="sv2#area8" name="Web Market" landmark="true" defaultPage="sv2#area8#page22" landmarks="sv2#area8#page34 sv2#area8#page35 sv2#area8#page39">
+  <OperationUnits>
+    <SetUnit gr:x="152" gr:y="192" id="sv2#area8#stu2" name="Set Maglietta" contextParameters="ctx1"/>
+    <CreateUnit gr:x="522" gr:y="612" id="sv2#area8#cru3" name="Configurazione" entity="ent7">
+      <Link id="sv2#area8#cru3#ln214" name="Link214" to="sv2#area8#stu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#cru3#ln214#par296" name="oid_configurazione_oid" source="ent7#att28Array" target="sv2#area8#stu5.ctx2"/>
+      </Link>
+      <OKLink id="sv2#area8#cru3#oln79" name="OKLink79" to="sv2#area8#seu47" automaticCoupling="true"/>
+    </CreateUnit>
+    <GetUnit gr:x="352" gr:y="612" id="sv2#area8#gtu10" name="Get Maglietta" contextParameters="ctx1" linkOrder="sv2#area8#gtu10#ln52 sv2#area8#gtu10#ln212">
+      <Link id="sv2#area8#gtu10#ln52" name="Link52" to="sv2#area8#cru3" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu10#ln52#par288" name="maglietta_oid_Maglietta.oid(ConfigurazioneToMaglietta)" source="sv2#area8#gtu10.ctx1" target="sv2#area8#cru3.rel13#role25.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#gtu10#ln212" name="Link212" to="sv2#area8#seu47" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu10#ln212#par289" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu10.ctx1" target="sv2#area8#seu47#su96#kcond12.ent1#att1"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="372" gr:y="822" id="sv2#area8#seu47" name="Stampabile?" entity="ent1">
+      <Selector id="sv2#area8#seu47#su96" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#seu47#su96#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#seu47#ln213" name="Link213" to="sv2#area8#switch1" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#seu47#ln213#par290" name="stampabileFronte_Switch" source="ent1#att6Array" target="sv2#area8#switch1.switch"/>
+      </Link>
+      <OKLink id="sv2#area8#seu47#oln84" name="OKLink84" to="sv2#area8#switch1" automaticCoupling="true" gr:bendpoints="70,13,-89,17"/>
+    </SelectorUnit>
+    <SwitchUnit gr:x="512" gr:y="832" id="sv2#area8#switch1" name="Stampabile Fronte?">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="sv2#area8#switch1#oln6" name="OKLink6" to="sv2#area8#page41" automaticCoupling="true" code="true"/>
+      <OKLink id="sv2#area8#switch1#oln7" name="OKLink7" to="sv2#area8#seu52" automaticCoupling="true" gr:bendpoints="76,77,79,-333;76,338,79,-72" code="false"/>
+    </SwitchUnit>
+    <SetUnit gr:x="552" gr:y="732" id="sv2#area8#stu5" name="Set Configurazione" contextParameters="ctx2"/>
+    <GetUnit gr:x="342" gr:y="1122" id="sv2#area8#gtu11" name="Get Configurazione" contextParameters="ctx2">
+      <Link id="sv2#area8#gtu11#ln231" name="Link223" to="sv2#area8#mfu3" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu11#ln231#par307" name="configurazione_oid_KeyCondition64 [oid]" source="sv2#area8#gtu11.ctx2" target="sv2#area8#mfu3#su98#kcond65.ent7#att28"/>
+      </Link>
+    </GetUnit>
+    <ModifyUnit id="sv2#area8#mfu3" name="Configurazione" gr:x="502" gr:y="1112" entity="ent7">
+      <Selector id="sv2#area8#mfu3#su98" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#mfu3#su98#kcond65" name="KeyCondition64" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area8#mfu3#oln19" name="OKLink19" to="sv2#area8#seu52" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SwitchUnit gr:x="512" gr:y="1242" id="sv2#area8#switch2" name="Stampabile Retro?">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="sv2#area8#switch2#oln20" name="OKLink20" to="sv2#area8#page42" automaticCoupling="true" code="true"/>
+      <OKLink id="sv2#area8#switch2#oln77" name="OKLink77" to="sv2#area8#page43" automaticCoupling="true" gr:bendpoints="80,85,148,-366;82,316,150,-135" code="false"/>
+    </SwitchUnit>
+    <ModifyUnit id="sv2#area8#mfu4" name="Configurazione" gr:x="510" gr:y="1524" entity="ent7">
+      <Selector id="sv2#area8#mfu4#su99" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#mfu4#su99#kcond66" name="KeyCondition64" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area8#mfu4#oln71" name="OKLink71" to="sv2#area8#page43" automaticCoupling="true"/>
+    </ModifyUnit>
+    <GetUnit id="sv2#area8#gtu12" name="Get Configurazione" gr:x="350" gr:y="1534" contextParameters="ctx2">
+      <Link id="sv2#area8#gtu12#ln235" name="Link223" to="sv2#area8#mfu4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu12#ln235#par309" name="configurazione_oid_KeyCondition64 [oid]" source="sv2#area8#gtu12.ctx2" target="sv2#area8#mfu4#su99#kcond66.ent7#att28"/>
+      </Link>
+    </GetUnit>
+    <ModuleInstanceUnit gr:x="322" gr:y="1912" id="sv2#area8#miu10" name="Carrello" moduleId="mov1#mpkg2#opm13" linkOrder="sv2#area8#miu10#ln247">
+      <Link id="sv2#area8#miu10#ln247" name="Link247" to="sv2#area8#cru4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#miu10#ln247#par314" name="ordine_oid_Ordine.oid(RigaOrdineToOrdine)" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#cru4.rel18#role36.ent9#att35"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <CreateUnit gr:x="532" gr:y="1912" id="sv2#area8#cru4" name="Aggiungi a Carrello" entity="ent8">
+      <OKLink id="sv2#area8#cru4#oln78" name="OKLink78" to="sv2#area8#page39" automaticCoupling="true"/>
+    </CreateUnit>
+    <GetUnit gr:x="322" gr:y="2012" id="sv2#area8#gtu15" name="Get Configurazione" contextParameters="ctx2">
+      <Link id="sv2#area8#gtu15#ln248" name="Link248" to="sv2#area8#cru4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu15#ln248#par315" name="configurazione_oid_Configurazione.oid(RigaOrdineToConfigurazione)" source="sv2#area8#gtu15.ctx2" target="sv2#area8#cru4.rel17#role33.ent7#att28"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="322" gr:y="2102" id="sv2#area8#seu48" name="SelectorUnit48" entity="ent7" distinctAttributes="rel13#role25.ent1#att9 rel11#role21.ent6#att27 rel12#role23.ent6#att27" linkOrder="sv2#area8#seu48#ln249">
+      <Link id="sv2#area8#seu48#ln249" name="Link249" to="sv2#area8#mathu1" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#seu48#ln249#par316" name="dimensioneFronte_dimensioneStampaFronte" source="ent7#att29Array" target="sv2#area8#mathu1#mathv4"/>
+        <LinkParameter id="sv2#area8#seu48#ln249#par317" name="dimensioneRetro_dimensioneStampaRetro" source="ent7#att30Array" target="sv2#area8#mathu1#mathv5"/>
+        <LinkParameter id="sv2#area8#seu48#ln249#par318" name="ConfigurazioneToMaglietta.prezzo_prezzoMaglietta" source="rel13#role25$ent1#att9Array" target="sv2#area8#mathu1#mathv1"/>
+        <LinkParameter id="sv2#area8#seu48#ln249#par319" name="ConfigurazioneToStampaFronte.prezzoBase_prezzoStampaFronte" source="rel11#role21$ent6#att27Array" target="sv2#area8#mathu1#mathv2"/>
+        <LinkParameter id="sv2#area8#seu48#ln249#par348" name="ConfigurazioneToStampaRetro.prezzoBase_prezzoStampRetro" source="rel12#role23$ent6#att27Array" target="sv2#area8#mathu1#mathv3"/>
+      </Link>
+    </SelectorUnit>
+    <MathUnit gr:x="452" gr:y="2102" id="sv2#area8#mathu1" name="Calcola prezzo base" resultType="float" defaultExpression="prezzoMaglietta+(prezzoStampaFronte*dimensioneStampaFronte)+(prezzoStampaRetro*dimensioneStampaRetro)" linkOrder="sv2#area8#mathu1#ln250 sv2#area8#mathu1#ln253">
+      <MathVariable id="sv2#area8#mathu1#mathv1" name="prezzoMaglietta"/>
+      <MathVariable id="sv2#area8#mathu1#mathv2" name="prezzoStampaFronte"/>
+      <MathVariable id="sv2#area8#mathu1#mathv3" name="prezzoStampRetro"/>
+      <MathVariable id="sv2#area8#mathu1#mathv4" name="dimensioneStampaFronte"/>
+      <MathVariable id="sv2#area8#mathu1#mathv5" name="dimensioneStampaRetro"/>
+      <Link id="sv2#area8#mathu1#ln250" name="Link250" to="sv2#area8#mathu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#mathu1#ln250#par349" name="Result_prezzo" source="result" target="sv2#area8#mathu2#mathv6"/>
+      </Link>
+      <Link id="sv2#area8#mathu1#ln253" name="Link253" to="sv2#area8#cru4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#mathu1#ln253#par351" name="Result_prezzoSingolo" source="result" target="sv2#area8#cru4.ent8#att32"/>
+      </Link>
+    </MathUnit>
+    <MathUnit gr:x="682" gr:y="2102" id="sv2#area8#mathu2" name="Prezzo totale" resultType="float" defaultExpression="prezzo*quantit&#224;" linkOrder="sv2#area8#mathu2#ln252">
+      <MathVariable id="sv2#area8#mathu2#mathv6" name="prezzo"/>
+      <MathVariable id="sv2#area8#mathu2#mathv7" name="quantit&#224;"/>
+      <Link id="sv2#area8#mathu2#ln252" name="Link252" to="sv2#area8#cru4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#mathu2#ln252#par352" name="Result_prezzoTotale" source="result" target="sv2#area8#cru4.ent8#att34"/>
+      </Link>
+    </MathUnit>
+    <ModuleInstanceUnit gr:x="632" gr:y="42" id="sv2#area8#miu12" name="Get Carrello" moduleId="mov1#mpkg2#opm13">
+      <Link id="sv2#area8#miu12#ln256" name="Link256" to="sv2#area8#page39#inu13" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#miu12#ln256#par354" name="ordine_oid_carrello [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#page39#inu13#su111#rcond38.ent9#att35"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <GetUnit id="sv2#area8#gtu13" name="Get Maglietta" gr:x="182" gr:y="1032" contextParameters="ctx1">
+      <Link id="sv2#area8#gtu13#ln255" name="Link212" to="sv2#area8#seu52" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu13#ln255#par363" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu13.ctx1" target="sv2#area8#seu52#su115#kcond77.ent1#att1"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="sv2#area8#seu52" name="Stampabile?" gr:x="202" gr:y="1242" entity="ent1" linkOrder="sv2#area8#seu52#ln257">
+      <Selector id="sv2#area8#seu52#su115" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#seu52#su115#kcond77" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#seu52#ln257" name="Link257" to="sv2#area8#switch2" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#seu52#ln257#par385" name="stampabileRetro_Switch" source="ent1#att7Array" target="sv2#area8#switch2.switch"/>
+      </Link>
+      <OKLink id="sv2#area8#seu52#oln85" name="OKLink85" to="sv2#area8#switch2" automaticCoupling="true" gr:bendpoints="156,8,-170,22"/>
+    </SelectorUnit>
+  </OperationUnits>
 </Area>

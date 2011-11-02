@@ -1,0 +1,88 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="295" gr:y="155" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
+  <ContentUnits>
+    <GetUnit gr:x="110" gr:y="1" id="sv2#area8#page40#gtu6" name="Get Maglietta" contextParameters="ctx1">
+      <Link id="sv2#area8#page40#gtu6#ln254" name="Link254" to="sv2#area8#page40#seu51" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#gtu6#ln254#par362" name="maglietta_oid_KeyCondition69 [oid]" source="sv2#area8#page40#gtu6.ctx1" target="sv2#area8#page40#seu51#su114#kcond69.ent1#att1"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="105" gr:y="94" id="sv2#area8#page40#seu44" name="Sessi" entity="ent4">
+      <Selector id="sv2#area8#page40#seu44#su17" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page40#seu44#su17#rcond34" name="maglietta" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv2#area8#page40#seu44#ln41" name="Link41" to="sv2#area8#page40#enu18" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu44#ln41#par69" name="nome_Scegli il sesso [label]" source="ent4#att18Array" target="sv2#area8#page40#enu18#sfld3_label"/>
+        <LinkParameter id="sv2#area8#page40#seu44#ln41#par70" name="oid_Scegli il sesso [output]" source="ent4#att17Array" target="sv2#area8#page40#enu18#sfld3_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="105" gr:y="194" id="sv2#area8#page40#seu45" name="Taglie" entity="ent3">
+      <Selector id="sv2#area8#page40#seu45#su18" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page40#seu45#su18#rcond36" name="maglietta" predicate="in" implied="false" role="rel3#role5"/>
+      </Selector>
+      <Link id="sv2#area8#page40#seu45#ln44" name="Link44" to="sv2#area8#page40#enu18" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu45#ln44#par79" name="nome_La taglia [label]" source="ent3#att16Array" target="sv2#area8#page40#enu18#sfld4_label"/>
+        <LinkParameter id="sv2#area8#page40#seu45#ln44#par91" name="oid_La taglia [output]" source="ent3#att15Array" target="sv2#area8#page40#enu18#sfld4_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="105" gr:y="294" id="sv2#area8#page40#seu46" name="Colori" entity="ent2">
+      <Selector id="sv2#area8#page40#seu46#su94" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page40#seu46#su94#rcond37" name="maglietta" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv2#area8#page40#seu46#ln47" name="Link47" to="sv2#area8#page40#enu18" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu46#ln47#par92" name="nome_Ed il colore [label]" source="ent2#att13Array" target="sv2#area8#page40#enu18#sfld9_label"/>
+        <LinkParameter id="sv2#area8#page40#seu46#ln47#par218" name="oid_Ed il colore [output]" source="ent2#att12Array" target="sv2#area8#page40#enu18#sfld9_output"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="228" gr:y="97" id="sv2#area8#page40#enu18" linkOrder="sv2#area8#page40#enu18#ln50">
+      <SelectionField id="sv2#area8#page40#enu18#sfld3" name="Scegli il sesso" type="string"/>
+      <SelectionField id="sv2#area8#page40#enu18#sfld4" name="La taglia" type="string"/>
+      <SelectionField id="sv2#area8#page40#enu18#sfld9" name="Ed il colore" type="string"/>
+      <Link id="sv2#area8#page40#enu18#ln50" name="Link50" to="sv2#area8#cru3" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page40#enu18#ln50#par219" name="Ed il colore_Colore.oid(ConfigurazioneToColore)" source="sv2#area8#page40#enu18#sfld9" target="sv2#area8#cru3.rel16#role31.ent2#att12"/>
+        <LinkParameter id="sv2#area8#page40#enu18#ln50#par285" name="Scegli il sesso_Sesso.oid(ConfigurazioneToSesso)" source="sv2#area8#page40#enu18#sfld3" target="sv2#area8#cru3.rel14#role27.ent4#att17"/>
+        <LinkParameter id="sv2#area8#page40#enu18#ln50#par286" name="La taglia_Taglia.oid(ConfigurazioneToTaglia)" source="sv2#area8#page40#enu18#sfld4" target="sv2#area8#cru3.rel15#role29.ent3#att15"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area8#page40#seu51" name="Maglietta" entity="ent1">
+      <Selector id="sv2#area8#page40#seu51#su114" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page40#seu51#su114#kcond69" name="KeyCondition69" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#page40#seu51#ln37" name="Link37" to="sv2#area8#page40#seu44" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu51#ln37#par304" name="maglietta_oid_maglietta [oid]" source="ent1#att1Array" target="sv2#area8#page40#seu44#su17#rcond34.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page40#seu51#ln39" name="Link26" to="sv2#area8#page40#seu45" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu51#ln39#par353" name="maglietta_oid_maglietta [oid]" source="ent1#att1Array" target="sv2#area8#page40#seu45#su18#rcond36.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page40#seu51#ln40" name="Link33" to="sv2#area8#page40#seu46" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu51#ln40#par355" name="maglietta_oid_maglietta [oid]" source="ent1#att1Array" target="sv2#area8#page40#seu46#su94#rcond37.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page40#seu51#ln225" name="Link225" to="sv2#area8#stu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu51#ln225#par356" name="oid_maglietta_oid" source="ent1#att1Array" target="sv2#area8#stu2.ctx1"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page40#enu18">
+          <layout:Field field="sv2#area8#page40#enu18#sfld3"/>
+          <layout:Field field="sv2#area8#page40#enu18#sfld4"/>
+          <layout:Field field="sv2#area8#page40#enu18#sfld9"/>
+          <layout:Link link="sv2#area8#page40#enu18#ln50"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv2#area8#page40#var1" name="maglietta_oid" type="integer"/>
+</Page>
