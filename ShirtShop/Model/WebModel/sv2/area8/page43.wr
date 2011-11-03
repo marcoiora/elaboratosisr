@@ -10,14 +10,15 @@
         <LinkParameter id="sv2#area8#page43#gtu14#ln245#par312" name="configurazione_oid_KeyCondition67 [oid]" source="sv2#area8#page43#gtu14.ctx2" target="sv2#area8#page43#dau13#su110#kcond67.ent7#att28"/>
       </Link>
     </GetUnit>
-    <EntryUnit gr:x="14" gr:y="124" id="sv2#area8#page43#enu21" linkOrder="sv2#area8#page43#enu21#ln246">
+    <EntryUnit gr:x="14" gr:y="124" id="sv2#area8#page43#enu21" linkOrder="sv2#area8#page43#enu21#ln258">
       <Field id="sv2#area8#page43#enu21#fld33" name="Quantit&#224;" type="integer" modifiable="true"/>
-      <Link id="sv2#area8#page43#enu21#ln246" name="Aggiungi al Carrello" to="sv2#area8#cru4" type="normal" validate="true">
+      <Link id="sv2#area8#page43#enu21#ln246" name="Aggiungi al Carrello" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#page43#enu21#ln246#par313" name="Quantit&#224;_quantita" source="sv2#area8#page43#enu21#fld33" target="sv2#area8#cru4.ent8#att33"/>
       </Link>
       <Link id="sv2#area8#page43#enu21#ln251" name="Link251" to="sv2#area8#mathu2" type="transport" validate="true" gr:bendpoints="337,22,-7,-275">
         <LinkParameter id="sv2#area8#page43#enu21#ln251#par350" name="Quantit&#224;_quantit&#224;" source="sv2#area8#page43#enu21#fld33" target="sv2#area8#mathu2#mathv7"/>
       </Link>
+      <Link id="sv2#area8#page43#enu21#ln258" name="Link258" to="sv2#area8#miu10" automaticCoupling="true" type="normal" validate="true"/>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid>
@@ -31,7 +32,7 @@
       <layout:Cell>
         <layout:Unit unitId="sv2#area8#page43#enu21">
           <layout:Field field="sv2#area8#page43#enu21#fld33"/>
-          <layout:Link link="sv2#area8#page43#enu21#ln246"/>
+          <layout:Link link="sv2#area8#page43#enu21#ln258"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

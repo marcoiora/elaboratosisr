@@ -1,4 +1,4 @@
-<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="-10" id="mov1#mpkg2#opm13#opg19" name="Operation Group 19" transaction="true">
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="-10" id="mov1#mpkg2#opm13#opg19" name="Operation Group 19" transaction="true">
   <OperationUnits>
     <SelectorUnit id="mov1#mpkg2#opm13#opg19#seu43" name="Carrello" gr:x="0" gr:y="0" entity="ent9">
       <Selector id="mov1#mpkg2#opm13#opg19#seu43#su95" defaultPolicy="fill" booleanOperator="and">
@@ -8,6 +8,7 @@
       <Link id="mov1#mpkg2#opm13#opg19#seu43#ln215" name="Link213" to="mov1#mpkg2#opm13#inn15" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg2#opm13#opg19#seu43#ln215#par291" name="oid_Input" source="ent9#att35Array" target="mov1#mpkg2#opm13#inn15.isnotnull"/>
       </Link>
+      <OKLink id="mov1#mpkg2#opm13#opg19#seu43#oln88" name="OKLink88" to="mov1#mpkg2#opm13#inn15" automaticCoupling="true" gr:bendpoints="91,94,-91,-55"/>
     </SelectorUnit>
     <CreateUnit id="mov1#mpkg2#opm13#opg19#cru14" name="Carrello" gr:x="410" gr:y="20" entity="ent9">
       <OKLink id="mov1#mpkg2#opm13#opg19#cru14#oln72" name="OKLink71" to="mov1#mpkg2#opm13#okcu16">

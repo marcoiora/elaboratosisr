@@ -1,4 +1,4 @@
-<WebModel xmlns:layout="http://www.webratio.com/2006/WebML/Layout" defaultLocale="lcl1" layout:style="WRDefault" control="Y29uZmlndXJhemlvbmVfb2lkbWFnbGlldHRhX29pZHN0YW1wYV9vaWR0ZW1wbGF0ZV9vaWRDb3VudHJ5SVNPQ3R4UGFyYW0=" homeSiteView="sv1" linkedResourceOrder="lr5 lr6 lr7" layout:pageLayout="WebRatio/Basic">
+<WebModel xmlns:layout="http://www.webratio.com/2006/WebML/Layout" defaultLocale="lcl1" layout:style="WebRatio" control="Y29uZmlndXJhemlvbmVfb2lkbWFnbGlldHRhX29pZHN0YW1wYV9vaWR0ZW1wbGF0ZV9vaWRDb3VudHJ5SVNPQ3R4UGFyYW0=" homeSiteView="sv1" layout:pageLayout="WRDefault/Default">
   <Locale id="lcl1" country="US" language="en">
     <PatternConfiguration type="boolean" pattern="yes|no"/>
     <PatternConfiguration type="decimal" useNumberPattern="false" maxDecimal="3" minDecimal="0" minInteger="1" useThousandSeparator="true"/>
@@ -12,9 +12,6 @@
   <ContextParameter id="GroupCtxParam" name="GroupCtxParam" entity="Group" type="entity"/>
   <ContextParameter id="LanguageISOCtxParam" name="LanguageISOCtxParam" type="string"/>
   <ContextParameter id="CountryISOCtxParam" name="CountryISOCtxParam" type="string"/>
-  <LinkedResource id="lr5" path="WebRatio/wr-css/global.css"/>
-  <LinkedResource id="lr7" path="WebRatio/wr-css/units.css"/>
-  <LinkedResource id="lr6" path="WebRatio/wr-css/menu.css"/>
   <ContextParameter id="ctx1" name="maglietta_oid" type="integer"/>
   <ContextParameter id="ctx3" name="stampa_oid" type="integer"/>
   <ContextParameter id="ctx4" name="template_oid" type="integer"/>

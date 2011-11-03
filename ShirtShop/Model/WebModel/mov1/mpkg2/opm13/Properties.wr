@@ -1,9 +1,9 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="30" gr:y="200" id="mov1#mpkg2#opm13" name="Crea o recupera carrello">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="200" id="mov1#mpkg2#opm13" name="Crea o recupera carrello">
   <OperationUnits>
-    <OKCollectorUnit id="mov1#mpkg2#opm13#okcu16" name="OK Collector16" gr:x="410" gr:y="190">
+    <OKCollectorUnit id="mov1#mpkg2#opm13#okcu16" name="OK Collector16" gr:x="400" gr:y="190">
       <OutputCollectorParameter id="mov1#mpkg2#opm13#okcu16#ocp12" name="ordine_oid"/>
     </OKCollectorUnit>
-    <GetUnit gr:x="220" gr:y="-100" id="mov1#mpkg2#opm13#gtu9" name="Utente" contextParameters="UserCtxParam">
+    <GetUnit gr:x="210" gr:y="-100" id="mov1#mpkg2#opm13#gtu9" name="Utente" contextParameters="UserCtxParam">
       <Link id="mov1#mpkg2#opm13#gtu9#ln216" name="Link214" to="mov1#mpkg2#opm13#opg19#cru14" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln216#par293" name="UserCtxParam.oid_Cliente.oid(OrdineToCliente)" source="mov1#mpkg2#opm13#gtu9.UserCtxParam" target="mov1#mpkg2#opm13#opg19#cru14.rel19#role37.userOID"/>
         <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln216#par294" name="carrello_stato" target="mov1#mpkg2#opm13#opg19#cru14.ent9#att41" sourceValue="carrello"/>
@@ -12,14 +12,14 @@
         <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln221#par295" name="UserCtxParam.oid_Cliente [oid]" source="mov1#mpkg2#opm13#gtu9.UserCtxParam" target="mov1#mpkg2#opm13#opg19#seu43#su95#rcond35.userOID"/>
       </Link>
     </GetUnit>
-    <IsNotNullUnit gr:x="170" gr:y="200" id="mov1#mpkg2#opm13#inn15" name="esiste gia' carrello o crea nuovo?">
+    <IsNotNullUnit gr:x="160" gr:y="200" id="mov1#mpkg2#opm13#inn15" name="esiste gia' carrello o crea nuovo?">
       <OKLink id="mov1#mpkg2#opm13#inn15#oln70" name="OKLink70" to="mov1#mpkg2#opm13#okcu16">
         <LinkParameter id="mov1#mpkg2#opm13#inn15#oln70#par287" name="Input Value_ordine_oid" source="inputValue" target="mov1#mpkg2#opm13#okcu16#ocp12"/>
       </OKLink>
       <KOLink id="mov1#mpkg2#opm13#inn15#kln63" name="KOLink62" to="mov1#mpkg2#opm13#opg19#cru14" automaticCoupling="true"/>
     </IsNotNullUnit>
-    <InputCollectorUnit gr:x="10" gr:y="200" id="mov1#mpkg2#opm13#icu15" name="Input Collector15">
-      <OKLink id="mov1#mpkg2#opm13#icu15#oln69" name="OKLink69" to="mov1#mpkg2#opm13#inn15" automaticCoupling="true"/>
+    <InputCollectorUnit gr:x="0" gr:y="200" id="mov1#mpkg2#opm13#icu15" name="Input Collector15">
+      <OKLink id="mov1#mpkg2#opm13#icu15#oln87" name="OKLink87" to="mov1#mpkg2#opm13#opg19#seu43" automaticCoupling="true"/>
     </InputCollectorUnit>
   </OperationUnits>
 </OperationModule>

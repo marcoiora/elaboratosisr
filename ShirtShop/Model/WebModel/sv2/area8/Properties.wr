@@ -63,6 +63,7 @@
       <Link id="sv2#area8#miu10#ln247" name="Link247" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#miu10#ln247#par314" name="ordine_oid_Ordine.oid(RigaOrdineToOrdine)" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#cru4.rel18#role36.ent9#att35"/>
       </Link>
+      <OKLink id="sv2#area8#miu10#oln86" name="OKLink86" to="sv2#area8#cru4" automaticCoupling="true" gr:bendpoints="104,14,-97,15"/>
     </ModuleInstanceUnit>
     <CreateUnit gr:x="532" gr:y="1912" id="sv2#area8#cru4" name="Aggiungi a Carrello" entity="ent8">
       <OKLink id="sv2#area8#cru4#oln78" name="OKLink78" to="sv2#area8#page39" automaticCoupling="true"/>
@@ -101,11 +102,6 @@
         <LinkParameter id="sv2#area8#mathu2#ln252#par352" name="Result_prezzoTotale" source="result" target="sv2#area8#cru4.ent8#att34"/>
       </Link>
     </MathUnit>
-    <ModuleInstanceUnit gr:x="632" gr:y="42" id="sv2#area8#miu12" name="Get Carrello" moduleId="mov1#mpkg2#opm13">
-      <Link id="sv2#area8#miu12#ln256" name="Link256" to="sv2#area8#page39#inu13" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#miu12#ln256#par354" name="ordine_oid_carrello [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#page39#inu13#su111#rcond38.ent9#att35"/>
-      </Link>
-    </ModuleInstanceUnit>
     <GetUnit id="sv2#area8#gtu13" name="Get Maglietta" gr:x="182" gr:y="1032" contextParameters="ctx1">
       <Link id="sv2#area8#gtu13#ln255" name="Link212" to="sv2#area8#seu52" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu13#ln255#par363" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu13.ctx1" target="sv2#area8#seu52#su115#kcond77.ent1#att1"/>
