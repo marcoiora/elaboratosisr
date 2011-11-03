@@ -1,15 +1,20 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page42" name="Step 3 - Personalizzazione Posteriore" gr:x="372" gr:y="1352" linkOrder="sv2#area8#page42#ln261">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page42" name="Step 3 - Personalizzazione Posteriore" gr:x="372" gr:y="1352">
   <ContentUnits>
     <IndexUnit id="sv2#area8#page42#inu10" name="Scegli una stampa" linkOrder="sv2#area8#page42#inu10#ln233" gr:x="-1" gr:y="-1" entity="ent6" displayAttributes="ent6#att23 ent6#att25">
-      <Link id="sv2#area8#page42#inu10#ln233" name="Link222" to="sv2#area8#page42#enu20" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area8#page42#inu10#ln233" name="seleziona" to="sv2#area8#page42#enu20" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page42#enu20">
+        <LinkParameter id="sv2#area8#page42#inu10#ln233#par399" name="nome_Stampa selezionata" source="data[].ent6#att23" target="sv2#area8#page42#enu20#fld39_slot"/>
+        <LinkParameter id="sv2#area8#page42#inu10#ln233#par400" name="oid_stampa_oid" source="data[].ent6#att22" target="sv2#area8#page42#enu20#fld31_slot"/>
+      </Link>
     </IndexUnit>
-    <EntryUnit id="sv2#area8#page42#enu20" gr:x="159" gr:y="2" linkOrder="sv2#area8#page42#enu20#ln244">
+    <EntryUnit id="sv2#area8#page42#enu20" gr:x="159" gr:y="2" linkOrder="sv2#area8#page42#enu20#ln244 sv2#area8#page42#enu20#ln265" name="Stampa sul retro" fieldOrder="sv2#area8#page42#enu20#fld39 sv2#area8#page42#enu20#fld32">
       <Field id="sv2#area8#page42#enu20#fld31" name="stampa_oid" type="integer" modifiable="true" preloaded="true" hidden="true"/>
-      <Field id="sv2#area8#page42#enu20#fld32" name="scegli la dimensione" type="float" modifiable="true"/>
-      <Link id="sv2#area8#page42#enu20#ln244" name="Link244" to="sv2#area8#mfu4" type="normal" validate="true">
+      <Field id="sv2#area8#page42#enu20#fld32" name="Scegli la dimensione" type="float" modifiable="true"/>
+      <Link id="sv2#area8#page42#enu20#ln244" name="Conferma" to="sv2#area8#mfu4" type="normal" validate="true">
         <LinkParameter id="sv2#area8#page42#enu20#ln244#par310" name="scegli la dimensione_dimensioneRetro" source="sv2#area8#page42#enu20#fld32" target="sv2#area8#mfu4.ent7#att30"/>
         <LinkParameter id="sv2#area8#page42#enu20#ln244#par311" name="stampa_oid_Stampa.oid(ConfigurazioneToStampaRetro)" source="sv2#area8#page42#enu20#fld31" target="sv2#area8#mfu4.rel12#role23.ent6#att22"/>
       </Link>
+      <Field id="sv2#area8#page42#enu20#fld39" name="Stampa selezionata" type="string" modifiable="false" preloaded="true"/>
+      <Link id="sv2#area8#page42#enu20#ln265" name="Nessuna Stampa" to="sv2#area8#page43" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-172,50,-175,-303;-173,149,-176,-204;-171,204,-174,-149"/>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid>
@@ -23,8 +28,10 @@
       </layout:Cell>
       <layout:Cell>
         <layout:Unit unitId="sv2#area8#page42#enu20">
-          <layout:Field field="sv2#area8#page42#enu20#fld32"/>
           <layout:Link link="sv2#area8#page42#enu20#ln244"/>
+          <layout:Link link="sv2#area8#page42#enu20#ln265"/>
+          <layout:Field field="sv2#area8#page42#enu20#fld39"/>
+          <layout:Field field="sv2#area8#page42#enu20#fld32"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -40,5 +47,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv2#area8#page42#ln261" name="Nessuna stampa posteriore" to="sv2#area8#page43" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-172,50,-175,-303;-173,149,-176,-204;-171,204,-174,-149"/>
 </Page>

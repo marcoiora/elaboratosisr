@@ -4,7 +4,7 @@
       <Selector id="sv2#area8#page35#inu7#su16" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#page35#inu7#su16#kcond11" name="KeyCondition11" predicate="notIn" implied="true"/>
       </Selector>
-      <Link id="sv2#area8#page35#inu7#ln223" name="Link223" to="sv2#area8#page40#seu51" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area8#page35#inu7#ln223" name="personalizza" to="sv2#area8#page40#seu51" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
     <SelectorUnit gr:x="0" gr:y="1" id="sv2#area8#page35#seu6" name="Template" entity="ent13">
       <Link id="sv2#area8#page35#seu6#ln32" name="Link32" to="sv2#area8#page35#inu7" automaticCoupling="true" type="transport" validate="true"/>

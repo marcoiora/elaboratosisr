@@ -55,53 +55,40 @@
       <OKLink id="sv2#area8#mfu4#oln71" name="OKLink71" to="sv2#area8#page43" automaticCoupling="true"/>
     </ModifyUnit>
     <GetUnit id="sv2#area8#gtu12" name="Get Configurazione" gr:x="350" gr:y="1534" contextParameters="ctx2">
-      <Link id="sv2#area8#gtu12#ln235" name="Link223" to="sv2#area8#mfu4" type="transport" validate="true">
+      <Link id="sv2#area8#gtu12#ln235" name="seleziona" to="sv2#area8#mfu4" type="transport" validate="true" ajaxEnabled="true">
         <LinkParameter id="sv2#area8#gtu12#ln235#par309" name="configurazione_oid_KeyCondition64 [oid]" source="sv2#area8#gtu12.ctx2" target="sv2#area8#mfu4#su99#kcond66.ent7#att28"/>
       </Link>
     </GetUnit>
-    <ModuleInstanceUnit gr:x="322" gr:y="1912" id="sv2#area8#miu10" name="Carrello" moduleId="mov1#mpkg2#opm13" linkOrder="sv2#area8#miu10#ln247">
+    <ModuleInstanceUnit gr:x="322" gr:y="1912" id="sv2#area8#miu10" name="Carrello" moduleId="mov1#mpkg2#opm13">
       <Link id="sv2#area8#miu10#ln247" name="Link247" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#miu10#ln247#par314" name="ordine_oid_Ordine.oid(RigaOrdineToOrdine)" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#cru4.rel18#role36.ent9#att35"/>
       </Link>
-      <OKLink id="sv2#area8#miu10#oln86" name="OKLink86" to="sv2#area8#cru4" automaticCoupling="true" gr:bendpoints="104,14,-97,15"/>
+      <OKLink id="sv2#area8#miu10#oln91" name="OKLink91" to="sv2#area8#seu48" automaticCoupling="true"/>
     </ModuleInstanceUnit>
     <CreateUnit gr:x="532" gr:y="1912" id="sv2#area8#cru4" name="Aggiungi a Carrello" entity="ent8">
       <OKLink id="sv2#area8#cru4#oln78" name="OKLink78" to="sv2#area8#page39" automaticCoupling="true"/>
     </CreateUnit>
-    <GetUnit gr:x="322" gr:y="2012" id="sv2#area8#gtu15" name="Get Configurazione" contextParameters="ctx2">
+    <GetUnit gr:x="512" gr:y="2032" id="sv2#area8#gtu15" name="Get Configurazione" contextParameters="ctx2" linkOrder="sv2#area8#gtu15#ln267">
       <Link id="sv2#area8#gtu15#ln248" name="Link248" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu15#ln248#par315" name="configurazione_oid_Configurazione.oid(RigaOrdineToConfigurazione)" source="sv2#area8#gtu15.ctx2" target="sv2#area8#cru4.rel17#role33.ent7#att28"/>
       </Link>
+      <Link id="sv2#area8#gtu15#ln267" name="Link267" to="sv2#area8#seu48" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#gtu15#ln267#par401" name="configurazione_oid_KeyCondition79 [oid]" source="sv2#area8#gtu15.ctx2" target="sv2#area8#seu48#su117#kcond79.ent7#att28"/>
+      </Link>
     </GetUnit>
-    <SelectorUnit gr:x="322" gr:y="2102" id="sv2#area8#seu48" name="SelectorUnit48" entity="ent7" distinctAttributes="rel13#role25.ent1#att9 rel11#role21.ent6#att27 rel12#role23.ent6#att27" linkOrder="sv2#area8#seu48#ln249">
-      <Link id="sv2#area8#seu48#ln249" name="Link249" to="sv2#area8#mathu1" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#seu48#ln249#par316" name="dimensioneFronte_dimensioneStampaFronte" source="ent7#att29Array" target="sv2#area8#mathu1#mathv4"/>
-        <LinkParameter id="sv2#area8#seu48#ln249#par317" name="dimensioneRetro_dimensioneStampaRetro" source="ent7#att30Array" target="sv2#area8#mathu1#mathv5"/>
-        <LinkParameter id="sv2#area8#seu48#ln249#par318" name="ConfigurazioneToMaglietta.prezzo_prezzoMaglietta" source="rel13#role25$ent1#att9Array" target="sv2#area8#mathu1#mathv1"/>
-        <LinkParameter id="sv2#area8#seu48#ln249#par319" name="ConfigurazioneToStampaFronte.prezzoBase_prezzoStampaFronte" source="rel11#role21$ent6#att27Array" target="sv2#area8#mathu1#mathv2"/>
-        <LinkParameter id="sv2#area8#seu48#ln249#par348" name="ConfigurazioneToStampaRetro.prezzoBase_prezzoStampRetro" source="rel12#role23$ent6#att27Array" target="sv2#area8#mathu1#mathv3"/>
+    <SelectorUnit gr:x="362" gr:y="2092" id="sv2#area8#seu48" name="SelectorUnit48" entity="ent7" distinctAttributes="rel13#role25.ent1#att9 rel11#role21.ent6#att27 rel12#role23.ent6#att27" linkOrder="sv2#area8#seu48#ln268">
+      <Selector id="sv2#area8#seu48#su117" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#seu48#su117#kcond79" name="KeyCondition79" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#seu48#ln268" name="Link268" to="sv2#area8#scu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#seu48#ln268#par402" name="dimensioneFronte_dimensioneStampaFronte" source="ent7#att29Array" target="sv2#area8#scu2.dimensioneStampaFronte"/>
+        <LinkParameter id="sv2#area8#seu48#ln268#par403" name="dimensioneRetro_dimensioneStampaRetro" source="ent7#att30Array" target="sv2#area8#scu2.dimensioneStampaRetro"/>
+        <LinkParameter id="sv2#area8#seu48#ln268#par404" name="ConfigurazioneToMaglietta.prezzo_prezzoMaglietta" source="rel13#role25$ent1#att9Array" target="sv2#area8#scu2.prezzoMaglietta"/>
+        <LinkParameter id="sv2#area8#seu48#ln268#par407" name="ConfigurazioneToStampaFronte.prezzoBase_prezzoStampaFronte" source="rel11#role21$ent6#att27Array" target="sv2#area8#scu2.prezzoStampaFronte"/>
+        <LinkParameter id="sv2#area8#seu48#ln268#par408" name="ConfigurazioneToStampaRetro.prezzoBase_prezzoStampaRetro" source="rel12#role23$ent6#att27Array" target="sv2#area8#scu2.prezzoStampaRetro"/>
       </Link>
+      <OKLink id="sv2#area8#seu48#oln97" name="OKLink97" to="sv2#area8#scu2" automaticCoupling="true" gr:bendpoints="153,29,-154,1"/>
     </SelectorUnit>
-    <MathUnit gr:x="452" gr:y="2102" id="sv2#area8#mathu1" name="Calcola prezzo base" resultType="float" defaultExpression="prezzoMaglietta+(prezzoStampaFronte*dimensioneStampaFronte)+(prezzoStampaRetro*dimensioneStampaRetro)" linkOrder="sv2#area8#mathu1#ln250 sv2#area8#mathu1#ln253">
-      <MathVariable id="sv2#area8#mathu1#mathv1" name="prezzoMaglietta"/>
-      <MathVariable id="sv2#area8#mathu1#mathv2" name="prezzoStampaFronte"/>
-      <MathVariable id="sv2#area8#mathu1#mathv3" name="prezzoStampRetro"/>
-      <MathVariable id="sv2#area8#mathu1#mathv4" name="dimensioneStampaFronte"/>
-      <MathVariable id="sv2#area8#mathu1#mathv5" name="dimensioneStampaRetro"/>
-      <Link id="sv2#area8#mathu1#ln250" name="Link250" to="sv2#area8#mathu2" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#mathu1#ln250#par349" name="Result_prezzo" source="result" target="sv2#area8#mathu2#mathv6"/>
-      </Link>
-      <Link id="sv2#area8#mathu1#ln253" name="Link253" to="sv2#area8#cru4" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#mathu1#ln253#par351" name="Result_prezzoSingolo" source="result" target="sv2#area8#cru4.ent8#att32"/>
-      </Link>
-    </MathUnit>
-    <MathUnit gr:x="682" gr:y="2102" id="sv2#area8#mathu2" name="Prezzo totale" resultType="float" defaultExpression="prezzo*quantit&#224;" linkOrder="sv2#area8#mathu2#ln252">
-      <MathVariable id="sv2#area8#mathu2#mathv6" name="prezzo"/>
-      <MathVariable id="sv2#area8#mathu2#mathv7" name="quantit&#224;"/>
-      <Link id="sv2#area8#mathu2#ln252" name="Link252" to="sv2#area8#cru4" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#mathu2#ln252#par352" name="Result_prezzoTotale" source="result" target="sv2#area8#cru4.ent8#att34"/>
-      </Link>
-    </MathUnit>
     <GetUnit id="sv2#area8#gtu13" name="Get Maglietta" gr:x="182" gr:y="1032" contextParameters="ctx1">
       <Link id="sv2#area8#gtu13#ln255" name="Link212" to="sv2#area8#seu52" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu13#ln255#par363" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu13.ctx1" target="sv2#area8#seu52#su115#kcond77.ent1#att1"/>
@@ -116,5 +103,12 @@
       </Link>
       <OKLink id="sv2#area8#seu52#oln85" name="OKLink85" to="sv2#area8#switch2" automaticCoupling="true" gr:bendpoints="156,8,-170,22"/>
     </SelectorUnit>
+    <ScriptUnit gr:x="672" gr:y="2134" id="sv2#area8#scu2" name="Calcola Prezzo" script="WEB-INF/descr/calcolaPrezzoRiga.groovy" linkOrder="sv2#area8#scu2#ln270">
+      <Link id="sv2#area8#scu2#ln270" name="Link270" to="sv2#area8#cru4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#scu2#ln270#par410" name="prezzoSingolo_prezzoSingolo" source="result(prezzoSingolo)" target="sv2#area8#cru4.ent8#att32"/>
+        <LinkParameter id="sv2#area8#scu2#ln270#par411" name="prezzoRiga_prezzoTotale" source="result(prezzoRiga)" target="sv2#area8#cru4.ent8#att34"/>
+      </Link>
+      <OKLink id="sv2#area8#scu2#oln98" name="OKLink98" to="sv2#area8#cru4" automaticCoupling="true" gr:bendpoints="-75,-97,52,119"/>
+    </ScriptUnit>
   </OperationUnits>
 </Area>
