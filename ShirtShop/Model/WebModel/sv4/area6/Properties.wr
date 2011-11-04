@@ -2,6 +2,7 @@
   <OperationUnits>
     <CreateUnit id="sv4#area6#cru5" name="Salva e Nuova Foto" gr:x="569" gr:y="766" entity="ent5">
       <KOLink id="sv4#area6#cru5#kln12" name="KOLink12" to="sv4#page16" automaticCoupling="true"/>
+      <OKLink id="sv4#area6#cru5#oln99" name="OKLink99" to="sv4#area6#page17" automaticCoupling="true"/>
     </CreateUnit>
     <CreateUnit gr:x="579" gr:y="676" id="sv4#area6#cru6" name="Salva Foto e Fine" entity="ent5">
       <KOLink id="sv4#area6#cru6#kln11" name="KOLink11" to="sv4#page16" automaticCoupling="true"/>
@@ -64,6 +65,7 @@
     <ModuleInstanceUnit gr:x="1272" gr:y="575" id="sv4#area6#miu9" name="Salva Template" moduleId="mov1#mpkg1#opm7">
       <Link id="sv4#area6#miu9#ln166" name="Link166" to="sv4#area6#page26#seu33" type="transport" validate="true">
         <LinkParameter id="sv4#area6#miu9#ln166#par336" name="OK Collector.oid_Maglietta [oid]" source="mov1#mpkg1#opm7#okcu8#ocp3" target="sv4#area6#page26#seu33#su82#rcond20.ent1#att1"/>
+        <LinkParameter id="sv4#area6#miu9#ln166#par412" name="OK Collector.oid_PASSING" source="mov1#mpkg1#opm7#okcu8#ocp3" passing="true"/>
       </Link>
       <Link id="sv4#area6#miu9#ln167" name="Link167" to="sv4#area6#page26#seu34" type="transport" validate="true">
         <LinkParameter id="sv4#area6#miu9#ln167#par337" name="OK Collector.oid_Maglietta [oid]" source="mov1#mpkg1#opm7#okcu8#ocp3" target="sv4#area6#page26#seu34#su83#rcond21.ent1#att1"/>
@@ -128,5 +130,6 @@
       <OKLink id="sv4#area6#miu14#oln93" name="OKLink93" to="sv4#area6#page32" automaticCoupling="true"/>
       <KOLink id="sv4#area6#miu14#kln68" name="KOLink68" to="sv4#page16" automaticCoupling="true"/>
     </ModuleInstanceUnit>
+    <SetUnit gr:x="1468" gr:y="640" id="sv4#area6#stu6" name="Set Template" contextParameters="ctx4"/>
   </OperationUnits>
 </Area>

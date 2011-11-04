@@ -29,6 +29,9 @@
         <LinkParameter id="sv4#area6#page26#seu33#ln152#par277" name="nome_Colore [label]" source="ent2#att13Array" target="sv4#area6#page26#enu14#sfld7_label"/>
         <LinkParameter id="sv4#area6#page26#seu33#ln152#par278" name="oid_Colore [output]" source="ent2#att12Array" target="sv4#area6#page26#enu14#sfld7_output"/>
       </Link>
+      <Link id="sv4#area6#page26#seu33#ln271" name="Link271" to="sv4#area6#stu6" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page26#seu33#ln271#par413" name="OK Collector.oid_PASSING_template_oid" sourceLinkParameter="sv4#area6#miu9#ln166#par412" target="sv4#area6#stu6.ctx4"/>
+      </Link>
     </SelectorUnit>
     <SelectorUnit id="sv4#area6#page26#seu34" name="Sesso" gr:x="0" gr:y="111" distinctAttributes="ent4#att17 ent4#att18" entity="ent4">
       <Selector id="sv4#area6#page26#seu34#su83" defaultPolicy="fill" booleanOperator="and">
@@ -41,10 +44,10 @@
     </SelectorUnit>
     <GetUnit id="sv4#area6#page26#gtu2" name="Get Template" gr:x="155" gr:y="136" contextParameters="ctx4">
       <Link id="sv4#area6#page26#gtu2#ln154" name="Link58" to="sv4#area6#page26#seu33" type="transport" validate="true">
-        <LinkParameter id="sv4#area6#page26#gtu2#ln154#par282" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#page26#gtu2.ctx1" target="sv4#area6#page26#seu33#su82#rcond20.ent1#att1"/>
+        <LinkParameter id="sv4#area6#page26#gtu2#ln154#par282" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#page26#gtu2.ctx4" target="sv4#area6#page26#seu33#su82#rcond20.ent1#att1"/>
       </Link>
       <Link id="sv4#area6#page26#gtu2#ln155" name="Link59" to="sv4#area6#page26#seu34" type="transport" validate="true">
-        <LinkParameter id="sv4#area6#page26#gtu2#ln155#par283" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#page26#gtu2.ctx1" target="sv4#area6#page26#seu34#su83#rcond21.ent1#att1"/>
+        <LinkParameter id="sv4#area6#page26#gtu2#ln155#par283" name="maglietta_oid_Maglietta [oid]" source="sv4#area6#page26#gtu2.ctx4" target="sv4#area6#page26#seu34#su83#rcond21.ent1#att1"/>
       </Link>
       <Link id="sv4#area6#page26#gtu2#ln217" name="Link217" to="sv4#area6#cru11" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page26#gtu2#ln217#par406" name="template_oid_Maglietta.oid(FotoToMaglietta)" source="sv4#area6#page26#gtu2.ctx4" target="sv4#area6#cru11.rel5#role10.ent1#att1"/>
