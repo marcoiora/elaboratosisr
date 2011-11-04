@@ -1,0 +1,96 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="119" gr:y="152" id="sv2#area8#page44" name="Step 1 - Caratteristiche">
+  <ContentUnits>
+    <SelectorUnit gr:x="60" gr:y="0" id="sv2#area8#page44#seu53" name="Template" entity="ent13">
+      <Selector id="sv2#area8#page44#seu53#su118" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page44#seu53#su118#kcond80" name="KeyCondition80" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#page44#seu53#ln273" name="Link273" to="sv2#area8#stu7" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page44#seu53#ln273#par414" name="oid_template_oid" source="ent1#att1Array" target="sv2#area8#stu7.ctx4"/>
+      </Link>
+      <Link id="sv2#area8#page44#seu53#ln284" name="Link284" to="sv2#area8#page44#dau17" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area8#page44#seu53#ln285" name="Link285" to="sv2#area8#page44#seu54" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area8#page44#seu53#ln286" name="Link286" to="sv2#area8#page44#seu56" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area8#page44#seu53#ln287" name="Link287" to="sv2#area8#page44#seu55" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area8#page44#seu53#ln289" name="Link289" to="sv2#area8#cru13" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page44#seu53#ln289#par446" name="dimensioneFronte_dimensioneFronte" source="ent13#att51Array" target="sv2#area8#cru13.ent7#att29"/>
+        <LinkParameter id="sv2#area8#page44#seu53#ln289#par447" name="dimensioneRetro_dimensioneRetro" source="ent13#att52Array" target="sv2#area8#cru13.ent7#att30"/>
+        <LinkParameter id="sv2#area8#page44#seu53#ln289#par448" name="oid_Maglietta.oid(ConfigurazioneToMaglietta)" source="ent1#att1Array" target="sv2#area8#cru13.rel13#role25.ent1#att1"/>
+        <LinkParameter id="sv2#area8#page44#seu53#ln289#par449" name="TemplateToStampaFronte.oid_Stampa.oid(ConfigurazioneToStampaFronte)" source="rel22#role43_ent6#att22Array" target="sv2#area8#cru13.rel11#role21.ent6#att22"/>
+        <LinkParameter id="sv2#area8#page44#seu53#ln289#par450" name="TemplateToStampaRetro.oid_Stampa.oid(ConfigurazioneToStampaRetro)" source="rel23#role45_ent6#att22Array" target="sv2#area8#cru13.rel12#role23.ent6#att22"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv2#area8#page44#seu54" name="Sessi" gr:x="0" gr:y="110" entity="ent4">
+      <Selector id="sv2#area8#page44#seu54#su119" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page44#seu54#su119#rcond41" name="maglietta" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="sv2#area8#page44#seu54#ln275" name="Link41" to="sv2#area8#page44#enu9" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page44#seu54#ln275#par416" name="nome_Scegli il sesso [label]" source="ent4#att18Array" target="sv2#area8#page44#enu9#sfld10_label"/>
+        <LinkParameter id="sv2#area8#page44#seu54#ln275#par417" name="oid_Scegli il sesso [output]" source="ent4#att17Array" target="sv2#area8#page44#enu9#sfld10_output"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#area8#page44#enu9" linkOrder="sv2#area8#page44#enu9#ln277 sv2#area8#page44#enu9#ln288" gr:x="216" gr:y="224">
+      <SelectionField id="sv2#area8#page44#enu9#sfld10" name="Scegli il sesso" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string"/>
+      <SelectionField id="sv2#area8#page44#enu9#sfld11" name="La taglia" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string"/>
+      <SelectionField id="sv2#area8#page44#enu9#sfld12" name="Ed il colore" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string"/>
+      <Link id="sv2#area8#page44#enu9#ln277" name="Link263" to="sv2#area8#page44#dau17" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page44#dau17">
+        <LinkParameter id="sv2#area8#page44#enu9#ln277#par421" name="Ed il colore_Colore [oid]" source="sv2#area8#page44#enu9#sfld12" target="sv2#area8#page44#dau17#su122#rcond46.ent2#att12"/>
+        <LinkParameter id="sv2#area8#page44#enu9#ln277#par438" name="Scegli il sesso_Sesso [oid]" source="sv2#area8#page44#enu9#sfld10" target="sv2#area8#page44#dau17#su122#rcond45.ent4#att17"/>
+      </Link>
+      <Link id="sv2#area8#page44#enu9#ln288" name="Link288" to="sv2#area8#cru13" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+    <SelectorUnit id="sv2#area8#page44#seu55" name="Colori" gr:x="0" gr:y="310" entity="ent2">
+      <Selector id="sv2#area8#page44#seu55#su120" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page44#seu55#su120#rcond42" name="maglietta" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv2#area8#page44#seu55#ln278" name="Link47" to="sv2#area8#page44#enu9" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page44#seu55#ln278#par439" name="nome_Ed il colore [label]" source="ent2#att13Array" target="sv2#area8#page44#enu9#sfld12_label"/>
+        <LinkParameter id="sv2#area8#page44#seu55#ln278#par440" name="oid_Ed il colore [output]" source="ent2#att12Array" target="sv2#area8#page44#enu9#sfld12_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv2#area8#page44#seu56" name="Taglie" gr:x="0" gr:y="210" entity="ent3">
+      <Selector id="sv2#area8#page44#seu56#su121" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page44#seu56#su121#rcond43" name="maglietta" predicate="in" implied="false" role="rel3#role5"/>
+      </Selector>
+      <Link id="sv2#area8#page44#seu56#ln279" name="Link44" to="sv2#area8#page44#enu9" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page44#seu56#ln279#par441" name="nome_La taglia [label]" source="ent3#att16Array" target="sv2#area8#page44#enu9#sfld11_label"/>
+        <LinkParameter id="sv2#area8#page44#seu56#ln279#par442" name="oid_La taglia [output]" source="ent3#att15Array" target="sv2#area8#page44#enu9#sfld11_output"/>
+      </Link>
+    </SelectorUnit>
+    <DataUnit id="sv2#area8#page44#dau17" name="Foto" gr:x="206" gr:y="4" entity="ent5" displayAttributes="ent5#att21">
+      <Selector id="sv2#area8#page44#dau17#su122" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page44#dau17#su122#rcond44" name="Maglietta" predicate="in" implied="false" role="rel5#role9"/>
+        <RelationshipRoleCondition id="sv2#area8#page44#dau17#su122#rcond45" name="Sesso" predicate="in" implied="false" role="rel7#role14"/>
+        <RelationshipRoleCondition id="sv2#area8#page44#dau17#su122#rcond46" name="Colore" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page44#enu9">
+          <layout:Field field="sv2#area8#page44#enu9#sfld10"/>
+          <layout:Field field="sv2#area8#page44#enu9#sfld11"/>
+          <layout:Field field="sv2#area8#page44#enu9#sfld12"/>
+          <layout:Link link="sv2#area8#page44#enu9#ln277"/>
+          <layout:Link link="sv2#area8#page44#enu9#ln288"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page44#dau17">
+          <layout:Attribute attribute="ent5#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

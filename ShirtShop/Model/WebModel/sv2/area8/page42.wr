@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page42" name="Step 3 - Personalizzazione Posteriore" gr:x="372" gr:y="1352">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page42" name="Step 3 - Personalizzazione Posteriore" gr:x="744" gr:y="1351">
   <ContentUnits>
     <IndexUnit id="sv2#area8#page42#inu10" name="Scegli una stampa" linkOrder="sv2#area8#page42#inu10#ln233" gr:x="-1" gr:y="-1" entity="ent6" displayAttributes="ent6#att23 ent6#att25">
       <Link id="sv2#area8#page42#inu10#ln233" name="seleziona" to="sv2#area8#page42#enu20" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page42#enu20">

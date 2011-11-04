@@ -1,13 +1,5 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="295" gr:y="153" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="667" gr:y="152" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
   <ContentUnits>
-    <GetUnit gr:x="110" gr:y="1" id="sv2#area8#page40#gtu6" name="Get Maglietta" contextParameters="ctx1">
-      <Link id="sv2#area8#page40#gtu6#ln254" name="Link254" to="sv2#area8#page40#seu51" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page40#gtu6#ln254#par362" name="maglietta_oid_KeyCondition69 [oid]" source="sv2#area8#page40#gtu6.ctx1" target="sv2#area8#page40#seu51#su114#kcond69.ent1#att1"/>
-      </Link>
-      <Link id="sv2#area8#page40#gtu6#ln262" name="Link262" to="sv2#area8#page40#dau16" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page40#gtu6#ln262#par389" name="maglietta_oid_Maglietta [oid]" source="sv2#area8#page40#gtu6.ctx1" target="sv2#area8#page40#dau16#su116#rcond4.ent1#att1"/>
-      </Link>
-    </GetUnit>
     <SelectorUnit gr:x="105" gr:y="94" id="sv2#area8#page40#seu44" name="Sessi" entity="ent4">
       <Selector id="sv2#area8#page40#seu44#su17" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area8#page40#seu44#su17#rcond34" name="maglietta" predicate="in" implied="false" role="rel4#role7"/>
@@ -65,6 +57,7 @@
       <Link id="sv2#area8#page40#seu51#ln225" name="Link225" to="sv2#area8#stu2" type="transport" validate="true">
         <LinkParameter id="sv2#area8#page40#seu51#ln225#par356" name="oid_maglietta_oid" source="ent1#att1Array" target="sv2#area8#stu2.ctx1"/>
       </Link>
+      <Link id="sv2#area8#page40#seu51#ln274" name="Link274" to="sv2#area8#page40#dau16" type="transport" validate="true" automaticCoupling="true"/>
     </SelectorUnit>
     <DataUnit gr:x="331" gr:y="3" id="sv2#area8#page40#dau16" name="Foto" entity="ent5" displayAttributes="ent5#att21">
       <Selector id="sv2#area8#page40#dau16#su116" defaultPolicy="fill" booleanOperator="and">

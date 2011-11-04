@@ -1,0 +1,51 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page45" name="Step 2 - Aggiungi al carrello" gr:x="111" gr:y="762">
+  <ContentUnits>
+    <DataUnit id="sv2#area8#page45#dau18" name="La tua maglietta" gr:x="144" gr:y="4" entity="ent7" displayAll="true">
+      <Selector id="sv2#area8#page45#dau18#su123" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page45#dau18#su123#kcond81" name="KeyCondition67" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit id="sv2#area8#page45#gtu17" name="Get Configurazione" gr:x="0" gr:y="0" contextParameters="ctx2">
+      <Link id="sv2#area8#page45#gtu17#ln291" name="Link245" to="sv2#area8#page45#dau18" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page45#gtu17#ln291#par452" name="configurazione_oid_KeyCondition67 [oid]" source="sv2#area8#page45#gtu17.ctx2" target="sv2#area8#page45#dau18#su123#kcond81.ent7#att28"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit id="sv2#area8#page45#enu12" linkOrder="sv2#area8#page45#enu12#ln293" gr:x="14" gr:y="124">
+      <Field id="sv2#area8#page45#enu12#fld40" name="Quantit&#224;" type="integer" modifiable="true"/>
+      <Link id="sv2#area8#page45#enu12#ln292" name="Aggiungi al Carrello" to="sv2#area8#cru15" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page45#enu12#ln292#par453" name="Quantit&#224;_quantita" source="sv2#area8#page45#enu12#fld40" target="sv2#area8#cru15.ent8#att33"/>
+      </Link>
+      <Link id="sv2#area8#page45#enu12#ln293" name="Aggiungi!" to="sv2#area8#miu12" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area8#page45#enu12#ln294" name="Link269" to="sv2#area8#scu3" type="transport" validate="true" gr:bendpoints="-107,95,-444,-228;-104,360,-441,37;108,360,-229,37">
+        <LinkParameter id="sv2#area8#page45#enu12#ln294#par454" name="Quantit&#224;_quantita" source="sv2#area8#page45#enu12#fld40" target="sv2#area8#scu3.quantita"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page45#dau18">
+          <layout:Attribute attribute="ent7#att29"/>
+          <layout:Attribute attribute="ent7#att30"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page45#enu12">
+          <layout:Field field="sv2#area8#page45#enu12#fld40"/>
+          <layout:Link link="sv2#area8#page45#enu12#ln293"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,6 +1,8 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="161" gr:y="1" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="275" gr:y="12" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="-1" gr:y="-1" id="sv2#area8#page34#inu4" name="Proposte" entity="ent13" displayAttributes="ent1#att2 rel22#role43.ent6#att25 rel23#role45.ent6#att25"/>
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv2#area8#page34#inu4" name="Proposte" entity="ent13" displayAttributes="ent1#att2 rel22#role43.ent6#att25 rel23#role45.ent6#att25" linkOrder="sv2#area8#page34#inu4#ln272">
+      <Link id="sv2#area8#page34#inu4#ln272" name="seleziona" to="sv2#area8#page44#seu53" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -9,6 +11,7 @@
           <layout:Attribute attribute="ent1#att2"/>
           <layout:Attribute attribute="rel22#role43.ent6#att25"/>
           <layout:Attribute attribute="rel23#role45.ent6#att25"/>
+          <layout:Link link="sv2#area8#page34#inu4#ln272"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
