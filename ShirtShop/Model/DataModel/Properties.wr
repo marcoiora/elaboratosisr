@@ -46,7 +46,8 @@
       <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="local derby" type="Apache Derby" url="jdbc:derby://localhost:43210/shirtshop;create=true" username="shirtshop" password="shirtshop" cryptedPassword="false" jndiName="" connectionCount="5" runtimeType="" runtimeURL="" runtimeUsername="" runtimePassword="" runtimeCryptedPassword="" schema="APP"/>
+  <db:Database id="db1" name="local derby" type="Apache Derby" url="jdbc:derby://localhost:43210/shirtshop;create=true" username="shirtshop" password="shirtshop" jndiName="" connectionCount="5" runtimeType="" runtimeURL="" runtimeUsername="" runtimePassword="" runtimeCryptedPassword="" schema="APP">
+  </db:Database>
   <Entity gr:x="130" gr:y="180" id="ent1" name="Maglietta" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10" gr:hideAttributes="false" db:database="db1" db:table="MAGLIETTA">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="OID"/>
     <Attribute id="ent1#att2" name="nome" type="string" db:column="NOME"/>
@@ -206,7 +207,9 @@
     <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="DATAORACONFERMA"/>
     <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="DATAORAPRESAINCARICO"/>
     <Attribute id="ent9#att38" name="dataOraSpedizione" type="timestamp" db:column="DATAORASPEDIZIONE"/>
-    <Attribute id="ent9#att39" name="prezzoTotale" type="float" db:column="PREZZOTOTALE"/>
+    <Attribute id="ent9#att39" name="prezzoTotale" type="float" derivationQuery="calculated::sum(Self.rel18#role35(as Var1).ent8#att34)" storageType="file" db:table="ORDINE_PREZZOTOTALE_VIEW" db:column="DER_ATTR">
+      <db:JoinColumn attribute="ent9#att35" name="OID"/>
+    </Attribute>
     <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="SPESESPEDIZIONE"/>
     <Attribute id="ent9#att41" name="stato" type="string" db:column="STATO"/>
   </Entity>

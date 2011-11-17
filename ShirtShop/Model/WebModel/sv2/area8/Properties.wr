@@ -155,5 +155,23 @@
       </Link>
       <OKLink id="sv2#area8#scu3#oln102" name="OKLink98" to="sv2#area8#cru15" automaticCoupling="true" gr:bendpoints="-75,-97,52,119"/>
     </ScriptUnit>
+    <ModifyUnit gr:x="1241" gr:y="682" id="sv2#area8#mfu2" name="Trasforma Carrello in Ordine" entity="ent9">
+      <Selector id="sv2#area8#mfu2#su127" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#mfu2#su127#kcond64" name="KeyCondition64" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv2#area8#mfu2#kln7" name="KOLink7" to="sv2#area8#page46#mssu2">
+        <LinkParameter id="sv2#area8#mfu2#kln7#par303" name="Errore nel salvataggio dell'ordine. Si prega di riprovare._Shown Messages" sourceValue="Errore nel salvataggio dell'ordine. Si prega di riprovare." target="sv2#area8#page46#mssu2.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#area8#mfu2#oln5" name="OKLink5" to="sv2#area8#page47#mssu6">
+        <LinkParameter id="sv2#area8#mfu2#oln5#par350" name="Ordine accettato._Shown Messages" sourceValue="Ordine accettato." target="sv2#area8#page47#mssu6.shownMessages"/>
+      </OKLink>
+    </ModifyUnit>
+    <TimeUnit gr:x="1521" gr:y="672" id="sv2#area8#tmu1" name="Adesso">
+      <OKLink id="sv2#area8#tmu1#oln69" name="OKLink69" to="sv2#area8#mfu2">
+        <LinkParameter id="sv2#area8#tmu1#oln69#par352" name="Current/Input Timestamp_dataOraConferma" source="currentTimestamp" target="sv2#area8#mfu2.ent9#att36"/>
+        <LinkParameter id="sv2#area8#tmu1#oln69#par362" name="ordine_oid_PASSING_KeyCondition64 [oid]" sourceLinkParameter="sv2#area8#page46#mssu1#ln232#par354" target="sv2#area8#mfu2#su127#kcond64.ent9#att35"/>
+        <LinkParameter id="sv2#area8#tmu1#oln69#par389" name="da-gestire_stato" sourceValue="da-gestire" target="sv2#area8#mfu2.ent9#att41"/>
+      </OKLink>
+    </TimeUnit>
   </OperationUnits>
 </Area>

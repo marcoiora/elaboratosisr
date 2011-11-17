@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1431" gr:y="782" id="sv2#area8#page47" name="TrasformaInOrdine">
+  <ContentUnits>
+    <MultiMessageUnit id="sv2#area8#page47#mssu6" name="Messaggio" gr:x="19" gr:y="19" linkOrder="sv2#area8#page47#mssu6#ln251 sv2#area8#page47#mssu6#ln253">
+      <Link id="sv2#area8#page47#mssu6#ln251" name="Torna alla home page" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="70,87,788,-133"/>
+      <Link id="sv2#area8#page47#mssu6#ln253" name="Visualizza i miei ordini" to="sv2#area11" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page47#mssu6">
+          <layout:Link link="sv2#area8#page47#mssu6#ln251"/>
+          <layout:Link link="sv2#area8#page47#mssu6#ln253"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
