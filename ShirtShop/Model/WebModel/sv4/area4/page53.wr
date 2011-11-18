@@ -1,0 +1,42 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="333" gr:y="361" id="sv4#area4#page53" name="Nuovo Stampatore">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#area4#page53#enu17" name="Inserisci dati Nuovo Stampatore" fieldOrder="sv4#area4#page53#enu17#fld83 sv4#area4#page53#enu17#fld84 sv4#area4#page53#enu17#fld85 sv4#area4#page53#enu17#fld86" linkOrder="sv4#area4#page53#enu17#ln300">
+      <Field id="sv4#area4#page53#enu17#fld83" name="Matricola" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page53#enu17#fld84" name="Email" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page53#enu17#fld85" name="Username" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page53#enu17#fld86" name="Password" type="password" modifiable="true"/>
+      <Link id="sv4#area4#page53#enu17#ln300" name="Salva" to="sv4#area4#cru17" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page53#enu17#ln300#par420" name="Email_email" source="sv4#area4#page53#enu17#fld84" target="sv4#area4#cru17.email"/>
+        <LinkParameter id="sv4#area4#page53#enu17#ln300#par443" name="2_Group.oid(defaultGroup)" sourceValue="2" target="sv4#area4#cru17.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv4#area4#page53#enu17#ln300#par444" name="Matricola_matricola" source="sv4#area4#page53#enu17#fld83" target="sv4#area4#cru17.ent12#att11"/>
+        <LinkParameter id="sv4#area4#page53#enu17#ln300#par445" name="Password_password" source="sv4#area4#page53#enu17#fld86" target="sv4#area4#cru17.password"/>
+        <LinkParameter id="sv4#area4#page53#enu17#ln300#par465" name="Username_userName" source="sv4#area4#page53#enu17#fld85" target="sv4#area4#cru17.userName"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page53#enu17">
+          <layout:Field field="sv4#area4#page53#enu17#fld83"/>
+          <layout:Field field="sv4#area4#page53#enu17#fld84"/>
+          <layout:Field field="sv4#area4#page53#enu17#fld85"/>
+          <layout:Field field="sv4#area4#page53#enu17#fld86"/>
+          <layout:Link link="sv4#area4#page53#enu17#ln300"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

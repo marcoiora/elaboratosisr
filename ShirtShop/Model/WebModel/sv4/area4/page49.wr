@@ -1,0 +1,45 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="218" gr:y="27" id="sv4#area4#page49" name="Accounts Disponibili" linkOrder="sv4#area4#page49#ln249 sv4#area4#page49#ln282">
+  <ContentUnits>
+    <IndexUnit gr:x="4" gr:y="0" id="sv4#area4#page49#inu26" name="Accounts Clienti" entity="ent10" displayAttributes="ent10#att43 ent10#att44 password userName ent10#att50" linkOrder="sv4#area4#page49#inu26#ln254">
+      <Link id="sv4#area4#page49#inu26#ln254" name="Cancella" to="sv4#area4#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <IndexUnit gr:x="0" gr:y="96" id="sv4#area4#page49#inu27" name="Accounts Stampatori" entity="ent12" displayAttributes="ent12#att11 userName password" linkOrder="sv4#area4#page49#inu27#ln266">
+      <Link id="sv4#area4#page49#inu27#ln266" name="Cancella" to="sv4#area4#page52#dau15" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page49#inu26">
+          <layout:Attribute attribute="ent10#att43"/>
+          <layout:Attribute attribute="ent10#att44"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="ent10#att50"/>
+          <layout:Link link="sv4#area4#page49#inu26#ln254"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page49#inu27">
+          <layout:Attribute attribute="ent12#att11"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Link link="sv4#area4#page49#inu27#ln266"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv4#area4#page49#ln249" name="Nuovo Cliente" to="sv4#area4#page50" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv4#area4#page49#ln282" name="Nuovo Stampatore" to="sv4#area4#page53" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="49,198,-124,-79"/>
+</Page>

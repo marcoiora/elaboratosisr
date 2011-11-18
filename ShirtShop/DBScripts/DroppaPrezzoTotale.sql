@@ -1,0 +1,1 @@
+alter table APP.ORDINE drop column PREZZOTOTALE;

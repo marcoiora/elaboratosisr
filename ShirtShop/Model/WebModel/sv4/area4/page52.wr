@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="63" gr:y="311" id="sv4#area4#page52" name="Cancella Stampatore">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="-1" id="sv4#area4#page52#dau15" name="Dettaglio Stampatore Selezionato" entity="ent12" displayAttributes="ent12#att11 email userName password" linkOrder="sv4#area4#page52#dau15#ln281">
+      <Selector id="sv4#area4#page52#dau15#su133" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area4#page52#dau15#su133#kcond86" name="KeyCondition86" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area4#page52#dau15#ln281" name="Elimina" to="sv4#area4#dlu10" automaticCoupling="true" type="normal" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page52#dau15">
+          <layout:Attribute attribute="ent12#att11"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Link link="sv4#area4#page52#dau15#ln281"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4" name="Amministrazione" landmarks="sv4#area4 sv4#area5 sv4#area7 sv4#page11 sv4#lou1 sv4#area6" homePage="sv4#page11" layout:pageLayout="WebRatio/Basic">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4" name="Amministrazione" landmarks="sv4#page11 sv4#area4 sv4#area5 sv4#area6 sv4#area7 sv4#lou1" homePage="sv4#page11" layout:pageLayout="WebRatio/Basic">
   <OperationUnits>
     <LogoutUnit gr:x="160" gr:y="10" id="sv4#lou1" name="Logout" siteView="sv1" landmark="true">
       <KOLink id="sv4#lou1#kln1" name="KOLink1" to="sv4#page11" automaticCoupling="true" gr:bendpoints="-66,18,115,10"/>

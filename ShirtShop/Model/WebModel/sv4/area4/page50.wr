@@ -1,0 +1,55 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="413" gr:y="0" id="sv4#area4#page50" name="Nuovo Cliente">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#area4#page50#enu16" name="Inserisci dati Nuovo Cliente" linkOrder="sv4#area4#page50#enu16#ln250" customDescriptor="false" fieldOrder="sv4#area4#page50#enu16#fld41 sv4#area4#page50#enu16#fld48 sv4#area4#page50#enu16#fld74 sv4#area4#page50#enu16#fld80 sv4#area4#page50#enu16#fld82 sv4#area4#page50#enu16#fld62 sv4#area4#page50#enu16#fld61 sv4#area4#page50#enu16#fld73">
+      <Link id="sv4#area4#page50#enu16#ln250" name="Salva" to="sv4#area4#cru16" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par31" name="CodiceFiscale_codiceFiscale" source="sv4#area4#page50#enu16#fld82" target="sv4#area4#cru16.ent10#att56"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par67" name="Cognome_cognome" source="sv4#area4#page50#enu16#fld48" target="sv4#area4#cru16.ent10#att44"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par297" name="Email_email" source="sv4#area4#page50#enu16#fld62" target="sv4#area4#cru16.email"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par317" name="Indirizzo_indirizzo" source="sv4#area4#page50#enu16#fld74" target="sv4#area4#cru16.ent10#att45"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par318" name="true_isactive" sourceValue="true" target="sv4#area4#cru16.ent10#att50"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par319" name="Nome_nome" source="sv4#area4#page50#enu16#fld41" target="sv4#area4#cru16.ent10#att43"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par348" name="Password_password" source="sv4#area4#page50#enu16#fld73" target="sv4#area4#cru16.password"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par349" name="Telefono_telefono" source="sv4#area4#page50#enu16#fld80" target="sv4#area4#cru16.ent10#att55"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par415" name="Username_userName" source="sv4#area4#page50#enu16#fld61" target="sv4#area4#cru16.userName"/>
+        <LinkParameter id="sv4#area4#page50#enu16#ln250#par418" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv4#area4#cru16.User2DefaultGroup.groupOID"/>
+      </Link>
+      <Field id="sv4#area4#page50#enu16#fld41" name="Nome" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld48" name="Cognome" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld61" name="Username" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld62" name="Email" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld73" name="Password" type="password" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld74" name="Indirizzo" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld80" name="Telefono" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page50#enu16#fld82" name="CodiceFiscale" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page50#enu16">
+          <layout:Link link="sv4#area4#page50#enu16#ln250"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld41"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld48"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld74"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld80"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld82"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld62"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld61"/>
+          <layout:Field field="sv4#area4#page50#enu16#fld73"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
