@@ -1,0 +1,56 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area12#page50" name="Sommario Ordini">
+  <ContentUnits>
+    <IndexUnit gr:x="130" gr:y="0" id="sv3#area12#page50#inu26" name="I tuoi ordini" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37" linkOrder="sv3#area12#page50#inu26#ln266">
+      <Selector id="sv3#area12#page50#inu26#su130" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area12#page50#inu26#su130#acond7" name="stato" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="in-stampa"/>
+        <RelationshipRoleCondition id="sv3#area12#page50#inu26#su130#rcond48" name="stampatore" predicate="in" implied="false" role="rel20#role40"/>
+      </Selector>
+      <Link id="sv3#area12#page50#inu26#ln266" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <GetUnit gr:x="0" gr:y="0" id="sv3#area12#page50#gtu6" name="utente" contextParameters="UserCtxParam">
+      <Link id="sv3#area12#page50#gtu6#ln249" name="Link249" to="sv3#area12#page50#inu26" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page50#gtu6#ln249#par31" name="UserCtxParam.oid_stampatore [oid]" source="sv3#area12#page50#gtu6.UserCtxParam" target="sv3#area12#page50#inu26#su130#rcond48.userOID"/>
+      </Link>
+    </GetUnit>
+    <IndexUnit gr:x="0" gr:y="120" id="sv3#area12#page50#inu27" name="Nuovi ordini" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36" linkOrder="sv3#area12#page50#inu27#ln259">
+      <Selector id="sv3#area12#page50#inu27#su131" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area12#page50#inu27#su131#acond12" name="stato" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="da-gestire"/>
+      </Selector>
+      <Link id="sv3#area12#page50#inu27#ln259" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page50#inu26">
+          <layout:Attribute attribute="ent9#att35"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att43"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att44"/>
+          <layout:Attribute attribute="ent9#att36"/>
+          <layout:Attribute attribute="ent9#att37"/>
+          <layout:Link link="sv3#area12#page50#inu26#ln266"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page50#inu27">
+          <layout:Attribute attribute="ent9#att35"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att43"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att44"/>
+          <layout:Attribute attribute="ent9#att36"/>
+          <layout:Link link="sv3#area12#page50#inu27#ln259"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
