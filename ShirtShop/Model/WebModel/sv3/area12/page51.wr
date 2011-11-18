@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="6" gr:y="286" id="sv3#area12#page51" name="Dettaglio Ordine">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#dau14" name="Dettaglio Ordine" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 rel19#role37.ent10#att43 rel19#role37.ent10#att44 rel19#role37.ent10#att45 rel19#role37.ent10#att56 rel19#role37.ent10#att55 rel19#role37.email">
+      <Selector id="sv3#area12#page51#dau14#su133" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area12#page51#dau14#su133#kcond78" name="KeyCondition78" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#area12#page51#dau14#ln276" name="Link276" to="sv3#area12#page51#mdu3" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+    <MultiDataUnit gr:x="134" gr:y="4" id="sv3#area12#page51#mdu3" name="Prodotti in Ordine" entity="ent8" displayAttributes="ent8#att33 rel17#role33.rel13#role25.ent1#att1 rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel13#role25.ent1#att3 rel17#role33.rel13#role25.ent1#att4 rel17#role33.rel13#role25.ent1#att5 rel17#role33.rel13#role25.ent1#att8 rel17#role33.rel13#role25.ent1#att10 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel16#role31.ent2#att13 rel17#role33.ent7#att29 rel17#role33.ent7#att30 rel17#role33.rel11#role21.ent6#att23 rel17#role33.rel11#role21.ent6#att25 rel17#role33.rel11#role21.ent6#att26 rel17#role33.rel12#role23.ent6#att23 rel17#role33.rel12#role23.ent6#att25 rel17#role33.rel12#role23.ent6#att26">
+      <Selector id="sv3#area12#page51#mdu3#su134" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area12#page51#mdu3#su134#rcond49" name="ordine" predicate="in" implied="false" role="rel18#role35"/>
+      </Selector>
+    </MultiDataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page51#dau14">
+          <layout:Attribute attribute="ent9#att35"/>
+          <layout:Attribute attribute="ent9#att36"/>
+          <layout:Attribute attribute="ent9#att37"/>
+          <layout:Attribute attribute="ent9#att38"/>
+          <layout:Attribute attribute="ent9#att39"/>
+          <layout:Attribute attribute="ent9#att40"/>
+          <layout:Attribute attribute="ent9#att41"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att43"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att44"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att45"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att56"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att55"/>
+          <layout:Attribute attribute="rel19#role37.email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page51#mdu3">
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att1"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att2"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att3"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att4"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att5"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att8"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att10"/>
+          <layout:Attribute attribute="rel17#role33.rel14#role27.ent4#att18"/>
+          <layout:Attribute attribute="rel17#role33.rel15#role29.ent3#att16"/>
+          <layout:Attribute attribute="rel17#role33.rel16#role31.ent2#att13"/>
+          <layout:Attribute attribute="rel17#role33.ent7#att29"/>
+          <layout:Attribute attribute="rel17#role33.ent7#att30"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role21.ent6#att23"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role21.ent6#att25"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role21.ent6#att26"/>
+          <layout:Attribute attribute="rel17#role33.rel12#role23.ent6#att23"/>
+          <layout:Attribute attribute="rel17#role33.rel12#role23.ent6#att25"/>
+          <layout:Attribute attribute="rel17#role33.rel12#role23.ent6#att26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
