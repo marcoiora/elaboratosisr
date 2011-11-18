@@ -13,3 +13,10 @@ ShirtShop/.Temp~/
 
 # Files di backup
 *~
+
+/Thumbs.db
+/fotomagliette/Thumbs.db
+/fotostampe/Thumbs.db
+/Immagini/Thumbs.db
+/SlidePrimaEsposizione/Immagine/Thumbs.db
+/SlidePrimaEsposizione/Thumbs.db
