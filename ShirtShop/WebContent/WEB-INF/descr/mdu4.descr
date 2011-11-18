@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.MultiDataUnitService" name="ListaOrdini">
+  <MaxResults/>
+  <Query entity="ent9">
+    <Input id="p0" param="rcond51.userOID" type="integer" implied="false" expandStyle="in"/>
+    <Input id="p1" param="acond9" type="string" implied="false" expandStyle="or" value="carrello" attribute="att41"/>
+    <Output id="att35" name="oid"/>
+    <Output id="att37" name="dataOraPresaInCarico" label="Data Ora Presa In Carico" text="Data Ora Presa In Carico T"/>
+    <Output id="att36" name="dataOraConferma"/>
+    <Output id="att39" name="prezzoTotale"/>
+    <Output id="att38" name="dataOraSpedizione"/>
+    <Output id="att40" name="speseSpedizione"/>
+    <Output id="att41" name="stato"/>
+    <HQL>select a_ordine.oid, a_ordine.dataOraPresaInCarico, a_ordine.dataOraConferma, d_prezzoTotale.value, a_ordine.dataOraSpedizione, a_ordine.speseSpedizione, a_ordine.stato from Ordine a_ordine left join a_ordine.prezzoTotaleBean d_prezzoTotale
+      <Where defaultPolicy="fill" allImplied="false">(({[p0](a_ordine.ordineToCliente.oid in(?))})) and (({[p1]safe_cast(a_ordine.stato) != safe_cast(?)}))</Where>
+    </HQL>
+  </Query>
+</Descriptor>
+ 

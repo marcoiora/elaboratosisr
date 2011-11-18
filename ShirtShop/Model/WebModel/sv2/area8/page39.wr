@@ -10,7 +10,7 @@
         <LinkParameter id="sv2#area8#page39#miu11#ln260#par386" name="ordine_oid_carrello [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#page39#inu13#su111#rcond38.ent9#att35"/>
       </Link>
     </ModuleInstanceUnit>
-    <MultiMessageUnit gr:x="214" gr:y="96" id="sv2#area8#page39#mssu4" name="Procedi all'acquisto" linkOrder="sv2#area8#page39#mssu4#ln252">
+    <MultiMessageUnit gr:x="214" gr:y="96" id="sv2#area8#page39#mssu4" linkOrder="sv2#area8#page39#mssu4#ln252" name="Procedi all'acquisto">
       <Link id="sv2#area8#page39#mssu4#ln252" name="Procedi all'acquisto" to="sv2#area8#page46#miu15" automaticCoupling="true" type="normal" validate="true"/>
       <Message xml:space="preserve">Puoi procedere all'acquisto qui:</Message>
     </MultiMessageUnit>
