@@ -1,57 +1,26 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1321" gr:y="282" id="sv2#area8#page46" name="Procedi all'acquisto (conferma)">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1331" gr:y="341" id="sv2#area8#page46" name="Procedi all'acquisto (conferma)">
   <ContentUnits>
-    <IndexUnit id="sv2#area8#page46#inu25" name="Prodotti in carrello" gr:x="159" gr:y="1" entity="ent8" displayAttributes="rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel16#role31.ent2#att13 rel17#role33.rel11#role21.ent6#att23 rel17#role33.rel12#role23.ent6#att23 ent8#att32 ent8#att33 ent8#att34">
-      <Selector id="sv2#area8#page46#inu25#su97" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv2#area8#page46#inu25#su97#rcond47" name="carrello" predicate="in" implied="false" role="rel18#role35"/>
-      </Selector>
-    </IndexUnit>
-    <ModuleInstanceUnit id="sv2#area8#page46#miu15" name="Get Carrello" gr:x="8" gr:y="0" moduleId="mov1#mpkg2#opm13">
-      <Link id="sv2#area8#page46#miu15#ln26" name="Link260" to="sv2#area8#page46#inu25" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page46#miu15#ln26#par30" name="ordine_oid_carrello [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#page46#inu25#su97#rcond47.ent9#att35"/>
-      </Link>
-      <Link id="sv2#area8#page46#miu15#ln33" name="Link33" to="sv2#area8#page46#seu42" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page46#miu15#ln33#par351" name="ordine_oid_oid [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#page46#seu42#su113#kcond68.ent9#att35"/>
-      </Link>
-      <Link id="sv2#area8#page46#miu15#ln234" name="Link234" to="sv2#area8#page46#mssu1" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page46#miu15#ln234#par316" name="ordine_oid_PASSING" source="mov1#mpkg2#opm13#okcu16#ocp12" passing="true"/>
-      </Link>
-    </ModuleInstanceUnit>
-    <SelectorUnit gr:x="0" gr:y="111" id="sv2#area8#page46#seu42" name="Totale Ordine" entity="ent9" distinctAttributes="ent9#att39">
-      <Selector id="sv2#area8#page46#seu42#su113" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv2#area8#page46#seu42#su113#kcond68" name="oid" predicate="in" implied="false"/>
-      </Selector>
-      <Link id="sv2#area8#page46#seu42#ln34" name="Link34" to="sv2#area8#page46#mssu3" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page46#seu42#ln34#par308" name="prezzoTotale_Shown Messages" source="ent9#att39Array" target="sv2#area8#page46#mssu3.shownMessages"/>
-      </Link>
-    </SelectorUnit>
-    <MultiMessageUnit gr:x="105" gr:y="224" id="sv2#area8#page46#mssu3" name="Totale"/>
-    <MultiMessageUnit gr:x="207" gr:y="205" id="sv2#area8#page46#mssu1" name="Avviso" linkOrder="sv2#area8#page46#mssu1#ln36 sv2#area8#page46#mssu1#ln232">
+    <MultiMessageUnit gr:x="224" gr:y="24" id="sv2#area8#page46#mssu1" name="Avviso" linkOrder="sv2#area8#page46#mssu1#ln36 sv2#area8#page46#mssu1#ln232">
       <Message xml:space="preserve">Si conferma l'acquisto?</Message>
-      <Link id="sv2#area8#page46#mssu1#ln36" name="Annulla" to="sv2#area8#page39" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="209,-3,410,423;243,-271,334,146">
+      <Link id="sv2#area8#page46#mssu1#ln36" name="Annulla" to="sv2#area8#page39" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-25,-171,234,145">
         <Comment xml:space="preserve">No</Comment>
       </Link>
       <Link id="sv2#area8#page46#mssu1#ln232" name="Conferma" to="sv2#area8#tmu1" type="normal" validate="true">
         <LinkParameter id="sv2#area8#page46#mssu1#ln232#par354" name="ordine_oid_PASSING" sourceLinkParameter="sv2#area8#page46#miu15#ln234#par316" passing="true"/>
       </Link>
     </MultiMessageUnit>
-    <MultiMessageUnit gr:x="18" gr:y="254" id="sv2#area8#page46#mssu2" name="Errori"/>
+    <MultiMessageUnit gr:x="0" gr:y="91" id="sv2#area8#page46#mssu2" name="Errori"/>
+    <ModuleInstanceUnit gr:x="50" gr:y="0" id="sv2#area8#page46#miu16" name="Visualizza Carrello" moduleId="mov1#mpkg2#ctm1">
+      <Link id="sv2#area8#page46#miu16#ln254" to="sv2#area8#page46#mssu1" type="transport" validate="true" name="Link234">
+        <LinkParameter id="sv2#area8#page46#miu16#ln254#par67" source="mov1#mpkg2#ctm1#ocu1#ocp1" name="ordine_oid_PASSING" passing="true"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
         <layout:Unit unitId="sv2#area8#page46#mssu2"/>
-        <layout:Unit unitId="sv2#area8#page46#inu25">
-          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att2"/>
-          <layout:Attribute attribute="rel17#role33.rel14#role27.ent4#att18"/>
-          <layout:Attribute attribute="rel17#role33.rel15#role29.ent3#att16"/>
-          <layout:Attribute attribute="rel17#role33.rel16#role31.ent2#att13"/>
-          <layout:Attribute attribute="rel17#role33.rel11#role21.ent6#att23"/>
-          <layout:Attribute attribute="rel17#role33.rel12#role23.ent6#att23"/>
-          <layout:Attribute attribute="ent8#att32"/>
-          <layout:Attribute attribute="ent8#att33"/>
-          <layout:Attribute attribute="ent8#att34"/>
-        </layout:Unit>
-        <layout:Unit unitId="sv2#area8#page46#mssu3"/>
+        <layout:Unit unitId="sv2#area8#page46#miu16"/>
         <layout:Unit unitId="sv2#area8#page46#mssu1">
           <layout:Link link="sv2#area8#page46#mssu1#ln36"/>
           <layout:Link link="sv2#area8#page46#mssu1#ln232"/>

@@ -36,7 +36,7 @@
         <LinkParameter id="sv2#area8#page44#enu9#ln277#par421" name="Ed il colore_Colore [oid]" source="sv2#area8#page44#enu9#sfld12" target="sv2#area8#page44#dau17#su122#rcond46.ent2#att12"/>
         <LinkParameter id="sv2#area8#page44#enu9#ln277#par438" name="Scegli il sesso_Sesso [oid]" source="sv2#area8#page44#enu9#sfld10" target="sv2#area8#page44#dau17#su122#rcond45.ent4#att17"/>
       </Link>
-      <Link id="sv2#area8#page44#enu9#ln288" name="Link288" to="sv2#area8#cru13" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area8#page44#enu9#ln288" name="Conferma" to="sv2#area8#cru13" automaticCoupling="true" type="normal" validate="true"/>
     </EntryUnit>
     <SelectorUnit id="sv2#area8#page44#seu55" name="Colori" gr:x="0" gr:y="310" entity="ent2">
       <Selector id="sv2#area8#page44#seu55#su120" defaultPolicy="fill" booleanOperator="and">

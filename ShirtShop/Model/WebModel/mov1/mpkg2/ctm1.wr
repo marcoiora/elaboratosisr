@@ -1,0 +1,65 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="68" id="mov1#mpkg2#ctm1" name="VisualizzaCarrello">
+  <ContentUnits>
+    <InputCollectorUnit gr:x="0" gr:y="262" id="mov1#mpkg2#ctm1#icu1" name="Input Collector">
+      <Link id="mov1#mpkg2#ctm1#icu1#ln249" type="transport" to="mov1#mpkg2#ctm1#miu17"/>
+    </InputCollectorUnit>
+    <OutputCollectorUnit gr:x="859" gr:y="0" id="mov1#mpkg2#ctm1#ocu1" name="Output Collector1">
+      <OutputCollectorParameter id="mov1#mpkg2#ctm1#ocu1#ocp1" name="ordine_oid"/>
+    </OutputCollectorUnit>
+    <MultiMessageUnit id="mov1#mpkg2#ctm1#mssu5" name="Totale" gr:x="405" gr:y="224"/>
+    <SelectorUnit id="mov1#mpkg2#ctm1#seu58" name="Totale Ordine" gr:x="300" gr:y="111" entity="ent9" distinctAttributes="ent9#att39">
+      <Selector id="mov1#mpkg2#ctm1#seu58#su130" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg2#ctm1#seu58#su130#kcond78" name="oid" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#mpkg2#ctm1#seu58#ln259" name="Link34" to="mov1#mpkg2#ctm1#mssu5" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm1#seu58#ln259#par317" name="prezzoTotale_Shown Messages" source="ent9#att39Array" target="mov1#mpkg2#ctm1#mssu5.shownMessages"/>
+      </Link>
+    </SelectorUnit>
+    <ModuleInstanceUnit id="mov1#mpkg2#ctm1#miu17" name="Get Carrello" gr:x="308" gr:y="0" moduleId="mov1#mpkg2#opm13">
+      <Link id="mov1#mpkg2#ctm1#miu17#ln262" name="Link260" to="mov1#mpkg2#ctm1#inu27" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm1#miu17#ln262#par318" name="ordine_oid_carrello [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="mov1#mpkg2#ctm1#inu27#su131#rcond48.ent9#att35"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm1#miu17#ln266" name="Link33" to="mov1#mpkg2#ctm1#seu58" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm1#miu17#ln266#par319" name="ordine_oid_oid [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="mov1#mpkg2#ctm1#seu58#su130#kcond78.ent9#att35"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm1#miu17#ln276" to="mov1#mpkg2#ctm1#ocu1" type="transport" validate="true" name="Link234">
+        <LinkParameter id="mov1#mpkg2#ctm1#miu17#ln276#par348" source="mov1#mpkg2#opm13#okcu16#ocp12" name="ordine_oid_PASSING" target="mov1#mpkg2#ctm1#ocu1#ocp1"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <IndexUnit id="mov1#mpkg2#ctm1#inu27" name="Prodotti in carrello" gr:x="520" gr:y="120" entity="ent8" displayAttributes="rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel16#role31.ent2#att13 rel17#role33.rel11#role21.ent6#att23 rel17#role33.rel12#role23.ent6#att23 ent8#att32 ent8#att33 ent8#att34">
+      <Selector id="mov1#mpkg2#ctm1#inu27#su131" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm1#inu27#su131#rcond48" name="carrello" predicate="in" implied="false" role="rel18#role35"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#ctm1#inu27">
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att2"/>
+          <layout:Attribute attribute="rel17#role33.rel14#role27.ent4#att18"/>
+          <layout:Attribute attribute="rel17#role33.rel15#role29.ent3#att16"/>
+          <layout:Attribute attribute="rel17#role33.rel16#role31.ent2#att13"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role21.ent6#att23"/>
+          <layout:Attribute attribute="rel17#role33.rel12#role23.ent6#att23"/>
+          <layout:Attribute attribute="ent8#att32"/>
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:Attribute attribute="ent8#att34"/>
+        </layout:Unit>
+        <layout:Unit unitId="mov1#mpkg2#ctm1#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

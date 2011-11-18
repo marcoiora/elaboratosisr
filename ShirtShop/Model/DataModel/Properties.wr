@@ -302,6 +302,5 @@
       <db:JoinColumn attribute="ent6#att22" name="stampa_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w">
-  </db:Database>
+  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w"/>
 </DataModel>

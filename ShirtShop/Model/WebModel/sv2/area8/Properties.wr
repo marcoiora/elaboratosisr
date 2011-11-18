@@ -1,4 +1,4 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-1439" gr:y="-2290" id="sv2#area8" name="Web Market" landmark="true" defaultPage="sv2#area8#page22" landmarks="sv2#area8#page34 sv2#area8#page35 sv2#area8#page39">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-1439" gr:y="-2290" id="sv2#area8" name="Web Market" landmark="true" defaultPage="sv2#area8#page34" landmarks="sv2#area8#page34 sv2#area8#page35 sv2#area8#page39">
   <OperationUnits>
     <SetUnit gr:x="524" gr:y="191" id="sv2#area8#stu2" name="Set Maglietta" contextParameters="ctx1"/>
     <CreateUnit gr:x="894" gr:y="611" id="sv2#area8#cru3" name="Configurazione" entity="ent7">
