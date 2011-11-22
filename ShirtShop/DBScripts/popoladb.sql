@@ -1,18 +1,18 @@
-truncate maglietta_colore;
-truncate maglietta_sesso;
-truncate maglietta_taglia;
-truncate colore;
-truncate taglia;
-truncate sesso;
-truncate maglietta;
-truncate cliente;
-truncate stampatore;
-truncate `user`;
-truncate `group`;
-truncate `module`;
-truncate tema_stampa;
-truncate tema;
-truncate stampa;
+delete from maglietta_colore;
+delete from maglietta_sesso;
+delete from maglietta_taglia;
+delete from colore;
+delete from taglia;
+delete from sesso;
+delete from maglietta;
+delete from cliente;
+delete from stampatore;
+delete from `user`;
+delete from `group`;
+delete from `module`;
+delete from tema_stampa;
+delete from tema;
+delete from stampa;
 
 
 insert into colore (oid, nome, valoreEsadecimale) values (1,'rosso','ff0000');
