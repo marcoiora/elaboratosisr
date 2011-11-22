@@ -1,305 +1,307 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="630" gr:y="-20" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:database="db1" db:table="USER">
-    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="OID"/>
-    <Attribute name="userName" id="userName" type="string" db:column="USERNAME"/>
-    <Attribute name="password" id="password" type="password" db:column="PASSWORD"/>
-    <Attribute name="email" id="email" type="string" db:column="EMAIL"/>
+  <Entity id="User" name="User" duration="persistent" gr:x="630" gr:y="-20" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:database="db2" db:table="user">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="userName" id="userName" type="string" db:column="username"/>
+    <Attribute name="password" id="password" type="password" db:column="password"/>
+    <Attribute name="email" id="email" type="string" db:column="email"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="880" gr:y="-10" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="GROUP">
-    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="OID"/>
-    <Attribute name="groupName" id="groupName" type="string" db:column="GROUPNAME"/>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="880" gr:y="-10" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db2" db:table="group">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="1150" gr:y="-20" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="MODULE">
-    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="OID"/>
-    <Attribute name="moduleID" id="moduleID" type="string" db:column="MODULEID"/>
-    <Attribute name="moduleName" id="moduleName" type="string" db:column="MODULENAME"/>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="1150" gr:y="-20" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db2" db:table="module">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
   </Entity>
-  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="USER_GROUP">
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db2" db:table="user_group">
     <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
-      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="Group2User" name="users" maxCard="N">
-      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="115,42,-112,42" db:database="db1" db:table="USER">
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="115,42,-112,42" db:database="db2" db:table="user">
     <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
-      <db:JoinColumn attribute="userOID" name="OID"/>
+      <db:JoinColumn attribute="userOID" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
-      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db1" db:table="GROUP">
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db2" db:table="group">
     <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
-      <db:JoinColumn attribute="groupOID" name="OID"/>
+      <db:JoinColumn attribute="groupOID" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
-      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="111,41,-116,41" db:database="db1" db:table="GROUP_MODULE">
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="111,41,-116,41" db:database="db2" db:table="group_module">
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
-      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
-      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
   <db:Database id="db1" name="local derby" type="Apache Derby" url="jdbc:derby://localhost:43210/shirtshop;create=true" username="shirtshop" password="shirtshop" jndiName="" connectionCount="5" runtimeType="" runtimeURL="" runtimeUsername="" runtimePassword="" runtimeCryptedPassword="" schema="APP"/>
-  <Entity gr:x="130" gr:y="180" id="ent1" name="Maglietta" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10" gr:hideAttributes="false" db:database="db1" db:table="MAGLIETTA">
-    <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent1#att2" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent1#att3" name="descrizione" type="text" contentType="text/html" db:column="DESCRIZIONE" db:clob="true"/>
-    <Attribute id="ent1#att4" name="manica" type="string" db:column="MANICA"/>
-    <Attribute id="ent1#att5" name="collo" type="string" db:column="COLLO"/>
-    <Attribute id="ent1#att6" name="stampabileFronte" type="boolean" db:column="STAMPABILEFRONTE"/>
-    <Attribute id="ent1#att7" name="stampabileRetro" type="boolean" db:column="STAMPABILERETRO"/>
-    <Attribute id="ent1#att8" name="materiale" type="string" db:column="MATERIALE"/>
-    <Attribute id="ent1#att9" name="prezzo" type="float" db:column="PREZZO"/>
-    <Attribute id="ent1#att10" name="isactive" type="boolean" db:column="ISACTIVE"/>
+  <Entity gr:x="130" gr:y="180" id="ent1" name="Maglietta" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att10" gr:hideAttributes="false" db:database="db2" db:table="maglietta">
+    <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent1#att2" name="nome" type="string" db:column="nome"/>
+    <Attribute id="ent1#att3" name="descrizione" type="text" contentType="text/html" db:column="descrizione"/>
+    <Attribute id="ent1#att4" name="manica" type="string" db:column="manica"/>
+    <Attribute id="ent1#att5" name="collo" type="string" db:column="collo"/>
+    <Attribute id="ent1#att6" name="stampabileFronte" type="boolean" db:column="stampabilefronte"/>
+    <Attribute id="ent1#att7" name="stampabileRetro" type="boolean" db:column="stampabileretro"/>
+    <Attribute id="ent1#att8" name="materiale" type="string" db:column="materiale"/>
+    <Attribute id="ent1#att9" name="prezzo" type="float" db:column="prezzo"/>
+    <Attribute id="ent1#att10" name="isactive" type="boolean" db:column="isactive"/>
   </Entity>
-  <Entity gr:x="630" gr:y="260" id="ent2" name="Colore" duration="persistent" attributeOrder="ent2#att12 ent2#att13 ent2#att14" gr:hideAttributes="false" db:database="db1" db:table="COLORE">
-    <Attribute id="ent2#att12" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent2#att13" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent2#att14" name="valoreEsadecimale" type="string" db:column="VALOREESADECIMALE"/>
+  <Entity gr:x="630" gr:y="260" id="ent2" name="Colore" duration="persistent" attributeOrder="ent2#att12 ent2#att13 ent2#att14" gr:hideAttributes="false" db:database="db2" db:table="colore">
+    <Attribute id="ent2#att12" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent2#att13" name="nome" type="string" db:column="nome"/>
+    <Attribute id="ent2#att14" name="valoreEsadecimale" type="string" db:column="valoreesadecimale"/>
   </Entity>
-  <Relationship id="rel1" name="Maglietta_Colore" sourceEntity="ent1" targetEntity="ent2" db:database="db1" db:table="MAGLIETTA_COLORE">
+  <Relationship id="rel1" name="Maglietta_Colore" sourceEntity="ent1" targetEntity="ent2" db:database="db2" db:table="maglietta_colore">
     <RelationshipRole1 id="rel1#role1" name="MagliettaToColore" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel1#role2" name="ColoreToMaglietta" maxCard="N">
-      <db:JoinColumn attribute="ent2#att12" name="COLORE_OID"/>
+      <db:JoinColumn attribute="ent2#att12" name="colore_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="220" gr:y="520" id="ent3" name="Taglia" duration="persistent" attributeOrder="ent3#att15 ent3#att16" gr:hideAttributes="false" db:database="db1" db:table="TAGLIA">
-    <Attribute id="ent3#att15" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent3#att16" name="nome" type="string" db:column="NOME"/>
+  <Entity gr:x="220" gr:y="520" id="ent3" name="Taglia" duration="persistent" attributeOrder="ent3#att15 ent3#att16" gr:hideAttributes="false" db:database="db2" db:table="taglia">
+    <Attribute id="ent3#att15" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent3#att16" name="nome" type="string" db:column="nome"/>
   </Entity>
-  <Entity gr:x="370" gr:y="510" id="ent4" name="Sesso" duration="persistent" attributeOrder="ent4#att17 ent4#att18" gr:hideAttributes="false" db:database="db1" db:table="SESSO">
-    <Attribute id="ent4#att17" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent4#att18" name="nome" type="string" db:column="NOME"/>
+  <Entity gr:x="370" gr:y="510" id="ent4" name="Sesso" duration="persistent" attributeOrder="ent4#att17 ent4#att18" gr:hideAttributes="false" db:database="db2" db:table="sesso">
+    <Attribute id="ent4#att17" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent4#att18" name="nome" type="string" db:column="nome"/>
   </Entity>
-  <Relationship id="rel3" name="Maglietta_Taglia" sourceEntity="ent1" targetEntity="ent3" db:database="db1" db:table="MAGLIETTA_TAGLIA">
+  <Relationship id="rel3" name="Maglietta_Taglia" sourceEntity="ent1" targetEntity="ent3" db:database="db2" db:table="maglietta_taglia">
     <RelationshipRole1 id="rel3#role5" name="MagliettaToTaglia" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel3#role6" name="TagliaToMaglietta" maxCard="N">
-      <db:JoinColumn attribute="ent3#att15" name="TAGLIA_OID"/>
+      <db:JoinColumn attribute="ent3#att15" name="taglia_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel4" name="Maglietta_Sesso" sourceEntity="ent1" targetEntity="ent4" db:database="db1" db:table="MAGLIETTA_SESSO">
+  <Relationship id="rel4" name="Maglietta_Sesso" sourceEntity="ent1" targetEntity="ent4" db:database="db2" db:table="maglietta_sesso">
     <RelationshipRole1 id="rel4#role7" name="MagliettaToSesso" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel4#role8" name="SessoToMaglietta" maxCard="N">
-      <db:JoinColumn attribute="ent4#att17" name="SESSO_OID"/>
+      <db:JoinColumn attribute="ent4#att17" name="sesso_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="440" gr:y="360" id="ent5" name="Foto" duration="persistent" attributeOrder="ent5#att19 ent5#att20 ent5#att21" gr:hideAttributes="false" db:database="db1" db:table="FOTO">
-    <Attribute id="ent5#att19" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent5#att20" name="commento" type="text" contentType="text/html" db:column="COMMENTO" db:clob="true"/>
-    <Attribute id="ent5#att21" name="immagine" type="blob" contentType="image" db:column="IMMAGINE"/>
+  <Entity gr:x="440" gr:y="360" id="ent5" name="Foto" duration="persistent" attributeOrder="ent5#att19 ent5#att20 ent5#att21" gr:hideAttributes="false" db:database="db2" db:table="foto">
+    <Attribute id="ent5#att19" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent5#att20" name="commento" type="text" contentType="text/html" db:column="commento"/>
+    <Attribute id="ent5#att21" name="immagine" type="blob" contentType="image" db:column="immagine"/>
   </Entity>
-  <Relationship id="rel5" name="Maglietta_Foto" sourceEntity="ent1" targetEntity="ent5" db:database="db1" db:table="FOTO">
+  <Relationship id="rel5" name="Maglietta_Foto" sourceEntity="ent1" targetEntity="ent5" db:database="db2" db:table="foto">
     <RelationshipRole1 id="rel5#role9" name="MagliettaToFoto" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel5#role10" name="FotoToMaglietta" maxCard="1">
-      <db:JoinColumn attribute="ent5#att19" name="OID"/>
+      <db:JoinColumn attribute="ent5#att19" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel6" name="Foto_Colore" sourceEntity="ent5" targetEntity="ent2" db:database="db1" db:table="FOTO">
+  <Relationship id="rel6" name="Foto_Colore" sourceEntity="ent5" targetEntity="ent2" db:database="db2" db:table="foto">
     <RelationshipRole1 id="rel6#role11" name="FotoToColore" maxCard="1">
-      <db:JoinColumn attribute="ent5#att19" name="OID"/>
+      <db:JoinColumn attribute="ent5#att19" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel6#role12" name="ColoreToFoto" maxCard="N">
-      <db:JoinColumn attribute="ent2#att12" name="COLORE_OID"/>
+      <db:JoinColumn attribute="ent2#att12" name="colore_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel7" name="Foto_Sesso" sourceEntity="ent5" targetEntity="ent4" db:database="db1" db:table="FOTO">
+  <Relationship id="rel7" name="Foto_Sesso" sourceEntity="ent5" targetEntity="ent4" db:database="db2" db:table="foto">
     <RelationshipRole1 id="rel7#role13" name="FotoToSesso" maxCard="1">
-      <db:JoinColumn attribute="ent5#att19" name="OID"/>
+      <db:JoinColumn attribute="ent5#att19" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel7#role14" name="SessoToFoto" maxCard="N">
-      <db:JoinColumn attribute="ent4#att17" name="SESSO_OID"/>
+      <db:JoinColumn attribute="ent4#att17" name="sesso_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="-80" gr:y="40" id="ent6" name="Stampa" duration="persistent" attributeOrder="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49" gr:hideAttributes="false" db:database="db1" db:table="STAMPA">
-    <Attribute id="ent6#att22" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent6#att23" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent6#att24" name="descrizione" type="text" contentType="text/html" db:column="DESCRIZIONE" db:clob="true"/>
-    <Attribute id="ent6#att25" name="anteprima" type="blob" contentType="image" db:column="ANTEPRIMA"/>
-    <Attribute id="ent6#att26" name="immagineHD" type="blob" contentType="image" db:column="IMMAGINEHD"/>
-    <Attribute id="ent6#att27" name="prezzoBase" type="float" db:column="PREZZOBASE"/>
-    <Attribute id="ent6#att49" name="isactive" type="boolean" db:column="ISACTIVE"/>
+  <Entity gr:x="-80" gr:y="40" id="ent6" name="Stampa" duration="persistent" attributeOrder="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49" gr:hideAttributes="false" db:database="db2" db:table="stampa">
+    <Attribute id="ent6#att22" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent6#att23" name="nome" type="string" db:column="nome"/>
+    <Attribute id="ent6#att24" name="descrizione" type="text" contentType="text/html" db:column="descrizione"/>
+    <Attribute id="ent6#att25" name="anteprima" type="blob" contentType="image" db:column="anteprima"/>
+    <Attribute id="ent6#att26" name="immagineHD" type="blob" contentType="image" db:column="immaginehd"/>
+    <Attribute id="ent6#att27" name="prezzoBase" type="float" db:column="prezzobase"/>
+    <Attribute id="ent6#att49" name="isactive" type="boolean" db:column="isactive"/>
   </Entity>
-  <Entity gr:x="50" gr:y="660" id="ent7" name="Configurazione" duration="persistent" attributeOrder="ent7#att28 ent7#att29 ent7#att30" gr:hideAttributes="false" db:database="db1" db:table="CONFIGURAZIONE">
-    <Attribute id="ent7#att28" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent7#att29" name="dimensioneFronte" type="float" db:column="DIMENSIONEFRONTE"/>
-    <Attribute id="ent7#att30" name="dimensioneRetro" type="float" db:column="DIMENSIONERETRO"/>
+  <Entity gr:x="50" gr:y="660" id="ent7" name="Configurazione" duration="persistent" attributeOrder="ent7#att28 ent7#att29 ent7#att30" gr:hideAttributes="false" db:database="db2" db:table="configurazione">
+    <Attribute id="ent7#att28" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent7#att29" name="dimensioneFronte" type="float" db:column="dimensionefronte"/>
+    <Attribute id="ent7#att30" name="dimensioneRetro" type="float" db:column="dimensioneretro"/>
   </Entity>
-  <Relationship id="rel11" name="Configurazione_StampaFronte" sourceEntity="ent7" targetEntity="ent6" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel11" name="Configurazione_StampaFronte" sourceEntity="ent7" targetEntity="ent6" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel11#role21" name="ConfigurazioneToStampaFronte" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel11#role22" name="StampaFronteToConfigurazione" maxCard="N">
-      <db:JoinColumn attribute="ent6#att22" name="STAMPA_OID"/>
+      <db:JoinColumn attribute="ent6#att22" name="stampa_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel12" name="Configurazione_StampaRetro" sourceEntity="ent7" targetEntity="ent6" gr:bendpoints="-155,-224,23,371" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel12" name="Configurazione_StampaRetro" sourceEntity="ent7" targetEntity="ent6" gr:bendpoints="-155,-224,23,371" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel12#role23" name="ConfigurazioneToStampaRetro" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel12#role24" name="StampaRetroToConfigurazione" maxCard="N">
-      <db:JoinColumn attribute="ent6#att22" name="STAMPA_OID_2"/>
+      <db:JoinColumn attribute="ent6#att22" name="stampa_oid_2"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel13" name="Configurazione_Maglietta" sourceEntity="ent7" targetEntity="ent1" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel13" name="Configurazione_Maglietta" sourceEntity="ent7" targetEntity="ent1" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel13#role25" name="ConfigurazioneToMaglietta" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel13#role26" name="MagliettaToConfigurazione" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel14" name="Configurazione_Sesso" sourceEntity="ent7" targetEntity="ent4" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel14" name="Configurazione_Sesso" sourceEntity="ent7" targetEntity="ent4" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel14#role27" name="ConfigurazioneToSesso" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel14#role28" name="SessoToConfigurazione" maxCard="N">
-      <db:JoinColumn attribute="ent4#att17" name="SESSO_OID"/>
+      <db:JoinColumn attribute="ent4#att17" name="sesso_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel15" name="Configurazione_Taglia" sourceEntity="ent7" targetEntity="ent3" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel15" name="Configurazione_Taglia" sourceEntity="ent7" targetEntity="ent3" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel15#role29" name="ConfigurazioneToTaglia" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel15#role30" name="TagliaToConfigurazione" maxCard="N">
-      <db:JoinColumn attribute="ent3#att15" name="TAGLIA_OID"/>
+      <db:JoinColumn attribute="ent3#att15" name="taglia_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel16" name="Configurazione_Colore" sourceEntity="ent7" targetEntity="ent2" gr:bendpoints="324,-74,-187,289" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel16" name="Configurazione_Colore" sourceEntity="ent7" targetEntity="ent2" gr:bendpoints="324,-74,-187,289" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel16#role31" name="ConfigurazioneToColore" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel16#role32" name="ColoreToConfigurazione" maxCard="N">
-      <db:JoinColumn attribute="ent2#att12" name="COLORE_OID"/>
+      <db:JoinColumn attribute="ent2#att12" name="colore_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="600" gr:y="610" id="ent8" name="RigaOrdine" duration="persistent" attributeOrder="ent8#att31 ent8#att32 ent8#att33 ent8#att34" gr:hideAttributes="false" db:database="db1" db:table="RIGAORDINE">
-    <Attribute id="ent8#att31" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent8#att32" name="prezzoSingolo" type="float" db:column="PREZZOSINGOLO"/>
-    <Attribute id="ent8#att33" name="quantita" type="string" db:column="QUANTITA"/>
-    <Attribute id="ent8#att34" name="prezzoTotale" type="float" db:column="PREZZOTOTALE"/>
+  <Entity gr:x="600" gr:y="610" id="ent8" name="RigaOrdine" duration="persistent" attributeOrder="ent8#att31 ent8#att32 ent8#att33 ent8#att34" gr:hideAttributes="false" db:database="db2" db:table="rigaordine">
+    <Attribute id="ent8#att31" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent8#att32" name="prezzoSingolo" type="float" db:column="prezzosingolo"/>
+    <Attribute id="ent8#att33" name="quantita" type="string" db:column="quantita"/>
+    <Attribute id="ent8#att34" name="prezzoTotale" type="float" db:column="prezzototale"/>
   </Entity>
-  <Relationship id="rel17" name="RigaOrdine_Configurazione" sourceEntity="ent8" targetEntity="ent7" db:database="db1" db:table="CONFIGURAZIONE">
+  <Relationship id="rel17" name="RigaOrdine_Configurazione" sourceEntity="ent8" targetEntity="ent7" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel17#role33" name="RigaOrdineToConfigurazione" maxCard="1">
-      <db:JoinColumn attribute="ent8#att31" name="RIGAORDINE_OID"/>
+      <db:JoinColumn attribute="ent8#att31" name="rigaordine_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel17#role34" name="ConfigurazioneToRigaOrdine" maxCard="1">
-      <db:JoinColumn attribute="ent7#att28" name="OID"/>
+      <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41" gr:hideAttributes="false" db:database="db1" db:table="ORDINE">
-    <Attribute id="ent9#att35" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="DATAORACONFERMA"/>
-    <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="DATAORAPRESAINCARICO"/>
-    <Attribute id="ent9#att38" name="dataOraSpedizione" type="timestamp" db:column="DATAORASPEDIZIONE"/>
-    <Attribute id="ent9#att39" name="prezzoTotale" type="float" derivationQuery="calculated::sum(Self.rel18#role35(as Var1).ent8#att34)" storageType="file" db:table="ORDINE_PREZZOTOTALE_VIEW" db:column="DER_ATTR">
-      <db:JoinColumn attribute="ent9#att35" name="OID"/>
+  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41" gr:hideAttributes="false" db:database="db2" db:table="ordine">
+    <Attribute id="ent9#att35" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="dataoraconferma"/>
+    <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="dataorapresaincarico"/>
+    <Attribute id="ent9#att38" name="dataOraSpedizione" type="timestamp" db:column="dataoraspedizione"/>
+    <Attribute id="ent9#att39" name="prezzoTotale" type="float" derivationQuery="calculated::sum(Self.rel18#role35(as Var1).ent8#att34)" storageType="file" db:table="ordine_prezzototale_view" db:column="der_attr">
+      <db:JoinColumn attribute="ent9#att35" name="oid"/>
     </Attribute>
-    <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="SPESESPEDIZIONE"/>
-    <Attribute id="ent9#att41" name="stato" type="string" db:column="STATO"/>
+    <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="spesespedizione"/>
+    <Attribute id="ent9#att41" name="stato" type="string" db:column="stato"/>
   </Entity>
-  <Relationship id="rel18" name="Ordine_RigaOrdine" sourceEntity="ent9" targetEntity="ent8" db:database="db1" db:table="RIGAORDINE">
+  <Relationship id="rel18" name="Ordine_RigaOrdine" sourceEntity="ent9" targetEntity="ent8" db:database="db2" db:table="rigaordine">
     <RelationshipRole1 id="rel18#role35" name="OrdineToRigaOrdine" maxCard="N">
-      <db:JoinColumn attribute="ent9#att35" name="ORDINE_OID"/>
+      <db:JoinColumn attribute="ent9#att35" name="ordine_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel18#role36" name="RigaOrdineToOrdine" maxCard="1">
-      <db:JoinColumn attribute="ent8#att31" name="OID"/>
+      <db:JoinColumn attribute="ent8#att31" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="430" gr:y="-80" id="ent10" name="Cliente" duration="persistent" attributeOrder="ent10#att43 ent10#att44 ent10#att45 ent10#att50 ent10#att55 ent10#att56" gr:hideAttributes="false" db:database="db1" db:table="CLIENTE">
-    <Attribute id="ent10#att43" name="nome" type="string" db:column="NOME"/>
-    <Attribute id="ent10#att44" name="cognome" type="string" db:column="COGNOME"/>
-    <Attribute id="ent10#att45" name="indirizzo" type="string" db:column="INDIRIZZO"/>
+  <Entity gr:x="430" gr:y="-80" id="ent10" name="Cliente" duration="persistent" attributeOrder="ent10#att43 ent10#att44 ent10#att45 ent10#att50 ent10#att55 ent10#att56" gr:hideAttributes="false" db:database="db2" db:table="cliente">
+    <Attribute id="ent10#att43" name="nome" type="string" db:column="nome"/>
+    <Attribute id="ent10#att44" name="cognome" type="string" db:column="cognome"/>
+    <Attribute id="ent10#att45" name="indirizzo" type="string" db:column="indirizzo"/>
     <Generalization superEntity="User">
-      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
     </Generalization>
-    <Attribute id="ent10#att50" name="isactive" type="boolean" db:column="ISACTIVE"/>
-    <Attribute id="ent10#att55" name="telefono" type="string" db:column="TELEFONO"/>
-    <Attribute id="ent10#att56" name="codiceFiscale" type="string" db:column="CODICEFISCALE"/>
+    <Attribute id="ent10#att50" name="isactive" type="boolean" db:column="isactive"/>
+    <Attribute id="ent10#att55" name="telefono" type="string" db:column="telefono"/>
+    <Attribute id="ent10#att56" name="codiceFiscale" type="string" db:column="codicefiscale"/>
   </Entity>
-  <Entity gr:x="1140" gr:y="260" id="ent11" name="Pagina" duration="persistent" attributeOrder="ent11#att46 ent11#att47 ent11#att48 ent11#att42" gr:hideAttributes="false" db:database="db1" db:table="PAGINA">
-    <Attribute id="ent11#att46" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent11#att47" name="titolo" type="string" db:column="TITOLO"/>
-    <Attribute id="ent11#att48" name="testoHTML" type="text" contentType="text/html" db:column="TESTOHTML" db:clob="true"/>
-    <Attribute id="ent11#att42" name="home" type="boolean" db:column="HOME"/>
+  <Entity gr:x="1140" gr:y="260" id="ent11" name="Pagina" duration="persistent" attributeOrder="ent11#att46 ent11#att47 ent11#att48 ent11#att42" gr:hideAttributes="false" db:database="db2" db:table="pagina">
+    <Attribute id="ent11#att46" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent11#att47" name="titolo" type="string" db:column="titolo"/>
+    <Attribute id="ent11#att48" name="testoHTML" type="text" contentType="text/html" db:column="testohtml"/>
+    <Attribute id="ent11#att42" name="home" type="boolean" db:column="home"/>
   </Entity>
-  <Relationship id="rel19" name="Ordine_Cliente" sourceEntity="ent9" targetEntity="ent10" gr:bendpoints="-313,-154,142,185" db:database="db1" db:table="ORDINE">
+  <Relationship id="rel19" name="Ordine_Cliente" sourceEntity="ent9" targetEntity="ent10" gr:bendpoints="-313,-154,142,185" db:database="db2" db:table="ordine">
     <RelationshipRole1 id="rel19#role37" name="OrdineToCliente" maxCard="1">
-      <db:JoinColumn attribute="ent9#att35" name="OID"/>
+      <db:JoinColumn attribute="ent9#att35" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel19#role38" name="ClienteToOrdine" maxCard="N">
-      <db:JoinColumn attribute="userOID" name="CLIENTE_OID"/>
+      <db:JoinColumn attribute="userOID" name="cliente_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="810" gr:y="110" id="ent12" name="Stampatore" duration="persistent" gr:hideAttributes="false" attributeOrder="ent12#att11" db:database="db1" db:table="STAMPATORE">
+  <Entity gr:x="810" gr:y="110" id="ent12" name="Stampatore" duration="persistent" gr:hideAttributes="false" attributeOrder="ent12#att11" db:database="db2" db:table="stampatore">
     <Generalization superEntity="User">
-      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
     </Generalization>
-    <Attribute id="ent12#att11" name="matricola" type="string" key="false" db:column="MATRICOLA"/>
+    <Attribute id="ent12#att11" name="matricola" type="string" key="false" db:column="matricola"/>
   </Entity>
-  <Relationship id="rel20" name="Ordine_Stampatore" sourceEntity="ent9" targetEntity="ent12" db:database="db1" db:table="ORDINE">
+  <Relationship id="rel20" name="Ordine_Stampatore" sourceEntity="ent9" targetEntity="ent12" db:database="db2" db:table="ordine">
     <RelationshipRole1 id="rel20#role39" name="OrdineToStampatore" maxCard="1">
-      <db:JoinColumn attribute="ent9#att35" name="OID"/>
+      <db:JoinColumn attribute="ent9#att35" name="oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel20#role40" name="StampatoreToOrdine" maxCard="N">
-      <db:JoinColumn attribute="userOID" name="STAMPATORE_OID"/>
+      <db:JoinColumn attribute="userOID" name="stampatore_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel21" name="Cliente_Stampa" sourceEntity="ent10" targetEntity="ent6" gr:bendpoints="-460,0,0,-169" db:database="db1" db:table="STAMPA">
+  <Relationship id="rel21" name="Cliente_Stampa" sourceEntity="ent10" targetEntity="ent6" gr:bendpoints="-460,0,0,-169" db:database="db2" db:table="stampa">
     <RelationshipRole1 id="rel21#role41" name="ClienteToStampa" maxCard="N">
-      <db:JoinColumn attribute="userOID" name="CLIENTE_OID"/>
+      <db:JoinColumn attribute="userOID" name="cliente_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel21#role42" name="StampaToCliente" maxCard="1">
-      <db:JoinColumn attribute="ent6#att22" name="OID"/>
+      <db:JoinColumn attribute="ent6#att22" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="220" gr:y="40" id="ent13" name="Template" duration="persistent" attributeOrder="ent13#att51 ent13#att52" gr:hideAttributes="false" db:database="db1" db:table="TEMPLATE">
+  <Entity gr:x="220" gr:y="40" id="ent13" name="Template" duration="persistent" attributeOrder="ent13#att51 ent13#att52" gr:hideAttributes="false" db:database="db2" db:table="template">
     <Generalization superEntity="ent1">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </Generalization>
-    <Attribute id="ent13#att51" name="dimensioneFronte" type="float" db:column="DIMENSIONEFRONTE"/>
-    <Attribute id="ent13#att52" name="dimensioneRetro" type="float" db:column="DIMENSIONERETRO"/>
+    <Attribute id="ent13#att51" name="dimensioneFronte" type="float" db:column="dimensionefronte"/>
+    <Attribute id="ent13#att52" name="dimensioneRetro" type="float" db:column="dimensioneretro"/>
   </Entity>
-  <Relationship id="rel22" name="Template_StampaFronte" sourceEntity="ent13" targetEntity="ent6" gr:bendpoints="-187,-32,161,-58" db:database="db1" db:table="TEMPLATE">
+  <Relationship id="rel22" name="Template_StampaFronte" sourceEntity="ent13" targetEntity="ent6" gr:bendpoints="-187,-32,161,-58" db:database="db2" db:table="template">
     <RelationshipRole1 id="rel22#role43" name="TemplateToStampaFronte" maxCard="1">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel22#role44" name="StampaFronteToTemplate" maxCard="N">
-      <db:JoinColumn attribute="ent6#att22" name="STAMPA_OID"/>
+      <db:JoinColumn attribute="ent6#att22" name="stampa_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel23" name="Template_StampaRetro" sourceEntity="ent13" targetEntity="ent6" gr:bendpoints="-182,27,166,1" db:database="db1" db:table="TEMPLATE">
+  <Relationship id="rel23" name="Template_StampaRetro" sourceEntity="ent13" targetEntity="ent6" gr:bendpoints="-182,27,166,1" db:database="db2" db:table="template">
     <RelationshipRole1 id="rel23#role45" name="TemplateToStampaRetro" maxCard="1">
-      <db:JoinColumn attribute="ent1#att1" name="MAGLIETTA_OID"/>
+      <db:JoinColumn attribute="ent1#att1" name="maglietta_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel23#role46" name="StampaRetroToTemplate" maxCard="N">
-      <db:JoinColumn attribute="ent6#att22" name="STAMPA_OID_2"/>
+      <db:JoinColumn attribute="ent6#att22" name="stampa_oid_2"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="-130" gr:y="270" id="ent14" name="Tema" duration="persistent" attributeOrder="ent14#att53 ent14#att54" gr:hideAttributes="false" db:database="db1" db:table="TEMA">
-    <Attribute id="ent14#att53" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="ent14#att54" name="nome" type="string" db:column="NOME"/>
+  <Entity gr:x="-130" gr:y="270" id="ent14" name="Tema" duration="persistent" attributeOrder="ent14#att53 ent14#att54" gr:hideAttributes="false" db:database="db2" db:table="tema">
+    <Attribute id="ent14#att53" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent14#att54" name="nome" type="string" db:column="nome"/>
   </Entity>
-  <Relationship id="rel24" name="Tema_Stampa" sourceEntity="ent14" targetEntity="ent6" db:database="db1" db:table="TEMA_STAMPA">
+  <Relationship id="rel24" name="Tema_Stampa" sourceEntity="ent14" targetEntity="ent6" db:database="db2" db:table="tema_stampa">
     <RelationshipRole1 id="rel24#role47" name="TemaToStampa" maxCard="N">
-      <db:JoinColumn attribute="ent14#att53" name="TEMA_OID"/>
+      <db:JoinColumn attribute="ent14#att53" name="tema_oid"/>
     </RelationshipRole1>
     <RelationshipRole2 id="rel24#role48" name="StampaToTema" maxCard="N">
-      <db:JoinColumn attribute="ent6#att22" name="STAMPA_OID"/>
+      <db:JoinColumn attribute="ent6#att22" name="stampa_oid"/>
     </RelationshipRole2>
   </Relationship>
+  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w">
+  </db:Database>
 </DataModel>
