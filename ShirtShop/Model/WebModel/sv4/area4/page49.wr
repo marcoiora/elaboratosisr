@@ -1,10 +1,32 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="218" gr:y="27" id="sv4#area4#page49" name="Accounts Disponibili" linkOrder="sv4#area4#page49#ln249 sv4#area4#page49#ln282">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="151" id="sv4#area4#page49" name="Accounts Disponibili" linkOrder="sv4#area4#page49#ln249 sv4#area4#page49#ln282">
   <ContentUnits>
-    <IndexUnit gr:x="4" gr:y="0" id="sv4#area4#page49#inu26" name="Accounts Clienti" entity="ent10" displayAttributes="ent10#att43 ent10#att44 password userName ent10#att50" linkOrder="sv4#area4#page49#inu26#ln254">
+    <IndexUnit gr:x="4" gr:y="0" id="sv4#area4#page49#inu26" name="Accounts Clienti" entity="ent10" displayAttributes="ent10#att43 ent10#att44 password userName ent10#att50" linkOrder="sv4#area4#page49#inu26#ln254 sv4#area4#page49#inu26#ln260">
       <Link id="sv4#area4#page49#inu26#ln254" name="Cancella" to="sv4#area4#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#area4#page49#inu26#ln260" name="Modifica" to="sv4#area4#page22#enu22" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par316" name="defaultGroup.oid_PASSING" source="data[].User2DefaultGroup_groupOID" passing="true"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par362" name="isactive_PASSING" source="data[].ent10#att50" passing="true"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par386" name="oid_PASSING" source="data[].userOID" passing="true"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par477" name="codiceFiscale_CodiceFiscale" source="data[].ent10#att56" target="sv4#area4#page22#enu22#fld91_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par478" name="cognome_Cognome" source="data[].ent10#att44" target="sv4#area4#page22#enu22#fld88_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par479" name="email_Email" source="data[].email" target="sv4#area4#page22#enu22#fld89_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par480" name="indirizzo_Indirizzo" source="data[].ent10#att45" target="sv4#area4#page22#enu22#fld90_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par481" name="isactive_isActive" source="data[].ent10#att50" target="sv4#area4#page22#enu22#fld96_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par482" name="nome_Nome" source="data[].ent10#att43" target="sv4#area4#page22#enu22#fld87_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par483" name="password_Password" source="data[].password" target="sv4#area4#page22#enu22#fld94_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par484" name="telefono_Telefono" source="data[].ent10#att55" target="sv4#area4#page22#enu22#fld93_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu26#ln260#par485" name="userName_Username" source="data[].userName" target="sv4#area4#page22#enu22#fld92_slot"/>
+      </Link>
     </IndexUnit>
-    <IndexUnit gr:x="0" gr:y="96" id="sv4#area4#page49#inu27" name="Accounts Stampatori" entity="ent12" displayAttributes="ent12#att11 userName password" linkOrder="sv4#area4#page49#inu27#ln266">
+    <IndexUnit gr:x="0" gr:y="96" id="sv4#area4#page49#inu27" name="Accounts Stampatori" entity="ent12" displayAttributes="ent12#att11 userName password" linkOrder="sv4#area4#page49#inu27#ln266 sv4#area4#page49#inu27#ln280">
       <Link id="sv4#area4#page49#inu27#ln266" name="Cancella" to="sv4#area4#page52#dau15" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#area4#page49#inu27#ln280" name="Modifica" to="sv4#area4#page54#enu23" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page49#inu27#ln280#par486" name="email_Email" source="data[].email" target="sv4#area4#page54#enu23#fld97_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu27#ln280#par487" name="matricola_Matricola" source="data[].ent12#att11" target="sv4#area4#page54#enu23#fld98_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu27#ln280#par488" name="password_Password" source="data[].password" target="sv4#area4#page54#enu23#fld99_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu27#ln280#par489" name="userName_Username" source="data[].userName" target="sv4#area4#page54#enu23#fld100_slot"/>
+        <LinkParameter id="sv4#area4#page49#inu27#ln280#par490" name="defaultGroup.oid_PASSING" source="data[].User2DefaultGroup_groupOID" passing="true"/>
+        <LinkParameter id="sv4#area4#page49#inu27#ln280#par491" name="oid_PASSING" source="data[].userOID" passing="true"/>
+      </Link>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid>
@@ -17,6 +39,7 @@
           <layout:Attribute attribute="userName"/>
           <layout:Attribute attribute="ent10#att50"/>
           <layout:Link link="sv4#area4#page49#inu26#ln254"/>
+          <layout:Link link="sv4#area4#page49#inu26#ln260"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
@@ -25,6 +48,7 @@
           <layout:Attribute attribute="userName"/>
           <layout:Attribute attribute="password"/>
           <layout:Link link="sv4#area4#page49#inu27#ln266"/>
+          <layout:Link link="sv4#area4#page49#inu27#ln280"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

@@ -1,0 +1,43 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="281" gr:y="521" id="sv4#area4#page54" name="Modifica Stampatore">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="-1" id="sv4#area4#page54#enu23" name="Modifica dati Stampatore" fieldOrder="sv4#area4#page54#enu23#fld98 sv4#area4#page54#enu23#fld97 sv4#area4#page54#enu23#fld100 sv4#area4#page54#enu23#fld99" linkOrder="sv4#area4#page54#enu23#ln301">
+      <Field id="sv4#area4#page54#enu23#fld97" name="Email" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page54#enu23#fld98" name="Matricola" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page54#enu23#fld99" name="Password" type="password" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page54#enu23#fld100" name="Username" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv4#area4#page54#enu23#ln301" name="Conferma Modifica" to="sv4#area4#mfu12" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page54#enu23#ln301#par492" name="Email_email" source="sv4#area4#page54#enu23#fld97" target="sv4#area4#mfu12.email"/>
+        <LinkParameter id="sv4#area4#page54#enu23#ln301#par493" name="defaultGroup.oid_PASSING_Group.oid(defaultGroup)" sourceLinkParameter="sv4#area4#page49#inu27#ln280#par490" target="sv4#area4#mfu12.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv4#area4#page54#enu23#ln301#par494" name="oid_PASSING_KeyCondition88 [oid]" sourceLinkParameter="sv4#area4#page49#inu27#ln280#par491" target="sv4#area4#mfu12#su111#kcond88.userOID"/>
+        <LinkParameter id="sv4#area4#page54#enu23#ln301#par495" name="Matricola_matricola" source="sv4#area4#page54#enu23#fld98" target="sv4#area4#mfu12.ent12#att11"/>
+        <LinkParameter id="sv4#area4#page54#enu23#ln301#par496" name="Password_password" source="sv4#area4#page54#enu23#fld99" target="sv4#area4#mfu12.password"/>
+        <LinkParameter id="sv4#area4#page54#enu23#ln301#par497" name="Username_userName" source="sv4#area4#page54#enu23#fld100" target="sv4#area4#mfu12.userName"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page54#enu23">
+          <layout:Field field="sv4#area4#page54#enu23#fld98"/>
+          <layout:Field field="sv4#area4#page54#enu23#fld97"/>
+          <layout:Field field="sv4#area4#page54#enu23#fld100"/>
+          <layout:Field field="sv4#area4#page54#enu23#fld99"/>
+          <layout:Link link="sv4#area4#page54#enu23#ln301"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

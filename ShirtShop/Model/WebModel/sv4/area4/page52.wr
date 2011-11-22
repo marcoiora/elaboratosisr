@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="63" gr:y="311" id="sv4#area4#page52" name="Cancella Stampatore">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="51" gr:y="431" id="sv4#area4#page52" name="Cancella Stampatore">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="-1" id="sv4#area4#page52#dau15" name="Dettaglio Stampatore Selezionato" entity="ent12" displayAttributes="ent12#att11 email userName password" linkOrder="sv4#area4#page52#dau15#ln281">
       <Selector id="sv4#area4#page52#dau15#su133" defaultPolicy="fill" booleanOperator="and">

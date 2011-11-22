@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="29" id="sv4#area4#page51" name="Cancella Cliente">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="151" id="sv4#area4#page51" name="Cancella Cliente">
   <ContentUnits>
     <DataUnit gr:x="-1" gr:y="0" id="sv4#area4#page51#dau14" name="Dettaglio Cliente Selezionato" entity="ent10" displayAttributes="ent10#att43 ent10#att44 ent10#att45 ent10#att55 ent10#att56 email userName password ent10#att50" linkOrder="sv4#area4#page51#dau14#ln259">
       <Selector id="sv4#area4#page51#dau14#su130" defaultPolicy="fill" booleanOperator="and">

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="413" gr:y="0" id="sv4#area4#page50" name="Nuovo Cliente">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="444" gr:y="0" id="sv4#area4#page50" name="Nuovo Cliente">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv4#area4#page50#enu16" name="Inserisci dati Nuovo Cliente" linkOrder="sv4#area4#page50#enu16#ln250" customDescriptor="false" fieldOrder="sv4#area4#page50#enu16#fld41 sv4#area4#page50#enu16#fld48 sv4#area4#page50#enu16#fld74 sv4#area4#page50#enu16#fld80 sv4#area4#page50#enu16#fld82 sv4#area4#page50#enu16#fld62 sv4#area4#page50#enu16#fld61 sv4#area4#page50#enu16#fld73">
       <Link id="sv4#area4#page50#enu16#ln250" name="Salva" to="sv4#area4#cru16" type="normal" validate="true">

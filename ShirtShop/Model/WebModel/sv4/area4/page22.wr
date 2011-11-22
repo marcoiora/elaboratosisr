@@ -1,0 +1,58 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="19" gr:y="1" id="sv4#area4#page22" name="Modifica Cliente">
+  <ContentUnits>
+    <EntryUnit gr:x="-1" gr:y="-1" id="sv4#area4#page22#enu22" name="Modifica dati Cliente" fieldOrder="sv4#area4#page22#enu22#fld87 sv4#area4#page22#enu22#fld88 sv4#area4#page22#enu22#fld89 sv4#area4#page22#enu22#fld90 sv4#area4#page22#enu22#fld91 sv4#area4#page22#enu22#fld93 sv4#area4#page22#enu22#fld92 sv4#area4#page22#enu22#fld94 sv4#area4#page22#enu22#fld96" linkOrder="sv4#area4#page22#enu22#ln256">
+      <Field id="sv4#area4#page22#enu22#fld87" name="Nome" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld88" name="Cognome" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld89" name="Email" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld90" name="Indirizzo" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld91" name="CodiceFiscale" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld92" name="Username" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld93" name="Telefono" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area4#page22#enu22#fld94" name="Password" type="password" modifiable="true" preloaded="true"/>
+      <Link id="sv4#area4#page22#enu22#ln256" name="Conferma Modifica" to="sv4#area4#mfu11" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par466" name="CodiceFiscale_codiceFiscale" source="sv4#area4#page22#enu22#fld91" target="sv4#area4#mfu11.ent10#att56"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par467" name="Cognome_cognome" source="sv4#area4#page22#enu22#fld88" target="sv4#area4#mfu11.ent10#att44"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par468" name="Email_email" source="sv4#area4#page22#enu22#fld89" target="sv4#area4#mfu11.email"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par469" name="defaultGroup.oid_PASSING_Group.oid(defaultGroup)" sourceLinkParameter="sv4#area4#page49#inu26#ln260#par316" target="sv4#area4#mfu11.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par470" name="Indirizzo_indirizzo" source="sv4#area4#page22#enu22#fld90" target="sv4#area4#mfu11.ent10#att45"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par471" name="isactive_PASSING_isactive" sourceLinkParameter="sv4#area4#page49#inu26#ln260#par362" target="sv4#area4#mfu11.ent10#att50"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par472" name="oid_PASSING_KeyCondition68 [oid]" sourceLinkParameter="sv4#area4#page49#inu26#ln260#par386" target="sv4#area4#mfu11#su97#kcond68.userOID"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par473" name="Nome_nome" source="sv4#area4#page22#enu22#fld87" target="sv4#area4#mfu11.ent10#att43"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par474" name="Password_password" source="sv4#area4#page22#enu22#fld94" target="sv4#area4#mfu11.password"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par475" name="Telefono_telefono" source="sv4#area4#page22#enu22#fld93" target="sv4#area4#mfu11.ent10#att55"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par476" name="Username_userName" source="sv4#area4#page22#enu22#fld92" target="sv4#area4#mfu11.userName"/>
+      </Link>
+      <Field id="sv4#area4#page22#enu22#fld96" name="isActive" type="boolean" modifiable="true" preloaded="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page22#enu22">
+          <layout:Link link="sv4#area4#page22#enu22#ln256"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld87"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld88"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld89"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld90"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld91"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld93"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld92"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld94"/>
+          <layout:Field field="sv4#area4#page22#enu22#fld96"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
