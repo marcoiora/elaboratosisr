@@ -31,7 +31,7 @@
         <Comment xml:space="preserve">No</Comment>
       </Link>
       <Link id="sv2#area8#page46#mssu1#ln232" name="Conferma" to="sv2#area8#tmu1" type="normal" validate="true">
-        <LinkParameter id="sv2#area8#page46#mssu1#ln232#par354" name="ordine_oid_PASSING" sourceLinkParameter="sv2#area8#page46#miu15#ln234#par316" passing="true"/>
+        <LinkParameter id="sv2#area8#page46#mssu1#ln232#par351" name="ordine_oid_PASSING" sourceLinkParameter="sv2#area8#page46#miu16#ln254#par67" passing="true"/>
       </Link>
     </MultiMessageUnit>
     <MultiMessageUnit gr:x="18" gr:y="254" id="sv2#area8#page46#mssu2" name="Errori"/>
