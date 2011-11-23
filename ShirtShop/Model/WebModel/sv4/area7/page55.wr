@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv4#area7#page55" name="Visualizzazione Ordini">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-1" gr:y="-1" id="sv4#area7#page55" name="Visualizzazione Ordini">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv4#area7#page55#inu13" name="Ordini" entity="ent9"/>
+    <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area7#page55#inu13" name="Ordini" entity="ent9"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -21,5 +21,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Variable id="sv4#area7#page55#var2" name="NumOrdini" type="boolean"/>
 </Page>
