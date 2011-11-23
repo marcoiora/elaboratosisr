@@ -1,0 +1,31 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="182" gr:y="-9" id="mov1#mpkg3#opm1#opg1" name="Transazione" transaction="true">
+  <OperationUnits>
+    <SwitchUnit gr:x="118" gr:y="19" id="mov1#mpkg3#opm1#opg1#switch4" name="stato?">
+      <OKLink id="mov1#mpkg3#opm1#opg1#switch4#oln89" name="OKLink89" to="mov1#mpkg3#opm1#kocu1" automaticCoupling="true"/>
+      <Case value="da-gestire"/>
+      <OKLink id="mov1#mpkg3#opm1#opg1#switch4#oln114" name="OKLink114" to="mov1#mpkg3#opm1#opg1#tmu2" automaticCoupling="true" code="da-gestire"/>
+    </SwitchUnit>
+    <ModifyUnit gr:x="420" gr:y="0" id="mov1#mpkg3#opm1#opg1#mfu13" name="Ordine" entity="ent9">
+      <Selector id="mov1#mpkg3#opm1#opg1#mfu13#su135" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm1#opg1#mfu13#su135#kcond90" name="KeyCondition90" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm1#opg1#mfu13#oln107" name="OKLink107" to="mov1#mpkg3#opm1#okcu1" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg3#opm1#opg1#mfu13#kln64" name="KOLink64" to="mov1#mpkg3#opm1#kocu1" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="0" gr:y="10" id="mov1#mpkg3#opm1#opg1#seu59" name="stato" entity="ent9" distinctAttributes="ent9#att41" linkOrder="mov1#mpkg3#opm1#opg1#seu59#ln306">
+      <Selector id="mov1#mpkg3#opm1#opg1#seu59#su136" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm1#opg1#seu59#su136#kcond91" name="KeyCondition91" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#mpkg3#opm1#opg1#seu59#ln306" name="Link306" to="mov1#mpkg3#opm1#opg1#switch4" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm1#opg1#seu59#ln306#par506" name="stato_Switch" source="ent9#att41Array" target="mov1#mpkg3#opm1#opg1#switch4.switch"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm1#opg1#seu59#oln113" name="OKLink113" to="mov1#mpkg3#opm1#opg1#switch4" automaticCoupling="true" gr:bendpoints="58,12,-59,17"/>
+    </SelectorUnit>
+    <TimeUnit gr:x="280" gr:y="20" id="mov1#mpkg3#opm1#opg1#tmu2" name="Now!">
+      <OKLink id="mov1#mpkg3#opm1#opg1#tmu2#oln115" name="OKLink115" to="mov1#mpkg3#opm1#opg1#mfu13">
+        <LinkParameter id="mov1#mpkg3#opm1#opg1#tmu2#oln115#par508" name="Current/Input Timestamp_dataOraPresaInCarico" source="currentTimestamp" target="mov1#mpkg3#opm1#opg1#mfu13.ent9#att37"/>
+        <LinkParameter id="mov1#mpkg3#opm1#opg1#tmu2#oln115#par509" name="in-stampa_stato" sourceValue="in-stampa" target="mov1#mpkg3#opm1#opg1#mfu13.ent9#att41"/>
+      </OKLink>
+    </TimeUnit>
+  </OperationUnits>
+</OperationGroup>

@@ -1,0 +1,18 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="30" id="mov1#mpkg3#opm1" name="Prendi in carico">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm1#icu2" name="Input Collector" gr:x="0" gr:y="0" linkOrder="mov1#mpkg3#opm1#icu2#ln305">
+      <InputCollectorParameter id="mov1#mpkg3#opm1#icu2#icp1" name="ordine_oid"/>
+      <Link id="mov1#mpkg3#opm1#icu2#ln283" name="Link283" to="mov1#mpkg3#opm1#opg1#mfu13" type="transport" validate="true" gr:bendpoints="216,-15,-229,-43;380,-14,-65,-42">
+        <LinkParameter id="mov1#mpkg3#opm1#icu2#ln283#par500" name="oid_KeyCondition90 [oid]" source="mov1#mpkg3#opm1#icu2#icp1" target="mov1#mpkg3#opm1#opg1#mfu13#su135#kcond90.ent9#att35"/>
+        <LinkParameter id="mov1#mpkg3#opm1#icu2#ln283#par502" name="stampatore_oid_Stampatore.oid(OrdineToStampatore)" source="mov1#mpkg3#opm1#icu2#icp2" target="mov1#mpkg3#opm1#opg1#mfu13.rel20#role39.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg3#opm1#icu2#icp2" name="stampatore_oid"/>
+      <Link id="mov1#mpkg3#opm1#icu2#ln305" name="Link305" to="mov1#mpkg3#opm1#opg1#seu59" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm1#icu2#ln305#par505" name="ordine_oid_KeyCondition91 [oid]" source="mov1#mpkg3#opm1#icu2#icp1" target="mov1#mpkg3#opm1#opg1#seu59#su136#kcond91.ent9#att35"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm1#icu2#oln112" name="OKLink112" to="mov1#mpkg3#opm1#opg1#seu59" automaticCoupling="true" gr:bendpoints="96,36,-89,-3"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="660" gr:y="240" id="mov1#mpkg3#opm1#okcu1" name="OK Collector1"/>
+    <KOCollectorUnit gr:x="330" gr:y="270" id="mov1#mpkg3#opm1#kocu1" name="KO Collector1"/>
+  </OperationUnits>
+</OperationModule>

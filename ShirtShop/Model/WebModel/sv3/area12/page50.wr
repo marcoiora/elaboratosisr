@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area12#page50" name="Sommario Ordini">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area12#page50" name="Sommario Ordini" localized="false">
   <ContentUnits>
     <IndexUnit gr:x="130" gr:y="0" id="sv3#area12#page50#inu26" name="I tuoi ordini" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37" linkOrder="sv3#area12#page50#inu26#ln266">
       <Selector id="sv3#area12#page50#inu26#su130" defaultPolicy="fill" booleanOperator="and">
