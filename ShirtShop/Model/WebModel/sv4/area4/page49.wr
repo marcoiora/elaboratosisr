@@ -4,7 +4,6 @@
       <Link id="sv4#area4#page49#inu26#ln254" name="Cancella" to="sv4#area4#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
       <Link id="sv4#area4#page49#inu26#ln260" name="Modifica" to="sv4#area4#page22#enu22" type="normal" validate="true">
         <LinkParameter id="sv4#area4#page49#inu26#ln260#par316" name="defaultGroup.oid_PASSING" source="data[].User2DefaultGroup_groupOID" passing="true"/>
-        <LinkParameter id="sv4#area4#page49#inu26#ln260#par362" name="isactive_PASSING" source="data[].ent10#att50" passing="true"/>
         <LinkParameter id="sv4#area4#page49#inu26#ln260#par386" name="oid_PASSING" source="data[].userOID" passing="true"/>
         <LinkParameter id="sv4#area4#page49#inu26#ln260#par477" name="codiceFiscale_CodiceFiscale" source="data[].ent10#att56" target="sv4#area4#page22#enu22#fld91_slot"/>
         <LinkParameter id="sv4#area4#page49#inu26#ln260#par478" name="cognome_Cognome" source="data[].ent10#att44" target="sv4#area4#page22#enu22#fld88_slot"/>

@@ -15,12 +15,12 @@
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par468" name="Email_email" source="sv4#area4#page22#enu22#fld89" target="sv4#area4#mfu11.email"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par469" name="defaultGroup.oid_PASSING_Group.oid(defaultGroup)" sourceLinkParameter="sv4#area4#page49#inu26#ln260#par316" target="sv4#area4#mfu11.User2DefaultGroup.groupOID"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par470" name="Indirizzo_indirizzo" source="sv4#area4#page22#enu22#fld90" target="sv4#area4#mfu11.ent10#att45"/>
-        <LinkParameter id="sv4#area4#page22#enu22#ln256#par471" name="isactive_PASSING_isactive" sourceLinkParameter="sv4#area4#page49#inu26#ln260#par362" target="sv4#area4#mfu11.ent10#att50"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par472" name="oid_PASSING_KeyCondition68 [oid]" sourceLinkParameter="sv4#area4#page49#inu26#ln260#par386" target="sv4#area4#mfu11#su97#kcond68.userOID"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par473" name="Nome_nome" source="sv4#area4#page22#enu22#fld87" target="sv4#area4#mfu11.ent10#att43"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par474" name="Password_password" source="sv4#area4#page22#enu22#fld94" target="sv4#area4#mfu11.password"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par475" name="Telefono_telefono" source="sv4#area4#page22#enu22#fld93" target="sv4#area4#mfu11.ent10#att55"/>
         <LinkParameter id="sv4#area4#page22#enu22#ln256#par476" name="Username_userName" source="sv4#area4#page22#enu22#fld92" target="sv4#area4#mfu11.userName"/>
+        <LinkParameter id="sv4#area4#page22#enu22#ln256#par30" name="isActive_isactive" source="sv4#area4#page22#enu22#fld96" target="sv4#area4#mfu11.ent10#att50"/>
       </Link>
       <Field id="sv4#area4#page22#enu22#fld96" name="isActive" type="boolean" modifiable="true" preloaded="true"/>
     </EntryUnit>
