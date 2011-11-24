@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="6" gr:y="286" id="sv3#area12#page51" name="Dettaglio Ordine">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#dau14" name="Dettaglio Ordine" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 rel19#role37.ent10#att43 rel19#role37.ent10#att44 rel19#role37.ent10#att45 rel19#role37.ent10#att56 rel19#role37.ent10#att55 rel19#role37.email" linkOrder="sv3#area12#page51#dau14#ln302">
+    <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#dau14" name="Dettaglio Ordine" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 rel19#role37.ent10#att43 rel19#role37.ent10#att44 rel19#role37.ent10#att45 rel19#role37.ent10#att56 rel19#role37.ent10#att55 rel19#role37.email" linkOrder="sv3#area12#page51#dau14#ln302 sv3#area12#page51#dau14#ln33">
       <Selector id="sv3#area12#page51#dau14#su133" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area12#page51#dau14#su133#kcond78" name="KeyCondition78" predicate="in" implied="false"/>
       </Selector>
@@ -10,13 +10,14 @@
       <Link id="sv3#area12#page51#dau14#ln302" name="Prendi in carico" to="sv3#area12#miu15" type="normal" validate="true">
         <LinkParameter id="sv3#area12#page51#dau14#ln302#par503" name="oid_ordine_oid" source="data.ent9#att35" target="sv3#area12#miu15.mov1#mpkg3#opm1#icu2#icp1"/>
       </Link>
+      <Link id="sv3#area12#page51#dau14#ln33" name="Evadi Ordine" to="sv3#area12#page56#seu42" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-64,68,-66,-199;-64,218,-66,-49"/>
     </DataUnit>
     <IndexUnit gr:x="170" gr:y="10" id="sv3#area12#page51#inu25" name="Prodotti in ordine" entity="ent8" displayAttributes="ent8#att33 rel17#role33.rel13#role25.ent1#att2"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv3#area12#page51#dau14">
+        <layout:Unit unitId="sv3#area12#page51#dau14" manualLinks="true">
           <layout:Attribute attribute="ent9#att35"/>
           <layout:Attribute attribute="ent9#att36"/>
           <layout:Attribute attribute="ent9#att37"/>
@@ -30,8 +31,9 @@
           <layout:Attribute attribute="rel19#role37.ent10#att56"/>
           <layout:Attribute attribute="rel19#role37.ent10#att55"/>
           <layout:Attribute attribute="rel19#role37.email"/>
-          <layout:Link link="sv3#area12#page51#dau14#ln302"/>
         </layout:Unit>
+        <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln302" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1"/>
+        <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln33" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1" layout:linkVisibilityConditionNegated="true"/>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
@@ -52,4 +54,8 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <Variable id="sv3#area12#page51#var3" name="stato" type="string" unitId="sv3#area12#page51#dau14" parameter="data.ent9#att41"/>
+  <ConditionExpression id="sv3#area12#page51#cexpr1" name="dagestire">
+    <TextValue xml:space="preserve">return stato == "da-gestire"</TextValue>
+  </ConditionExpression>
 </Page>
