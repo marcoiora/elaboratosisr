@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="32" gr:y="548" id="sv3#area12#page56" name="Conferma Spedizione">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="31" gr:y="671" id="sv3#area12#page56" name="Conferma Spedizione">
   <ContentUnits>
     <DataUnit gr:x="114" gr:y="7" id="sv3#area12#page56#dau19" name="Dati Cliente" entity="ent10" displayAttributes="email ent10#att43 ent10#att44 ent10#att45 ent10#att55 ent10#att56">
       <Selector id="sv3#area12#page56#dau19#su113" defaultPolicy="fill" booleanOperator="and">

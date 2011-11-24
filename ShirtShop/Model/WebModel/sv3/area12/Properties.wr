@@ -1,14 +1,14 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-60" gr:y="-780" id="sv3#area12" name="Gestione Ordini" landmark="true" defaultPage="sv3#area12#page50">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-200" gr:y="-930" id="sv3#area12" name="Gestione Ordini" landmark="true" defaultPage="sv3#area12#page50">
   <OperationUnits>
-    <ModuleInstanceUnit gr:x="22" gr:y="452" id="sv3#area12#miu15" name="Prendi in carico" moduleId="mov1#mpkg3#opm1">
+    <ModuleInstanceUnit gr:x="20" gr:y="500" id="sv3#area12#miu15" name="Prendi in carico" moduleId="mov1#mpkg3#opm1">
       <OKLink id="sv3#area12#miu15#oln109" name="OKLink109" to="sv3#area12#page50" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <GetUnit gr:x="172" gr:y="452" id="sv3#area12#gtu19" name="stampatore_oid" contextParameters="UserCtxParam" linkOrder="sv3#area12#gtu19#ln304">
+    <GetUnit gr:x="170" gr:y="500" id="sv3#area12#gtu19" name="stampatore_oid" contextParameters="UserCtxParam" linkOrder="sv3#area12#gtu19#ln304">
       <Link id="sv3#area12#gtu19#ln304" name="Link304" to="sv3#area12#miu15" type="transport" validate="true">
         <LinkParameter id="sv3#area12#gtu19#ln304#par504" name="UserCtxParam.oid_stampatore_oid" source="sv3#area12#gtu19.UserCtxParam" target="sv3#area12#miu15.mov1#mpkg3#opm1#icu2#icp2"/>
       </Link>
     </GetUnit>
-    <ModuleInstanceUnit gr:x="82" gr:y="802" id="sv3#area12#miu11" name="Evadi" moduleId="mov1#mpkg3#opm2">
+    <ModuleInstanceUnit gr:x="63" gr:y="971" id="sv3#area12#miu11" name="Evadi" moduleId="mov1#mpkg3#opm2">
       <OKLink id="sv3#area12#miu11#oln118" name="OKLink118" to="sv3#area12#page50" automaticCoupling="true"/>
     </ModuleInstanceUnit>
   </OperationUnits>
