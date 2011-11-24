@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page18" name="Nuova Stampa" ajaxEnabled="true" gr:x="815" gr:y="288" linkOrder="sv4#area6#page18#ln83">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page18" name="Nuova Stampa" ajaxEnabled="true" gr:x="1010" gr:y="210" linkOrder="sv4#area6#page18#ln83">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page18#enu7" name="Inserisci dati Stampa" gr:x="0" gr:y="111" ajaxEnableExpandedLinks="true" linkOrder="sv4#area6#page18#enu7#ln91">
       <Field id="sv4#area6#page18#enu7#fld26" name="Nome" type="string" modifiable="true" preloaded="true"/>
@@ -8,7 +8,7 @@
       <Field id="sv4#area6#page18#enu7#fld35" name="Immagine per stampa" type="blob" modifiable="true" contentType="image" preloaded="true"/>
       <Field id="sv4#area6#page18#enu7#fld36" name="Prezzo (a dimensione piena)" type="float" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page18#enu7#fld37" name="Attiva" type="boolean" modifiable="true" preloaded="true" ajaxEventEnabled="false"/>
-      <Link id="sv4#area6#page18#enu7#ln91" name="Salva" to="sv4#area6#miu4" type="normal" validate="true">
+      <Link id="sv4#area6#page18#enu7#ln91" name="Salva" to="sv4#area6#miu4" type="normal" validate="true" gr:bendpoints="-232,-96,748,-78;-724,-106,256,-88">
         <LinkParameter id="sv4#area6#page18#enu7#ln91#par225" name="Immagine anteprima/web_anteprima" source="sv4#area6#page18#enu7#fld34" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp61"/>
         <LinkParameter id="sv4#area6#page18#enu7#ln91#par226" name="Descrizione_descrizione" source="sv4#area6#page18#enu7#fld27" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp60"/>
         <LinkParameter id="sv4#area6#page18#enu7#ln91#par227" name="Immagine per stampa_immagineHd" source="sv4#area6#page18#enu7#fld35" target="sv4#area6#miu4.mov1#mpkg1#opm8#icu8#icp62"/>

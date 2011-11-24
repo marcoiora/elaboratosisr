@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="20" gr:y="916" id="sv4#area6#page30" name="Tipi collo" layout:pageLayout="WRDefault/Autocomplete">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="540" gr:y="1030" id="sv4#area6#page30" name="Tipi collo" layout:pageLayout="WRDefault/Autocomplete">
   <ContentUnits>
     <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page30#inu14" name="Tipi collo" distinct="true" ajaxEnableExpandedLinks="false" displayAttributes="ent1#att5" entity="ent1">
       <Selector id="sv4#area6#page30#inu14#su25" defaultPolicy="fill" booleanOperator="and">

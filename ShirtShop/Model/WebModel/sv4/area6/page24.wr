@@ -1,9 +1,9 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="882" gr:y="6" id="sv4#area6#page24" name="Gestione Prodotti" landmark="false" linkOrder="sv4#area6#page24#ln111 sv4#area6#page24#ln84 sv4#area6#page24#ln146">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="790" gr:y="0" id="sv4#area6#page24" name="Gestione Prodotti" landmark="false" linkOrder="sv4#area6#page24#ln111 sv4#area6#page24#ln84 sv4#area6#page24#ln146">
   <ContentUnits>
     <IndexUnit id="sv4#area6#page24#inu20" name="Magliette" gr:x="95" gr:y="2" linkOrder="sv4#area6#page24#inu20#ln112" displayAttributes="ent1#att2 ent1#att10" entity="ent1">
       <SortAttribute attribute="ent1#att10" order="descending"/>
       <SortAttribute attribute="ent1#att2" order="ascending"/>
-      <Link id="sv4#area6#page24#inu20#ln112" name="dettagli" to="sv4#area6#page33#seu16" type="normal" validate="true">
+      <Link id="sv4#area6#page24#inu20#ln112" name="dettagli" to="sv4#area6#page33#seu16" type="normal" validate="true" gr:bendpoints="-344,216,188,-1196">
         <LinkParameter id="sv4#area6#page24#inu20#ln112#par172" name="oid_KeyCondition28 [oid]" source="data[].ent1#att1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
       </Link>
       <Selector id="sv4#area6#page24#inu20#su129" defaultPolicy="fill" booleanOperator="and">
@@ -14,7 +14,7 @@
       <Link id="sv4#area6#page24#inu21#ln115" name="dettagli" to="sv4#area6#page21#seu12" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
     <IndexUnit id="sv4#area6#page24#inu22" name="Proposte" gr:x="263" gr:y="1" displayAttributes="ent1#att2 ent1#att10" entity="ent13" linkOrder="sv4#area6#page24#inu22#ln195">
-      <Link id="sv4#area6#page24#inu22#ln195" name="dettagli" to="sv4#area6#page36#seu35" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#area6#page24#inu22#ln195" name="dettagli" to="sv4#area6#page36#seu35" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="134,128,6,-1000;94,382,-34,-746;-24,614,-152,-514;-16,874,-144,-254"/>
     </IndexUnit>
     <SelectorUnit id="sv4#area6#page24#seu50" name="Proposte" gr:x="0" gr:y="5" entity="ent13">
       <Link id="sv4#area6#page24#seu50#ln243" name="Link243" to="sv4#area6#page24#inu20" automaticCoupling="true" type="transport" validate="true"/>

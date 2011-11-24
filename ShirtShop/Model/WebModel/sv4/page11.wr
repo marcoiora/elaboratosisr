@@ -1,8 +1,15 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-70" gr:y="30" id="sv4#page11" name="Home Amministratore" landmark="true">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-110" gr:y="-60" id="sv4#page11" name="Home Amministratore" landmark="true">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="-1" gr:y="-1" id="sv4#page11#mssu3" name="Benvenuto Amministratore">
+      <Message xml:space="preserve">Benvenuto nell'area riservata all'Amministratore.
+Attraverso i link nella barra del men&#249; in alto sar&#224; facile gestire il sito e fare contenti i clienti!</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#page11#mssu3"/>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>

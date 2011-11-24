@@ -1,16 +1,21 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="26" gr:y="379" id="sv4#area5#page15" name="Cancella Informazione" linkOrder="sv4#area5#page15#ln24">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="342" id="sv4#area5#page15" name="Cancella Informazione">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv4#area5#page15#dau9" name="Dettaglio Informazione" entity="ent11">
+    <DataUnit gr:x="0" gr:y="0" id="sv4#area5#page15#dau9" name="Dettaglio Informazione" entity="ent11" displayAttributes="ent11#att47 ent11#att48 ent11#att42" linkOrder="sv4#area5#page15#dau9#ln25">
       <Selector id="sv4#area5#page15#dau9#su11" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#area5#page15#dau9#su11#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv4#area5#page15#dau9#ln25" name="Link25" to="sv4#area5#dlu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#area5#page15#dau9#ln25" name="Cancella" to="sv4#area5#dlu1" automaticCoupling="true" type="normal" validate="true"/>
     </DataUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv4#area5#page15#dau9"/>
+        <layout:Unit unitId="sv4#area5#page15#dau9">
+          <layout:Attribute attribute="ent11#att47"/>
+          <layout:Attribute attribute="ent11#att48"/>
+          <layout:Attribute attribute="ent11#att42"/>
+          <layout:Link link="sv4#area5#page15#dau9#ln25"/>
+        </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
@@ -26,5 +31,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv4#area5#page15#ln24" name="Elimina" to="sv4#area5#dlu1" automaticCoupling="true" type="normal" validate="true"/>
 </Page>
