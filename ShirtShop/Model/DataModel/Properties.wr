@@ -211,7 +211,7 @@
     </Attribute>
     <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="spesespedizione"/>
     <Attribute id="ent9#att41" name="stato" type="string" db:column="stato"/>
-    <Attribute id="ent9#att57" name="tracking" type="string"/>
+    <Attribute id="ent9#att57" name="tracking" type="string" db:column="tracking"/>
   </Entity>
   <Relationship id="rel18" name="Ordine_RigaOrdine" sourceEntity="ent9" targetEntity="ent8" db:database="db2" db:table="rigaordine">
     <RelationshipRole1 id="rel18#role35" name="OrdineToRigaOrdine" maxCard="N">

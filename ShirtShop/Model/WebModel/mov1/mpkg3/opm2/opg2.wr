@@ -11,7 +11,7 @@
     </SelectorUnit>
     <TimeUnit id="mov1#mpkg3#opm2#opg2#tmu3" name="Now!" gr:x="280" gr:y="20">
       <OKLink id="mov1#mpkg3#opm2#opg2#tmu3#oln108" name="OKLink115" to="mov1#mpkg3#opm2#opg2#mfu14">
-        <LinkParameter id="mov1#mpkg3#opm2#opg2#tmu3#oln108#par498" name="in-stampa_stato" target="mov1#mpkg3#opm2#opg2#mfu14.ent9#att41" sourceValue="in-stampa"/>
+        <LinkParameter id="mov1#mpkg3#opm2#opg2#tmu3#oln108#par498" name="in-stampa_stato" target="mov1#mpkg3#opm2#opg2#mfu14.ent9#att41" sourceValue="evaso"/>
         <LinkParameter id="mov1#mpkg3#opm2#opg2#tmu3#oln108#par507" name="Current/Input Timestamp_dataOraSpedizione" source="currentTimestamp" target="mov1#mpkg3#opm2#opg2#mfu14.ent9#att38"/>
       </OKLink>
     </TimeUnit>

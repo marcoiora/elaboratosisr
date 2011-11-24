@@ -17,7 +17,7 @@
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv3#area12#page51#dau14">
+        <layout:Unit unitId="sv3#area12#page51#dau14" manualLinks="true">
           <layout:Attribute attribute="ent9#att35"/>
           <layout:Attribute attribute="ent9#att36"/>
           <layout:Attribute attribute="ent9#att37"/>
@@ -31,13 +31,11 @@
           <layout:Attribute attribute="rel19#role37.ent10#att56"/>
           <layout:Attribute attribute="rel19#role37.ent10#att55"/>
           <layout:Attribute attribute="rel19#role37.email"/>
-          <layout:Link link="sv3#area12#page51#dau14#ln302"/>
-          <layout:Link link="sv3#area12#page51#dau14#ln33"/>
         </layout:Unit>
-      </layout:Cell>
-      <layout:Cell>
         <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln302" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1"/>
+        <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln33" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1" layout:linkVisibilityConditionNegated="true"/>
       </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
@@ -47,9 +45,7 @@
           <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att2"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell>
-        <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln33" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1" layout:linkVisibilityConditionNegated="true"/>
-      </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
@@ -60,6 +56,6 @@
   </layout:Grid>
   <Variable id="sv3#area12#page51#var3" name="stato" type="string" unitId="sv3#area12#page51#dau14" parameter="data.ent9#att41"/>
   <ConditionExpression id="sv3#area12#page51#cexpr1" name="dagestire">
-    <TextValue xml:space="preserve">return stato = "da-gestire"</TextValue>
+    <TextValue xml:space="preserve">return stato == "da-gestire"</TextValue>
   </ConditionExpression>
 </Page>
