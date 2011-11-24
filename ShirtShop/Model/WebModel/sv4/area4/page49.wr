@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="151" id="sv4#area4#page49" name="Accounts Disponibili" linkOrder="sv4#area4#page49#ln249 sv4#area4#page49#ln282">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="151" id="sv4#area4#page49" name="Accounts Disponibili">
   <ContentUnits>
     <IndexUnit gr:x="4" gr:y="0" id="sv4#area4#page49#inu26" name="Accounts Clienti" entity="ent10" displayAttributes="ent10#att43 ent10#att44 password userName ent10#att50" linkOrder="sv4#area4#page49#inu26#ln254 sv4#area4#page49#inu26#ln260">
       <Link id="sv4#area4#page49#inu26#ln254" name="Cancella" to="sv4#area4#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
@@ -64,6 +64,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv4#area4#page49#ln249" name="Nuovo Cliente" to="sv4#area4#page50" automaticCoupling="true" type="normal" validate="true"/>
-  <Link id="sv4#area4#page49#ln282" name="Nuovo Stampatore" to="sv4#area4#page53" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="49,198,-124,-79"/>
 </Page>

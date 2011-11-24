@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="281" gr:y="521" id="sv4#area4#page54" name="Modifica Stampatore">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="291" gr:y="521" id="sv4#area4#page54" name="Modifica Stampatore">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="-1" id="sv4#area4#page54#enu23" name="Modifica dati Stampatore" fieldOrder="sv4#area4#page54#enu23#fld98 sv4#area4#page54#enu23#fld97 sv4#area4#page54#enu23#fld100 sv4#area4#page54#enu23#fld99" linkOrder="sv4#area4#page54#enu23#ln301">
       <Field id="sv4#area4#page54#enu23#fld97" name="Email" type="string" modifiable="true" preloaded="true"/>
