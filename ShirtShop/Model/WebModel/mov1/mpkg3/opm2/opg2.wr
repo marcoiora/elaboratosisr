@@ -1,0 +1,31 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="200" gr:y="0" id="mov1#mpkg3#opm2#opg2" name="Transazione" transaction="true">
+  <OperationUnits>
+    <SelectorUnit id="mov1#mpkg3#opm2#opg2#seu60" name="stato" gr:x="0" gr:y="10" entity="ent9" distinctAttributes="ent9#att41">
+      <Selector id="mov1#mpkg3#opm2#opg2#seu60#su138" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm2#opg2#seu60#su138#kcond93" name="KeyCondition91" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#mpkg3#opm2#opg2#seu60#ln234" name="Link306" to="mov1#mpkg3#opm2#opg2#switch3" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm2#opg2#seu60#ln234#par362" name="stato_Switch" source="ent9#att41Array" target="mov1#mpkg3#opm2#opg2#switch3.switch"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm2#opg2#seu60#oln96" name="OKLink113" to="mov1#mpkg3#opm2#opg2#switch3" automaticCoupling="true" gr:bendpoints="58,12,-59,17"/>
+    </SelectorUnit>
+    <TimeUnit id="mov1#mpkg3#opm2#opg2#tmu3" name="Now!" gr:x="280" gr:y="20">
+      <OKLink id="mov1#mpkg3#opm2#opg2#tmu3#oln108" name="OKLink115" to="mov1#mpkg3#opm2#opg2#mfu14">
+        <LinkParameter id="mov1#mpkg3#opm2#opg2#tmu3#oln108#par498" name="in-stampa_stato" target="mov1#mpkg3#opm2#opg2#mfu14.ent9#att41" sourceValue="in-stampa"/>
+        <LinkParameter id="mov1#mpkg3#opm2#opg2#tmu3#oln108#par507" name="Current/Input Timestamp_dataOraSpedizione" source="currentTimestamp" target="mov1#mpkg3#opm2#opg2#mfu14.ent9#att38"/>
+      </OKLink>
+    </TimeUnit>
+    <SwitchUnit id="mov1#mpkg3#opm2#opg2#switch3" name="stato?" gr:x="118" gr:y="19">
+      <OKLink id="mov1#mpkg3#opm2#opg2#switch3#oln110" name="OKLink114" to="mov1#mpkg3#opm2#opg2#tmu3" automaticCoupling="true" code="in-stampa"/>
+      <Case value="in-stampa"/>
+      <OKLink id="mov1#mpkg3#opm2#opg2#switch3#oln116" name="OKLink116" to="mov1#mpkg3#opm2#kocu2" automaticCoupling="true"/>
+    </SwitchUnit>
+    <ModifyUnit id="mov1#mpkg3#opm2#opg2#mfu14" name="Ordine" gr:x="420" gr:y="0" entity="ent9">
+      <Selector id="mov1#mpkg3#opm2#opg2#mfu14#su139" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm2#opg2#mfu14#su139#kcond94" name="KeyCondition90" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm2#opg2#mfu14#oln117" name="OKLink117" to="mov1#mpkg3#opm2#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg3#opm2#opg2#mfu14#kln66" name="KOLink66" to="mov1#mpkg3#opm2#kocu2" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationGroup>

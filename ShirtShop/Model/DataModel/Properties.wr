@@ -201,7 +201,7 @@
       <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41" gr:hideAttributes="false" db:database="db2" db:table="ordine">
+  <Entity gr:x="840" gr:y="220" id="ent9" name="Ordine" duration="persistent" attributeOrder="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" gr:hideAttributes="false" db:database="db2" db:table="ordine">
     <Attribute id="ent9#att35" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="dataoraconferma"/>
     <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="dataorapresaincarico"/>
@@ -211,6 +211,7 @@
     </Attribute>
     <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="spesespedizione"/>
     <Attribute id="ent9#att41" name="stato" type="string" db:column="stato"/>
+    <Attribute id="ent9#att57" name="tracking" type="string"/>
   </Entity>
   <Relationship id="rel18" name="Ordine_RigaOrdine" sourceEntity="ent9" targetEntity="ent8" db:database="db2" db:table="rigaordine">
     <RelationshipRole1 id="rel18#role35" name="OrdineToRigaOrdine" maxCard="N">
