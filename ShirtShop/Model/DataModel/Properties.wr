@@ -206,7 +206,7 @@
     <Attribute id="ent9#att36" name="dataOraConferma" type="timestamp" db:column="dataoraconferma"/>
     <Attribute id="ent9#att37" name="dataOraPresaInCarico" type="timestamp" db:column="dataorapresaincarico"/>
     <Attribute id="ent9#att38" name="dataOraSpedizione" type="timestamp" db:column="dataoraspedizione"/>
-    <Attribute id="ent9#att39" name="prezzoTotale" type="float" derivationQuery="calculated::sum(Self.rel18#role35(as Var1).ent8#att34)" storageType="file" db:table="ordine_prezzototale_view" db:column="der_attr">
+    <Attribute id="ent9#att39" name="prezzoTotale" type="float" derivationQuery="calculated::sum(Self.rel18#role35(as Var1).ent8#att34) + Self.ent9#att40" storageType="file" db:table="ordine_prezzototale_view" db:column="der_attr">
       <db:JoinColumn attribute="ent9#att35" name="oid"/>
     </Attribute>
     <Attribute id="ent9#att40" name="speseSpedizione" type="float" db:column="spesespedizione"/>
@@ -303,5 +303,6 @@
       <db:JoinColumn attribute="ent6#att22" name="stampa_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w" showSQL="true"/>
+  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w" showSQL="true">
+  </db:Database>
 </DataModel>
