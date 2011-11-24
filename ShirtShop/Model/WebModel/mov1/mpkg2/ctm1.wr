@@ -50,10 +50,11 @@
           <layout:Attribute attribute="ent8#att33"/>
           <layout:Attribute attribute="ent8#att34"/>
         </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
         <layout:Unit unitId="mov1#mpkg2#ctm1#mssu3"/>
         <layout:Unit unitId="mov1#mpkg2#ctm1#mssu5"/>
       </layout:Cell>
-      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
