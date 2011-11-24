@@ -1,21 +1,26 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="365" gr:y="0" id="sv1#area3#page4" name="Registrazione" landmark="true">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page4#enu3" name="Form Registrazione" linkOrder="sv1#area3#page4#enu3#ln3">
-      <Field id="sv1#area3#page4#enu3#fld5" name="username" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld6" name="password" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld7" name="nome" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld8" name="cognome" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld9" name="email" type="string" modifiable="true"/>
-      <Link id="sv1#area3#page4#enu3#ln3" name="Crea" to="sv1#area3#cru1" type="normal" validate="true">
+      <Field id="sv1#area3#page4#enu3#fld5" name="Username" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld6" name="Password" type="password" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld7" name="Nome" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld8" name="Cognome" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld9" name="E-mail" type="string" modifiable="true"/>
+      <Link id="sv1#area3#page4#enu3#ln3" name="Registrati" to="sv1#area3#cru1" type="normal" validate="true">
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par5" name="cognome_cognome" source="sv1#area3#page4#enu3#fld8" target="sv1#area3#cru1.ent10#att44"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par6" name="email_email" source="sv1#area3#page4#enu3#fld9" target="sv1#area3#cru1.email"/>
-        <LinkParameter id="sv1#area3#page4#enu3#ln3#par7" name="_Group.oid(defaultGroup)" blank="true" target="sv1#area3#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par7" name="_Group.oid(defaultGroup)" target="sv1#area3#cru1.User2DefaultGroup.groupOID" sourceValue="1"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par8" name="_indirizzo" target="sv1#area3#cru1.ent10#att45" source="sv1#area3#page4#enu3#fld10"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par9" name="nome_nome" source="sv1#area3#page4#enu3#fld7" target="sv1#area3#cru1.ent10#att43"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par10" name="password_password" source="sv1#area3#page4#enu3#fld6" target="sv1#area3#cru1.password"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par11" name="username_userName" source="sv1#area3#page4#enu3#fld5" target="sv1#area3#cru1.userName"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par498" name="Codice Fiscale_codiceFiscale" source="sv1#area3#page4#enu3#fld102" target="sv1#area3#cru1.ent10#att56"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par499" name="true_isactive" sourceValue="true" target="sv1#area3#cru1.ent10#att50"/>
+        <LinkParameter id="sv1#area3#page4#enu3#ln3#par501" name="Telefono_telefono" source="sv1#area3#page4#enu3#fld101" target="sv1#area3#cru1.ent10#att55"/>
       </Link>
-      <Field id="sv1#area3#page4#enu3#fld10" name="indirizzo" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld10" name="Indirizzo" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld101" name="Telefono" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld102" name="Codice Fiscale" type="string" modifiable="true"/>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid>
@@ -29,6 +34,8 @@
           <layout:Field field="sv1#area3#page4#enu3#fld8"/>
           <layout:Field field="sv1#area3#page4#enu3#fld9"/>
           <layout:Field field="sv1#area3#page4#enu3#fld10"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld101"/>
+          <layout:Field field="sv1#area3#page4#enu3#fld102"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
