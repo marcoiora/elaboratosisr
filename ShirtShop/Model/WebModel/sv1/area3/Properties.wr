@@ -1,7 +1,7 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="337" gr:y="122" id="sv1#area3" name="Home" landmark="true" landmarks="sv1#area3#page4 sv1#area3#page3" defaultPage="sv1#area3#page3">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="60" id="sv1#area3" name="Home Page" landmark="true" landmarks="sv1#area3#page4" defaultPage="sv1#area3#page3">
   <OperationUnits>
-    <CreateUnit gr:x="406" gr:y="138" id="sv1#area3#cru1" name="Nuovo Cliente" entity="ent10">
-      <OKLink id="sv1#area3#cru1#oln1" name="OKLink1" to="sv1#area3#page3" automaticCoupling="true"/>
+    <CreateUnit gr:x="422" gr:y="202" id="sv1#area3#cru1" name="Nuovo Cliente" entity="ent10">
+      <OKLink id="sv1#area3#cru1#oln1" name="OKLink1" to="sv1#area3#page57" automaticCoupling="true"/>
       <KOLink id="sv1#area3#cru1#kln4" name="KOLink4" to="sv1#area3#page5" automaticCoupling="true"/>
     </CreateUnit>
   </OperationUnits>
