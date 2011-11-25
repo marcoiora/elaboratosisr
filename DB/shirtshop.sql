@@ -357,19 +357,23 @@ INSERT INTO `ordine` (`oid`, `dataoraconferma`, `dataorapresaincarico`, `dataora
 
 -- --------------------------------------------------------
 
+CREATE TABLE IF NOT EXISTS `rigaordine` (
+  `oid` int(11) NOT NULL,
+  `prezzosingolo` double DEFAULT NULL,
+  `quantita` varchar(255) DEFAULT NULL,
+  `prezzototale` double DEFAULT NULL,
+  `ordine_oid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`oid`),
+  KEY `fk_rigaordine_ordine` (`ordine_oid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 --
 -- Struttura della tabella `ordine_prezzototale_view`
 --
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`shirtshop`@`%` SQL SECURITY DEFINER VIEW `shirtshop`.`ordine_prezzototale_view` AS select `al1`.`oid` AS `oid`,sum(`al2`.`prezzototale`) AS `der_attr` from (`shirtshop`.`ordine` `al1` left join `shirtshop`.`rigaordine` `al2` on((`al1`.`oid` = `al2`.`ordine_oid`))) group by `al1`.`oid`;
-
---
--- Dump dei dati per la tabella `ordine_prezzototale_view`
---
-
-INSERT INTO `ordine_prezzototale_view` (`oid`, `der_attr`) VALUES
-(1, 30.9),
-(2, 452.7);
 
 -- --------------------------------------------------------
 
@@ -397,16 +401,6 @@ INSERT INTO `pagina` (`oid`, `titolo`, `testohtml`, `home`) VALUES
 --
 -- Struttura della tabella `rigaordine`
 --
-
-CREATE TABLE IF NOT EXISTS `rigaordine` (
-  `oid` int(11) NOT NULL,
-  `prezzosingolo` double DEFAULT NULL,
-  `quantita` varchar(255) DEFAULT NULL,
-  `prezzototale` double DEFAULT NULL,
-  `ordine_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_rigaordine_ordine` (`ordine_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `rigaordine`
