@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="185" id="sv3#area13#page59" name="Modifica dati profilo">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv3#area13#page59#enu25" name="Dati profilo" fieldOrder="sv3#area13#page59#enu25#fld106 sv3#area13#page59#enu25#fld103 sv3#area13#page59#enu25#fld104 sv3#area13#page59#enu25#fld105" linkOrder="sv3#area13#page59#enu25#ln315 sv3#area13#page59#enu25#ln317">
+      <Field id="sv3#area13#page59#enu25#fld103" name="username" type="string" modifiable="false" preloaded="true"/>
+      <Field id="sv3#area13#page59#enu25#fld104" name="password" type="password" modifiable="true" preloaded="true"/>
+      <Field id="sv3#area13#page59#enu25#fld105" name="e-mail" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv3#area13#page59#enu25#fld106" name="matricola" type="string" modifiable="false" preloaded="true"/>
+      <Link id="sv3#area13#page59#enu25#ln315" name="Modifica" to="sv3#area13#mfu15" type="normal" validate="true">
+        <LinkParameter id="sv3#area13#page59#enu25#ln315#par522" name="e-mail_email" source="sv3#area13#page59#enu25#fld105" target="sv3#area13#mfu15.email"/>
+        <LinkParameter id="sv3#area13#page59#enu25#ln315#par523" name="password_password" source="sv3#area13#page59#enu25#fld104" target="sv3#area13#mfu15.password"/>
+      </Link>
+      <Link id="sv3#area13#page59#enu25#ln317" name="Annulla" to="sv3#area13#page58" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area13#page59#enu25">
+          <layout:Field field="sv3#area13#page59#enu25#fld106"/>
+          <layout:Field field="sv3#area13#page59#enu25#fld103"/>
+          <layout:Field field="sv3#area13#page59#enu25#fld104"/>
+          <layout:Field field="sv3#area13#page59#enu25#fld105"/>
+          <layout:Link link="sv3#area13#page59#enu25#ln315"/>
+          <layout:Link link="sv3#area13#page59#enu25#ln317"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

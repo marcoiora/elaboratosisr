@@ -1,0 +1,44 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="3" gr:y="0" id="sv3#area13#page58" name="Il tuo profilo">
+  <ContentUnits>
+    <DataUnit gr:x="114" gr:y="0" id="sv3#area13#page58#dau20" name="Stampatore" entity="ent12" displayAttributes="userName email ent12#att11" linkOrder="sv3#area13#page58#dau20#ln311">
+      <Selector id="sv3#area13#page58#dau20#su140" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area13#page58#dau20#su140#kcond95" name="KeyCondition95" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#area13#page58#dau20#ln311" name="modifica profilo" to="sv3#area13#page59#enu25" type="normal" validate="true">
+        <LinkParameter id="sv3#area13#page58#dau20#ln311#par517" name="email_e-mail" source="data.email" target="sv3#area13#page59#enu25#fld105_slot"/>
+        <LinkParameter id="sv3#area13#page58#dau20#ln311#par518" name="matricola_matricola" source="data.ent12#att11" target="sv3#area13#page59#enu25#fld106_slot"/>
+        <LinkParameter id="sv3#area13#page58#dau20#ln311#par519" name="password_password" source="data.password" target="sv3#area13#page59#enu25#fld104_slot"/>
+        <LinkParameter id="sv3#area13#page58#dau20#ln311#par520" name="userName_username" source="data.userName" target="sv3#area13#page59#enu25#fld103_slot"/>
+      </Link>
+    </DataUnit>
+    <GetUnit gr:x="0" gr:y="6" id="sv3#area13#page58#gtu20" name="stampatore" contextParameters="UserCtxParam">
+      <Link id="sv3#area13#page58#gtu20#ln8" name="Link8" to="sv3#area13#page58#dau20" type="transport" validate="true">
+        <LinkParameter id="sv3#area13#page58#gtu20#ln8#par513" name="UserCtxParam.oid_KeyCondition95 [oid]" source="sv3#area13#page58#gtu20.UserCtxParam" target="sv3#area13#page58#dau20#su140#kcond95.userOID"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area13#page58#dau20">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="ent12#att11"/>
+          <layout:Link link="sv3#area13#page58#dau20#ln311"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
