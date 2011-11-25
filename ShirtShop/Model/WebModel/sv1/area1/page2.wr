@@ -35,5 +35,5 @@
     </layout:Row>
   </layout:Grid>
   <Link id="sv1#area1#page2#ln282" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true"/>
-  <Link id="sv1#area1#page2#ln303" name="Catalogo Magliette" to="sv1#area1#page1" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-22,-98,218,-2;-79,-110,161,-14"/>
+  <Link id="sv1#area1#page2#ln303" name="Torna al Catalogo Magliette" to="sv1#area1#page1" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-22,-98,218,-2;-79,-110,161,-14"/>
 </Page>

@@ -76,5 +76,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv1#area1#page9#ln24" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-6,-218,221,0"/>
+  <Link id="sv1#area1#page9#ln24" name="Torna alle Proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-6,-218,221,0"/>
 </Page>

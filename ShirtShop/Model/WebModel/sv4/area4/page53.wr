@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="421" gr:y="381" id="sv4#area4#page53" name="Nuovo Stampatore" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="421" gr:y="396" id="sv4#area4#page53" name="Nuovo Stampatore" landmark="true">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv4#area4#page53#enu17" name="Inserisci dati Nuovo Stampatore" fieldOrder="sv4#area4#page53#enu17#fld83 sv4#area4#page53#enu17#fld84 sv4#area4#page53#enu17#fld85 sv4#area4#page53#enu17#fld86" linkOrder="sv4#area4#page53#enu17#ln300">
       <Field id="sv4#area4#page53#enu17#fld83" name="Matricola" type="string" modifiable="true"/>
