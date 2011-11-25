@@ -89,7 +89,7 @@
       </Link>
       <OKLink id="sv2#area8#seu48#oln97" name="OKLink97" to="sv2#area8#scu2" automaticCoupling="true" gr:bendpoints="153,29,-154,1"/>
     </SelectorUnit>
-    <GetUnit id="sv2#area8#gtu13" name="Get Maglietta" gr:x="554" gr:y="1031" contextParameters="ctx1">
+    <GetUnit id="sv2#area8#gtu13" name="Get Maglietta" gr:x="541" gr:y="1112" contextParameters="ctx1">
       <Link id="sv2#area8#gtu13#ln255" name="Link212" to="sv2#area8#seu52" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu13#ln255#par363" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu13.ctx1" target="sv2#area8#seu52#su115#kcond77.ent1#att1"/>
       </Link>
