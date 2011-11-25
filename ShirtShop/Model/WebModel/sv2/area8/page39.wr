@@ -1,8 +1,9 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1234" gr:y="5" id="sv2#area8#page39" name="Carrello" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1234" gr:y="5" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
   <ContentUnits>
-    <MultiMessageUnit gr:x="161" gr:y="91" id="sv2#area8#page39#mssu4" name="Procedi all'acquisto" linkOrder="sv2#area8#page39#mssu4#ln252">
-      <Link id="sv2#area8#page39#mssu4#ln252" name="Procedi all'acquisto" to="sv2#area8#page46#miu16" type="normal" validate="true" gr:bendpoints="10,247,-43,-250"/>
-      <Message xml:space="preserve">Puoi procedere all'acquisto qui:</Message>
+    <MultiMessageUnit gr:x="161" gr:y="91" id="sv2#area8#page39#mssu4" linkOrder="sv2#area8#page39#mssu4#ln252 sv2#area8#page39#mssu4#ln34">
+      <Link id="sv2#area8#page39#mssu4#ln252" name="Conferma l'ordine" to="sv2#area8#page46#miu16" type="normal" validate="true" gr:bendpoints="10,247,-43,-250"/>
+      <Link id="sv2#area8#page39#mssu4#ln34" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true"/>
+      <Message xml:space="preserve">Cosa vuoi fare ora?</Message>
     </MultiMessageUnit>
     <ModuleInstanceUnit id="sv2#area8#page39#miu18" name="Visualizza Carrello" gr:x="0" gr:y="0" moduleId="mov1#mpkg2#ctm1"/>
   </ContentUnits>
@@ -18,6 +19,7 @@
       <layout:Cell>
         <layout:Unit unitId="sv2#area8#page39#mssu4">
           <layout:Link link="sv2#area8#page39#mssu4#ln252"/>
+          <layout:Link link="sv2#area8#page39#mssu4#ln34"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
