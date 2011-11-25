@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="10" id="sv4#area5#page14" name="Modifica Informazione">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="8" gr:y="10" id="sv4#area5#page14" name="Modifica Informazione">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv4#area5#page14#enu4" name="Modifica dati informazione" linkOrder="sv4#area5#page14#enu4#ln28">
       <Field id="sv4#area5#page14#enu4#fld12" name="Titolo" type="string" modifiable="true" preloaded="true"/>

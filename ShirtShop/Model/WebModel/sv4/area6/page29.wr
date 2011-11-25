@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="452" gr:y="4" id="sv4#area6#page29" name="Gestione Stampe" landmark="true" linkOrder="sv4#area6#page29#ln76">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="430" gr:y="310" id="sv4#area6#page29" name="Gestione Stampe" landmark="true" linkOrder="sv4#area6#page29#ln76">
   <ContentUnits>
     <IndexUnit id="sv4#area6#page29#inu18" name="Stampe" gr:x="0" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att49" linkOrder="sv4#area6#page29#inu18#ln116">
       <Link id="sv4#area6#page29#inu18#ln116" name="dettagli" to="sv4#area6#page21#seu12" automaticCoupling="true" type="normal" validate="true"/>
@@ -27,5 +27,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv4#area6#page29#ln76" name="Nuova Stampa" to="sv4#area6#page18" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv4#area6#page29#ln76" name="Nuova Stampa" to="sv4#area6#page18" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="152,-96,-444,-44;392,-92,-204,-40"/>
 </Page>

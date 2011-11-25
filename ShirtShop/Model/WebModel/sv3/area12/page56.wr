@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="32" gr:y="548" id="sv3#area12#page56" name="Conferma Spedizione">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="31" gr:y="671" id="sv3#area12#page56" name="Conferma Spedizione">
   <ContentUnits>
     <DataUnit gr:x="114" gr:y="7" id="sv3#area12#page56#dau19" name="Dati Cliente" entity="ent10" displayAttributes="email ent10#att43 ent10#att44 ent10#att45 ent10#att55 ent10#att56">
       <Selector id="sv3#area12#page56#dau19#su113" defaultPolicy="fill" booleanOperator="and">
@@ -12,9 +12,15 @@
       <Link id="sv3#area12#page56#seu42#ln34" name="Link34" to="sv3#area12#page56#dau19" type="transport" validate="true">
         <LinkParameter id="sv3#area12#page56#seu42#ln34#par308" name="OrdineToCliente.oid_KeyCondition89 [oid]" source="rel19#role37_userOIDArray" target="sv3#area12#page56#dau19#su113#kcond89.userOID"/>
       </Link>
+      <Link id="sv3#area12#page56#seu42#ln309" name="Link309" to="sv3#area12#miu11" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page56#seu42#ln309#par511" name="oid_ordine_oid" source="ent9#att35Array" target="sv3#area12#miu11.mov1#mpkg3#opm2#icu3#icp3"/>
+      </Link>
     </SelectorUnit>
-    <EntryUnit gr:x="24" gr:y="118" id="sv3#area12#page56#enu24" name="Conferma Evasione">
+    <EntryUnit gr:x="24" gr:y="118" id="sv3#area12#page56#enu24" name="Conferma Evasione" linkOrder="sv3#area12#page56#enu24#ln308">
       <Field id="sv3#area12#page56#enu24#fld95" name="Tracking Number/URL" type="string" modifiable="true"/>
+      <Link id="sv3#area12#page56#enu24#ln308" name="Evadi" to="sv3#area12#miu11" type="normal" validate="true">
+        <LinkParameter id="sv3#area12#page56#enu24#ln308#par512" name="Tracking Number/URL_tracking" source="sv3#area12#page56#enu24#fld95" target="sv3#area12#miu11.mov1#mpkg3#opm2#icu3#icp4"/>
+      </Link>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid>
@@ -32,6 +38,7 @@
       <layout:Cell>
         <layout:Unit unitId="sv3#area12#page56#enu24">
           <layout:Field field="sv3#area12#page56#enu24#fld95"/>
+          <layout:Link link="sv3#area12#page56#enu24#ln308"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

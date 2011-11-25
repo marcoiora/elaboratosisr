@@ -6,16 +6,13 @@
     <OutputCollectorUnit gr:x="859" gr:y="0" id="mov1#mpkg2#ctm1#ocu1" name="Output Collector1">
       <OutputCollectorParameter id="mov1#mpkg2#ctm1#ocu1#ocp1" name="ordine_oid"/>
     </OutputCollectorUnit>
-    <MultiMessageUnit id="mov1#mpkg2#ctm1#mssu5" name="Totale" gr:x="400" gr:y="230"/>
+    <MultiMessageUnit id="mov1#mpkg2#ctm1#mssu5" name="Totale" gr:x="405" gr:y="224"/>
     <SelectorUnit id="mov1#mpkg2#ctm1#seu58" name="Totale Ordine" gr:x="300" gr:y="111" entity="ent9" distinctAttributes="ent9#att39">
       <Selector id="mov1#mpkg2#ctm1#seu58#su130" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="mov1#mpkg2#ctm1#seu58#su130#kcond78" name="oid" predicate="in" implied="false"/>
       </Selector>
       <Link id="mov1#mpkg2#ctm1#seu58#ln259" name="Link34" to="mov1#mpkg2#ctm1#mssu5" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg2#ctm1#seu58#ln259#par317" name="prezzoTotale_Shown Messages" source="ent9#att39Array" target="mov1#mpkg2#ctm1#mssu5.shownMessages"/>
-      </Link>
-      <Link id="mov1#mpkg2#ctm1#seu58#ln33" name="Link33" to="mov1#mpkg2#ctm1#mssu3" type="transport" validate="true">
-        <LinkParameter id="mov1#mpkg2#ctm1#seu58#ln33#par498" name="speseSpedizione_Shown Messages" source="ent9#att40Array" target="mov1#mpkg2#ctm1#mssu3.shownMessages"/>
       </Link>
     </SelectorUnit>
     <ModuleInstanceUnit id="mov1#mpkg2#ctm1#miu17" name="Get Carrello" gr:x="308" gr:y="0" moduleId="mov1#mpkg2#opm13">
@@ -34,7 +31,6 @@
         <RelationshipRoleCondition id="mov1#mpkg2#ctm1#inu27#su131#rcond48" name="carrello" predicate="in" implied="false" role="rel18#role35"/>
       </Selector>
     </IndexUnit>
-    <MultiMessageUnit gr:x="494" gr:y="241" id="mov1#mpkg2#ctm1#mssu3" name="Spese di spedizione"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -50,11 +46,9 @@
           <layout:Attribute attribute="ent8#att33"/>
           <layout:Attribute attribute="ent8#att34"/>
         </layout:Unit>
-      </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="mov1#mpkg2#ctm1#mssu3"/>
         <layout:Unit unitId="mov1#mpkg2#ctm1#mssu5"/>
       </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>

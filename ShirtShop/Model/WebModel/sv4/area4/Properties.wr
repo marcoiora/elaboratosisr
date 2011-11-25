@@ -1,4 +1,4 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-319" gr:y="131" id="sv4#area4" name="Gestione Account" landmark="true" defaultPage="sv4#area4#page49">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-319" gr:y="131" id="sv4#area4" name="Gestione Account" landmark="true" defaultPage="sv4#area4#page49" landmarks="sv4#area4#page50 sv4#area4#page53">
   <OperationUnits>
     <CreateUnit gr:x="481" gr:y="151" id="sv4#area4#cru16" name="Crea Nuovo Cliente" entity="ent10">
       <OKLink id="sv4#area4#cru16#oln86" name="OKLink86" to="sv4#area4#page49" automaticCoupling="true"/>
@@ -20,20 +20,20 @@
     </DeleteUnit>
     <CreateUnit gr:x="431" gr:y="251" id="sv4#area4#cru17" name="Crea Nuovo Stampatore" entity="ent12">
       <OKLink id="sv4#area4#cru17#oln95" name="OKLink95" to="sv4#area4#page49" automaticCoupling="true"/>
-      <KOLink id="sv4#area4#cru17#kln13" name="KOLink13" to="sv4#page16" automaticCoupling="true"/>
+      <KOLink id="sv4#area4#cru17#kln13" name="KOLink13" to="sv4#page16" automaticCoupling="true" gr:bendpoints="156,94,-104,-95"/>
     </CreateUnit>
     <ModifyUnit gr:x="219" gr:y="1" id="sv4#area4#mfu11" name="Modifica Cliente" entity="ent10">
       <Selector id="sv4#area4#mfu11#su97" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#area4#mfu11#su97#kcond68" name="KeyCondition68" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv4#area4#mfu11#oln105" name="OKLink105" to="sv4#area4#page49" automaticCoupling="true"/>
-      <KOLink id="sv4#area4#mfu11#kln14" name="KOLink14" to="sv4#page16" automaticCoupling="true" gr:bendpoints="3,-96,-496,-529;394,-92,-105,-525;396,257,-103,-176"/>
+      <KOLink id="sv4#area4#mfu11#kln14" name="KOLink14" to="sv4#page16" automaticCoupling="true" gr:bendpoints="3,-96,-496,-529;405,-92,-87,-524;406,253,-86,-179"/>
     </ModifyUnit>
     <ModifyUnit gr:x="491" gr:y="531" id="sv4#area4#mfu12" name="Modifica Stampatore" entity="ent12">
       <Selector id="sv4#area4#mfu12#su111" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#area4#mfu12#su111#kcond88" name="KeyCondition88" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv4#area4#mfu12#oln106" name="OKLink106" to="sv4#area4#page49" automaticCoupling="true" gr:bendpoints="-156,-92,77,220"/>
+      <OKLink id="sv4#area4#mfu12#oln106" name="OKLink106" to="sv4#area4#page49" automaticCoupling="true" gr:bendpoints="-6,-70,229,242;-180,-72,55,240"/>
       <KOLink id="sv4#area4#mfu12#kln62" name="KOLink62" to="sv4#page16" automaticCoupling="true"/>
     </ModifyUnit>
   </OperationUnits>

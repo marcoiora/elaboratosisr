@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1025" gr:y="303" id="sv4#area6#page23" name="Nuova Proposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1350" gr:y="0" id="sv4#area6#page23" name="Nuova Proposta">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page23#enu13" name="Inserisci dati proposta" gr:x="155" gr:y="122" fieldOrder="sv4#area6#page23#enu13#fld57 sv4#area6#page23#enu13#fld58 sv4#area6#page23#enu13#fld59 sv4#area6#page23#enu13#fld60 sv4#area6#page23#enu13#fld63 sv4#area6#page23#enu13#msfld9 sv4#area6#page23#enu13#msfld10 sv4#area6#page23#enu13#msfld11 sv4#area6#page23#enu13#sfld5 sv4#area6#page23#enu13#fld65 sv4#area6#page23#enu13#sfld6 sv4#area6#page23#enu13#fld66 sv4#area6#page23#enu13#fld64" linkOrder="sv4#area6#page23#enu13#ln165 sv4#area6#page23#enu13#ln179 sv4#area6#page23#enu13#ln180 sv4#area6#page23#enu13#ln181">
       <Field id="sv4#area6#page23#enu13#fld57" name="Nome" type="string" modifiable="true"/>
@@ -14,7 +14,7 @@
       <SelectionField id="sv4#area6#page23#enu13#sfld6" name="Stampa Retro" type="string"/>
       <Field id="sv4#area6#page23#enu13#fld65" name="Dimensione stampa fronte" type="float" modifiable="true"/>
       <Field id="sv4#area6#page23#enu13#fld66" name="Dimensione stampa retro" type="float" modifiable="true"/>
-      <Link id="sv4#area6#page23#enu13#ln165" name="Salva" to="sv4#area6#miu9" type="normal" validate="true">
+      <Link id="sv4#area6#page23#enu13#ln165" name="Salva" to="sv4#area6#miu9" type="normal" validate="true" gr:bendpoints="-184,162,42,-236">
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par320" name="Collo_collo" source="sv4#area6#page23#enu13#fld60" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp50"/>
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par321" name="Colori disponibili_colori" source="sv4#area6#page23#enu13#msfld11" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp47"/>
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par322" name="Descrizione_descrizione" source="sv4#area6#page23#enu13#fld58" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp46"/>
@@ -33,8 +33,8 @@
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par335" name="Taglie disponibili_taglie" source="sv4#area6#page23#enu13#msfld9" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp43"/>
       </Link>
       <Link id="sv4#area6#page23#enu13#ln179" name="Manica" to="sv4#area6#page28#inu12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12"/>
-      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15"/>
-      <Link id="sv4#area6#page23#enu13#ln181" name="Collo" to="sv4#area6#page30#inu14" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14"/>
+      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-606,2,286,-188"/>
+      <Link id="sv4#area6#page23#enu13#ln181" name="Collo" to="sv4#area6#page30#inu14" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-298,212,674,-708;-578,330,394,-590;-910,410,62,-510;-910,656,62,-264"/>
     </EntryUnit>
     <SelectorUnit id="sv4#area6#page23#seu29" name="Taglie" gr:x="191" gr:y="0" distinct="false" distinctAttributes="ent3#att15 ent3#att16" entity="ent3">
       <SortAttribute attribute="ent3#att15" order="ascending"/>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area3#page3" name="HomePage" gr:x="0" gr:y="3" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area3#page3" name="HomePage" gr:x="0" gr:y="3" landmark="false">
   <ContentUnits>
     <EntryUnit id="sv1#area3#page3#enu2" name="Login" linkOrder="sv1#area3#page3#enu2#ln2" gr:x="0" gr:y="6">
       <Field id="sv1#area3#page3#enu2#fld3" name="username" type="string" modifiable="true"/>
@@ -15,7 +15,7 @@
     </DataUnit>
     <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" maxResults="4" linkOrder="sv1#area3#page3#mdu2#ln17" displayAttributes="ent1#att2 ent1#att3" entity="ent13">
       <SortAttribute attribute="ent1#att1" order="descending"/>
-      <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-2,246,-161,-166"/>
     </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>
@@ -28,9 +28,9 @@
       </layout:Cell>
       <layout:Cell>
         <layout:Unit unitId="sv1#area3#page3#mdu2">
+          <layout:Link link="sv1#area3#page3#mdu2#ln17"/>
           <layout:Attribute attribute="ent1#att2"/>
           <layout:Attribute attribute="ent1#att3"/>
-          <layout:Link link="sv1#area3#page3#mdu2#ln17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="18" gr:y="225" id="sv4#area5#page12" name="Gestione Informazioni" landmark="true" linkOrder="sv4#area5#page12#ln19">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="10" gr:y="172" id="sv4#area5#page12" name="Gestione Informazioni" landmark="false">
   <ContentUnits>
     <IndexUnit gr:x="0" gr:y="0" id="sv4#area5#page12#inu3" name="Lista informazioni" linkOrder="sv4#area5#page12#inu3#ln22 sv4#area5#page12#inu3#ln27" displayAttributes="ent11#att47 ent11#att42" entity="ent11">
       <Link id="sv4#area5#page12#inu3#ln22" name="Cancella" to="sv4#area5#page15#dau9" automaticCoupling="true" type="normal" validate="true"/>
@@ -34,5 +34,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv4#area5#page12#ln19" name="Nuova Informazione" to="sv4#area5#page13" automaticCoupling="true" type="normal" validate="true"/>
 </Page>

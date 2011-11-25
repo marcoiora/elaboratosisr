@@ -7,7 +7,6 @@
       <Link id="mov1#mpkg2#opm13#gtu9#ln216" name="Link214" to="mov1#mpkg2#opm13#opg19#cru14" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln216#par293" name="UserCtxParam.oid_Cliente.oid(OrdineToCliente)" source="mov1#mpkg2#opm13#gtu9.UserCtxParam" target="mov1#mpkg2#opm13#opg19#cru14.rel19#role37.userOID"/>
         <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln216#par294" name="carrello_stato" target="mov1#mpkg2#opm13#opg19#cru14.ent9#att41" sourceValue="carrello"/>
-        <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln216#par499" name="9.90_speseSpedizione" sourceValue="9.90" target="mov1#mpkg2#opm13#opg19#cru14.ent9#att40"/>
       </Link>
       <Link id="mov1#mpkg2#opm13#gtu9#ln221" name="Link212" to="mov1#mpkg2#opm13#opg19#seu43" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg2#opm13#gtu9#ln221#par295" name="UserCtxParam.oid_Cliente [oid]" source="mov1#mpkg2#opm13#gtu9.UserCtxParam" target="mov1#mpkg2#opm13#opg19#seu43#su95#rcond35.userOID"/>

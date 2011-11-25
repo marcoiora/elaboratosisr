@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="219" gr:y="256" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="310" gr:y="10" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true">
   <ContentUnits>
     <EntryUnit gr:x="82" gr:y="122" id="sv4#area6#page25#enu5" name="Inserisci dati maglietta" linkOrder="sv4#area6#page25#enu5#ln35 sv4#area6#page25#enu5#ln38 sv4#area6#page25#enu5#ln42 sv4#area6#page25#enu5#ln43">
       <Field id="sv4#area6#page25#enu5#fld15" name="Nome" type="string" modifiable="true"/>
@@ -7,7 +7,7 @@
       <Field id="sv4#area6#page25#enu5#fld19" name="Collo" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln42" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" preloaded="true"/>
       <Field id="sv4#area6#page25#enu5#fld20" name="Permetti Stampa Fronte" type="boolean" modifiable="true" preloaded="false"/>
       <Field id="sv4#area6#page25#enu5#fld21" name="Permetti Stampa Retro" type="boolean" modifiable="true"/>
-      <Field id="sv4#area6#page25#enu5#fld22" name="Materiale" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln43" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" preloaded="true"/>
+      <Field id="sv4#area6#page25#enu5#fld22" name="Materiale" type="string" modifiable="true" ajaxAutocompleteEnabled="true" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" preloaded="true" ajaxAutocompleteLink="sv4#area6#page25#enu5#ln43"/>
       <Field id="sv4#area6#page25#enu5#fld23" name="Prezzo" type="float" modifiable="true"/>
       <MultiSelectionField id="sv4#area6#page25#enu5#msfld1" name="Taglie disponibili" type="string"/>
       <MultiSelectionField id="sv4#area6#page25#enu5#msfld2" name="Sessi disponibili" type="string"/>
@@ -26,10 +26,10 @@
         <LinkParameter id="sv4#area6#page25#enu5#ln35#par195" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page25#enu5#fld21" target="sv4#area6#miu1.mov1#mpkg1#opm12#icu13#icp82"/>
         <LinkParameter id="sv4#area6#page25#enu5#ln35#par196" name="Taglie disponibili_taglie" source="sv4#area6#page25#enu5#msfld1" target="sv4#area6#miu1.mov1#mpkg1#opm12#icu13#icp72"/>
       </Link>
-      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12">
+      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="744,0,-262,-230">
         <LinkParameter id="sv4#area6#page25#enu5#ln38#par59" name="Manica_manica" source="sv4#area6#page25#enu5#fld18" target="sv4#area6#page28#inu12#su24#acond1"/>
       </Link>
-      <Link id="sv4#area6#page25#enu5#ln42" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14">
+      <Link id="sv4#area6#page25#enu5#ln42" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-120,86,-260,-824;-138,166,-278,-744;26,506,-114,-404">
         <LinkParameter id="sv4#area6#page25#enu5#ln42#par61" name="Collo_collo" source="sv4#area6#page25#enu5#fld19" target="sv4#area6#page30#inu14#su25#acond2"/>
       </Link>
       <Link id="sv4#area6#page25#enu5#ln43" name="Materiale" to="sv4#area6#page31#inu15" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15">

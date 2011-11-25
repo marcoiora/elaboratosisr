@@ -1,0 +1,18 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="68" id="mov1#mpkg3#opm2" name="Evadi Ordine">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm2#icu3" name="Input Collector" gr:x="20" gr:y="20" linkOrder="mov1#mpkg3#opm2#icu3#ln303 mov1#mpkg3#opm2#icu3#ln307">
+      <InputCollectorParameter id="mov1#mpkg3#opm2#icu3#icp3" name="ordine_oid"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm2#icu3#icp4" name="tracking"/>
+      <Link id="mov1#mpkg3#opm2#icu3#ln303" name="Link303" to="mov1#mpkg3#opm2#opg2#seu60" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm2#icu3#ln303#par499" name="ordine_oid_KeyCondition91 [oid]" source="mov1#mpkg3#opm2#icu3#icp3" target="mov1#mpkg3#opm2#opg2#seu60#su138#kcond93.ent9#att35"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm2#icu3#oln111" name="OKLink111" to="mov1#mpkg3#opm2#opg2#seu60" automaticCoupling="true" gr:bendpoints="105,35,-100,-3"/>
+      <Link id="mov1#mpkg3#opm2#icu3#ln307" name="Link307" to="mov1#mpkg3#opm2#opg2#mfu14" type="transport" validate="true" gr:bendpoints="183,-30,-442,-57;472,-28,-133,-45">
+        <LinkParameter id="mov1#mpkg3#opm2#icu3#ln307#par501" name="ordine_oid_KeyCondition90 [oid]" source="mov1#mpkg3#opm2#icu3#icp3" target="mov1#mpkg3#opm2#opg2#mfu14#su139#kcond94.ent9#att35"/>
+        <LinkParameter id="mov1#mpkg3#opm2#icu3#ln307#par510" name="tracking_tracking" source="mov1#mpkg3#opm2#icu3#icp4" target="mov1#mpkg3#opm2#opg2#mfu14.ent9#att57"/>
+      </Link>
+    </InputCollectorUnit>
+    <KOCollectorUnit gr:x="480" gr:y="190" id="mov1#mpkg3#opm2#kocu2" name="KO Collector2"/>
+    <OKCollectorUnit gr:x="720" gr:y="190" id="mov1#mpkg3#opm2#okcu2" name="OK Collector2"/>
+  </OperationUnits>
+</OperationModule>
