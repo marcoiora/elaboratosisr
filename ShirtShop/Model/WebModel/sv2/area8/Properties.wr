@@ -15,7 +15,7 @@
         <LinkParameter id="sv2#area8#gtu10#ln212#par289" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu10.ctx1" target="sv2#area8#seu47#su96#kcond12.ent1#att1"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="744" gr:y="821" id="sv2#area8#seu47" name="Stampabile?" entity="ent1">
+    <SelectorUnit gr:x="731" gr:y="762" id="sv2#area8#seu47" name="Stampabile?" entity="ent1">
       <Selector id="sv2#area8#seu47#su96" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#seu47#su96#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
       </Selector>
@@ -24,13 +24,13 @@
       </Link>
       <OKLink id="sv2#area8#seu47#oln84" name="OKLink84" to="sv2#area8#switch1" automaticCoupling="true" gr:bendpoints="70,13,-89,17"/>
     </SelectorUnit>
-    <SwitchUnit gr:x="884" gr:y="831" id="sv2#area8#switch1" name="Stampabile Fronte?">
+    <SwitchUnit gr:x="901" gr:y="752" id="sv2#area8#switch1" name="Stampabile Fronte?">
       <Case value="true"/>
       <Case value="false"/>
       <OKLink id="sv2#area8#switch1#oln6" name="OKLink6" to="sv2#area8#page41" automaticCoupling="true" code="true"/>
       <OKLink id="sv2#area8#switch1#oln7" name="OKLink7" to="sv2#area8#seu52" automaticCoupling="true" gr:bendpoints="76,77,79,-333;76,338,79,-72" code="false"/>
     </SwitchUnit>
-    <SetUnit gr:x="924" gr:y="731" id="sv2#area8#stu5" name="Set Configurazione" contextParameters="ctx2"/>
+    <SetUnit gr:x="1051" gr:y="722" id="sv2#area8#stu5" name="Set Configurazione" contextParameters="ctx2"/>
     <GetUnit gr:x="714" gr:y="1121" id="sv2#area8#gtu11" name="Get Configurazione" contextParameters="ctx2">
       <Link id="sv2#area8#gtu11#ln231" name="Link223" to="sv2#area8#mfu3" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu11#ln231#par307" name="configurazione_oid_KeyCondition64 [oid]" source="sv2#area8#gtu11.ctx2" target="sv2#area8#mfu3#su98#kcond65.ent7#att28"/>
