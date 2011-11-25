@@ -30,5 +30,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv1#area1#page8#ln307" name="Catalogo Stampe" to="sv1#area1#page6" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-100,-62,168,-54"/>
+  <Link id="sv1#area1#page8#ln307" name="Torna al Catalogo Stampe" to="sv1#area1#page6" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-100,-62,168,-54"/>
 </Page>
