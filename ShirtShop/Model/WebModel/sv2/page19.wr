@@ -1,22 +1,18 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-27" gr:y="20" id="sv2#page19" name="Home Cliente">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-27" gr:y="24" id="sv2#page19" name="Home Cliente" landmark="true">
   <ContentUnits>
-    <DataUnit id="sv2#page19#dau10" name="Informazioni Home" gr:x="96" gr:y="0" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
-      <Selector id="sv2#page19#dau10#su19" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv2#page19#dau10#su19#acond5" name="AttCondition2" predicate="eq" booleanOperator="or" implied="false" value="True" attributes="ent11#att42"/>
-      </Selector>
-    </DataUnit>
-    <IndexUnit gr:x="0" gr:y="4" id="sv2#page19#inu26" name="Proposte" entity="ent13" displayAttributes="ent1#att2 ent1#att3" maxResults="4" linkOrder="sv2#page19#inu26#ln18">
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#page19#inu26" name="Proposte" entity="ent13" displayAttributes="ent1#att2 ent1#att3" maxResults="4" linkOrder="sv2#page19#inu26#ln18">
       <SortAttribute attribute="ent1#att1" order="descending"/>
       <Link id="sv2#page19#inu26#ln18" name="Seleziona" to="sv2#area8#page44#seu53" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
+    <MultiMessageUnit gr:x="91" gr:y="10" id="sv2#page19#mssu9" name="Benvenuto Cliente">
+      <Message xml:space="preserve">Benvenuto nell'area riservata al Cliente.
+Attraverso i link sulla pagina potrai creare nuove magliette attraverso il WebMarket, controllare i tuoi ordini e modificare il tuo profilo.</Message>
+    </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv2#page19#dau10">
-          <layout:Attribute attribute="ent11#att47"/>
-          <layout:Attribute attribute="ent11#att48"/>
-        </layout:Unit>
+        <layout:Unit unitId="sv2#page19#mssu9"/>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell>
