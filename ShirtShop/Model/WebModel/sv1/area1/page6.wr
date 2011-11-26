@@ -1,31 +1,19 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="347" id="sv1#area1#page6" name="Catalogo Stampe" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="14" gr:y="344" id="sv1#area1#page6" name="Catalogo Stampe" landmark="true">
   <ContentUnits>
-    <IndexUnit id="sv1#area1#page6#inu8" name="Stampe" linkOrder="sv1#area1#page6#inu8#ln5" gr:x="140" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
-      <Selector id="sv1#area1#page6#inu8#su2" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#area1#page6#inu8#su2#rcond2" name="tema" predicate="in" implied="true" role="rel24#role47"/>
-      </Selector>
-      <Link id="sv1#area1#page6#inu8#ln5" name="Dettaglio stampa" to="sv1#area1#page8#dau3" type="normal" automaticCoupling="true" validate="true"/>
-    </IndexUnit>
-    <MultiChoiceIndexUnit gr:x="0" gr:y="1" id="sv1#area1#page6#mciu4" name="Temi Disponibili" entity="ent14" linkOrder="sv1#area1#page6#mciu4#ln234" displayAttributes="ent14#att54">
-      <Link id="sv1#area1#page6#mciu4#ln234" name="Filtra" to="sv1#area1#page6#inu8" automaticCoupling="true" type="normal" validate="true"/>
-    </MultiChoiceIndexUnit>
+    <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv1#area1#page6#miu24" name="CatalogoStampeInstance" moduleId="mov1#mpkg4#ctm3" linkOrder="sv1#area1#page6#miu24#ln358">
+      <Link id="sv1#area1#page6#miu24#ln358" to="sv1#area1#page8#dau3" type="normal" validate="true" name="Dettaglio stampa">
+        <LinkParameter id="sv1#area1#page6#miu24#ln358#par579" source="mov1#mpkg4#ctm3#ocu3#ocp14" name="oid_KeyCondition3 [oid]" target="sv1#area1#page8#dau3#su9#kcond3.ent6#att22"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv1#area1#page6#mciu4">
-          <layout:Link link="sv1#area1#page6#mciu4#ln234"/>
-          <layout:Attribute attribute="ent14#att54"/>
+        <layout:Unit unitId="sv1#area1#page6#miu24">
+          <layout:Link link="sv1#area1#page6#miu24#ln358"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv1#area1#page6#inu8">
-          <layout:Link link="sv1#area1#page6#inu8#ln5"/>
-          <layout:Attribute attribute="ent6#att23"/>
-          <layout:Attribute attribute="ent6#att25"/>
-          <layout:Attribute attribute="ent6#att27"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>

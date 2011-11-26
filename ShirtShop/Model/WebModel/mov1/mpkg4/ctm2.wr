@@ -1,4 +1,4 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="320" gr:y="100" id="mov1#mpkg4#ctm2" name="CatalogoMagliette">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="120" id="mov1#mpkg4#ctm2" name="CatalogoMagliette">
   <ContentUnits>
     <OutputCollectorUnit gr:x="460" gr:y="260" id="mov1#mpkg4#ctm2#ocu2" name="Output Collector2">
       <OutputCollectorParameter id="mov1#mpkg4#ctm2#ocu2#ocp13" name="oid"/>

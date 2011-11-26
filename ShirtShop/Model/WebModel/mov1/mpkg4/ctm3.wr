@@ -1,0 +1,47 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="60" id="mov1#mpkg4#ctm3" name="CatalogoStampe">
+  <ContentUnits>
+    <OutputCollectorUnit gr:x="410" gr:y="20" id="mov1#mpkg4#ctm3#ocu3" name="Output Collector3">
+      <OutputCollectorParameter id="mov1#mpkg4#ctm3#ocu3#ocp14" name="oid"/>
+    </OutputCollectorUnit>
+    <IndexUnit id="mov1#mpkg4#ctm3#inu30" name="Stampe" linkOrder="mov1#mpkg4#ctm3#inu30#ln361" gr:x="260" gr:y="10" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
+      <Selector id="mov1#mpkg4#ctm3#inu30#su147" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg4#ctm3#inu30#su147#rcond58" name="tema" predicate="in" implied="true" role="rel24#role47"/>
+      </Selector>
+      <Link id="mov1#mpkg4#ctm3#inu30#ln361" to="mov1#mpkg4#ctm3#ocu3" type="normal" validate="true" name="Dettaglio stampa">
+        <LinkParameter id="mov1#mpkg4#ctm3#inu30#ln361#par581" name="oid_KeyCondition3 [oid]" source="data[].ent6#att22" target="mov1#mpkg4#ctm3#ocu3#ocp14"/>
+      </Link>
+    </IndexUnit>
+    <MultiChoiceIndexUnit id="mov1#mpkg4#ctm3#mciu11" name="Temi Disponibili" linkOrder="mov1#mpkg4#ctm3#mciu11#ln360" gr:x="90" gr:y="10" entity="ent14" displayAttributes="ent14#att54">
+      <Link id="mov1#mpkg4#ctm3#mciu11#ln360" name="Filtra" to="mov1#mpkg4#ctm3#inu30" type="normal" automaticCoupling="true" validate="true"/>
+    </MultiChoiceIndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#ctm3#mciu11">
+          <layout:Link link="mov1#mpkg4#ctm3#mciu11#ln360"/>
+          <layout:Attribute attribute="ent14#att54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#ctm3#inu30">
+          <layout:Link link="mov1#mpkg4#ctm3#inu30#ln361"/>
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>
