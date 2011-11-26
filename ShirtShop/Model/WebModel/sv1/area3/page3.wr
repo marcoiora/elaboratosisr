@@ -15,7 +15,7 @@
     </DataUnit>
     <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" maxResults="4" linkOrder="sv1#area3#page3#mdu2#ln17" displayAttributes="ent1#att2 ent1#att3" entity="ent13">
       <SortAttribute attribute="ent1#att1" order="descending"/>
-      <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-2,246,-161,-166"/>
+      <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" type="normal" validate="true" gr:bendpoints="-4,323,-527,-242;326,322,-197,-243" automaticCoupling="true"/>
     </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>

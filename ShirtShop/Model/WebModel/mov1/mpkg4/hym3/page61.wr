@@ -1,0 +1,39 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg4#hym3#page61" name="Informazioni" gr:x="304" gr:y="74">
+  <ContentUnits>
+    <IndexUnit id="mov1#mpkg4#hym3#page61#inu29" name="Informazioni" linkOrder="mov1#mpkg4#hym3#page61#inu29#ln319" gr:x="0" gr:y="0" displayAttributes="ent11#att47" entity="ent11">
+      <Link id="mov1#mpkg4#hym3#page61#inu29#ln319" name="Dettagli" to="mov1#mpkg4#hym3#page61#dau24" type="normal" automaticCoupling="true" validate="true"/>
+    </IndexUnit>
+    <DataUnit id="mov1#mpkg4#hym3#page61#dau24" name="Dettaglio" gr:x="252" gr:y="2" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
+      <Selector id="mov1#mpkg4#hym3#page61#dau24#su146" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg4#hym3#page61#dau24#su146#kcond100" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#hym3#page61#inu29">
+          <layout:Attribute attribute="ent11#att47"/>
+          <layout:Link link="mov1#mpkg4#hym3#page61#inu29#ln319"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#hym3#page61#dau24">
+          <layout:Attribute attribute="ent11#att47"/>
+          <layout:Attribute attribute="ent11#att48"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

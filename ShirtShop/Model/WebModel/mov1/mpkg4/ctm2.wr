@@ -1,0 +1,102 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="320" gr:y="100" id="mov1#mpkg4#ctm2" name="CatalogoMagliette">
+  <ContentUnits>
+    <OutputCollectorUnit gr:x="460" gr:y="260" id="mov1#mpkg4#ctm2#ocu2" name="Output Collector2">
+      <OutputCollectorParameter id="mov1#mpkg4#ctm2#ocu2#ocp13" name="oid"/>
+    </OutputCollectorUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm2#seu68" name="TipoMateriale" gr:x="480" gr:y="140" entity="ent1" distinctAttributes="ent1#att8" distinct="true">
+      <Link id="mov1#mpkg4#ctm2#seu68#ln354" name="FiltraMateriale" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu68#ln354#par566" name="materiale_Materiale [label]" source="ent1#att8Array" target="mov1#mpkg4#ctm2#enu35#msfld26_label"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#seu68#ln354#par567" name="materiale_Materiale [output]" source="ent1#att8Array" target="mov1#mpkg4#ctm2#enu35#msfld26_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm2#seu69" name="TipoManica" gr:x="320" gr:y="-10" entity="ent1" distinctAttributes="ent1#att4" distinct="true">
+      <Link id="mov1#mpkg4#ctm2#seu69#ln350" name="Filtra Manica" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu69#ln350#par560" name="manica_Manica [label]" source="ent1#att4Array" target="mov1#mpkg4#ctm2#enu35#msfld24_label"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#seu69#ln350#par561" name="manica_Manica [output]" source="ent1#att4Array" target="mov1#mpkg4#ctm2#enu35#msfld24_output"/>
+      </Link>
+    </SelectorUnit>
+    <IndexUnit id="mov1#mpkg4#ctm2#inu6" name="Magliette" linkOrder="mov1#mpkg4#ctm2#inu6#ln348" gr:x="174" gr:y="215" displayAttributes="ent1#att2 ent1#att3" entity="ent1">
+      <Selector id="mov1#mpkg4#ctm2#inu6#su143" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg4#ctm2#inu6#su143#rcond55" name="colore" predicate="in" implied="true" role="rel1#role2"/>
+        <RelationshipRoleCondition id="mov1#mpkg4#ctm2#inu6#su143#rcond56" name="taglia" predicate="in" implied="true" role="rel3#role6"/>
+        <RelationshipRoleCondition id="mov1#mpkg4#ctm2#inu6#su143#rcond57" name="sesso" predicate="in" implied="true" role="rel4#role8"/>
+        <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond20" name="manica" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att4"/>
+        <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond21" name="collo" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att5"/>
+        <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond22" name="materiale" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att8"/>
+      </Selector>
+      <Link id="mov1#mpkg4#ctm2#inu6#ln348" to="mov1#mpkg4#ctm2#ocu2" type="normal" validate="true" name="Dettagli">
+        <LinkParameter id="mov1#mpkg4#ctm2#inu6#ln348#par559" name="oid_KeyCondition1 [oid]" source="data[].ent1#att1" target="mov1#mpkg4#ctm2#ocu2#ocp13"/>
+      </Link>
+    </IndexUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm2#seu70" name="TipoCollo" gr:x="480" gr:y="20" entity="ent1" distinctAttributes="ent1#att5" distinct="true">
+      <Link id="mov1#mpkg4#ctm2#seu70#ln352" name="Filtra Collo" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu70#ln352#par563" name="collo_Collo [label]" source="ent1#att5Array" target="mov1#mpkg4#ctm2#enu35#msfld25_label"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#seu70#ln352#par564" name="collo_Collo [output]" source="ent1#att5Array" target="mov1#mpkg4#ctm2#enu35#msfld25_output"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="250" gr:y="120" id="mov1#mpkg4#ctm2#enu35" name="Filtra Magliette" linkOrder="mov1#mpkg4#ctm2#enu35#ln351" fieldOrder="mov1#mpkg4#ctm2#enu35#msfld27 mov1#mpkg4#ctm2#enu35#msfld28 mov1#mpkg4#ctm2#enu35#msfld29 mov1#mpkg4#ctm2#enu35#msfld24 mov1#mpkg4#ctm2#enu35#msfld25 mov1#mpkg4#ctm2#enu35#msfld26">
+      <MultiSelectionField id="mov1#mpkg4#ctm2#enu35#msfld24" name="Manica" type="string"/>
+      <Link id="mov1#mpkg4#ctm2#enu35#ln351" name="Filtra" to="mov1#mpkg4#ctm2#inu6" type="normal" validate="true" gr:bendpoints="-77,119,186,-130">
+        <LinkParameter id="mov1#mpkg4#ctm2#enu35#ln351#par562" name="Manica_manica" source="mov1#mpkg4#ctm2#enu35#msfld24" target="mov1#mpkg4#ctm2#inu6#su143#acond20"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#enu35#ln351#par565" name="Collo_collo" source="mov1#mpkg4#ctm2#enu35#msfld25" target="mov1#mpkg4#ctm2#inu6#su143#acond21"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#enu35#ln351#par568" name="Materiale_materiale" source="mov1#mpkg4#ctm2#enu35#msfld26" target="mov1#mpkg4#ctm2#inu6#su143#acond22"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#enu35#ln351#par571" name="Colori Disponibili_colore [oid]" source="mov1#mpkg4#ctm2#enu35#msfld27" target="mov1#mpkg4#ctm2#inu6#su143#rcond55.ent2#att12"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#enu35#ln351#par574" name="Taglie Disponibili_taglia [oid]" source="mov1#mpkg4#ctm2#enu35#msfld28" target="mov1#mpkg4#ctm2#inu6#su143#rcond56.ent3#att15"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#enu35#ln351#par577" name="Sesso Disponibile_sesso [oid]" source="mov1#mpkg4#ctm2#enu35#msfld29" target="mov1#mpkg4#ctm2#inu6#su143#rcond57.ent4#att17"/>
+      </Link>
+      <MultiSelectionField id="mov1#mpkg4#ctm2#enu35#msfld25" name="Collo" type="string"/>
+      <MultiSelectionField id="mov1#mpkg4#ctm2#enu35#msfld26" name="Materiale" type="string"/>
+      <MultiSelectionField id="mov1#mpkg4#ctm2#enu35#msfld27" name="Colori Disponibili" type="string"/>
+      <MultiSelectionField id="mov1#mpkg4#ctm2#enu35#msfld28" name="Taglie Disponibili" type="string"/>
+      <MultiSelectionField id="mov1#mpkg4#ctm2#enu35#msfld29" name="Sesso Disponibile" type="string"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="170" gr:y="-10" id="mov1#mpkg4#ctm2#seu71" name="Colori Disponibili" entity="ent2" distinctAttributes="ent2#att13">
+      <Link id="mov1#mpkg4#ctm2#seu71#ln355" name="Filtra Colori" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu71#ln355#par569" name="nome_Colori Disponibili [label]" source="ent2#att13Array" target="mov1#mpkg4#ctm2#enu35#msfld27_label"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#seu71#ln355#par570" name="nome_Colori Disponibili [output]" source="ent2#att12Array" target="mov1#mpkg4#ctm2#enu35#msfld27_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="30" id="mov1#mpkg4#ctm2#seu72" name="Taglie Disponibili" entity="ent3" distinctAttributes="ent3#att16">
+      <Link id="mov1#mpkg4#ctm2#seu72#ln356" name="Filtra Taglie" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu72#ln356#par572" name="nome_Taglie Disponibili [label]" source="ent3#att16Array" target="mov1#mpkg4#ctm2#enu35#msfld28_label"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#seu72#ln356#par573" name="nome_Taglie Disponibili [output]" source="ent3#att15Array" target="mov1#mpkg4#ctm2#enu35#msfld28_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="10" gr:y="140" id="mov1#mpkg4#ctm2#seu73" name="Sessi Disponibili" entity="ent4" distinctAttributes="ent4#att18">
+      <Link id="mov1#mpkg4#ctm2#seu73#ln357" name="Link357" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu73#ln357#par575" name="nome_Sesso Disponibile [label]" source="ent4#att18Array" target="mov1#mpkg4#ctm2#enu35#msfld29_label"/>
+        <LinkParameter id="mov1#mpkg4#ctm2#seu73#ln357#par576" name="oid_Sesso Disponibile [output]" source="ent4#att17Array" target="mov1#mpkg4#ctm2#enu35#msfld29_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#ctm2#enu35">
+          <layout:Link link="mov1#mpkg4#ctm2#enu35#ln351"/>
+          <layout:Field field="mov1#mpkg4#ctm2#enu35#msfld27"/>
+          <layout:Field field="mov1#mpkg4#ctm2#enu35#msfld28"/>
+          <layout:Field field="mov1#mpkg4#ctm2#enu35#msfld29"/>
+          <layout:Field field="mov1#mpkg4#ctm2#enu35#msfld24"/>
+          <layout:Field field="mov1#mpkg4#ctm2#enu35#msfld25"/>
+          <layout:Field field="mov1#mpkg4#ctm2#enu35#msfld26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#ctm2#inu6">
+          <layout:Link link="mov1#mpkg4#ctm2#inu6#ln348"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>
