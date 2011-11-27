@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="2" gr:y="0" id="mov1#mpkg2#opm13" name="Crea o recupera carrello">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="4" gr:y="0" id="mov1#mpkg2#opm13" name="Crea o recupera carrello">
   <OperationUnits>
     <OKCollectorUnit id="mov1#mpkg2#opm13#okcu16" name="OK Collector16" gr:x="400" gr:y="190">
       <OutputCollectorParameter id="mov1#mpkg2#opm13#okcu16#ocp12" name="ordine_oid"/>
