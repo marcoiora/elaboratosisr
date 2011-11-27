@@ -7,7 +7,7 @@
       </Link>
       <Selector id="sv2#area8#page41#inu9#su138" defaultPolicy="fill" booleanOperator="or">
         <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond52" name="Sue" predicate="in" implied="false" role="rel21#role41"/>
-        <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond50" name="Non private" predicate="notIn" implied="false" role="rel21#role42.rel21#role41"/>
+        <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond50" name="Non private" predicate="notIn" implied="false" role="rel21#role41"/>
       </Selector>
     </IndexUnit>
     <EntryUnit gr:x="310" gr:y="40" id="sv2#area8#page41#enu19" linkOrder="sv2#area8#page41#enu19#ln229 sv2#area8#page41#enu19#ln264" fieldOrder="sv2#area8#page41#enu19#fld38 sv2#area8#page41#enu19#fld30" name="Stampa sul fronte">
@@ -29,10 +29,9 @@
         <LinkParameter id="sv2#area8#page41#gtu22#ln307#par510" name="UserCtxParam.oid_Non private [oid]" source="sv2#area8#page41#gtu22.UserCtxParam" target="sv2#area8#page41#inu9#su138#rcond52.userOID"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area8#page41#seu61" name="Utenti" entity="ent10">
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area8#page41#seu61" name="Utenti" entity="ent10" distinctAttributes="userOID">
       <Link id="sv2#area8#page41#seu61#ln8" name="Link8" to="sv2#area8#page41#inu9" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page41#seu61#ln8#par517" name="oid_Non private [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond50.ent6#att22"/>
-        <LinkParameter id="sv2#area8#page41#seu61#ln8#par518" name="oid_Sue [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond52.userOID"/>
+        <LinkParameter id="sv2#area8#page41#seu61#ln8#par539" name="oid_Non private [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond50.userOID"/>
       </Link>
     </SelectorUnit>
   </ContentUnits>
