@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="220" gr:y="37" id="mov1#mpkg1#hym2#page10" name="Nuovo Colore">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="mov1#mpkg1#hym2#page10#enu26" name="Nuovo Colore" linkOrder="mov1#mpkg1#hym2#page10#enu26#ln5">
+      <Link id="mov1#mpkg1#hym2#page10#enu26#ln5" name="Salva" to="mov1#mpkg1#hym2#cru19" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg1#hym2#page10#enu26#ln5#par525" name="Nome_nome" source="mov1#mpkg1#hym2#page10#enu26#fld108" target="mov1#mpkg1#hym2#cru19.ent2#att13"/>
+        <LinkParameter id="mov1#mpkg1#hym2#page10#enu26#ln5#par526" name="Valore Esadecimale_valoreEsadecimale" source="mov1#mpkg1#hym2#page10#enu26#fld109" target="mov1#mpkg1#hym2#cru19.ent2#att14"/>
+      </Link>
+      <Field id="mov1#mpkg1#hym2#page10#enu26#fld108" name="Colore" type="string" modifiable="true"/>
+      <Field id="mov1#mpkg1#hym2#page10#enu26#fld109" name="Valore Esadecimale" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg1#hym2#page10#enu26">
+          <layout:Link link="mov1#mpkg1#hym2#page10#enu26#ln5"/>
+          <layout:Field field="mov1#mpkg1#hym2#page10#enu26#fld108"/>
+          <layout:Field field="mov1#mpkg1#hym2#page10#enu26#fld109"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

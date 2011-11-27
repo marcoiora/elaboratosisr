@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg1#hym5#page63" name="Nuovo Sesso" gr:x="220" gr:y="37">
+  <ContentUnits>
+    <EntryUnit id="mov1#mpkg1#hym5#page63#enu29" name="Nuovo Sesso" linkOrder="mov1#mpkg1#hym5#page63#enu29#ln320" gr:x="0" gr:y="0">
+      <Link id="mov1#mpkg1#hym5#page63#enu29#ln320" name="Salva" to="mov1#mpkg1#hym5#cru21" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg1#hym5#page63#enu29#ln320#par532" name="Sesso_nome" source="mov1#mpkg1#hym5#page63#enu29#fld112" target="mov1#mpkg1#hym5#cru21.ent4#att18"/>
+      </Link>
+      <Field id="mov1#mpkg1#hym5#page63#enu29#fld112" name="Sesso" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg1#hym5#page63#enu29">
+          <layout:Link link="mov1#mpkg1#hym5#page63#enu29#ln320"/>
+          <layout:Field field="mov1#mpkg1#hym5#page63#enu29#fld112"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

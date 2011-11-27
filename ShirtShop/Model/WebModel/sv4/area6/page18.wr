@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page18" name="Nuova Stampa" ajaxEnabled="true" gr:x="1010" gr:y="210" linkOrder="sv4#area6#page18#ln83">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page18" name="Nuova Stampa" ajaxEnabled="true" gr:x="1010" gr:y="319" linkOrder="sv4#area6#page18#ln83">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page18#enu7" name="Inserisci dati Stampa" gr:x="0" gr:y="111" ajaxEnableExpandedLinks="true" linkOrder="sv4#area6#page18#enu7#ln91">
       <Field id="sv4#area6#page18#enu7#fld26" name="Nome" type="string" modifiable="true" preloaded="true"/>

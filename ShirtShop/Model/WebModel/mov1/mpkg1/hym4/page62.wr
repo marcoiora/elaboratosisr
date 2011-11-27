@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg1#hym4#page62" name="Nuova Taglia" gr:x="220" gr:y="37">
+  <ContentUnits>
+    <EntryUnit id="mov1#mpkg1#hym4#page62#enu28" name="Nuova Taglia" linkOrder="mov1#mpkg1#hym4#page62#enu28#ln16" gr:x="0" gr:y="0">
+      <Link id="mov1#mpkg1#hym4#page62#enu28#ln16" name="Salva" to="mov1#mpkg1#hym4#cru20" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg1#hym4#page62#enu28#ln16#par529" name="Taglia_nome" source="mov1#mpkg1#hym4#page62#enu28#fld110" target="mov1#mpkg1#hym4#cru20.ent3#att16"/>
+      </Link>
+      <Field id="mov1#mpkg1#hym4#page62#enu28#fld110" name="Taglia" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg1#hym4#page62#enu28">
+          <layout:Link link="mov1#mpkg1#hym4#page62#enu28#ln16"/>
+          <layout:Field field="mov1#mpkg1#hym4#page62#enu28#fld110"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
