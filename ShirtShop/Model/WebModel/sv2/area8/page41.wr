@@ -52,16 +52,15 @@
           <layout:Link link="sv2#area8#page41#enu19#ln229"/>
           <layout:Link link="sv2#area8#page41#enu19#ln264"/>
         </layout:Unit>
+        <layout:Unit unitId="sv2#area8#page41#mssu7">
+          <layout:Link link="sv2#area8#page41#mssu7#ln234"/>
+        </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page41#mssu7">
-          <layout:Link link="sv2#area8#page41#mssu7#ln234"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>

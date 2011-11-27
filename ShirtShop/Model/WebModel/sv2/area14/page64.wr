@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area14#page64" name="Catalogo Stampe" landmark="true" gr:x="14" gr:y="344">
+  <ContentUnits>
+    <ModuleInstanceUnit id="sv2#area14#page64#miu27" name="CatalogoStampeInstance" linkOrder="sv2#area14#page64#miu27#ln4" gr:x="0" gr:y="0" moduleId="mov1#mpkg4#ctm3">
+      <Link id="sv2#area14#page64#miu27#ln4" name="Dettaglio stampa" to="sv2#area14#page66#dau10" type="normal" validate="true">
+        <LinkParameter id="sv2#area14#page64#miu27#ln4#par528" name="oid_KeyCondition3 [oid]" source="mov1#mpkg4#ctm3#ocu3#ocp14" target="sv2#area14#page66#dau10#su149#kcond102.ent6#att22"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area14#page64#miu27">
+          <layout:Link link="sv2#area14#page64#miu27#ln4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:UnitConfiguration unitType="MultiChoiceIndexUnit" layout:unitLayout="WRDefault/Normal">
+    <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+  </layout:UnitConfiguration>
+</Page>
