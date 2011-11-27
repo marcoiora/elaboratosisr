@@ -14,6 +14,9 @@
       <Link id="sv3#area12#page50#gtu6#ln24" name="Link24" to="sv3#area12#page50#scu1" type="transport" validate="true">
         <LinkParameter id="sv3#area12#page50#gtu6#ln24#par514" name="UserCtxParam.oid_RoleCondition47 [oid]" source="sv3#area12#page50#gtu6.UserCtxParam" target="sv3#area12#page50#scu1#su142#rcond47.userOID"/>
       </Link>
+      <Link id="sv3#area12#page50#gtu6#ln329" name="Link329" to="sv3#area12#page50#inu28" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page50#gtu6#ln329#par541" name="UserCtxParam.oid_RoleCondition2 [oid]" source="sv3#area12#page50#gtu6.UserCtxParam" target="sv3#area12#page50#inu28#su153#rcond2.userOID"/>
+      </Link>
     </GetUnit>
     <IndexUnit gr:x="0" gr:y="120" id="sv3#area12#page50#inu27" name="Nuovi ordini" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36" linkOrder="sv3#area12#page50#inu27#ln259">
       <Selector id="sv3#area12#page50#inu27#su131" defaultPolicy="fill" booleanOperator="and">
@@ -23,6 +26,10 @@
     </IndexUnit>
     <IndexUnit gr:x="296" gr:y="156" id="sv3#area12#page50#inu28" name="Ordini evasi" entity="ent9" linkOrder="sv3#area12#page50#inu28#ln282" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37 ent9#att38 ent9#att57">
       <Link id="sv3#area12#page50#inu28#ln282" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-96,103,183,-81"/>
+      <Selector id="sv3#area12#page50#inu28#su153" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#area12#page50#inu28#su153#acond18" name="stato" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="evaso"/>
+        <RelationshipRoleCondition id="sv3#area12#page50#inu28#su153#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel20#role40"/>
+      </Selector>
     </IndexUnit>
     <ScrollerUnit gr:x="176" gr:y="136" id="sv3#area12#page50#scu1" name="Ordini evasi" useCountQuery="false" entity="ent9" linkOrder="sv3#area12#page50#scu1#ln19" blockFactor="5">
       <Link id="sv3#area12#page50#scu1#ln19" name="Link19" to="sv3#area12#page50#inu28" automaticCoupling="true" type="automatic" validate="true"/>
@@ -31,6 +38,11 @@
         <AttributesCondition id="sv3#area12#page50#scu1#su142#acond15" name="AttCondition15" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="evaso"/>
       </Selector>
     </ScrollerUnit>
+    <ModuleInstanceUnit gr:x="346" gr:y="36" id="sv3#area12#page50#miu28" name="Novit&#224;" moduleId="mov1#mpkg3#ctm4" linkOrder="sv3#area12#page50#miu28#ln328">
+      <Link id="sv3#area12#page50#miu28#ln328" name="dettagli" to="sv3#area12#page51#dau14" type="normal" validate="true" codeRef="mov1#mpkg3#ctm4#ocu4">
+        <LinkParameter id="sv3#area12#page50#miu28#ln328#par540" name="ordine_oid_KeyCondition78 [oid]" source="mov1#mpkg3#ctm4#ocu4#ocp15" target="sv3#area12#page51#dau14#su133#kcond78.ent9#att35"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -44,7 +56,11 @@
           <layout:Link link="sv3#area12#page50#inu26#ln266"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page50#miu28">
+          <layout:Link link="sv3#area12#page50#miu28#ln328"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>

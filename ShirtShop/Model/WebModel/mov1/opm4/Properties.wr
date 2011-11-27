@@ -1,0 +1,48 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Recupera&amp;Aggiorna ultimo check" gr:x="560" gr:y="300">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu16" name="Input Collector" gr:x="0" gr:y="0">
+      <OKLink id="mov1#opm4#icu16#oln131" name="OKLink122" to="mov1#opm4#seu62" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <GetUnit id="mov1#opm4#gtu23" name="utente" gr:x="10" gr:y="120" contextParameters="UserCtxParam">
+      <Link id="mov1#opm4#gtu23#ln1" name="Link5" to="mov1#opm4#seu62" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="mov1#opm4#gtu23#ln4" name="Link316" to="mov1#opm4#mfu17" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="-1,218,-675,77;528,208,-146,67"/>
+    </GetUnit>
+    <SelectorUnit id="mov1#opm4#seu62" name="utente_lastcheck" gr:x="140" gr:y="20" entity="User" distinctAttributes="User#att58">
+      <Selector id="mov1#opm4#seu62#su148" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#seu62#su148#kcond7" name="KeyCondition99" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm4#seu62#oln132" name="OKLink121" to="mov1#opm4#inn2" gr:bendpoints="88,17,-84,13">
+        <LinkParameter id="mov1#opm4#seu62#oln132#par528" name="lastcheck_Input" source="User#att58Array" target="mov1#opm4#inn2.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit id="mov1#opm4#inn2" name="IsNotNullUnit1" gr:x="317" gr:y="38" emptyStringAsNull="true">
+      <OKLink id="mov1#opm4#inn2#oln133" name="OKLink123" to="mov1#opm4#tmu6" automaticCoupling="true"/>
+      <KOLink id="mov1#opm4#inn2#kln69" name="KOLink70" to="mov1#opm4#tmu7">
+        <LinkParameter id="mov1#opm4#inn2#kln69#par530" name="0_Input TimeStamp" target="mov1#opm4#tmu7.timeStamp" sourceValue="0"/>
+      </KOLink>
+      <Link id="mov1#opm4#inn2#ln6" name="Link325" to="mov1#opm4#okcu7" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#inn2#ln6#par531" name="Input Value_lastcheck" source="inputValue" target="mov1#opm4#okcu7#ocp2"/>
+      </Link>
+    </IsNotNullUnit>
+    <TimeUnit id="mov1#opm4#tmu6" name="now" gr:x="500" gr:y="160">
+      <OKLink id="mov1#opm4#tmu6#oln134" name="OKLink124" to="mov1#opm4#mfu17">
+        <LinkParameter id="mov1#opm4#tmu6#oln134#par533" name="Current/Input Timestamp_lastcheck" source="currentTimestamp" target="mov1#opm4#mfu17.User#att58"/>
+      </OKLink>
+    </TimeUnit>
+    <ModifyUnit id="mov1#opm4#mfu17" name="aggiorna" gr:x="650" gr:y="150" entity="User">
+      <Selector id="mov1#opm4#mfu17#su149" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#mfu17#su149#kcond99" name="KeyCondition101" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm4#mfu17#oln135" name="OKLink127" to="mov1#opm4#okcu7" automaticCoupling="true"/>
+    </ModifyUnit>
+    <TimeUnit id="mov1#opm4#tmu7" name="TimeUnit5" gr:x="240" gr:y="160">
+      <OKLink id="mov1#opm4#tmu7#oln136" name="OKLink126" to="mov1#opm4#tmu6" automaticCoupling="true"/>
+      <Link id="mov1#opm4#tmu7#ln322" name="Link326" to="mov1#opm4#okcu7" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#tmu7#ln322#par534" name="Current/Input Timestamp_lastcheck" source="currentTimestamp" target="mov1#opm4#okcu7#ocp2"/>
+      </Link>
+    </TimeUnit>
+    <OKCollectorUnit id="mov1#opm4#okcu7" name="OK Collector4" gr:x="530" gr:y="0">
+      <OutputCollectorParameter id="mov1#opm4#okcu7#ocp2" name="lastcheck"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

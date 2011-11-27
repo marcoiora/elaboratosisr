@@ -1,0 +1,35 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg3#ctm4" name="Novit&#224;" gr:x="0" gr:y="138">
+  <ContentUnits>
+    <InputCollectorUnit id="mov1#mpkg3#ctm4#icu17" gr:x="0" gr:y="0">
+      <Link id="mov1#mpkg3#ctm4#icu17#ln323" name="Link335" to="mov1#mpkg3#ctm4#miu27" type="transport" automaticCoupling="true" validate="true"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit id="mov1#mpkg3#ctm4#miu27" name="recupera" gr:x="10" gr:y="160" moduleId="mov1#opm4">
+      <Link id="mov1#mpkg3#ctm4#miu27#ln326" name="Link326" to="mov1#mpkg3#ctm4#inu2" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#ctm4#miu27#ln326#par539" name="lastcheck_AttCondition17" source="mov1#opm4#okcu7#ocp2" target="mov1#mpkg3#ctm4#inu2#su152#acond17"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <IndexUnit gr:x="240" gr:y="150" id="mov1#mpkg3#ctm4#inu2" name="Ordini inseriti dall'ultimo controllo" entity="ent9" displayAttributes="ent9#att35 ent9#att36 rel19#role37.ent10#att43 rel19#role37.ent10#att44" linkOrder="mov1#mpkg3#ctm4#inu2#ln327">
+      <Selector id="mov1#mpkg3#ctm4#inu2#su152" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#mpkg3#ctm4#inu2#su152#acond17" name="AttCondition17" predicate="gteq" booleanOperator="or" implied="false" attributes="ent9#att36"/>
+      </Selector>
+      <Link id="mov1#mpkg3#ctm4#inu2#ln327" name="dettagli" to="mov1#mpkg3#ctm4#ocu4" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <OutputCollectorUnit gr:x="605" gr:y="102" id="mov1#mpkg3#ctm4#ocu4" name="ordine_oid">
+      <OutputCollectorParameter id="mov1#mpkg3#ctm4#ocu4#ocp15" name="ordine_oid"/>
+    </OutputCollectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg3#ctm4#inu2">
+          <layout:Attribute attribute="ent9#att35"/>
+          <layout:Attribute attribute="ent9#att36"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att43"/>
+          <layout:Attribute attribute="rel19#role37.ent10#att44"/>
+          <layout:Link link="mov1#mpkg3#ctm4#inu2#ln327"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

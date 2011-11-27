@@ -1,14 +1,14 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="30" gr:y="228" id="mov1#mpkg2#ctm5" name="Novit&#224;">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="6" gr:y="138" id="mov1#mpkg2#ctm5" name="Novit&#224;">
   <ContentUnits>
     <InputCollectorUnit gr:x="0" gr:y="0" id="mov1#mpkg2#ctm5#icu6">
       <Link id="mov1#mpkg2#ctm5#icu6#ln335" name="Link335" to="mov1#mpkg2#ctm5#miu29" automaticCoupling="true" type="transport" validate="true"/>
     </InputCollectorUnit>
-    <ModuleInstanceUnit gr:x="10" gr:y="160" id="mov1#mpkg2#ctm5#miu29" name="recupera" moduleId="mov1#mpkg2#opm3">
+    <ModuleInstanceUnit gr:x="10" gr:y="160" id="mov1#mpkg2#ctm5#miu29" name="recupera" moduleId="mov1#opm4">
       <Link id="mov1#mpkg2#ctm5#miu29#ln336" name="Link336" to="mov1#mpkg2#ctm5#mdu5" type="transport" validate="true">
-        <LinkParameter id="mov1#mpkg2#ctm5#miu29#ln336#par537" name="lastcheck_AttCondition14" source="mov1#mpkg2#opm3#okcu4#ocp16" target="mov1#mpkg2#ctm5#mdu5#su19#acond13"/>
+        <LinkParameter id="mov1#mpkg2#ctm5#miu29#ln336#par537" name="lastcheck_AttCondition14" source="mov1#opm4#okcu7#ocp2" target="mov1#mpkg2#ctm5#mdu5#su19#acond13"/>
       </Link>
       <Link id="mov1#mpkg2#ctm5#miu29#ln338" name="Link338" to="mov1#mpkg2#ctm5#mdu3" type="transport" validate="true">
-        <LinkParameter id="mov1#mpkg2#ctm5#miu29#ln338#par538" name="lastcheck_AttCondition16" source="mov1#mpkg2#opm3#okcu4#ocp16" target="mov1#mpkg2#ctm5#mdu3#su2#acond5"/>
+        <LinkParameter id="mov1#mpkg2#ctm5#miu29#ln338#par538" name="lastcheck_AttCondition16" source="mov1#opm4#okcu7#ocp2" target="mov1#mpkg2#ctm5#mdu3#su2#acond5"/>
       </Link>
     </ModuleInstanceUnit>
     <MultiDataUnit id="mov1#mpkg2#ctm5#mdu3" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" gr:x="200" gr:y="150" name="Ordini evasi dall'ultima visita">

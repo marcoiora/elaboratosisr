@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="2" gr:y="0" id="mov1#mpkg3#opm1" name="Prendi in carico">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="4" gr:y="0" id="mov1#mpkg3#opm1" name="Prendi in carico">
   <OperationUnits>
     <InputCollectorUnit id="mov1#mpkg3#opm1#icu2" name="Input Collector" gr:x="0" gr:y="0" linkOrder="mov1#mpkg3#opm1#icu2#ln305">
       <InputCollectorParameter id="mov1#mpkg3#opm1#icu2#icp1" name="ordine_oid"/>
