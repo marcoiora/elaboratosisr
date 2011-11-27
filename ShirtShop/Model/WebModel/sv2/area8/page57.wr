@@ -1,8 +1,32 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1251" gr:y="1104" id="sv2#area8#page57" name="Carica stampa personalizzata">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1184" gr:y="1106" id="sv2#area8#page57" name="Carica stampa personalizzata">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#area8#page57#enu27" name="Carica l'immagine:" linkOrder="sv2#area8#page57#enu27#ln341">
+      <Field id="sv2#area8#page57#enu27#fld107" name="File immagine" type="blob" modifiable="true"/>
+      <Field id="sv2#area8#page57#enu27#fld111" name="Nome immagine" type="string" modifiable="true"/>
+      <Field id="sv2#area8#page57#enu27#fld113" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
+      <Link id="sv2#area8#page57#enu27#ln341" name="Salva" to="sv2#area8#cru18" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page57#enu27#ln341#par545" name="Descrizione_descrizione" source="sv2#area8#page57#enu27#fld113" target="sv2#area8#cru18.ent6#att24"/>
+        <LinkParameter id="sv2#area8#page57#enu27#ln341#par546" name="Nome immagine_nome" source="sv2#area8#page57#enu27#fld111" target="sv2#area8#cru18.ent6#att23"/>
+        <LinkParameter id="sv2#area8#page57#enu27#ln341#par547" name="File immagine_immagineHD" source="sv2#area8#page57#enu27#fld107" target="sv2#area8#cru18.ent6#att26"/>
+        <LinkParameter id="sv2#area8#page57#enu27#ln341#par549" name="10_prezzoBase" sourceValue="10" target="sv2#area8#cru18.ent6#att27"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit id="sv2#area8#page57#gtu25" name="Utente" gr:x="61" gr:y="70" contextParameters="UserCtxParam">
+      <Link id="sv2#area8#page57#gtu25#ln342" name="Link342" to="sv2#area8#cru18" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page57#gtu25#ln342#par544" name="UserCtxParam.oid_Cliente.oid(StampaToCliente)" source="sv2#area8#page57#gtu25.UserCtxParam" target="sv2#area8#cru18.rel21#role42.userOID"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page57#enu27">
+          <layout:Field field="sv2#area8#page57#enu27#fld107"/>
+          <layout:Field field="sv2#area8#page57#enu27#fld111"/>
+          <layout:Field field="sv2#area8#page57#enu27#fld113"/>
+          <layout:Link link="sv2#area8#page57#enu27#ln341"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
@@ -17,5 +41,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Variable id="sv2#area8#page57#var2" name="fronte-retro"/>
 </Page>

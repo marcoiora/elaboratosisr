@@ -1,7 +1,7 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="584" gr:y="885" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
   <ContentUnits>
     <IndexUnit gr:x="101" gr:y="31" id="sv2#area8#page41#inu9" name="Scegli una stampa" entity="ent6" displayAttributes="ent6#att23 ent6#att25" linkOrder="sv2#area8#page41#inu9#ln222">
-      <Link id="sv2#area8#page41#inu9#ln222" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page41#enu19">
+      <Link id="sv2#area8#page41#inu9#ln222" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true">
         <LinkParameter id="sv2#area8#page41#inu9#ln222#par390" name="oid_stampa_oid" source="data[].ent6#att22" target="sv2#area8#page41#enu19#fld29_slot"/>
         <LinkParameter id="sv2#area8#page41#inu9#ln222#par398" name="nome_stampa" source="data[].ent6#att23" target="sv2#area8#page41#enu19#fld38_slot"/>
       </Link>
@@ -22,9 +22,7 @@
     </EntryUnit>
     <MultiMessageUnit gr:x="473" gr:y="44" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
-      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" type="normal" validate="true">
-        <LinkParameter id="sv2#area8#page41#mssu7#ln234#par542" name="fronte_fronte-retro" sourceValue="fronte" targetVariable="sv2#area8#page57#var2"/>
-      </Link>
+      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" type="normal" validate="true" automaticCoupling="true"/>
     </MultiMessageUnit>
     <GetUnit gr:x="1" gr:y="91" id="sv2#area8#page41#gtu22" name="Utente" contextParameters="UserCtxParam">
       <Link id="sv2#area8#page41#gtu22#ln307" name="Link307" to="sv2#area8#page41#inu9" type="transport" validate="true">

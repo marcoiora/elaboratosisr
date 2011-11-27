@@ -173,5 +173,12 @@
         <LinkParameter id="sv2#area8#tmu1#oln69#par354" name="ordine_oid_PASSING_KeyCondition64 [oid]" sourceLinkParameter="sv2#area8#page46#mssu1#ln232#par351" target="sv2#area8#mfu2#su127#kcond64.ent9#att35"/>
       </OKLink>
     </TimeUnit>
+    <CreateUnit gr:x="1411" gr:y="1132" id="sv2#area8#cru18" name="Salva Stampa" entity="ent6">
+      <KOLink id="sv2#area8#cru18#kln69" name="KOLink69" to="sv2#area8#page57" automaticCoupling="true" gr:bendpoints="-16,96,154,60"/>
+      <OKLink id="sv2#area8#cru18#oln134" name="OKLink134" to="sv2#area8#page41#enu19">
+        <LinkParameter id="sv2#area8#cru18#oln134#par550" name="nome_Stampa selezionata" source="ent6#att23Array" target="sv2#area8#page41#enu19#fld38_slot"/>
+        <LinkParameter id="sv2#area8#cru18#oln134#par551" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page41#enu19#fld29_slot"/>
+      </OKLink>
+    </CreateUnit>
   </OperationUnits>
 </Area>

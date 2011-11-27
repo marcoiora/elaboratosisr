@@ -32,9 +32,7 @@
     </GetUnit>
     <MultiMessageUnit id="sv2#area8#page42#mssu10" linkOrder="sv2#area8#page42#mssu10#ln340" gr:x="441" gr:y="11">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
-      <Link id="sv2#area8#page42#mssu10#ln340" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" type="normal" validate="true">
-        <LinkParameter id="sv2#area8#page42#mssu10#ln340#par543" name="fronte_fronte-retro" targetVariable="sv2#area8#page57#var2" sourceValue="retro"/>
-      </Link>
+      <Link id="sv2#area8#page42#mssu10#ln340" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" type="normal" validate="true" automaticCoupling="true"/>
     </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid>
