@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm8" name="Salva Stampa" gr:x="0" gr:y="60">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm8" name="Salva Stampa" gr:x="2" gr:y="60">
   <OperationUnits>
     <InputCollectorUnit id="mov1#mpkg1#opm8#icu8" name="Input Collector" gr:x="-10" gr:y="-10">
       <Link id="mov1#mpkg1#opm8#icu8#ln68" name="Link86" to="mov1#mpkg1#opm8#inn9" type="transport" validate="true">

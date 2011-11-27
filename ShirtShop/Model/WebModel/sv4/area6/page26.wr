@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page26" name="Aggiungi Fotografie" gr:x="1100" gr:y="679">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page26" name="Aggiungi Fotografie" gr:x="1100" gr:y="788">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page26#enu14" name="Inserisci Fotografia" gr:x="136" gr:y="5" linkOrder="sv4#area6#page26#enu14#ln169 sv4#area6#page26#enu14#ln171 sv4#area6#page26#enu14#ln172">
       <SelectionField id="sv4#area6#page26#enu14#sfld7" name="Colore" type="string"/>

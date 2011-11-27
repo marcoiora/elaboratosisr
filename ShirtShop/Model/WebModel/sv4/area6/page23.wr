@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1350" gr:y="0" id="sv4#area6#page23" name="Nuova Proposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1350" gr:y="109" id="sv4#area6#page23" name="Nuova Proposta">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page23#enu13" name="Inserisci dati proposta" gr:x="155" gr:y="122" fieldOrder="sv4#area6#page23#enu13#fld57 sv4#area6#page23#enu13#fld58 sv4#area6#page23#enu13#fld59 sv4#area6#page23#enu13#fld60 sv4#area6#page23#enu13#fld63 sv4#area6#page23#enu13#msfld9 sv4#area6#page23#enu13#msfld10 sv4#area6#page23#enu13#msfld11 sv4#area6#page23#enu13#sfld5 sv4#area6#page23#enu13#fld65 sv4#area6#page23#enu13#sfld6 sv4#area6#page23#enu13#fld66 sv4#area6#page23#enu13#fld64" linkOrder="sv4#area6#page23#enu13#ln165 sv4#area6#page23#enu13#ln179 sv4#area6#page23#enu13#ln180 sv4#area6#page23#enu13#ln181">
       <Field id="sv4#area6#page23#enu13#fld57" name="Nome" type="string" modifiable="true"/>

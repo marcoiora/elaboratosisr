@@ -1,0 +1,11 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="198" id="mov1#mpkg1#hym4" name="Nuova Taglia">
+  <OperationUnits>
+    <OKCollectorUnit id="mov1#mpkg1#hym4#okcu5" name="OK Collector" gr:x="594" gr:y="0"/>
+    <CreateUnit id="mov1#mpkg1#hym4#cru20" name="Salva Taglia" gr:x="420" gr:y="40" entity="ent3">
+      <OKLink id="mov1#mpkg1#hym4#cru20#oln125" name="OKLink123" to="mov1#mpkg1#hym4#okcu5"/>
+    </CreateUnit>
+    <InputCollectorUnit id="mov1#mpkg1#hym4#icu6" name="Input Collector" gr:x="0" gr:y="67">
+      <OKLink id="mov1#mpkg1#hym4#icu6#oln126" name="OKLink121" to="mov1#mpkg1#hym4#page62" automaticCoupling="true"/>
+    </InputCollectorUnit>
+  </OperationUnits>
+</HybridModule>
