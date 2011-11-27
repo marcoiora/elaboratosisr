@@ -1,0 +1,34 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area14#page66" name="Dettaglio Stampa" linkOrder="sv2#area14#page66#ln323" gr:x="321" gr:y="354">
+  <ContentUnits>
+    <DataUnit id="sv2#area14#page66#dau10" name="Stampa" gr:x="0" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
+      <Selector id="sv2#area14#page66#dau10#su149" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area14#page66#dau10#su149#kcond102" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area14#page66#dau10">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att24"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area14#page66#ln323" name="Torna al Catalogo Stampe" to="sv2#area14#page64" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-100,-62,168,-54"/>
+</Page>

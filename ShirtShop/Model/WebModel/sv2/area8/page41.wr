@@ -1,13 +1,13 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="584" gr:y="885" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
   <ContentUnits>
     <IndexUnit gr:x="101" gr:y="31" id="sv2#area8#page41#inu9" name="Scegli una stampa" entity="ent6" displayAttributes="ent6#att23 ent6#att25" linkOrder="sv2#area8#page41#inu9#ln222">
-      <Link id="sv2#area8#page41#inu9#ln222" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page41#enu19">
+      <Link id="sv2#area8#page41#inu9#ln222" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true">
         <LinkParameter id="sv2#area8#page41#inu9#ln222#par390" name="oid_stampa_oid" source="data[].ent6#att22" target="sv2#area8#page41#enu19#fld29_slot"/>
         <LinkParameter id="sv2#area8#page41#inu9#ln222#par398" name="nome_stampa" source="data[].ent6#att23" target="sv2#area8#page41#enu19#fld38_slot"/>
       </Link>
       <Selector id="sv2#area8#page41#inu9#su138" defaultPolicy="fill" booleanOperator="or">
         <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond52" name="Sue" predicate="in" implied="false" role="rel21#role41"/>
-        <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond50" name="Non private" predicate="notIn" implied="false" role="rel21#role42.rel21#role41"/>
+        <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond50" name="Non private" predicate="notIn" implied="false" role="rel21#role41"/>
       </Selector>
     </IndexUnit>
     <EntryUnit gr:x="310" gr:y="40" id="sv2#area8#page41#enu19" linkOrder="sv2#area8#page41#enu19#ln229 sv2#area8#page41#enu19#ln264" fieldOrder="sv2#area8#page41#enu19#fld38 sv2#area8#page41#enu19#fld30" name="Stampa sul fronte">
@@ -22,17 +22,16 @@
     </EntryUnit>
     <MultiMessageUnit gr:x="473" gr:y="44" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
-      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" type="normal" validate="true" automaticCoupling="true"/>
     </MultiMessageUnit>
     <GetUnit gr:x="1" gr:y="91" id="sv2#area8#page41#gtu22" name="Utente" contextParameters="UserCtxParam">
       <Link id="sv2#area8#page41#gtu22#ln307" name="Link307" to="sv2#area8#page41#inu9" type="transport" validate="true">
         <LinkParameter id="sv2#area8#page41#gtu22#ln307#par510" name="UserCtxParam.oid_Non private [oid]" source="sv2#area8#page41#gtu22.UserCtxParam" target="sv2#area8#page41#inu9#su138#rcond52.userOID"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area8#page41#seu61" name="Utenti" entity="ent10">
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area8#page41#seu61" name="Utenti" entity="ent10" distinctAttributes="userOID">
       <Link id="sv2#area8#page41#seu61#ln8" name="Link8" to="sv2#area8#page41#inu9" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page41#seu61#ln8#par517" name="oid_Non private [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond50.ent6#att22"/>
-        <LinkParameter id="sv2#area8#page41#seu61#ln8#par518" name="oid_Sue [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond52.userOID"/>
+        <LinkParameter id="sv2#area8#page41#seu61#ln8#par539" name="oid_Non private [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond50.userOID"/>
       </Link>
     </SelectorUnit>
   </ContentUnits>
@@ -52,16 +51,15 @@
           <layout:Link link="sv2#area8#page41#enu19#ln229"/>
           <layout:Link link="sv2#area8#page41#enu19#ln264"/>
         </layout:Unit>
+        <layout:Unit unitId="sv2#area8#page41#mssu7">
+          <layout:Link link="sv2#area8#page41#mssu7#ln234"/>
+        </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page41#mssu7">
-          <layout:Link link="sv2#area8#page41#mssu7#ln234"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
