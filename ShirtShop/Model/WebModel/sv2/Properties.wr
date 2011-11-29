@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Cliente" landmarks="sv2#page19 sv2#area9 sv2#area8 sv2#area11 sv2#area10 sv2#lou2 sv2#area14" homePage="sv2#page19" protected="true" layout:style="WebRatio">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Cliente" landmarks="sv2#page19 sv2#area9 sv2#area8 sv2#area14 sv2#area11 sv2#area10 sv2#lou2" homePage="sv2#page19" protected="true" layout:style="WebRatio">
   <OperationUnits>
     <LogoutUnit gr:x="10" gr:y="270" id="sv2#lou2" name="Esci" siteView="sv1" landmark="true">
       <KOLink id="sv2#lou2#kln15" name="KOLink15" to="sv2#page19" automaticCoupling="true"/>

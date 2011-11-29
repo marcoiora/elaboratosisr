@@ -66,6 +66,7 @@
         <RelationshipRoleCondition id="sv2#area8#page40#dau16#su116#rcond40" name="Colore" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
     </DataUnit>
+    <ModuleInstanceUnit gr:x="288" gr:y="314" id="sv2#area8#page40#miu31" name="StatoPersonalizzazione" moduleId="mov1#mpkg2#ctm4"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -83,7 +84,9 @@
           <layout:Attribute attribute="ent5#att21"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page40#miu31"/>
+      </layout:Cell>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>

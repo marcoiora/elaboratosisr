@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1184" gr:y="1106" id="sv2#area8#page57" name="Carica stampa personalizzata">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1121" gr:y="1112" id="sv2#area8#page57" name="Carica stampa personalizzata">
   <ContentUnits>
-    <EntryUnit gr:x="0" gr:y="0" id="sv2#area8#page57#enu27" name="Carica l'immagine:" linkOrder="sv2#area8#page57#enu27#ln341">
+    <EntryUnit gr:x="109" gr:y="0" id="sv2#area8#page57#enu27" name="Carica l'immagine:" linkOrder="sv2#area8#page57#enu27#ln341">
       <Field id="sv2#area8#page57#enu27#fld107" name="File immagine" type="blob" modifiable="true"/>
       <Field id="sv2#area8#page57#enu27#fld111" name="Nome immagine" type="string" modifiable="true"/>
       <Field id="sv2#area8#page57#enu27#fld113" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
@@ -11,11 +11,12 @@
         <LinkParameter id="sv2#area8#page57#enu27#ln341#par549" name="10_prezzoBase" sourceValue="10" target="sv2#area8#cru18.ent6#att27"/>
       </Link>
     </EntryUnit>
-    <GetUnit id="sv2#area8#page57#gtu25" name="Utente" gr:x="61" gr:y="70" contextParameters="UserCtxParam">
+    <GetUnit id="sv2#area8#page57#gtu25" name="Utente" gr:x="170" gr:y="70" contextParameters="UserCtxParam">
       <Link id="sv2#area8#page57#gtu25#ln342" name="Link342" to="sv2#area8#cru18" type="transport" validate="true">
         <LinkParameter id="sv2#area8#page57#gtu25#ln342#par544" name="UserCtxParam.oid_Cliente.oid(StampaToCliente)" source="sv2#area8#page57#gtu25.UserCtxParam" target="sv2#area8#cru18.rel21#role42.userOID"/>
       </Link>
     </GetUnit>
+    <ModuleInstanceUnit id="sv2#area8#page57#miu33" name="StatoPersonalizzazione" gr:x="0" gr:y="70" moduleId="mov1#mpkg2#ctm4"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -28,7 +29,9 @@
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page57#miu33"/>
+      </layout:Cell>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>

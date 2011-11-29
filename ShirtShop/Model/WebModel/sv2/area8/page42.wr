@@ -34,6 +34,7 @@
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
       <Link id="sv2#area8#page42#mssu10#ln340" name="Carica la tua stampa personalizzata!" to="sv2#area8#page69" type="normal" validate="true" automaticCoupling="true"/>
     </MultiMessageUnit>
+    <ModuleInstanceUnit id="sv2#area8#page42#miu35" name="StatoPersonalizzazione" gr:x="101" gr:y="121" moduleId="mov1#mpkg2#ctm4"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -55,7 +56,9 @@
           <layout:Link link="sv2#area8#page42#mssu10#ln340"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page42#miu35"/>
+      </layout:Cell>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>

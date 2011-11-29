@@ -1,4 +1,4 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2" gr:y="68" id="mov1#mpkg2#ctm1" name="VisualizzaCarrello">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="14" gr:y="68" id="mov1#mpkg2#ctm1" name="VisualizzaCarrello">
   <ContentUnits>
     <InputCollectorUnit gr:x="0" gr:y="262" id="mov1#mpkg2#ctm1#icu1" name="Input Collector">
       <Link id="mov1#mpkg2#ctm1#icu1#ln249" type="transport" to="mov1#mpkg2#ctm1#miu17"/>
