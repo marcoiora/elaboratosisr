@@ -1,0 +1,93 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="50" gr:y="328" id="mov1#mpkg2#ctm4" name="StatoPersonalizzazione">
+  <ContentUnits>
+    <GetUnit gr:x="3" gr:y="0" id="mov1#mpkg2#ctm4#gtu27" name="Maglietta" contextParameters="ctx1">
+      <Link id="mov1#mpkg2#ctm4#gtu27#ln345" name="Link345" to="mov1#mpkg2#ctm4#dau28" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm4#gtu27#ln345#par557" name="maglietta_oid_KeyCondition107 [oid]" source="mov1#mpkg2#ctm4#gtu27.ctx1" target="mov1#mpkg2#ctm4#dau28#su155#kcond107.ent1#att1"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="0" gr:y="120" id="mov1#mpkg2#ctm4#dau28" name="Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att5 ent1#att8 ent1#att9">
+      <Selector id="mov1#mpkg2#ctm4#dau28#su155" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg2#ctm4#dau28#su155#kcond107" name="KeyCondition107" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit gr:x="380" gr:y="0" id="mov1#mpkg2#ctm4#gtu28" name="Configurazione" contextParameters="ctx2">
+      <Link id="mov1#mpkg2#ctm4#gtu28#ln347" name="Link347" to="mov1#mpkg2#ctm4#dau30" type="transport" validate="true" gr:bendpoints="99,57,-27,-70">
+        <LinkParameter id="mov1#mpkg2#ctm4#gtu28#ln347#par578" name="configurazione_oid_RoleCondition9 [oid]" source="mov1#mpkg2#ctm4#gtu28.ctx2" target="mov1#mpkg2#ctm4#dau30#su157#rcond9.ent7#att28"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm4#gtu28#ln349" name="Link349" to="mov1#mpkg2#ctm4#dau31" type="transport" validate="true" gr:bendpoints="207,20,-87,-107">
+        <LinkParameter id="mov1#mpkg2#ctm4#gtu28#ln349#par580" name="configurazione_oid_RoleCondition9 [oid]" source="mov1#mpkg2#ctm4#gtu28.ctx2" target="mov1#mpkg2#ctm4#dau31#su158#rcond10.ent7#att28"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm4#gtu28#ln353" name="Link353" to="mov1#mpkg2#ctm4#dau32" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm4#gtu28#ln353#par582" name="configurazione_oid_RoleCondition49 [oid]" source="mov1#mpkg2#ctm4#gtu28.ctx2" target="mov1#mpkg2#ctm4#dau32#su159#rcond49.ent7#att28"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm4#gtu28#ln359" name="Link359" to="mov1#mpkg2#ctm4#dau33" type="transport" validate="true" gr:bendpoints="-123,119,98,-15">
+        <LinkParameter id="mov1#mpkg2#ctm4#gtu28#ln359#par583" name="configurazione_oid_RoleCondition49 [oid]" source="mov1#mpkg2#ctm4#gtu28.ctx2" target="mov1#mpkg2#ctm4#dau33#su160#rcond53.ent7#att28"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm4#gtu28#ln362" name="Link362" to="mov1#mpkg2#ctm4#dau34" type="transport" validate="true" gr:bendpoints="-120,211,101,-33">
+        <LinkParameter id="mov1#mpkg2#ctm4#gtu28#ln362#par584" name="configurazione_oid_RoleCondition49 [oid]" source="mov1#mpkg2#ctm4#gtu28.ctx2" target="mov1#mpkg2#ctm4#dau34#su161#rcond54.ent7#att28"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="490" gr:y="120" id="mov1#mpkg2#ctm4#dau30" name="StampaFronte" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
+      <Selector id="mov1#mpkg2#ctm4#dau30#su157" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm4#dau30#su157#rcond9" name="RoleCondition9" predicate="in" implied="false" role="rel11#role21"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit id="mov1#mpkg2#ctm4#dau31" name="StampaRetro" gr:x="660" gr:y="120" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
+      <Selector id="mov1#mpkg2#ctm4#dau31#su158" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm4#dau31#su158#rcond10" name="RoleCondition9" predicate="in" implied="false" role="rel12#role23"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit gr:x="150" gr:y="10" id="mov1#mpkg2#ctm4#dau32" name="Colore" entity="ent2" displayAttributes="ent2#att13">
+      <Selector id="mov1#mpkg2#ctm4#dau32#su159" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm4#dau32#su159#rcond49" name="RoleCondition49" predicate="in" implied="false" role="rel16#role31"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit gr:x="150" gr:y="110" id="mov1#mpkg2#ctm4#dau33" name="Taglia" entity="ent3" displayAttributes="ent3#att16">
+      <Selector id="mov1#mpkg2#ctm4#dau33#su160" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm4#dau33#su160#rcond53" name="RoleCondition49" predicate="in" implied="false" role="rel15#role29"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit gr:x="150" gr:y="210" id="mov1#mpkg2#ctm4#dau34" name="Sesso" entity="ent4" displayAttributes="ent4#att18">
+      <Selector id="mov1#mpkg2#ctm4#dau34#su161" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm4#dau34#su161#rcond54" name="RoleCondition49" predicate="in" implied="false" role="rel14#role27"/>
+      </Selector>
+    </DataUnit>
+    <MultiMessageUnit gr:x="-230" gr:y="-10" id="mov1#mpkg2#ctm4#mssu11" name="Stato della personalizzazione">
+      <Message xml:space="preserve">Qui sotto puoi visualizzare cosa hai gi&#224; personalizzato sulla tua maglietta.</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#mssu11"/>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#dau28">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+        </layout:Unit>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#dau32">
+          <layout:Attribute attribute="ent2#att13"/>
+        </layout:Unit>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#dau33">
+          <layout:Attribute attribute="ent3#att16"/>
+        </layout:Unit>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#dau34">
+          <layout:Attribute attribute="ent4#att18"/>
+        </layout:Unit>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#dau30">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+        </layout:Unit>
+        <layout:Unit unitId="mov1#mpkg2#ctm4#dau31">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>
