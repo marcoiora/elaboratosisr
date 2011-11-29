@@ -29,9 +29,21 @@
       </Link>
     </SelectorUnit>
     <EntryUnit id="sv2#area8#page44#enu9" linkOrder="sv2#area8#page44#enu9#ln277 sv2#area8#page44#enu9#ln288" gr:x="216" gr:y="224">
-      <SelectionField id="sv2#area8#page44#enu9#sfld10" name="Scegli il sesso" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string"/>
-      <SelectionField id="sv2#area8#page44#enu9#sfld11" name="La taglia" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string"/>
-      <SelectionField id="sv2#area8#page44#enu9#sfld12" name="Ed il colore" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string"/>
+      <SelectionField id="sv2#area8#page44#enu9#sfld10" name="Scegli il sesso" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld10#mnd3" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+        </VRules>
+      </SelectionField>
+      <SelectionField id="sv2#area8#page44#enu9#sfld11" name="La taglia" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld11#mnd2" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+        </VRules>
+      </SelectionField>
+      <SelectionField id="sv2#area8#page44#enu9#sfld12" name="Ed il colore" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld12#mnd1" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+        </VRules>
+      </SelectionField>
       <Link id="sv2#area8#page44#enu9#ln277" name="Link263" to="sv2#area8#page44#dau17" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page44#dau17">
         <LinkParameter id="sv2#area8#page44#enu9#ln277#par421" name="Ed il colore_Colore [oid]" source="sv2#area8#page44#enu9#sfld12" target="sv2#area8#page44#dau17#su122#rcond46.ent2#att12"/>
         <LinkParameter id="sv2#area8#page44#enu9#ln277#par438" name="Scegli il sesso_Sesso [oid]" source="sv2#area8#page44#enu9#sfld10" target="sv2#area8#page44#dau17#su122#rcond45.ent4#att17"/>
