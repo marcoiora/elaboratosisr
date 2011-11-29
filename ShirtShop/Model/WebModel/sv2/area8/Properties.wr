@@ -15,7 +15,7 @@
         <LinkParameter id="sv2#area8#gtu10#ln212#par289" name="maglietta_oid_KeyCondition12 [oid]" source="sv2#area8#gtu10.ctx1" target="sv2#area8#seu47#su96#kcond12.ent1#att1"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="731" gr:y="762" id="sv2#area8#seu47" name="Stampabile?" entity="ent1">
+    <SelectorUnit gr:x="731" gr:y="732" id="sv2#area8#seu47" name="Stampabile?" entity="ent1">
       <Selector id="sv2#area8#seu47#su96" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#seu47#su96#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
       </Selector>
