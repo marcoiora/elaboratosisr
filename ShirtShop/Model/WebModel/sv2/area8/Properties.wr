@@ -28,19 +28,19 @@
       <Case value="true"/>
       <Case value="false"/>
       <OKLink id="sv2#area8#switch1#oln6" name="OKLink6" to="sv2#area8#page41" automaticCoupling="true" code="true"/>
-      <OKLink id="sv2#area8#switch1#oln7" name="OKLink7" to="sv2#area8#seu52" automaticCoupling="true" gr:bendpoints="76,77,79,-333;76,338,79,-72" code="false"/>
+      <OKLink id="sv2#area8#switch1#oln7" name="OKLink7" to="sv2#area8#seu52" automaticCoupling="true" gr:bendpoints="76,77,79,-333;-253,359,96,-143" code="false"/>
     </SwitchUnit>
     <SetUnit gr:x="1051" gr:y="722" id="sv2#area8#stu5" name="Set Configurazione" contextParameters="ctx2"/>
-    <GetUnit gr:x="714" gr:y="1121" id="sv2#area8#gtu11" name="Get Configurazione" contextParameters="ctx2">
+    <GetUnit gr:x="801" gr:y="1112" id="sv2#area8#gtu11" name="Get Configurazione" contextParameters="ctx2">
       <Link id="sv2#area8#gtu11#ln231" name="Link223" to="sv2#area8#mfu3" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu11#ln231#par307" name="configurazione_oid_KeyCondition64 [oid]" source="sv2#area8#gtu11.ctx2" target="sv2#area8#mfu3#su98#kcond65.ent7#att28"/>
       </Link>
     </GetUnit>
-    <ModifyUnit id="sv2#area8#mfu3" name="Configurazione" gr:x="874" gr:y="1111" entity="ent7">
+    <ModifyUnit id="sv2#area8#mfu3" name="Configurazione" gr:x="971" gr:y="1112" entity="ent7">
       <Selector id="sv2#area8#mfu3#su98" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#mfu3#su98#kcond65" name="KeyCondition64" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv2#area8#mfu3#oln19" name="OKLink19" to="sv2#area8#seu52" automaticCoupling="true"/>
+      <OKLink id="sv2#area8#mfu3#oln19" name="OKLink19" to="sv2#area8#seu52" automaticCoupling="true" gr:bendpoints="-117,78,194,-53"/>
     </ModifyUnit>
     <SwitchUnit gr:x="884" gr:y="1241" id="sv2#area8#switch2" name="Stampabile Retro?">
       <Case value="true"/>
@@ -48,27 +48,27 @@
       <OKLink id="sv2#area8#switch2#oln20" name="OKLink20" to="sv2#area8#page42" automaticCoupling="true" code="true"/>
       <OKLink id="sv2#area8#switch2#oln77" name="OKLink77" to="sv2#area8#page43" automaticCoupling="true" gr:bendpoints="80,85,148,-366;82,316,150,-135" code="false"/>
     </SwitchUnit>
-    <ModifyUnit id="sv2#area8#mfu4" name="Configurazione" gr:x="881" gr:y="1552" entity="ent7">
+    <ModifyUnit id="sv2#area8#mfu4" name="Configurazione" gr:x="881" gr:y="1572" entity="ent7">
       <Selector id="sv2#area8#mfu4#su99" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#mfu4#su99#kcond66" name="KeyCondition64" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv2#area8#mfu4#oln71" name="OKLink71" to="sv2#area8#page43" automaticCoupling="true"/>
     </ModifyUnit>
-    <GetUnit id="sv2#area8#gtu12" name="Get Configurazione" gr:x="611" gr:y="1562" contextParameters="ctx2">
+    <GetUnit id="sv2#area8#gtu12" name="Get Configurazione" gr:x="611" gr:y="1582" contextParameters="ctx2">
       <Link id="sv2#area8#gtu12#ln235" name="seleziona" to="sv2#area8#mfu4" type="transport" validate="true" ajaxEnabled="true">
         <LinkParameter id="sv2#area8#gtu12#ln235#par309" name="configurazione_oid_KeyCondition64 [oid]" source="sv2#area8#gtu12.ctx2" target="sv2#area8#mfu4#su99#kcond66.ent7#att28"/>
       </Link>
     </GetUnit>
-    <ModuleInstanceUnit gr:x="694" gr:y="1911" id="sv2#area8#miu10" name="Carrello" moduleId="mov1#mpkg2#opm13">
+    <ModuleInstanceUnit gr:x="704" gr:y="1941" id="sv2#area8#miu10" name="Carrello" moduleId="mov1#mpkg2#opm13">
       <Link id="sv2#area8#miu10#ln247" name="Link247" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#miu10#ln247#par314" name="ordine_oid_Ordine.oid(RigaOrdineToOrdine)" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#cru4.rel18#role36.ent9#att35"/>
       </Link>
       <OKLink id="sv2#area8#miu10#oln91" name="OKLink91" to="sv2#area8#seu48" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <CreateUnit gr:x="904" gr:y="1911" id="sv2#area8#cru4" name="Aggiungi a Carrello" entity="ent8">
+    <CreateUnit gr:x="914" gr:y="1941" id="sv2#area8#cru4" name="Aggiungi a Carrello" entity="ent8">
       <OKLink id="sv2#area8#cru4#oln78" name="OKLink78" to="sv2#area8#page39" automaticCoupling="true"/>
     </CreateUnit>
-    <GetUnit gr:x="884" gr:y="2031" id="sv2#area8#gtu15" name="Get Configurazione" contextParameters="ctx2" linkOrder="sv2#area8#gtu15#ln267">
+    <GetUnit gr:x="871" gr:y="2062" id="sv2#area8#gtu15" name="Get Configurazione" contextParameters="ctx2" linkOrder="sv2#area8#gtu15#ln267">
       <Link id="sv2#area8#gtu15#ln248" name="Link248" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#gtu15#ln248#par315" name="configurazione_oid_Configurazione.oid(RigaOrdineToConfigurazione)" source="sv2#area8#gtu15.ctx2" target="sv2#area8#cru4.rel17#role33.ent7#att28"/>
       </Link>
@@ -76,7 +76,7 @@
         <LinkParameter id="sv2#area8#gtu15#ln267#par401" name="configurazione_oid_KeyCondition79 [oid]" source="sv2#area8#gtu15.ctx2" target="sv2#area8#seu48#su117#kcond79.ent7#att28"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="734" gr:y="2091" id="sv2#area8#seu48" name="SelectorUnit48" entity="ent7" distinctAttributes="rel13#role25.ent1#att9 rel11#role21.ent6#att27 rel12#role23.ent6#att27" linkOrder="sv2#area8#seu48#ln268">
+    <SelectorUnit gr:x="721" gr:y="2122" id="sv2#area8#seu48" name="SelectorUnit48" entity="ent7" distinctAttributes="rel13#role25.ent1#att9 rel11#role21.ent6#att27 rel12#role23.ent6#att27" linkOrder="sv2#area8#seu48#ln268">
       <Selector id="sv2#area8#seu48#su117" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#seu48#su117#kcond79" name="KeyCondition79" predicate="in" implied="false"/>
       </Selector>
@@ -103,7 +103,7 @@
       </Link>
       <OKLink id="sv2#area8#seu52#oln85" name="OKLink85" to="sv2#area8#switch2" automaticCoupling="true" gr:bendpoints="156,8,-170,22"/>
     </SelectorUnit>
-    <ScriptUnit gr:x="1044" gr:y="2133" id="sv2#area8#scu2" name="Calcola Prezzo" script="WEB-INF/descr/calcolaPrezzoRiga.groovy" linkOrder="sv2#area8#scu2#ln270">
+    <ScriptUnit gr:x="1054" gr:y="2163" id="sv2#area8#scu2" name="Calcola Prezzo" script="WEB-INF/descr/calcolaPrezzoRiga.groovy" linkOrder="sv2#area8#scu2#ln270">
       <Link id="sv2#area8#scu2#ln270" name="Link270" to="sv2#area8#cru4" type="transport" validate="true">
         <LinkParameter id="sv2#area8#scu2#ln270#par410" name="prezzoSingolo_prezzoSingolo" source="result(prezzoSingolo)" target="sv2#area8#cru4.ent8#att32"/>
         <LinkParameter id="sv2#area8#scu2#ln270#par411" name="prezzoRiga_prezzoTotale" source="result(prezzoRiga)" target="sv2#area8#cru4.ent8#att34"/>
@@ -155,7 +155,7 @@
       </Link>
       <OKLink id="sv2#area8#scu3#oln102" name="OKLink98" to="sv2#area8#cru15" automaticCoupling="true" gr:bendpoints="-75,-97,52,119"/>
     </ScriptUnit>
-    <ModifyUnit gr:x="1241" gr:y="682" id="sv2#area8#mfu2" name="Trasforma Carrello in Ordine" entity="ent9">
+    <ModifyUnit gr:x="1261" gr:y="652" id="sv2#area8#mfu2" name="Trasforma Carrello in Ordine" entity="ent9">
       <Selector id="sv2#area8#mfu2#su127" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#mfu2#su127#kcond64" name="KeyCondition64" predicate="in" implied="false"/>
       </Selector>
@@ -173,11 +173,18 @@
         <LinkParameter id="sv2#area8#tmu1#oln69#par354" name="ordine_oid_PASSING_KeyCondition64 [oid]" sourceLinkParameter="sv2#area8#page46#mssu1#ln232#par351" target="sv2#area8#mfu2#su127#kcond64.ent9#att35"/>
       </OKLink>
     </TimeUnit>
-    <CreateUnit gr:x="1411" gr:y="1132" id="sv2#area8#cru18" name="Salva Stampa" entity="ent6">
+    <CreateUnit gr:x="1421" gr:y="1132" id="sv2#area8#cru18" name="Salva Stampa" entity="ent6">
       <KOLink id="sv2#area8#cru18#kln69" name="KOLink69" to="sv2#area8#page57" automaticCoupling="true" gr:bendpoints="-16,96,154,60"/>
-      <OKLink id="sv2#area8#cru18#oln134" name="OKLink134" to="sv2#area8#page41#enu19">
+      <OKLink id="sv2#area8#cru18#oln134" name="OKLink134" to="sv2#area8#page41#enu19" gr:bendpoints="-117,-176,370,1">
         <LinkParameter id="sv2#area8#cru18#oln134#par550" name="nome_Stampa selezionata" source="ent6#att23Array" target="sv2#area8#page41#enu19#fld38_slot"/>
         <LinkParameter id="sv2#area8#cru18#oln134#par551" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page41#enu19#fld29_slot"/>
+      </OKLink>
+    </CreateUnit>
+    <CreateUnit id="sv2#area8#cru22" name="Salva Stampa" gr:x="1471" gr:y="1392" entity="ent6">
+      <KOLink id="sv2#area8#cru22#kln71" name="KOLink69" to="sv2#area8#page69" automaticCoupling="true" gr:bendpoints="-3,79,167,44;-20,85,150,50"/>
+      <OKLink id="sv2#area8#cru22#oln131" name="OKLink131" to="sv2#area8#page42#enu20" gr:bendpoints="-31,-85,583,-104;-248,-93,283,-86">
+        <LinkParameter id="sv2#area8#cru22#oln131#par555" name="nome_Stampa selezionata" source="ent6#att23Array" target="sv2#area8#page42#enu20#fld39_slot"/>
+        <LinkParameter id="sv2#area8#cru22#oln131#par556" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page42#enu20#fld31_slot"/>
       </OKLink>
     </CreateUnit>
   </OperationUnits>
