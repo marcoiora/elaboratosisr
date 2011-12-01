@@ -1,20 +1,23 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="275" gr:y="12" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="164" gr:y="0" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="-1" gr:y="-1" id="sv2#area8#page34#inu4" name="Proposte" entity="ent13" displayAttributes="ent1#att2 rel22#role43.ent6#att25 rel23#role45.ent6#att25" linkOrder="sv2#area8#page34#inu4#ln272">
-      <Link id="sv2#area8#page34#inu4#ln272" name="seleziona" to="sv2#area8#page44#seu53" automaticCoupling="true" type="normal" validate="true"/>
-    </IndexUnit>
+    <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#area8#page34#miu30" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#area8#page34#miu30#ln365 sv2#area8#page34#miu30#ln366">
+      <Link id="sv2#area8#page34#miu30#ln365" name="Dettagli" to="sv2#area14#page68#dau23" type="normal" validate="true" gr:bendpoints="237,-89,-1857,-1451;1368,-112,-726,-1474" codeRef="mov1#mpkg2#ctm7#ocu5">
+        <LinkParameter id="sv2#area8#page34#miu30#ln365#par527" name="oid_KeyCondition2 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area14#page68#dau23#su150#kcond103.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page34#miu30#ln366" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6">
+        <LinkParameter id="sv2#area8#page34#miu30#ln366#par596" name="oid_proposta_selezionata_KeyCondition80 [oid]" source="mov1#mpkg2#ctm7#ocu6#ocp17" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
+      <layout:Cell/>
       <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page34#inu4">
-          <layout:Attribute attribute="ent1#att2"/>
-          <layout:Attribute attribute="rel22#role43.ent6#att25"/>
-          <layout:Attribute attribute="rel23#role45.ent6#att25"/>
-          <layout:Link link="sv2#area8#page34#inu4#ln272"/>
+        <layout:Unit unitId="sv2#area8#page34#miu30">
+          <layout:Link link="sv2#area8#page34#miu30#ln365"/>
+          <layout:Link link="sv2#area8#page34#miu30#ln366"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>

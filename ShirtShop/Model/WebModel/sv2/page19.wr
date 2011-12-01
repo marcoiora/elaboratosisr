@@ -1,28 +1,31 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-29" gr:y="24" id="sv2#page19" name="Home Cliente" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-77" gr:y="24" id="sv2#page19" name="Home Cliente" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="0" gr:y="0" id="sv2#page19#inu26" name="Proposte" entity="ent13" displayAttributes="ent1#att2 ent1#att3" maxResults="4" linkOrder="sv2#page19#inu26#ln18">
-      <SortAttribute attribute="ent1#att1" order="descending"/>
-      <Link id="sv2#page19#inu26#ln18" name="Seleziona" to="sv2#area8#page44#seu53" automaticCoupling="true" type="normal" validate="true"/>
-    </IndexUnit>
-    <MultiMessageUnit gr:x="91" gr:y="10" id="sv2#page19#mssu9" name="Benvenuto Cliente">
+    <MultiMessageUnit gr:x="137" gr:y="10" id="sv2#page19#mssu9" name="Benvenuto Cliente">
       <Message xml:space="preserve">Benvenuto nell'area riservata al Cliente.
 Attraverso i link sulla pagina potrai creare nuove magliette attraverso il WebMarket, controllare i tuoi ordini e modificare il tuo profilo.</Message>
     </MultiMessageUnit>
-    <ModuleInstanceUnit gr:x="117" gr:y="82" id="sv2#page19#miu26" name="Novit&#224;" moduleId="mov1#mpkg2#ctm5"/>
+    <ModuleInstanceUnit gr:x="163" gr:y="82" id="sv2#page19#miu26" name="Novit&#224;" moduleId="mov1#mpkg2#ctm5"/>
+    <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#page19#miu38" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#page19#miu38#ln367 sv2#page19#miu38#ln369">
+      <Link id="sv2#page19#miu38#ln367" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6">
+        <LinkParameter id="sv2#page19#miu38#ln367#par591" name="oid_proposta_selezionata_KeyCondition80 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
+      </Link>
+      <Link id="sv2#page19#miu38#ln369" name="Dettagli" to="sv2#area14#page68#dau23" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu5">
+        <LinkParameter id="sv2#page19#miu38#ln369#par592" name="oid_proposta_selezionata_KeyCondition2 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area14#page68#dau23#su150#kcond103.ent1#att1"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
         <layout:Unit unitId="sv2#page19#mssu9"/>
       </layout:Cell>
-      <layout:Cell/>
       <layout:Cell>
-        <layout:Unit unitId="sv2#page19#inu26">
-          <layout:Attribute attribute="ent1#att2"/>
-          <layout:Attribute attribute="ent1#att3"/>
-          <layout:Link link="sv2#page19#inu26#ln18"/>
+        <layout:Unit unitId="sv2#page19#miu38">
+          <layout:Link link="sv2#page19#miu38#ln367"/>
+          <layout:Link link="sv2#page19#miu38#ln369"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
     </layout:Row>
     <layout:Row>
       <layout:Cell>
