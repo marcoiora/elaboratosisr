@@ -5,11 +5,12 @@
         <LinkParameter id="sv2#area11#page48#gtu16#ln261#par419" name="UserCtxParam.oid_OrdiniDelCliente [oid]" source="sv2#area11#page48#gtu16.UserCtxParam" target="sv2#area11#page48#mdu4#su132#rcond51.userOID"/>
       </Link>
     </GetUnit>
-    <MultiDataUnit gr:x="112" gr:y="101" id="sv2#area11#page48#mdu4" name="ListaOrdini" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" customDescriptor="false">
+    <MultiDataUnit gr:x="112" gr:y="101" id="sv2#area11#page48#mdu4" name="ListaOrdini" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" customDescriptor="false" linkOrder="sv2#area11#page48#mdu4#ln9">
       <Selector id="sv2#area11#page48#mdu4#su132" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area11#page48#mdu4#su132#rcond51" name="OrdiniDelCliente" predicate="in" implied="false" role="rel19#role38"/>
         <AttributesCondition id="sv2#area11#page48#mdu4#su132#acond9" name="Non carrelli" predicate="neq" booleanOperator="or" implied="false" attributes="ent9#att41" value="carrello"/>
       </Selector>
+      <Link id="sv2#area11#page48#mdu4#ln9" name="Dettagli" to="sv2#area11#page71#mdu7" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="false" ajaxWindowUseLinkAsTitle="true" ajaxWindowClosable="true" ajaxWindowModal="true" ajaxWindowWidth="500" ajaxWindowHeight="250"/>
     </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>
@@ -24,6 +25,7 @@
           <layout:Attribute attribute="ent9#att40"/>
           <layout:Attribute attribute="ent9#att41"/>
           <layout:Attribute attribute="ent9#att57"/>
+          <layout:Link link="sv2#area11#page48#mdu4#ln9"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
