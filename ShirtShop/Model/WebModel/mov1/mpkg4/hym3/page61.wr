@@ -36,4 +36,9 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <layout:UnitConfiguration unitType="IndexUnit" layout:unitLayout="WRDefault/Normal" layout:frameLayout="None">
+    <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+    <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+    <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+  </layout:UnitConfiguration>
 </Page>
