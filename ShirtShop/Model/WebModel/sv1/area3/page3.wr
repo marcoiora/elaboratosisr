@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area3#page3" name="HomePage" gr:x="0" gr:y="3" landmark="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area3#page3" name="HomePage" gr:x="0" gr:y="0" landmark="false">
   <ContentUnits>
-    <EntryUnit id="sv1#area3#page3#enu2" name="Login" linkOrder="sv1#area3#page3#enu2#ln2" gr:x="0" gr:y="6">
+    <EntryUnit id="sv1#area3#page3#enu2" name="Login" linkOrder="sv1#area3#page3#enu2#ln2" gr:x="0" gr:y="13">
       <Field id="sv1#area3#page3#enu2#fld3" name="username" type="string" modifiable="true"/>
       <Field id="sv1#area3#page3#enu2#fld4" name="password" type="password" modifiable="true"/>
       <Link id="sv1#area3#page3#enu2#ln2" name="Enter" to="sv1#lgu1" type="normal" validate="true">
@@ -8,15 +8,24 @@
         <LinkParameter id="sv1#area3#page3#enu2#ln2#par4" name="password_Password" source="sv1#area3#page3#enu2#fld4" target="sv1#lgu1.password"/>
       </Link>
     </EntryUnit>
-    <DataUnit id="sv1#area3#page3#dau2" name="Informazioni Home" gr:x="184" gr:y="0" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
+    <DataUnit id="sv1#area3#page3#dau2" name="Informazioni Home" gr:x="106" gr:y="0" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
       <Selector id="sv1#area3#page3#dau2#su3" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv1#area3#page3#dau2#su3#acond3" name="AttCondition2" predicate="eq" booleanOperator="or" implied="false" value="True" attributes="ent11#att42"/>
       </Selector>
     </DataUnit>
-    <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="84" gr:y="0" maxResults="4" linkOrder="sv1#area3#page3#mdu2#ln17" displayAttributes="ent1#att2 ent1#att3" entity="ent13">
+    <MultiDataUnit id="sv1#area3#page3#mdu2" name="Proposte" gr:x="6" gr:y="111" maxResults="4" displayAttributes="ent1#att2 ent1#att3" entity="ent13" linkOrder="sv1#area3#page3#mdu2#ln373">
       <SortAttribute attribute="ent1#att1" order="descending"/>
-      <Link id="sv1#area3#page3#mdu2#ln17" name="Tutte le proposte" to="sv1#area1#page7" type="normal" validate="true" gr:bendpoints="-126,265,-260,-182" automaticCoupling="true"/>
+      <Selector id="sv1#area3#page3#mdu2#su166" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area3#page3#mdu2#su166#kcond111" name="KeyCondition109" predicate="notIn" implied="true"/>
+      </Selector>
+      <Link id="sv1#area3#page3#mdu2#ln373" name="Tutte le proposte" to="sv1#area1#page7" type="normal" validate="true" gr:bendpoints="-90,226,-267,-200"/>
     </MultiDataUnit>
+    <SelectorUnit id="sv1#area3#page3#seu67" name="SelezioneProposteNoAttive" gr:x="116" gr:y="111" entity="ent13">
+      <Link id="sv1#area3#page3#seu67#ln372" name="Link365" to="sv1#area3#page3#mdu2" type="transport" automaticCoupling="true" validate="true"/>
+      <Selector id="sv1#area3#page3#seu67#su167" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area3#page3#seu67#su167#acond17" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att10" value="False"/>
+      </Selector>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -28,9 +37,9 @@
       </layout:Cell>
       <layout:Cell>
         <layout:Unit unitId="sv1#area3#page3#mdu2">
-          <layout:Link link="sv1#area3#page3#mdu2#ln17"/>
           <layout:Attribute attribute="ent1#att2"/>
           <layout:Attribute attribute="ent1#att3"/>
+          <layout:Link link="sv1#area3#page3#mdu2#ln373"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>

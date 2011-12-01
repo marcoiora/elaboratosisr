@@ -23,6 +23,8 @@
         <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond20" name="manica" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att4"/>
         <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond21" name="collo" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att5"/>
         <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond22" name="materiale" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att8"/>
+        <KeyCondition id="mov1#mpkg4#ctm2#inu6#su143#kcond108" name="KeyCondition108" predicate="notIn" implied="true"/>
+        <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond18" name="AttCondition18" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att10" value="true"/>
       </Selector>
       <Link id="mov1#mpkg4#ctm2#inu6#ln348" to="mov1#mpkg4#ctm2#ocu2" type="normal" validate="true" name="Dettagli">
         <LinkParameter id="mov1#mpkg4#ctm2#inu6#ln348#par559" name="oid_KeyCondition1 [oid]" source="data[].ent1#att1" target="mov1#mpkg4#ctm2#ocu2#ocp13"/>
@@ -66,6 +68,11 @@
       <Link id="mov1#mpkg4#ctm2#seu73#ln357" name="Link357" to="mov1#mpkg4#ctm2#enu35" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg4#ctm2#seu73#ln357#par575" name="nome_Sesso Disponibile [label]" source="ent4#att18Array" target="mov1#mpkg4#ctm2#enu35#msfld29_label"/>
         <LinkParameter id="mov1#mpkg4#ctm2#seu73#ln357#par576" name="oid_Sesso Disponibile [output]" source="ent4#att17Array" target="mov1#mpkg4#ctm2#enu35#msfld29_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm2#seu64" name="Proposte" gr:x="70" gr:y="280" entity="ent13">
+      <Link id="mov1#mpkg4#ctm2#seu64#ln364" name="Link364" to="mov1#mpkg4#ctm2#inu6" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#seu64#ln364#par586" name="oid_KeyCondition108 [oid (not in)]" source="ent1#att1Array" target="mov1#mpkg4#ctm2#inu6#su143#kcond108.ent1#att1"/>
       </Link>
     </SelectorUnit>
   </ContentUnits>

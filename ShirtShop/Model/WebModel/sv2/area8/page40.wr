@@ -22,7 +22,7 @@
       <Selector id="sv2#area8#page40#seu46#su94" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#area8#page40#seu46#su94#rcond37" name="maglietta" predicate="in" implied="false" role="rel1#role1"/>
       </Selector>
-      <Link id="sv2#area8#page40#seu46#ln47" name="Link47" to="sv2#area8#page40#enu18" type="transport" validate="true">
+      <Link id="sv2#area8#page40#seu46#ln47" name="Link47" to="sv2#area8#page40#enu18" type="transport" validate="true" gr:bendpoints="70,-36,-46,174">
         <LinkParameter id="sv2#area8#page40#seu46#ln47#par92" name="nome_Ed il colore [label]" source="ent2#att13Array" target="sv2#area8#page40#enu18#sfld9_label"/>
         <LinkParameter id="sv2#area8#page40#seu46#ln47#par218" name="oid_Ed il colore [output]" source="ent2#att12Array" target="sv2#area8#page40#enu18#sfld9_output"/>
       </Link>
@@ -48,10 +48,10 @@
       <Link id="sv2#area8#page40#seu51#ln37" name="Link37" to="sv2#area8#page40#seu44" type="transport" validate="true">
         <LinkParameter id="sv2#area8#page40#seu51#ln37#par304" name="maglietta_oid_maglietta [oid]" source="ent1#att1Array" target="sv2#area8#page40#seu44#su17#rcond34.ent1#att1"/>
       </Link>
-      <Link id="sv2#area8#page40#seu51#ln39" name="Link26" to="sv2#area8#page40#seu45" type="transport" validate="true">
+      <Link id="sv2#area8#page40#seu51#ln39" name="Link26" to="sv2#area8#page40#seu45" type="transport" validate="true" gr:bendpoints="55,173,-55,-21">
         <LinkParameter id="sv2#area8#page40#seu51#ln39#par353" name="maglietta_oid_maglietta [oid]" source="ent1#att1Array" target="sv2#area8#page40#seu45#su18#rcond36.ent1#att1"/>
       </Link>
-      <Link id="sv2#area8#page40#seu51#ln40" name="Link33" to="sv2#area8#page40#seu46" type="transport" validate="true">
+      <Link id="sv2#area8#page40#seu51#ln40" name="Link33" to="sv2#area8#page40#seu46" type="transport" validate="true" gr:bendpoints="31,292,-80,-2">
         <LinkParameter id="sv2#area8#page40#seu51#ln40#par355" name="maglietta_oid_maglietta [oid]" source="ent1#att1Array" target="sv2#area8#page40#seu46#su94#rcond37.ent1#att1"/>
       </Link>
       <Link id="sv2#area8#page40#seu51#ln225" name="Link225" to="sv2#area8#stu2" type="transport" validate="true">
@@ -66,6 +66,7 @@
         <RelationshipRoleCondition id="sv2#area8#page40#dau16#su116#rcond40" name="Colore" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
     </DataUnit>
+    <ModuleInstanceUnit gr:x="288" gr:y="314" id="sv2#area8#page40#miu31" name="StatoPersonalizzazione" moduleId="mov1#mpkg2#ctm4"/>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -83,7 +84,9 @@
           <layout:Attribute attribute="ent5#att21"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page40#miu31"/>
+      </layout:Cell>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>

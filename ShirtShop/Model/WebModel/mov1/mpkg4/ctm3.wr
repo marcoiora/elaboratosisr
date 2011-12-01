@@ -6,6 +6,7 @@
     <IndexUnit id="mov1#mpkg4#ctm3#inu30" name="Stampe" linkOrder="mov1#mpkg4#ctm3#inu30#ln361" gr:x="260" gr:y="10" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
       <Selector id="mov1#mpkg4#ctm3#inu30#su147" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov1#mpkg4#ctm3#inu30#su147#rcond58" name="tema" predicate="in" implied="true" role="rel24#role47"/>
+        <AttributesCondition id="mov1#mpkg4#ctm3#inu30#su147#acond14" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent6#att49" value="true"/>
       </Selector>
       <Link id="mov1#mpkg4#ctm3#inu30#ln361" to="mov1#mpkg4#ctm3#ocu3" type="normal" validate="true" name="Dettaglio stampa">
         <LinkParameter id="mov1#mpkg4#ctm3#inu30#ln361#par581" name="oid_KeyCondition3 [oid]" source="data[].ent6#att22" target="mov1#mpkg4#ctm3#ocu3#ocp14"/>
