@@ -1,3 +1,16 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-190" gr:y="240" id="sv2#area10" name="Il mio Account" landmark="true">
-  <OperationUnits/>
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-540" gr:y="76" id="sv2#area10" name="Gestione Account" landmark="true" defaultPage="sv2#area10#page72">
+  <OperationUnits>
+    <ModifyUnit gr:x="222" gr:y="176" id="sv2#area10#mfu16" name="Modifica Profilo" entity="ent10">
+      <Selector id="sv2#area10#mfu16#su169" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area10#mfu16#su169#kcond109" name="KeyCondition109" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area10#mfu16#oln122" name="OKLink122" to="sv2#area10#page72" automaticCoupling="true"/>
+      <KOLink id="sv2#area10#mfu16#kln70" name="KOLink70" to="sv2#area10#page73" automaticCoupling="true" gr:bendpoints="-90,-37,111,-49"/>
+    </ModifyUnit>
+    <GetUnit gr:x="291" gr:y="69" id="sv2#area10#gtu29" name="Cliente" contextParameters="UserCtxParam" linkOrder="sv2#area10#gtu29#ln330">
+      <Link id="sv2#area10#gtu29#ln330" name="Link330" to="sv2#area10#mfu16" type="transport" validate="true">
+        <LinkParameter id="sv2#area10#gtu29#ln330#par613" name="UserCtxParam.oid_KeyCondition109 [oid]" source="sv2#area10#gtu29.UserCtxParam" target="sv2#area10#mfu16#su169#kcond109.userOID"/>
+      </Link>
+    </GetUnit>
+  </OperationUnits>
 </Area>

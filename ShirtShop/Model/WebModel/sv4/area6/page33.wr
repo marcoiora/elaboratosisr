@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="1409" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln56 sv4#area6#page33#ln63">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="1445" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln56 sv4#area6#page33#ln63">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page33#enu10" name="Modifica dati" gr:x="283" gr:y="134" linkOrder="sv4#area6#page33#enu10#ln137 sv4#area6#page33#enu10#ln138 sv4#area6#page33#enu10#ln139 sv4#area6#page33#enu10#ln48">
       <Field id="sv4#area6#page33#enu10#fld49" name="Nome" type="string" modifiable="true" preloaded="true"/>

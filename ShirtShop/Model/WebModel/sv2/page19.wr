@@ -19,24 +19,17 @@ Attraverso i link sulla pagina potrai creare nuove magliette attraverso il WebMa
       <layout:Cell>
         <layout:Unit unitId="sv2#page19#mssu9"/>
       </layout:Cell>
+    </layout:Row>
+    <layout:Row>
       <layout:Cell>
+        <layout:Unit unitId="sv2#page19#miu26"/>
         <layout:Unit unitId="sv2#page19#miu38">
           <layout:Link link="sv2#page19#miu38#ln367"/>
           <layout:Link link="sv2#page19#miu38#ln369"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#page19#miu26"/>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
