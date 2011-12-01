@@ -1,0 +1,53 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area10#page72" name="Il tuo profilo">
+  <ContentUnits>
+    <GetUnit gr:x="0" gr:y="14" id="sv2#area10#page72#gtu24" name="cliente" contextParameters="UserCtxParam">
+      <Link id="sv2#area10#page72#gtu24#ln13" name="Link13" to="sv2#area10#page72#dau29" type="transport" validate="true">
+        <LinkParameter id="sv2#area10#page72#gtu24#ln13#par419" name="UserCtxParam.oid_KeyCondition101 [oid]" source="sv2#area10#page72#gtu24.UserCtxParam" target="sv2#area10#page72#dau29#su163#kcond101.userOID"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="126" gr:y="0" id="sv2#area10#page72#dau29" name="I tuoi dati" entity="ent10" displayAttributes="ent10#att43 ent10#att44 ent10#att45 email ent10#att55 ent10#att56 userName password" linkOrder="sv2#area10#page72#dau29#ln15">
+      <Selector id="sv2#area10#page72#dau29#su163" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area10#page72#dau29#su163#kcond101" name="KeyCondition101" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area10#page72#dau29#ln15" name="Modifica" to="sv2#area10#page73#enu31" type="normal" validate="true">
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par524" name="codiceFiscale_Codice Fiscale" source="data.ent10#att56" target="sv2#area10#page73#enu31#fld122_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par597" name="cognome_Cognome" source="data.ent10#att44" target="sv2#area10#page73#enu31#fld118_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par598" name="email_E-mail" source="data.email" target="sv2#area10#page73#enu31#fld120_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par599" name="indirizzo_Indirizzo" source="data.ent10#att45" target="sv2#area10#page73#enu31#fld119_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par600" name="nome_Nome" source="data.ent10#att43" target="sv2#area10#page73#enu31#fld117_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par601" name="password_Password" source="data.password" target="sv2#area10#page73#enu31#fld123_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par602" name="telefono_Telefono" source="data.ent10#att55" target="sv2#area10#page73#enu31#fld121_slot"/>
+        <LinkParameter id="sv2#area10#page72#dau29#ln15#par603" name="userName_Username" source="data.userName" target="sv2#area10#page73#enu31#fld124_slot"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area10#page72#dau29">
+          <layout:Attribute attribute="ent10#att43"/>
+          <layout:Attribute attribute="ent10#att44"/>
+          <layout:Attribute attribute="ent10#att45"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="ent10#att55"/>
+          <layout:Attribute attribute="ent10#att56"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Link link="sv2#area10#page72#dau29#ln15"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
