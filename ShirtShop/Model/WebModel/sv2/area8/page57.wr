@@ -9,6 +9,7 @@
         <LinkParameter id="sv2#area8#page57#enu27#ln341#par546" name="Nome immagine_nome" source="sv2#area8#page57#enu27#fld111" target="sv2#area8#cru18.ent6#att23"/>
         <LinkParameter id="sv2#area8#page57#enu27#ln341#par547" name="File immagine_immagineHD" source="sv2#area8#page57#enu27#fld107" target="sv2#area8#cru18.ent6#att26"/>
         <LinkParameter id="sv2#area8#page57#enu27#ln341#par549" name="10_prezzoBase" sourceValue="10" target="sv2#area8#cru18.ent6#att27"/>
+        <LinkParameter id="sv2#area8#page57#enu27#ln341#par30" name="true_isactive" sourceValue="true" target="sv2#area8#cru18.ent6#att49"/>
       </Link>
     </EntryUnit>
     <GetUnit id="sv2#area8#page57#gtu25" name="Utente" gr:x="170" gr:y="70" contextParameters="UserCtxParam">
