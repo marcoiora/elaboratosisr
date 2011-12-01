@@ -24,6 +24,7 @@
         <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond21" name="collo" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att5"/>
         <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond22" name="materiale" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att8"/>
         <KeyCondition id="mov1#mpkg4#ctm2#inu6#su143#kcond108" name="KeyCondition108" predicate="notIn" implied="true"/>
+        <AttributesCondition id="mov1#mpkg4#ctm2#inu6#su143#acond18" name="AttCondition18" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att10" value="true"/>
       </Selector>
       <Link id="mov1#mpkg4#ctm2#inu6#ln348" to="mov1#mpkg4#ctm2#ocu2" type="normal" validate="true" name="Dettagli">
         <LinkParameter id="mov1#mpkg4#ctm2#inu6#ln348#par559" name="oid_KeyCondition1 [oid]" source="data[].ent1#att1" target="mov1#mpkg4#ctm2#ocu2#ocp13"/>

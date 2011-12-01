@@ -1,4 +1,4 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="224" gr:y="181" id="mov1#mpkg4#ctm6" name="ElencoProposteSenzaInattive">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="190" id="mov1#mpkg4#ctm6" name="ElencoProposteSenzaInattive">
   <ContentUnits>
     <OutputCollectorUnit gr:x="56" gr:y="179" id="mov1#mpkg4#ctm6#ocu4" name="Output Collector4">
       <OutputCollectorParameter id="mov1#mpkg4#ctm6#ocu4#ocp2" name="PropostaOID"/>
