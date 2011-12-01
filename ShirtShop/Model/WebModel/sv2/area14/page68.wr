@@ -14,23 +14,20 @@
         <LinkParameter id="sv2#area14#page68#dau23#ln329#par535" name="TemplateToStampaRetro.oid_KeyCondition6 [oid]" source="data.rel23#role45_ent6#att22" target="sv2#area14#page68#dau27#su153#kcond106.ent6#att22"/>
       </Link>
     </DataUnit>
-    <DataUnit id="sv2#area14#page68#dau25" name="Proposta" linkOrder="sv2#area14#page68#dau25#ln330" gr:x="130" gr:y="2" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att8 ent1#att9" entity="ent1">
+    <DataUnit id="sv2#area14#page68#dau25" name="Proposta" gr:x="130" gr:y="2" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att8 ent1#att9" entity="ent1">
       <Selector id="sv2#area14#page68#dau25#su151" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area14#page68#dau25#su151#kcond104" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv2#area14#page68#dau25#ln330" name="Dettaglio maglietta" to="sv2#area14#page65#dau8" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="1,67,430,-2"/>
     </DataUnit>
-    <DataUnit id="sv2#area14#page68#dau26" name="Stampa fronte" linkOrder="sv2#area14#page68#dau26#ln331" gr:x="10" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
+    <DataUnit id="sv2#area14#page68#dau26" name="Stampa fronte" gr:x="10" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
       <Selector id="sv2#area14#page68#dau26#su152" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area14#page68#dau26#su152#kcond105" name="KeyCondition5" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv2#area14#page68#dau26#ln331" name="Dettaglio stampa" to="sv2#area14#page66#dau10" type="normal" automaticCoupling="true" validate="true"/>
     </DataUnit>
-    <DataUnit id="sv2#area14#page68#dau27" name="Stampa retro" linkOrder="sv2#area14#page68#dau27#ln332" gr:x="130" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
+    <DataUnit id="sv2#area14#page68#dau27" name="Stampa retro" gr:x="130" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
       <Selector id="sv2#area14#page68#dau27#su153" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area14#page68#dau27#su153#kcond106" name="KeyCondition6" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv2#area14#page68#dau27#ln332" name="Dettaglio stampa" to="sv2#area14#page66#dau10" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="1,100,343,-1"/>
     </DataUnit>
   </ContentUnits>
   <layout:Grid>
@@ -43,7 +40,6 @@
           <layout:Attribute attribute="ent1#att5"/>
           <layout:Attribute attribute="ent1#att8"/>
           <layout:Attribute attribute="ent1#att9"/>
-          <layout:Link link="sv2#area14#page68#dau25#ln330"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
@@ -52,7 +48,6 @@
           <layout:Attribute attribute="ent6#att24"/>
           <layout:Attribute attribute="ent6#att25"/>
           <layout:Attribute attribute="ent6#att27"/>
-          <layout:Link link="sv2#area14#page68#dau26#ln331"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
@@ -61,7 +56,6 @@
           <layout:Attribute attribute="ent6#att24"/>
           <layout:Attribute attribute="ent6#att25"/>
           <layout:Attribute attribute="ent6#att27"/>
-          <layout:Link link="sv2#area14#page68#dau27#ln332"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>

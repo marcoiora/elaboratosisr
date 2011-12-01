@@ -4,7 +4,13 @@
       <Selector id="sv1#area1#page2#dau1#su1" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page2#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
+      <Link id="sv1#area1#page2#dau1#ln9" name="Link9" to="sv1#area1#page2#mdu1" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
+    <MultiDataUnit gr:x="114" gr:y="14" id="sv1#area1#page2#mdu1" name="Foto Maglietta" entity="ent5" displayAttributes="ent5#att21 ent5#att20 rel6#role11.ent2#att13 rel7#role13.ent4#att18">
+      <Selector id="sv1#area1#page2#mdu1#su132" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page2#mdu1#su132#rcond51" name="RoleCondition51" predicate="in" implied="false" role="rel5#role9"/>
+      </Selector>
+    </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -20,7 +26,14 @@
           <layout:Attribute attribute="ent1#att9"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page2#mdu1">
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Attribute attribute="ent5#att20"/>
+          <layout:Attribute attribute="rel6#role11.ent2#att13"/>
+          <layout:Attribute attribute="rel7#role13.ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
