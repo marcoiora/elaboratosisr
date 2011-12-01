@@ -11,6 +11,7 @@
         <RelationshipRoleCondition id="sv2#area11#page48#inu31#su162#rcond60" name="RoleCondition60" predicate="in" implied="false" role="rel19#role38"/>
       </Selector>
       <Link id="sv2#area11#page48#inu31#ln17" name="Dettagli" to="sv2#area11#page71#mdu7" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="false" ajaxWindowUseLinkAsTitle="true" ajaxWindowWidth="500" ajaxWindowHeight="250" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+      <SortAttribute attribute="ent9#att36" order="descending"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid>
