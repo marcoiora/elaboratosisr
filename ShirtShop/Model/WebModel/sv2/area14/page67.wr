@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area14#page67" name="Catalogo Magliette" landmark="true" gr:x="0" gr:y="0">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area14#page67" name="Catalogo Magliette" landmark="true" gr:x="0" gr:y="19">
   <ContentUnits>
     <ModuleInstanceUnit id="sv2#area14#page67#miu28" name="CatalogoMaglietteInstance" linkOrder="sv2#area14#page67#miu28#ln324" gr:x="0" gr:y="0" moduleId="mov1#mpkg4#ctm2">
       <Link id="sv2#area14#page67#miu28#ln324" name="Dettagli" to="sv2#area14#page65#dau8" type="normal" validate="true">

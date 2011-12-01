@@ -1,0 +1,37 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="248" id="mov1#mpkg2#ctm7" name="MostraPropostePerClienti">
+  <ContentUnits>
+    <IndexUnit id="mov1#mpkg2#ctm7#inu1" name="Proposte" gr:x="80" gr:y="70" entity="ent13" displayAttributes="ent1#att2 ent1#att3 rel22#role43.ent6#att25 rel23#role45.ent6#att25 ent1#att9" linkOrder="mov1#mpkg2#ctm7#inu1#ln325 mov1#mpkg2#ctm7#inu1#ln376">
+      <Selector id="mov1#mpkg2#ctm7#inu1#su10" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#mpkg2#ctm7#inu1#su10#acond23" name="Non inattive" predicate="neq" booleanOperator="or" implied="false" attributes="ent1#att10" value="false"/>
+      </Selector>
+      <Link id="mov1#mpkg2#ctm7#inu1#ln325" name="Dettagli" to="mov1#mpkg2#ctm7#ocu5" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm7#inu1#ln325#par558" name="oid_oid_proposta_selezionata" source="data[].ent1#att1" target="mov1#mpkg2#ctm7#ocu5#ocp16"/>
+      </Link>
+      <Link id="mov1#mpkg2#ctm7#inu1#ln376" name="Compra" to="mov1#mpkg2#ctm7#ocu6" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm7#inu1#ln376#par595" name="oid_oid_proposta_selezionata" source="data[].ent1#att1" target="mov1#mpkg2#ctm7#ocu6#ocp17"/>
+      </Link>
+    </IndexUnit>
+    <OutputCollectorUnit gr:x="240" gr:y="20" id="mov1#mpkg2#ctm7#ocu5" name="To-dettagli">
+      <OutputCollectorParameter id="mov1#mpkg2#ctm7#ocu5#ocp16" name="oid_proposta_selezionata"/>
+    </OutputCollectorUnit>
+    <OutputCollectorUnit gr:x="240" gr:y="180" id="mov1#mpkg2#ctm7#ocu6" name="To-compra">
+      <OutputCollectorParameter id="mov1#mpkg2#ctm7#ocu6#ocp17" name="oid_proposta_selezionata"/>
+    </OutputCollectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#ctm7#inu1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="rel22#role43.ent6#att25"/>
+          <layout:Attribute attribute="rel23#role45.ent6#att25"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Link link="mov1#mpkg2#ctm7#inu1#ln325"/>
+          <layout:Link link="mov1#mpkg2#ctm7#inu1#ln376"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

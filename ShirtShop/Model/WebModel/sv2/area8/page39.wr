@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1234" gr:y="5" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1234" gr:y="8" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
   <ContentUnits>
     <MultiMessageUnit gr:x="161" gr:y="91" id="sv2#area8#page39#mssu4" linkOrder="sv2#area8#page39#mssu4#ln252 sv2#area8#page39#mssu4#ln34">
       <Link id="sv2#area8#page39#mssu4#ln252" name="Conferma l'ordine" to="sv2#area8#page46#miu16" type="normal" validate="true" gr:bendpoints="10,247,-43,-250"/>
