@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page45" name="Step 2 - Aggiungi al carrello" gr:x="111" gr:y="765">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page45" name="Step 2 - Aggiungi al carrello" gr:x="111" gr:y="788">
   <ContentUnits>
     <DataUnit id="sv2#area8#page45#dau18" name="La tua maglietta" gr:x="144" gr:y="4" entity="ent7" displayAll="true">
       <Selector id="sv2#area8#page45#dau18#su123" defaultPolicy="fill" booleanOperator="and">

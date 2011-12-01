@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1321" gr:y="344" id="sv2#area8#page46" name="Procedi all'acquisto (conferma)">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1321" gr:y="367" id="sv2#area8#page46" name="Procedi all'acquisto (conferma)">
   <ContentUnits>
     <MultiMessageUnit gr:x="224" gr:y="24" id="sv2#area8#page46#mssu1" name="Avviso" linkOrder="sv2#area8#page46#mssu1#ln36 sv2#area8#page46#mssu1#ln232">
       <Message xml:space="preserve">Si conferma l'acquisto?</Message>

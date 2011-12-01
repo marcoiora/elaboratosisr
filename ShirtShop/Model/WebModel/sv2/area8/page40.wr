@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="667" gr:y="155" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="667" gr:y="178" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
   <ContentUnits>
     <SelectorUnit gr:x="105" gr:y="94" id="sv2#area8#page40#seu44" name="Sessi" entity="ent4">
       <Selector id="sv2#area8#page40#seu44#su17" defaultPolicy="fill" booleanOperator="and">
