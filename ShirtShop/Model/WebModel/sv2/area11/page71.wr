@@ -1,0 +1,38 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="268" gr:y="177" id="sv2#area11#page71" name="Dettagli Ordine" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" layout:frameLayout="WebRatio/Basic">
+  <ContentUnits>
+    <MultiDataUnit id="sv2#area11#page71#mdu7" name="Dettagli Ordine" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att32 ent8#att33 ent8#att34 rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel11#role21.ent6#att23 rel17#role33.rel12#role23.ent6#att23 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel16#role31.ent2#att13">
+      <Selector id="sv2#area11#page71#mdu7#su8" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area11#page71#mdu7#su8#rcond38" name="RoleCondition38" predicate="in" implied="false" role="rel18#role35"/>
+      </Selector>
+    </MultiDataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area11#page71#mdu7">
+          <layout:Attribute attribute="ent8#att32"/>
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:Attribute attribute="ent8#att34"/>
+          <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att2"/>
+          <layout:Attribute attribute="rel17#role33.rel11#role21.ent6#att23"/>
+          <layout:Attribute attribute="rel17#role33.rel12#role23.ent6#att23"/>
+          <layout:Attribute attribute="rel17#role33.rel14#role27.ent4#att18"/>
+          <layout:Attribute attribute="rel17#role33.rel15#role29.ent3#att16"/>
+          <layout:Attribute attribute="rel17#role33.rel16#role31.ent2#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
