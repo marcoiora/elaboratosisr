@@ -1,26 +1,37 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="4" gr:y="334" id="sv3#area12#page51" name="Dettaglio Ordine" localized="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2" gr:y="334" id="sv3#area12#page51" name="Dettaglio Ordine" localized="false">
   <ContentUnits>
-    <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#dau14" name="Dettaglio Ordine" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 rel19#role37.ent10#att43 rel19#role37.ent10#att44 rel19#role37.ent10#att45 rel19#role37.ent10#att56 rel19#role37.ent10#att55 rel19#role37.email ent9#att57" linkOrder="sv3#area12#page51#dau14#ln302 sv3#area12#page51#dau14#ln33">
+    <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#dau14" name="Dettaglio Ordine" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 rel19#role37.ent10#att43 rel19#role37.ent10#att44 rel19#role37.ent10#att45 rel19#role37.ent10#att56 rel19#role37.ent10#att55 rel19#role37.email ent9#att57">
       <Selector id="sv3#area12#page51#dau14#su133" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area12#page51#dau14#su133#kcond78" name="KeyCondition78" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#area12#page51#dau14#ln26" name="Link26" to="sv3#area12#page51#inu25" type="transport" validate="true">
-        <LinkParameter id="sv3#area12#page51#dau14#ln26#par30" name="oid_current oid" source="data.ent9#att35" target="sv3#area12#page51#inu25.current.ent8#att31"/>
+        <LinkParameter id="sv3#area12#page51#dau14#ln26#par524" name="oid_ordine [oid]" source="data.ent9#att35" target="sv3#area12#page51#inu25#su162#rcond60.ent9#att35"/>
       </Link>
-      <Link id="sv3#area12#page51#dau14#ln302" name="Prendi in carico" to="sv3#area12#miu15" type="normal" validate="true">
-        <LinkParameter id="sv3#area12#page51#dau14#ln302#par503" name="oid_ordine_oid" source="data.ent9#att35" target="sv3#area12#miu15.mov1#mpkg3#opm1#icu2#icp1"/>
+      <Link id="sv3#area12#page51#dau14#ln399" name="Link399" to="sv3#area12#page51#gctu2" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page51#dau14#ln399#par616" name="oid_PASSING" source="data.ent9#att35" passing="true"/>
       </Link>
-      <Link id="sv3#area12#page51#dau14#ln33" name="Evadi Ordine" to="sv3#area12#page56#seu42" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-64,68,-66,-199;-64,218,-66,-49"/>
+      <Link id="sv3#area12#page51#dau14#ln400" name="Link400" to="sv3#area12#page51#gctu3" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page51#dau14#ln400#par617" name="oid_PASSING" source="data.ent9#att35" passing="true"/>
+      </Link>
     </DataUnit>
-    <IndexUnit gr:x="170" gr:y="10" id="sv3#area12#page51#inu25" name="Prodotti in ordine" entity="ent8" displayAttributes="ent8#att33 rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel16#role31.ent2#att13 rel17#role33.rel13#role25.ent1#att1 ent8#att32 ent8#att34" linkOrder="sv3#area12#page51#inu25#ln314">
-      <Link id="sv3#area12#page51#inu25#ln312" name="Link312" to="sv3#area12#page51#page57#dau21" type="transport" validate="true">
-        <LinkParameter id="sv3#area12#page51#inu25#ln312#par515" name="RigaOrdineToConfigurazione.oid_KeyCondition97 [oid]" source="data[].rel17#role33_ent7#att28" target="sv3#area12#page51#page57#dau21#su144#kcond97.ent7#att28"/>
+    <IndexUnit gr:x="170" gr:y="10" id="sv3#area12#page51#inu25" name="Prodotti in ordine" entity="ent8" displayAttributes="ent8#att33 rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel16#role31.ent2#att13 rel17#role33.rel13#role25.ent1#att1 ent8#att32 ent8#att34" linkOrder="sv3#area12#page51#inu25#ln388">
+      <Selector id="sv3#area12#page51#inu25#su162" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#area12#page51#inu25#su162#rcond60" name="ordine" predicate="in" implied="false" role="rel18#role35"/>
+      </Selector>
+      <Link id="sv3#area12#page51#inu25#ln388" name="Dettaglio Stampe" to="sv3#area12#page76#dau38" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowModal="true" ajaxWindowClosable="true" ajaxWindowWidth="800" ajaxWindowHeight="600">
+        <LinkParameter id="sv3#area12#page51#inu25#ln388#par607" name="RigaOrdineToConfigurazione.oid_KeyCondition97 [oid]" source="data[].rel17#role33_ent7#att28" target="sv3#area12#page76#dau38#su177#kcond115.ent7#att28"/>
       </Link>
-      <Link id="sv3#area12#page51#inu25#ln313" name="Link313" to="sv3#area12#page51#page57#dau22" type="transport" validate="true">
-        <LinkParameter id="sv3#area12#page51#inu25#ln313#par516" name="RigaOrdineToConfigurazione.oid_KeyCondition98 [oid]" source="data[].rel17#role33_ent7#att28" target="sv3#area12#page51#page57#dau22#su145#kcond98.ent7#att28"/>
-      </Link>
-      <Link id="sv3#area12#page51#inu25#ln314" name="dettagli stampe" to="sv3#area12#page51#page57" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
+    <NoOpContentUnit gr:x="13" gr:y="122" id="sv3#area12#page51#gctu2" name="Prendi in carico" linkOrder="sv3#area12#page51#gctu2#ln401">
+      <Link id="sv3#area12#page51#gctu2#ln401" name="Prendi in carico" to="sv3#area12#miu15" type="normal" validate="true">
+        <LinkParameter id="sv3#area12#page51#gctu2#ln401#par618" name="oid_PASSING_ordine_oid" sourceLinkParameter="sv3#area12#page51#dau14#ln399#par616" target="sv3#area12#miu15.mov1#mpkg3#opm1#icu2#icp1"/>
+      </Link>
+    </NoOpContentUnit>
+    <NoOpContentUnit gr:x="163" gr:y="122" id="sv3#area12#page51#gctu3" name="Evadi" linkOrder="sv3#area12#page51#gctu3#ln402">
+      <Link id="sv3#area12#page51#gctu3#ln402" name="Evadi" to="sv3#area12#page56#seu42" type="normal" validate="true">
+        <LinkParameter id="sv3#area12#page51#gctu3#ln402#par619" name="oid_PASSING_KeyCondition92 [oid]" sourceLinkParameter="sv3#area12#page51#dau14#ln400#par617" target="sv3#area12#page56#seu42#su137#kcond92.ent9#att35"/>
+      </Link>
+    </NoOpContentUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -41,10 +52,15 @@
           <layout:Attribute attribute="rel19#role37.email"/>
           <layout:Attribute attribute="ent9#att57"/>
         </layout:Unit>
-        <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln302" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1"/>
-        <layout:Link unitId="sv3#area12#page51#dau14" link="sv3#area12#page51#dau14#ln33" layout:linkVisibilityCondition="sv3#area12#page51#cexpr1" layout:linkVisibilityConditionNegated="true"/>
       </layout:Cell>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page51#gctu3" layout:unitVisibilityCondition="sv3#area12#page51#cexpr1" layout:unitVisibilityConditionNegated="true">
+          <layout:Link link="sv3#area12#page51#gctu3#ln402"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv3#area12#page51#gctu2" layout:unitVisibilityCondition="sv3#area12#page51#cexpr1">
+          <layout:Link link="sv3#area12#page51#gctu2#ln401"/>
+        </layout:Unit>
+      </layout:Cell>
     </layout:Row>
     <layout:Row>
       <layout:Cell>
@@ -57,55 +73,14 @@
           <layout:Attribute attribute="rel17#role33.rel13#role25.ent1#att1"/>
           <layout:Attribute attribute="ent8#att32"/>
           <layout:Attribute attribute="ent8#att34"/>
-          <layout:Link link="sv3#area12#page51#inu25#ln314"/>
+          <layout:Link link="sv3#area12#page51#inu25#ln388"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell>
-        <layout:SubPage pageId="sv3#area12#page51#page57">
-          <layout:Grid>
-            <layout:Row>
-              <layout:Cell>
-                <layout:Unit unitId="sv3#area12#page51#page57#dau21">
-                  <layout:Attribute attribute="ent7#att29"/>
-                  <layout:Attribute attribute="rel11#role21.ent6#att23"/>
-                  <layout:Attribute attribute="rel11#role21.ent6#att25"/>
-                  <layout:Attribute attribute="rel11#role21.ent6#att26"/>
-                  <layout:Attribute attribute="rel11#role21.ent6#att27"/>
-                </layout:Unit>
-              </layout:Cell>
-            </layout:Row>
-            <layout:Row>
-              <layout:Cell>
-                <layout:Unit unitId="sv3#area12#page51#page57#dau22">
-                  <layout:Attribute attribute="ent7#att30"/>
-                  <layout:Attribute attribute="rel12#role23.ent6#att23"/>
-                  <layout:Attribute attribute="rel12#role23.ent6#att25"/>
-                  <layout:Attribute attribute="rel12#role23.ent6#att26"/>
-                  <layout:Attribute attribute="rel12#role23.ent6#att27"/>
-                </layout:Unit>
-              </layout:Cell>
-            </layout:Row>
-          </layout:Grid>
-        </layout:SubPage>
-      </layout:Cell>
+      <layout:Cell/>
     </layout:Row>
   </layout:Grid>
   <Variable id="sv3#area12#page51#var3" name="stato" type="string" unitId="sv3#area12#page51#dau14" parameter="data.ent9#att41"/>
   <ConditionExpression id="sv3#area12#page51#cexpr1" name="dagestire">
     <TextValue xml:space="preserve">return stato == "da-gestire"</TextValue>
   </ConditionExpression>
-  <Page gr:x="309" gr:y="9" id="sv3#area12#page51#page57" name="Dettagli stampe">
-    <ContentUnits>
-      <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#page57#dau21" name="Stampa Fronte" entity="ent7" displayAttributes="ent7#att29 rel11#role21.ent6#att23 rel11#role21.ent6#att25 rel11#role21.ent6#att26 rel11#role21.ent6#att27">
-        <Selector id="sv3#area12#page51#page57#dau21#su144" defaultPolicy="fill" booleanOperator="and">
-          <KeyCondition id="sv3#area12#page51#page57#dau21#su144#kcond97" name="KeyCondition97" predicate="in" implied="false"/>
-        </Selector>
-      </DataUnit>
-      <DataUnit gr:x="6" gr:y="106" id="sv3#area12#page51#page57#dau22" name="Stampa Retro" entity="ent7" displayAttributes="ent7#att30 rel12#role23.ent6#att23 rel12#role23.ent6#att25 rel12#role23.ent6#att26 rel12#role23.ent6#att27">
-        <Selector id="sv3#area12#page51#page57#dau22#su145" defaultPolicy="fill" booleanOperator="and">
-          <KeyCondition id="sv3#area12#page51#page57#dau22#su145#kcond98" name="KeyCondition98" predicate="in" implied="false"/>
-        </Selector>
-      </DataUnit>
-    </ContentUnits>
-  </Page>
 </Page>

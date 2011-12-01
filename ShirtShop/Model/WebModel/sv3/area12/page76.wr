@@ -1,0 +1,56 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area12#page76" name="Dettagli stampe" gr:x="360" gr:y="350" ajaxEnabled="true" layout:pageLayout="WRDefault/Empty">
+  <ContentUnits>
+    <DataUnit id="sv3#area12#page76#dau38" name="Stampa Fronte" gr:x="0" gr:y="0" entity="ent7" displayAttributes="ent7#att29 rel11#role21.ent6#att23 rel11#role21.ent6#att25 rel11#role21.ent6#att26 rel11#role21.ent6#att27">
+      <Selector id="sv3#area12#page76#dau38#su177" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area12#page76#dau38#su177#kcond115" name="KeyCondition97" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#area12#page76#dau38#ln389" name="Link389" to="sv3#area12#page76#dau39" type="transport" validate="true">
+        <LinkParameter id="sv3#area12#page76#dau38#ln389#par608" name="oid_KeyCondition98 [oid]" source="data.ent7#att28" target="sv3#area12#page76#dau39#su178#kcond116.ent7#att28"/>
+      </Link>
+      <Link id="sv3#area12#page76#dau38#ln390" name="Link390" to="sv3#area12#page76#dau40" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+    <DataUnit id="sv3#area12#page76#dau39" name="Stampa Retro" gr:x="5" gr:y="124" entity="ent7" displayAttributes="ent7#att30 rel12#role23.ent6#att23 rel12#role23.ent6#att25 rel12#role23.ent6#att26 rel12#role23.ent6#att27">
+      <Selector id="sv3#area12#page76#dau39#su178" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area12#page76#dau39#su178#kcond116" name="KeyCondition98" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit gr:x="136" gr:y="5" id="sv3#area12#page76#dau40" name="Maglietta" entity="ent7" displayAttributes="rel13#role25.ent1#att2 rel13#role25.ent1#att4 rel13#role25.ent1#att5 rel13#role25.ent1#att8 rel13#role25.ent1#att9 rel14#role27.ent4#att18 rel15#role29.ent3#att16 rel16#role31.ent2#att13">
+      <Selector id="sv3#area12#page76#dau40#su179" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area12#page76#dau40#su179#kcond117" name="KeyCondition117" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page76#dau38">
+          <layout:Attribute attribute="ent7#att29"/>
+          <layout:Attribute attribute="rel11#role21.ent6#att23"/>
+          <layout:Attribute attribute="rel11#role21.ent6#att25"/>
+          <layout:Attribute attribute="rel11#role21.ent6#att26"/>
+          <layout:Attribute attribute="rel11#role21.ent6#att27"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv3#area12#page76#dau39">
+          <layout:Attribute attribute="ent7#att30"/>
+          <layout:Attribute attribute="rel12#role23.ent6#att23"/>
+          <layout:Attribute attribute="rel12#role23.ent6#att25"/>
+          <layout:Attribute attribute="rel12#role23.ent6#att26"/>
+          <layout:Attribute attribute="rel12#role23.ent6#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#area12#page76#dau40">
+          <layout:Attribute attribute="rel13#role25.ent1#att2"/>
+          <layout:Attribute attribute="rel13#role25.ent1#att4"/>
+          <layout:Attribute attribute="rel13#role25.ent1#att5"/>
+          <layout:Attribute attribute="rel13#role25.ent1#att8"/>
+          <layout:Attribute attribute="rel13#role25.ent1#att9"/>
+          <layout:Attribute attribute="rel14#role27.ent4#att18"/>
+          <layout:Attribute attribute="rel15#role29.ent3#att16"/>
+          <layout:Attribute attribute="rel16#role31.ent2#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv3#area12#page76#var4" name="configurazione_oid" type="integer"/>
+</Page>
