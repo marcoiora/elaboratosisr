@@ -1,0 +1,48 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="224" gr:y="181" id="mov1#mpkg4#ctm6" name="ElencoProposteSenzaInattive">
+  <ContentUnits>
+    <OutputCollectorUnit gr:x="56" gr:y="179" id="mov1#mpkg4#ctm6#ocu4" name="Output Collector4">
+      <OutputCollectorParameter id="mov1#mpkg4#ctm6#ocu4#ocp2" name="PropostaOID"/>
+    </OutputCollectorUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm6#seu66" name="SelezioneProposteNoAttive" gr:x="190" gr:y="0" entity="ent13">
+      <Link id="mov1#mpkg4#ctm6#seu66#ln368" name="Link365" to="mov1#mpkg4#ctm6#inu5" type="transport" automaticCoupling="true" validate="true"/>
+      <Selector id="mov1#mpkg4#ctm6#seu66#su164" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#mpkg4#ctm6#seu66#su164#acond16" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att10" value="False"/>
+      </Selector>
+    </SelectorUnit>
+    <IndexUnit id="mov1#mpkg4#ctm6#inu5" name="Proposte" gr:x="50" gr:y="10" displayAttributes="ent1#att2 ent1#att3 rel22#role43.ent6#att25 rel23#role45.ent6#att25 ent1#att9" entity="ent13" linkOrder="mov1#mpkg4#ctm6#inu5#ln374">
+      <Link id="mov1#mpkg4#ctm6#inu5#ln374" name="Dettaglio" to="mov1#mpkg4#ctm6#ocu4" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm6#inu5#ln374#par587" name="oid_PASSING" source="data[].ent1#att1" passing="true"/>
+        <LinkParameter id="mov1#mpkg4#ctm6#inu5#ln374#par588" name="oid_PropostaOID" source="data[].ent1#att1" target="mov1#mpkg4#ctm6#ocu4#ocp2"/>
+      </Link>
+      <Selector id="mov1#mpkg4#ctm6#inu5#su168" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg4#ctm6#inu5#su168#kcond112" name="KeyCondition112" predicate="notIn" implied="true"/>
+      </Selector>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg4#ctm6#inu5">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="rel22#role43.ent6#att25"/>
+          <layout:Attribute attribute="rel23#role45.ent6#att25"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Link link="mov1#mpkg4#ctm6#inu5#ln374"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

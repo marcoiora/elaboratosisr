@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="522" gr:y="111" id="sv1#area1#page9" name="Dettaglio Proposta" linkOrder="sv1#area1#page9#ln24">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="545" gr:y="142" id="sv1#area1#page9" name="Dettaglio Proposta" linkOrder="sv1#area1#page9#ln24">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="0" id="sv1#area1#page9#dau4" name="Template" entity="ent13">
       <Selector id="sv1#area1#page9#dau4#su4" defaultPolicy="fill" booleanOperator="and">
@@ -18,7 +18,7 @@
       <Selector id="sv1#area1#page9#dau5#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page9#dau5#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv1#area1#page9#dau5#ln13" name="Dettaglio maglietta" to="sv1#area1#page2#dau1" type="normal" validate="true" gr:bendpoints="1,67,430,-2" automaticCoupling="true"/>
+      <Link id="sv1#area1#page9#dau5#ln13" name="Dettaglio maglietta" to="sv1#area1#page2#dau1" type="normal" validate="true" gr:bendpoints="1,67,430,-2;-215,70,237,33" automaticCoupling="true"/>
     </DataUnit>
     <DataUnit gr:x="10" gr:y="142" id="sv1#area1#page9#dau6" name="Stampa fronte" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27" linkOrder="sv1#area1#page9#dau6#ln14">
       <Selector id="sv1#area1#page9#dau6#su6" defaultPolicy="fill" booleanOperator="and">
