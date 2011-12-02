@@ -1,11 +1,11 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="164" gr:y="0" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="164" gr:y="167" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
   <ContentUnits>
-    <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#area8#page34#miu30" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#area8#page34#miu30#ln365 sv2#area8#page34#miu30#ln366">
-      <Link id="sv2#area8#page34#miu30#ln365" name="Dettagli" to="sv2#area14#page68#dau23" type="normal" validate="true" gr:bendpoints="237,-89,-1857,-1451;1368,-112,-726,-1474" codeRef="mov1#mpkg2#ctm7#ocu5">
-        <LinkParameter id="sv2#area8#page34#miu30#ln365#par527" name="oid_KeyCondition2 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area14#page68#dau23#su150#kcond103.ent1#att1"/>
-      </Link>
+    <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#area8#page34#miu30" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#area8#page34#miu30#ln393 sv2#area8#page34#miu30#ln366">
       <Link id="sv2#area8#page34#miu30#ln366" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6">
         <LinkParameter id="sv2#area8#page34#miu30#ln366#par596" name="oid_proposta_selezionata_KeyCondition80 [oid]" source="mov1#mpkg2#ctm7#ocu6#ocp17" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page34#miu30#ln393" name="Dettagli" to="sv2#area8#page79#dau36" codeRef="mov1#mpkg2#ctm7#ocu5" type="normal" validate="true" gr:bendpoints="49,-133,-147,8">
+        <LinkParameter id="sv2#area8#page34#miu30#ln393#par624" name="oid_KeyCondition2 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area8#page79#dau36#su173#kcond113.ent1#att1"/>
       </Link>
     </ModuleInstanceUnit>
   </ContentUnits>
@@ -14,7 +14,7 @@
       <layout:Cell/>
       <layout:Cell>
         <layout:Unit unitId="sv2#area8#page34#miu30">
-          <layout:Link link="sv2#area8#page34#miu30#ln365"/>
+          <layout:Link link="sv2#area8#page34#miu30#ln393"/>
           <layout:Link link="sv2#area8#page34#miu30#ln366"/>
         </layout:Unit>
       </layout:Cell>

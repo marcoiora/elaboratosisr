@@ -1,22 +1,20 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="713" gr:y="3" id="sv2#area8#page35" name="Personalizza una maglietta" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="713" gr:y="171" id="sv2#area8#page35" name="Catalogo Magliette" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="120" gr:y="0" id="sv2#area8#page35#inu7" name="Scegli una Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att9" linkOrder="sv2#area8#page35#inu7#ln223">
-      <Selector id="sv2#area8#page35#inu7#su16" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv2#area8#page35#inu7#su16#kcond11" name="KeyCondition11" predicate="notIn" implied="true"/>
-      </Selector>
-      <Link id="sv2#area8#page35#inu7#ln223" name="personalizza" to="sv2#area8#page40#seu51" automaticCoupling="true" type="normal" validate="true"/>
-    </IndexUnit>
-    <SelectorUnit gr:x="0" gr:y="1" id="sv2#area8#page35#seu6" name="Template" entity="ent13">
-      <Link id="sv2#area8#page35#seu6#ln32" name="Link32" to="sv2#area8#page35#inu7" automaticCoupling="true" type="transport" validate="true"/>
-    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="0" gr:y="-1" id="sv2#area8#page35#miu43" name="Catalogo Magliette" moduleId="mov1#mpkg4#ctm2" linkOrder="sv2#area8#page35#miu43#ln378 sv2#area8#page35#miu43#ln384">
+      <Link id="sv2#area8#page35#miu43#ln378" name="Link378" to="sv2#area8#page40#seu51" type="normal" validate="true" codeRef="mov1#mpkg4#ctm2#ocu7">
+        <LinkParameter id="sv2#area8#page35#miu43#ln378#par516" name="oid_KeyCondition69 [oid]" source="mov1#mpkg4#ctm2#ocu7#ocp18" target="sv2#area8#page40#seu51#su114#kcond69.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page35#miu43#ln384" name="Link379" to="sv2#area8#page78#dau35" codeRef="mov1#mpkg4#ctm2#ocu2" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page35#miu43#ln384#par614" name="oid_KeyCondition1 [oid]" source="mov1#mpkg4#ctm2#ocu2#ocp13" target="sv2#area8#page78#dau35#su171#kcond110.ent1#att1"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page35#inu7">
-          <layout:Attribute attribute="ent1#att2"/>
-          <layout:Attribute attribute="ent1#att9"/>
-          <layout:Link link="sv2#area8#page35#inu7#ln223"/>
+        <layout:Unit unitId="sv2#area8#page35#miu43">
+          <layout:Link link="sv2#area8#page35#miu43#ln378"/>
+          <layout:Link link="sv2#area8#page35#miu43#ln384"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

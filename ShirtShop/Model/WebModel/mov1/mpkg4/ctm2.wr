@@ -1,6 +1,6 @@
 <ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="120" id="mov1#mpkg4#ctm2" name="CatalogoMagliette">
   <ContentUnits>
-    <OutputCollectorUnit gr:x="460" gr:y="260" id="mov1#mpkg4#ctm2#ocu2" name="Output Collector2">
+    <OutputCollectorUnit gr:x="460" gr:y="260" id="mov1#mpkg4#ctm2#ocu2" name="To-Dettagli">
       <OutputCollectorParameter id="mov1#mpkg4#ctm2#ocu2#ocp13" name="oid"/>
     </OutputCollectorUnit>
     <SelectorUnit id="mov1#mpkg4#ctm2#seu68" name="TipoMateriale" gr:x="480" gr:y="140" entity="ent1" distinctAttributes="ent1#att8" distinct="true">
@@ -15,7 +15,7 @@
         <LinkParameter id="mov1#mpkg4#ctm2#seu69#ln350#par561" name="manica_Manica [output]" source="ent1#att4Array" target="mov1#mpkg4#ctm2#enu35#msfld24_output"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit id="mov1#mpkg4#ctm2#inu6" name="Magliette" linkOrder="mov1#mpkg4#ctm2#inu6#ln348" gr:x="174" gr:y="215" displayAttributes="ent1#att2 ent1#att3" entity="ent1">
+    <IndexUnit id="mov1#mpkg4#ctm2#inu6" name="Magliette" linkOrder="mov1#mpkg4#ctm2#inu6#ln348 mov1#mpkg4#ctm2#inu6#ln302" gr:x="174" gr:y="215" displayAttributes="ent1#att2 ent1#att3" entity="ent1">
       <Selector id="mov1#mpkg4#ctm2#inu6#su143" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov1#mpkg4#ctm2#inu6#su143#rcond55" name="colore" predicate="in" implied="true" role="rel1#role2"/>
         <RelationshipRoleCondition id="mov1#mpkg4#ctm2#inu6#su143#rcond56" name="taglia" predicate="in" implied="true" role="rel3#role6"/>
@@ -28,6 +28,9 @@
       </Selector>
       <Link id="mov1#mpkg4#ctm2#inu6#ln348" to="mov1#mpkg4#ctm2#ocu2" type="normal" validate="true" name="Dettagli">
         <LinkParameter id="mov1#mpkg4#ctm2#inu6#ln348#par559" name="oid_KeyCondition1 [oid]" source="data[].ent1#att1" target="mov1#mpkg4#ctm2#ocu2#ocp13"/>
+      </Link>
+      <Link id="mov1#mpkg4#ctm2#inu6#ln302" name="Compra" to="mov1#mpkg4#ctm2#ocu7" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm2#inu6#ln302#par30" name="oid_oid" source="data[].ent1#att1" target="mov1#mpkg4#ctm2#ocu7#ocp18"/>
       </Link>
     </IndexUnit>
     <SelectorUnit id="mov1#mpkg4#ctm2#seu70" name="TipoCollo" gr:x="480" gr:y="20" entity="ent1" distinctAttributes="ent1#att5" distinct="true">
@@ -75,6 +78,17 @@
         <LinkParameter id="mov1#mpkg4#ctm2#seu64#ln364#par586" name="oid_KeyCondition108 [oid (not in)]" source="ent1#att1Array" target="mov1#mpkg4#ctm2#inu6#su143#kcond108.ent1#att1"/>
       </Link>
     </SelectorUnit>
+    <OutputCollectorUnit gr:x="460" gr:y="360" id="mov1#mpkg4#ctm2#ocu7" name="To-Compra">
+      <OutputCollectorParameter id="mov1#mpkg4#ctm2#ocu7#ocp18" name="oid"/>
+    </OutputCollectorUnit>
+    <DataUnit gr:x="70" gr:y="396" id="mov1#mpkg4#ctm2#dau21" name="utente" entity="User">
+      <Selector id="mov1#mpkg4#ctm2#dau21#su144" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg4#ctm2#dau21#su144#kcond97" name="KeyCondition97" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit gr:x="-30" gr:y="400" id="mov1#mpkg4#ctm2#gtu31" name="utente" contextParameters="UserCtxParam">
+      <Link id="mov1#mpkg4#ctm2#gtu31#ln377" name="Link377" to="mov1#mpkg4#ctm2#dau21" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -91,9 +105,10 @@
       </layout:Cell>
       <layout:Cell>
         <layout:Unit unitId="mov1#mpkg4#ctm2#inu6">
-          <layout:Link link="mov1#mpkg4#ctm2#inu6#ln348"/>
           <layout:Attribute attribute="ent1#att2"/>
           <layout:Attribute attribute="ent1#att3"/>
+          <layout:Link link="mov1#mpkg4#ctm2#inu6#ln348"/>
+          <layout:Link link="mov1#mpkg4#ctm2#inu6#ln302" layout:linkVisibilityCondition="mov1#mpkg4#ctm2#cexpr2" layout:linkDisableConditionNegated="true" layout:linkDisableCondition="mov1#mpkg4#ctm2#cexpr2"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>
@@ -106,4 +121,8 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <Variable id="mov1#mpkg4#ctm2#var2" name="utente_oid" type="integer" unitId="mov1#mpkg4#ctm2#dau21" parameter="data.userOID"/>
+  <ConditionExpression id="mov1#mpkg4#ctm2#cexpr2" name="utente_loggato">
+    <TextValue xml:space="preserve">return utente_oid != null</TextValue>
+  </ConditionExpression>
 </ContentModule>

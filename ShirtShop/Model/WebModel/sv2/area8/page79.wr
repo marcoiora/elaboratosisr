@@ -1,0 +1,84 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page79" name="Dettaglio Proposta" gr:x="371" gr:y="0">
+  <ContentUnits>
+    <DataUnit id="sv2#area8#page79#dau36" name="Template" gr:x="0" gr:y="0" entity="ent13">
+      <Selector id="sv2#area8#page79#dau36#su173" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page79#dau36#su173#kcond113" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#page79#dau36#ln387" name="Link10" to="sv2#area8#page79#dau37" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page79#dau36#ln387#par621" name="oid_KeyCondition4 [oid]" source="data.ent1#att1" target="sv2#area8#page79#dau37#su174#kcond114.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area8#page79#dau36#ln391" name="Link11" to="sv2#area8#page79#dau41" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page79#dau36#ln391#par622" name="TemplateToStampaFronte.oid_KeyCondition5 [oid]" source="data.rel22#role43_ent6#att22" target="sv2#area8#page79#dau41#su175#kcond118.ent6#att22"/>
+      </Link>
+      <Link id="sv2#area8#page79#dau36#ln392" name="Link12" to="sv2#area8#page79#dau42" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page79#dau36#ln392#par623" name="TemplateToStampaRetro.oid_KeyCondition6 [oid]" source="data.rel23#role45_ent6#att22" target="sv2#area8#page79#dau42#su176#kcond119.ent6#att22"/>
+      </Link>
+      <Link id="sv2#area8#page79#dau36#ln396" name="Link396" to="sv2#area8#page79#gctu4" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page79#dau36#ln396#par626" name="oid_PASSING" source="data.ent1#att1" passing="true"/>
+      </Link>
+    </DataUnit>
+    <DataUnit id="sv2#area8#page79#dau37" name="Proposta" gr:x="130" gr:y="2" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att8 ent1#att9" entity="ent1">
+      <Selector id="sv2#area8#page79#dau37#su174" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page79#dau37#su174#kcond114" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit id="sv2#area8#page79#dau41" name="Stampa fronte" gr:x="10" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
+      <Selector id="sv2#area8#page79#dau41#su175" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page79#dau41#su175#kcond118" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit id="sv2#area8#page79#dau42" name="Stampa retro" gr:x="130" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
+      <Selector id="sv2#area8#page79#dau42#su176" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page79#dau42#su176#kcond119" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <NoOpContentUnit gr:x="228" gr:y="29" id="sv2#area8#page79#gctu4" name="Compra" linkOrder="sv2#area8#page79#gctu4#ln395">
+      <Link id="sv2#area8#page79#gctu4#ln395" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page79#gctu4#ln395#par627" name="oid_PASSING_KeyCondition80 [oid]" sourceLinkParameter="sv2#area8#page79#dau36#ln396#par626" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
+      </Link>
+    </NoOpContentUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page79#dau37">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att9"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv2#area8#page79#gctu4">
+          <layout:Link link="sv2#area8#page79#gctu4#ln395"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page79#dau41">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att24"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page79#dau42">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att24"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
