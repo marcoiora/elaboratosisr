@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="325" gr:y="31" id="sv1#area1#page7" name="Le nostre proposte" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="340" gr:y="31" id="sv1#area1#page7" name="Le nostre proposte" landmark="true">
   <ContentUnits>
     <ModuleInstanceUnit id="sv1#area1#page7#miu37" name="ElencoProposteSenzaInattiveInstance" gr:x="0" gr:y="0" moduleId="mov1#mpkg4#ctm6" linkOrder="sv1#area1#page7#miu37#ln371">
       <Link id="sv1#area1#page7#miu37#ln371" name="Dettaglio proposta" to="sv1#area1#page9#dau4" type="normal" validate="true">

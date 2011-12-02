@@ -109,6 +109,8 @@
           <layout:Attribute attribute="ent1#att3"/>
           <layout:Link link="mov1#mpkg4#ctm2#inu6#ln348"/>
           <layout:Link link="mov1#mpkg4#ctm2#inu6#ln302" layout:linkVisibilityCondition="mov1#mpkg4#ctm2#cexpr2" layout:linkDisableConditionNegated="true" layout:linkDisableCondition="mov1#mpkg4#ctm2#cexpr2"/>
+          <layout:LayoutParameter name="use-empty-unit-message" value="true" type="unit"/>
+          <layout:LayoutParameter name="empty-unit-message" value="EmptyShirt" type="unit"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>
@@ -125,4 +127,5 @@
   <ConditionExpression id="mov1#mpkg4#ctm2#cexpr2" name="utente_loggato">
     <TextValue xml:space="preserve">return utente_oid != null</TextValue>
   </ConditionExpression>
+  <Variable id="mov1#mpkg4#ctm2#var6" name="NumeroMagliette" type="integer" unitId="mov1#mpkg4#ctm2#inu6" parameter="data[].ent1#att1"/>
 </ContentModule>
