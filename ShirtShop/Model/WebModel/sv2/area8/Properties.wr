@@ -176,8 +176,8 @@
         <LinkParameter id="sv2#area8#tmu1#oln69#par354" name="ordine_oid_PASSING_KeyCondition64 [oid]" sourceLinkParameter="sv2#area8#page46#mssu1#ln232#par351" target="sv2#area8#mfu2#su127#kcond64.ent9#att35"/>
       </OKLink>
     </TimeUnit>
-    <CreateUnit gr:x="1744" gr:y="1378" id="sv2#area8#cru18" name="Salva Stampa" entity="ent6">
-      <KOLink id="sv2#area8#cru18#kln69" name="KOLink69" to="sv2#area8#page57" automaticCoupling="true" gr:bendpoints="-16,96,154,60"/>
+    <CreateUnit gr:x="1579" gr:y="1259" id="sv2#area8#cru18" name="Salva Stampa" entity="ent6">
+      <KOLink id="sv2#area8#cru18#kln69" name="KOLink69" to="sv2#area8#page57" automaticCoupling="true" gr:bendpoints="-52,-70,152,-71"/>
       <OKLink id="sv2#area8#cru18#oln134" name="OKLink134" to="sv2#area8#page41#enu19" gr:bendpoints="-80,-163,502,-63">
         <LinkParameter id="sv2#area8#cru18#oln134#par550" name="nome_Stampa selezionata" source="ent6#att23Array" target="sv2#area8#page41#enu19#fld38_slot"/>
         <LinkParameter id="sv2#area8#cru18#oln134#par551" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page41#enu19#fld29_slot"/>
@@ -190,6 +190,16 @@
         <LinkParameter id="sv2#area8#cru22#oln131#par556" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page42#enu20#fld31_slot"/>
       </OKLink>
     </CreateUnit>
-    <SetUnit gr:x="1311" gr:y="2395" id="sv2#area8#stu9" name="SvuotaConfigurazioneCorrente" contextParameters="ctx2"/>
+    <SetUnit gr:x="1146" gr:y="2276" id="sv2#area8#stu9" name="SvuotaConfigurazioneCorrente" contextParameters="ctx2"/>
+    <ScriptUnit gr:x="1601" gr:y="1401" id="sv2#area8#scu4" name="ResizeImage" script="WEB-INF/descr/resizeimage.groovy">
+      <OKLink id="sv2#area8#scu4#oln140" name="OKLink140" to="sv2#area8#cru18">
+        <LinkParameter id="sv2#area8#scu4#oln140#par546" name="Descrizione_PASSING_descrizione" sourceLinkParameter="sv2#area8#page57#enu27#ln341#par527" target="sv2#area8#cru18.ent6#att24"/>
+        <LinkParameter id="sv2#area8#scu4#oln140#par547" name="File immagine_PASSING_immagineHD" sourceLinkParameter="sv2#area8#page57#enu27#ln341#par535" target="sv2#area8#cru18.ent6#att26"/>
+        <LinkParameter id="sv2#area8#scu4#oln140#par549" name="true_isactive" sourceValue="true" target="sv2#area8#cru18.ent6#att49"/>
+        <LinkParameter id="sv2#area8#scu4#oln140#par592" name="Nome immagine_PASSING_nome" sourceLinkParameter="sv2#area8#page57#enu27#ln341#par545" target="sv2#area8#cru18.ent6#att23"/>
+        <LinkParameter id="sv2#area8#scu4#oln140#par593" name="10_prezzoBase" sourceValue="10" target="sv2#area8#cru18.ent6#att27"/>
+        <LinkParameter id="sv2#area8#scu4#oln140#par594" name="thumbnail_anteprima" source="result(thumbnail)" target="sv2#area8#cru18.ent6#att25"/>
+      </OKLink>
+    </ScriptUnit>
   </OperationUnits>
 </Area>
