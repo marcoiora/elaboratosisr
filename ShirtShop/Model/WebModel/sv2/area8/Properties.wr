@@ -1,6 +1,6 @@
 <Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-1664" gr:y="-2618" id="sv2#area8" name="Web Market" landmark="true" defaultPage="sv2#area8#page64" landmarks="sv2#area8#page34 sv2#area8#page35 sv2#area8#page80 sv2#area8#page39">
   <OperationUnits>
-    <SetUnit gr:x="747" gr:y="508" id="sv2#area8#stu2" name="Set Maglietta" contextParameters="ctx1"/>
+    <SetUnit gr:x="676" gr:y="500" id="sv2#area8#stu2" name="Set Maglietta" contextParameters="ctx1"/>
     <CreateUnit gr:x="1117" gr:y="928" id="sv2#area8#cru3" name="Configurazione" entity="ent7">
       <Link id="sv2#area8#cru3#ln214" name="Link214" to="sv2#area8#stu5" type="transport" validate="true">
         <LinkParameter id="sv2#area8#cru3#ln214#par296" name="oid_configurazione_oid" source="ent7#att28Array" target="sv2#area8#stu5.ctx2"/>
@@ -113,7 +113,7 @@
       </Link>
       <OKLink id="sv2#area8#scu2#oln98" name="OKLink98" to="sv2#area8#cru4" automaticCoupling="true" gr:bendpoints="-75,-97,52,119"/>
     </ScriptUnit>
-    <SetUnit gr:x="165" gr:y="330" id="sv2#area8#stu7" name="Set Template" contextParameters="ctx4"/>
+    <SetUnit gr:x="126" gr:y="330" id="sv2#area8#stu7" name="Set Template" contextParameters="ctx4"/>
     <CreateUnit gr:x="506" gr:y="820" id="sv2#area8#cru13" name="Configurazione" entity="ent7" linkOrder="sv2#area8#cru13#ln290">
       <Link id="sv2#area8#cru13#ln290" name="Link290" to="sv2#area8#stu8" type="transport" validate="true">
         <LinkParameter id="sv2#area8#cru13#ln290#par451" name="oid_configurazione_oid" source="ent7#att28Array" target="sv2#area8#stu8.ctx2"/>
