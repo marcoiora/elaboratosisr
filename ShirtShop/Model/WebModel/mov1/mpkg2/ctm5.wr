@@ -11,14 +11,18 @@
         <LinkParameter id="mov1#mpkg2#ctm5#miu29#ln338#par538" name="lastcheck_AttCondition16" source="mov1#opm4#okcu7#ocp2" target="mov1#mpkg2#ctm5#mdu3#su2#acond5"/>
       </Link>
     </ModuleInstanceUnit>
-    <MultiDataUnit id="mov1#mpkg2#ctm5#mdu3" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" gr:x="200" gr:y="150" name="Ordini evasi dall'ultima visita">
+    <MultiDataUnit id="mov1#mpkg2#ctm5#mdu3" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" gr:x="240" gr:y="150" name="Ordini evasi dall'ultima visita">
       <Selector id="mov1#mpkg2#ctm5#mdu3#su2" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="mov1#mpkg2#ctm5#mdu3#su2#acond5" attributes="ent9#att38" predicate="gteq" booleanOperator="or" implied="false" name="AttCondition16"/>
       </Selector>
+      <Link id="mov1#mpkg2#ctm5#mdu3#ln14" name="Link14" to="mov1#mpkg2#ctm5#mdu5" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm5#mdu3#ln14#par515" name="oid_KeyCondition11 [oid (not in)]" source="ent9#att35Array" target="mov1#mpkg2#ctm5#mdu5#su19#kcond11.ent9#att35"/>
+      </Link>
     </MultiDataUnit>
-    <MultiDataUnit id="mov1#mpkg2#ctm5#mdu5" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" gr:x="200" gr:y="30" name="Ordini presi in carico dall'ultima visita">
+    <MultiDataUnit id="mov1#mpkg2#ctm5#mdu5" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" gr:x="200" gr:y="20" name="Ordini presi in carico dall'ultima visita">
       <Selector id="mov1#mpkg2#ctm5#mdu5#su19" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="mov1#mpkg2#ctm5#mdu5#su19#acond13" attributes="ent9#att37" predicate="gteq" booleanOperator="or" implied="false" name="AttCondition14"/>
+        <KeyCondition id="mov1#mpkg2#ctm5#mdu5#su19#kcond11" name="KeyCondition11" predicate="notIn" implied="false"/>
       </Selector>
     </MultiDataUnit>
   </ContentUnits>

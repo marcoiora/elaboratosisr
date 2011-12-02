@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="545" gr:y="142" id="sv1#area1#page9" name="Dettaglio Proposta" linkOrder="sv1#area1#page9#ln24">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="560" gr:y="171" id="sv1#area1#page9" name="Dettaglio Proposta" linkOrder="sv1#area1#page9#ln24">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="0" id="sv1#area1#page9#dau4" name="Template" entity="ent13">
       <Selector id="sv1#area1#page9#dau4#su4" defaultPolicy="fill" booleanOperator="and">
@@ -70,5 +70,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv1#area1#page9#ln24" name="Torna alle Proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-3,-184,244,3"/>
+  <Link id="sv1#area1#page9#ln24" name="Torna alle Proposte" to="sv1#area1#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="10,-225,230,-8"/>
 </Page>
