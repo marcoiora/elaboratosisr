@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="890" gr:y="469" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="836" gr:y="460" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
   <ContentUnits>
     <SelectorUnit gr:x="105" gr:y="94" id="sv2#area8#page40#seu44" name="Sessi" entity="ent4">
       <Selector id="sv2#area8#page40#seu44#su17" defaultPolicy="fill" booleanOperator="and">
@@ -66,37 +66,41 @@
         <RelationshipRoleCondition id="sv2#area8#page40#dau16#su116#rcond40" name="Colore" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
     </DataUnit>
-    <ModuleInstanceUnit gr:x="288" gr:y="314" id="sv2#area8#page40#miu31" name="StatoPersonalizzazione" moduleId="mov1#mpkg2#ctm4"/>
+    <ModuleInstanceUnit gr:x="344" gr:y="304" id="sv2#area8#page40#miu31" name="StatoPersonalizzazione" moduleId="mov1#mpkg2#ctm4"/>
+    <MultiMessageUnit id="sv2#area8#page40#mssu17" name="Step di Caratteristiche Maglietta" gr:x="334" gr:y="184">
+      <Message xml:space="preserve">In questa sezione &#232; possibile scegliere le caratteristiche della maglietta quali colori, sesso, taglia.</Message>
+    </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page40#enu18">
-          <layout:Field field="sv2#area8#page40#enu18#sfld3"/>
-          <layout:Field field="sv2#area8#page40#enu18#sfld4"/>
-          <layout:Field field="sv2#area8#page40#enu18#sfld9"/>
-          <layout:Link link="sv2#area8#page40#enu18#ln50"/>
-          <layout:Link link="sv2#area8#page40#enu18#ln263"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page40#dau16">
-          <layout:Attribute attribute="ent5#att21"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page40#miu31"/>
+      <layout:Cell width="1200">
+        <layout:Unit unitId="sv2#area8#page40#mssu17"/>
       </layout:Cell>
     </layout:Row>
     <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page40#enu18">
+                <layout:Field field="sv2#area8#page40#enu18#sfld3"/>
+                <layout:Field field="sv2#area8#page40#enu18#sfld4"/>
+                <layout:Field field="sv2#area8#page40#enu18#sfld9"/>
+                <layout:Link link="sv2#area8#page40#enu18#ln50"/>
+                <layout:Link link="sv2#area8#page40#enu18#ln263"/>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page40#dau16">
+                <layout:Attribute attribute="ent5#att21"/>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page40#miu31"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
     </layout:Row>
   </layout:Grid>
   <Variable id="sv2#area8#page40#var1" name="maglietta_oid" type="integer"/>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="295" gr:y="319" id="sv2#area8#page44" name="Step 1 - Caratteristiche">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="276" gr:y="320" id="sv2#area8#page44" name="Step 1 - Caratteristiche">
   <ContentUnits>
     <SelectorUnit gr:x="60" gr:y="0" id="sv2#area8#page44#seu53" name="Template" entity="ent13">
       <Selector id="sv2#area8#page44#seu53#su118" defaultPolicy="fill" booleanOperator="and">
@@ -75,33 +75,43 @@
         <RelationshipRoleCondition id="sv2#area8#page44#dau17#su122#rcond46" name="Colore" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
     </DataUnit>
+    <MultiMessageUnit gr:x="145" gr:y="335" id="sv2#area8#page44#mssu13" name="Step di Caratteristiche Proposta">
+      <Message xml:space="preserve">In questa sezione &#232; possibile scegliere le caratteristiche della proposta quali colori, sesso, taglia.</Message>
+    </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page44#enu9">
-          <layout:Field field="sv2#area8#page44#enu9#sfld10"/>
-          <layout:Field field="sv2#area8#page44#enu9#sfld11"/>
-          <layout:Field field="sv2#area8#page44#enu9#sfld12"/>
-          <layout:Link link="sv2#area8#page44#enu9#ln277"/>
-          <layout:Link link="sv2#area8#page44#enu9#ln288"/>
-        </layout:Unit>
+      <layout:Cell width="1200">
+        <layout:Unit unitId="sv2#area8#page44#mssu13"/>
       </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page44#dau17">
-          <layout:Attribute attribute="ent5#att21"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page44#enu9">
+                <layout:Field field="sv2#area8#page44#enu9#sfld10"/>
+                <layout:Field field="sv2#area8#page44#enu9#sfld11"/>
+                <layout:Field field="sv2#area8#page44#enu9#sfld12"/>
+                <layout:Link link="sv2#area8#page44#enu9#ln277"/>
+                <layout:Link link="sv2#area8#page44#enu9#ln288"/>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page44#dau17">
+                <layout:Attribute attribute="ent5#att21"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
     </layout:Row>
     <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>

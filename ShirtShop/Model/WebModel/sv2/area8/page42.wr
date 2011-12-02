@@ -40,40 +40,44 @@
       <Link id="sv2#area8#page42#mssu10#ln342" name="Carica la tua stampa personalizzata!" to="sv2#area8#miu47" automaticCoupling="true" type="normal" validate="true"/>
     </MultiMessageUnit>
     <ModuleInstanceUnit id="sv2#area8#page42#miu35" name="StatoPersonalizzazione" gr:x="101" gr:y="121" moduleId="mov1#mpkg2#ctm4"/>
+    <MultiMessageUnit id="sv2#area8#page42#mssu19" name="Step di Personalizzazione Stampa Posteriore" gr:x="296" gr:y="150">
+      <Message xml:space="preserve">In questa sezione &#232; possibile scegliere la stampa anteriore della maglietta scelta.</Message>
+    </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page42#inu10">
-          <layout:Attribute attribute="ent6#att23"/>
-          <layout:Attribute attribute="ent6#att25"/>
-          <layout:Link link="sv2#area8#page42#inu10#ln233"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page42#enu20">
-          <layout:Link link="sv2#area8#page42#enu20#ln244"/>
-          <layout:Link link="sv2#area8#page42#enu20#ln265"/>
-          <layout:Field field="sv2#area8#page42#enu20#fld39"/>
-          <layout:Field field="sv2#area8#page42#enu20#fld32"/>
-        </layout:Unit>
-        <layout:Unit unitId="sv2#area8#page42#mssu10">
-          <layout:Link link="sv2#area8#page42#mssu10#ln342"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page42#miu35"/>
+      <layout:Cell width="1200">
+        <layout:Unit unitId="sv2#area8#page42#mssu19"/>
       </layout:Cell>
     </layout:Row>
     <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page42#inu10">
+                <layout:Attribute attribute="ent6#att23"/>
+                <layout:Attribute attribute="ent6#att25"/>
+                <layout:Link link="sv2#area8#page42#inu10#ln233"/>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page42#enu20">
+                <layout:Link link="sv2#area8#page42#enu20#ln244"/>
+                <layout:Link link="sv2#area8#page42#enu20#ln265"/>
+                <layout:Field field="sv2#area8#page42#enu20#fld39"/>
+                <layout:Field field="sv2#area8#page42#enu20#fld32"/>
+              </layout:Unit>
+              <layout:Unit unitId="sv2#area8#page42#mssu10">
+                <layout:Link link="sv2#area8#page42#mssu10#ln340"/>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page42#miu35"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
     </layout:Row>
   </layout:Grid>
 </Page>

@@ -24,32 +24,35 @@
         <LinkParameter id="sv2#area8#page45#enu12#ln294#par454" name="Quantit&#224;_quantita" source="sv2#area8#page45#enu12#fld40" target="sv2#area8#scu3.quantita"/>
       </Link>
     </EntryUnit>
+    <MultiMessageUnit id="sv2#area8#page45#mssu16" name="Step di Aggiungi al carrello" gr:x="136" gr:y="119">
+      <Message xml:space="preserve">In questa sezione &#232; possibile scegliere la quantit&#224; della proposta scelta e aggiungerla al carrello.</Message>
+    </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page45#dau18">
-          <layout:Attribute attribute="ent7#att29"/>
-          <layout:Attribute attribute="ent7#att30"/>
-        </layout:Unit>
+      <layout:Cell width="1200">
+        <layout:Unit unitId="sv2#area8#page45#mssu16"/>
       </layout:Cell>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page45#enu12">
-          <layout:Field field="sv2#area8#page45#enu12#fld40"/>
-          <layout:Link link="sv2#area8#page45#enu12#ln293"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page45#dau18">
+                <layout:Attribute attribute="ent7#att29"/>
+                <layout:Attribute attribute="ent7#att30"/>
+              </layout:Unit>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area8#page45#enu12">
+                <layout:Field field="sv2#area8#page45#enu12#fld40"/>
+                <layout:Link link="sv2#area8#page45#enu12#ln293"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
     </layout:Row>
   </layout:Grid>
 </Page>

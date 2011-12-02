@@ -1,20 +1,40 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="60" id="mov1#mpkg4#ctm3" name="CatalogoStampe">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="80" gr:y="70" id="mov1#mpkg4#ctm3" name="CatalogoStampe">
   <ContentUnits>
-    <OutputCollectorUnit gr:x="410" gr:y="20" id="mov1#mpkg4#ctm3#ocu3" name="Output Collector3">
+    <OutputCollectorUnit gr:x="330" gr:y="10" id="mov1#mpkg4#ctm3#ocu3" name="Output Collector3">
       <OutputCollectorParameter id="mov1#mpkg4#ctm3#ocu3#ocp14" name="oid"/>
     </OutputCollectorUnit>
-    <IndexUnit id="mov1#mpkg4#ctm3#inu30" name="Stampe" linkOrder="mov1#mpkg4#ctm3#inu30#ln361" gr:x="260" gr:y="10" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
+    <IndexUnit id="mov1#mpkg4#ctm3#inu30" name="Stampe" linkOrder="mov1#mpkg4#ctm3#inu30#ln361" gr:x="180" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
       <Selector id="mov1#mpkg4#ctm3#inu30#su147" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov1#mpkg4#ctm3#inu30#su147#rcond58" name="tema" predicate="in" implied="true" role="rel24#role47"/>
         <AttributesCondition id="mov1#mpkg4#ctm3#inu30#su147#acond14" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent6#att49" value="true"/>
+        <KeyCondition id="mov1#mpkg4#ctm3#inu30#su147#kcond98" name="KeyCondition98" predicate="in" implied="false"/>
       </Selector>
       <Link id="mov1#mpkg4#ctm3#inu30#ln361" to="mov1#mpkg4#ctm3#ocu3" type="normal" validate="true" name="Dettaglio stampa">
         <LinkParameter id="mov1#mpkg4#ctm3#inu30#ln361#par581" name="oid_KeyCondition3 [oid]" source="data[].ent6#att22" target="mov1#mpkg4#ctm3#ocu3#ocp14"/>
       </Link>
     </IndexUnit>
-    <MultiChoiceIndexUnit id="mov1#mpkg4#ctm3#mciu11" name="Temi Disponibili" linkOrder="mov1#mpkg4#ctm3#mciu11#ln360" gr:x="90" gr:y="10" entity="ent14" displayAttributes="ent14#att54">
+    <MultiChoiceIndexUnit id="mov1#mpkg4#ctm3#mciu11" name="Temi Disponibili" linkOrder="mov1#mpkg4#ctm3#mciu11#ln360" gr:x="10" gr:y="0" entity="ent14" displayAttributes="ent14#att54">
       <Link id="mov1#mpkg4#ctm3#mciu11#ln360" name="Filtra" to="mov1#mpkg4#ctm3#inu30" type="normal" automaticCoupling="true" validate="true"/>
     </MultiChoiceIndexUnit>
+    <GetUnit gr:x="290" gr:y="210" id="mov1#mpkg4#ctm3#gtu30" name="GetUnit30" contextParameters="UserCtxParam">
+      <Link id="mov1#mpkg4#ctm3#gtu30#ln379" name="Link379" to="mov1#mpkg4#ctm3#seu74" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm3#gtu30#ln379#par631" name="UserCtxParam.oid_DiCliente [oid]" source="mov1#mpkg4#ctm3#gtu30.UserCtxParam" target="mov1#mpkg4#ctm3#seu74#su145#rcond66.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm3#seu65" name="Cliente" gr:x="0" gr:y="100" entity="ent10">
+      <Link id="mov1#mpkg4#ctm3#seu65#ln331" name="Link324" to="mov1#mpkg4#ctm3#seu74" type="transport" validate="true" gr:bendpoints="75,8,-37,-88">
+        <LinkParameter id="mov1#mpkg4#ctm3#seu65#ln331#par632" name="oid_DiNessuno [oid]" source="userOIDArray" target="mov1#mpkg4#ctm3#seu74#su145#rcond64.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#mpkg4#ctm3#seu74" name="Stampa" gr:x="90" gr:y="190" entity="ent6">
+      <Selector id="mov1#mpkg4#ctm3#seu74#su145" defaultPolicy="fill" booleanOperator="or">
+        <RelationshipRoleCondition id="mov1#mpkg4#ctm3#seu74#su145#rcond64" name="DiNessuno" predicate="notIn" implied="false" role="rel21#role41"/>
+        <RelationshipRoleCondition id="mov1#mpkg4#ctm3#seu74#su145#rcond66" name="DiCliente" predicate="in" implied="false" role="rel21#role41"/>
+      </Selector>
+      <Link id="mov1#mpkg4#ctm3#seu74#ln369" name="Link369" to="mov1#mpkg4#ctm3#inu30" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg4#ctm3#seu74#ln369#par633" name="oid_KeyCondition98 [oid]" source="ent6#att22Array" target="mov1#mpkg4#ctm3#inu30#su147#kcond98.ent6#att22"/>
+      </Link>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>

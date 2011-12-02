@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1350" gr:y="145" id="sv4#area6#page23" name="Nuova Proposta">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1263" gr:y="134" id="sv4#area6#page23" name="Nuova Proposta">
   <ContentUnits>
-    <EntryUnit id="sv4#area6#page23#enu13" name="Inserisci dati proposta" gr:x="155" gr:y="122" fieldOrder="sv4#area6#page23#enu13#fld57 sv4#area6#page23#enu13#fld58 sv4#area6#page23#enu13#fld59 sv4#area6#page23#enu13#fld60 sv4#area6#page23#enu13#fld63 sv4#area6#page23#enu13#msfld9 sv4#area6#page23#enu13#msfld10 sv4#area6#page23#enu13#msfld11 sv4#area6#page23#enu13#sfld5 sv4#area6#page23#enu13#fld65 sv4#area6#page23#enu13#sfld6 sv4#area6#page23#enu13#fld66 sv4#area6#page23#enu13#fld64" linkOrder="sv4#area6#page23#enu13#ln165 sv4#area6#page23#enu13#ln179 sv4#area6#page23#enu13#ln180 sv4#area6#page23#enu13#ln181">
+    <EntryUnit id="sv4#area6#page23#enu13" name="Inserisci dati proposta" gr:x="240" gr:y="170" fieldOrder="sv4#area6#page23#enu13#fld57 sv4#area6#page23#enu13#fld58 sv4#area6#page23#enu13#fld59 sv4#area6#page23#enu13#fld60 sv4#area6#page23#enu13#fld63 sv4#area6#page23#enu13#msfld9 sv4#area6#page23#enu13#msfld10 sv4#area6#page23#enu13#msfld11 sv4#area6#page23#enu13#sfld5 sv4#area6#page23#enu13#fld65 sv4#area6#page23#enu13#sfld6 sv4#area6#page23#enu13#fld66 sv4#area6#page23#enu13#fld64" linkOrder="sv4#area6#page23#enu13#ln165 sv4#area6#page23#enu13#ln179 sv4#area6#page23#enu13#ln180 sv4#area6#page23#enu13#ln181">
       <Field id="sv4#area6#page23#enu13#fld57" name="Nome" type="string" modifiable="true"/>
       <Field id="sv4#area6#page23#enu13#fld58" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
       <Field id="sv4#area6#page23#enu13#fld59" name="Manica" ajaxAutocompleteEnabled="true" ajaxAutocompleteIndicator="true" ajaxAutocompleteMinChars="1" type="string" modifiable="true" preloaded="true" ajaxAutocompleteLink="sv4#area6#page23#enu13#ln179"/>
@@ -33,37 +33,43 @@
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par335" name="Taglie disponibili_taglie" source="sv4#area6#page23#enu13#msfld9" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp43"/>
       </Link>
       <Link id="sv4#area6#page23#enu13#ln179" name="Manica" to="sv4#area6#page28#inu12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12"/>
-      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-606,2,286,-188"/>
+      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-347,5,524,-158;-532,-64,339,-227"/>
       <Link id="sv4#area6#page23#enu13#ln181" name="Collo" to="sv4#area6#page30#inu14" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-298,212,674,-708;-578,330,394,-590;-910,410,62,-510;-910,656,62,-264"/>
     </EntryUnit>
-    <SelectorUnit id="sv4#area6#page23#seu29" name="Taglie" gr:x="191" gr:y="0" distinct="false" distinctAttributes="ent3#att15 ent3#att16" entity="ent3">
+    <SelectorUnit id="sv4#area6#page23#seu29" name="Taglie" gr:x="277" gr:y="9" distinct="false" distinctAttributes="ent3#att15 ent3#att16" entity="ent3">
       <SortAttribute attribute="ent3#att15" order="ascending"/>
       <Link id="sv4#area6#page23#seu29#ln149" name="Link149" to="sv4#area6#page23#enu13" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page23#seu29#ln149#par269" name="nome_Taglie disponibili [label]" source="ent3#att16Array" target="sv4#area6#page23#enu13#msfld9_label"/>
         <LinkParameter id="sv4#area6#page23#seu29#ln149#par270" name="oid_Taglie disponibili [output]" source="ent3#att15Array" target="sv4#area6#page23#enu13#msfld9_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit id="sv4#area6#page23#seu30" name="Sessi disponibili" gr:x="81" gr:y="0" distinctAttributes="ent4#att17 ent4#att18" entity="ent4">
+    <SelectorUnit id="sv4#area6#page23#seu30" name="Sessi disponibili" gr:x="167" gr:y="9" distinctAttributes="ent4#att17 ent4#att18" entity="ent4">
       <SortAttribute attribute="ent4#att18" order="ascending"/>
       <Link id="sv4#area6#page23#seu30#ln148" name="Link148" to="sv4#area6#page23#enu13" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page23#seu30#ln148#par267" name="nome_Sessi disponibili [label]" source="ent4#att18Array" target="sv4#area6#page23#enu13#msfld10_label"/>
         <LinkParameter id="sv4#area6#page23#seu30#ln148#par268" name="oid_Sessi disponibili [output]" source="ent4#att17Array" target="sv4#area6#page23#enu13#msfld10_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit id="sv4#area6#page23#seu31" name="Colori disponibili" gr:x="265" gr:y="3" distinctAttributes="ent2#att12 ent2#att13" entity="ent2">
+    <SelectorUnit id="sv4#area6#page23#seu31" name="Colori disponibili" gr:x="351" gr:y="12" distinctAttributes="ent2#att12 ent2#att13" entity="ent2">
       <SortAttribute attribute="ent2#att13" order="ascending"/>
       <Link id="sv4#area6#page23#seu31#ln150" name="Link150" to="sv4#area6#page23#enu13" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page23#seu31#ln150#par271" name="nome_Colori disponibili [label]" source="ent2#att13Array" target="sv4#area6#page23#enu13#msfld11_label"/>
         <LinkParameter id="sv4#area6#page23#seu31#ln150#par272" name="oid_Colori disponibili [output]" source="ent2#att12Array" target="sv4#area6#page23#enu13#msfld11_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="0" gr:y="55" id="sv4#area6#page23#seu32" name="Stampa" entity="ent6">
+    <SelectorUnit gr:x="11" gr:y="101" id="sv4#area6#page23#seu32" name="Stampa" entity="ent6">
       <Link id="sv4#area6#page23#seu32#ln151" name="Link151" to="sv4#area6#page23#enu13" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page23#seu32#ln151#par273" name="nome_Stampa Fronte [label]" source="ent6#att23Array" target="sv4#area6#page23#enu13#sfld5_label"/>
         <LinkParameter id="sv4#area6#page23#seu32#ln151#par274" name="oid_Stampa Fronte [output]" source="ent6#att22Array" target="sv4#area6#page23#enu13#sfld5_output"/>
         <LinkParameter id="sv4#area6#page23#seu32#ln151#par275" name="nome_Stampa Retro [label]" source="ent6#att23Array" target="sv4#area6#page23#enu13#sfld6_label"/>
         <LinkParameter id="sv4#area6#page23#seu32#ln151#par276" name="oid_Stampa Retro [output]" source="ent6#att22Array" target="sv4#area6#page23#enu13#sfld6_output"/>
       </Link>
+      <Selector id="sv4#area6#page23#seu32#su16" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#area6#page23#seu32#su16#rcond63" name="DiNessuno" predicate="notIn" implied="false" role="rel21#role41"/>
+      </Selector>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv4#area6#page23#seu6" name="Cliente" entity="ent10">
+      <Link id="sv4#area6#page23#seu6#ln324" name="Link324" to="sv4#area6#page23#seu32" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="71,42,37,-65"/>
     </SelectorUnit>
   </ContentUnits>
   <layout:Grid>
