@@ -34,7 +34,7 @@
         <LinkParameter id="sv4#area6#page21#seu11#ln94#par234" name="oid_Tema - Preselection" source="ent14#att53Array" target="sv4#area6#page21#enu11#msfld8_presel"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="38" gr:y="1" id="sv4#area6#page21#seu12" name="Stampa" entity="ent6" distinctAttributes="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49 rel21#role42.ent10#att56">
+    <SelectorUnit gr:x="38" gr:y="1" id="sv4#area6#page21#seu12" name="Stampa" entity="ent6" distinctAttributes="ent6#att22 ent6#att23 ent6#att24 ent6#att25 ent6#att26 ent6#att27 ent6#att49 rel21#role42.userName">
       <Selector id="sv4#area6#page21#seu12#su60" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#area6#page21#seu12#su60#kcond47" name="KeyCondition47" predicate="in" implied="false"/>
       </Selector>
@@ -46,7 +46,7 @@
         <LinkParameter id="sv4#area6#page21#seu12#ln95#par238" name="immagineHD_Immagine per stampa" source="ent6#att26Array" target="sv4#area6#page21#enu11#fld45_slot"/>
         <LinkParameter id="sv4#area6#page21#seu12#ln95#par239" name="nome_Nome" source="ent6#att23Array" target="sv4#area6#page21#enu11#fld42_slot"/>
         <LinkParameter id="sv4#area6#page21#seu12#ln95#par240" name="prezzoBase_Prezzo (a dimensione piena)" source="ent6#att27Array" target="sv4#area6#page21#enu11#fld46_slot"/>
-        <LinkParameter id="sv4#area6#page21#seu12#ln95#par379" name="StampaToCliente.codiceFiscale_Cliente" source="rel21#role42$ent10#att56Array" target="sv4#area6#page21#enu11#fld78_slot"/>
+        <LinkParameter id="sv4#area6#page21#seu12#ln95#par379" name="StampaToCliente.codiceFiscale_Cliente" source="rel21#role42$userNameArray" target="sv4#area6#page21#enu11#fld78_slot"/>
       </Link>
       <Link id="sv4#area6#page21#seu12#ln103" name="Link103" to="sv4#area6#stu3" type="transport" validate="true" gr:bendpoints="26,-55,-228,72">
         <LinkParameter id="sv4#area6#page21#seu12#ln103#par242" name="oid_stampa_oid" source="ent6#att22Array" target="sv4#area6#stu3.ctx3"/>

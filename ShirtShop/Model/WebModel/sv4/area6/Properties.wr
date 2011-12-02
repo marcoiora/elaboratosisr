@@ -1,4 +1,4 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="962" gr:y="-199" id="sv4#area6" name="Gestione Prodotti" landmark="true" defaultPage="sv4#area6#page24" landmarks="sv4#area6#page27 sv4#area6#page29 sv4#area6#page32">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1090" gr:y="-190" id="sv4#area6" name="Gestione Prodotti" landmark="true" defaultPage="sv4#area6#page24" landmarks="sv4#area6#page27 sv4#area6#page29 sv4#area6#page32">
   <OperationUnits>
     <CreateUnit id="sv4#area6#cru5" name="Salva e Nuova Foto" gr:x="557" gr:y="885" entity="ent5">
       <KOLink id="sv4#area6#cru5#kln12" name="KOLink12" to="sv4#page16" automaticCoupling="true" gr:bendpoints="0,114,1134,234;-560,94,574,214"/>
