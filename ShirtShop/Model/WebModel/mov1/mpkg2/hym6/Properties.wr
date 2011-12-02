@@ -1,0 +1,35 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="428" id="mov1#mpkg2#hym6" name="Carica Stampa Personalizzata">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="0" gr:y="253" id="mov1#mpkg2#hym6#icu18" name="Input Collector">
+      <OKLink id="mov1#mpkg2#hym6#icu18#oln144" to="mov1#mpkg2#hym6#page65" validate="true" name="Carica la tua stampa personalizzata!"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1132" gr:y="0" id="mov1#mpkg2#hym6#okcu4" name="OK Collector4">
+      <OutputCollectorParameter id="mov1#mpkg2#hym6#okcu4#ocp19" name="oid"/>
+      <OutputCollectorParameter id="mov1#mpkg2#hym6#okcu4#ocp20" name="nome_PASSING_Stampa selezionata"/>
+    </OKCollectorUnit>
+    <CreateUnit id="mov1#mpkg2#hym6#cru23" name="Salva Stampa" gr:x="622" gr:y="76" entity="ent6">
+      <KOLink id="mov1#mpkg2#hym6#cru23#kln72" name="KOLink69" to="mov1#mpkg2#hym6#page65" automaticCoupling="true" gr:bendpoints="-52,-70,152,-71"/>
+      <OKLink id="mov1#mpkg2#hym6#cru23#oln147" name="OKLink141" to="mov1#mpkg2#hym6#scu5">
+        <LinkParameter id="mov1#mpkg2#hym6#cru23#oln147#par650" name="immagineHD_orig_image" source="ent6#att26Array" target="mov1#mpkg2#hym6#scu5.orig_image"/>
+        <LinkParameter id="mov1#mpkg2#hym6#cru23#oln147#par651" name="oid_PASSING" source="ent6#att22Array" passing="true"/>
+        <LinkParameter id="mov1#mpkg2#hym6#cru23#oln147#par652" name="nome_PASSING" source="ent6#att23Array" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+    <ModifyUnit id="mov1#mpkg2#hym6#mfu19" name="Aggiungi Thumbnail" gr:x="732" gr:y="196" entity="ent6">
+      <Selector id="mov1#mpkg2#hym6#mfu19#su145" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg2#hym6#mfu19#su145#kcond102" name="KeyCondition98" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg2#hym6#mfu19#oln149" to="mov1#mpkg2#hym6#okcu4" name="OKLink143">
+        <LinkParameter id="mov1#mpkg2#hym6#mfu19#oln149#par662" name="nome_PASSING_Stampa selezionata" target="mov1#mpkg2#hym6#okcu4#ocp20" sourceLinkParameter="mov1#mpkg2#hym6#scu5#oln148#par654"/>
+        <LinkParameter id="mov1#mpkg2#hym6#mfu19#oln149#par663" source="ent6#att22Array" name="oid_stampa_oid" target="mov1#mpkg2#hym6#okcu4#ocp19"/>
+      </OKLink>
+    </ModifyUnit>
+    <ScriptUnit id="mov1#mpkg2#hym6#scu5" name="ResizeImage" gr:x="592" gr:y="206" script="WEB-INF/descr/resizeimage.groovy">
+      <OKLink id="mov1#mpkg2#hym6#scu5#oln148" name="OKLink142" to="mov1#mpkg2#hym6#mfu19">
+        <LinkParameter id="mov1#mpkg2#hym6#scu5#oln148#par653" name="oid_PASSING_KeyCondition98 [oid]" sourceLinkParameter="mov1#mpkg2#hym6#cru23#oln147#par651" target="mov1#mpkg2#hym6#mfu19#su145#kcond102.ent6#att22"/>
+        <LinkParameter id="mov1#mpkg2#hym6#scu5#oln148#par654" name="nome_PASSING" sourceLinkParameter="mov1#mpkg2#hym6#cru23#oln147#par652" passing="true"/>
+        <LinkParameter id="mov1#mpkg2#hym6#scu5#oln148#par655" name="thumbnail_anteprima" source="result(thumbnail)" target="mov1#mpkg2#hym6#mfu19.ent6#att25"/>
+      </OKLink>
+    </ScriptUnit>
+  </OperationUnits>
+</HybridModule>

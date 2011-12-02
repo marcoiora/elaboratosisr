@@ -1,0 +1,48 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg2#hym6#page65" name="Carica stampa personalizzata" gr:x="300" gr:y="0">
+  <ContentUnits>
+    <EntryUnit id="mov1#mpkg2#hym6#page65#enu32" name="Carica l'immagine:" linkOrder="mov1#mpkg2#hym6#page65#enu32#ln324" gr:x="109" gr:y="99">
+      <Field id="mov1#mpkg2#hym6#page65#enu32#fld125" name="File immagine" type="blob" modifiable="true" contentType="image"/>
+      <Field id="mov1#mpkg2#hym6#page65#enu32#fld126" name="Nome immagine" type="string" modifiable="true"/>
+      <Field id="mov1#mpkg2#hym6#page65#enu32#fld127" name="Descrizione" type="text" modifiable="true" contentType="text/html"/>
+      <Link id="mov1#mpkg2#hym6#page65#enu32#ln324" name="Salva" to="mov1#mpkg2#hym6#cru23" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg2#hym6#page65#enu32#ln324#par656" name="Descrizione_descrizione" source="mov1#mpkg2#hym6#page65#enu32#fld127" target="mov1#mpkg2#hym6#cru23.ent6#att24"/>
+        <LinkParameter id="mov1#mpkg2#hym6#page65#enu32#ln324#par657" name="File immagine_immagineHD" source="mov1#mpkg2#hym6#page65#enu32#fld125" target="mov1#mpkg2#hym6#cru23.ent6#att26"/>
+        <LinkParameter id="mov1#mpkg2#hym6#page65#enu32#ln324#par658" name="true_isactive" target="mov1#mpkg2#hym6#cru23.ent6#att49" sourceValue="true"/>
+        <LinkParameter id="mov1#mpkg2#hym6#page65#enu32#ln324#par659" name="Nome immagine_nome" source="mov1#mpkg2#hym6#page65#enu32#fld126" target="mov1#mpkg2#hym6#cru23.ent6#att23"/>
+        <LinkParameter id="mov1#mpkg2#hym6#page65#enu32#ln324#par660" name="10_prezzoBase" target="mov1#mpkg2#hym6#cru23.ent6#att27" sourceValue="10"/>
+      </Link>
+    </EntryUnit>
+    <GetUnit id="mov1#mpkg2#hym6#page65#gtu30" name="Utente" gr:x="171" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="mov1#mpkg2#hym6#page65#gtu30#ln331" name="Link342" to="mov1#mpkg2#hym6#cru23" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#hym6#page65#gtu30#ln331#par661" name="UserCtxParam.oid_Cliente.oid(StampaToCliente)" source="mov1#mpkg2#hym6#page65#gtu30.UserCtxParam" target="mov1#mpkg2#hym6#cru23.rel21#role42.userOID"/>
+      </Link>
+    </GetUnit>
+    <ModuleInstanceUnit id="mov1#mpkg2#hym6#page65#miu44" name="StatoPersonalizzazione" gr:x="0" gr:y="0" moduleId="mov1#mpkg2#ctm4"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#hym6#page65#enu32">
+          <layout:Field field="mov1#mpkg2#hym6#page65#enu32#fld125"/>
+          <layout:Field field="mov1#mpkg2#hym6#page65#enu32#fld126"/>
+          <layout:Field field="mov1#mpkg2#hym6#page65#enu32#fld127"/>
+          <layout:Link link="mov1#mpkg2#hym6#page65#enu32#ln324"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#hym6#page65#miu44"/>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

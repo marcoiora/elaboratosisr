@@ -35,9 +35,9 @@
         <LinkParameter id="sv2#area8#page42#gtu23#ln339#par540" name="UserCtxParam.oid_Sue [oid]" source="sv2#area8#page42#gtu23.UserCtxParam" target="sv2#area8#page42#inu10#su154#rcond2.userOID"/>
       </Link>
     </GetUnit>
-    <MultiMessageUnit id="sv2#area8#page42#mssu10" linkOrder="sv2#area8#page42#mssu10#ln340" gr:x="441" gr:y="51">
+    <MultiMessageUnit id="sv2#area8#page42#mssu10" gr:x="441" gr:y="51" linkOrder="sv2#area8#page42#mssu10#ln342">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
-      <Link id="sv2#area8#page42#mssu10#ln340" name="Carica la tua stampa personalizzata!" to="sv2#area8#page69" type="normal" validate="true" automaticCoupling="true"/>
+      <Link id="sv2#area8#page42#mssu10#ln342" name="Carica la tua stampa personalizzata!" to="sv2#area8#miu47" automaticCoupling="true" type="normal" validate="true"/>
     </MultiMessageUnit>
     <ModuleInstanceUnit id="sv2#area8#page42#miu35" name="StatoPersonalizzazione" gr:x="101" gr:y="121" moduleId="mov1#mpkg2#ctm4"/>
   </ContentUnits>
@@ -58,7 +58,7 @@
           <layout:Field field="sv2#area8#page42#enu20#fld32"/>
         </layout:Unit>
         <layout:Unit unitId="sv2#area8#page42#mssu10">
-          <layout:Link link="sv2#area8#page42#mssu10#ln340"/>
+          <layout:Link link="sv2#area8#page42#mssu10#ln342"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>

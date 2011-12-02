@@ -176,30 +176,18 @@
         <LinkParameter id="sv2#area8#tmu1#oln69#par354" name="ordine_oid_PASSING_KeyCondition64 [oid]" sourceLinkParameter="sv2#area8#page46#mssu1#ln232#par351" target="sv2#area8#mfu2#su127#kcond64.ent9#att35"/>
       </OKLink>
     </TimeUnit>
-    <CreateUnit gr:x="1579" gr:y="1259" id="sv2#area8#cru18" name="Salva Stampa" entity="ent6">
-      <KOLink id="sv2#area8#cru18#kln69" name="KOLink69" to="sv2#area8#page57" automaticCoupling="true" gr:bendpoints="-52,-70,152,-71"/>
-      <OKLink id="sv2#area8#cru18#oln134" name="OKLink134" to="sv2#area8#page41#enu19" gr:bendpoints="-80,-163,502,-63">
-        <LinkParameter id="sv2#area8#cru18#oln134#par550" name="nome_Stampa selezionata" source="ent6#att23Array" target="sv2#area8#page41#enu19#fld38_slot"/>
-        <LinkParameter id="sv2#area8#cru18#oln134#par551" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page41#enu19#fld29_slot"/>
-      </OKLink>
-    </CreateUnit>
-    <CreateUnit id="sv2#area8#cru22" name="Salva Stampa" gr:x="1724" gr:y="1728" entity="ent6">
-      <KOLink id="sv2#area8#cru22#kln71" name="KOLink69" to="sv2#area8#page69" automaticCoupling="true" gr:bendpoints="-3,79,167,44;-20,85,150,50"/>
-      <OKLink id="sv2#area8#cru22#oln131" name="OKLink131" to="sv2#area8#page42#enu20" gr:bendpoints="-31,-85,583,-104;-248,-93,283,-86">
-        <LinkParameter id="sv2#area8#cru22#oln131#par555" name="nome_Stampa selezionata" source="ent6#att23Array" target="sv2#area8#page42#enu20#fld39_slot"/>
-        <LinkParameter id="sv2#area8#cru22#oln131#par556" name="oid_stampa_oid" source="ent6#att22Array" target="sv2#area8#page42#enu20#fld31_slot"/>
-      </OKLink>
-    </CreateUnit>
     <SetUnit gr:x="1146" gr:y="2276" id="sv2#area8#stu9" name="SvuotaConfigurazioneCorrente" contextParameters="ctx2"/>
-    <ScriptUnit gr:x="1601" gr:y="1401" id="sv2#area8#scu4" name="ResizeImage" script="WEB-INF/descr/resizeimage.groovy">
-      <OKLink id="sv2#area8#scu4#oln140" name="OKLink140" to="sv2#area8#cru18">
-        <LinkParameter id="sv2#area8#scu4#oln140#par546" name="Descrizione_PASSING_descrizione" sourceLinkParameter="sv2#area8#page57#enu27#ln341#par527" target="sv2#area8#cru18.ent6#att24"/>
-        <LinkParameter id="sv2#area8#scu4#oln140#par547" name="File immagine_PASSING_immagineHD" sourceLinkParameter="sv2#area8#page57#enu27#ln341#par535" target="sv2#area8#cru18.ent6#att26"/>
-        <LinkParameter id="sv2#area8#scu4#oln140#par549" name="true_isactive" sourceValue="true" target="sv2#area8#cru18.ent6#att49"/>
-        <LinkParameter id="sv2#area8#scu4#oln140#par592" name="Nome immagine_PASSING_nome" sourceLinkParameter="sv2#area8#page57#enu27#ln341#par545" target="sv2#area8#cru18.ent6#att23"/>
-        <LinkParameter id="sv2#area8#scu4#oln140#par593" name="10_prezzoBase" sourceValue="10" target="sv2#area8#cru18.ent6#att27"/>
-        <LinkParameter id="sv2#area8#scu4#oln140#par594" name="thumbnail_anteprima" source="result(thumbnail)" target="sv2#area8#cru18.ent6#att25"/>
+    <ModuleInstanceUnit gr:x="1506" gr:y="1270" id="sv2#area8#miu39" name="Carica Stampa Fronte" moduleId="mov1#mpkg2#hym6">
+      <OKLink id="sv2#area8#miu39#oln145" to="sv2#area8#page41#enu19" name="OKLink143">
+        <LinkParameter id="sv2#area8#miu39#oln145#par646" name="nome_PASSING_Stampa selezionata" target="sv2#area8#page41#enu19#fld38_slot" source="mov1#mpkg2#hym6#okcu4#ocp20"/>
+        <LinkParameter id="sv2#area8#miu39#oln145#par647" source="mov1#mpkg2#hym6#okcu4#ocp19" name="oid_stampa_oid" target="sv2#area8#page41#enu19#fld29_slot"/>
       </OKLink>
-    </ScriptUnit>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1506" gr:y="1700" id="sv2#area8#miu47" name="Carica Stampa Retro" moduleId="mov1#mpkg2#hym6">
+      <OKLink id="sv2#area8#miu47#oln151" name="OKLink151" to="sv2#area8#page42#enu20">
+        <LinkParameter id="sv2#area8#miu47#oln151#par666" name="nome_PASSING_Stampa selezionata_Stampa selezionata" source="mov1#mpkg2#hym6#okcu4#ocp20" target="sv2#area8#page42#enu20#fld39_slot"/>
+        <LinkParameter id="sv2#area8#miu47#oln151#par667" name="oid_stampa_oid" source="mov1#mpkg2#hym6#okcu4#ocp19" target="sv2#area8#page42#enu20#fld31_slot"/>
+      </OKLink>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </Area>

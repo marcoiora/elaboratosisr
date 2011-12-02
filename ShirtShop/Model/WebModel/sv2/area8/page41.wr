@@ -27,7 +27,7 @@
     </EntryUnit>
     <MultiMessageUnit gr:x="461" gr:y="140" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
-      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#page57" type="normal" validate="true" automaticCoupling="true"/>
+      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#miu39" type="normal" validate="true"/>
     </MultiMessageUnit>
     <GetUnit gr:x="1" gr:y="140" id="sv2#area8#page41#gtu22" name="Utente" contextParameters="UserCtxParam">
       <Link id="sv2#area8#page41#gtu22#ln307" name="Link307" to="sv2#area8#page41#inu9" type="transport" validate="true">
