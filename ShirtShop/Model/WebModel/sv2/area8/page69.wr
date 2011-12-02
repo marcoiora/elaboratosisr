@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page69" name="Carica stampa personalizzata" gr:x="1225" gr:y="1532">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page69" name="Carica stampa personalizzata" gr:x="1225" gr:y="1388">
   <ContentUnits>
     <EntryUnit id="sv2#area8#page69#enu30" name="Carica l'immagine:" linkOrder="sv2#area8#page69#enu30#ln343" gr:x="6" gr:y="0">
       <Field id="sv2#area8#page69#enu30#fld114" name="File immagine" type="blob" modifiable="true"/>
@@ -9,6 +9,7 @@
         <LinkParameter id="sv2#area8#page69#enu30#ln343#par543" name="Nome immagine_nome" source="sv2#area8#page69#enu30#fld115" target="sv2#area8#cru22.ent6#att23"/>
         <LinkParameter id="sv2#area8#page69#enu30#ln343#par552" name="File immagine_immagineHD" source="sv2#area8#page69#enu30#fld114" target="sv2#area8#cru22.ent6#att26"/>
         <LinkParameter id="sv2#area8#page69#enu30#ln343#par553" name="10_prezzoBase" target="sv2#area8#cru22.ent6#att27" sourceValue="10"/>
+        <LinkParameter id="sv2#area8#page69#enu30#ln343#par503" name="true_isactive" sourceValue="true" target="sv2#area8#cru22.ent6#att49"/>
       </Link>
     </EntryUnit>
     <GetUnit id="sv2#area8#page69#gtu26" name="Utente" gr:x="67" gr:y="70" contextParameters="UserCtxParam">

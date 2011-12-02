@@ -1,7 +1,7 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg4#hym3#page61" name="Informazioni" gr:x="304" gr:y="74">
   <ContentUnits>
     <IndexUnit id="mov1#mpkg4#hym3#page61#inu29" name="Informazioni" linkOrder="mov1#mpkg4#hym3#page61#inu29#ln319" gr:x="0" gr:y="0" displayAttributes="ent11#att47" entity="ent11">
-      <Link id="mov1#mpkg4#hym3#page61#inu29#ln319" name="Dettagli" to="mov1#mpkg4#hym3#page61#dau24" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="mov1#mpkg4#hym3#page61#inu29#ln319" name="Leggi" to="mov1#mpkg4#hym3#page61#dau24" type="normal" automaticCoupling="true" validate="true"/>
     </IndexUnit>
     <DataUnit id="mov1#mpkg4#hym3#page61#dau24" name="Dettaglio" gr:x="252" gr:y="2" displayAttributes="ent11#att47 ent11#att48" entity="ent11">
       <Selector id="mov1#mpkg4#hym3#page61#dau24#su146" defaultPolicy="fill" booleanOperator="and">
@@ -36,4 +36,9 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <layout:UnitConfiguration unitType="IndexUnit" layout:unitLayout="WRDefault/Normal" layout:frameLayout="None">
+    <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+    <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+    <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+  </layout:UnitConfiguration>
 </Page>

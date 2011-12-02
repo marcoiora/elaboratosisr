@@ -3,7 +3,7 @@
     <PatternConfiguration type="boolean" pattern="yes|no"/>
     <PatternConfiguration type="decimal" useNumberPattern="false" maxDecimal="3" minDecimal="0" minInteger="1" useThousandSeparator="true"/>
     <PatternConfiguration type="date" pattern="M/d/yy"/>
-    <PatternConfiguration type="float" useNumberPattern="false" maxDecimal="3" minDecimal="0" minInteger="2" useThousandSeparator="true"/>
+    <PatternConfiguration type="float" useNumberPattern="false" maxDecimal="2" minDecimal="2" minInteger="1" useThousandSeparator="true"/>
     <PatternConfiguration type="integer" useNumberPattern="false" minInteger="1" useThousandSeparator="true"/>
     <PatternConfiguration type="time" pattern="h:mm:ss a"/>
     <PatternConfiguration type="timestamp" pattern="M/d/yy h:mm:ss a"/>

@@ -1,25 +1,36 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1234" gr:y="175" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1265" gr:y="0" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
   <ContentUnits>
-    <MultiMessageUnit gr:x="161" gr:y="91" id="sv2#area8#page39#mssu4" linkOrder="sv2#area8#page39#mssu4#ln252 sv2#area8#page39#mssu4#ln34">
+    <MultiMessageUnit gr:x="276" gr:y="133" id="sv2#area8#page39#mssu4" linkOrder="sv2#area8#page39#mssu4#ln252 sv2#area8#page39#mssu4#ln34">
       <Link id="sv2#area8#page39#mssu4#ln252" name="Conferma l'ordine" to="sv2#area8#page46#miu16" type="normal" validate="true" gr:bendpoints="10,247,-43,-250"/>
       <Link id="sv2#area8#page39#mssu4#ln34" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-260,-1,362,-941;-304,-118,318,-1058"/>
       <Message xml:space="preserve">Cosa vuoi fare ora?</Message>
     </MultiMessageUnit>
-    <ModuleInstanceUnit id="sv2#area8#page39#miu18" name="Visualizza Carrello" gr:x="0" gr:y="0" moduleId="mov1#mpkg2#ctm1"/>
+    <ModuleInstanceUnit id="sv2#area8#page39#miu18" name="Visualizza Carrello" gr:x="58" gr:y="170" moduleId="mov1#mpkg2#ctm1"/>
+    <SelectorUnit gr:x="140" gr:y="2" id="sv2#area8#page39#seu63" name="Num. articoli" entity="ent9" distinctAttributes="count(rel18#role35.ent8#att31)">
+      <Selector id="sv2#area8#page39#seu63#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page39#seu63#su8#kcond101" name="KeyCondition101" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="10" gr:y="90" id="sv2#area8#page39#mssu14" linkOrder="sv2#area8#page39#mssu14#ln17">
+      <Message xml:space="preserve">Il carrello &#232; vuoto.</Message>
+      <Link id="sv2#area8#page39#mssu14#ln17" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-98,-98,407,-1068"/>
+    </MultiMessageUnit>
+    <ModuleInstanceUnit id="sv2#area8#page39#miu43" name="Carrello" gr:x="0" gr:y="0" moduleId="mov1#mpkg2#opm13">
+      <Link id="sv2#area8#page39#miu43#ln381" name="Link381" to="sv2#area8#page39#seu63" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page39#miu43#ln381#par599" name="ordine_oid_KeyCondition101 [oid]" source="mov1#mpkg2#opm13#okcu16#ocp12" target="sv2#area8#page39#seu63#su8#kcond101.ent9#att35"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page39#miu18"/>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page39#mssu4">
+        <layout:Unit unitId="sv2#area8#page39#miu18" layout:unitVisibilityCondition="sv2#area8#page39#cexpr3"/>
+        <layout:Unit unitId="sv2#area8#page39#mssu4" layout:unitVisibilityCondition="sv2#area8#page39#cexpr3">
           <layout:Link link="sv2#area8#page39#mssu4#ln252"/>
           <layout:Link link="sv2#area8#page39#mssu4#ln34"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv2#area8#page39#mssu14" layout:unitVisibilityCondition="sv2#area8#page39#cexpr2">
+          <layout:Link link="sv2#area8#page39#mssu14#ln17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -30,5 +41,17 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
+  <Variable id="sv2#area8#page39#var2" name="numArticoli" type="integer" unitId="sv2#area8#page39#seu63" parameter="count$rel18#role35$ent8#att31Array"/>
+  <ConditionExpression id="sv2#area8#page39#cexpr2" name="Carrello vuoto">
+    <TextValue xml:space="preserve">return numArticoli[0] == 0</TextValue>
+  </ConditionExpression>
+  <ConditionExpression id="sv2#area8#page39#cexpr3" name="Carrello pieno">
+    <TextValue xml:space="preserve">return numArticoli[0] != 0</TextValue>
+  </ConditionExpression>
 </Page>
