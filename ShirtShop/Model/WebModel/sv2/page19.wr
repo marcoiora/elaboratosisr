@@ -7,7 +7,7 @@ Attraverso i link sulla pagina potrai creare nuove magliette attraverso il WebMa
     <ModuleInstanceUnit gr:x="163" gr:y="82" id="sv2#page19#miu26" name="Novit&#224;" moduleId="mov1#mpkg2#ctm5"/>
     <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#page19#miu38" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#page19#miu38#ln367 sv2#page19#miu38#ln394">
       <Link id="sv2#page19#miu38#ln367" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6">
-        <LinkParameter id="sv2#page19#miu38#ln367#par591" name="oid_proposta_selezionata_KeyCondition80 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
+        <LinkParameter id="sv2#page19#miu38#ln367#par591" name="oid_proposta_selezionata_KeyCondition80 [oid]" source="mov1#mpkg2#ctm7#ocu6#ocp17" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
       </Link>
       <Link id="sv2#page19#miu38#ln394" name="Dettagli" to="sv2#area8#page79#dau36" codeRef="mov1#mpkg2#ctm7#ocu5" type="normal" validate="true">
         <LinkParameter id="sv2#page19#miu38#ln394#par625" name="oid_proposta_selezionata_KeyCondition2 [oid]" source="mov1#mpkg2#ctm7#ocu5#ocp16" target="sv2#area8#page79#dau36#su173#kcond113.ent1#att1"/>
