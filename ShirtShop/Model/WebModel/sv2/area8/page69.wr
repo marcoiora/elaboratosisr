@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page69" name="Carica stampa personalizzata" gr:x="1225" gr:y="1388">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page69" name="Carica stampa personalizzata" gr:x="1290" gr:y="1532">
   <ContentUnits>
     <EntryUnit id="sv2#area8#page69#enu30" name="Carica l'immagine:" linkOrder="sv2#area8#page69#enu30#ln343" gr:x="6" gr:y="0">
       <Field id="sv2#area8#page69#enu30#fld114" name="File immagine" type="blob" modifiable="true"/>

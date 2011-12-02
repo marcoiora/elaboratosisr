@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-77" gr:y="24" id="sv2#page19" name="Home Cliente" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-70" gr:y="140" id="sv2#page19" name="Home Cliente" landmark="true">
   <ContentUnits>
     <MultiMessageUnit gr:x="137" gr:y="10" id="sv2#page19#mssu9" name="Benvenuto Cliente">
       <Message xml:space="preserve">Benvenuto nell'area riservata al Cliente.

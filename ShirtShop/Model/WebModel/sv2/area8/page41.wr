@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="584" gr:y="862" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="649" gr:y="1039" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
   <ContentUnits>
     <IndexUnit gr:x="101" gr:y="80" id="sv2#area8#page41#inu9" name="Scegli una stampa" entity="ent6" displayAttributes="ent6#att23 ent6#att25" linkOrder="sv2#area8#page41#inu9#ln222">
       <Link id="sv2#area8#page41#inu9#ln222" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true">
@@ -23,7 +23,7 @@
         <LinkParameter id="sv2#area8#page41#enu19#ln229#par306" name="stampa_oid_Stampa.oid(ConfigurazioneToStampaFronte)" source="sv2#area8#page41#enu19#fld29" target="sv2#area8#mfu3.rel11#role21.ent6#att22"/>
       </Link>
       <Field id="sv2#area8#page41#enu19#fld38" name="Stampa selezionata" type="string" modifiable="false" preloaded="true"/>
-      <Link id="sv2#area8#page41#enu19#ln264" name="Nessuna Stampa" to="sv2#area8#seu52" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-183,109,171,-185;-250,196,104,-98"/>
+      <Link id="sv2#area8#page41#enu19#ln264" name="Nessuna Stampa" to="sv2#area8#seu52" type="normal" automaticCoupling="true" validate="true"/>
     </EntryUnit>
     <MultiMessageUnit gr:x="461" gr:y="140" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
