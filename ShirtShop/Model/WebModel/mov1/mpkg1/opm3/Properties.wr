@@ -1,0 +1,128 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="50" gr:y="0" id="mov1#mpkg1#opm3" name="CreaCombinazioniColoreSesso">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm3#icu19" name="Maglietta" linkOrder="mov1#mpkg1#opm3#icu19#ln415">
+      <InputCollectorParameter id="mov1#mpkg1#opm3#icu19#icp5" name="maglietta_oid"/>
+      <Link id="mov1#mpkg1#opm3#icu19#ln341" name="Link341" to="mov1#mpkg1#opm3#seu75" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#icu19#ln341#par503" name="maglietta_oid_RoleCondition61 [oid]" source="mov1#mpkg1#opm3#icu19#icp5" target="mov1#mpkg1#opm3#seu75#su150#rcond61.ent1#att1"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm3#icu19#ln344" name="Link344" to="mov1#mpkg1#opm3#seu76" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#icu19#ln344#par535" name="maglietta_oid_of-maglietta [oid]" source="mov1#mpkg1#opm3#icu19#icp5" target="mov1#mpkg1#opm3#seu76#su151#rcond65.ent1#att1"/>
+      </Link>
+      <OKLink id="mov1#mpkg1#opm3#icu19#oln154" name="OKLink154" to="mov1#mpkg1#opm3#seu79" automaticCoupling="true"/>
+      <Link id="mov1#mpkg1#opm3#icu19#ln415" name="Link415" to="mov1#mpkg1#opm3#seu85" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#icu19#ln415#par693" name="maglietta_oid_of-maglietta [oid]" source="mov1#mpkg1#opm3#icu19#icp5" target="mov1#mpkg1#opm3#seu85#su188#rcond68.ent1#att1"/>
+      </Link>
+    </InputCollectorUnit>
+    <LoopUnit gr:x="180" gr:y="130" id="mov1#mpkg1#opm3#lpu1" name="Ciclo su Colore">
+      <OKLink id="mov1#mpkg1#opm3#lpu1#oln152" name="OKLink152" to="mov1#mpkg1#opm3#seu78" automaticCoupling="true" code="end"/>
+      <OKLink id="mov1#mpkg1#opm3#lpu1#oln156" name="OKLink156" to="mov1#mpkg1#opm3#seu76" code="next">
+        <LinkParameter id="mov1#mpkg1#opm3#lpu1#oln156#par551" name="Next Element_PASSING" source="next" passing="true"/>
+      </OKLink>
+    </LoopUnit>
+    <SelectorUnit gr:x="170" gr:y="-10" id="mov1#mpkg1#opm3#seu75" name="Colori della maglietta" entity="ent2" linkOrder="mov1#mpkg1#opm3#seu75#ln343">
+      <Selector id="mov1#mpkg1#opm3#seu75#su150" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg1#opm3#seu75#su150#rcond61" name="of-maglietta" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="mov1#mpkg1#opm3#seu75#ln343" name="Link343" to="mov1#mpkg1#opm3#lpu1" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#seu75#ln343#par527" name="oid_Input Array" source="ent2#att12Array" target="mov1#mpkg1#opm3#lpu1.array"/>
+      </Link>
+      <OKLink id="mov1#mpkg1#opm3#seu75#oln141" name="OKLink141" to="mov1#mpkg1#opm3#lpu1" automaticCoupling="true" gr:bendpoints="-15,65,-17,-51"/>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="220" id="mov1#mpkg1#opm3#seu76" name="Sessi della maglietta" entity="ent4" linkOrder="mov1#mpkg1#opm3#seu76#ln370">
+      <Selector id="mov1#mpkg1#opm3#seu76#su151" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg1#opm3#seu76#su151#rcond65" name="of-maglietta" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <Link id="mov1#mpkg1#opm3#seu76#ln370" name="Link370" to="mov1#mpkg1#opm3#lpu2" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#seu76#ln370#par542" name="oid_Input Array" source="ent4#att17Array" target="mov1#mpkg1#opm3#lpu2.array"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu76#ln370#par552" name="Next Element_PASSING" sourceLinkParameter="mov1#mpkg1#opm3#lpu1#oln156#par551" passing="true"/>
+      </Link>
+      <OKLink id="mov1#mpkg1#opm3#seu76#oln157" name="OKLink157" to="mov1#mpkg1#opm3#lpu2" automaticCoupling="true" gr:bendpoints="110,18,-94,12"/>
+    </SelectorUnit>
+    <LoopUnit gr:x="220" gr:y="240" id="mov1#mpkg1#opm3#lpu2" name="Ciclo su Sesso" linkOrder="mov1#mpkg1#opm3#lpu2#ln416">
+      <OKLink id="mov1#mpkg1#opm3#lpu2#oln159" name="OKLink159" to="mov1#mpkg1#opm3#lpu1" automaticCoupling="true" code="end"/>
+      <OKLink id="mov1#mpkg1#opm3#lpu2#oln170" name="OKLink170" to="mov1#mpkg1#opm3#seu85" code="next">
+        <LinkParameter id="mov1#mpkg1#opm3#lpu2#oln170#par694" name="Next Element_PASSING_of-colore [oid]" sourceLinkParameter="mov1#mpkg1#opm3#seu76#ln370#par552" target="mov1#mpkg1#opm3#seu85#su188#rcond69.ent2#att12"/>
+        <LinkParameter id="mov1#mpkg1#opm3#lpu2#oln170#par695" name="Next Element_of-sesso [oid]" source="next" target="mov1#mpkg1#opm3#seu85#su188#rcond70.ent4#att17"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm3#lpu2#ln416" name="Link416" to="mov1#mpkg1#opm3#seu80" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#lpu2#ln416#par697" name="Next Element_PASSING_KeyCondition106 [oid]" sourceLinkParameter="mov1#mpkg1#opm3#seu76#ln370#par552" target="mov1#mpkg1#opm3#seu80#su183#kcond106.ent2#att12"/>
+        <LinkParameter id="mov1#mpkg1#opm3#lpu2#ln416#par698" name="Next Element_PASSING" source="next" passing="true"/>
+      </Link>
+    </LoopUnit>
+    <DeleteUnit gr:x="140" gr:y="-140" id="mov1#mpkg1#opm3#dlu11" name="ColoreSesso" entity="ent16">
+      <OKLink id="mov1#mpkg1#opm3#dlu11#oln150" name="OKLink150" to="mov1#mpkg1#opm3#seu75" automaticCoupling="true"/>
+      <Selector id="mov1#mpkg1#opm3#dlu11#su182" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm3#dlu11#su182#kcond105" name="KeyCondition105" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="530" gr:y="100" id="mov1#mpkg1#opm3#okcu15" name="results">
+      <OutputCollectorParameter id="mov1#mpkg1#opm3#okcu15#ocp21" name="coloresesso_oid"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="370" gr:y="110" id="mov1#mpkg1#opm3#seu78" name="ColoreSesso" entity="ent16">
+      <OKLink id="mov1#mpkg1#opm3#seu78#oln153" name="OKLink153" to="mov1#mpkg1#opm3#okcu15">
+        <LinkParameter id="mov1#mpkg1#opm3#seu78#oln153#par550" name="oid_coloresesso_oid" source="ent16#att64Array" target="mov1#mpkg1#opm3#okcu15#ocp21"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="-150" id="mov1#mpkg1#opm3#seu79" name="ColoreSesso" entity="ent16">
+      <OKLink id="mov1#mpkg1#opm3#seu79#oln155" name="OKLink155" to="mov1#mpkg1#opm3#dlu11" automaticCoupling="true"/>
+    </SelectorUnit>
+    <CreateUnit gr:x="650" gr:y="230" id="mov1#mpkg1#opm3#cru22" name="ColoreSesso" entity="ent16">
+      <OKLink id="mov1#mpkg1#opm3#cru22#oln162" name="OKLink162" to="mov1#mpkg1#opm3#lpu2" automaticCoupling="true" gr:bendpoints="-131,-45,148,-49"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="320" gr:y="330" id="mov1#mpkg1#opm3#seu80" name="Colore" entity="ent2">
+      <Selector id="mov1#mpkg1#opm3#seu80#su183" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm3#seu80#su183#kcond106" name="KeyCondition106" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm3#seu80#oln164" name="OKLink164" to="mov1#mpkg1#opm3#seu81">
+        <LinkParameter id="mov1#mpkg1#opm3#seu80#oln164#par637" name="nome_PASSING" source="ent2#att13Array" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu80#oln164#par638" name="oid_PASSING" source="ent2#att12Array" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu80#oln164#par699" name="Next Element_PASSING_KeyCondition121 [oid]" sourceLinkParameter="mov1#mpkg1#opm3#lpu2#ln416#par698" target="mov1#mpkg1#opm3#seu81#su184#kcond121.ent4#att17"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm3#seu80#ln412" name="Link412" to="mov1#mpkg1#opm3#cru22" type="transport" validate="true" gr:bendpoints="85,-105,-254,3">
+        <LinkParameter id="mov1#mpkg1#opm3#seu80#ln412#par691" name="oid_colore_oid" source="ent2#att12Array" target="mov1#mpkg1#opm3#cru22.ent16#att65"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="440" gr:y="330" id="mov1#mpkg1#opm3#seu81" name="Sesso" entity="ent4" linkOrder="mov1#mpkg1#opm3#seu81#ln413">
+      <Selector id="mov1#mpkg1#opm3#seu81#su184" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm3#seu81#su184#kcond121" name="KeyCondition121" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm3#seu81#oln166" name="OKLink166" to="mov1#mpkg1#opm3#scu6">
+        <LinkParameter id="mov1#mpkg1#opm3#seu81#oln166#par648" name="nome_PASSING" source="ent4#att18Array" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu81#oln166#par649" name="oid_PASSING" source="ent4#att17Array" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu81#oln166#par664" name="oid_PASSING" sourceLinkParameter="mov1#mpkg1#opm3#seu80#oln164#par638" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu81#oln166#par678" name="nome_PASSING_in1" sourceLinkParameter="mov1#mpkg1#opm3#seu80#oln164#par637" target="mov1#mpkg1#opm3#scu6.in1"/>
+        <LinkParameter id="mov1#mpkg1#opm3#seu81#oln166#par679" name=" - _in2" sourceValue=" - " target="mov1#mpkg1#opm3#scu6.in2"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm3#seu81#ln413" name="Link413" to="mov1#mpkg1#opm3#cru22" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm3#seu81#ln413#par692" name="oid_sesso_oid" source="ent4#att17Array" target="mov1#mpkg1#opm3#cru22.ent16#att66"/>
+      </Link>
+    </SelectorUnit>
+    <ScriptUnit gr:x="560" gr:y="340" id="mov1#mpkg1#opm3#scu6" name="Colore+&quot; - &quot;" script="WEB-INF/descr/concatena.groovy">
+      <OKLink id="mov1#mpkg1#opm3#scu6#oln167" name="OKLink167" to="mov1#mpkg1#opm3#scu7">
+        <LinkParameter id="mov1#mpkg1#opm3#scu6#oln167#par669" name="oid_PASSING" sourceLinkParameter="mov1#mpkg1#opm3#seu81#oln166#par649" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#scu6#oln167#par670" name="oid_PASSING" sourceLinkParameter="mov1#mpkg1#opm3#seu81#oln166#par664" passing="true"/>
+        <LinkParameter id="mov1#mpkg1#opm3#scu6#oln167#par680" name="out_in1" source="result(out)" target="mov1#mpkg1#opm3#scu7.in1"/>
+        <LinkParameter id="mov1#mpkg1#opm3#scu6#oln167#par681" name="nome_PASSING_in2" sourceLinkParameter="mov1#mpkg1#opm3#seu81#oln166#par648" target="mov1#mpkg1#opm3#scu7.in2"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit gr:x="685" gr:y="344" id="mov1#mpkg1#opm3#scu7" name="&quot;Colore - &quot;+Sesso" script="WEB-INF/descr/concatena.groovy">
+      <OKLink id="mov1#mpkg1#opm3#scu7#oln168" name="OKLink168" to="mov1#mpkg1#opm3#cru22">
+        <LinkParameter id="mov1#mpkg1#opm3#scu7#oln168#par672" name="str_ColoreSesso" source="result(out)" target="mov1#mpkg1#opm3#cru22.ent16#att67"/>
+      </OKLink>
+    </ScriptUnit>
+    <SelectorUnit gr:x="120" gr:y="340" id="mov1#mpkg1#opm3#seu85" name="Esiste gia'?" entity="ent5">
+      <Selector id="mov1#mpkg1#opm3#seu85#su188" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg1#opm3#seu85#su188#rcond68" name="of-maglietta" predicate="in" implied="false" role="rel5#role9"/>
+        <RelationshipRoleCondition id="mov1#mpkg1#opm3#seu85#su188#rcond69" name="of-colore" predicate="in" implied="false" role="rel6#role12"/>
+        <RelationshipRoleCondition id="mov1#mpkg1#opm3#seu85#su188#rcond70" name="of-sesso" predicate="in" implied="false" role="rel7#role14"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm3#seu85#oln171" name="OKLink171" to="mov1#mpkg1#opm3#inn1">
+        <LinkParameter id="mov1#mpkg1#opm3#seu85#oln171#par696" name="oid_Input" source="ent5#att19Array" target="mov1#mpkg1#opm3#inn1.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="270" gr:y="460" id="mov1#mpkg1#opm3#inn1" name="Esiste?">
+      <OKLink id="mov1#mpkg1#opm3#inn1#oln172" name="OKLink172" to="mov1#mpkg1#opm3#lpu2" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm3#inn1#kln71" name="KOLink71" to="mov1#mpkg1#opm3#seu80" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

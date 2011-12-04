@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="1445" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln56 sv4#area6#page33#ln63">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="1445" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln63">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page33#enu10" name="Modifica dati" gr:x="283" gr:y="134" linkOrder="sv4#area6#page33#enu10#ln137 sv4#area6#page33#enu10#ln138 sv4#area6#page33#enu10#ln139 sv4#area6#page33#enu10#ln48">
       <Field id="sv4#area6#page33#enu10#fld49" name="Nome" type="string" modifiable="true" preloaded="true"/>
@@ -126,12 +126,32 @@
       <Link id="sv4#area6#page33#gtu4#ln60" name="Link60" to="sv4#area6#page33#seu16" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#gtu4#ln60#par212" name="maglietta_oid_KeyCondition28 [oid]" source="sv4#area6#page33#gtu4.ctx1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
       </Link>
+      <Link id="sv4#area6#page33#gtu4#ln420" name="Link420" to="sv4#area6#page33#miu34" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page33#gtu4#ln420#par711" name="maglietta_oid_maglietta_oid" source="sv4#area6#page33#gtu4.ctx1" target="sv4#area6#page33#miu34.mov1#mpkg1#opm3#icu19#icp5"/>
+      </Link>
     </GetUnit>
+    <ModuleInstanceUnit gr:x="136" gr:y="371" id="sv4#area6#page33#miu34" name="CombinazioniColoreSesso" moduleId="mov1#mpkg1#opm3">
+      <Link id="sv4#area6#page33#miu34#ln421" name="Link421" to="sv4#area6#page33#seu87" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#page33#miu34#ln421#par712" name="coloresesso_oid_KeyCondition126 [oid]" source="mov1#mpkg1#opm3#okcu15#ocp21" target="sv4#area6#page33#seu87#su190#kcond126.ent16#att64"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="346" gr:y="377" id="sv4#area6#page33#seu87" name="ColoreSesso" entity="ent16">
+      <Selector id="sv4#area6#page33#seu87#su190" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#page33#seu87#su190#kcond126" name="KeyCondition126" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <NoOpContentUnit gr:x="452" gr:y="393" id="sv4#area6#page33#gctu11" name="Aggiungi Fotografia" linkOrder="sv4#area6#page33#gctu11#ln422">
+      <Link id="sv4#area6#page33#gctu11#ln422" name="Aggiungi fotografia" to="sv4#area6#page17" type="normal" automaticCoupling="true" validate="true"/>
+    </NoOpContentUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
         <layout:Unit unitId="sv4#area6#page33#enu10">
+          <layout:Link link="sv4#area6#page33#enu10#ln137"/>
+          <layout:Link link="sv4#area6#page33#enu10#ln138"/>
+          <layout:Link link="sv4#area6#page33#enu10#ln139"/>
+          <layout:Link link="sv4#area6#page33#enu10#ln48"/>
           <layout:Field field="sv4#area6#page33#enu10#fld49"/>
           <layout:Field field="sv4#area6#page33#enu10#fld50"/>
           <layout:Field field="sv4#area6#page33#enu10#fld51"/>
@@ -140,19 +160,19 @@
           <layout:Field field="sv4#area6#page33#enu10#fld54"/>
           <layout:Field field="sv4#area6#page33#enu10#fld55"/>
           <layout:Field field="sv4#area6#page33#enu10#fld56"/>
+          <layout:Field field="sv4#area6#page33#enu10#fld25"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld13"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld14"/>
           <layout:Field field="sv4#area6#page33#enu10#msfld15"/>
-          <layout:Field field="sv4#area6#page33#enu10#fld25"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln137"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln138"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln139"/>
-          <layout:Link link="sv4#area6#page33#enu10#ln48"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
     </layout:Row>
     <layout:Row>
       <layout:Cell>
+        <layout:Unit unitId="sv4#area6#page33#gctu11" layout:unitVisibilityCondition="sv4#area6#page33#cexpr4">
+          <layout:Link link="sv4#area6#page33#gctu11#ln422"/>
+        </layout:Unit>
         <layout:Unit unitId="sv4#area6#page33#inu23">
           <layout:Attribute attribute="ent5#att21"/>
           <layout:Attribute attribute="ent5#att20"/>
@@ -161,8 +181,12 @@
           <layout:Link link="sv4#area6#page33#inu23#ln49"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv4#area6#page33#ln56" name="Aggiungi fotografia" to="sv4#area6#page17" automaticCoupling="true" type="normal" validate="true"/>
   <Link id="sv4#area6#page33#ln63" name="Elimina" to="sv4#area6#miu3" automaticCoupling="true" type="normal" validate="true"/>
+  <Variable id="sv4#area6#page33#var7" name="card_coloresesso" type="integer" unitId="sv4#area6#page33#seu87" parameter="dataSize"/>
+  <ConditionExpression id="sv4#area6#page33#cexpr4" name="foto_da_aggiungere">
+    <TextValue xml:space="preserve">return card_coloresesso &gt; 0</TextValue>
+  </ConditionExpression>
 </Page>

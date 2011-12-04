@@ -180,7 +180,7 @@
       <db:JoinColumn attribute="ent3#att15" name="taglia_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel16" name="Configurazione_Colore" sourceEntity="ent7" targetEntity="ent2" gr:bendpoints="324,-74,-187,289" db:database="db2" db:table="configurazione">
+  <Relationship id="rel16" name="Configurazione_Colore" sourceEntity="ent7" targetEntity="ent2" gr:bendpoints="439,-62,-145,338" db:database="db2" db:table="configurazione">
     <RelationshipRole1 id="rel16#role31" name="ConfigurazioneToColore" maxCard="1">
       <db:JoinColumn attribute="ent7#att28" name="oid"/>
     </RelationshipRole1>
@@ -305,4 +305,10 @@
     </RelationshipRole2>
   </Relationship>
   <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w" showSQL="true"/>
+  <Entity gr:x="870" gr:y="580" id="ent16" name="ColoreSesso" duration="volatile" attributeOrder="ent16#att64 ent16#att65 ent16#att66 ent16#att67">
+    <Attribute id="ent16#att64" key="true" name="oid" type="integer"/>
+    <Attribute id="ent16#att65" name="colore_oid" type="integer"/>
+    <Attribute id="ent16#att66" name="sesso_oid" type="integer"/>
+    <Attribute id="ent16#att67" name="ColoreSesso" type="string"/>
+  </Entity>
 </DataModel>

@@ -8,16 +8,10 @@
       <KOLink id="sv4#area6#cru6#kln11" name="KOLink11" to="sv4#page16" automaticCoupling="true" gr:bendpoints="-100,0,1038,30;-184,200,954,230;-468,190,670,220"/>
       <OKLink id="sv4#area6#cru6#oln21" name="OKLink21" to="sv4#area6#page27" automaticCoupling="true"/>
     </CreateUnit>
-    <ModuleInstanceUnit gr:x="60" gr:y="605" id="sv4#area6#miu1" name="Salva Maglietta" moduleId="mov1#mpkg1#opm12" linkOrder="sv4#area6#miu1#ln226 sv4#area6#miu1#ln227 sv4#area6#miu1#ln228 sv4#area6#miu1#ln230">
+    <ModuleInstanceUnit gr:x="60" gr:y="605" id="sv4#area6#miu1" name="Salva Maglietta" moduleId="mov1#mpkg1#opm12" linkOrder="sv4#area6#miu1#ln406">
       <KOLink id="sv4#area6#miu1#kln22" name="KOLink22" to="sv4#page16" automaticCoupling="true"/>
-      <Link id="sv4#area6#miu1#ln224" name="Link224" to="sv4#area6#page17#seu4" type="transport" validate="true">
-        <LinkParameter id="sv4#area6#miu1#ln224#par298" name="OK Collector.Source oid [Maglietta]_Maglietta [oid]" source="mov1#mpkg1#opm12#okcu14#ocp11" target="sv4#area6#page17#seu4#su14#rcond1.ent1#att1"/>
-      </Link>
       <Link id="sv4#area6#miu1#ln226" name="Link226" to="sv4#area6#cru6" type="transport" validate="true" gr:bendpoints="380,44,-130,-144">
         <LinkParameter id="sv4#area6#miu1#ln226#par301" name="OK Collector.Source oid [Maglietta]_Maglietta.oid(FotoToMaglietta)" source="mov1#mpkg1#opm12#okcu14#ocp11" target="sv4#area6#cru6.rel5#role10.ent1#att1"/>
-      </Link>
-      <Link id="sv4#area6#miu1#ln227" name="Link227" to="sv4#area6#page17#seu5" type="transport" validate="true" gr:bendpoints="22,136,-76,-126">
-        <LinkParameter id="sv4#area6#miu1#ln227#par299" name="OK Collector.Source oid [Maglietta]_Maglietta [oid]" source="mov1#mpkg1#opm12#okcu14#ocp11" target="sv4#area6#page17#seu5#su15#rcond3.ent1#att1"/>
       </Link>
       <Link id="sv4#area6#miu1#ln228" name="Link228" to="sv4#area6#cru5" type="transport" validate="true" gr:bendpoints="346,66,-160,-212;346,156,-160,-122">
         <LinkParameter id="sv4#area6#miu1#ln228#par300" name="OK Collector.Source oid [Maglietta]_Maglietta.oid(FotoToMaglietta)" source="mov1#mpkg1#opm12#okcu14#ocp11" target="sv4#area6#cru5.rel5#role10.ent1#att1"/>
@@ -25,6 +19,9 @@
       <OKLink id="sv4#area6#miu1#oln76" name="OKLink76" to="sv4#area6#page17" automaticCoupling="true"/>
       <Link id="sv4#area6#miu1#ln230" name="Link230" to="sv4#area6#stu1" type="transport" validate="true">
         <LinkParameter id="sv4#area6#miu1#ln230#par302" name="OK Collector.Source oid [Maglietta]_maglietta_oid" source="mov1#mpkg1#opm12#okcu14#ocp11" target="sv4#area6#stu1.ctx1"/>
+      </Link>
+      <Link id="sv4#area6#miu1#ln406" name="Link406" to="sv4#area6#page17#miu33" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#miu1#ln406#par674" name="OK Collector.Source oid [Maglietta]_maglietta_oid" source="mov1#mpkg1#opm12#okcu14#ocp11" target="sv4#area6#page17#miu33.mov1#mpkg1#opm3#icu19#icp5"/>
       </Link>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="200" gr:y="1075" id="sv4#area6#miu2" name="Salva Maglietta" moduleId="mov1#mpkg1#opm12">
@@ -149,5 +146,29 @@
     <ModuleInstanceUnit id="sv4#area6#miu42" name="Nuovo Colore" gr:x="1610" gr:y="10" moduleId="mov1#mpkg1#hym2">
       <OKLink id="sv4#area6#miu42#oln139" name="OKLink124" to="sv4#area6#page23" automaticCoupling="true" gr:bendpoints="12,64,138,-150;-46,69,145,-130"/>
     </ModuleInstanceUnit>
+    <SelectorUnit gr:x="542" gr:y="642" id="sv4#area6#seu84" name="ColoreSesso" entity="ent16">
+      <Selector id="sv4#area6#seu84#su187" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#seu84#su187#kcond124" name="KeyCondition124" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area6#seu84#ln410" name="Link410" to="sv4#area6#cru6" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#seu84#ln410#par683" name="colore_oid_Colore.oid(FotoToColore)" source="ent16#att65Array" target="sv4#area6#cru6.rel6#role11.ent2#att12"/>
+        <LinkParameter id="sv4#area6#seu84#ln410#par684" name="sesso_oid_Sesso.oid(FotoToSesso)" source="ent16#att66Array" target="sv4#area6#cru6.rel7#role13.ent4#att17"/>
+        <LinkParameter id="sv4#area6#seu84#ln410#par689" name="Commento_PASSING_commento" sourceLinkParameter="sv4#area6#page17#enu6#ln409#par687" target="sv4#area6#cru6.ent5#att20"/>
+        <LinkParameter id="sv4#area6#seu84#ln410#par690" name="Fotografia_PASSING_immagine" sourceLinkParameter="sv4#area6#page17#enu6#ln409#par688" target="sv4#area6#cru6.ent5#att21"/>
+      </Link>
+      <OKLink id="sv4#area6#seu84#oln169" name="OKLink169" to="sv4#area6#cru6" automaticCoupling="true" gr:bendpoints="2,79,-31,-66"/>
+    </SelectorUnit>
+    <SelectorUnit id="sv4#area6#seu86" name="ColoreSesso" gr:x="522" gr:y="1032" entity="ent16">
+      <Selector id="sv4#area6#seu86#su189" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area6#seu86#su189#kcond125" name="KeyCondition124" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area6#seu86#ln418" name="Link411" to="sv4#area6#cru5" type="transport" validate="true">
+        <LinkParameter id="sv4#area6#seu86#ln418#par704" name="colore_oid_Colore.oid(FotoToColore)" source="ent16#att65Array" target="sv4#area6#cru5.rel6#role11.ent2#att12"/>
+        <LinkParameter id="sv4#area6#seu86#ln418#par705" name="sesso_oid_Sesso.oid(FotoToSesso)" source="ent16#att66Array" target="sv4#area6#cru5.rel7#role13.ent4#att17"/>
+        <LinkParameter id="sv4#area6#seu86#ln418#par709" name="Commento_PASSING_commento" sourceLinkParameter="sv4#area6#page17#enu6#ln419#par707" target="sv4#area6#cru5.ent5#att20"/>
+        <LinkParameter id="sv4#area6#seu86#ln418#par710" name="Fotografia_PASSING_immagine" sourceLinkParameter="sv4#area6#page17#enu6#ln419#par708" target="sv4#area6#cru5.ent5#att21"/>
+      </Link>
+      <OKLink id="sv4#area6#seu86#oln174" name="OKLink174" to="sv4#area6#cru5" automaticCoupling="true" gr:bendpoints="40,-78,-10,77"/>
+    </SelectorUnit>
   </OperationUnits>
 </Area>
