@@ -189,4 +189,7 @@
   <ConditionExpression id="sv4#area6#page33#cexpr4" name="foto_da_aggiungere">
     <TextValue xml:space="preserve">return card_coloresesso &gt; 0</TextValue>
   </ConditionExpression>
+  <Link id="sv4#area6#page33#ln23" name="Nuovo Sesso" to="sv4#area6#miu49" type="normal" automaticCoupling="true" validate="true"/>
+  <Link id="sv4#area6#page33#ln227" name="Nuova Taglia" to="sv4#area6#miu50" type="normal" automaticCoupling="true" validate="true"/>
+  <Link id="sv4#area6#page33#ln375" name="Nuovo Colore" to="sv4#area6#miu51" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="60,-310,-136,25"/>
 </Page>

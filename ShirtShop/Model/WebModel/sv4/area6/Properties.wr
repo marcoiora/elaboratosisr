@@ -119,7 +119,7 @@
       </Selector>
       <OKLink id="sv4#area6#dlu5#oln83" name="OKLink83" to="sv4#area6#page36" automaticCoupling="true"/>
     </DeleteUnit>
-    <ModuleInstanceUnit gr:x="800" gr:y="1935" id="sv4#area6#miu13" name="Elimina Template" moduleId="mov1#mpkg1#opm10">
+    <ModuleInstanceUnit gr:x="852" gr:y="1962" id="sv4#area6#miu13" name="Elimina Template" moduleId="mov1#mpkg1#opm10">
       <OKLink id="sv4#area6#miu13#oln92" name="OKLink92" to="sv4#area6#page32" automaticCoupling="true" gr:bendpoints="174,-190,-658,1154;716,-196,-116,1148;720,-758,-112,586"/>
       <KOLink id="sv4#area6#miu13#kln67" name="KOLink67" to="sv4#page16" automaticCoupling="true" gr:bendpoints="-6,100,1366,1272;-964,100,408,1272"/>
     </ModuleInstanceUnit>
@@ -170,5 +170,14 @@
       </Link>
       <OKLink id="sv4#area6#seu86#oln174" name="OKLink174" to="sv4#area6#cru5" automaticCoupling="true" gr:bendpoints="40,-78,-10,77"/>
     </SelectorUnit>
+    <ModuleInstanceUnit id="sv4#area6#miu49" name="Nuovo Sesso" gr:x="912" gr:y="1482" moduleId="mov1#mpkg1#hym5">
+      <OKLink id="sv4#area6#miu49#oln140" name="OKLink130" to="sv4#area6#page33" automaticCoupling="true" gr:bendpoints="-77,-109,343,-235"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv4#area6#miu50" name="Nuova Taglia" gr:x="932" gr:y="1582" moduleId="mov1#mpkg1#hym4">
+      <OKLink id="sv4#area6#miu50#oln142" name="OKLink127" to="sv4#area6#page33" automaticCoupling="true" gr:bendpoints="-123,-92,349,-98"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv4#area6#miu51" name="Nuovo Colore" gr:x="692" gr:y="1332" moduleId="mov1#mpkg1#hym2">
+      <OKLink id="sv4#area6#miu51#oln143" name="OKLink124" to="sv4#area6#page33" automaticCoupling="true" gr:bendpoints="123,25,319,-310"/>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </Area>
