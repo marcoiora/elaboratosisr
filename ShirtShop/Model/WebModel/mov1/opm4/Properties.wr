@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Recupera&amp;Aggiorna ultimo check" gr:x="560" gr:y="300">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Recupera&amp;Aggiorna ultimo check" gr:x="550" gr:y="310">
   <OperationUnits>
     <InputCollectorUnit id="mov1#opm4#icu16" name="Input Collector" gr:x="0" gr:y="0">
       <OKLink id="mov1#opm4#icu16#oln131" name="OKLink122" to="mov1#opm4#seu62" automaticCoupling="true"/>

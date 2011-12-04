@@ -1,4 +1,4 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="248" id="mov1#mpkg2#ctm7" name="MostraPropostePerClienti">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="4" gr:y="198" id="mov1#mpkg2#ctm7" name="MostraPropostePerClienti">
   <ContentUnits>
     <IndexUnit id="mov1#mpkg2#ctm7#inu1" name="Proposte" gr:x="80" gr:y="70" entity="ent13" displayAttributes="ent1#att2 ent1#att3 rel22#role43.ent6#att25 rel23#role45.ent6#att25 ent1#att9" linkOrder="mov1#mpkg2#ctm7#inu1#ln325 mov1#mpkg2#ctm7#inu1#ln376">
       <Selector id="mov1#mpkg2#ctm7#inu1#su10" defaultPolicy="fill" booleanOperator="and">

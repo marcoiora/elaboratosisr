@@ -1,4 +1,4 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="6" gr:y="138" id="mov1#mpkg2#ctm5" name="Novit&#224;">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="138" id="mov1#mpkg2#ctm5" name="Novit&#224;">
   <ContentUnits>
     <InputCollectorUnit gr:x="0" gr:y="0" id="mov1#mpkg2#ctm5#icu6">
       <Link id="mov1#mpkg2#ctm5#icu6#ln335" name="Link335" to="mov1#mpkg2#ctm5#miu29" automaticCoupling="true" type="transport" validate="true"/>

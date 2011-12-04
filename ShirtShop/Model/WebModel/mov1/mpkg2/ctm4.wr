@@ -1,4 +1,4 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="50" gr:y="328" id="mov1#mpkg2#ctm4" name="StatoPersonalizzazione">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="4" gr:y="258" id="mov1#mpkg2#ctm4" name="StatoPersonalizzazione">
   <ContentUnits>
     <GetUnit gr:x="3" gr:y="0" id="mov1#mpkg2#ctm4#gtu27" name="Maglietta" contextParameters="ctx1">
       <Link id="mov1#mpkg2#ctm4#gtu27#ln345" name="Link345" to="mov1#mpkg2#ctm4#dau28" type="transport" validate="true">

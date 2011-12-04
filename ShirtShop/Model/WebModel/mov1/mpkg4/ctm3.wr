@@ -1,9 +1,9 @@
-<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="80" gr:y="70" id="mov1#mpkg4#ctm3" name="CatalogoStampe">
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="60" id="mov1#mpkg4#ctm3" name="CatalogoStampe">
   <ContentUnits>
-    <OutputCollectorUnit gr:x="330" gr:y="10" id="mov1#mpkg4#ctm3#ocu3" name="Output Collector3">
+    <OutputCollectorUnit gr:x="380" gr:y="-10" id="mov1#mpkg4#ctm3#ocu3" name="To_Dettagli">
       <OutputCollectorParameter id="mov1#mpkg4#ctm3#ocu3#ocp14" name="oid"/>
     </OutputCollectorUnit>
-    <IndexUnit id="mov1#mpkg4#ctm3#inu30" name="Stampe" linkOrder="mov1#mpkg4#ctm3#inu30#ln361" gr:x="180" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27">
+    <IndexUnit id="mov1#mpkg4#ctm3#inu30" name="Stampe" linkOrder="mov1#mpkg4#ctm3#inu30#ln361" gr:x="180" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27" distinct="false">
       <Selector id="mov1#mpkg4#ctm3#inu30#su147" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov1#mpkg4#ctm3#inu30#su147#rcond58" name="tema" predicate="in" implied="true" role="rel24#role47"/>
         <AttributesCondition id="mov1#mpkg4#ctm3#inu30#su147#acond14" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent6#att49" value="true"/>
@@ -16,7 +16,7 @@
     <MultiChoiceIndexUnit id="mov1#mpkg4#ctm3#mciu11" name="Temi Disponibili" linkOrder="mov1#mpkg4#ctm3#mciu11#ln360" gr:x="10" gr:y="0" entity="ent14" displayAttributes="ent14#att54">
       <Link id="mov1#mpkg4#ctm3#mciu11#ln360" name="Filtra" to="mov1#mpkg4#ctm3#inu30" type="normal" automaticCoupling="true" validate="true"/>
     </MultiChoiceIndexUnit>
-    <GetUnit gr:x="290" gr:y="210" id="mov1#mpkg4#ctm3#gtu30" name="GetUnit30" contextParameters="UserCtxParam">
+    <GetUnit gr:x="290" gr:y="250" id="mov1#mpkg4#ctm3#gtu30" name="GetUnit30" contextParameters="UserCtxParam">
       <Link id="mov1#mpkg4#ctm3#gtu30#ln379" name="Link379" to="mov1#mpkg4#ctm3#seu74" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg4#ctm3#gtu30#ln379#par631" name="UserCtxParam.oid_DiCliente [oid]" source="mov1#mpkg4#ctm3#gtu30.UserCtxParam" target="mov1#mpkg4#ctm3#seu74#su145#rcond66.userOID"/>
       </Link>
@@ -46,10 +46,10 @@
       </layout:Cell>
       <layout:Cell>
         <layout:Unit unitId="mov1#mpkg4#ctm3#inu30">
-          <layout:Link link="mov1#mpkg4#ctm3#inu30#ln361"/>
           <layout:Attribute attribute="ent6#att23"/>
           <layout:Attribute attribute="ent6#att25"/>
           <layout:Attribute attribute="ent6#att27"/>
+          <layout:Link link="mov1#mpkg4#ctm3#inu30#ln361"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

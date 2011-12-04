@@ -1,0 +1,70 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg2#ctm8" name="CatalogoStampeSelezione" gr:x="4" gr:y="318">
+  <ContentUnits>
+    <OutputCollectorUnit id="mov1#mpkg2#ctm8#ocu9" name="To_Dettagli" gr:x="380" gr:y="-10">
+      <OutputCollectorParameter id="mov1#mpkg2#ctm8#ocu9#ocp21" name="oid"/>
+      <OutputCollectorParameter id="mov1#mpkg2#ctm8#ocu9#ocp22" name="nome"/>
+    </OutputCollectorUnit>
+    <IndexUnit id="mov1#mpkg2#ctm8#inu4" name="Stampe" linkOrder="mov1#mpkg2#ctm8#inu4#ln46" gr:x="180" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att25 ent6#att27" distinct="false">
+      <Selector id="mov1#mpkg2#ctm8#inu4#su15" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm8#inu4#su15#rcond1" name="tema" predicate="in" implied="true" role="rel24#role47"/>
+        <AttributesCondition id="mov1#mpkg2#ctm8#inu4#su15#acond9" name="AttCondition14" predicate="eq" booleanOperator="or" implied="false" attributes="ent6#att49" value="true"/>
+        <KeyCondition id="mov1#mpkg2#ctm8#inu4#su15#kcond103" name="KeyCondition98" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#mpkg2#ctm8#inu4#ln46" name="Seleziona" to="mov1#mpkg2#ctm8#ocu9" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm8#inu4#ln46#par58" name="oid_KeyCondition3 [oid]" source="data[].ent6#att22" target="mov1#mpkg2#ctm8#ocu9#ocp21"/>
+        <LinkParameter id="mov1#mpkg2#ctm8#inu4#ln46#par85" name="nome_nome" source="data[].ent6#att23" target="mov1#mpkg2#ctm8#ocu9#ocp22"/>
+      </Link>
+    </IndexUnit>
+    <MultiChoiceIndexUnit id="mov1#mpkg2#ctm8#mciu1" name="Temi Disponibili" linkOrder="mov1#mpkg2#ctm8#mciu1#ln56" gr:x="10" gr:y="0" entity="ent14" displayAttributes="ent14#att54">
+      <Link id="mov1#mpkg2#ctm8#mciu1#ln56" name="Filtra" to="mov1#mpkg2#ctm8#inu4" type="normal" automaticCoupling="true" validate="true"/>
+    </MultiChoiceIndexUnit>
+    <GetUnit id="mov1#mpkg2#ctm8#gtu25" name="GetUnit30" gr:x="290" gr:y="250" contextParameters="UserCtxParam">
+      <Link id="mov1#mpkg2#ctm8#gtu25#ln58" name="Link379" to="mov1#mpkg2#ctm8#seu75" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm8#gtu25#ln58#par80" name="UserCtxParam.oid_DiCliente [oid]" source="mov1#mpkg2#ctm8#gtu25.UserCtxParam" target="mov1#mpkg2#ctm8#seu75#su150#rcond8.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="mov1#mpkg2#ctm8#seu5" name="Cliente" gr:x="0" gr:y="100" entity="ent10">
+      <Link id="mov1#mpkg2#ctm8#seu5#ln59" name="Link324" to="mov1#mpkg2#ctm8#seu75" type="transport" validate="true" gr:bendpoints="75,8,-37,-88">
+        <LinkParameter id="mov1#mpkg2#ctm8#seu5#ln59#par81" name="oid_DiNessuno [oid]" source="userOIDArray" target="mov1#mpkg2#ctm8#seu75#su150#rcond3.userOID"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="mov1#mpkg2#ctm8#seu75" name="Stampa" gr:x="90" gr:y="190" entity="ent6">
+      <Selector id="mov1#mpkg2#ctm8#seu75#su150" defaultPolicy="fill" booleanOperator="or">
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm8#seu75#su150#rcond3" name="DiNessuno" predicate="notIn" implied="false" role="rel21#role41"/>
+        <RelationshipRoleCondition id="mov1#mpkg2#ctm8#seu75#su150#rcond8" name="DiCliente" predicate="in" implied="false" role="rel21#role41"/>
+      </Selector>
+      <Link id="mov1#mpkg2#ctm8#seu75#ln70" name="Link369" to="mov1#mpkg2#ctm8#inu4" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg2#ctm8#seu75#ln70#par82" name="oid_KeyCondition98 [oid]" source="ent6#att22Array" target="mov1#mpkg2#ctm8#inu4#su15#kcond103.ent6#att22"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#ctm8#mciu1">
+          <layout:Link link="mov1#mpkg2#ctm8#mciu1#ln56"/>
+          <layout:Attribute attribute="ent14#att54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#mpkg2#ctm8#inu4">
+          <layout:Attribute attribute="ent6#att23"/>
+          <layout:Attribute attribute="ent6#att25"/>
+          <layout:Attribute attribute="ent6#att27"/>
+          <layout:Link link="mov1#mpkg2#ctm8#inu4#ln46"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

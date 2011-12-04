@@ -1,16 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="706" gr:y="1160" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="782" gr:y="1160" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
   <ContentUnits>
-    <IndexUnit gr:x="101" gr:y="84" id="sv2#area8#page41#inu9" name="Scegli una stampa" entity="ent6" displayAttributes="ent6#att23 ent6#att25" linkOrder="sv2#area8#page41#inu9#ln222">
-      <Link id="sv2#area8#page41#inu9#ln222" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true">
-        <LinkParameter id="sv2#area8#page41#inu9#ln222#par390" name="oid_stampa_oid" source="data[].ent6#att22" target="sv2#area8#page41#enu19#fld29_slot"/>
-        <LinkParameter id="sv2#area8#page41#inu9#ln222#par398" name="nome_stampa" source="data[].ent6#att23" target="sv2#area8#page41#enu19#fld38_slot"/>
-      </Link>
-      <Selector id="sv2#area8#page41#inu9#su138" defaultPolicy="fill" booleanOperator="or">
-        <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond52" name="Sue" predicate="in" implied="false" role="rel21#role41"/>
-        <RelationshipRoleCondition id="sv2#area8#page41#inu9#su138#rcond50" name="Non private" predicate="notIn" implied="false" role="rel21#role41"/>
-      </Selector>
-    </IndexUnit>
-    <EntryUnit gr:x="310" gr:y="93" id="sv2#area8#page41#enu19" linkOrder="sv2#area8#page41#enu19#ln229 sv2#area8#page41#enu19#ln264" fieldOrder="sv2#area8#page41#enu19#fld38 sv2#area8#page41#enu19#fld30" name="Stampa sul fronte">
+    <EntryUnit gr:x="234" gr:y="93" id="sv2#area8#page41#enu19" linkOrder="sv2#area8#page41#enu19#ln229 sv2#area8#page41#enu19#ln264" fieldOrder="sv2#area8#page41#enu19#fld38 sv2#area8#page41#enu19#fld30" name="Stampa sul fronte">
       <Field id="sv2#area8#page41#enu19#fld29" name="stampa_oid" type="integer" modifiable="true" preloaded="true" hidden="true"/>
       <Field id="sv2#area8#page41#enu19#fld30" name="Scegli la dimensione" type="float" modifiable="true">
         <VRules>
@@ -25,24 +15,20 @@
       <Field id="sv2#area8#page41#enu19#fld38" name="Stampa selezionata" type="string" modifiable="false" preloaded="true"/>
       <Link id="sv2#area8#page41#enu19#ln264" name="Nessuna Stampa" to="sv2#area8#seu52" type="normal" automaticCoupling="true" validate="true"/>
     </EntryUnit>
-    <MultiMessageUnit gr:x="461" gr:y="144" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
+    <MultiMessageUnit gr:x="385" gr:y="144" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
       <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#miu39" type="normal" validate="true"/>
     </MultiMessageUnit>
-    <GetUnit gr:x="1" gr:y="144" id="sv2#area8#page41#gtu22" name="Utente" contextParameters="UserCtxParam">
-      <Link id="sv2#area8#page41#gtu22#ln307" name="Link307" to="sv2#area8#page41#inu9" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page41#gtu22#ln307#par510" name="UserCtxParam.oid_Non private [oid]" source="sv2#area8#page41#gtu22.UserCtxParam" target="sv2#area8#page41#inu9#su138#rcond52.userOID"/>
-      </Link>
-    </GetUnit>
-    <SelectorUnit gr:x="0" gr:y="53" id="sv2#area8#page41#seu61" name="Utenti" entity="ent10" distinctAttributes="userOID">
-      <Link id="sv2#area8#page41#seu61#ln8" name="Link8" to="sv2#area8#page41#inu9" type="transport" validate="true">
-        <LinkParameter id="sv2#area8#page41#seu61#ln8#par539" name="oid_Non private [oid]" source="userOIDArray" target="sv2#area8#page41#inu9#su138#rcond50.userOID"/>
-      </Link>
-    </SelectorUnit>
-    <ModuleInstanceUnit id="sv2#area8#page41#miu32" name="StatoPersonalizzazione" gr:x="391" gr:y="4" moduleId="mov1#mpkg2#ctm4"/>
-    <MultiMessageUnit id="sv2#area8#page41#mssu18" name="Step di Personalizzazione Stampa Anteriore" gr:x="76" gr:y="0">
+    <ModuleInstanceUnit id="sv2#area8#page41#miu32" name="StatoPersonalizzazione" gr:x="315" gr:y="4" moduleId="mov1#mpkg2#ctm4"/>
+    <MultiMessageUnit id="sv2#area8#page41#mssu18" name="Step di Personalizzazione Stampa Anteriore" gr:x="0" gr:y="0">
       <Message xml:space="preserve">In questa sezione &#232; possibile scegliere la stampa anteriore della maglietta scelta.</Message>
     </MultiMessageUnit>
+    <ModuleInstanceUnit id="sv2#area8#page41#miu48" name="Scegli Stampa" gr:x="8" gr:y="104" moduleId="mov1#mpkg2#ctm8" linkOrder="sv2#area8#page41#miu48#ln233">
+      <Link id="sv2#area8#page41#miu48#ln233" name="seleziona" to="sv2#area8#page41#enu19" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv2#area8#page41#miu48#ln233#par298" name="oid_stampa_oid" source="mov1#mpkg2#ctm8#ocu9#ocp21" target="sv2#area8#page41#enu19#fld29_slot"/>
+        <LinkParameter id="sv2#area8#page41#miu48#ln233#par299" name="nome_stampa" source="mov1#mpkg2#ctm8#ocu9#ocp22" target="sv2#area8#page41#enu19#fld38_slot"/>
+      </Link>
+    </ModuleInstanceUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -54,13 +40,7 @@
       <layout:Cell>
         <layout:Grid>
           <layout:Row>
-            <layout:Cell>
-              <layout:Unit unitId="sv2#area8#page41#inu9">
-                <layout:Attribute attribute="ent6#att23"/>
-                <layout:Attribute attribute="ent6#att25"/>
-                <layout:Link link="sv2#area8#page41#inu9#ln222"/>
-              </layout:Unit>
-            </layout:Cell>
+            <layout:Cell/>
             <layout:Cell>
               <layout:Unit unitId="sv2#area8#page41#enu19">
                 <layout:Field field="sv2#area8#page41#enu19#fld38"/>
