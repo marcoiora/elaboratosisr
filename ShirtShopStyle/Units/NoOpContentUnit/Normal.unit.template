@@ -1,0 +1,58 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Links Orientation" name="link-orientation" type="enum" values="horizontal|vertical" default="horizontal">
+Defines the orientation of the links.
+Allowed values are:
+- horizontal (default): places the links on the
+same line one next to the other
+- vertical: places one link per line
+</wr:LayoutParameter>
+
+<wr:LayoutParameter label="Links Alignment" name="link-alignment" type="enum" values="left|right|center" default="left">
+Defines the alignment of the links.
+Allowed values are:
+- left (default): places the links on the left
+- right: places the links on the right
+- center: places the links on the center
+</wr:LayoutParameter>
+
+[%
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+def linkOrientation = params["link-orientation"]
+def linkAlignment = params["link-alignment"]
+%]
+<wr:Frame>
+  <div class="plain <wr:StyleClass/>">
+    <div class="plain NoOpContentUnit">
+      <table align="[%= linkAlignment%]">
+        <tr>
+           <td>
+             <table>
+               [% if (linkOrientation == "horizontal") {%]
+                 <tr>
+               [% } %]
+               <wr:Iterate var="link" context="unit" select="layout:Link">
+                 <wr:Visible>
+                 [% if(linkOrientation == "vertical") { %]
+                   <tr>
+                 [% } %]
+                 <td nowrap="nowrap">
+                   <wr:Link class="link"/>
+                 </td>
+                 [%if(linkOrientation == "vertical") {%]
+                   </tr>
+                 [% } %]
+                 </wr:Visible>
+               </wr:Iterate>
+               [% if (linkOrientation == "horizontal") {%]
+                 </tr>
+               [% } %]
+             </table>
+           </td>
+        </tr>  
+      </table> 
+    </div>
+  </div>
+</wr:Frame>

@@ -1,0 +1,115 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.math.NumberUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+def links = unit.selectNodes("layout:Link")
+def unitLink = unit.selectSingleNode("layout:Link")
+def link = unitLink?.valueOf("@link")
+
+%]
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain IndexUnit">
+				<table border="0" cellspacing="1" cellpadding="2" id="[%= unit["id"] + "_" +  wr.ajaxUnits.indexOf(unit) + "_sortable" %]">
+					<tr>
+						[% if (links.size() == 1) {%]
+							<wr:Visible context="unitLink">
+								<th class="<wr:StyleClass/> header"></th>
+							</wr:Visible>
+						[% } %] 
+						<wr:Iterate var="l" context="unit" select="layout:Attribute">
+							<wr:Visible>
+								<th nowrap="nowrap" class="<wr:StyleClass/> header">
+									<wr:Label/>
+								</th>
+							</wr:Visible>
+						</wr:Iterate>
+						[% if (links.size() > 1) { %]
+							<wr:Iterate var="l" context="unit" select="layout:Link">
+								<wr:Visible>
+									<th class="<wr:StyleClass/> header"></th>
+								</wr:Visible>
+							</wr:Iterate> 
+						[% } %]
+					</tr>
+					
+					<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+						<c:set var="index" value="${status.index}"/>
+						<tr> 
+							[% if (links.size() == 1) {%]
+								<wr:Visible context="unitLink" position="'index'">
+									<td>
+										<a href="<wr:URL context="unitLink"/>" class="<wr:StyleClass context="unitLink"/> link<c:if test="${<wr:UnitId/>.currentIndex eq index}">Current</c:if>" [%if (unitLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+											<img src="WRResources/spacer.gif" class="bullet<c:if test="${<wr:UnitId/>.currentIndex eq index}">Current</c:if>" border="0" alt="<wr:Label context="unitLink"/>"/>
+										</a>
+									</td>
+								</wr:Visible>
+							[% } %]
+							<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+								<wr:Visible position="'index'">
+									<td class="<wr:StyleClass/> value<c:if test="${<wr:UnitId/>.currentIndex eq index}">Current</c:if>">
+										<wr:Value/>
+									</td>
+								</wr:Visible>
+							</wr:Iterate>
+							
+							[% if (links.size() > 1) { %]
+								<wr:Iterate var="l" context="unit" select="layout:Link">
+									<wr:Visible position="'index'">
+										<td>
+											<c:choose>
+												<c:when test="${<wr:UnitId/>.currentIndex eq index}">
+													<wr:Link class="linkCurrent"/>
+												</c:when>
+												<c:otherwise>
+													<wr:Link class="link"/>
+												</c:otherwise>
+											</c:choose>
+										</td>
+									</wr:Visible>
+								</wr:Iterate> 
+							[% } %]
+						</tr>
+					</c:forEach>
+				 </table>
+			</div>
+		</div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain IndexUnit">
+				<table>
+					<tr>
+						<td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]

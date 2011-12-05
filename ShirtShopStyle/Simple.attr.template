@@ -1,0 +1,59 @@
+#?delimiters [%, %], [%=, %]
+[% 
+def type = attr["type"]
+def subType = attr["subType"]
+def contentType = attr["contentType"]
+def typeId = (subType != "") ? subType : type
+def pattern = typeId + "Pattern"
+def attrProp = getFieldName(attr["attribute"])
+def mode = attr["mode"]
+
+if (mode == "value") { %]
+	<span class="<wr:StyleClass context="attr"/> value">
+[% } %]
+[% if (mode == "label") { %]
+	<span class="<wr:StyleClass context="attr"/> header"><wr:Label context="attr"/></span>
+[% } else if ((type == "string") || (type == "text")) { 
+    if (contentType == "text/html") { %]
+		<c:out value="${[%=item%].[%=attrProp%]}" escapeXml="false"/>
+  	[% } else { %]
+		<c:out value="${[%=item%].[%=attrProp%]}"/>
+  	[% } 
+} else if ((type == "float") || (type == "integer") || (type == "decimal")) { %]
+	<fmt:formatNumber value="${[%=item%].[%=attrProp%]}" pattern="${[%=pattern%]}"/>
+[% } else if ((type == "date") || (type == "time") || (type == "timestamp")) { %]
+	<fmt:formatDate value="${[%=item%].[%=attrProp%]}" pattern="${[%=pattern%]}"/>
+[% } else if (type == "blob") { %]
+  <c:if test="${not (empty [%=item%].[%=attrProp%])}">
+	<a [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>"><c:out value="${[%=item%].[%=attrProp%].name}"/></a>
+  </c:if>
+[% } else if (type == "boolean") { %]
+<c:if test="${not(empty [%=item%].[%=attrProp%])}">
+  <c:choose>
+    <c:when test="${[%=item%].[%=attrProp%]}">
+      <bean:message key="[%=typeId%].yes"/>
+    </c:when>
+    <c:otherwise>
+      <bean:message key="[%=typeId%].no"/>
+    </c:otherwise>
+  </c:choose>
+</c:if>
+[% } else if (type == "url") { %]
+  [%
+    def makeHref = {
+        if ("email".equals(contentType) || "mail".equals(contentType)) {
+            %]<c:set var="encEmail" value="${[%=item%].[%=attrProp%]}"/>mailto:<%= java.net.URLEncoder.encode((String)pageContext.getAttribute("encEmail"), "US-ASCII")%>[%
+        } else {
+            %]<c:out value="${[%=item%].[%=attrProp%]}"/>[%
+        }
+    }
+  %]
+  <c:if test="${not(empty [%=item%].[%=attrProp%])}">
+    <a [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="[% makeHref() %]"><c:out value="${[%=item%].[%=attrProp%]}"/></a>
+  </c:if>
+[% } else { %]
+<c:out value="${[%=item%].[%=attrProp%]}"/>
+[% } %]
+[%if (mode == "value") { %]
+	</span>
+[% } %]

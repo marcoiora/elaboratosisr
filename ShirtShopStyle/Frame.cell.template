@@ -1,0 +1,66 @@
+#?delimiters [%, %], [%=, %]
+<wr:Frame>
+[%
+def page = cell.selectSingleNode("ancestor::Page")
+def ajaxEnabled = isAjaxPage(page)
+def inSubPage = cell.selectSingleNode("ancestor::layout:SubPage")
+def inCustomLocation = cell.selectSingleNode("ancestor::layout:CustomLocation") != null
+
+	for (cellElem in cell.elements()) {
+	    def styleClass = cellElem["styleClass"]
+	    if (cellElem.selectSingleNode("self::layout:Unit") != null) {
+	    	if (wr.ajaxGeneration == "true" && ajaxEnabled) { %]
+	        	<div class="ajaxDiv" id="[%= cellElem["id"] + "_" +  wr.ajaxUnits.indexOf(cellElem) %]">
+			    	[%= "###__" + cellElem["id"] + "_" +  wr.ajaxUnits.indexOf(cellElem) + "__###" %]
+			    </div>
+	        [% } else {
+	        	printRaw(executeTemplate(wr.webappPluginDir + "/Struts13/Unit.template", ["unit" : cellElem]))
+	        }
+	    } else if (cellElem.selectSingleNode("self::layout:Attribute")) {
+	    	if (wr.ajaxGeneration == "true" && ajaxEnabled) { %]
+	        	<div class="ajaxDiv" id="[%= cellElem["id"] +  "_" + wr.ajaxUnits.indexOf(cellElem) + "_" + cellElem["mode"] %]">
+			    	[%= "###__" + cellElem["id"] + "_" +  wr.ajaxUnits.indexOf(cellElem) + "_" + cellElem["mode"] + "__###" %]
+			    </div>
+	        [% } else {
+	        	expandLayoutAttribute(cellElem)
+	        	printRaw(executeTemplate(wr.webappPluginDir + "/Struts13/Attribute.template", ["attr" : cellElem, position: "", "item" : getLayoutAttributeItem(cellElem), "styleClass" : styleClass]))
+			   }
+	    } else if (cellElem.selectSingleNode("self::layout:Field")) {
+	    	if (wr.ajaxGeneration == "true" && ajaxEnabled) { %]
+	        	<div class="ajaxDiv" id="[%= cellElem["id"] +  "_" +   wr.ajaxUnits.indexOf(cellElem) + "_" + cellElem["mode"] %]">
+			    	[%= "###__" + cellElem["id"] + "_" +  wr.ajaxUnits.indexOf(cellElem) + "_" + cellElem["mode"] + "__###" %]
+			    </div>
+	        [% } else {
+	        	expandLayoutField(cellElem)
+	        	printRaw(executeTemplate(wr.webappPluginDir + "/Struts13/Field.template", ["field" : cellElem, "mode" : cellElem["mode"], "styleClass" : styleClass]))
+	        }
+	    } else if (cellElem.selectSingleNode("self::layout:Link")) {
+	    	if (wr.ajaxGeneration == "true" && ajaxEnabled) { %]
+	        	<div class="ajaxDiv" id="[%= cellElem["id"] +  "_" +   wr.ajaxUnits.indexOf(cellElem) %]">
+			    	[%= "###__" + cellElem["id"] + "_" +  wr.ajaxUnits.indexOf(cellElem) + "__###" %]
+			    </div>
+	        [% } else {
+	        	expandLayoutLink(cellElem)
+	        	printRaw(executeTemplate(wr.webappPluginDir + "/Struts13/Link.template", ["link" : cellElem, "type" : "", "styleClass" : styleClass, "position" : "", "item" : getLayoutAttributeItem(cellElem)]))
+	        }
+	    } else if (cellElem.selectSingleNode("self::layout:Grid")) {
+	    	if (wr.ajaxGeneration == "true" && ajaxEnabled) { %]
+	        	<div class="ajaxDiv" id="[%= page["id"] + "_grid_"  + wr.ajaxCells.indexOf(cellElem) %]">
+			    	[%= "###__" + page["id"] + "_grid_" +  wr.ajaxCells.indexOf(cellElem) + "__###" %]
+			    </div>
+	        [% } else {
+	        	printRaw(executeTemplate(wr.webappPluginDir + "/Struts13/Grid.template", ["grid" : cellElem]))
+	        }
+	    } else if (cellElem.selectSingleNode("self::layout:SubPage")) {
+	    	if (wr.ajaxGeneration == "true" && ajaxEnabled) { %]
+	        	<div class="ajaxDiv" id="[%= cellElem["pageId"] + "_"  + wr.ajaxSubPages.indexOf(cellElem) %]">
+			    	[%= "###__" + cellElem["pageId"] + "_" +  wr.ajaxSubPages.indexOf(cellElem) + "__###" %]
+			    </div>
+	        [% } else {
+	        	printRaw(executeTemplate(wr.webappPluginDir + "/Struts13/SubPage.template", ["layoutSubPage" : cellElem]))
+	        }
+	    }
+	}
+%]	
+</wr:Frame>
+

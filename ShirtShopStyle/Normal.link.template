@@ -1,0 +1,52 @@
+#?delimiters [%, %], [%=, %]
+[% 
+def isAjax = (link["ajaxEnabled"] == "true" && isAjaxPage(page))
+def formBean = getFormBeanName(page)
+if ((type == "") && (link["unitId"] != "")) {  // link individually placed
+     type = isFormBased(getById(link["unitId"])) ? "button" : ""
+}
+%]
+[% def visibility = getVisibilityPolicy(getById(link["to"]))
+	if (isProtectedAncestorOrSelf(getById(link["to"]))) {
+    if ( visibility == "" || visibility == "hide") { %]
+	<c:if test="${webratio:isTargetAccessible('[%=getLinkId(link)%]', pageContext)}">
+ [% } else if (visibility == "inactive") { %]
+    <c:choose>
+       <c:when test="${webratio:isTargetAccessible('[%=getLinkId(link)%]', pageContext)}">
+ [% } 
+ }%]
+ 	[% if ("button" == type) { %]
+		[% if (isAjax) { %]
+ 			<input onclick="return ajaxRequest('[%= formBean %]', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'isForm': true, 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': 'button:[%= link["id"] %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))" [%= styleClass ? "class=\"${styleClass}\"" : "" %] id="button:[%= link["id"] %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+ 		[% } else { %]
+			<input onclick="[%if (link["newWindow"] == "true") { %]$('[%= formBean %]').target='_blank'[% } else { %]$('[%= formBean %]').target='_self'[% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] id="button:[%= link["id"] %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+		[% } %]
+	[% } else { %]
+		[% if (isAjax) { %]
+ 			<a onclick="return ajaxRequest('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'pressedLink' : '[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= link["id"] %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>">							
+ 		[% } else { %]
+ 			<a [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %] target="_blank"[% } %]>
+		[% } %]
+		<wr:Label context="link"/>
+		</a>
+	[% } %]									
+ [% 
+ if (isProtectedAncestorOrSelf(getById(link["to"]))) {
+ if (visibility == "inactive") { %]
+     </c:when>
+	 <c:otherwise>
+	 	[% if ("button" == type) { %]
+	 		<input disabled="yes" [%= styleClass ? "class=\"${styleClass}\"" : "" %] id="button:[%= link["id"] %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+		[% } else { %]
+			<span [%= styleClass ? "class=\"${styleClass}\"" : "" %]>
+				<wr:Label context="link"/>
+			</span>
+		[% } %]	
+	 </c:otherwise>
+ [% } %]	
+ [% if ( visibility == "" || visibility == "hide" ) { %]
+	</c:if>
+ [% } else if (visibility == "inactive") { %]
+	</c:choose>
+ [% } %]
+ [% } %]

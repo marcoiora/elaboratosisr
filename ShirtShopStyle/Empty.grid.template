@@ -1,0 +1,32 @@
+#?delimiters [%, %], [%=, %]
+[%
+import org.apache.commons.lang.math.NumberUtils
+
+def hiddenCells = new HashSet()
+def rowIndex = 0
+def gridRows = grid.selectNodes("layout:Row")
+for (row in gridRows) {
+    def cellIndex = 0
+    def rowCells = row.selectNodes("layout:Cell")
+    for (cell in rowCells) {
+        def colspan = NumberUtils.toInt(cell["colspan"], 1)
+        def rowspan = NumberUtils.toInt(cell["rowspan"], 1)
+        if ((colspan > 1) || (rowspan > 1)) {
+            for (i in rowIndex..(rowIndex + rowspan - 1)) {
+                for (j in cellIndex..(cellIndex + colspan - 1)) {
+                    if ((i != rowIndex) || (j != cellIndex)) {
+                        hiddenCells.add(grid.selectSingleNode("layout:Row[" + (i + 1) + "]/layout:Cell[" + (j + 1) + "]"))
+                    }
+                }
+            }
+        }
+        cellIndex++
+    }
+    rowIndex++
+}
+%]
+[% for (row in gridRows) { %]
+	[% for (cell in row.selectNodes("layout:Cell").findAll{!hiddenCells.contains(it)}) { %]
+		<wr:Cell context="cell"/>
+	[% } %]
+[% }  %]

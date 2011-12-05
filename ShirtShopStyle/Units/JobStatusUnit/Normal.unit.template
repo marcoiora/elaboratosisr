@@ -1,0 +1,44 @@
+#?delimiters [%, %], [%=, %]
+[%setHTMLOutput()%]
+<c:if test="${not(empty <wr:UnitId/>.instanceId)}">
+<wr:Frame>
+<div class="plain <wr:StyleClass/>">
+	<div class="plain JobStatusUnit">
+		<table>
+		    <tr>
+		      <td colspan="4">
+		         <table>
+		           <tr><th nowrap="nowrap" class="<wr:StyleClass/> header" style="text-align:left"><bean:message key="JobStatus.JobId"/>:</th><td><c:out value="${<wr:UnitId/>.instanceId}"/></td></tr>
+				   <tr><th nowrap="nowrap" class="<wr:StyleClass/> header" style="text-align:left"><bean:message key="JobStatus.JobGroup"/>:</th><td><c:out value="${<wr:UnitId/>.group}"/></td></tr>
+				 </table>
+		      </td>
+		    </tr>
+		    <tr>
+			   <th nowrap="nowrap" class="<wr:StyleClass/> header"></th>
+			   <th nowrap="nowrap" class="<wr:StyleClass/> header"><bean:message key="JobStatus.TriggerId"/></th>
+			   <th nowrap="nowrap" class="<wr:StyleClass/> header"><bean:message key="JobStatus.TriggerGroup"/></th>
+			   <th nowrap="nowrap" class="<wr:StyleClass/> header"><bean:message key="JobStatus.TriggerNextFireTimestamp"/></th>
+		    </tr>
+			<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.triggers}">
+			  <c:set var="index" value="${status.index}"/>
+			  <tr>  
+					<td class="<wr:StyleClass/> value"><img src="WRResources/spacer.gif" class="bullet" border="0" alt=""/></td>
+					<td class="<wr:StyleClass/> value">
+  						<c:out value="${current.instanceId}"/>
+  					</td>
+  					<td class="<wr:StyleClass/> value">
+  						<c:out value="${current.group}"/>
+  					</td>
+  					<td class="<wr:StyleClass/> value">
+  						<fmt:formatDate value="${current.nextFireTimestamp}" pattern="${timestampPattern}"/>
+  					</td>
+                    <wr:Iterate var="link" context="unit" select="layout:Link">
+  					   <wr:Visible position="'index'"><td class="<wr:StyleClass/> value"><wr:Link context="link"/></td></wr:Visible>
+                    </wr:Iterate>
+  				</tr>
+			</c:forEach>
+		</table>
+  	</div>
+</div>
+</wr:Frame>
+</c:if>

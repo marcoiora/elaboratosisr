@@ -1,0 +1,102 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Link Style" name="link-style" type="enum" values="normal|button" default="normal">
+Defines the style of the link. 
+Allowed values are:
+- normal (default)
+- button
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show" name="show" type="enum" values="text|icon|icon &amp; text|text &amp; icon" default="text">
+Defines the content of the link.
+Allowed values are:
+- text (default)
+- icon & text
+- text & icon
+- icon
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Folder" name="icon-folder" type="string" default="Resources">
+Defines the path to the folder containing the icon used to render links if you choose icon, icon & text or text & icon in the "Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Extension" name="icon-extension" type="string" default="png">
+Defines the extension of the icon used to render links if you choose icon, icon & text or text & icon in the "Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Name" name="icon-name" type="string">
+Defines the name of the image to use. If omitted the name of the link is used.
+</wr:LayoutParameter>
+
+<wr:LayoutParameter label="Scroll Show" name="scroll-show" type="enum" values="text|icon|icon &amp; text|text &amp; icon" default="text">
+Defines the content of the unit scroll links.
+Allowed values are:
+- text (default)
+- icon & text
+- text & icon
+- icon
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Scroll Icon Folder" name="scroll-icon-folder" type="string" default="Resources">
+Defines the path to the folder containing the icon used to render scroll links if you choose icon, icon & text or text & icon in the "Scroll Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Scroll Icon Extension" name="scroll-icon-extension" type="string" default="png">
+Defines the extension of the icon used to render unit scroll links if you choose icon, icon & text or text & icon in the "Scroll Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Scroll Icon Name" name="scroll-icon-name" type="string">
+Defines the name of the image to use. If omitted the name of the unit scroll link is used.
+</wr:LayoutParameter>
+
+<wr:LayoutParameter label="Sort Show" name="sort-show" type="enum" values="text|icon|icon &amp; text|text &amp; icon" default="text">
+Defines the content of the unit sort links.
+Allowed values are:
+- text (default)
+- icon & text
+- text & icon
+- icon
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Sort Icon Folder" name="sort-icon-folder" type="string" default="Resources">
+Defines the path to the folder containing the icon used to render sort links if you choose icon, icon & text or text & icon in the "Sort Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Sort Icon Extension" name="sort-icon-extension" type="string" default="png">
+Defines the extension of the icon used to render unit sort links if you choose icon, icon & text or text & icon in the "Sort Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Sort Icon Name" name="sort-icon-name" type="string">
+Defines the name of the image to use. If omitted the name of the unit sort link is used.
+</wr:LayoutParameter>
+
+<wr:LayoutParameter label="New Window Type" name="new-window-type" type="enum" values="normal|javascript" default="normal">
+Defines the type of the window in which the target of the link has to be opened. 
+Allowed values are:
+- normal (default)
+- javascript
+</wr:LayoutParameter>
+<wr:LayoutParameter label="New Window Options" name="new-window-options" type="string" default="width=640,height=480,status=yes">
+Defines the properties of the window. It is a string written as you would write the style HTML attribute.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Confirm Dialog" name="confirmation" type="boolean" default="false">
+Defines if a confirmation dialog has to be shown before the link is navigated. 
+Allowed values are:
+- true 
+- false (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Confirm Message Key" name="confirm-message" type="string" default="linkConfirmMessage">
+Defines the message to show to the user in the confirmation dialog. It is a key that has also to be added in the Localization dialog.
+</wr:LayoutParameter>
+
+[%
+	/* Parameters to extend */
+	def paramNames = ["show", "icon-folder", "icon-extension", "icon-name"]
+	
+	/* Determine link type */
+	def linkType = null
+	if ("true" == link["scroll"]) {
+		linkType = "scroll"
+	} else if ("true" == link["sort"]) {
+		linkType = "sort"
+	}
+	
+	/* Override extended parameters */
+	def linkLayout = getLinkLayout(link)
+	if (linkType != null) {
+		paramNames.each { linkLayout.parameters[it] = params[linkType + "-" + it] }
+	}
+	
+	def templateName = "WRDefault/Default"
+	def templateFile = getElementLayoutFile(templateName, ".link.template")
+	printRaw(executeTemplate(templateFile.absolutePath, ["params" : linkLayout.parameters, "templateType" : "link"]))
+%]

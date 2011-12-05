@@ -1,0 +1,116 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Header" name="show-header" type="boolean" default="true">
+Defines the rendition of the header on the top.
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Attributes Name" name="show-attribute-name" type="boolean" default="false">
+Defines the rendition of the attributes names.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.math.NumberUtils
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+
+
+def showHeader = params["show-header"]
+def showAttributeName = params["show-attribute-name"]
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+
+def atts = unit.selectNodes("layout:Attribute")
+def bullet = "images/shadow_left.jpg"
+def links = unit.selectNodes("layout:Link")
+%]
+
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain MultiDataUnit">
+			    <table>
+			      <tr>
+			        <td> 
+			          <table border="0" cellspacing="1" cellpadding="2">
+			            [% if (showHeader == "true") {%] 
+				              <tr>
+				                <th class="<wr:StyleClass/> header"></th>  				                
+				                <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+				                	<wr:Visible>
+                                      [% if (showAttributeName == "true") {%]
+				                		<th class="<wr:StyleClass/> header"></th>
+				                	  [% } %]
+					                  <th nowrap="nowrap" class="<wr:StyleClass/> header"><wr:Label/></th>
+                                    </wr:Visible>
+				                </wr:Iterate>
+				              </tr>
+			            [% } %]
+			            <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+			              <c:set var="index" value="${status.index}"/>
+			              <tr>
+			                <td>
+			                    <img src="WRResources/spacer.gif" class="bullet" border="0" />
+			                </td>
+			                <wr:Iterate var="attr" context="unit" select="layout:Attribute"> 
+			                  <wr:Visible position="'index'">
+                                [% if (showAttributeName == "true") {%]
+			                    <th class="<wr:StyleClass/> header"><wr:Label/></th>
+			                    [% } %]
+							    <td class="<wr:StyleClass/> value [%= attr["type"]%]"><wr:Value/></td> 
+			                  </wr:Visible>
+			                </wr:Iterate>
+			              </tr>
+			            </c:forEach>
+			          </table>
+			        </td>
+			      </tr>
+			      [% if (!links.empty) {%]
+			        <tr>
+			          <td colspan="2">
+			            <table>
+			                <wr:Iterate var="link" context="unit" select="layout:Link">
+			                  <wr:Visible>
+			                    <tr><td><wr:Link class="link"/></td></tr>
+			                  </wr:Visible>
+			                </wr:Iterate>
+			            </table>
+			          </td>
+			        </tr>
+			     [% } %]
+			    </table>
+	   	   </div>
+	   </div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain MultiDataUnit">
+				<table>
+				    <tr>
+				      <td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]

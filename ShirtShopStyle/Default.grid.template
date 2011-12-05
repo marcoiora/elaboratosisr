@@ -1,0 +1,56 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Width" name="width" type="string">
+Defines the width of the cell of the grid.
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.math.NumberUtils
+
+def paramGridWidth = params["width"]
+def gridWidth= grid.attributeValue("width", paramGridWidth)
+def gridHeight=grid["height"]
+def gridCSSStyle=grid["cssStyle"]
+def gridAlign=grid["align"]
+def cellpadding=grid["padding"]
+def cellspacing=grid["spacing"]
+
+def hiddenCells = new HashSet()
+def rowIndex = 0
+def gridRows = grid.selectNodes("layout:Row")
+for (row in gridRows) {
+    def cellIndex = 0
+    def rowCells = row.selectNodes("layout:Cell")
+    for (cell in rowCells) {
+        def colspan = NumberUtils.toInt(cell["colspan"], 1)
+        def rowspan = NumberUtils.toInt(cell["rowspan"], 1)
+        if ((colspan > 1) || (rowspan > 1)) {
+            for (i in rowIndex..(rowIndex + rowspan - 1)) {
+                for (j in cellIndex..(cellIndex + colspan - 1)) {
+                    if ((i != rowIndex) || (j != cellIndex)) {
+                        hiddenCells.add(grid.selectSingleNode("layout:Row[" + (i + 1) + "]/layout:Cell[" + (j + 1) + "]"))
+                    }
+                }
+            }
+        }
+        cellIndex++
+    }
+    rowIndex++
+}
+%]
+<table [% if(gridCSSStyle != "") {%] style="[%= gridCSSStyle%]" [% }%][% if(gridHeight != "") {%] height="[%= gridHeight%]" [% }%][% if(cellspacing != "") {%] cellspacing="[%= cellspacing%]" [% }%] [% if(cellpadding != "") {%] cellpadding="[%= cellpadding%]" [% }%] [% if(gridAlign != "") {%] align="[%= gridAlign%]"[% }%] [% if(gridWidth != "") {%] width="[%= gridWidth %]" [% }%]>
+[% for (row in gridRows) { %]
+<tr>
+[% for (cell in row.selectNodes("layout:Cell").findAll{!hiddenCells.contains(it)}) { 
+   def colspan = cell["colspan"]
+   def rowspan = cell["rowspan"]
+   def vAlign = cell.attributeValue("valign", "top")
+   def align = cell.attributeValue("align", "left")
+   def width = cell["width"]
+   def height = cell["height"]
+   def cssStyle = cell["cssStyle"]
+   def padding = cell["padding"]
+%]
+<td [% if(cssStyle != "") {%] style="[%= cssStyle%][% if(padding != "") {%];padding:[%=padding%][% }%]" [% }%][% if(height != "") {%] height="[%= height%]" [% }%][% if(width != "") {%]width="[%=width%]" [% }%][% if(padding != "" && cssStyle == "") {%]style="padding:[%=padding%]" [% }%] valign="[%= vAlign%]" align="[%= align%]" [% if(colspan != "") {%] colspan="[%=colspan%]" [% }%][% if(rowspan != "") {%] rowspan="[%=rowspan%]" [% }%]><wr:Cell context="cell"/></td>
+[% } %]
+</tr>
+[% }  %]
+</table>

@@ -1,0 +1,217 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Input size" name="input-size" type="string" default="25">
+Defines the size of inputs.
+Allowed values are:
+- size of the input
+- 25 (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Input Max Length" name="input-max-length" type="string">
+Defines the max length of inputs.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Javascript" name="use-javascripts" type="boolean" default="true">
+Defines if calendar or Advanced HTML Editor have to be used.
+ - true (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="CKEditor toolbar" name="fck-toolbar" type="string" default="WebRatioDefault">
+Defines the toolbar the CKEditor should use.
+Allowed values are:
+- any toolbar defined in the CKEditor/config.js file
+- WebRatioDefault (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Textarea width" name="width" type="string" default="35">
+Defines the width of the textarea fields.
+Allowed values are:
+- number of columns
+- 35 (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Textarea height" name="height" type="string" default="8">
+Defines the height of the textarea fields.
+Allowed values are:
+- number of rows
+- 8 (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Boolean field rendering" name="boolean-field-rendering" type="enum" values="normal|checkbox" default="normal">
+Defines the rendition of a boolean field.
+Allowed values are:
+- normal (default)
+- checkbox
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use 'No selection' in Selection fields" name="selection-field-empty-message" type="boolean" default="true">
+Defines if the option "No selection" has to be used.
+Allowed values are:
+ - true (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="No Selection Message" name="no-selection-message" type="string" default="selectionfield.noselection">
+Defines the key of the message to use as the no selection item.
+Default value: selectionfield.noselection
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Selection field rendering" name="selection-field-rendering" type="enum" values="select|radio|radio horizontal" default="select">
+Defines the rendition of a selection field.
+Allowed values are:
+- select (default)
+- radio
+- radio horizontal
+</wr:LayoutParameter>
+[%
+
+import org.apache.commons.lang.math.NumberUtils
+import org.apache.commons.lang.StringUtils
+
+def unitId = field.selectSingleNode("ancestor::layout:Unit")?.valueOf("@unitId")
+if (unitId == "") {
+	unitId = field["unitId"]
+} 
+def fieldId = field["field"]
+def type = field["type"]
+def contentType = field["contentType"]
+def modifiable = (field["modifiable"] == "true")
+def plain = getById(field["field"])?.name == "Field"
+def selection = getById(field["field"])?.name == "SelectionField"
+def fieldProp = field["field"] + ((isLocalizedType(type) && plain) ? "_locale" : "")
+def inputSize = params["input-size"]
+def maxLength = params["input-max-length"]
+def ckEditorToolbar = StringUtils.defaultIfEmpty(params["fck-toolbar"], "WebRatioDefault")
+def useJavascripts = params["use-javascripts"]
+def typeId = (field["subType"] != "") ? field["subType"] : type
+def formBean = getFormBeanName(page)
+
+def selectionFieldRendering = params["selection-field-rendering"]
+def width = NumberUtils.toInt(params["width"])
+def height = NumberUtils.toInt(params["height"])
+def submitLinks = getSubmitLinks(field)
+
+def readCond = getDisableCondition(field)
+def readOnly = "false"
+if(!selection && !modifiable){
+  readOnly = "true"
+}else if(readCond != null){
+  readOnly = "\${" + readCond + "}"  
+}
+
+def onkeyPressed = {
+   if(submitLinks != null && submitLinks.size() > 0){
+      %]onkeypress="if(event.keyCode==13){clickButton('[%= submitLinks.collect{it["link"]}.join("|")%]'); return false;}"[%
+   }
+}
+
+if (mode == "error") { %]
+	<html:errors property="[%=unitId%][${index}].value([%=fieldProp%])"/>
+[% } else if (mode == "label") { %]
+<wr:Label context="field"/>
+[% } else if (plain) {%]
+	[% if ((type == "boolean")) { %]
+		[% if (params["boolean-field-rendering"] == "checkbox") { %]
+			<html:checkbox [%onkeyPressed()%] indexed="true" name="[%=unitId%]"  property="value([%=fieldProp%])" value="true" disabled="[%=readOnly%]" styleClass="[%=styleClass%]" styleId="[%=unitId%][${index}].value([%=fieldProp%])"/>
+		[% } else { %]
+			[% if (modifiable) { %]
+				<html:radio [%onkeyPressed()%] styleClass="[%=styleClass%]" indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])" value="true" disabled="[%=readOnly%]"/>
+				<bean:message key="[%=typeId%].yes"/>
+				<html:radio [%onkeyPressed()%] styleClass="[%=styleClass%]" indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])" value="false" disabled="[%=readOnly%]"/>
+				<bean:message key="[%=typeId%].no"/>
+			[% } else { %]
+				<c:choose>
+					<c:when test="${[%=unitId%].map.[%=fieldProp%]}">
+						<bean:message key="[%=typeId%].yes"/>
+					</c:when>
+					<c:otherwise>
+						<bean:message key="[%=typeId%].no"/>
+					</c:otherwise>
+				</c:choose>
+			[% } %]
+			<c:if test="[%= readOnly%]">
+				<html:hidden indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])"/>
+			</c:if>
+		[% } %]
+	[% } else if ((type == "text")) { %]
+		<html:textarea styleId="[%=unitId%][${index}].value([%=fieldProp%])" indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])" styleClass="[%=styleClass%]" cols="[%= width %]" rows="[%= height %]" readonly="[%=readOnly%]"/>
+		[% if (contentType == "text/html" && useJavascripts == "true") { %]
+			<script type="text/javascript">
+				if (CKEDITOR.instances['[%=unitId%][${index}].value([%=fieldProp%])']) {
+					CKEDITOR.remove(CKEDITOR.instances['[%=unitId%][${index}].value([%=fieldProp%])']);
+				}
+				CKEDITOR.replace('[%=unitId%][${index}].value([%=fieldProp%])', {
+					width    : [%= width * 10 %],
+					height   : [%= (height * 10) + 120 %],
+					toolbar  : '[%= ckEditorToolbar %]',
+					language : '<%= ((java.util.Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY)).getLanguage() %>',
+					baseHref : '<%= wrBaseURI %>'
+				});
+			</script>
+		[% } %]
+  	[% } else if (type == "blob") { %]
+		<html:hidden indexed="true" name="[%=unitId%]" property="value([%=fieldProp%]_preload)"/>
+	    [% if (modifiable) { %]
+		<html:file [%onkeyPressed()%] styleId="[%=unitId%][${index}].value([%=fieldProp%])" indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])" disabled="[%= readOnly%]" size="[%= inputSize %]"/>
+	    [% } %]
+		<c:if test="${not empty([%=unitId%].map.[%=fieldProp%]_preload)}">
+		  <html:checkbox [%onkeyPressed()%] indexed="true" name="[%=unitId%]" property="value([%=fieldProp%]_clear)" disabled="[%= readOnly%]"/> clear <a target="blank" href="<webratio:BLOB value="${[%=unitId%].map.[%=fieldProp%]_preload}"/>">preview</a>
+		</c:if>
+  	[% } else if (type == "password") { %]
+		<html:password [%onkeyPressed()%] styleId="[%=unitId%][${index}].value([%=fieldProp%])" indexed="true" name="[%=unitId%]" size="[%= inputSize %]" styleClass="[%=styleClass%]" property="value([%=fieldProp%])" readonly="[%= readOnly%]" redisplay="false"/>
+  	[% } else { %]
+		<html:text [%onkeyPressed()%] styleId="[%=unitId%][${index}].value([%=fieldProp%])" indexed="true" [% if (maxLength != "") { %]maxlength="[%= maxLength %]"[% } %] size="[%= inputSize %]" styleClass="[%=styleClass%]" name="[%=unitId%]" property="value([%=fieldProp%])" readonly="[%=readOnly%]"/>
+  		[%  if ((type == "date" || type == "time" || type == "timestamp") && useJavascripts == "true") { %]
+  			<c:choose><c:when test="[%= readOnly %]">
+				<img src="WRResources/calendar/calendar_disabled.gif" />
+  			</c:when><c:otherwise>
+				<img src="WRResources/calendar/calendar.gif" id="[%=unitId%][${index}].value([%=fieldProp%])_calendar" style="cursor: pointer"/>
+				<script type="text/javascript">
+					Calendar.setup(
+					  {
+					   inputField  : "[%=unitId%][${index}].value([%=fieldProp%])",
+					   ifFormat    : "<bean:message key="[%= typeId%]CalendarPattern"/>",
+					   firstDay    : <%= java.util.Calendar.getInstance((java.util.Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY)).getFirstDayOfWeek() - 1 %>,
+					   button      : "[%=unitId%][${index}].value([%=fieldProp%])_calendar"[% if(type == "time" || type == "timestamp") { %],
+					   showsTime : "true"
+					   [% } %]
+					  }
+					);
+				</script>
+			</c:otherwise></c:choose>
+	  	[% } %]
+ 	[% } %]
+[% } else if (selection) { 
+     if(readCond != null){
+           %]<c:if test="[%= readOnly%]"><html:hidden property="value([%=fieldProp%])" indexed="true" name="[%=unitId%]"/></c:if>[%        
+     }
+     def selectionFieldEmpty = params["selection-field-empty-message"]   
+     if (type == "boolean") { %]
+	   <html:select [%onkeyPressed()%] styleId="[%=unitId%][${index}].value([%=fieldProp%])" styleClass="[%=styleClass%]" indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])" disabled="[%= readOnly%]">
+	     [% if (selectionFieldEmpty == "true") { %]
+		  	<html:option value=""><bean:message key="[%=params["no-selection-message"]%]"/></html:option>
+	     [% } %]
+	     <html:option value="false"><bean:message key="[%=typeId%].no"/></html:option>
+	     <html:option value="true"><bean:message key="[%=typeId%].yes"/></html:option>
+	   </html:select>
+     [% } else { 
+        def suffix = isLocalizedType(type) ? "_locale" : ""
+        def labelProperty = field["field"] + "LabelList" + (isLocalizedType(type) ? "_locale" : "")
+		def listProperty = field["field"] + "List"
+		def selectionFieldRendition = params["selection-field-rendering"]
+		if (selectionFieldRendition == "select") { %]
+		<html:select [%onkeyPressed()%] indexed="true" styleId="[%=unitId%][${index}].value([%=fieldProp%])" name="[%=unitId%]" styleClass="[%=styleClass%]" property="value([%= fieldProp %])" disabled="[%= readOnly%]">
+		  [% if (selectionFieldEmpty == "true") { %]
+		  	<html:option value=""><bean:message key="[%=params["no-selection-message"]%]"/></html:option>
+		  [% } %]
+		  <html:options property="[%=listProperty%]" labelProperty="[%=labelProperty%]"/>
+		</html:select>
+		[% } else if (selectionFieldRendition == "radio horizontal") { %]
+		  <c:forEach var="radioCurrent" varStatus="radioStatus" items="${[%= formBean + ".map." + listProperty %]}">
+      		<c:set var="radioIndex" value="${radioStatus.index}"/>
+      		<input [%onkeyPressed()%] type="radio" name="[%=unitId%][${index}].value([%=fieldProp%])" value="<c:out value="${radioCurrent}"/>" <c:if test="${[%=unitId%].map.[%=fieldProp%] eq radioCurrent}">checked="checked"</c:if> [% if(readCond != null){%]<c:if test="[%= readOnly%]">disabled</c:if>[%}%]><c:out value="${[%= formBean + ".map." + labelProperty %][radioIndex]}"/></input>
+		  </c:forEach>
+		[% } else { %]
+		<table>
+			<c:forEach var="radioCurrent" varStatus="radioStatus" items="${[%= formBean + ".map." + listProperty %]}">
+      			<c:set var="radioIndex" value="${radioStatus.index}"/>
+      			<tr>
+	      			<td>
+		      			<input [%onkeyPressed()%] type="radio" name="[%=unitId%][${index}].value([%=fieldProp%])" value="<c:out value="${radioCurrent}"/>" <c:if test="${[%=unitId%].map.[%=fieldProp%] eq radioCurrent}">checked="checked"</c:if> [% if(readCond != null){%]<c:if test="[%= readOnly%]">disabled</c:if>[%}%]><c:out value="${[%= formBean + ".map." + labelProperty %][radioIndex]}"/></input>
+		      		</td>
+		      	</tr>
+      		</c:forEach>
+		</table>
+		[% } %]
+     [% } %]
+[% } %]
+

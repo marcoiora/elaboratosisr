@@ -1,0 +1,216 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+
+def link = getById(unit.valueOf("layout:Link[1]/@link"))
+
+def blockFactor = unit["blockFactor"]
+def firstLink = unit.selectSingleNode("layout:Link[contains(@link,'First')]")
+def previousLink = unit.selectSingleNode("layout:Link[contains(@link,'Previous')]")
+def blockLink = unit.selectSingleNode("layout:Link[contains(@link,'Block')]")
+def nextLink = unit.selectSingleNode("layout:Link[contains(@link,'Next')]")
+def lastLink = unit.selectSingleNode("layout:Link[contains(@link,'Last')]")
+
+%]
+
+[% 
+def getIconPath(linkLayout) {
+	folder = linkLayout.parameters["icon-folder"]
+	name = StringUtils.defaultIfEmpty(linkLayout.parameters["icon-name"], linkLayout.contextElement?.attributeValue("name"))
+	extension = linkLayout.parameters["icon-extension"]
+	return getFilePath(folder, name, extension)
+}
+%]
+
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0) and <wr:UnitId/>.scroller.of gt [%= blockFactor %]}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0) and <wr:UnitId/>.scroller.of gt [%= blockFactor %]}">
+[% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain ScrollerUnit">
+				<table border="0" cellspacing="1" cellpadding="2">
+					<tr> 
+						[% if (firstLink) { %]
+							<td class="scrollText">
+								<wr:Visible context="firstLink">
+									<c:choose>
+										<c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.first}">
+											<wr:Link class="scroll" context="firstLink"/>
+										</c:when>
+										<c:otherwise>
+											[% def firstLinkLayout = getLinkLayout(firstLink)
+											   if (firstLinkLayout.parameters["show"] && (firstLinkLayout.parameters["show"] == "icon" || firstLinkLayout.parameters["show"] == "icon & text")) { %]
+												<table cellspacing="0" cellpadding="0">
+													<tr>
+														<td valign="middle">
+															<img src="[%=getIconPath(firstLinkLayout) %]" border="0"/>
+														</td>
+														[% if (firstLinkLayout.parameters["show"] == "icon & text") { %]
+															<td>
+																<bean:message key="Scroller.First"/>
+															</td>
+														[% } %]
+													</tr>
+												</table>
+											[% } else { %]
+												<span><bean:message key="Scroller.First"/></span>
+											[% } %]
+										</c:otherwise>
+									</c:choose>
+								</wr:Visible>
+							</td>
+						[% } %]
+						[% if (previousLink) { %]
+							<td class="scrollText">
+								<wr:Visible context="previousLink">
+									<c:choose>
+										<c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.previous}">
+											<wr:Link class="scroll" context="previousLink"/>
+										</c:when>
+										<c:otherwise>
+											[% def previousLinkLayout = getLinkLayout(previousLink)
+											   if (previousLinkLayout.parameters["show"] && (previousLinkLayout.parameters["show"] == "icon" || previousLinkLayout.parameters["show"] == "icon & text")) { %]
+												<table cellspacing="0" cellpadding="0">
+													<tr>
+														<td valign="middle">
+															<img src="[%=getIconPath(previousLinkLayout) %]" border="0"/>
+														</td>
+														[% if (previousLinkLayout.parameters["show"] == "icon & text") { %]
+															<td>
+																<bean:message key="Scroller.Previous"/>
+															</td>
+														[% } %]
+													</tr>
+												</table>
+											[% } else { %]
+												<span><bean:message key="Scroller.Previous"/></span>
+											[% } %]
+										</c:otherwise>
+									</c:choose>
+								</wr:Visible>
+							</td>
+						[% } %]
+						<td class="scrollText" nowrap>${<wr:UnitId/>.scroller.from} <bean:message key="Scroller.To"/> ${<wr:UnitId/>.scroller.to} <bean:message key="Scroller.Of"/> ${<wr:UnitId/>.scroller.of}</td>
+						[% if (nextLink) { %]
+							<td class="scrollText">
+								<wr:Visible context="nextLink">
+									<c:choose>
+										<c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.next}">
+											<wr:Link class="scroll" context="nextLink"/>
+										</c:when>
+										 <c:otherwise>
+											[% def nextLinkLayout = getLinkLayout(nextLink)
+											   if (nextLinkLayout.parameters["show"] && (nextLinkLayout.parameters["show"] == "icon" || nextLinkLayout.parameters["show"] == "icon & text")) { %]
+												<table cellspacing="0" cellpadding="0">
+													<tr>
+														<td valign="middle">
+															<img src="[%=getIconPath(nextLinkLayout) %]" border="0"/>
+														</td>
+														[% if (nextLinkLayout.parameters["show"] == "icon & text") { %]
+															<td>
+																<bean:message key="Scroller.Next"/>
+															</td>
+														[% } %]
+													</tr>
+												</table>
+											[% } else { %]
+												<span><bean:message key="Scroller.Next"/></span>
+											[% } %]
+										</c:otherwise>
+									</c:choose>
+								</wr:Visible>
+							</td>
+						[% } %]
+						[% if (lastLink) { %]
+							<td class="scrollText">
+								<wr:Visible context="lastLink">
+									<c:choose>
+										<c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.last}">
+											<wr:Link class="scroll" context="lastLink"/>
+										</c:when>
+										<c:otherwise>
+											[% def lastLinkLayout = getLinkLayout(lastLink)
+											   if (lastLinkLayout.parameters["show"] && (lastLinkLayout.parameters["show"] == "icon" || lastLinkLayout.parameters["show"] == "icon & text")) { %]
+												<table cellspacing="0" cellpadding="0">
+													<tr>
+														<td valign="middle">
+															<img src="[%=getIconPath(lastLinkLayout) %]" border="0"/>
+														</td>
+														[% if (lastLinkLayout.parameters["show"] == "icon & text") { %]
+															<td>
+																<bean:message key="Scroller.Last"/>
+															</td>
+														[% } %]
+													</tr>
+												</table>
+											[% } else { %]
+												<span><bean:message key="Scroller.Last"/></span>
+											[% } %] 
+										</c:otherwise>
+									</c:choose>
+								</wr:Visible>
+							</td>
+						[% } %]
+					</tr>
+					[% if (blockLink) { %]
+						<tr>
+							<td colspan="5" class="scrollText">
+								<wr:Visible context="blockLink">
+									<span><bean:message key="Scroller.Jump"/></span>
+									<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.scroller.blocks}">
+										<c:set var="index" value="${status.index}"/>
+										<span class="jump">
+											<c:choose>
+												<c:when test="${current ne <wr:UnitId/>.scroller.current}">
+													<a class="<wr:StyleClass context="blockLink"/> link" href="<wr:URL context="blockLink"/>" onclick="<wr:AjaxURL context="blockLink" />">${current}</a>
+												</c:when>
+												<c:otherwise>
+													${current}
+												</c:otherwise>
+											</c:choose>
+										</span>
+									</c:forEach> 
+								</wr:Visible>
+							</td>
+						</tr>
+					[% } %]
+				 </table>
+			 </div>
+		  </div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:when test="${<wr:UnitId/>.dataSize eq 0}">
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain ScrollerUnit">
+				<table>
+					<tr>
+						<td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:when>
+</c:choose>
+[% } %]

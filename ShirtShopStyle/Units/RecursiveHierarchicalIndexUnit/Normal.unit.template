@@ -1,0 +1,66 @@
+#?delimiters [%, %], [%=, %]
+[% 
+ setHTMLOutput()
+ def linkCount = unit.selectNodes("layout:Link").size()
+ def firstLink = unit.selectSingleNode("layout:Link")
+%]
+
+<c:if test="${not(empty <wr:UnitId/>)}">
+<wr:Frame>
+	<div class="plain <wr:StyleClass/>">
+		<div class="plain RecursiveHierachicalIndexUnit">
+			<table border="0" cellspacing="1" cellpadding="2">
+			  <!-- begin header -->
+			  <tr>
+			     [%if(linkCount == 1){%]<wr:Visible context="firstLink"><td>&nbsp;</td></wr:Visible>[%}%]
+			     <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+			        <wr:Visible>
+			          <td nowrap="nowrap" class="<wr:StyleClass/> header"><wr:Label context="attr"/></td>  
+			        </wr:Visible>
+			     </wr:Iterate>
+			     [%if(linkCount > 1){%]
+			     <wr:Iterate var="link" context="unit" select="layout:Link">
+			        <wr:Visible>
+			          <td>&nbsp;</td>
+			        </wr:Visible>
+			     </wr:Iterate>
+			     [%}%] 
+			  </tr>
+			  <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+			    <c:set var="index" value="${status.index}"/>
+			    <c:set var="currentLevel" value="${current.level}"/>
+			    <c:set var="isCurrent" value="${current.isCurrent}"/>
+			      <tr>
+			        [%if(linkCount == 1){%] 
+			          <wr:Visible context="firstLink" position="'index'"> 
+			             <td><wr:Link class="link" context="firstLink"/></td>
+			          </wr:Visible>
+			        [%}%]
+			        <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+				 	  <wr:Visible position="'index'">
+					 	  <c:choose>
+						    <c:when test="${isCurrent}">
+						     <td class="<wr:StyleClass/> valueCurrent [%=attr["type"]%]" nowrap style="padding-left:<c:out value="${currentLevel * 10}"/>px">
+						    </c:when>
+						    <c:otherwise>
+						     <td class="<wr:StyleClass/> value [%=attr["type"]%]" nowrap style="padding-left:<c:out value="${currentLevel * 10}"/>px">
+						    </c:otherwise>
+						  </c:choose>
+				          <wr:Value context="attr"/>
+				          </td>
+			          </wr:Visible>
+				 	</wr:Iterate>
+			        [%if(linkCount > 1){%]
+			        <wr:Iterate var="link" context="unit" select="layout:Link">
+			         <wr:Visible position="'index'">
+			           <td><wr:Link context="link" class="link"/></td>
+			         </wr:Visible>
+			        </wr:Iterate>
+			        [%}%] 
+			      </tr>
+			    </c:forEach>
+			 </table>
+		</div>
+	</div>
+</wr:Frame>  
+</c:if>

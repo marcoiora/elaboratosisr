@@ -1,0 +1,213 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Header" name="show-header" type="boolean" default="true">
+Defines the rendition of the attributes name on the top.
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Alternate Rows" name="use-alternate" type="boolean" default="false">
+Defines the usage of alternates colours for each line.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Position" name="link-position" type="enum" values="right|onRow" default="right">
+Defines the rendition of the links.
+Allowed values are:
+- right (default): places the links on the right
+- on_row: places the links on the attributes
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Buttons Position" name="button-position" type="enum" values="top|bottom|both" default="bottom">
+Defines where to position the buttons
+Allowed values are:
+- top (default): places the buttons at the top
+- bottom: places the buttons at the bottom
+- both: places the buttons at the top and bottom
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Select All" name="select-all" type="boolean" values="true|false" default="false">
+Defines the rendition of a link that allows
+to select or deselect all the checkboxes of
+the unit.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.math.NumberUtils
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+def showHeader = params["show-header"]
+def linkPosition = params["link-position"]
+def buttonPosition = params["button-position"]
+def selectAll = params["select-all"]
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+def useAlternate = params["use-alternate"]
+def links = unit.selectNodes("layout:Link")
+def unitLink = unit.selectNodes("layout:Link").find{!isButton(it)}
+def myIndex = unit.hashCode()
+
+//returns true if the given link must be rendered as a form button
+def isButton(link){
+  def navLink = getById(link["link"])
+  def linkParams = navLink.selectNodes("LinkParameter").collect{it["source"]}
+  if(linkParams.isEmpty()){
+    linkParams = getAutomaticLinkParameters(navLink).collect{it["source"]}
+  }
+  for(param in linkParams){
+    if(param?.startsWith("data")){
+      return false;
+    }
+  }
+  return true
+}
+%]
+
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain MultiChoiceIndexUnit">
+				<table>
+					<tr>
+						<td colspan="2" class="error"><html:errors property="<wr:UnitId/>Checked" /></td>
+					</tr>
+					<tr>
+						<td>
+							[% if (buttonPosition == "top" || buttonPosition == "both" ) { %]						
+								<table>
+									<tr>
+										<wr:Iterate var="link" context="unit" select="layout:Link">
+											<wr:Visible>
+												[% if (isButton(link)) { %]
+													<td><wr:Link class="button" type="button"/></td>
+												[% } %]
+											</wr:Visible>
+										</wr:Iterate>
+									</tr>
+								</table>
+							[% } %]					
+							<table border="0" cellspacing="1" cellpadding="2">
+							[% if (showHeader == "true") {%]
+								<tr>
+								 [% if (selectAll == "true") {%]
+									<th class="<wr:StyleClass/> header">
+									    <script>multiChoiceMap.set("<wr:UnitId/>_[%= myIndex%]", "all")</script>
+										<a href="" onmouseover="this.cursor='pointer'" onmouseout="this.cursor='default'" onclick="return checkall('<wr:UnitId/>', '[%= myIndex%]', 'Checked')"> <img id="<wr:UnitId/>[%= myIndex%]image" src="WRResources/spacer.gif" class="selectAll" border="0" /></a>
+									</th>
+								[% } else {%]
+									<th class="<wr:StyleClass/> header"/>
+								[% } %]
+									<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+										<wr:Visible>
+                                          <th nowrap="nowrap" class="<wr:StyleClass/> header"><wr:Label/></th>
+                                        </wr:Visible>
+									</wr:Iterate>
+									<wr:Iterate var="link" context="unit" select="layout:Link">
+										[% if (!isButton(link) && (linkPosition == "right" || (linkPosition == "onRow" && index > 0))) { %]
+											<wr:Visible><th class="<wr:StyleClass/> header" /></wr:Visible>
+										[% } %]
+									</wr:Iterate>
+								</tr>
+							[% } %]
+
+							<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+								<c:set var="index" value="${status.index}" />
+									<tr class="row[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">	
+										<td>
+											<html:multibox styleId="<wr:UnitId/>_[%= myIndex%]_${index}" property="<wr:UnitId/>Checked" styleClass="checkBox"><c:out value="${<wr:UnitId/>.key[index]}"/></html:multibox>
+										</td>
+									[% if (linkPosition == "right") { %]
+									  <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+										<wr:Visible position="'index'">
+										  <td class="<wr:StyleClass/> value[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %] [%= attr["type"]%]"><wr:Value/></td>
+										</wr:Visible>
+									  </wr:Iterate>
+									[% } else if (linkPosition == "onRow") { %]
+									  <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+										<wr:Visible position="'index'">
+										  <td class="<wr:StyleClass/> value[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %] [%= attr["type"]%]">
+			         				 	   [% if (unitLink != null) {%]
+											<wr:Visible context="unitLink" position="'index'">
+												<a class="<wr:StyleClass context="unitLink"/> link[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]" href="<wr:URL context="unitLink"/>" onclick="<wr:AjaxURL context="unitLink" />">
+											</wr:Visible>
+											<wr:Value/>
+											<wr:Visible context="unitLink" position="'index'">
+												</a>
+											</wr:Visible>
+			                		       [% } else { %]
+			                		    	 <wr:Value/>
+			                		       [% }%]
+			                		      </td>
+			                		    </wr:Visible>
+			                		   </wr:Iterate>
+			                		 [% } %]
+									<wr:Iterate var="link" context="unit" select="layout:Link">
+									  <wr:Visible position="'index'">
+									    [% if (!isButton(link) && (linkPosition == "right" || (linkPosition == "onRow" && index > 0))) { %]
+                                          <td> 
+                                            [% if (useAlternate == "true") { %]
+                                              <c:choose>
+                                                <c:when test="${index mod 2 eq 0}">
+                                                  <wr:Link class="linkAlternate"/>
+                                                </c:when>
+                                                <c:otherwise>
+                                                  <wr:Link class="link"/>
+                                                </c:otherwise>
+                                              </c:choose>
+                                            [% } else { %]
+                                              <wr:Link class="link"/>								
+                                            [% } %]
+										  </td>
+									    [% } %]
+									  </wr:Visible>
+									</wr:Iterate>
+								</tr>
+							</c:forEach>
+							</table>
+							[% if (buttonPosition == "bottom" || buttonPosition == "both" ) {%]						
+								<table>
+									<tr>
+										<wr:Iterate var="link" context="unit" select="layout:Link">
+											[% if (isButton(link)) { %]
+												<wr:Visible>
+													<td><wr:Link class="button" type="button"/></td>
+												</wr:Visible>	
+											[% } %]
+										</wr:Iterate>
+									</tr>
+								</table>
+							[% } %]
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain MultiChoiceIndexUnit">
+				<table>
+				    <tr>
+				      <td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]  

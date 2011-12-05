@@ -1,0 +1,32 @@
+#?delimiters [%, %], [%=, %]
+[% 
+    setHTMLOutput()
+	def firstLink = unit.selectSingleNode("layout:Link[1]")
+	def entity = unit["entity"]
+%]
+<wr:Frame>
+<div class="plain <wr:StyleClass/>">
+	<div class="plain AlphabetUnit">
+	  <table>
+	  	<tr>
+		  <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+		    <c:set var="index" value="${status.index}"/>
+		    <td class="<wr:StyleClass /> value">
+		    	[%if(firstLink != null){ %]
+			    	[% if (entity != "") {%]<c:if test="${current.dataSize gt 0}">[% } %]
+			    	<a class="<wr:StyleClass context="firstLink"/> link" onclick="<wr:AjaxURL context="firstLink"/>" href="<wr:URL context="firstLink"/>">
+			    	[% if (entity != "") {%]</c:if>[% } %]
+		    	[%}%]
+		    	<c:out value="${current.letterChar}"/>[% if (entity != "") {%] (<c:out value="${current.dataSize}"/>)[%}%]
+		    	[%if(firstLink != null){ %]
+			    	[% if (entity != "") { %]<c:if test="${current.dataSize gt 0}">[% } %]
+			    	</a>
+			    	[% if (entity != "") {%]</c:if>[% } %]
+		    	[% } %]
+		    </td>
+		  </c:forEach>
+		</tr>
+	  </table>
+	</div>
+</div>
+</wr:Frame>

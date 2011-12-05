@@ -1,0 +1,3 @@
+#?delimiters [%, %], [%=, %]
+[%setHTMLOutput()%]
+<c:redirect url="${<wr:UnitId/>.data[0]}"/>

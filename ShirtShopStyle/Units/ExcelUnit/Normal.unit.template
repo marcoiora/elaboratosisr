@@ -1,0 +1,133 @@
+#?delimiters [%, %], [%=, %]
+[%
+setHTMLOutput()
+import org.apache.commons.lang.StringUtils
+
+def unitId = unit["id"]
+def cellInfoOrderIds = unit["cellInfoOrder"].tokenize(" ")
+def allCellInfos = unit.selectNodes("CellInfo")
+def cellInfos = []
+cellInfos += cellInfoOrderIds.collect{getById(it)}
+cellInfos += allCellInfos.findAll{!cellInfoOrderIds.contains(it["id"])}
+
+def links = unit.selectNodes("layout:Link")
+
+//prints out the cell value
+def printCellValue(cellInfo){
+  def type = cellInfo["type"]
+  def subType = cellInfo["subType"]
+  def contentType = cellInfo["contentType"]
+  def typeId = (subType != "") ? subType : type
+  def pattern = typeId + "Pattern"
+  def prop = getFieldName(cellInfo)  
+  if(!StringUtils.isBlank(cellInfo["dataFormat"])){
+     pattern = "'" + cellInfo["dataFormat"] + "'"
+  }
+  
+  
+  if ((type == "string") || (type == "text")) {
+    %]<c:out value="${current.[%=prop%]}"/>[%
+  } else if ((type == "float") || (type == "integer") || (type == "decimal")) { 
+    %]<fmt:formatNumber value="${current.[%=prop%]}" pattern="${[%=pattern%]}"/>[%
+  } else if ((type == "date") || (type == "time") || (type == "timestamp")) { 
+    %]<fmt:formatDate value="${current.[%=prop%]}" pattern="${[%=pattern%]}"/>[%
+  } else if (type == "blob") { 
+    %]<c:if test="${not (empty current.[%=prop%])}">[%
+       if (contentType.startsWith("image")) {
+         %]<img border="0" src="<webratio:BLOB value="${current.[%=prop%]}"/>" alt="<c:out value="${current.[%=prop%].name}"/>"/>[% 
+       } else { 
+         if (contentType.startsWith("application")) {
+            %]<table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <img border="0" alt="<wr:Label context="cellInfo"/>" src="WRResources/[%= StringUtils.substringAfter(contentType, "application/") %]icon.png"/>
+                    </td>
+                    <td>
+                        <a href="<webratio:BLOB value="${current.[%=prop%]}"/>"><c:out value="${current.[%=prop%].name}"/></a>
+                    </td>
+                </tr>
+            </table>[%
+         } else { 
+            %]<a target="_blank" href="<webratio:BLOB value="${current.[%=prop%]}"/>"><c:out value="${current.[%=prop%].name}"/></a>[%
+         } 
+     }  
+     %]</c:if>[%
+  } else if (type == "boolean") { 
+    %]<c:if test="${not(empty current.[%=prop%])}">
+        <c:choose>
+          <c:when test="${current.[%=prop%]}"><bean:message key="[%=typeId%].yes"/></c:when>
+          <c:otherwise><bean:message key="[%=typeId%].no"/></c:otherwise>
+        </c:choose>
+      </c:if>[%
+  } else if (type == "url") {
+     def makeHref = {
+       if ("email".equals(contentType) || "mail".equals(contentType)) {
+          %]<c:set var="encEmail" value="${current.[%=prop%]}"/>mailto:<%= java.net.URLEncoder.encode((String)pageContext.getAttribute("encEmail"), "US-ASCII")%>[%
+       } else {
+          %]<c:out value="${current.[%=prop%]}"/>[%
+       }
+     }
+     %]<c:if test="${not(empty current.[%=prop%])}">
+        <a target="_blank" href="[% makeHref() %]"><c:out value="${current.[%=prop%]}"/></a>
+       </c:if>[%
+  } else { 
+    %]<c:out value="${current.[%=prop%]}"/>[%
+  }
+}
+%]
+
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+  <wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain ExcelUnit">
+				<table>
+					<tr>
+						<td>
+							<table border="0" cellspacing="1" cellpadding="2">
+								[% if (!cellInfos.empty) { %]
+									<tr>
+									    <th class="header"></th>
+									    [%for(cellInfo in cellInfos){%]
+									       <th valign="top" class="header" nowrap="nowrap">
+                                               <wr:Label context="cellInfo"/>
+                                           </th>
+                                        [%}%]
+									</tr>
+								[% } %]
+								<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+									<c:set var="index" value="${status.index}"/>
+									<tr>
+										<td>
+											<img src="WRResources/spacer.gif" class="bullet" border="0" alt=""/>
+										</td>
+										[%for(cellInfo in cellInfos){%]
+                                           <td valign="top" class="value" nowrap="nowrap">
+                                               [%printCellValue(cellInfo)%]
+                                           </td>
+                                        [%}%]
+									</tr>
+								</c:forEach>
+							 </table>
+						 </td>
+					</tr>
+					
+					[% if (!links.empty) {%]
+						<tr>
+							<td colspan="2">
+								<table>
+									<wr:Iterate var="link" context="unit" select="layout:Link">
+										<wr:Visible>
+											<tr>
+												<td><wr:Link class="link"/></td>
+											</tr>
+										</wr:Visible>
+									</wr:Iterate>
+								</table>
+							</td>
+						</tr>
+					[% } %]
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:if>

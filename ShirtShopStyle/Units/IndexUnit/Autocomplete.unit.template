@@ -1,0 +1,17 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter name="separator" label="Separator" type="string">
+A string representing the separator between
+the different attributes of the index.
+</wr:LayoutParameter>
+
+[% 
+	def separator = params["separator"]
+	def keyAtts = getKeyAttributes(getById(unit["entity"]))
+%]
+
+<ul>
+    <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+      <c:set var="index" value="${status.index}"/>
+      <li id="[% for (keyAtt in keyAtts) { %]<c:out value="${current.[%= getFieldName(keyAtt) %]}"/>[% } %]"><wr:Iterate var="att" context="unit" select="layout:Attribute">[% if (index > 0) { %]<span class="informal">[%= separator%]<wr:Value /></span>[% } else { %]<wr:Value />[% } %]</wr:Iterate></li>
+    </c:forEach>
+</ul>

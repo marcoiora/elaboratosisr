@@ -1,0 +1,230 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Header" name="show-header" type="boolean" default="true">
+Defines the rendition of the header on the top.
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Attributes Name" name="show-attribute-name" type="boolean" default="false">
+Defines the rendition of the attributes names.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Bullet" name="show-bullet" type="boolean" default="true">
+Defines the rendition of a bullet next to each line.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Alternate Rows" name="use-alternate" type="boolean" default="false">
+Defines the usage of alternates colours for each line.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Position" name="link-position" type="enum" values="left|right|on_bullet|on_row" default="right">
+Defines the rendition of the sub levels links.
+Allowed values are:
+- right (default): places the links on the right
+- left: places the links on the left
+- on_bullet: places the first link on the bullet
+- on_row: places the first link on the attributes
+</wr:LayoutParameter>
+[%
+	import org.apache.commons.lang.StringUtils
+	import org.apache.commons.lang.math.NumberUtils
+	setHTMLOutput()
+
+	def firstIndex = cell.selectSingleNode("layout:Unit").find{getById(it["unitId"])?.name == "IndexUnit"}
+%]
+
+[% getNestedIndexLayout(firstIndex, params, 1) %]
+
+[%
+	def getNestedIndexLayout(unit, params, unitIndex) { 
+	
+	
+	
+	def showHeader = StringUtils.defaultIfEmpty(params["show-header"], "true")
+	def showBullet = StringUtils.defaultIfEmpty(params["show-bullet"], "true")
+	def useAlternate = StringUtils.defaultIfEmpty(params["use-alternate"], "false")
+	def showAttributeName = StringUtils.defaultIfEmpty(params["show-attribute-name"], "true")
+	def linkPosition = StringUtils.defaultIfEmpty(params["link-position"], "right")
+	def atts = unit.selectNodes("layout:Attribute")
+	def links = unit.selectNodes("layout:Link")
+	def unitLink = unit.selectSingleNode("layout:Link[1]")
+	def link = unitLink?.valueOf("@link")
+	
+	def colSpan = atts.size() + links.size() + (showBullet ? 1 : 0) - ((linkPosition == "on_row" ||linkPosition == "on_bullet") ? 1 : 0)
+	def current = "current" + unitIndex
+	position = "index" + unitIndex 
+	%]
+	
+	<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+		<wr:Frame>
+			<div class="plain <wr:StyleClass context="unit"/>">
+				<div class="plain IndexUnit">
+					<table border="0" cellspacing="1" cellpadding="2">
+					<!-- ========== -->
+					<!-- begin header -->
+					<!-- ========== -->
+					[% if (showHeader == "true" && unitIndex == 1) {%]
+						<tr>
+						[% if (showBullet == "true") {%]
+								<th class="<wr:StyleClass/> header"></th>
+						[% } %]
+						[% if (linkPosition == "left") { %]
+						    <wr:Iterate var="l" context="unit" select="layout:Link">
+								<th class="<wr:StyleClass/> header"></th>
+							</wr:Iterate>
+						[% }  %]
+						<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+							[% if (showAttributeName == "true") {%]
+									<th class="<wr:StyleClass/> header"></th>
+							[% } %]
+								<th nowrap="nowrap" class="<wr:StyleClass/> header">
+									<wr:Label/>
+								</th>
+						</wr:Iterate>
+						[% if (linkPosition == "right") { %]
+							<wr:Iterate var="l" context="unit" select="layout:Link">
+								<th class="<wr:StyleClass/> header"></th>
+							</wr:Iterate>
+							
+						[% } %]
+						</tr>
+					[% } %]
+				
+					<!-- instances -->
+					
+					<c:forEach var="current[%= unitIndex %]" varStatus="status[%= unitIndex %]" items="${<wr:UnitId/>.data}">
+						<c:set var="index[%= unitIndex %]" value="${status[%= unitIndex %].index}"/>		
+							<tr class="row<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]">	
+		
+							[% if (showBullet == "true") {
+							 if ((linkPosition == "on_bullet") || (linkPosition == "on_row") && (!links.empty)) { 
+							 	def position = "index" + unitIndex%]
+							        <td>
+							        	<a href="<wr:URL context="unitLink" position="position"/>" class="link<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]"
+								    	[%if (unitLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+							             	<img src="WRResources/spacer.gif" class="bullet<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]" border="0" alt="<wr:Label context="unitLink"/>"/>
+										</a>
+							        </td>
+							  [% } else { %]
+									<td>
+										<img src="WRResources/spacer.gif" class="bullet<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]" border="0" />
+									</td>
+							  [% } 
+						    } %]
+									
+								[% if (linkPosition == "left") { %]
+									<wr:Iterate var="l" context="unit" select="layout:Link">
+										<td>
+										 <c:choose>
+										   <c:when test="${<wr:UnitId/>.currentIndex eq index[%= unitIndex %]}">
+											   	[% if (useAlternate == "true") { %]
+													<c:choose>
+														<c:when test="${index[%= unitIndex %] mod 2 eq 0}">
+															<wr:Link class="linkCurrent" position="position"/>
+														</c:when>
+														<c:otherwise>
+															<wr:Link class="linkAlternateCurrent" position="position"/>
+														</c:otherwise>
+													</c:choose>
+												[% } else { %]
+													<wr:Link class="linkCurrent" position="position"/>
+												[% } %]	
+										   </c:when>
+										   <c:otherwise>
+										  	 	[% if (useAlternate == "true") { %]
+													<c:choose>
+														<c:when test="${index[%= unitIndex %] mod 2 eq 0}">
+															<wr:Link class="link" position="position"/>
+														</c:when>
+														<c:otherwise>
+															<wr:Link class="linkAlternate" position="position"/>
+														</c:otherwise>
+													</c:choose>
+												[% } else { %]
+														<wr:Link class="link" position="position"/>
+												[% } %]	
+										   </c:otherwise>
+										 </c:choose>
+										</td>
+								    </wr:Iterate>
+								[% } %]
+								
+								<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+									[% if (showAttributeName == "true") {%]
+									   <th class="<wr:StyleClass/> header<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]">	
+									     <wr:Label/>
+									   </th>
+									[% } %]
+								
+									
+									<!-- PRINT ATTRIBUTES -->
+									[% if ((linkPosition == "on_row") && (!links.empty)) {
+										def position = "index" + unitIndex %]
+											<!-- linked attribute -->
+											<td>
+											  <a href="<wr:URL context="unitLink" position="position"/>" class="<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]">			
+												<wr:Value/>
+											  </a>
+											</td>
+									[% } else {%]
+										<!-- not linked attribute -->
+										<td class="<wr:StyleClass/> value<c:if test="<wr:UnitId/>.currentIndex eq index[%= unitIndex %]">Current</c:if>[% if (useAlternate == "true") { %]<c:if test="${index[%= unitIndex %] mod 2 eq 0}">Alternate</c:if>[% } %]">	
+								   			<wr:Value item="current"/>
+										</td>
+									[% } %]
+								</wr:Iterate>
+								[% if (linkPosition == "right") { %]
+								   <wr:Iterate var="l" context="unit" select="layout:Link">
+								   	<td>
+				  					 <c:choose>
+									    <c:when test="${<wr:UnitId/>.currentIndex eq index[%= unitIndex %]}">
+									    	[% if (useAlternate == "true") { %]
+												<c:choose>
+													<c:when test="${index[%= unitIndex %] mod 2 eq 0}">
+														<wr:Link class="linkCurrent" position="position"/>
+													</c:when>
+													<c:otherwise>
+														<wr:Link class="linkAlternateCurrent" position="position"/>
+													</c:otherwise>
+												</c:choose>
+											[% } else { %]
+												 <wr:Link  class="linkCurrent" position="position"/>
+											[% } %]
+										</c:when>
+										<c:otherwise>
+											[% if (useAlternate == "true") { %]
+												<c:choose>
+													<c:when test="${index[%= unitIndex %] mod 2 eq 0}">
+														<wr:Link class="link" position="position"/>
+													</c:when>
+													<c:otherwise>
+														<wr:Link class="linkAlternate" position="position"/>
+													</c:otherwise>
+												</c:choose>
+											[% } else { %]
+												<wr:Link class="link" position="position"/>
+											[% } %]
+										</c:otherwise>
+									 </c:choose>
+									</td>
+								   </wr:Iterate>
+								[% } %]
+								</tr>
+							    <c:if test="${<wr:UnitId/>.currentIndex eq index[%= unitIndex %]}">
+							    	<tr>
+							    		<td colspan="[%= colSpan %]" style="padding-left: 10px">
+							    			[% 
+							    				def nextUnit = unit.selectSingleNode("following-sibling::layout:Unit").find{getById(it["unitId"])?.name == "IndexUnit"}
+							    						    				
+							    				if (nextUnit != null) {
+							    					getNestedIndexLayout(nextUnit, params, unitIndex + 1) 
+							    				}
+							    			%]
+							    		</td>
+							    	</tr>
+							    </c:if>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
+		</wr:Frame>
+	</c:if>
+[% } %]

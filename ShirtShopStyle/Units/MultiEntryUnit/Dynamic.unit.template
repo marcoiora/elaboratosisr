@@ -1,0 +1,93 @@
+#?delimiters [%, %], [%=, %]
+
+[% 
+setHTMLOutput()
+
+def formBean = getFormBeanName(page)
+%]
+<wr:Frame>
+    <table cellspacing="2" cellpadding="2" border="0">
+	  <tr>
+	  	<td class="error">
+	  		<html:errors property="<wr:UnitId/>"/>
+	  		<html:errors property="<wr:UnitId/>Checked"/>
+	  	</td>
+	  </tr>
+    </table>
+	<div class="plain <wr:StyleClass/>">
+		<div class="plain MultiEntryUnit">
+			<html:hidden property="<wr:UnitId/>DataSize" styleId="<wr:UnitId/>DataSize"></html:hidden>
+			<script>
+			multiEntryMap.set("<wr:UnitId/>LastIndex", "<c:out value="${[%= formBean %].map.<wr:UnitId/>DataSize -1}"></c:out>");
+			</script>
+			
+			<table cellspacing="0" cellpadding="0" border="0">
+				<tr>
+			     <td>
+			  		<div id="<wr:UnitId/>">
+					<c:forEach var="<wr:UnitId/>" varStatus="status" items="${[%=getFormBeanName(page)%].map.<wr:UnitId/>}">
+					  <c:set var="index" value="${status.index}"/>
+					  <div id="<c:out value="<wr:UnitId/>[${index}]"/>" class="ajaxPreservedMarkup">
+					  <table>
+						<tr style="<c:if test="${index gt 0}">display:none;</c:if>" id="<c:out value="<wr:UnitId/>[${index}]Header"/>">
+						<wr:Iterate var="field" context="unit" select="layout:Field">
+						    <th align="left" nowrap class="<wr:StyleClass/> header"><wr:Label/></th>
+						</wr:Iterate>
+						<th class="<wr:StyleClass/> header"></th>
+						</tr>
+						<tr>
+							<wr:Iterate var="field" context="unit" select="layout:Field">
+								[% def fieldType = getById(field["field"])?.name %]
+								<td>
+									<table cellspacing="0" cellpadding="0">
+										<tr>
+											<td class="<wr:StyleClass/> value">
+											[% if (fieldType == "Field") { %]
+												<wr:Value class="field"/>
+											[% } else if (fieldType == "SelectionField") { %]
+												<wr:Value class="selectionfield"/>
+											[% } %]
+											</td>
+										</tr>
+										<tr>
+											<td class="<wr:StyleClass/> error">
+												<wr:FieldError/>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</wr:Iterate>
+							<td>
+							<html:hidden property="value(key)" indexed="true" name="[%= unit["id"]%]"/>
+							<img src="Resources/minus.png" alt="Delete Row" onClick="removeRow('<wr:UnitId/>','<c:out value="<wr:UnitId/>[${index}]"/>');"></td>
+						</tr>
+						[% // prints hidden fields, which do not have associated layout:Field elements
+						for (hiddenField in getById(unit["id"])?.selectNodes("Field[@hidden = 'true']")) {
+						  def type = hiddenField["type"]
+					  	  if (type == "blob") { %]
+						<html:hidden property="value([%= hiddenField["id"]%]_preload)" indexed="true" name="[%= unit["id"]%]"/>
+						  [% } else { %]
+						<html:hidden property="value([%= hiddenField["id"]%])" indexed="true" name="[%= unit["id"]%]"/>
+						  [% }
+						} 
+						%]
+					  </table>
+					  </div>
+					</c:forEach>
+					</div>
+			     </td>
+			    </tr>
+			    <tr>
+			     <td align="right">
+			       <img src="Resources/plus.png" alt="Add Row" onClick="addRow('<wr:UnitId/>');">
+			     </td>
+			    </tr>
+			    <wr:Iterate var="link" context="unit" select="layout:Link">
+			      <tr>
+			        <td align="left"><wr:Link class="button" type="button"/></td>
+			      </tr>
+			    </wr:Iterate>
+			</table>
+		</div>
+	</div>
+</wr:Frame>

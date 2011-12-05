@@ -1,0 +1,75 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.math.NumberUtils
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+%]
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain MultiMessageUnit">
+				<table>
+					<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+						<c:set var="index" value="${status.index}"/>
+						<tr>
+							<td class="value">
+								<bean:message key="${current}"/>
+							</td>
+						</tr>
+					</c:forEach>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<wr:Iterate var="link" context="unit" select="layout:Link">
+										<wr:Visible>
+											<td>
+												<wr:Link class="link"/>
+											</td>
+										</wr:Visible>
+									</wr:Iterate>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain MultiMessageUnit">
+				<table>
+				    <tr>
+				      <td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]

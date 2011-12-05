@@ -1,0 +1,104 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Attributes Name" name="show-attribute-name" type="boolean">
+Defines the rendition of the attributes names.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Columns Number" name="num-cols" type="enum" values="2|3|4|5">
+Defines the number of columns to be used.
+Allowed values are: 2(default),3,4,5.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.math.NumberUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]	 
+
+def showAttributeName = StringUtils.defaultIfEmpty(params["show-attribute-name"], "true")
+def numCols = NumberUtils.toInt(params["num-cols"], 2)
+
+%]
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain IndexUnit">
+	
+	          <table border="0" cellspacing="1" cellpadding="2">
+				<tr>
+	            <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+	              <c:set var="index" value="${status.index}"/>
+	              <td>
+	              	<table>
+	              <wr:Iterate var="attr" context="unit" select="layout:Attribute" >
+				       <tr>
+				       	
+				       [% if(showAttributeName == "true") { %]
+				       	<th class="<wr:StyleClass/> header<c:if test="${<wr:UnitId/>.currentIndex eq index}">Current</c:if>">
+	                       <wr:Label/>
+	                    </th>
+	                   [% } %]
+	                     <td class="<wr:StyleClass/> value<c:if test="${<wr:UnitId/>.currentIndex eq index}">Current</c:if>">
+	                        <wr:Value/>
+	                      </td>
+	                   </tr>
+	                </wr:Iterate>
+	                <wr:Iterate var="link" context="unit" select="layout:Link" >
+	                     <tr>
+	                        <td>
+			  					<c:choose>
+					   				<c:when test="${<wr:UnitId/>.currentIndex eq index}">
+										<wr:Link class="linkCurrent"/>
+					   				</c:when>
+					   				<c:otherwise>
+										<wr:Link class="link"/>
+					   				</c:otherwise>
+					   			</c:choose>
+							</td>
+	                      </tr>
+	                </wr:Iterate>
+	                </table>
+	              </td>
+	
+	              <c:if test="${index mod [%=numCols%] eq [%=numCols - 1%]}">
+	                </tr>
+	              </c:if>
+	            </c:forEach>
+	          </table>
+	       </div>
+	   </div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain IndexUnit">
+				<table>
+				    <tr>
+				      <td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]  

@@ -1,0 +1,6 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter name="escape-xml" label="Escape XML" type="boolean" default="true">
+Permits to enable or disable the XML entities escaping of the printed value.
+</wr:LayoutParameter>
+[%setHTMLOutput()%]
+<c:out value="${<wr:UnitId/>.result}" escapeXml="[%=params["escape-xml"]%]"/>

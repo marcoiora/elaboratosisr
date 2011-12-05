@@ -1,0 +1,118 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Multi selection values orientation" name="multi-selection-field-orientation" type="enum" values="vertical|horizontal" default="vertical">
+Defines the orientation for multi selection field values:
+- vertical (default)
+- horizontal
+</wr:LayoutParameter>
+<wr:LayoutParameter name="localize-values" label="Localize Values" type="boolean" default="false">
+  Defines whether to use bean message to print out the (multi) selection field values.
+</wr:LayoutParameter>
+
+[%
+import org.apache.commons.lang.math.NumberUtils
+import org.apache.commons.lang.StringUtils
+
+if (mode == "error") {
+  return
+} else if (mode == "label") {
+  %]<span class="<wr:StyleClass context="field"/> header"><wr:Label context="field"/></span>[%
+  return
+}
+
+def localizeValues = "true" == params["localize-values"]
+def unitId = field.selectSingleNode("ancestor::layout:Unit")?.valueOf("@unitId")
+def type = field["type"]
+def subType = getById(field["subType"])
+def typeId = type
+if(subType != null){
+  typeId = subType["id"]
+  type = subType["type"]
+}
+def contentType = field["contentType"]
+def fieldId = field["field"]
+def modifiable = (field["modifiable"] == "true")
+def plain = getById(field["field"])?.name == "Field"
+def selection = getById(field["field"])?.name == "SelectionField"
+def multiSelection = getById(field["field"])?.name == "MultiSelectionField"
+def multiEntryUnit = getById(unitId).name == "MultiEntryUnit"
+
+def formBean = page["id"] + "FormBean"
+def fieldProp = field["field"] + ((isLocalizedType(type) && plain) ? "_locale" : "") + ((type == "blob") ? "_preload" : "") 
+def qualifiedProp = formBean + ".map." + fieldProp 
+if(multiEntryUnit){
+  qualifiedProp = formBean + ".map." + unitId + "[index].map." + fieldProp
+}
+def styleClass = field["styleClass"]
+
+if (plain) {
+	if (type == "boolean") {
+		%]<c:choose>
+			<c:when test="${[%=qualifiedProp%]}"><bean:message key="[%=typeId%].yes"/></c:when>
+			<c:otherwise><bean:message key="[%=typeId%].no"/></c:otherwise>
+		</c:choose>[%
+	} else if (type == "blob") { 
+	  %]<c:if test="${not (empty [%=qualifiedProp%])}">
+	       <a target="_blank" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:BLOB value="${[%=qualifiedProp%]}"/>"><c:out value="${[%=qualifiedProp%].name}"/></a>
+	    </c:if>[%
+	} else if (type == "url") {
+	      def makeHref = {
+		        if ("email".equals(contentType) || "mail".equals(contentType)) {
+		            %]<c:set var="encEmail" value="${[%=qualifiedProp%]}"/>mailto:<%= java.net.URLEncoder.encode((String)pageContext.getAttribute("encEmail"), "US-ASCII")%>[%
+		        } else {
+		            %]<c:out value="${[%=qualifiedProp%]}"/>[%
+		        }
+		    }
+		  %]<c:if test="${not(empty [%=qualifiedProp%])}">
+		    <a target="_blank" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="[% makeHref() %]"><c:out value="${[%=qualifiedProp%]}"/></a>
+		  </c:if>[%
+	} else {
+	  %]<c:out value="${[%=qualifiedProp%]}" [%= (contentType == "text/html") ? "escapeXml=\"false\"" : ""%]/>[%
+	}	
+} else if (selection) {
+    def labelProperty = formBean + ".map." + field["field"] + "LabelList" + (isLocalizedType(type) ? "_locale" : "")
+	def listProperty = formBean + ".map." + field["field"] + "List"                             
+    %]
+      <c:forEach var="selection" varStatus="selectionStatus" items="${[%= listProperty %]}">
+        <c:if test="${selection eq [%= qualifiedProp %]}">
+          [%if (localizeValues) {%]
+			 <bean:message key="${[%= labelProperty %][selectionStatus.index]}"/>
+		  [%} else {%]
+			 <c:out value="${[%= labelProperty %][selectionStatus.index]}"/> 
+		  [%}%]         
+        </c:if>
+      </c:forEach>
+    [%
+} else if (multiSelection && !multiEntryUnit) {
+    def labelProperty = formBean + ".map." + field["field"] + "LabelList" + (isLocalizedType(type) ? "_locale" : "")
+	def listProperty = formBean + ".map." + field["field"] + "List"                             
+    def horizontal = "horizontal" == params["multi-selection-field-orientation"] 
+    %]
+      <table>
+        [%=horizontal ? "<tr>" : ""%]
+        <c:set var="msfValues" value="${[%=qualifiedProp%]}"/>
+        <c:forEach var="current" varStatus="status" items="${[%=listProperty %]}">
+         <c:set var="index" value="${status.index}"/>
+         <%if(org.apache.commons.lang.ArrayUtils.contains((Object[])pageContext.getAttribute("msfValues"), pageContext.getAttribute("current"))){%>
+         [%=!horizontal ? "<tr>" : ""%]
+           <td [%= styleClass ? "class=\"${styleClass}\"" : "" %]>
+	        [%if (localizeValues) {%]
+			   <bean:message key="${[%= labelProperty %][index]}"/>
+		    [%} else {%]
+			   <c:out value="${[%= labelProperty %][index]}"/> 
+		    [%}%]
+	        <html:hidden property="[%= fieldProp %]" value="${current}"/>
+           </td>
+         [%=!horizontal ? "</tr>" : ""%]
+         <%}%> 
+        </c:forEach>
+        [%=horizontal ? "</tr>" : ""%]
+      </table>
+    [%
+} 
+if (plain || selection) {
+    if(multiEntryUnit){
+	   %]<html:hidden indexed="true" name="[%=unitId%]" property="value([%=fieldProp%])"/>[%
+	}else{
+	   %]<html:hidden property="[%=fieldProp%]"/>[%
+	}
+}

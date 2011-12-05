@@ -1,0 +1,290 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Custom ID"  name="custom-id" type="string">
+Specifies a custom value for the "id" attribute of the generated
+HTML link. This overrides any identifier that is usually generated.
+Defaults to the link ID (for normal links) or "button:" followed by link ID (for button links).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Link Style" name="link-style" type="enum" values="normal|button" default="normal">
+Defines the style of the link. 
+Allowed values are:
+- normal (default)
+- button
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show" name="show" type="enum" values="text|icon|icon &amp; text|text &amp; icon" default="text">
+Defines the content of the link.
+Allowed values are:
+- text (default)
+- icon & text
+- text & icon
+- icon
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Folder" name="icon-folder" type="string" default="Resources">
+Defines the path to the folder containing the icon used to render links if you choose icon, icon & text or text & icon in the "Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Extension" name="icon-extension" type="string" default="png">
+Defines the extension of the icon used to render links if you choose icon, icon & text or text & icon in the "Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Name" name="icon-name" type="string">
+Defines the name of the image to use. If omitted the name of the link is used.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Padding" name="icon-padding" type="string" default="20px">
+The space that should be reserved for the icon in "icon & text" buttons. Usually set a bit wider than the icon.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="New Window Type" name="new-window-type" type="enum" values="normal|javascript" default="normal">
+Defines the type of the window in which the target of the link has to be opened. 
+Allowed values are:
+- normal (default)
+- javascript
+</wr:LayoutParameter>
+<wr:LayoutParameter label="New Window Options" name="new-window-options" type="string" default="width=640,height=480,status=yes">
+Defines the properties of the window. It is a string written as you would write the style HTML attribute.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Confirm Dialog" name="confirmation" type="boolean" default="false">
+Defines if a confirmation dialog has to be shown before the link is navigated. 
+Allowed values are:
+- true 
+- false (default)
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Confirm Message Key" name="confirm-message" type="string" default="linkConfirmMessage">
+Defines the message to show to the user in the confirmation dialog. It is a key that has also to be added in the Localization dialog.
+</wr:LayoutParameter>
+
+[%
+	import org.apache.commons.lang.StringUtils
+	import org.apache.commons.lang.StringEscapeUtils
+	import java.io.File
+
+	def unitId = link.selectSingleNode("ancestor::layout:Unit")?.valueOf("@unitId")
+	if (unitId == "") {
+		unitId = link["unitId"]
+	} 
+	
+	def htmlId = StringUtils.defaultIfEmpty(params["custom-id"], link["id"])
+	def htmlButtonId = StringUtils.defaultIfEmpty(params["custom-id"], "button:" + link["id"])
+	def sortAtt = StringUtils.substringAfter(link["link"], unitId)
+	def linkStyle = params["link-style"]
+	def show = params["show"]
+	def newWindowType = params["new-window-type"]
+	def newWindowOptions = params["new-window-options"]
+	def useImage = (show == "icon" || show == "icon & text" || show == "text & icon") ? true : false
+	def image = params["icon-folder"] + "|" + params["icon-extension"]
+	def confirmation = params["confirmation"]
+	def confirmMessage = params["confirm-message"]
+	def targetPage = getAncestorTopLevelPage(getById(link["to"]))
+	if (((type == "") || (type == "-ajax")) && (link["unitId"] != "")) {  // link individually placed
+	     type = (isFormBased(getById(link["unitId"])) ? "button" : "") + type
+	}
+	def isAjax = (link["ajaxEnabled"] == "true" && isAjaxPage(page))
+	def formBean = getFormBeanName(page)
+	def folder = params["icon-folder"] + "/"
+	def extension = "." + params["icon-extension"]
+	if (useImage) { 
+		def tokens = StringUtils.splitPreserveAllTokens(image, "|");		
+		if (tokens.length > 1) {
+			folder = tokens[0]
+			if (folder == "") {
+				folder = params["icon-folder"] + "/"
+			} else {
+				if (folder.startsWith(File.separator)) {
+		           folder = StringUtils.substringAfter(folder, File.separator)
+		        }
+				if (!folder.endsWith(File.separator)) {
+		           folder = folder + File.separator;
+		        }
+		     }
+		    folder = StringUtils.replace(folder, File.separator, "/")
+			extension = tokens[1]
+			if (extension == "") {
+				extension = "." + params["icon-extension"]
+			} else {
+				if (!extension.startsWith(".")) {
+		           extension = "." + extension
+		        }
+			}
+		}	
+	}
+%]
+[% if (confirmation == "true") { %]
+	<c:set var="_wr_message"><bean:message key="[%printJSPTagValue(confirmMessage)%]"/></c:set>
+	<% pageContext.setAttribute("_wr_message", org.apache.commons.lang.StringEscapeUtils.escapeJavaScript((String) pageContext.getAttribute("_wr_message")));%>
+[% } %]
+[%
+	def getAlternativeText() {
+		if (link["alternativeText"] != "") {
+			if (isLocalizedAncestorOrSelf(link)) {
+	   			return "<bean:message key=\"" + getJSPTagValue(link["alternativeText"]) +  "\"/>"
+			} else { 
+			  return link["alternativeText"]
+			} 
+		}
+		if (isLocalizedAncestorOrSelf(link)) {
+   			return "<bean:message key=\"" + getJSPTagValue(getTitle(link)) +  "\"/>"
+		} else { 
+		  return getTitle(link)
+		} 
+	}
+
+	def getIconName() {
+		def iconName = StringUtils.defaultIfEmpty(params["icon-name"], "")
+		if (iconName != "") {
+			return iconName
+		}
+		return link["name"]
+	}
+	
+	def getButtonImageStyle = {
+		if (show == "icon") {
+			return "background-position: center; background-repeat: no-repeat; text-indent: -9999px;"
+		} else if (show == "icon & text") {
+			return "background-position: left; background-repeat: no-repeat; padding-left: ${params['icon-padding']};"
+		} else if (show == "text & icon") {
+			return "background-position: right; background-repeat: no-repeat; padding-right: ${params['icon-padding']};"
+		} else {
+			return "";
+		}
+	}
+%]
+
+[% if (type.contains("-ajax")) { 
+	if (isAjax) { %]
+	[% if (type.contains("button")) { %]
+		return ajaxRequest('[%= formBean %]', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page)%]', 'isForm': true, 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlButtonId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))
+	[% } else { %]
+		return ajaxRequest('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]', 'sourcePage': '[%= getPageId(page) %]', 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))	
+	[% }
+   	} 
+ } else {
+ 
+ def disableCond =  getDisableCondition(link, position)
+ def visibility = StringUtils.defaultIfEmpty(getVisibilityPolicy(getById(link["to"])), "hide")
+ def isProtected = isProtectedAncestorOrSelf(getById(link["to"]))
+ 
+ if (isProtected || disableCond != null) {
+     if (isProtected && visibility == "hide" && disableCond == null) { %]
+		<c:if test="${webratio:isTargetAccessible('[%=getLinkId(link)%]', pageContext)}">
+	 [% } else if (isProtected && visibility == "hide" && disableCond != null) { %]
+		<c:choose>
+	       <c:when test="${not(webratio:isTargetAccessible('[%=getLinkId(link)%]', pageContext))}"/>
+	       <c:when test="${not([%=disableCond%])}">
+	 [% } else if (visibility == "inactive" || disableCond != null) { %]
+	    [% def conds = []
+	       if(isProtected && visibility != "always"){
+	        conds.add("webratio:isTargetAccessible('" + getLinkId(link) + "', pageContext)")
+	       }
+	       if(disableCond != null){
+	         conds.add("not(" + disableCond + ")")
+	       }
+	    %]
+	    <c:choose>
+	       <c:when test="${[%=conds.join(" and ")%]}">
+	 [% } 
+ }%]
+ 	[% if ("button" == type) { %]
+ 		[% if (isAjax) { %]
+ 			<input title="[%= getAlternativeText() %]" onclick="[% if (confirmation == "true") { %] var c = confirm('<c:out value="${_wr_message}"/>'); if (c) { [% } %]return ajaxRequest('[%= formBean %]', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'isForm': true, 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlButtonId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]})) [% if (confirmation == "true") { %] } else  { $('[%= formBean %]').target='_self' }  return c; [% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] [% if (useImage) { %] style="background-image:url('[%=folder%][%= getIconName() %][%=extension%]'); [%=getButtonImageStyle()%]"[% } %] id="[%= htmlButtonId %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+ 		[% } else { %]
+			<input title="[%= getAlternativeText() %]" onclick="[% if (confirmation == "true") { %] var c = confirm('<c:out value="${_wr_message}"/>'); if (c) { [% } %][%if (link["newWindow"] == "true") { %][%if (newWindowType == "normal") { %] $('[%= formBean %]').target='_blank'[% } else { %] $('[%= formBean %]').target = '[%= htmlId %]'; window.open('','[%= htmlId %]','[%= newWindowOptions %]'); return true;[% } %][% } else { %]$('[%= formBean %]').target='_self'[% } %][% if (confirmation == "true") { %] }; return c; [% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] [% if (useImage) { %] style="background-image:url('[%=folder%][%= getIconName() %][%=extension%]'); [%=getButtonImageStyle()%]"[% } %] id="[%= htmlButtonId %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+		[% } %]
+	[% } else { %]
+		[% if (linkStyle == "button" && "sort" != type) { %]
+			[% if (isAjax) { %]
+				<input title="[%= getAlternativeText() %]" id="[%= htmlId %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] [% if (useImage) { %] style="background-image:url('[%=folder%][%= getIconName() %][%=extension%]'); [%=getButtonImageStyle()%]"[% } %] type="button" value="<wr:Label context="link"/>" onclick="[% if (confirmation == "true") { %] var c = confirm('<c:out value="${_wr_message}"/>'); if (c) { [% } %]return ajaxRequest('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))[% if (confirmation == "true") { %] }  return c; [% } %]">
+ 			[% } else { %]
+				<input title="[%= getAlternativeText() %]" id="[%= htmlId %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] [% if (useImage) { %] style="background-image:url('[%=folder%][%= getIconName() %][%=extension%]'); [%=getButtonImageStyle()%]"[% } %] type="button" value="<wr:Label context="link"/>" onclick="[% if (confirmation == "true") { %] if (confirm('<c:out value="${_wr_message}"/>')) { [% } %][%if (link["newWindow"] == "true") { %]window.open('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>','','[%if (newWindowType == "javascript") { %][%= newWindowOptions %][%} %]'); return false;[% } else { %]window.location='<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>'[% } %][% if (confirmation == "true") { %] } [% } %]">
+			[% } %]
+		[% } else  { %]
+			[% if (useImage) { %]
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+			[% } %]	
+	        [% if (show == "text & icon") { %]
+	          <td>
+	        	[% if (isAjax) { %]
+			 		<a title="[%= getAlternativeText() %]" id="[%= htmlId %]" onclick="[% if (confirmation == "true") { %] var c = confirm('<c:out value="${_wr_message}"/>'); if (c) { [% } %]return ajaxRequest('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))[% if (confirmation == "true") { %] }  return c; [% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>">							
+			 	[% } else { %]
+			 		<a title="[%= getAlternativeText() %]" id="[%= htmlId %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %][%if (newWindowType == "normal") { %] target="_blank" [% if (confirmation == "true") { %] onclick="return confirm('<c:out value="${_wr_message}"/>')"[% } %][% } else { %] onclick="[% if (confirmation == "true") { %] if (confirm('<c:out value="${_wr_message}"/>')) {[% } %] window.open('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>' ,'', '[%= newWindowOptions %]'); return false;[% if (confirmation == "true") { %] } [% } %]"[% } %][% } else { %][% if (confirmation == "true") { %] onclick="return confirm('<c:out value="${_wr_message}"/>')"[% } %][% } %]>
+				[% } %]
+					<wr:Label context="link"/></a>
+			  </td>
+	        [% } %]
+			[% if (useImage) { %]
+				<td valign="middle">
+					[% if (isAjax) { %]
+			 			<a title="[%= getAlternativeText() %]" id="[%= htmlId %]" onclick="[% if (confirmation == "true") { %] var c = confirm('<c:out value="${_wr_message}"/>'); if (c) { [% } %]return ajaxRequest('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))[% if (confirmation == "true") { %] }  return c; [% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>">							
+			 		[% } else { %]
+			 			<a title="[%= getAlternativeText() %]" id="[%= htmlId %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %][%if (newWindowType == "normal") { %] target="_blank" [% if (confirmation == "true") { %] onclick="return var confirm('<c:out value="${_wr_message}"/>')"[% } %][% } else { %] onclick="[% if (confirmation == "true") { %] if (confirm('<c:out value="${_wr_message}"/>')) {[% } %] window.open('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>' ,'', '[%= newWindowOptions %]'); return false;[% if (confirmation == "true") { %] } [% } %]"[% } %][% } else { %][% if (confirmation == "true") { %] onclick="return confirm('<c:out value="${_wr_message}"/>')"[% } %][% } %]>
+					[% } %]
+					[% if (type == "sort") { %]
+						<c:choose>
+		         			<c:when test="${[%= unitId %].sortMask.[%= sortAtt %] eq 'A'}">
+		         				<img title="[%= getAlternativeText() %]" alt="[%= getAlternativeText() %]" src="WRResources/spacer.gif" border="0" class="sortAscending" />
+		         			</c:when>
+		         			<c:otherwise>
+		         				<img title="[%= getAlternativeText() %]" alt="[%= getAlternativeText() %]" src="WRResources/spacer.gif" border="0" class="sortDescending" />
+		         			</c:otherwise>
+		         		</c:choose>
+					[% } else { %]
+						<img title="[%= getAlternativeText() %]" alt="[%= getAlternativeText() %]" src="[%=folder%][%= getIconName() %][%=extension%]" border="0"/>
+					[% } %]	
+					</a>
+				</td>
+			[% } %]	
+			[% if (!useImage || show == "icon & text" || show == "text"){ %]
+				[% if (show != "text") { %]
+					<td>
+				[% } %]	
+				[% if (isAjax) { %]
+		 			<a title="[%= getAlternativeText() %]" id="[%= htmlId %]" onclick="[% if (confirmation == "true") { %] var c = confirm('<c:out value="${_wr_message}"/>'); if (c) { [% } %]return ajaxRequest('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>', $H({'onFailureCallback': '[%= link["ajaxOnFailureCallback"]%]','sourcePage': '[%= getPageId(page) %]', 'pressedLink' : 'button:[%= link["id"] %]'[% if (link["ajaxOpenWindow"] == "true") { %], 'window': $H({'windowId': '[%= htmlId %]',[%= getWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]})[% } %][% if (link["ajaxCloseWindow"] == "true") { %], 'closeWindow': true [% } %][% if (link["ajaxOpenWaitingDialog"] == "true") { %], 'waitingWindow': $H({[%= getWaitingWindowParams(link).entrySet().collect{ "'$it.key':$it.value" }.join(', ') %]}) [% } %]}))[% if (confirmation == "true") { %] }  return c; [% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>">							
+		 		[% } else { %]
+		 			<a title="[%= getAlternativeText() %]" id="[%= htmlId %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %][%if (newWindowType == "normal") { %] target="_blank" [% if (confirmation == "true") { %] onclick="return confirm('<c:out value="${_wr_message}"/>')"[% } %][% } else { %] onclick="[% if (confirmation == "true") { %] if (confirm('<c:out value="${_wr_message}"/>')) {[% } %] window.open('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>' ,'', '[%= newWindowOptions %]'); return false;[% if (confirmation == "true") { %] } [% } %]"[% } %][% } else { %][% if (confirmation == "true") { %] onclick="return confirm('<c:out value="${_wr_message}"/>')"[% } %][% } %]>
+				[% } %]
+					<wr:Label context="link"/></a>
+				[% if (show != "text") { %]
+					</td>
+				[% } %]	
+			[% } %]
+			[% if (useImage) { %]
+				</tr>
+			</table>	
+			[% } %]	
+		[% } %]
+	[% } %]									
+ [% if (isProtected || disableCond != null) {
+ 	if (visibility == "inactive"  || disableCond != null) { %]
+     </c:when>
+	 <c:otherwise>
+	 	[% if ("button" == type) { %]
+			<input title="[%= getAlternativeText() %]" disabled="yes" [%= styleClass ? "class=\"${styleClass}\"" : "" %] [% if (useImage) { %] style="background-image:url('[%=folder%][%= getIconName() %]_disabled[%=extension%]'); [%=getButtonImageStyle()%]"[% } %] id="[%= htmlButtonId %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+		[% } else { %]
+			[% if (linkStyle == "button" && "sort" != type) { %]
+				<input title="[%= getAlternativeText() %]" disabled="yes" [%= styleClass ? "class=\"${styleClass}\"" : "" %] [% if (useImage) { %] style="background-image:url('[%=folder%][%= getIconName() %]_disabled[%=extension%]'); [%=getButtonImageStyle()%]"[% } %] id="[%= htmlId %]" type="button" value="<wr:Label context="link"/>">
+			[% } else  { %]
+				<table cellspacing="0" cellpadding="0" id="[%= htmlId %]">
+					<tr>
+						[% if (show == "text & icon") { %]
+							<td title="[%= getAlternativeText() %]">
+								<wr:Label context="link"/>
+							</td>
+						[% } %]
+						[% if (useImage) { %]
+							<td valign="middle">
+								<img alt="[%= getAlternativeText() %]" title="[%= getAlternativeText() %]" src="[%=folder%][%= getIconName() %]_disabled[%=extension%]" border="0"/>
+							</td>
+						[% } %]	
+						[% if (!useImage || show == "icon & text" || show == "text"){ %]
+							<td title="[%= getAlternativeText() %]">
+								<wr:Label context="link"/>
+							</td>
+						[% } %]
+					</tr>
+				</table>		
+			[% } %]
+		[% } %]
+	 </c:otherwise>
+  </c:choose>	 
+ [% } else if(visibility == "hide" && disableCond == null){ %]
+	</c:if>
+ [% } %]
+ [% } %]
+ [% } %]
+ 

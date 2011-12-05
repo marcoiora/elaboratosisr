@@ -1,0 +1,3 @@
+#?delimiters [%, %], [%=, %]
+[%setXMLOutput()%]
+<c:redirect url="${<wr:UnitId/>.result}"/>

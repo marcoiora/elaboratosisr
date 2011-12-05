@@ -1,0 +1,11 @@
+#?delimiters [%, %], [%=, %]
+<table width="100%">
+	<tr>
+		<td>
+			<h2><wr:FrameTitle/></h2>
+		</td>
+	</tr>
+	<tr>
+		<td><wr:FrameContent/></td>
+	</tr>
+</table>

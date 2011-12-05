@@ -1,0 +1,13 @@
+#?delimiters [%, %], [%=, %]
+[%setHTMLOutput()%]
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %> 
+<%@ taglib prefix="webratio" uri="http://www.webratio.com/2006/TagLib/JSP20" %>  
+<%@ page contentType="text/html; charset=UTF-8"%>  
+<webratio:Page page="<wr:PageId/>"/>
+<html>
+<wr:CustomLocation name="source"/>
+</html>

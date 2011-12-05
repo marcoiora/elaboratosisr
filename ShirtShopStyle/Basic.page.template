@@ -1,0 +1,221 @@
+#?delimiters [%, %], [%=, %]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+[%setHTMLOutput()%]
+[%def homePage = getHomePage(page.selectSingleNode("ancestor::SiteView")) %]
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
+<%@ taglib prefix="webratio" uri="http://www.webratio.com/2006/TagLib/JSP20" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<webratio:Page page="<wr:PageId/>"/>
+<html>
+  <head>
+    [%if(enableURLFragments()){%]<wr:BaseURI/>[%}%]
+    <title><wr:PageTitle/></title>
+    <wr:LinkedResources/>
+    <style type="text/css">
+    body {
+	    background: black url(wr-images/body-bg.jpg) repeat 0 0 !important;
+    }
+    
+    ul#navmenu a {
+    	/* Voci menu normali */
+    	border-color: #1d66ca;
+    }
+    ul#navmenu li.current a {
+    	border-color: #68a5ff;
+    }
+    ul#navmenu a:hover, ul#navmenu li:hover a, ul#navmenu li.iehover a {
+    	/* Voce selezionata */
+    	border-color: #68a5ff;
+    }
+    
+    ul#navmenu li:hover li a:hover, ul#navmenu li:hover li:hover a, ul#navmenu li.iehover li a:hover, ul#navmenu li.iehover li.iehover a {
+    	/* Sottomenu selezionati */
+    	border-color: #68a5ff;
+    }
+    /* Sottomenu */
+    ul#navmenu li:hover li a,
+	ul#navmenu li.iehover li a {
+		background-color: #1d66ca;
+		border-color: #1d66ca;
+	}
+	a img {
+		border: 0;
+	}
+	a {
+		color: #0057b9;
+	}
+	a:hover {
+		color: #337ce3;
+	}
+	
+	.headerOpened, td.headerOpened {
+		background-color: #d0e8ff;
+		color: #0057B9;
+		text-shadow: 1px 1px 1px white;
+	}
+    </style>
+  </head>
+  <body>
+    <wr:PageForm>
+      <table width="100%" height="100%" cellspacing="0">
+        <tr>
+          <td valign="top" height="50" >
+            <table cellspacing="0" valign="top">
+              <tr>
+                <td valign="middle">
+                  <a href="<wr:Id context="homePage"/>.do" title="Home"><img src="wr-images/logo_shirtshop.png" alt="WebRatio"/></a>
+                </td>
+                <td width="100%"></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="right" height="22" nowrap="nowrap" valign="bottom">
+                  <table border="0" cellspacing="0" align="right">
+                    <tr>
+                      <wr:PageLinks>
+                        <td nowrap="nowrap" valign="bottom" style="padding-left:5px">
+                          <wr:Link class="shortcuts"/>
+                        </td>
+                      </wr:PageLinks>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" width="100%" style=" background-color:#1d66ca">
+            <table valign="top" cellspacing="0" width="100%">
+              <tr>
+                <td>
+                  <ul id="navmenu">
+                    <wr:LandmarkMenu level="1">
+                      <wr:Current>
+                      	<li class="current">
+                  		   <wr:Link/>
+                  		   <ul>
+	                        <wr:LandmarkMenu level="2">
+		                      <wr:Current>
+		                        <li>
+		                            <wr:Link />
+			                        <ul>
+		                        		<wr:LandmarkMenu level="3">
+		                        			<wr:Current>
+						                        <li><wr:Link /></li>
+						                    </wr:Current>
+						                    <wr:NonCurrent>
+		                    					<li><wr:Link /></li>
+		                  					</wr:NonCurrent>
+		                          		</wr:LandmarkMenu>
+		                    		</ul>
+	                    		</li>
+		                      </wr:Current>
+		                      <wr:NonCurrent>
+		                        <li>
+		                            <wr:Link />
+			                        <ul>
+		                        		<wr:LandmarkMenu level="3">
+		                        			<wr:Current>
+						                        <li><wr:Link /></li>
+						                    </wr:Current>
+						                    <wr:NonCurrent>
+		                    					<li><wr:Link /></li>
+		                  					</wr:NonCurrent>
+		                          		</wr:LandmarkMenu>
+		                    		</ul>
+	                    		</li>
+		                      </wr:NonCurrent>
+		                    </wr:LandmarkMenu>
+		                   </ul>
+			             </li>
+                      </wr:Current>
+                      <wr:NonCurrent>
+                        <li>
+                           <wr:Link/>
+                           <ul>
+	                        <wr:LandmarkMenu level="2">
+		                      <wr:Current>
+		                        <li>
+		                        	<wr:Link />
+			                        <ul>
+		                        		<wr:LandmarkMenu level="3">
+		                        			<wr:Current>
+						                        <li><wr:Link /></li>
+						                    </wr:Current>
+						                    <wr:NonCurrent>
+		                    					<li><wr:Link /></li>
+		                  					</wr:NonCurrent>
+		                          		</wr:LandmarkMenu>
+		                    		</ul>
+	                    		</li>
+		                      </wr:Current>
+		                      <wr:NonCurrent>
+		                        <li>
+		                        	<wr:Link />
+			                        <ul>
+		                        		<wr:LandmarkMenu level="3">
+		                        			<wr:Current>
+						                        <li><wr:Link /></li>
+						                    </wr:Current>
+						                    <wr:NonCurrent>
+		                    					<li><wr:Link /></li>
+		                  					</wr:NonCurrent>
+		                          		</wr:LandmarkMenu>
+		                    		</ul>
+	                    		</li>
+		                      </wr:NonCurrent>
+		                    </wr:LandmarkMenu>
+		                   </ul>
+                        </li>
+                      </wr:NonCurrent>
+                    </wr:LandmarkMenu>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+		   <td class="eyebrow" height="22" align="left">
+		     <wr:NavigationBar linkClass="small" separator=" &gt; "/> &gt;
+		     <span><wr:PageTitle/></span>
+		   </td>		   
+		</tr>
+        <tr>
+          <td valign="top" height="100%">
+            <table valign="top" cellspacing="0" height="100%">
+              <tr>
+                <td width="100%" valign="top" height="100%">
+                  <table cellspacing="0" width="100%" height="100%">
+                    <tr>
+                      <td valign="top">
+                        <wr:Grid/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td width="100%" valign="top" align="right" height="100%" style="padding-left:30px">
+                  <table cellspacing="0" height="100%">
+                    <tr>
+                      <td height="22"></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" align="right" style="padding-top:3px;">
+                        <wr:CustomLocation name="Right Location"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </wr:PageForm>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Attributes Name" name="show-attribute-name" type="boolean" default="true">
+Defines the rendition of the attributes names.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Rows Number" name="num-rows" type="enum" values="1|2|3|4|5" default="1">
+Defines the number of rows to be used.
+Allowed values are: 1(default),2,3,4,5.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Attributes Orientation" name="attribute-orientation" type="enum" values="top|left" default="left">
+Defines the rendition of the attributes.
+Allowed values are:
+- left (default): places the labels on the left
+- top: places the labels on the top
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Position" name="link-position" type="enum" values="bottom|right" default="bottom">
+Defines the rendition of the links.
+Allowed values are:
+- bottom (default): places the links at the bottom
+- right: places the links on the right
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Orientation" name="link-orientation" type="enum" values="horizontal|vertical" default="horizontal">
+Defines the orientation of the links.
+Allowed values are:
+- horizontal (default): places the links on the
+same line one next to the other
+- vertical: places one link per line
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.math.NumberUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+
+def atts = unit.selectNodes("layout:Attribute")
+def attributeOrientation = StringUtils.defaultIfEmpty(params["attribute-orientation"], "left")
+def linkOrientation = StringUtils.defaultIfEmpty(params["link-orientation"], "horizontal")
+def showAttributeName = StringUtils.defaultIfEmpty(params["show-attribute-name"], "true")
+def linkPosition = StringUtils.defaultIfEmpty(params["link-position"], "left")
+def numRows = params["num-rows"]
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+
+def numCols = 0
+
+if((params["num-rows"] == "") || (params["num-rows"] == null)) {
+	numCols = atts.size()
+} else {
+	numCols = unit.numberValueOf("ceiling (count(layout:Attribute) div " + params["num-rows"] + ")" )
+}
+%]
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+	  <div class="plain <wr:StyleClass/>">
+	  	<div class="plain DataUnit">
+		    <table>
+		     <tr>
+		      <td>
+		       <table>
+		        	<tr>
+		        		[% def position = 0 %]
+		        		<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+			        		[% position++ %]
+			        		[% if (attributeOrientation == "top") { %]
+			        		  <td>
+			        		  <table>
+			        		  <tr>
+			        		[% }
+							  if (showAttributeName == "true") { %]		        		
+			        		  	<th class="<wr:StyleClass/> header"><wr:Label/></th>
+			        		[% } 
+			        		   if (attributeOrientation == "top" && showAttributeName == "true") { %]
+			        		  </tr><tr>
+			        		[% } %]  
+			        		  	<td class="<wr:StyleClass/> value"><wr:Value/></td>
+			        		[% if (attributeOrientation == "top") { %]  
+			        		  </tr>
+			        		  </table>
+			        		  </td>
+			        		[% }  
+			        		   if (position.mod(numCols) == 0) {%]
+			        		 	</tr><tr>
+			        		[% } %]
+		                </wr:Iterate>
+		        	</tr>
+		      </table>
+		      </td>
+		      [% if (linkPosition == "bottom") {%]
+			      </tr>
+			     <tr>
+		       [% } 
+		       
+		         %]
+		         <td valign="bottom">
+		   
+		           <table>
+		             [%if (linkOrientation == "horizontal") {%]
+		               <tr>
+		             [% } %]
+		               
+		               <wr:Iterate var="link" context="unit" select="layout:Link"> 
+		              [%  if (linkOrientation == "vertical") { %]
+		               <tr>
+		             [% } %]
+		                 <td>
+		                   <wr:Link class="link"/>
+		                 </td>
+		               [% if (linkOrientation == "vertical") {%]
+		                 </tr>
+		               [% } %]
+		              </wr:Iterate>
+		             [% if (linkOrientation == "horizontal") {%]
+		               </tr>
+		             [% } %]
+		           </table>
+		         </td>
+		       </tr>
+					
+		    </table>
+		 </div>
+	  </div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain DataUnit">
+				<table>
+				    <tr>
+				      <td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %] 

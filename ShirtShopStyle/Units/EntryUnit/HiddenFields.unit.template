@@ -1,0 +1,12 @@
+#?delimiters [%, %], [%=, %]
+[%
+// prints hidden fields, which do not have associated layout:Field elements
+for (hiddenField in getById(unit["id"])?.selectNodes("Field[@hidden = 'true']")) {
+    def type = hiddenField["type"]
+	if (type == "blob") { %]
+        <html:hidden property="[%=hiddenField["id"]%]_preload"/>
+    [% } else { %]
+		<html:hidden property="[%=hiddenField["id"]%]" styleId="[%=hiddenField["id"]%]"/>
+    [% }
+} 
+%]

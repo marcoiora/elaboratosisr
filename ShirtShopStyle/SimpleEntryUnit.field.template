@@ -1,0 +1,114 @@
+#?delimiters [%, %], [%=, %]
+[%
+def type = field["type"]
+def contentType = field["contentType"]
+def fieldId = field["field"]
+def modifiable = (field["modifiable"] == "true")
+def plain = getById(field["field"])?.name == "Field"
+def selection = getById(field["field"])?.name == "SelectionField"
+def multiSelection = getById(field["field"])?.name == "MultiSelectionField"
+def fieldProp = field["field"] + ((isLocalizedType(type) && plain) ? "_locale" : "")
+def subType = getById(field["subType"])
+def typeId = (field["subType"] != "") ? field["subType"] : type
+def formBean = getFormBeanName(page)
+if (mode == "error") { %]
+<span class="<wr:StyleClass context="field"/> error"><html:errors property="[%=fieldProp%]"/></span>
+[% } else if (mode == "label") { %]
+<span class="<wr:StyleClass context="field"/> header"><wr:Label context="field"/></span>
+[% } else if (plain) {
+	if (type == "boolean") {
+		if (modifiable) { %]
+			<html:radio styleClass="[%=styleClass%]" property="[%=fieldProp%]" value="true"/>
+			<bean:message key="[%=typeId%].yes"/>
+			<html:radio styleClass="[%=styleClass%]" property="[%=fieldProp%]" value="false"/>
+			<bean:message key="[%=typeId%].no"/>
+		[% } else { %]		
+			<html:hidden property="[%=fieldProp%]"/>
+			<c:choose>
+			  <c:when test="${[%=getFormBeanName(page)%].map.[%=fieldProp%]}">
+			    <bean:message key="[%=typeId%].yes"/>
+			  </c:when>
+			  <c:otherwise>
+			    <bean:message key="[%=typeId%].no"/>
+			  </c:otherwise>
+			</c:choose>
+		[% } %]
+	[% } else if (type == "text") { %]
+		<html:textarea styleId="[%= fieldProp %]" styleClass="[%=styleClass%]" cols="35" rows="8" property="[%=fieldProp%]" readonly="[%=!modifiable%]"/>		
+		[% if (contentType == "text/html") { %]
+			<script type="text/javascript">
+				if (CKEDITOR.instances['[%= fieldProp %]']) {
+					CKEDITOR.remove(CKEDITOR.instances['[%= fieldProp %]']);
+				}
+				CKEDITOR.replace('[%= fieldProp %]', {
+					width    : 350,
+					height   : 200,
+					toolbar  : 'WebRatioDefault',
+					language : '<%= ((java.util.Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY)).getLanguage() %>',
+					baseHref : '<%= wrBaseURI %>'
+				});
+			</script>
+		[% } %]
+	[% } else if (type == "blob") { %]
+		<html:hidden property="[%=fieldProp%]_preload"/>
+		[% if (modifiable) { %]
+			<html:file styleId="[%= fieldProp %]" styleClass="[%=styleClass%]" property="[%=fieldProp%]"/>
+		[% } %]
+		<c:if test="${not(empty [%=getFormBeanName(page)%].map.[%=fieldProp%]_preload)}">
+		  <html:checkbox styleClass="[%=styleClass%]" property="[%=fieldProp%]_clear"/> clear <a target="blank" href="<webratio:BLOB value="${[%=getFormBeanName(page)%].map.[%=fieldProp%]_preload}"/>">preview</a>
+		</c:if>
+	[% } else if (type == "password") { %]
+		<html:password styleId="[%= fieldProp %]" size="[%= inputSize %]" styleClass="[%=styleClass%]" property="[%=fieldProp%]" readonly="[%=!modifiable%]" redisplay="false"/>
+	[% } else { %]
+		<html:text styleId="[%= fieldProp %]" styleClass="[%=styleClass%]" property="[%=fieldProp%]" readonly="[%=!modifiable%]"/>
+		[% if ((type == "date" || type == "time" || type == "timestamp") && modifiable) { %]
+			<img src="WRResources/calendar/calendar.gif" id="[%= fieldProp %]_calendar" style="cursor: pointer"/>
+			<script type="text/javascript">
+			  Calendar.setup(
+			    {
+			      inputField  : "[%= fieldProp %]",
+			      ifFormat    : "<bean:message key="[%= typeId%]CalendarPattern"/>",
+			      firstDay    : <%= java.util.Calendar.getInstance((java.util.Locale) session.getAttribute(org.apache.struts.Globals.LOCALE_KEY)).getFirstDayOfWeek() - 1 %>,
+			      button      : "[%= fieldProp %]_calendar"[% if(type == "time" || type == "timestamp") { %],
+			      showsTime : "true"
+			      [% } %]
+			    }
+			  );
+			</script>
+  		[% } %]
+	[% } %]
+[% } else if (selection) { 
+		// selection field variables
+		def labelProperty = field["field"] + "LabelList" + (isLocalizedType(type) ? "_locale" : "")
+		def listProperty = field["field"] + "List"
+		 
+		if (type == "boolean") { %]
+			<html:select styleId="[%= fieldProp %]" styleClass="[%=styleClass%]" property="[%=fieldProp%]">
+			  <html:option value="false">
+			    <bean:message key="[%=typeId%].no"/>
+			  </html:option>
+			  <html:option value="true">
+			    <bean:message key="[%=typeId%].yes"/>
+			  </html:option>
+			</html:select>
+		[% } else { %]
+			<html:select styleId="[%= fieldProp %]" styleClass="[%=styleClass%]" property="[%= fieldProp %]">
+			  <html:option value=""><bean:message key="selectionfield.noselection"/></html:option>
+			  <html:options property="[%=listProperty%]" labelProperty="[%=labelProperty%]"/>
+			</html:select>
+		[% } %]
+[% } else if (multiSelection) { 
+	 // multi selection field variables
+	   def listProperty = getFormBeanName(page) + ".map." + fieldProp + "List"
+   	   def labelProperty = getFormBeanName(page) + ".map." + fieldProp + "LabelList" + (isLocalizedType(type) ? "_locale" : "") %]
+		<table>
+		  <c:forEach var="current" varStatus="status" items="${[%=listProperty%]}">
+		    <tr>
+		      <td [%= styleClass ? "class=\"${styleClass}\"" : "" %]>
+                <html:multibox styleId="[%= fieldProp %]" styleClass="[%= styleClass %]" property="[%=fieldProp%]" value="${current}"/>
+  		        <c:out value="${[%=labelProperty%][status.index]}"/>
+		      </td>
+		    </tr>
+		  </c:forEach>
+		</table>			
+[% } %]

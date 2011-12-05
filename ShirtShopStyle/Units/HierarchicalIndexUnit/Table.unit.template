@@ -1,0 +1,477 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Header" name="show-header" type="boolean" default="true">
+Defines the rendition of the header on the top.
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Bullet Icon" name="show-first-icon"type="boolean" default="true">
+Defines the rendition of an icon on the left of 
+the first level. 
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="First Level Links Position" name="link-position" type="enum" values="right|on_row|on_bullet" default="right">
+Defines the rendition of the first level links.
+Allowed values are:
+- right (default): places the links on the right
+- on_bullet: places the first link on the bullet
+- on_row: places the first link on the attributes
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Sub Levels Icon" name="show-branch-icon" type="boolean" default="true">
+Defines the rendition of an icon on the left of 
+the sub levels. 
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Level Links Position" name="level-link-position" type="enum" values="right|on_row|on_bullet" default="right">
+Defines the rendition of the sub levels links.
+Allowed values are:
+- right (default): places the links on the right
+- on_bullet: places the first link on the bullet
+- on_row: places the first link on the attributes
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Alternate Rows" name="use-alternate" type="boolean" default="false">
+Defines the usage of alternates colours for each line.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+
+def isSortable = unit["sortable"]
+def showHeader = "true" == params["show-header"]
+def showBullet = "true" == params["show-first-icon"]
+def linkPosition = params["link-position"]
+def useAlternate = StringUtils.defaultIfEmpty(params["use-alternate"], "false")
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]	 
+ 
+def position = "level1"
+def atts = unit.selectNodes("layout:Attribute")
+def rootFirstLink = unit.selectSingleNode("layout:Link[string(@sort) != 'true' and string(@scroll) != 'true']")
+def rootFirstLinkId = rootFirstLink?.valueOf("@link")
+def isScrollable = unit["blockFactor"] != "" ? "true": "false"
+def blockFactor = unit["blockFactor"]
+def firstLink = unit.selectSingleNode("layout:Link[contains(@link,'First')]")
+def previousLink = unit.selectSingleNode("layout:Link[contains(@link,'Previous')]")
+def blockLink = unit.selectSingleNode("layout:Link[contains(@link,'Block')]")
+def nextLink = unit.selectSingleNode("layout:Link[contains(@link,'Next')]")
+def lastLink = unit.selectSingleNode("layout:Link[contains(@link,'Last')]")
+%]
+
+[% 
+def getIconPath(linkLayout) {
+	folder = linkLayout.parameters["icon-folder"]
+	name = StringUtils.defaultIfEmpty(linkLayout.parameters["icon-name"], linkLayout.contextElement?.attributeValue("name"))
+	extension = linkLayout.parameters["icon-extension"]
+	return getFilePath(folder, name, extension)
+}
+%]
+
+[% // iterates recursively on the hierarchicalLevels
+   def getSubLevelsLayout(hLevel, position, levelCount, parentLevelElementsCount){
+   
+   	  def showBranchIcon = "true" == params["show-branch-icon"]
+	  def linkPosition = params["level-link-position"]
+	  def useAlternate = StringUtils.defaultIfEmpty(params["use-alternate"], "false")
+	  def levelId = hLevel["id"]
+	  def currentLevel = "level" + levelCount + "current"
+	  position = position + ",level" + levelCount
+	  def levelAtts = hLevel.selectNodes("layout:Attribute")
+	  def levelHasLinks = !hLevel.selectNodes("layout:Link").empty
+      def levelFirstLink = hLevel.selectSingleNode("layout:Link[1]")
+	  def levelFirstLinkId = levelFirstLink?.valueOf("@link")
+	  def levelElementsCount = parentLevelElementsCount +  levelAtts.size() + (showBranchIcon ? 1 : 0) + (levelHasLinks ? 1 : 0)
+%]
+
+<div class="plain HierarchicalIndexUnitLevel">
+   <c:choose>
+		<c:when test="${level[%=levelCount -1 %]current.[%=levelId%]dataSize gt 0}">
+			<c:forEach items="${level[%=levelCount -1 %]current.[%=levelId%]data}" var="level[%=levelCount%]current"
+				varStatus="level[%=levelCount%]status">
+			    <c:set var="level[%=levelCount%]" value="${level[%=levelCount%]status.index}" />
+			    <c:if test="${level[%=levelCount%] gt 0}">
+				    </tr>
+				    [% if (useAlternate) { %]
+				          <c:set var="<wr:UnitId/>RowIndex" value="${<wr:UnitId/>RowIndex + 1}"/>   
+                          <c:choose>
+                              <c:when test="${<wr:UnitId/>RowIndex mod 2 eq 0}">
+                                <tr class="rowAlternate">
+                              </c:when>
+                              <c:otherwise>
+                                <tr class="row">
+                              </c:otherwise>
+                          </c:choose>
+                    [% } else { %]
+                        <tr class="row">
+                    [% } %]
+				    <td colspan="[%= parentLevelElementsCount%]"/>
+			    </c:if>
+				[%if (showBranchIcon) {%]
+					<td>
+					   [%if(levelHasLinks){%]
+						[% if (linkPosition == "on_row" || linkPosition == "on_bullet") {%]
+							<a onclick="<wr:AjaxURL context="levelFirstLink" position="position"/>" href="<wr:URL context="levelFirstLink" position="position"/>" class="<wr:StyleClass context="levelFirstLink"/> link" [%if (levelFirstLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+						[% } %]
+							<img src="WRResources/spacer.gif" class="bullet" border="0" />
+						[% if (linkPosition == "on_row" || linkPosition == "on_bullet") {%]
+							</a>
+						[% } %]
+					   [%}%]	
+					</td>
+				[% } %]
+				<wr:Iterate var="attr" context="hLevel" select="layout:Attribute">
+					<td class="<wr:StyleClass/> value">
+						[% if (levelHasLinks && linkPosition == "on_row") {%]
+							<a onclick="<wr:AjaxURL context="levelFirstLink" position="position"/>" href="<wr:URL context="levelFirstLink" position="position"/>" class="<wr:StyleClass context="levelFirstLink"/> link" [%if (levelFirstLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+						[% } %]
+							<wr:Value item="currentLevel"/>
+						[% if (levelHasLinks && linkPosition == "on_row") {%]
+							</a>
+						[% } %]
+					</td>
+				</wr:Iterate>
+				[% if(levelHasLinks){%]
+				<td align="right">
+					<table>
+						<tr>
+							 <wr:Iterate var="link" context="hLevel" select="layout:Link">
+							 	[% if ((linkPosition == "on_row" || linkPosition == "on_bullet") && index > 0) { %]
+								     <td nowrap="nowrap">
+								     	<wr:Link class="link" position="position"/>
+								     </td>
+							    [% } else if (linkPosition != "on_row" && linkPosition != "on_bullet") {%]
+							    	<td nowrap="nowrap">
+								     	<wr:Link class="link" position="position"/>
+								    </td>
+								[% } %]
+							</wr:Iterate>
+						</tr>
+					</table>
+				</td>
+				[%}%]
+				<wr:Iterate var="subLevel" context="hLevel" select="HierarchicalIndexLevel">
+					[% getSubLevelsLayout(subLevel, position, levelCount + 1, levelElementsCount) %]
+				</wr:Iterate>
+				<c:if test="${level[%=levelCount%] eq level[%=levelCount -1 %]current.[%=levelId%]dataSize}"></tr></c:if>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<td colspan="[%= levelElementsCount - parentLevelElementsCount%]"/>
+		</c:otherwise>
+	</c:choose>
+</div>
+[% } %]
+
+[%def getSubLevelsHeaders(hLevel) { %]
+		[% if ("true" == params["show-branch-icon"]) { %]<th class="<wr:StyleClass/> header"/>[% } %]
+		<wr:Iterate var="level" context="hLevel" select="layout:Attribute">
+			<th class="<wr:StyleClass/> header"><wr:Label/></th>	
+  		</wr:Iterate>
+  		[%if(!hLevel.selectNodes("layout:Link").empty){%]<th class="<wr:StyleClass/> header"/>[%}%]
+  		<wr:Iterate var="subLevel" varIndex="subLevelIndex" context="hLevel" select="HierarchicalIndexLevel">
+ 			[% getSubLevelsHeaders(subLevel) %]
+  		</wr:Iterate>
+[%}%]
+
+[%def getElementsCount(hLevel, count) { %]
+		<wr:Iterate var="level" context="hLevel" select="layout:Attribute">
+			[% count++ %]
+  		</wr:Iterate>
+  		[% if(!hLevel.selectNodes("layout:Link").empty){ count++ }%]
+  		<wr:Iterate var="subLevel" varIndex="subLevelIndex" context="hLevel" select="HierarchicalIndexLevel">
+ 			[% count += getElementsCount(subLevel, count) %]
+  		</wr:Iterate>
+  		[% return count %]
+[%}%]
+
+
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+    [% def hasLinks = !unit.selectNodes("layout:Link[string(@sort) != 'true' and string(@scroll) != 'true']").empty %] 
+	[% if (useAlternate) { %]
+       <c:set var="<wr:UnitId/>RowIndex" value="0"/>
+     [% } %]
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain HierarchicalIndexUnit">
+			   [% if (isScrollable == "true") { %]
+                    <c:if test="${<wr:UnitId/>.scroller.of gt [%= blockFactor %]}">
+                        <table border="0" cellspacing="1" cellpadding="2">
+                            <tr> 
+                                [% if (firstLink) { %]
+	                                <td class="scrollText">
+	                                    <wr:Visible context="firstLink">
+	                                        <c:choose>
+	                                            <c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.first}">
+	                                                <wr:Link class="scroll" context="firstLink"/>
+	                                            </c:when>
+	                                            <c:otherwise>
+	                                                [% def firstLinkLayout = getLinkLayout(firstLink)
+	                                                   if (firstLinkLayout.parameters["show"] && (firstLinkLayout.parameters["show"] == "icon" || firstLinkLayout.parameters["show"] == "icon & text")) { %]
+	                                                    <table cellspacing="0" cellpadding="0">
+	                                                        <tr>
+	                                                            <td valign="middle">
+	                                                                <img src="[%=getIconPath(firstLinkLayout) %]" border="0"/>
+	                                                            </td>
+	                                                            [% if (firstLinkLayout.parameters["show"] == "icon & text") { %]
+	                                                            <td>
+	                                                                <bean:message key="HierarchicalIndex.First"/>
+	                                                            </td>
+	                                                            [% } %]
+	                                                        </tr>
+	                                                    </table>
+	                                                [% } else { %]
+	                                                    <span><bean:message key="HierarchicalIndex.First"/></span>
+	                                                [% } %]
+	                                            </c:otherwise>
+	                                        </c:choose>
+	                                    </wr:Visible>
+	                                </td>
+                                [% } %]
+                                [% if (previousLink) { %]
+	                                <td class="scrollText">
+	                                    <wr:Visible context="previousLink">
+	                                        <c:choose>
+	                                            <c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.previous}">
+	                                                <wr:Link class="scroll" context="previousLink"/>
+	                                            </c:when>
+	                                            <c:otherwise>
+	                                                [% def previousLinkLayout = getLinkLayout(previousLink)
+	                                                   if (previousLinkLayout.parameters["show"] && (previousLinkLayout.parameters["show"] == "icon" || previousLinkLayout.parameters["show"] == "icon & text")) { %]
+	                                                    <table cellspacing="0" cellpadding="0">
+	                                                        <tr>
+	                                                            <td valign="middle">
+	                                                                <img src="[%=getIconPath(previousLinkLayout) %]" border="0"/>
+	                                                            </td>
+	                                                            [% if (previousLinkLayout.parameters["show"] == "icon & text") { %]
+	                                                                <td>
+	                                                                    <bean:message key="HierarchicalIndex.Previous"/>
+	                                                                </td>
+	                                                            [% } %]
+	                                                        </tr>
+	                                                    </table>
+	                                                [% } else { %]
+	                                                    <span><bean:message key="HierarchicalIndex.Previous"/></span>
+	                                                [% } %]
+	                                            </c:otherwise>
+	                                        </c:choose>
+	                                    </wr:Visible>
+	                                </td>
+                                [% } %]
+                                <td class="scrollText" nowrap>${<wr:UnitId/>.scroller.from} <bean:message key="HierarchicalIndex.To"/> ${<wr:UnitId/>.scroller.to} <bean:message key="HierarchicalIndex.Of"/> ${<wr:UnitId/>.scroller.of}</td>
+                                [% if (nextLink) { %]
+	                                <td class="scrollText">
+	                                    <wr:Visible context="nextLink">
+	                                        <c:choose>
+	                                            <c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.next}">
+	                                                <wr:Link class="scroll" context="nextLink"/>
+	                                            </c:when>
+	                                            <c:otherwise>
+	                                                [% def nextLinkLayout = getLinkLayout(nextLink)
+	                                                if (nextLinkLayout.parameters["show"] && (nextLinkLayout.parameters["show"] == "icon" || nextLinkLayout.parameters["show"] == "icon & text")) { %]
+	                                                    <table cellspacing="0" cellpadding="0">
+	                                                        <tr>
+	                                                            <td valign="middle">
+	                                                                <img src="[%=getIconPath(nextLinkLayout) %]" border="0"/>
+	                                                            </td>
+	                                                            [% if (nextLinkLayout.parameters["show"] == "icon & text") { %]
+	                                                                <td>
+	                                                                    <bean:message key="HierarchicalIndex.Next"/>
+	                                                                </td>
+	                                                            [% } %]
+	                                                        </tr>
+	                                                    </table>
+	                                                [% } else { %]
+	                                                    <span><bean:message key="HierarchicalIndex.Next"/></span>
+	                                                [% } %]
+	                                            </c:otherwise>
+	                                        </c:choose>
+	                                    </wr:Visible>
+	                                </td>
+                                [% } %]
+                                [% if (lastLink) { %]
+	                                <td class="scrollText">
+	                                    <wr:Visible context="lastLink">
+	                                        <c:choose>
+	                                            <c:when test="${<wr:UnitId/>.scroller.current ne <wr:UnitId/>.scroller.last}">
+	                                                <wr:Link class="scroll" context="lastLink"/>
+	                                            </c:when>
+	                                            <c:otherwise>
+	                                                [% def lastLinkLayout = getLinkLayout(lastLink)
+	                                                if (lastLinkLayout.parameters["show"] && (lastLinkLayout.parameters["show"] == "icon" || lastLinkLayout.parameters["show"] == "icon & text")) { %]
+	                                                    <table cellspacing="0" cellpadding="0">
+	                                                        <tr>
+	                                                            <td valign="middle">
+	                                                                <img src="[%=getIconPath(lastLinkLayout) %]" border="0"/>
+	                                                            </td>
+	                                                            [% if (lastLinkLayout.parameters["show"] == "icon & text") { %]
+	                                                                <td>
+	                                                                    <bean:message key="HierarchicalIndex.Last"/>
+	                                                                </td>
+	                                                            [% } %]
+	                                                        </tr>
+	                                                    </table>
+	                                                [% } else { %]
+	                                                    <span><bean:message key="HierarchicalIndex.Last"/></span>
+	                                                [% } %] 
+	                                            </c:otherwise>
+	                                        </c:choose>
+	                                    </wr:Visible>
+	                                </td>
+                                [% } %]
+                            </tr>
+                            [% if (blockLink) { %]
+                            <tr>  
+                                <td colspan="5" class="scrollText"> 
+                                    <wr:Visible context="blockLink">
+                                        <span><bean:message key="HierarchicalIndex.Jump"/></span>
+                                        <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.scroller.blocks}">
+                                            <c:set var="index" value="${status.index}"/>
+                                            <span class="jump">
+                                                <c:choose>
+                                                    <c:when test="${current ne <wr:UnitId/>.scroller.current}">
+                                                        <a class="<wr:StyleClass context="blockLink"/> link" href="<wr:URL context="blockLink"/>" onclick="<wr:AjaxURL context="blockLink" />">${current}</a>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        ${current}
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </span>
+                                        </c:forEach> 
+                                    </wr:Visible>
+                                </td>
+                            </tr>
+                            [% } %]
+                        </table>
+                    </c:if>
+               [%}%]
+			   <table cellspacing="0" cellpadding="0">
+					[% if (showHeader) { %]
+						<tr>
+							[%if (showBullet) {%]<th class="<wr:StyleClass/> header"/>[% } %]
+							<wr:Iterate var="att" context="unit" select="layout:Attribute">
+					    		<th class="<wr:StyleClass/> header">[% if (isSortable == "true") { %]
+                                  [% def sortLink = unit.selectSingleNode("layout:Link[@link='" + unit["id"] + att["attribute"] + "']")
+                                     if(sortLink != null) { %]
+                                          <wr:Link context="sortLink" class="sort" type="sort"/>
+                                     [% } else { %]
+                                          <wr:Label/>
+                                     [% } %]
+                                  [% } else { %]
+                                     <wr:Label/>
+                                  [% } %]
+                                </th>
+					  		</wr:Iterate>
+					  		[%if(hasLinks){%]<th class="<wr:StyleClass/> header"/>[%}%]
+					  		<wr:Iterate var="hLevel" varIndex="hLevelIndex" context="unit" select="HierarchicalIndexLevel">
+			         			[% getSubLevelsHeaders(hLevel) %]
+			      			</wr:Iterate>
+					  	</tr>
+					[% } %]
+			  		<c:forEach var="level1current" varStatus="level1status" items="${<wr:UnitId/>.data}">
+						<c:set var="level1" value="${level1status.index}" />
+						<c:choose>
+						   <c:when test="${<wr:UnitId/>.currentIndex eq level1}"><c:set var="currentCSS" value="Current"/></c:when>
+						   <c:otherwise><c:set var="currentCSS" value=""/></c:otherwise>   
+						</c:choose>
+						[% if (useAlternate) { %]
+						    <c:set var="<wr:UnitId/>RowIndex" value="0"/>   
+							<c:choose>
+								<c:when test="${<wr:UnitId/>RowIndex mod 2 eq 0}">
+									<tr class="row${currentCSS}Alternate">
+								</c:when>
+								<c:otherwise>
+									<tr class="row${currentCSS}">
+								</c:otherwise>
+							</c:choose>
+						[% } else { %]
+							<tr class="row${currentCSS}">
+						[% } %]
+							[%if (showBullet) {%]
+								<td>
+								  [%if(hasLinks){%]
+									[% if (linkPosition == "on_row" || linkPosition == "on_bullet") {%]
+										<a onclick="<wr:AjaxURL context="rootFirstLink" position="position"/>" href="<wr:URL context="rootFirstLink" position="position"/>" class="<wr:StyleClass context="rootFirstLink"/> link" [%if (rootFirstLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+									[% } %]
+										<img src="WRResources/spacer.gif" class="bullet" border="0" />
+									[% if (linkPosition == "on_row" || linkPosition == "on_bullet") {%]
+										</a>
+									[% } %]
+								  [%}%]	
+								</td>
+							[% } %]
+							<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+								<td class="<wr:StyleClass/> value">
+									[% if (linkPosition == "on_row") {%]
+										<a onclick="<wr:AjaxURL context="rootFirstLink" position="position"/>" href="<wr:URL context="rootFirstLink" position="position"/>" class="<wr:StyleClass context="rootFirstLink"/> link" [%if (rootFirstLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+									[% } %]
+										<wr:Value item="'level1current'"/>
+									[% if (linkPosition == "on_row") {%]
+										</a>
+									[% } %]
+								</td>
+							</wr:Iterate>
+							[%if(hasLinks){%]
+							<td align="right">
+								<table>
+									<tr>
+										 <wr:Iterate var="link" context="unit" select="layout:Link[string(@sort) != 'true' and string(@scroll) != 'true']">
+										 	[% if ((linkPosition == "on_row" || linkPosition == "on_bullet") && index > 0) { %]
+											     <td nowrap="nowrap"><wr:Link class="link" position="position"/></td>
+										    [% } else if (linkPosition != "on_row" && linkPosition != "on_bullet") {%]
+										    	<td nowrap="nowrap"><wr:Link class="link" position="position"/></td>
+											[% } %]
+										</wr:Iterate>
+									</tr>
+								</table>
+							</td>
+							[%}%]
+							[% def elementsCount = atts.size() + (showBullet ? 1 : 0) + (hasLinks ? 1 : 0) %]
+							<wr:Iterate var="hLevel" context="unit" select="HierarchicalIndexLevel">
+								[% getSubLevelsLayout(hLevel, "level1", 2, elementsCount) %]
+							</wr:Iterate>
+						</tr>
+						<tr>
+							[% def count = elementsCount %]
+							<wr:Iterate var="hLevel" varIndex="hLevelIndex" context="unit" select="HierarchicalIndexLevel">
+			         			[% count += getElementsCount(hLevel, count) %]
+			      			</wr:Iterate>
+							<td colspan="[%= count %]">
+								<img src="WRResources/spacer.gif" height="1"/>
+							</td>
+						</tr>
+					</c:forEach>
+			  	</table>
+			</div>
+		</div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain HierarchicalIndexUnit">
+				<table>
+				    <tr>
+				      <td><bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/></td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]  

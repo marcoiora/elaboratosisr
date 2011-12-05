@@ -1,0 +1,187 @@
+#?delimiters [%, %], [%=, %]
+[%
+import org.apache.commons.lang.math.NumberUtils
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def years = NumberUtils.toInt(unit["years"], 5)
+%]
+<wr:Frame>
+<div class="plain <wr:StyleClass/>">
+	<div class="plain EventCalendarUnit">
+		<table border="0" cellspacing="1" cellpadding="2">    
+		  <tr>
+		     <td nowrap="nowrap">
+		      <table>
+		        <tr>
+		          <td>
+		            <select name="<wr:UnitId/>" onChange="if (this.value!='') {window.location.href=[%if(enableURLFragments()){%]'<%=wrBaseURI%>' + [%}%]this.value}" class="<wr:StyleClass/> month">
+		            <wr:Iterate var="link" context="unit" select="layout:Link[contains(@id, '-month-')]">
+		              [% def month = NumberUtils.toInt(link.valueOf("LinkParameter/@sourceValue")) %]
+		              <c:choose>
+		                <c:when test="${<wr:UnitId/>.currentMonth eq '[%= month%]'}">
+		                  <option selected value="<wr:URL context="link"/>"> 
+		                      <c:out value="${<wr:UnitId/>.monthNames[[%= month%]]}"/>
+		                  </option>
+		                </c:when>
+		                <c:otherwise>
+		                   <option value="<wr:URL context="link"/>"> 
+		                      <c:out value="${<wr:UnitId/>.monthNames[[%= month%]]}"/>
+		                   </option>
+		                </c:otherwise>
+		              </c:choose>
+		            </wr:Iterate>
+		            </select>
+		          </td>
+		        </tr>
+		      </table>
+		     </td>
+		     <c:set var="index" value="0"/>
+		     [% def yearLink = unit.selectSingleNode("layout:Link[contains(@id, '-year')]") %]
+		     <td nowrap="nowrap" align="right">
+		        <table>
+		           <tr>
+		              <td>
+		              	<a href="<wr:URL context="yearLink"/>">
+							<img src="WRResources/spacer.gif" class="previousYear" border="0" alt="<wr:Label context="yearLink"/>"/>
+						</a>
+		              </td>
+		              <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.years}" begin="1" end="[%= years%]">
+		                <c:set var="index" value="${status.index}"/>
+		                <td>
+		                 	<a class="<wr:StyleClass context="yearLink"/> link<c:if test="${current eq <wr:UnitId/>.currentYear}">Current</c:if>" href="<wr:URL context="yearLink"/>">
+		                    	<c:out value="${current}"/>
+		                    </a>
+		                </td>
+		              </c:forEach>
+		              <c:set var="index" value="${index + 1}"/>
+		              <td>
+		              	<a href="<wr:URL context="yearLink"/>">
+							<img src="WRResources/spacer.gif" class="nextYear" border="0" alt="<wr:Label context="yearLink"/>"/>				
+						</a>
+		              </td>
+		           </tr>
+		        </table>
+		     </td>
+		   </tr>
+		   <tr>
+		     <td colspan="2">
+		       <table>
+		         <tr>
+		           <c:forEach var="dayNamecurrent" varStatus="dayNamestatus" items="${<wr:UnitId/>.dayOfWeekNames}">
+			         <td style="border:1px solid black" width="13%">                                      
+		                <table cellspacing="0" cellpadding="0" width="100%">
+		                  <tr>
+		                    <td><img border="0" src="Resources/spacer.gif" height="1"/></td>
+		                  </tr>
+		                  <tr>
+		                    <td height="1" valign="top"  class="<wr:StyleClass/> day" align="center">
+		                       <c:out value="${dayNamecurrent}"/>
+		                    </td>
+		                  </tr>
+		                </table>
+		             </td>
+		           </c:forEach>
+		         </tr>
+		         <tr>
+		           <c:set var="fwday" value="${<wr:UnitId/>.daysOfWeek[0]}"/>
+		              <c:if test="${fwday != 1}">
+		                <c:forEach begin="1" end="${fwday-1}">
+		                  <td height="1" style="border:1px solid black" valign="top" width="13%">
+		                    <img border="0" src="WRResources/spacer.gif" class="horizontalSpacer"/>
+		                  </td>
+		                </c:forEach>
+		              </c:if>
+		              <c:forEach var="level1current" varStatus="level1status" items="${<wr:UnitId/>.date}">
+		                 <c:set var="level1" value="${level1status.index}"/>
+		                 <c:set var="wday" value="${<wr:UnitId/>.daysOfWeek[level1]}"/>
+		                  <td style="border:1px solid black" valign="top" width="13%">
+		                  <table width="100%">
+		                    <tr>
+		                      <td height="1" valign="top" colspan="2">
+		                         <img border="0" src="WRResources/spacer.gif" class="horizontalSpacer"/>
+		                      </td>
+		                    </tr>
+		                    <tr>
+		                      <td valign="top">
+		                         <img border="0" src="WRResources/spacer.gif" class="verticalSpacer"/>
+		                      </td>
+		                      <td valign="top" align="right">
+		                        <table>
+		                          <tr>
+		                            [% def outgoingLinks = unit.selectNodes("layout:Link[LinkParameter[string(@_exp) != 't'][@source = 'date[].date'] and not(LinkParameter[starts-with(@source, 'date[].data[].')])][string(@_exp) != 't']") %]
+		                           	[% def colSpan = unit.selectNodes("layout:Attribute").size() +  outgoingLinks.size() %]
+		                            <td valign="top" align="right" width="100%" colspan="[%= colSpan%]" class="value<c:if test="${level1current.date eq <wr:UnitId/>.currentDate}">Current</c:if>">
+		                             
+		                            [% if(outgoingLinks.size() == 1){ %]
+	                                    [% def lev1Link = outgoingLinks[0] %]
+	                                    <a class="<wr:StyleClass/> link<c:if test="${level1current.date eq <wr:UnitId/>.currentDate}">Current</c:if>"  onclick="<wr:AjaxURL context="lev1Link" position="'level1'"/>" href="<wr:URL context="lev1Link" position="'level1'"/>">
+	                                      <fmt:formatDate value="${level1current.date}" pattern="d"/>
+	                                    </a>
+		                            [% } else {%]
+		                               <fmt:formatDate value="${level1current.date}" pattern="d"/>
+		                            [% } %]
+		                               </td>
+		                            [% if(outgoingLinks.size() > 1){ %]
+		                               <wr:Iterate var="link" context="unit" select="layout:Link[LinkParameter/@source='date[].date']">
+		                                 <wr:Visible position="'level1'">
+		                                   <td>
+		                                     <wr:Link context="link" position="'level1'" class="link"/>
+		                                   </td>
+		                                 </wr:Visible>
+		                               </wr:Iterate>
+		                            [% } %]
+		                           </tr>
+		                            <c:if test="${level1current.dataSize gt 0}">
+		                              <c:forEach var="level2current" varStatus="level2status" items="${level1current.data}">
+		                                <c:set var="level2" value="${level2status.index}"/>
+		                                [% def lev2Links = unit.selectNodes("layout:Link[not(LinkParameter) or LinkParameter[string(@_exp) != 't'][@source != 'date[].date']][string(@_exp) != 't']") %]
+		                                <tr>
+		                                  <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+		                                    <td class="<wr:StyleClass/> value">
+		                                      [% if(lev2Links.size() == 1){%]
+		                                        <a class="<wr:StyleClass context="lev2Links[0]"/> link" href="<wr:URL context="lev2Links[0]" position="'level1,level2'"/>"  onclick="<wr:AjaxURL context="lev2Links[0]" position="'level1,level2'"/>">
+		                                          <wr:Value item="'level2current'" position="'level1,level2'"/>
+		                                        </a>
+		                                      [% } else { %]
+		                                        <wr:Value item="'level2current'" position="'level1,level2'"/>
+		                                      [% } %] 
+		                                    </td>
+		                                   </wr:Iterate>
+		                                   [% if(lev2Links.size() > 1){%]
+		                                     [% for(link in lev2Links){ %]
+		                                      <td>
+		                                          <wr:Link context="link" position="'level1,level2'"/>
+		                                      </td> 
+		                                     [% } %]
+		                                   [% } %]    
+		                                 </tr>
+		                              </c:forEach>
+		                            </c:if>
+		                          </table>
+		                        </td>
+		                      </tr>
+		                    </table>
+		                  </td>
+		                  <c:if test="${wday == 7}">
+		                    </tr>
+		                    <tr>
+		                  </c:if>
+		                </c:forEach>
+		              <c:set var="size" value="${<wr:UnitId/>.datesSize}"/>
+		              <c:set var="lwday" value="${<wr:UnitId/>.daysOfWeek[size-1]}"/>
+		              <c:if test="${lwday != 7}">
+		                <c:forEach begin="${lwday + 1}" end="7">
+		                  <td height="1" style="border:1px solid black" valign="top">
+		                    <img border="0" src="WRResources/spacer.gif" class="horizontalSpacer"/>
+		                  </td>
+		                </c:forEach>
+		              </c:if>
+		            </tr>
+		          </table>
+		        </td>
+		      </tr>  
+		</table>
+	</div>
+  </div>
+</wr:Frame>

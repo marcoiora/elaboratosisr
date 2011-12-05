@@ -1,0 +1,370 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Header" name="show-header" type="boolean" default="true">
+Defines the rendition of the header on the top.
+Allowed values are: true (default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Attributes Name" name="show-attribute-name" type="boolean" default="false">
+Defines the rendition of the attributes names.
+Allowed values are: true or false (default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Bullet" name="show-bullet" type="boolean" default="true">
+Defines the rendition of a bullet next to each line.
+Allowed values are: true or false (default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Alternate Rows" name="use-alternate" type="boolean" default="false">
+Defines the usage of alternates colours for each line.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Position" name="link-position" type="enum" values="left|right|on_bullet|on_row" default="right">
+Defines the rendition of the sub levels links.
+Allowed values are:
+- right (default): places the links on the right
+- left: places the links on the left
+- on_bullet: places the first link on the bullet
+- on_row: places the first link on the attributes
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Mandatory Fields" name="mandatory-fields" type="boolean" default="false">
+Defines whether to show a '*' for mandatory fields or not.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Form when Empty" name="show-form-empty" type="boolean" default="false">
+When set to true, the form is displyed instead in place of the empty list.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Form with No Selection" name="show-form-noselection" type="enum" values="none|top|bottom" default="none">
+Enables showing a standalone form when no there is no current list item select.
+Allowed values are:
+- none (default): no form is displayed
+- top: displays the form at the top
+- bottom: displays the form at the bottom
+</wr:LayoutParameter>
+[%
+setHTMLOutput()
+def unit = cell.selectNodes("layout:Unit").find{getById(it["unitId"])?.name == "IndexUnit"}
+def entryUnit = cell.selectNodes("layout:Unit").find{getById(it["unitId"])?.name == "EntryUnit"}
+
+def unitId = unit["id"]
+
+def showHeader = params["show-header"] ?: "true"
+def showBullet = params["show-bullet"] ?: "true"
+def useAlternate = params["use-alternate"] ?: "false"
+def showAttributeName = params["show-attribute-name"] ?: "true"
+def linkPosition = params["link-position"] ?: "right"
+def showMandatoryFields = params["mandatory-fields"] == "true"
+def showFormEmpty = params["show-form-empty"] == "true"
+def showFormNoSelection = params["show-form-noselection"]
+
+def links = unit.selectNodes("layout:Link")
+def unitLink = unit.selectSingleNode("layout:Link[1]")
+def link = unitLink?.valueOf("@link")
+def fields = entryUnit.selectNodes("layout:Field")
+def hiddenFields = getById(entryUnit["id"])?.selectNodes("Field[@hidden='true']")
+
+/*
+ * Standalone entry unit
+ */
+def printStandaloneForm = {
+%]
+	<tr class="row">	
+		[% if (showBullet == "true") { %]
+			<td></td>
+	    [% } %]
+		[% if (linkPosition == "left") { %]
+			<wr:Iterate var="l" context="entryUnit" select="layout:Link">
+				<wr:Visible>
+					<td><wr:Link class="button" type="button"/></td>
+				</wr:Visible>
+		    </wr:Iterate>
+		[% } %]
+		<wr:Iterate var="field" context="entryUnit" select="layout:Field">
+			<wr:Visible>
+				[% if (showAttributeName == "true") {%]
+					<th class="<wr:StyleClass/> header">
+				    	<wr:Label/>
+				    </th>
+				[% } %]
+				<td class="<wr:StyleClass/> value">
+					<wr:Value />
+				</td>
+			</wr:Visible>
+		</wr:Iterate>
+		[% if (linkPosition == "right") { %]
+			<wr:Iterate var="l" context="entryUnit" select="layout:Link">
+				<wr:Visible>
+					<td><wr:Link class="button" type="button"/></td>
+				</wr:Visible>
+			</wr:Iterate>
+		[% } %]
+	</tr>
+[%
+}
+
+/* 
+ * List elements
+ */
+%]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+	<wr:Frame>
+		<div class="plain <wr:StyleClass context="unit"/>">
+			<div class="plain IndexUnit">
+				
+				<table border="0" cellspacing="1" cellpadding="2">
+				[% if (showHeader == "true") {%]
+					<tr>
+					[% if (showBullet == "true") {%]
+							<th class="<wr:StyleClass/> header"></th>
+					[% } %]
+					[% if (linkPosition == "left") { %]
+					    <wr:Iterate var="l" context="unit" select="layout:Link">
+					    	<wr:Visible><th class="<wr:StyleClass/> header"></th></wr:Visible>
+						</wr:Iterate>
+					[% }  %]
+					<wr:Iterate var="attr" varIndex="attrIndex" context="unit" select="layout:Attribute">
+						<wr:Visible>
+							[% def field = entryUnit.selectSingleNode("layout:Field[${attrIndex + 1}]") %]
+							[% if (showAttributeName == "true") {%]
+								<th class="<wr:StyleClass/> header"></th>
+							[% } %]
+							<th nowrap="nowrap" class="<wr:StyleClass/> header">
+								<wr:Label/>
+								[% if (showMandatoryFields && isMandatoryField(field)) { %]*[% } %]
+							</th>
+						</wr:Visible>
+					</wr:Iterate>
+					[% if (linkPosition == "right") { %]
+						<wr:Iterate var="l" context="unit" select="layout:Link">
+							<wr:Visible><th class="<wr:StyleClass/> header"></th></wr:Visible>
+						</wr:Iterate>
+					[% } %]
+					</tr>
+				[% } %]
+				
+				[% if (showFormNoSelection == "top") { %]
+					<c:if test="${<wr:UnitId/>.currentIndex lt 0}">
+						[% printStandaloneForm() %]
+					</c:if>
+				[% } %]
+				
+				<!-- instances -->
+				
+				<c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+					<c:set var="index" value="${status.index}"/>	
+					
+					<c:choose>
+						<c:when test="${<wr:UnitId/>.currentIndex eq index}">
+							<tr class="rowCurrent[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">	
+								[% if (showBullet == "true") { %]
+									<td>
+										<img src="WRResources/spacer.gif" class="bulletCurrent[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]" border="0"/>
+									</td>
+							    [% } %]
+							    
+								[% if (linkPosition == "left") { %]
+									<wr:Iterate var="l" context="entryUnit" select="layout:Link">
+										<wr:Visible position="'index'">
+											<td>
+										  	 	[% if (useAlternate == "true") { %]
+													<c:choose>
+														<c:when test="${index mod 2 eq 0}">
+															<wr:Link class="button" type="button"/>
+														</c:when>
+														<c:otherwise>
+															<wr:Link class="buttonAlternate" type="button"/>
+														</c:otherwise>
+													</c:choose>
+												[% } else { %]
+													<wr:Link class="button" type="button"/>
+												[% } %]	
+											</td>
+										</wr:Visible>
+								    </wr:Iterate>
+								[% } %]
+								
+								<wr:Iterate var="field" context="entryUnit" select="layout:Field">
+									<wr:Visible position="'index'">
+										[% if (showAttributeName == "true") {%]
+											<th class="<wr:StyleClass/> headerCurrent[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">
+										    	<wr:Label/>
+										    </th>
+										[% } %]
+										<td class="<wr:StyleClass/> valueCurrent[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">
+											<wr:Value />
+										</td>
+									</wr:Visible>
+								</wr:Iterate>
+								
+								[% if (linkPosition == "right") { %]
+									<wr:Iterate var="l" context="entryUnit" select="layout:Link">
+										<wr:Visible position="'index'">
+											<td>
+												[% if (useAlternate == "true") { %]
+													<c:choose>
+														<c:when test="${index mod 2 eq 0}">
+															<wr:Link class="button" type="button"/>
+														</c:when>
+														<c:otherwise>
+															<wr:Link class="buttonAlternate" type="button"/>
+														</c:otherwise>
+													</c:choose>
+												[% } else { %]
+													<wr:Link class="button" type="button"/>
+												[% } %]	
+											</td>
+										</wr:Visible>
+									</wr:Iterate>
+								[% } %]
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<tr class="row[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">
+							
+								[% if (showBullet == "true") {
+								 if ((linkPosition == "on_bullet") || (linkPosition == "on_row") && (!links.empty)) { %]
+								        <td>
+								        	<wr:Visible context="unitLink" position="'index'">
+												<a href="<wr:URL context="unitLink"/>" class="<wr:StyleClass context="unitLink"/> link[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]"
+									        		[%if (unitLink?.attributeValue("newWindow") == "true") { %] target="_blank" [% } %]>
+													<img src="WRResources/spacer.gif" class="bullet[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]" border="0" alt="<wr:Label context="unitLink"/>"/>
+												</a>
+											</wr:Visible>
+								        </td>
+								  [% } else { %]
+										<td>
+											<img src="WRResources/spacer.gif" class="bullet[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]" border="0"/>
+										</td>
+								  [% } 
+							    } %]
+									
+								[% if (linkPosition == "left") { %]
+									<wr:Iterate var="l" context="unit" select="layout:Link">
+										<wr:Visible position="'index'">
+											<td>
+										  	 	[% if (useAlternate == "true") { %]
+													<c:choose>
+														<c:when test="${index mod 2 eq 0}">
+															<wr:Link class="link"/>
+														</c:when>
+														<c:otherwise>
+															<wr:Link class="linkAlternate"/>
+														</c:otherwise>
+													</c:choose>
+												[% } else { %]
+													<wr:Link class="link"/>
+												[% } %]	
+											</td>
+										</wr:Visible>
+								    </wr:Iterate>
+								[% } %]
+								
+								<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+									<wr:Visible position="'index'">
+										[% if (showAttributeName == "true") {%]
+											<th class="<wr:StyleClass/> header[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">
+										    	<wr:Label/>
+										    </th>
+										[% } %]
+										
+										<!-- PRINT ATTRIBUTES -->
+										[% if ((linkPosition == "on_row") && (!links.empty)) {%]
+												<!-- linked attribute -->
+												<td>
+													<a href="<wr:URL context="unitLink"/>" class="<wr:StyleClass context="unitLink"/> link[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">	
+														<wr:Value/>
+												  	</a>
+												</td>
+										[% } else {%]
+											<!-- not linked attribute -->
+											<td class="<wr:StyleClass/> value[% if (useAlternate == "true") { %]<c:if test="${index mod 2 eq 0}">Alternate</c:if>[% } %]">
+												<wr:Value />
+											</td>
+										[% } %]
+									</wr:Visible>
+								</wr:Iterate>
+								[% if (linkPosition == "right") { %]
+									<wr:Iterate var="l" context="unit" select="layout:Link">
+										<wr:Visible position="'index'">
+											<td>
+												[% if (useAlternate == "true") { %]
+													<c:choose>
+														<c:when test="${index mod 2 eq 0}">
+															<wr:Link class="link"/>
+														</c:when>
+														<c:otherwise>
+															<wr:Link class="linkAlternate"/>
+														</c:otherwise>
+													</c:choose>
+												[% } else { %]
+													<wr:Link class="link"/>
+												[% } %]
+											</td>
+										</wr:Visible>
+									</wr:Iterate>
+								[% } %]
+							</tr>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				
+				[% if (showFormNoSelection == "bottom") { %]
+					<c:if test="${<wr:UnitId/>.currentIndex lt 0}">
+						[% printStandaloneForm() %]
+					</c:if>
+				[% } %]
+				
+				</table>
+				
+				[% for (hiddenField in hiddenFields) { %]
+					[% if (hiddenField["type"] == "blob") { %]
+						<html:hidden property="[%=hiddenField["id"]%]_preload"/>
+					[% } else { %]
+						<html:hidden property="[%=hiddenField["id"]%]" styleId="[%=hiddenField["id"]%]"/>
+					[% } %]
+				[% } %]
+			</div>
+		</div>
+	</wr:Frame>
+</c:when>
+<c:otherwise>
+	[% if (showFormEmpty) { %]
+		<wr:Frame>
+			<div class="plain <wr:StyleClass context="unit"/>">
+				<div class="plain IndexUnit">
+					
+					<table border="0" cellspacing="1" cellpadding="2">
+					[% if (showHeader == "true") {%]
+						<tr>
+						[% if (showBullet == "true") {%]
+								<th></th>
+						[% } %]
+						[% if (linkPosition == "left") { %]
+						    <wr:Iterate var="l" context="unit" select="layout:Link">
+						    	<wr:Visible><th></th></wr:Visible>
+							</wr:Iterate>
+						[% }  %]
+						<wr:Iterate var="attr" context="unit" select="layout:Attribute">
+							<wr:Visible>
+								[% if (showAttributeName == "true") {%]
+									<th></th>
+								[% } %]
+								<th nowrap="nowrap" class="<wr:StyleClass/> header">
+									<wr:Label/>
+								</th>
+							</wr:Visible>
+						</wr:Iterate>
+						[% if (linkPosition == "right") { %]
+							<wr:Iterate var="l" context="unit" select="layout:Link">
+								<wr:Visible><th></th></wr:Visible>
+							</wr:Iterate>
+						[% } %]
+						</tr>
+					[% } %]
+					
+					[% printStandaloneForm() %]
+					</table>
+				</div>
+			</div>
+		</wr:Frame>
+	[% } %]
+</c:otherwise>
+</c:choose>

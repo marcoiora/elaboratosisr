@@ -1,0 +1,142 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter name="image-width" label="Image width" type="string">
+Defines the width of an image attribute
+</wr:LayoutParameter>
+<wr:LayoutParameter name="image-height" label="Image height" type="string">
+Defines the height of an image attribute
+</wr:LayoutParameter>
+<wr:LayoutParameter name="use-icon-extensions" label="Use icon for BLOBs extensions" type="boolean" default="false">
+Defines whether to use particular icons for BLOB's file extensions or not.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Folder" name="icon-folder" type="string" default="Resources">
+Defines the path to the folder containing the icon used to render attribute type.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Extension" name="icon-extension" type="string" default="png">
+Defines the extension of the icon used to render attribute type.
+</wr:LayoutParameter>
+[% 
+import org.apache.commons.lang.StringUtils
+
+def type = attr["type"]
+def subType = attr["subType"]
+def contentType = attr["contentType"]
+def typeId = (subType != "") ? subType : type
+def pattern = typeId + "Pattern"
+def attrProp = getFieldName(attr["attribute"])
+
+def mode = attr["mode"]
+def imageWidth = params["image-width"]
+def imageHeight = params["image-height"]
+def image = params["icon-folder"] + "|" + params["icon-extension"]
+
+def iconsExtensions = params["use-icon-extensions"]
+def folder = params["icon-folder"] + "/"
+def extension = "." + params["icon-extension"]
+if (iconsExtensions == "true") { 
+	def tokens = StringUtils.splitPreserveAllTokens(image, "|");		
+	if (tokens.length > 1) {
+		folder = tokens[0]
+		if (folder == "") {
+			folder = params["icon-folder"] + "/"
+		} else {
+			if (folder.startsWith(File.separator)) {
+	           folder = StringUtils.substringAfter(folder, File.separator)
+	        }
+			if (!folder.endsWith(File.separator)) {
+	           folder = folder + File.separator;
+	        }
+	    }	     
+	    folder = StringUtils.replace(folder, File.separator, "/")
+		extension = tokens[1]
+		if (extension == "") {
+			extension = "." + params["icon-extension"]
+		} else {
+			if (!extension.startsWith(".")) {
+	           extension = "." + extension
+	        }
+		}
+	}	
+}
+
+if (mode == "value") { %]
+	<span class="<wr:StyleClass context="attr"/> value [%=type%]">
+[% } %]
+[% if (mode == "label") { %]
+	<span class="<wr:StyleClass context="attr"/> header"><wr:Label context="attr"/></span>
+[% } else if ((type == "string") || (type == "text")) { 
+    if (contentType == "text/html") { %]
+	<c:out value="${[%=item%].[%=attrProp%]}" escapeXml="false"/>
+  [% } else { %]
+	<c:out value="${[%=item%].[%=attrProp%]}"/>
+  [% } 
+} else if ((type == "float") || (type == "integer") || (type == "decimal")) { %]
+	<fmt:formatNumber value="${[%=item%].[%=attrProp%]}" pattern="${[%=pattern%]}"/>
+[% } else if ((type == "date") || (type == "time") || (type == "timestamp")) { %]
+	<fmt:formatDate value="${[%=item%].[%=attrProp%]}" pattern="${[%=pattern%]}"/>
+[% } else if (type == "blob") { %]
+  <c:if test="${not (empty [%=item%].[%=attrProp%])}">
+  	[% if (iconsExtensions == "true") { %]
+  		<c:set var="fileExt" value="${[%=item%].[%=attrProp%].extension}"/>
+	   	<table cellspacing="0" cellpadding="0">
+  			<tr>
+		    	<td>
+		    		<a onclick="window.open('<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>', 'preview', 'toolbar=no,menubar=no,width=400,height=400,resizable=yes');return false;" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>">
+    					<img border="0" alt="<wr:Label context="attr"/>" src="[%= folder %]${fileExt}[%= extension %]"/>
+    				</a>
+   				</td>
+				<td>
+					<a onclick="window.open('<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>', 'preview', 'toolbar=no,menubar=no,width=400,height=400,resizable=yes');return false;" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>"><c:out value="${[%=item%].[%=attrProp%].name}"/></a>
+		    	</td>
+   			</tr>
+   		</table>
+  	[% } else { %]
+	  [% if (contentType.startsWith("image")) { %]
+		<img border="0"[% if (imageWidth != "") { %] width="[%= imageWidth%]"[% } %][% if (imageHeight != "") { %] height="[%= imageHeight%]"[% } %] [%= styleClass ? "class=\"${styleClass}\"" : "" %] src="<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>" alt="<c:out value="${[%=item%].[%=attrProp%].name}"/>" title="<c:out value="${[%=item%].[%=attrProp%].name}"/>"/> 
+	  [% } else { %]
+	  	[% if (contentType.startsWith("application")) { %]
+	  		<table cellspacing="0" cellpadding="0">
+	  			<tr>
+	  				<td>
+		    			<img border="0" alt="<wr:Label context="attr"/>" src="WRResources/[%= StringUtils.substringAfter(contentType, "application/") %]icon.png"/>
+	    			</td>
+	  				<td>
+						<a [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>"><c:out value="${[%=item%].[%=attrProp%].name}"/></a>
+		    		</td>
+	   			</tr>
+	   		</table>
+	    [% } else { %]
+			<a target="_blank" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:BLOB value="${[%=item%].[%=attrProp%]}"/>"><c:out value="${[%=item%].[%=attrProp%].name}"/></a>
+	    [% } %]
+	[% } %] 
+  [% } %]
+  </c:if>
+[% } else if (type == "boolean") { %]
+<c:if test="${not(empty [%=item%].[%=attrProp%])}">
+  <c:choose>
+    <c:when test="${[%=item%].[%=attrProp%]}">
+      <bean:message key="[%=typeId%].yes"/>
+    </c:when>
+    <c:otherwise>
+      <bean:message key="[%=typeId%].no"/>
+    </c:otherwise>
+  </c:choose>
+</c:if>
+[% } else if (type == "url") { %]
+  [%
+    def makeHref = {
+        if ("email".equals(contentType) || "mail".equals(contentType)) {
+            %]<c:set var="encEmail" value="${[%=item%].[%=attrProp%]}"/>mailto:<%= java.net.URLEncoder.encode((String)pageContext.getAttribute("encEmail"), "US-ASCII")%>[%
+        } else {
+            %]<c:out value="${[%=item%].[%=attrProp%]}"/>[%
+        }
+    }
+  %]
+  <c:if test="${not(empty [%=item%].[%=attrProp%])}">
+    <a target="_blank" [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="[% makeHref() %]"><c:out value="${[%=item%].[%=attrProp%]}"/></a>
+  </c:if>
+[% } else { %]
+<c:out value="${[%=item%].[%=attrProp%]}"/>
+[% } %]
+[%if (mode == "value") { %]
+	</span>
+[% } %]

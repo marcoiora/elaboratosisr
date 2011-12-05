@@ -1,0 +1,69 @@
+#?delimiters [%, %], [%=, %]
+[%
+setHTMLOutput()
+def unitId = unit["id"]
+def links = unit.selectNodes("layout:Link")
+%]
+<wr:Frame>
+	<div class="plain <wr:StyleClass/>">
+		<div class="plain EntryUnit">
+			<table>
+				<tr>
+					<td colspan="3" class="error">
+						<html:errors property="<wr:UnitId/>"/>
+					</td>
+				</tr>
+				
+				<wr:Iterate var="field" context="unit" select="layout:Field">
+					<wr:Visible>
+						[% def fieldType = getById(field["field"])?.name %]
+						<tr>
+							<th valign="top" class="<wr:StyleClass/> header">
+								<wr:Label/>
+							</th>
+							<td valign="top" nowrap="nowrap" class="<wr:StyleClass/> value">
+								[% if (fieldType == "Field") { %]
+									<wr:Value class="field"/>
+								[% } else if (fieldType == "SelectionField") { %]
+									<wr:Value class="selectionfield"/>
+								[% } else if (fieldType == "MultiSelectionField") { %]
+									<wr:Value class="multiselectionfield"/>
+								[% } %]
+							</td>
+							<td class="error">
+								<wr:FieldError/>
+							</td>
+						</tr>
+					</wr:Visible>
+				</wr:Iterate>
+				[% // prints hidden fields, which do not have associated layout:Field elements
+				  for (hiddenField in getById(unit["id"])?.selectNodes("Field[@hidden = 'true']")) {
+				    def type = hiddenField["type"]
+				    if (type == "blob") { %]
+					<html:hidden property="[%=hiddenField["id"]%]_preload"/>
+				[%  } else { %]
+					<html:hidden property="[%=hiddenField["id"]%]" styleId="[%=hiddenField["id"]%]"/>
+				[%  }
+				  } 
+				%]
+				[% if (links.size() > 0) { %]
+					<tr>
+						<td colspan="3">
+							<table>
+								<tr>
+									<wr:Iterate var="link" context="unit" select="layout:Link">
+										<wr:Visible>
+											<td>  
+												<wr:Link type="button" class="button"/> 
+											</td>
+										</wr:Visible>
+									</wr:Iterate>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				[% } %]
+			</table>
+		</div>
+	</div>
+</wr:Frame>

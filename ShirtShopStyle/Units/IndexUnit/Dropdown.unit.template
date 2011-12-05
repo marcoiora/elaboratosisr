@@ -1,0 +1,88 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Separator" name="separator" type="string">
+A string representing the separator between
+the different attributes of the index.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Empty Unit Message" name="use-empty-unit-message" type="boolean" default="false">
+Defines the usage of a message for empty units.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Empty Unit Message" name="empty-unit-message" type="string" default="emptyUnitMessage">
+Defines the key of the message to use if the unit is empty.
+Default value: emptyUnitMessage
+</wr:LayoutParameter>
+[%
+import org.apache.commons.lang.StringUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+
+def separator = StringUtils.defaultIfEmpty(params["separator"], " ")
+def useEmptyUnitMessage = params["use-empty-unit-message"]
+def emptyUnitMessage = params["empty-unit-message"]
+def attributes = unit.selectNodes("layout:Attribute")
+def unitLink = unit.selectSingleNode("layout:Link[1]")
+%]
+[% if (useEmptyUnitMessage != "true") { %]
+<c:if test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } else { %]
+<c:choose>
+<c:when test="${not(empty <wr:UnitId/>) and (<wr:UnitId/>.dataSize gt 0)}">
+[% } %]
+	<wr:Frame>
+	  <div class="plain <wr:StyleClass/>">
+		 <div class="plain IndexUnit">
+			    <table>
+			      <tr>
+			        <td>
+			          <select class="<wr:StyleClass/> selectionfield" name="<wr:UnitId/>" onChange="window.location.href=[%if(enableURLFragments()){%]'<%=wrBaseURI%>' + [%}%]this.value">
+				        <option value="">--<wr:Label context="unit"/>--</option>
+			            
+			            <c:forEach var="current" varStatus="status" items="${<wr:UnitId/>.data}">
+			              <c:set var="index" value="${status.index}"/>
+			              <c:choose>
+			                <c:when test="${<wr:UnitId/>.currentIndex eq index}">
+			          	      <option value="<wr:URL context="unitLink"/>" selected="selected">
+			          	    </c:when>
+			          	    <c:otherwise>
+			          	      <option value="<wr:URL context="unitLink"/>">
+			          	    </c:otherwise>
+			          	  </c:choose>
+			          	  <wr:Iterate var="attr" context="unit" select="layout:Attribute">
+			                  <wr:Value/>
+			                  [% if (index < (attributes.size() - 1)) { %]
+			                  	[%= separator %]
+			                  [% } %]
+			          	  </wr:Iterate>
+			          	  </option>  
+			            </c:forEach>
+				      </select>
+			        </td>
+			      </tr>
+			    </table>
+			 </div>
+	   </div>
+	</wr:Frame>
+[% if (useEmptyUnitMessage != "true") { %]
+</c:if>
+[% } else { %]
+</c:when>
+<c:otherwise>
+	<wr:Frame>
+		<div class="plain <wr:StyleClass/>">
+			<div class="plain IndexUnit">
+				<table>
+				    <tr>
+				      <td>
+				      	<select class="selectionField" name="<wr:UnitId/>" onChange="window.location.href=this.value">
+				        	<option value="">--<bean:message key="[%printJSPTagValue(emptyUnitMessage)%]"/>--</option>
+				        </select>
+				      </td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+	</wr:Frame>
+</c:otherwise>
+</c:choose>
+[% } %]  

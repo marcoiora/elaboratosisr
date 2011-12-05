@@ -1,0 +1,18 @@
+#?delimiters [%, %], [%=, %]
+[%
+setHTMLOutput()
+
+%]
+<wr:Frame>
+	<div class="plain <wr:StyleClass/>">
+		<div class="plain ScriptUnit">
+			<table>
+				<tr>
+					<td class="<wr:StyleClass/> value">
+  						<c:out value="${<wr:UnitId/>.result}" escapeXml="false"/>
+  					</td>
+  				</tr>
+  			</table>
+  		</div>
+  	</div>
+</wr:Frame>

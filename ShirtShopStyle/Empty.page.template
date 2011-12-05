@@ -1,0 +1,26 @@
+#?delimiters [%, %], [%=, %]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+[%setHTMLOutput()%]
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %> 
+<%@ taglib prefix="webratio" uri="http://www.webratio.com/2006/TagLib/JSP20" %>  
+<%@ page contentType="text/html; charset=UTF-8"%> 
+<webratio:Page page="<wr:PageId/>"/>
+<html>
+<head>
+  [%if(enableURLFragments()){%]<wr:BaseURI/>[%}%]
+  <title><wr:PageTitle/></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <wr:LinkedResources/>
+</head>
+<body style="background-color:white">
+<wr:PageForm>
+
+<wr:Grid/>
+
+</wr:PageForm>
+</body>
+</html>

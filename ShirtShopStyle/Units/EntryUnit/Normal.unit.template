@@ -1,0 +1,242 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Show Fields Name" name="show-label" type="enum" values="top|left|false" default="left">
+Defines the rendition of the fields names.
+Allowed values are:
+- left (default): places the fields name on the left
+- top: places the fields name at the top
+- false: the fields name are not shown
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Fields Orientation" name="field-orientation" type="enum" values="horizontal|vertical" default="vertical">
+Defines the orientation of the fields.
+Allowed values are:
+- vertical(default): places one field per line
+- horizontal : places the field on the
+same line one next to the other
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Alternate Rows" name="use-alternate" type="boolean" default="false">
+Defines the usage of alternates colours for each line.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Position" name="link-position" type="enum" values="bottom|right" default="bottom">
+Defines the rendition of the links.
+Allowed values are:
+- bottom (default): places the links at the bottom
+- right: places the links on the right
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Links Orientation" name="link-orientation" type="enum" values="horizontal|vertical" default="horizontal">
+Defines the orientation of the links.
+Allowed values are:
+- horizontal (default): places the links on the
+same line one next to the other
+- vertical: places one link per line
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Mandatory Fields" name="mandatory-fields" type="boolean" default="false">
+Defines whether to show a '*' for mandatory fields or not.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Error Messages Position" name="error-position" type="enum" values="right|bottom" default="right">
+Defines the rendition of the field error messages.
+Allowed values are:
+- bottom: places the error messages under the specific field
+- right (default): places the error messages on the right of the specific field
+</wr:LayoutParameter>
+
+[%
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.math.NumberUtils
+
+setHTMLOutput()
+def unitId = unit["id"]
+def fields = unit.selectNodes("layout:Field")
+def showLabel = params["show-label"]
+def fieldOrientation = params["field-orientation"]
+
+def useAlternate = params["use-alternate"]
+def linkPosition = params["link-position"]
+def linkOrientation = params["link-orientation"] 
+def showMandatoryFields = params["mandatory-fields"]
+def errorPosition = params["error-position"]
+
+def links = unit.selectNodes("layout:Link")
+
+def baseColSpan = 0 
+if(showLabel == "left") {
+	baseColSpan = 3
+} else {
+	baseColSpan = 2
+}
+	
+def colSpan = 0
+if(fieldOrientation == "horizontal") {
+	colSpan = baseColSpan * fields.size()
+} else {
+	colSpan = baseColSpan
+}
+
+%]
+<wr:Frame>
+	 <div class="plain <wr:StyleClass/>">
+		<div class="plain EntryUnit">
+			[% if (linkPosition == "right" && links.size() > 0) { %] 
+		   		<table border="0" cellpadding="0" cellspacing="0">
+		   			<tr>
+		   				<td>
+			[% } %]	
+				<table>
+					<tr>
+						<td colspan="[%=colSpan%]" class="error">
+							<html:errors property="<wr:UnitId/>" />
+						</td>
+					</tr>
+			[% if ((showLabel != "top") || (fieldOrientation != "horizontal")) {
+				if (fieldOrientation == "horizontal") { %]
+					<tr>
+						<wr:Iterate var="field" context="unit" select="layout:Field">
+						    <wr:Visible>
+	         			    [% def fieldType = getById(field["field"])?.name 
+						       def isMandatory = isMandatoryField(field)
+						    %]
+						    [% if(errorPosition == "bottom") { %]
+								<td valign="top"><table><tr>
+							[% } %]
+							[%if (showLabel != "false") { %]
+							<th valign="middle" class="<wr:StyleClass/> header">
+								<wr:Label/>[% if (showMandatoryFields =="true" && isMandatory) {%] * [% } %]
+							</th>
+							[% } %]
+							<td valign="middle" nowrap="nowrap" class="<wr:StyleClass/> value">
+								[% if (fieldType == "Field") { %]
+									<wr:Value class="field"/>
+								[% } else if (fieldType == "SelectionField") { %]
+									<wr:Value class="selectionfield"/>
+								[% } else if (fieldType == "MultiSelectionField") { %]
+									<wr:Value class="multiselectionfield"/>
+								[% } %]
+							</td> 
+							[% if(errorPosition == "bottom") { %]
+								</tr><tr><td></td>
+							[% } %]
+									<td class="error"><wr:FieldError/></td>
+							[% if(errorPosition == "bottom") { %]
+								</tr></table></td>
+							[% } %]								
+			                </wr:Visible>
+			            </wr:Iterate> 
+					</tr>
+				[% } %]
+				[% if (fieldOrientation == "vertical") { %]
+				  <wr:Iterate var="field" context="unit" select="layout:Field">
+					<wr:Visible>
+     				[% def fieldType = getById(field["field"])?.name 
+					   def isMandatory = isMandatoryField(field)
+					%]
+					<tr class="row[% if (useAlternate == "true" && (index+1).mod(2)==0){%]Alternate[%} %]">
+						[%if (showLabel != "false") { %]
+							<th valign="middle" class="<wr:StyleClass/> header">
+								<wr:Label/>[% if (showMandatoryFields == "true" && isMandatory) {%] * [% } %]
+							</th>
+						   [% if (showLabel == "top") {%]
+						   </tr><tr class="row[% if (useAlternate == "true" && (index+1).mod(2)==0){%]Alternate[%} %]">		
+						   [% } %]
+						[% } %]
+						<td valign="middle" nowrap="nowrap" class="<wr:StyleClass/> value">
+							[% if (fieldType == "Field") { %]
+								<wr:Value class="field"/>
+							[% } else if (fieldType == "SelectionField") { %]
+								<wr:Value class="selectionfield"/>
+							[% } else if (fieldType == "MultiSelectionField") { %]
+								<wr:Value class="multiselectionfield"/>
+							 [% } %]
+						</td>
+						[% if(errorPosition == "bottom") { %]
+						    </tr>
+							<tr><td></td>
+						[% } %]
+								<td class="error"><wr:FieldError/></td>
+
+					 	</tr>
+	                 </wr:Visible>
+	               </wr:Iterate> 
+				[% } %]
+			[% } 
+			if ((showLabel == "top") && (fieldOrientation == "horizontal")) { 
+			//the combination show-label=='top' and field-orientation='horizontal' requires 2 iterations
+			//one for the row of labels and another for the row of fields %]
+			<tr>
+			<wr:Iterate var="field" context="unit" select="layout:Field">
+	  		  <wr:Visible>
+    			[% def isMandatory = isMandatoryField(field) %]
+				<th valign="middle" [% if(errorPosition == "right") { %]colspan="2"[% } %] class="<wr:StyleClass/> header">
+					<wr:Label/>[% if (showMandatoryFields == "true" && isMandatory) {%] * [% } %]
+				</th>
+	          </wr:Visible>
+			</wr:Iterate>
+			</tr>
+			<tr>
+				<wr:Iterate var="field" context="unit" select="layout:Field">
+				  <wr:Visible>
+					[% def fieldType = getById(field["field"])?.name %]
+				    <td valign="middle" nowrap="nowrap" class="<wr:StyleClass/> value">
+						[% if (fieldType == "Field") { %]
+							<wr:Value class="field"/>
+						[% } else if (fieldType == "SelectionField") { %]
+							<wr:Value class="selectionfield"/>
+						[% } else if (fieldType == "MultiSelectionField") { %]
+							<wr:Value class="multiselectionfield"/>
+						 [% } %]
+					</td>
+					[% if(errorPosition == "right") { %]
+						<td class="error"><wr:FieldError/></td>
+					[% } %]	
+				  </wr:Visible>	
+				</wr:Iterate>
+			</tr>
+			[% if(errorPosition == "bottom") { %]
+				<tr>
+					<wr:Iterate var="field" context="unit" select="layout:Field">
+					  <wr:Visible>
+						<td class="error"><wr:FieldError/></td>
+					  </wr:Visible>	
+					</wr:Iterate>
+				</tr>
+			[% } %]	
+		  [% } %]
+		  [%
+			// prints hidden fields, which do not have associated layout:Field elements
+			for (hiddenField in getById(unit["id"])?.selectNodes("Field[@hidden = 'true']")) {
+			  def type = hiddenField["type"]
+			  if (type == "blob") { %]
+			<html:hidden property="[%=hiddenField["id"]%]_preload"/>
+			  [% } else { %]
+			<html:hidden property="[%=hiddenField["id"]%]" styleId="[%=hiddenField["id"]%]"/>
+			  [% }
+			} 
+			%]
+		  	
+		  	[% if (links.size() > 0) { %]
+				[% if (linkPosition == "bottom") { %]
+					<tr>
+						<td colspan="[%=colSpan%]">
+				[% } %]
+				[% if (linkPosition == "right") { %]
+					</table>
+						</td>
+						<td valign="bottom">
+				[% } %]
+					<table>
+				      <tr>
+				   <wr:Iterate var="link" context="unit" select="layout:Link">
+					 <wr:Visible>
+					  <td><wr:Link type="button" class="button"/></td>
+					  [% if (linkOrientation == "vertical") { %]</tr>[% } %]
+					 </wr:Visible>
+					</wr:Iterate>
+					[% if (linkOrientation == "horizontal") { %]</tr>[% } %]
+				    </table>
+				   </td>
+			   </tr>
+			[% } %]
+		  </table>
+		</div>
+	</div>
+</wr:Frame>

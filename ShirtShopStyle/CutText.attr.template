@@ -1,0 +1,22 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter name="maxChar" label="Max Chars Number" type="string" default="20">
+	The maximum number of shown chars.
+</wr:LayoutParameter>
+[% 
+	def attrProp = getFieldName(attr["attribute"])
+	def type = attr["type"]
+	def maxChar = params["maxChar"]
+	def stringToCut = "_wr_" + attr["id"] + "Value"
+%]
+<c:set var="_wr_string" value="${[%= item%].[%=attrProp%]}"/>
+<%	
+	{
+	 String  [%=stringToCut%] = (String) pageContext.getAttribute("_wr_string");
+	 if([%=stringToCut%] != null && [%=stringToCut%].length() > [%= maxChar %]){
+      [%=stringToCut%] = [%=stringToCut%].substring(0,[%= maxChar %]);
+      [%=stringToCut%] = [%=stringToCut%] + "...";
+     }
+     pageContext.setAttribute("_wr_cutText", [%=stringToCut%]);
+	}
+%>
+<span [% if (type != 'text') { %]title="${[%= item%].[%=attrProp%]}"[% } %]>[% if(type == "string") { %]&nbsp;[% } %]<c:out value="${_wr_cutText}" [% if(type == "text") { %] escapeXml="false"[% } %]/></span>

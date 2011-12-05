@@ -1,0 +1,14 @@
+#?delimiters [%, %], [%=, %]
+[% 
+def formBean = getFormBeanName(page)	
+if ((type == "") && (link["unitId"] != "")) {  // link individually placed
+     type = isFormBased(getById(link["unitId"])) ? "button" : ""
+}
+%]
+[% if ("button" == type) { %]
+	<input onclick="[%if (link["newWindow"] == "true") { %]$('[%= formBean %]').target='_blank'[% } else { %]$('[%= formBean %]').target='_self'[% } %]" [%= styleClass ? "class=\"${styleClass}\"" : "" %] id="button:[%= link["id"] %]" name="button:[%= link["id"] %]" type="submit" value="<wr:Label context="link"/>">
+[% } else { %]
+	<a [%= styleClass ? "class=\"${styleClass}\"" : "" %] href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %] target="_blank"[% } %]>
+		<wr:Label context="link"/>
+	</a>
+[% } %]									
