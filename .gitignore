@@ -16,3 +16,16 @@ ShirtShop/.Temp~/
 
 # Files di Windows della cache delle immagini
 Thumbs.db
+
+# Files generati da Mac OSX
+.DS_Store
+
+# Files non voluti
+.metadata/
+Acme/
+BookStore/
+BookStoreStyle/
+Laboratorio di Informatica/
+LagerAnimali/
+ProjectManager/
+ProjectManagerStyle/
