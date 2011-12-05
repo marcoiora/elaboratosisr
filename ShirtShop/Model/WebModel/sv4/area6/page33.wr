@@ -57,7 +57,7 @@
       <Link id="sv4#area6#page33#seu16#ln129" name="Link129" to="sv4#area6#page33#seu18" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#area6#page33#seu16#ln133" name="Link133" to="sv4#area6#page33#seu19" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#area6#page33#seu16#ln135" name="Link135" to="sv4#area6#page33#seu22" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv4#area6#page33#seu16#ln140" name="Link140" to="sv4#area6#page33#inu23" type="transport" validate="true" gr:bendpoints="-49,0,-53,-260;-48,128,-52,-132;-48,229,-52,-31">
+      <Link id="sv4#area6#page33#seu16#ln140" name="Link140" to="sv4#area6#page33#inu23" type="transport" validate="true" gr:bendpoints="-74,19,13,-221;-48,128,-52,-132;-48,229,-52,-31">
         <LinkParameter id="sv4#area6#page33#seu16#ln140#par199" name="oid_maglietta [oid]" source="ent1#att1Array" target="sv4#area6#page33#inu23#su66#rcond31.ent1#att1"/>
         <LinkParameter id="sv4#area6#page33#seu16#ln140#par200" name="oid_PASSING" source="ent1#att1Array" passing="true"/>
       </Link>

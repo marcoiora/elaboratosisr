@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="560" gr:y="171" id="sv1#area1#page9" name="Dettaglio Proposta" linkOrder="sv1#area1#page9#ln24">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="480" gr:y="241" id="sv1#area1#page9" name="Dettaglio Proposta" linkOrder="sv1#area1#page9#ln24">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="0" id="sv1#area1#page9#dau4" name="Template" entity="ent13">
       <Selector id="sv1#area1#page9#dau4#su4" defaultPolicy="fill" booleanOperator="and">
@@ -18,6 +18,7 @@
       <Selector id="sv1#area1#page9#dau5#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv1#area1#page9#dau5#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
+      <Link id="sv1#area1#page9#dau5#ln224" name="Link224" to="sv1#area1#page9#mdu9" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
     <DataUnit gr:x="10" gr:y="142" id="sv1#area1#page9#dau6" name="Stampa fronte" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
       <Selector id="sv1#area1#page9#dau6#su6" defaultPolicy="fill" booleanOperator="and">
@@ -29,6 +30,11 @@
         <KeyCondition id="sv1#area1#page9#dau7#su7#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
       </Selector>
     </DataUnit>
+    <MultiDataUnit gr:x="274" gr:y="64" id="sv1#area1#page9#mdu9" name="Foto Proposta" entity="ent5" displayAttributes="ent5#att21 ent5#att20">
+      <Selector id="sv1#area1#page9#mdu9#su154" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area1#page9#mdu9#su154#rcond67" name="RoleCondition67" predicate="in" implied="false" role="rel5#role9"/>
+      </Selector>
+    </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -40,6 +46,10 @@
           <layout:Attribute attribute="ent1#att5"/>
           <layout:Attribute attribute="ent1#att8"/>
           <layout:Attribute attribute="ent1#att9"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv1#area1#page9#mdu9">
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Attribute attribute="ent5#att20"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="843" gr:y="0" id="sv1#area1#page60" name="I nostri Prodotti" landmark="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="880" gr:y="0" id="sv1#area1#page60" name="I nostri Prodotti" landmark="false">
   <ContentUnits>
     <MultiMessageUnit gr:x="4" gr:y="0" id="sv1#area1#page60#mssu12" name="I cataloghi dei nostri Prodotti">
       <Message xml:space="preserve">Benvenuto nel Catalogo dei Prodotti di SHIRTSHOP!      Seguendo i link  qui sotto potrai visualizzare le proposte dedicate a te, il nostro catalogo di Magliette e di Stampe.</Message>
