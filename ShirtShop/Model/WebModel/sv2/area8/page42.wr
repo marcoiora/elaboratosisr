@@ -5,8 +5,8 @@
       <Field id="sv2#area8#page42#enu20#fld32" name="Scegli la dimensione" type="float" modifiable="true">
         <VRules>
           <RegularExpressionValidationRule id="sv2#area8#page42#enu20#fld32#regex2" name="Intero tra 0 e 1" regex="^(?:0\.[0-9]*|1|0|1\.0+)$" errorMessage="Inserire un numero decimale tra 0 e 1. Utilizzare il punto per la virgola."/>
-          <MandatoryValidationRule id="sv2#area8#page42#enu20#fld32#mnd5" name="Obbligatorio" errorMessage="campo obbligatorio"/>
         </VRules>
+        <Slot id="sv2#area8#page42#enu20#fld32#slot3" name="Slot3" label="true" output="true" value="1"/>
       </Field>
       <Link id="sv2#area8#page42#enu20#ln244" name="Conferma" to="sv2#area8#mfu4" type="normal" validate="true">
         <LinkParameter id="sv2#area8#page42#enu20#ln244#par310" name="scegli la dimensione_dimensioneRetro" source="sv2#area8#page42#enu20#fld32" target="sv2#area8#mfu4.ent7#att30"/>
