@@ -21,6 +21,7 @@
       <Selector id="sv2#area8#page79#dau37#su174" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#page79#dau37#su174#kcond114" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
+      <Link id="sv2#area8#page79#dau37#ln45" name="Link45" to="sv2#area8#page79#mdu10" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
     <DataUnit id="sv2#area8#page79#dau41" name="Stampa fronte" gr:x="10" gr:y="142" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
       <Selector id="sv2#area8#page79#dau41#su175" defaultPolicy="fill" booleanOperator="and">
@@ -37,6 +38,11 @@
         <LinkParameter id="sv2#area8#page79#gctu4#ln395#par627" name="oid_PASSING_KeyCondition80 [oid]" sourceLinkParameter="sv2#area8#page79#dau36#ln396#par626" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
       </Link>
     </NoOpContentUnit>
+    <MultiDataUnit gr:x="255" gr:y="115" id="sv2#area8#page79#mdu10" name="Foto Proposta" entity="ent5" displayAttributes="ent5#att21 ent5#att20">
+      <Selector id="sv2#area8#page79#mdu10#su165" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area8#page79#mdu10#su165#rcond52" name="RoleCondition52" predicate="in" implied="false" role="rel5#role9"/>
+      </Selector>
+    </MultiDataUnit>
   </ContentUnits>
   <layout:Grid>
     <layout:Row>
@@ -51,6 +57,10 @@
         </layout:Unit>
         <layout:Unit unitId="sv2#area8#page79#gctu4">
           <layout:Link link="sv2#area8#page79#gctu4#ln395"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv2#area8#page79#mdu10">
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Attribute attribute="ent5#att20"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell>
@@ -69,11 +79,6 @@
           <layout:Attribute attribute="ent6#att27"/>
         </layout:Unit>
       </layout:Cell>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
     </layout:Row>
     <layout:Row>
       <layout:Cell/>
