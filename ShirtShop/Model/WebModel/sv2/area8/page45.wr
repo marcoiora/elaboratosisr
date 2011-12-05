@@ -13,7 +13,7 @@
     <EntryUnit id="sv2#area8#page45#enu12" linkOrder="sv2#area8#page45#enu12#ln293" gr:x="14" gr:y="124">
       <Field id="sv2#area8#page45#enu12#fld40" name="Quantit&#224;" type="integer" modifiable="true">
         <VRules>
-          <MandatoryValidationRule id="sv2#area8#page45#enu12#fld40#mnd4" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+          <ValueLengthValidationRule id="sv2#area8#page45#enu12#fld40#vl10" name="Value Length10" predicate="neq" value="0" errorMessage="Inserire la Quantit&#224; "/>
         </VRules>
       </Field>
       <Link id="sv2#area8#page45#enu12#ln292" name="Aggiungi al Carrello" to="sv2#area8#cru15" type="transport" validate="true">
