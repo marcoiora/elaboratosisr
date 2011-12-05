@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="50" gr:y="0" id="mov1#mpkg1#opm3" name="CreaCombinazioniColoreSesso">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov1#mpkg1#opm3" name="CreaCombinazioniColoreSesso">
   <OperationUnits>
     <InputCollectorUnit id="mov1#mpkg1#opm3#icu19" name="Maglietta" linkOrder="mov1#mpkg1#opm3#icu19#ln415">
       <InputCollectorParameter id="mov1#mpkg1#opm3#icu19#icp5" name="maglietta_oid"/>

@@ -1,14 +1,46 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2" gr:y="176" id="sv2#area10#page73" name="Modifica Dati Profilo">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#area10#page73#enu31" name="Dati profilo" linkOrder="sv2#area10#page73#enu31#ln18 sv2#area10#page73#enu31#ln272">
-      <Field id="sv2#area10#page73#enu31#fld117" name="Nome" type="string" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld118" name="Cognome" type="string" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld119" name="Indirizzo" type="string" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld120" name="E-mail" type="string" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld121" name="Telefono" type="string" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld122" name="Codice Fiscale" type="string" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld123" name="Password" type="password" modifiable="true" preloaded="true"/>
-      <Field id="sv2#area10#page73#enu31#fld124" name="Username" type="string" modifiable="false" preloaded="true"/>
+      <Field id="sv2#area10#page73#enu31#fld117" name="Nome" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld117#vl13" name="Value Length13" predicate="neq" value="0" errorMessage="Inserire il Nome"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld118" name="Cognome" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld118#vl11" name="Value Length11" predicate="neq" value="0" errorMessage="Inserire il Cognome"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld119" name="Indirizzo" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld119#vl12" name="Value Length12" predicate="neq" value="0" errorMessage="Inserire un Indirizzo"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld120" name="E-mail" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <EMailValidationRule id="sv2#area10#page73#enu31#fld120#email2" name="EMail2" errorMessage="Inserisci una e-mail valida"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld121" name="Telefono" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld121#vl15" name="Value Length15" predicate="neq" value="0" errorMessage="Inserire il numero di Telefono"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld122" name="Codice Fiscale" type="string" modifiable="true" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld122#vl9" name="Value Length9" predicate="eq" value="16" errorMessage="Inserire il Codice Fiscale"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld123" name="Password" type="password" modifiable="true" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld123#vl14" name="Value Length14" predicate="min" value="5" errorMessage="La password deve essere di almeno 5 caratteri"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area10#page73#enu31#fld124" name="Username" type="string" modifiable="false" preloaded="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#area10#page73#enu31#fld124#vl16" name="Value Length16" predicate="min" value="5" errorMessage="Lo Username deve essere almeno di 5 caratteri"/>
+        </VRules>
+      </Field>
       <Link id="sv2#area10#page73#enu31#ln18" name="Annulla" to="sv2#area10#page72" automaticCoupling="true" type="normal" validate="true"/>
       <Link id="sv2#area10#page73#enu31#ln272" name="Modifica" to="sv2#area10#mfu16" type="normal" validate="true">
         <LinkParameter id="sv2#area10#page73#enu31#ln272#par604" name="Codice Fiscale_codiceFiscale" source="sv2#area10#page73#enu31#fld122" target="sv2#area10#mfu16.ent10#att56"/>

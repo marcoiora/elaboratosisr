@@ -29,19 +29,19 @@
       </Link>
     </SelectorUnit>
     <EntryUnit id="sv2#area8#page44#enu9" linkOrder="sv2#area8#page44#enu9#ln277 sv2#area8#page44#enu9#ln288" gr:x="216" gr:y="224">
-      <SelectionField id="sv2#area8#page44#enu9#sfld10" name="Scegli il sesso" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
+      <SelectionField id="sv2#area8#page44#enu9#sfld10" name="Sesso" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
         <VRules>
-          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld10#mnd3" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld10#mnd8" name="Mandatory8" errorMessage="Scegli il Sesso"/>
         </VRules>
       </SelectionField>
-      <SelectionField id="sv2#area8#page44#enu9#sfld11" name="La taglia" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
+      <SelectionField id="sv2#area8#page44#enu9#sfld11" name="Taglia" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
         <VRules>
-          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld11#mnd2" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld11#mnd9" name="Mandatory9" errorMessage="Scegli la Taglia"/>
         </VRules>
       </SelectionField>
-      <SelectionField id="sv2#area8#page44#enu9#sfld12" name="Ed il colore" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
+      <SelectionField id="sv2#area8#page44#enu9#sfld12" name="Colore" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page44#enu9#ln277" type="string">
         <VRules>
-          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld12#mnd1" name="Obbligatorio" errorMessage="campo obbligatorio"/>
+          <MandatoryValidationRule id="sv2#area8#page44#enu9#sfld12#mnd7" name="Mandatory7" errorMessage="Scegli il Colore"/>
         </VRules>
       </SelectionField>
       <Link id="sv2#area8#page44#enu9#ln277" name="Link263" to="sv2#area8#page44#dau17" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv2#area8#page44#dau17">

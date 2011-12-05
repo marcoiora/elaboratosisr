@@ -1,4 +1,4 @@
-<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="198" id="mov1#mpkg1#hym2" name="Nuovo Colore">
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="260" id="mov1#mpkg1#hym2" name="Nuovo Colore">
   <OperationUnits>
     <InputCollectorUnit gr:x="0" gr:y="67" id="mov1#mpkg1#hym2#icu4" name="Input Collector">
       <OKLink id="mov1#mpkg1#hym2#icu4#oln121" name="OKLink121" to="mov1#mpkg1#hym2#page10" automaticCoupling="true"/>

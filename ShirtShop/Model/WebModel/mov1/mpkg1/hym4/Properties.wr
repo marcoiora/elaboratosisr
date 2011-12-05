@@ -1,4 +1,4 @@
-<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="198" id="mov1#mpkg1#hym4" name="Nuova Taglia">
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="260" id="mov1#mpkg1#hym4" name="Nuova Taglia">
   <OperationUnits>
     <OKCollectorUnit id="mov1#mpkg1#hym4#okcu5" name="OK Collector" gr:x="594" gr:y="0"/>
     <CreateUnit id="mov1#mpkg1#hym4#cru20" name="Salva Taglia" gr:x="420" gr:y="40" entity="ent3">

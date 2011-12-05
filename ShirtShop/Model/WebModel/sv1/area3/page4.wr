@@ -1,11 +1,31 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="365" gr:y="5" id="sv1#area3#page4" name="Registrazione" landmark="true">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page4#enu3" name="Form Registrazione" linkOrder="sv1#area3#page4#enu3#ln3">
-      <Field id="sv1#area3#page4#enu3#fld5" name="Username" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld6" name="Password" type="password" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld7" name="Nome" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld8" name="Cognome" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld9" name="E-mail" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld5" name="Username" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld5#vl6" name="Value Length6" predicate="min" value="5" errorMessage="Lo Username deve essere almeno di 5 caratteri"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area3#page4#enu3#fld6" name="Password" type="password" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld6#vl2" name="Value Length2" predicate="min" value="5" errorMessage="La password deve essere di almeno 5 caratteri"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area3#page4#enu3#fld7" name="Nome" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld7#vl4" name="Value Length4" predicate="neq" value="0" errorMessage="Inserire il Nome"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area3#page4#enu3#fld8" name="Cognome" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld8#vl3" name="Value Length3" predicate="neq" value="0" errorMessage="Inserire il Cognome"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area3#page4#enu3#fld9" name="E-mail" type="string" modifiable="true">
+        <VRules>
+          <EMailValidationRule id="sv1#area3#page4#enu3#fld9#email1" name="EMail1" errorMessage="Inserire una e-mail valida"/>
+        </VRules>
+      </Field>
       <Link id="sv1#area3#page4#enu3#ln3" name="Registrati" to="sv1#area3#cru1" type="normal" validate="true">
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par5" name="cognome_cognome" source="sv1#area3#page4#enu3#fld8" target="sv1#area3#cru1.ent10#att44"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par6" name="email_email" source="sv1#area3#page4#enu3#fld9" target="sv1#area3#cru1.email"/>
@@ -18,9 +38,21 @@
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par499" name="true_isactive" sourceValue="true" target="sv1#area3#cru1.ent10#att50"/>
         <LinkParameter id="sv1#area3#page4#enu3#ln3#par501" name="Telefono_telefono" source="sv1#area3#page4#enu3#fld101" target="sv1#area3#cru1.ent10#att55"/>
       </Link>
-      <Field id="sv1#area3#page4#enu3#fld10" name="Indirizzo" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld101" name="Telefono" type="string" modifiable="true"/>
-      <Field id="sv1#area3#page4#enu3#fld102" name="Codice Fiscale" type="string" modifiable="true"/>
+      <Field id="sv1#area3#page4#enu3#fld10" name="Indirizzo" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld10#vl7" name="Value Length7" predicate="neq" value="0" errorMessage="Inserire un Indirizzo"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area3#page4#enu3#fld101" name="Telefono" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld101#vl5" name="Value Length5" predicate="neq" value="0" errorMessage="Inserire il numero di Telefono"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area3#page4#enu3#fld102" name="Codice Fiscale" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv1#area3#page4#enu3#fld102#vl8" name="Value Length8" predicate="eq" value="16" errorMessage="Inserire un Codice Fiscale valido"/>
+        </VRules>
+      </Field>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid>

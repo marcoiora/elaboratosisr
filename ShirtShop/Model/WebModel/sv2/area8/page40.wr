@@ -28,9 +28,21 @@
       </Link>
     </SelectorUnit>
     <EntryUnit gr:x="228" gr:y="97" id="sv2#area8#page40#enu18" linkOrder="sv2#area8#page40#enu18#ln50 sv2#area8#page40#enu18#ln263">
-      <SelectionField id="sv2#area8#page40#enu18#sfld3" name="Scegli il sesso" type="string" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page40#enu18#ln263"/>
-      <SelectionField id="sv2#area8#page40#enu18#sfld4" name="La taglia" type="string" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page40#enu18#ln263"/>
-      <SelectionField id="sv2#area8#page40#enu18#sfld9" name="Ed il colore" type="string" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page40#enu18#ln263"/>
+      <SelectionField id="sv2#area8#page40#enu18#sfld3" name="Sesso" type="string" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page40#enu18#ln263">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area8#page40#enu18#sfld3#mnd11" name="Mandatory11" errorMessage="Scegli il Sesso"/>
+        </VRules>
+      </SelectionField>
+      <SelectionField id="sv2#area8#page40#enu18#sfld4" name="Taglia" type="string" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page40#enu18#ln263">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area8#page40#enu18#sfld4#mnd14" name="Mandatory14" errorMessage="Scegli una Taglia"/>
+        </VRules>
+      </SelectionField>
+      <SelectionField id="sv2#area8#page40#enu18#sfld9" name="Colore" type="string" ajaxEventEnabled="true" ajaxEventLink="sv2#area8#page40#enu18#ln263">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area8#page40#enu18#sfld9#mnd10" name="Mandatory10" errorMessage="Scegli il Colore"/>
+        </VRules>
+      </SelectionField>
       <Link id="sv2#area8#page40#enu18#ln50" name="Conferma" to="sv2#area8#cru3" type="normal" validate="true">
         <LinkParameter id="sv2#area8#page40#enu18#ln50#par219" name="Ed il colore_Colore.oid(ConfigurazioneToColore)" source="sv2#area8#page40#enu18#sfld9" target="sv2#area8#cru3.rel16#role31.ent2#att12"/>
         <LinkParameter id="sv2#area8#page40#enu18#ln50#par285" name="Scegli il sesso_Sesso.oid(ConfigurazioneToSesso)" source="sv2#area8#page40#enu18#sfld3" target="sv2#area8#cru3.rel14#role27.ent4#att17"/>
