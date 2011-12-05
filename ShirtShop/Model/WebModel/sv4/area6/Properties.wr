@@ -56,7 +56,7 @@
       <KOLink id="sv4#area6#miu7#kln50" name="KOLink50" to="sv4#page16" automaticCoupling="true" gr:bendpoints="-24,80,1362,370"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="940" gr:y="1054" id="sv4#area6#miu8" name="Elimina Stampa" moduleId="mov1#mpkg1#opm11">
-      <OKLink id="sv4#area6#miu8#oln62" name="OKLink62" to="sv4#area6#page29" automaticCoupling="true"/>
+      <OKLink id="sv4#area6#miu8#oln62" name="OKLink62" to="sv4#area6#page29" automaticCoupling="true" gr:bendpoints="-294,-71,205,503"/>
       <KOLink id="sv4#area6#miu8#kln51" name="KOLink51" to="sv4#page16" automaticCoupling="true" gr:bendpoints="-76,118,1432,408"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="1260" gr:y="715" id="sv4#area6#miu9" name="Salva Template" moduleId="mov1#mpkg1#opm7">
@@ -138,13 +138,13 @@
       <OKLink id="sv4#area6#miu22#oln130" name="OKLink130" to="sv4#area6#page25" automaticCoupling="true" gr:bendpoints="-19,76,-187,-123"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit id="sv4#area6#miu40" name="Nuovo Sesso" gr:x="1300" gr:y="11" moduleId="mov1#mpkg1#hym5">
-      <OKLink id="sv4#area6#miu40#oln137" name="OKLink130" to="sv4#area6#page23" automaticCoupling="true" gr:bendpoints="-100,54,-236,-144;-19,76,-187,-123"/>
+      <OKLink id="sv4#area6#miu40#oln137" name="OKLink130" to="sv4#area6#page23" automaticCoupling="true" gr:bendpoints="-111,2,-273,-226"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit id="sv4#area6#miu41" name="Nuova Taglia" gr:x="1450" gr:y="0" moduleId="mov1#mpkg1#hym4">
       <OKLink id="sv4#area6#miu41#oln138" name="OKLink127" to="sv4#area6#page23" automaticCoupling="true" gr:bendpoints="33,64,65,-135"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit id="sv4#area6#miu42" name="Nuovo Colore" gr:x="1610" gr:y="10" moduleId="mov1#mpkg1#hym2">
-      <OKLink id="sv4#area6#miu42#oln139" name="OKLink124" to="sv4#area6#page23" automaticCoupling="true" gr:bendpoints="12,64,138,-150;-46,69,145,-130"/>
+      <OKLink id="sv4#area6#miu42#oln139" name="OKLink124" to="sv4#area6#page23" automaticCoupling="true" gr:bendpoints="32,52,182,-176"/>
     </ModuleInstanceUnit>
     <SelectorUnit gr:x="542" gr:y="642" id="sv4#area6#seu84" name="ColoreSesso" entity="ent16">
       <Selector id="sv4#area6#seu84#su187" defaultPolicy="fill" booleanOperator="and">

@@ -26,7 +26,7 @@
         <LinkParameter id="sv4#area6#page25#enu5#ln35#par195" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page25#enu5#fld21" target="sv4#area6#miu1.mov1#mpkg1#opm12#icu13#icp82"/>
         <LinkParameter id="sv4#area6#page25#enu5#ln35#par196" name="Taglie disponibili_taglie" source="sv4#area6#page25#enu5#msfld1" target="sv4#area6#miu1.mov1#mpkg1#opm12#icu13#icp72"/>
       </Link>
-      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="744,0,-262,-230">
+      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="645,-32,-362,-261;787,102,-220,-127">
         <LinkParameter id="sv4#area6#page25#enu5#ln38#par59" name="Manica_manica" source="sv4#area6#page25#enu5#fld18" target="sv4#area6#page28#inu12#su24#acond1"/>
       </Link>
       <Link id="sv4#area6#page25#enu5#ln42" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-120,86,-260,-824;-138,166,-278,-744;26,506,-114,-404">

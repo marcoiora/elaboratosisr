@@ -14,7 +14,7 @@
       <SelectionField id="sv4#area6#page23#enu13#sfld6" name="Stampa Retro" type="string"/>
       <Field id="sv4#area6#page23#enu13#fld65" name="Dimensione stampa fronte" type="float" modifiable="true"/>
       <Field id="sv4#area6#page23#enu13#fld66" name="Dimensione stampa retro" type="float" modifiable="true"/>
-      <Link id="sv4#area6#page23#enu13#ln165" name="Salva" to="sv4#area6#miu9" type="normal" validate="true" gr:bendpoints="-184,162,42,-236">
+      <Link id="sv4#area6#page23#enu13#ln165" name="Salva" to="sv4#area6#miu9" type="normal" validate="true" gr:bendpoints="-234,140,50,-242">
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par320" name="Collo_collo" source="sv4#area6#page23#enu13#fld60" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp50"/>
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par321" name="Colori disponibili_colori" source="sv4#area6#page23#enu13#msfld11" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp47"/>
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par322" name="Descrizione_descrizione" source="sv4#area6#page23#enu13#fld58" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp46"/>
@@ -32,9 +32,15 @@
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par334" name="Stampa Retro_stampaRetro_oid" source="sv4#area6#page23#enu13#sfld6" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp58"/>
         <LinkParameter id="sv4#area6#page23#enu13#ln165#par335" name="Taglie disponibili_taglie" source="sv4#area6#page23#enu13#msfld9" target="sv4#area6#miu9.mov1#mpkg1#opm7#icu7#icp43"/>
       </Link>
-      <Link id="sv4#area6#page23#enu13#ln179" name="Manica" to="sv4#area6#page28#inu12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12"/>
-      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-347,5,524,-158;-532,-64,339,-227"/>
-      <Link id="sv4#area6#page23#enu13#ln181" name="Collo" to="sv4#area6#page30#inu14" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-298,212,674,-708;-578,330,394,-590;-910,410,62,-510;-910,656,62,-264"/>
+      <Link id="sv4#area6#page23#enu13#ln179" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12">
+        <LinkParameter id="sv4#area6#page23#enu13#ln179#par44" name="Manica_manica" source="sv4#area6#page23#enu13#fld59" target="sv4#area6#page28#inu12#su24#acond1"/>
+      </Link>
+      <Link id="sv4#area6#page23#enu13#ln180" name="Materiali" to="sv4#area6#page31#inu15" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-347,5,524,-158;-532,-64,339,-227">
+        <LinkParameter id="sv4#area6#page23#enu13#ln180#par41" name="Materiale_materiale" source="sv4#area6#page23#enu13#fld63" target="sv4#area6#page31#inu15#su26#acond4"/>
+      </Link>
+      <Link id="sv4#area6#page23#enu13#ln181" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-578,330,394,-590;-910,410,62,-510;-910,656,62,-264">
+        <LinkParameter id="sv4#area6#page23#enu13#ln181#par45" name="Collo_collo" source="sv4#area6#page23#enu13#fld60" target="sv4#area6#page30#inu14#su25#acond2"/>
+      </Link>
     </EntryUnit>
     <SelectorUnit id="sv4#area6#page23#seu29" name="Taglie" gr:x="277" gr:y="9" distinct="false" distinctAttributes="ent3#att15 ent3#att16" entity="ent3">
       <SortAttribute attribute="ent3#att15" order="ascending"/>
