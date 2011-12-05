@@ -2,7 +2,7 @@
   <ContentUnits>
     <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page30#inu14" name="Tipi collo" distinct="true" ajaxEnableExpandedLinks="false" displayAttributes="ent1#att5" entity="ent1">
       <Selector id="sv4#area6#page30#inu14#su25" defaultPolicy="fill" booleanOperator="and">
-        <AttributesCondition id="sv4#area6#page30#inu14#su25#acond2" name="collo" predicate="contains" booleanOperator="or" implied="false" ignoreCase="true" attributes="ent1#att5"/>
+        <AttributesCondition id="sv4#area6#page30#inu14#su25#acond2" name="collo" predicate="beginsWith" booleanOperator="or" implied="false" ignoreCase="true" attributes="ent1#att5"/>
       </Selector>
     </IndexUnit>
   </ContentUnits>
