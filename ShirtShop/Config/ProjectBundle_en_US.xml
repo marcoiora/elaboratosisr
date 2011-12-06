@@ -2,4 +2,5 @@
 
 <Bundle>
   <Entry key="EmptyShirt">Non esistono prodotti con queste specifiche.</Entry>
+  <Entry key="EmptyTemplatesForStampa">Non c'&#232; nessuna proposta attualmente disponibile per questa stampa.</Entry>
 </Bundle>
