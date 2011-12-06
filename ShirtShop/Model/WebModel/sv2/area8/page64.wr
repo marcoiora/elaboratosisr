@@ -10,7 +10,7 @@
       <Link id="sv2#area8#page64#gctu9#ln32" name="Le nostre Proposte" to="sv2#area8#page34" automaticCoupling="true" type="normal" validate="true"/>
     </NoOpContentUnit>
     <NoOpContentUnit gr:x="0" gr:y="154" id="sv2#area8#page64#gctu10" name="Catalogo Stampe" linkOrder="sv2#area8#page64#gctu10#ln223">
-      <Link id="sv2#area8#page64#gctu10#ln223" name="Catalogo Stampe" to="sv2#area8#page80" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area8#page64#gctu10#ln223" name="Catalogo Stampe" to="sv2#area8#page80" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-11,932,-266,-907"/>
     </NoOpContentUnit>
   </ContentUnits>
   <layout:Grid>

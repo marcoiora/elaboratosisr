@@ -1,9 +1,13 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page81" name="Dettaglio Stampa" linkOrder="sv2#area8#page81#ln398" gr:x="541" gr:y="2008">
   <ContentUnits>
-    <DataUnit id="sv2#area8#page81#dau43" name="Stampa" gr:x="0" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27">
+    <DataUnit id="sv2#area8#page81#dau43" name="Stampa" gr:x="0" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att24 ent6#att25 ent6#att27" linkOrder="sv2#area8#page81#dau43#ln20">
       <Selector id="sv2#area8#page81#dau43#su180" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#page81#dau43#su180#kcond120" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
+      <Link id="sv2#area8#page81#dau43#ln20" name="Le nostre proposte con questa stampa" to="sv2#area8#page66#inu8" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page81#dau43#ln20#par57" name="oid_Filtro stampa fronte [oid]" source="data.ent6#att22" target="sv2#area8#page66#inu8#su170#rcond50.ent6#att22"/>
+        <LinkParameter id="sv2#area8#page81#dau43#ln20#par88" name="oid_Filtro stampa retro [oid]" source="data.ent6#att22" target="sv2#area8#page66#inu8#su170#rcond71.ent6#att22"/>
+      </Link>
     </DataUnit>
   </ContentUnits>
   <layout:Grid>
@@ -14,6 +18,7 @@
           <layout:Attribute attribute="ent6#att24"/>
           <layout:Attribute attribute="ent6#att25"/>
           <layout:Attribute attribute="ent6#att27"/>
+          <layout:Link link="sv2#area8#page81#dau43#ln20"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

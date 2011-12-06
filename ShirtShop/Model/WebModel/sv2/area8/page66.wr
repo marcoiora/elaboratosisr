@@ -1,0 +1,43 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="420" gr:y="1804" id="sv2#area8#page66" name="Proposte con questa stampa" linkOrder="sv2#area8#page66#ln222" localized="false">
+  <ContentUnits>
+    <IndexUnit id="sv2#area8#page66#inu8" name="Proposte" gr:x="0" gr:y="0" entity="ent13" displayAttributes="ent1#att2 ent1#att3 rel22#role43.ent6#att25 rel23#role45.ent6#att25 ent1#att9" linkOrder="sv2#area8#page66#inu8#ln334 sv2#area8#page66#inu8#ln339">
+      <Selector id="sv2#area8#page66#inu8#su170" defaultPolicy="fill" booleanOperator="and" expression="sv2#area8#page66#inu8#su170#acond25 AND ( sv2#area8#page66#inu8#su170#rcond50 OR sv2#area8#page66#inu8#su170#rcond71 )">
+        <AttributesCondition id="sv2#area8#page66#inu8#su170#acond25" name="Non inattive" predicate="neq" booleanOperator="or" implied="false" attributes="ent1#att10" value="false"/>
+        <RelationshipRoleCondition id="sv2#area8#page66#inu8#su170#rcond50" name="Filtro stampa fronte" predicate="in" implied="false" role="rel22#role44"/>
+        <RelationshipRoleCondition id="sv2#area8#page66#inu8#su170#rcond71" name="Filtro stampa retro" predicate="in" implied="false" role="rel23#role46"/>
+      </Selector>
+      <Link id="sv2#area8#page66#inu8#ln334" name="Dettagli" to="sv2#area8#page79#dau36" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-254,-371,-478,1325;-231,-1581,-455,115;63,-1592,-161,104"/>
+      <Link id="sv2#area8#page66#inu8#ln339" name="Compra" to="sv2#area8#page44#seu53" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-232,-371,-137,1124;-220,-1437,-125,58"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page66#inu8">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="rel22#role43.ent6#att25"/>
+          <layout:Attribute attribute="rel23#role45.ent6#att25"/>
+          <layout:Attribute attribute="ent1#att9"/>
+          <layout:Link link="sv2#area8#page66#inu8#ln334"/>
+          <layout:Link link="sv2#area8#page66#inu8#ln339"/>
+          <layout:LayoutParameter name="use-empty-unit-message" value="true" type="unit"/>
+          <layout:LayoutParameter name="empty-unit-message" value="EmptyTemplatesForStampa" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area8#page66#ln222" name="Torna al Catalogo Stampe" to="sv2#area8#page80" type="normal" validate="true" automaticCoupling="true"/>
+</Page>
