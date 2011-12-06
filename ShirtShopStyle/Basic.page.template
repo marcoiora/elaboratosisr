@@ -17,7 +17,7 @@
     <wr:LinkedResources/>
     <style type="text/css">
     body {
-	    background: black url(wr-images/body-bg.jpg) repeat 0 0 !important;
+	    background: white url(wr-images/body-bg.jpg) repeat 0 0 !important;
     }
     
     ul#navmenu a {
