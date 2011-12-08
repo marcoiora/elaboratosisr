@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Pubblica" landmarks="sv1#area3 sv1#area1 sv1#area2" homePage="sv1#area3#page3" layout:style="ShirtShopStyle" localized="false" layout:pageLayout="ShirtShopStyle/Basic">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Pubblica" landmarks="sv1#area3 sv1#area1 sv1#area2" layout:style="ShirtShopStyle" localized="false" layout:pageLayout="ShirtShopStyle/Basic" homePage="sv1#area3#page3">
   <OperationUnits>
     <LoginUnit gr:x="20" gr:y="60" id="sv1#lgu1" name="LoginUnit">
       <KOLink id="sv1#lgu1#kln2" name="KOLink1" to="sv1#area3#page3"/>

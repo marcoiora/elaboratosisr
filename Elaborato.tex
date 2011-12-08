@@ -2129,11 +2129,11 @@ di sua competenza.
 La progettazione dell'ipertesto ha come obiettivo l'implementazione delle site view, specificate in
 precedenza. Lo scopo è quello di realizzare la pubblicazione dei contenuti e la gestione dei casi 
 d'uso specificati durante l'analisi dei requisiti.\\
-La progettazione dell'ipertesto è costituito da due fasi sequenziali, descritte di seguito:
+La progettazione dell'ipertesto è costituita da due fasi sequenziali, descritte di seguito:
 \begin{enumerate}
 	\item \textbf{Progettazione Coarse}
 	\begin{itemize}
-		\item Definizioni delle site-view e individuazione delle aree in esse contenute: revisione
+		\item Definizione delle site-view e individuazione delle aree in esse contenute: revisione
 		dei requisiti funzionali e della mappa del sito (divisione dell'applicazione in moduli)
 		\item Definizione della visibilità di ogni area all'interno della vista (area di default, 
 		area landmark, area interna)
@@ -2146,22 +2146,220 @@ La progettazione dell'ipertesto è costituito da due fasi sequenziali, descritte 
 		\item Definizione della visibilità di ciascuna pagina all'interno dell'area (Home page, Pagina 
 		di Default, Pagina Landmark, Pagina Interna)
 		\item Specifica della struttura e dei contenuti di ogni pagina attraverso l'utilizzo di 
-		sotto-schemi di ipertesto, design pattern tipici
+		sotto-schemi di ipertesto
 	\end{itemize}
 \end{enumerate}
 \newpage
 
 \section{Progettazione Coarse}
-Durante la prima fase di progettazione sono state seguite le tre fasi principali indicate per ogni 
-site-view precedentemente individuata: individuazione delle aree, definizione della loro visibilità 
+Durante la progettazione Coarse sono state seguite le tre fasi principali sopra indicate, per ogni 
+site view precedentemente individuata: individuazione delle aree, definizione della loro visibilità 
 e specifica dei contenuti di ogni area.
-\subsection{Individuazione delle aree}
 
-\subsection{Definizione delle visibilità delle aree}
+\subsection{Individuazione delle aree e definiziona delle visibilità delle aree}
+Rifacendoci alla precedente analisi, riportiamo di nuovo le aree individuate per ogni site view con 
+la definizione della loro visibilità.\\
+Per la visibilità delle aree verrà utilizzata la seguente notazione:
+\begin{itemize}
+	\item \textbf{D}: (Default) area di default per la site view che la contiene
+	\item \textbf{L}: (Landmark) area accessibile da ogni punto della site view che la contiene
+	\item \textbf{I}: (Internal) area interna, accessibile solo mediante link espliciti
+\end{itemize}
+\subsubsection{Site View Pubblica}
+\begin{center}
+	\begin{longtable}{|l|c|}
+		\hline
+		Area \textbf{Home Page} & L D\\
+		\hline
+		Area \textbf{Prodotti} & L\\
+		\hline
+		Area \textbf{Informazioni} & L\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Site View Cliente}
+\begin{center}
+	\begin{longtable}{|l|c|}
+		\hline
+		Area \textbf{WebMarket} & L\\
+		\hline
+		Area \textbf{Informazione} & L\\
+		\hline
+		Area \textbf{Ordini} & L\\
+		\hline
+		Area \textbf{Gestione Account} & L\\
+		\hline
+	\end{longtable}
+\end{center}
+Si noti che nella Site View Cliente non vi è alcuna area di Default. Si avrà, come Default della Site
+View, solo una pagina di Benvenuto con funzione di ""smistamento"", senza quindi la necessità di creare
+un'area apposita. 
+
+\subsubsection{Site View Stampatore}
+\begin{center}
+	\begin{longtable}{|l|c|}
+		\hline
+		Area \textbf{Gestione Ordini} & L\\
+		\hline
+		Area \textbf{Gestione Account} & L\\
+		\hline
+	\end{longtable}
+\end{center}
+Si noti che anche nella Site View Stampatore non vi è alcuna area di Default. Si avrà, come Default della Site
+View, solo una pagina di Benvenuto con funzione di ""smistamento"", senza quindi la necessità di creare
+un'area apposita. 
+
+\subsubsection{Site View Amministrazione}
+\begin{center}
+	\begin{longtable}{|l|c|}
+		\hline
+		Area \textbf{Gestione Accounts} & L\\
+		\hline
+		Area \textbf{Gestione Informazioni} & L\\
+		\hline
+		Area \textbf{Gestione Prodotti} & L\\
+		\hline
+		Area \textbf{Gestione Archivio Ordini} & L\\
+		\hline
+	\end{longtable}
+\end{center}
+Si noti che anche nella Site View Amministrazione non vi è alcuna area di Default. Si avrà, come Default della Site
+View, solo una pagina di Benvenuto con funzione di ""smistamento"", senza quindi la necessità di creare
+un'area apposita. 
 
 \subsection{Specifica dei contenuti di ogni area} 
-\newpage
+La specifica dei contenuti di ogni area verrà presentata tramite l'uso di primitive di modellazione
+WebML.
+\subsubsection{Site View Pubblica}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\multirow{3}{*}{Area \textbf{Home Page}} & Core (Pagina)\\
+		& Access (Template)\\
+		& Create (Cliente)\\
+		\hline
+		\multirow{4}{*}{Area \textbf{Prodotti}} & Core (Maglietta, Foto)\\
+		& Core (Stampa)\\
+		& Access (Maglietta, Template, Sesso, Taglia, Colore, Maglietta[Manica, Collo, Materiale])\\
+		& Access (Stampa, Temi, Template)\\
+		\hline
+		\multirow{2}{*}{Area \textbf{Informazioni}} & Core (Pagina)\\
+		& Access (Pagina, Pagina)\\
+		\hline
+	\end{longtable}
+\end{center}
 
+\subsubsection{Site View Cliente}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\multirow{19}{*}{Area \textbf{WebMarket}} & Core (Maglietta, Foto)\\
+		& Core (Stampa)\\
+		& Core (Ordine, RigaOrdine)\\
+		& Access (Maglietta, Template, Sesso, Taglia, Colore, Maglietta[Manica, Collo, Materiale])\\
+		& Access (Stampa, Temi, Template)\\
+		& Interconnection (Configurazione2Maglietta)\\
+		& Interconnection (Configurazione2StampaFronte)\\
+		& Interconnection (Configurazione2StampaRetro)\\
+		& Interconnection (RigaOrdine2Configurazione)\\
+		& Modify (RigaOrdine)\\
+		& Modify (Ordine)\\
+		& Delete (RigaOrdine)\\
+		& Delete (Configurazione)\\
+		& Connect (Configurazione2StampaFronte)\\
+		& Connect (Configurazione2StampaRetro)\\
+		& Create\&Connect (Configurazione, Configurazione2Maglietta)\\
+		& Create\&Connect (Stampa, Cliente)\\
+		& Create\&Connect (RigaOrdine, RigaOrdine2Configurazione, Ordine2RigaOrdine)\\
+		& Create\&Connect (Ordine, Ordine2Cliente)\\
+		\hline
+		\multirow{2}{*}{Area \textbf{Informazione}} & Core (Pagina)\\
+		& Access (Pagina, Pagina)\\
+		\hline
+		\multirow{11}{*}{Area \textbf{Ordini}} & Core (Ordine, RigaOrdine)\\
+		& Core (Maglietta)\\
+		& Core (Stampa)\\
+		& Access (Ordine, Ordine)\\
+		& Interconnection (Configurazione2Maglietta)\\
+		& Interconnection (Configurazione2StampaFronte)\\
+		& Interconnection (Configurazione2StampaRetro)\\
+		& Interconnection (RigaOrdine2Configurazione)\\
+		& Delete (Ordine)\\
+		& Delete (RigaOrdine)\\
+		& Delete (Configurazione)\\
+		\hline
+		\multirow{1}{*}{Area \textbf{Gestione Account}} & Modify(Cliente)\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Site View Stampatore}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\multirow{9}{*}{Area \textbf{Gestione Ordini}} & Core (Ordine, RigaOrdine)\\
+		& Core (Maglietta)\\
+		& Core (Stampa)\\
+		& Access (Ordine, Ordine)\\
+		& Interconnection (Configurazione2Maglietta)\\
+		& Interconnection (Configurazione2StampaFronte)\\
+		& Interconnection (Configurazione2StampaRetro)\\
+		& Interconnection (RigaOrdine2Configurazione)\\
+		& Modify (Ordine)\\
+		\hline
+		\multirow{1}{*}{Area \textbf{Gestione Account}}	& Modify(Stampatore)\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Site View Amministrazione}
+\begin{center}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		\multirow{6}{*}{Area \textbf{Gestione Accounts}} & Modify (Cliente)\\
+		& Modify (Stampatore)\\
+		& Delete (Cliente)\\
+		& Delete (Stampatore)\\
+		& Create (Cliente)\\
+		& Create (Stampatore)\\
+		\hline
+		\multirow{5}{*}{Area \textbf{Gestione Informazioni}} & Core (Pagina)\\
+		& Access (Pagina)\\
+		& Modify (Pagina)\\
+		& Delete (Pagina)\\
+		& Create (Pagina)\\
+		\hline
+		\multirow{16}{*}{Area \textbf{Gestione Prodotti}} & Core (Maglietta, Foto)\\
+		& Core (Stampa)\\
+		& Modify (Maglietta)\\
+		& Modify (Stampa)\\
+		& Modify (Template)\\
+		& Delete (Maglietta)\\
+		& Delete (Stampa)\\
+		& Delete (Template)\\
+		& Delete (Foto)\\
+		& Create\&Connect (Maglietta, Maglietta2Foto, Maglietta2Colore, Maglietta2Sesso, Maglietta2Taglia)\\
+		& Create\&Connect (Stampa, Tema2Stampa)\\
+		& Create\&Connect (Template, Template2StampaFronte, Template2StampaRetro)\\
+		& Create (Taglia)\\
+		& Create (Sesso)\\
+		& Create (Colore)\\
+		& Create (Tema)\\
+		\hline
+		\multirow{8}{*}{Area \textbf{Gestione Archivio Ordini}}	& Core(Ordine, RigaOrdine)\\
+		& Core (Maglietta)\\
+		& Core (Stampa)\\
+		& Access (Ordine, Ordine)\\
+		& Interconnection (Configurazione2Maglietta)\\
+		& Interconnection (Configurazione2StampaFronte)\\
+		& Interconnection (Configurazione2StampaRetro)\\
+		& Interconnection (RigaOrdine2Configurazione)\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\newpage
 \section{Progettazione Dettagliata}
 
 \end{document}
