@@ -1,0 +1,43 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="222" gr:y="0" id="sv2#area11#opg3" name="Annulla Ordine" transaction="true">
+  <OperationUnits>
+    <DeleteUnit gr:x="572" gr:y="111" id="sv2#area11#opg3#dlu12" name="DeleteOrdine" entity="ent9">
+      <Selector id="sv2#area11#opg3#dlu12#su14" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area11#opg3#dlu12#su14#kcond104" name="KeyCondition104" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area11#opg3#seu4" name="Annulla Ordine" entity="ent9" distinctAttributes="ent9#att41">
+      <Selector id="sv2#area11#opg3#seu4#su181" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area11#opg3#seu4#su181#kcond122" name="KeyCondition122" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area11#opg3#seu4#oln146" name="OKLink146" to="sv2#area11#opg3#switch5">
+        <LinkParameter id="sv2#area11#opg3#seu4#oln146#par90" name="stato_Switch" source="ent9#att41Array" target="sv2#area11#opg3#switch5.switch"/>
+        <LinkParameter id="sv2#area11#opg3#seu4#oln146#par210" name="oid_PASSING" source="ent9#att35Array" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit gr:x="150" gr:y="10" id="sv2#area11#opg3#switch5" name="Anulla">
+      <Case value="da-gestire"/>
+      <OKLink id="sv2#area11#opg3#switch5#oln158" name="OKLink158" to="sv2#area11#opg3#dlu14" code="da-gestire">
+        <LinkParameter id="sv2#area11#opg3#switch5#oln158#par390" name="oid_PASSING_RoleCondition72 [oid]" sourceLinkParameter="sv2#area11#opg3#seu4#oln146#par210" target="sv2#area11#opg3#dlu14#su191#rcond72.ent9#att35"/>
+        <LinkParameter id="sv2#area11#opg3#switch5#oln158#par398" name="oid_PASSING" sourceLinkParameter="sv2#area11#opg3#seu4#oln146#par210" passing="true"/>
+      </OKLink>
+      <OKLink id="sv2#area11#opg3#switch5#oln160" name="OKLink160" to="sv2#area11#page67" automaticCoupling="true"/>
+    </SwitchUnit>
+    <DeleteUnit gr:x="342" gr:y="121" id="sv2#area11#opg3#dlu13" name="DeleteRigaOrdine" entity="ent8">
+      <Selector id="sv2#area11#opg3#dlu13#su185" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area11#opg3#dlu13#su185#rcond73" name="RoleCondition73" predicate="in" implied="false" role="rel18#role35"/>
+      </Selector>
+      <OKLink id="sv2#area11#opg3#dlu13#oln163" name="OKLink163" to="sv2#area11#opg3#dlu12">
+        <LinkParameter id="sv2#area11#opg3#dlu13#oln163#par543" name="oid_PASSING_KeyCondition104 [oid]" sourceLinkParameter="sv2#area11#opg3#dlu14#oln161#par400" target="sv2#area11#opg3#dlu12#su14#kcond104.ent9#att35"/>
+      </OKLink>
+    </DeleteUnit>
+    <DeleteUnit gr:x="302" gr:y="1" id="sv2#area11#opg3#dlu14" name="DeleteConfigurazione" entity="ent7">
+      <Selector id="sv2#area11#opg3#dlu14#su191" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area11#opg3#dlu14#su191#rcond72" name="RoleCondition72" predicate="in" implied="false" role="rel18#role35.rel17#role33"/>
+      </Selector>
+      <OKLink id="sv2#area11#opg3#dlu14#oln161" name="OKLink161" to="sv2#area11#opg3#dlu13">
+        <LinkParameter id="sv2#area11#opg3#dlu14#oln161#par399" name="oid_PASSING_RoleCondition73 [oid]" sourceLinkParameter="sv2#area11#opg3#switch5#oln158#par398" target="sv2#area11#opg3#dlu13#su185#rcond73.ent9#att35"/>
+        <LinkParameter id="sv2#area11#opg3#dlu14#oln161#par400" name="oid_PASSING" sourceLinkParameter="sv2#area11#opg3#switch5#oln158#par398" passing="true"/>
+      </OKLink>
+    </DeleteUnit>
+  </OperationUnits>
+</OperationGroup>

@@ -1,17 +1,18 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area11#page48" name="I miei ordini">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="98" id="sv2#area11#page48" name="I miei ordini">
   <ContentUnits>
     <GetUnit gr:x="0" gr:y="0" id="sv2#area11#page48#gtu16" name="Utente" contextParameters="UserCtxParam">
       <Link id="sv2#area11#page48#gtu16#ln261" name="Link261" to="sv2#area11#page48#inu31" type="transport" validate="true">
         <LinkParameter id="sv2#area11#page48#gtu16#ln261#par590" name="UserCtxParam.oid_RoleCondition60 [oid]" source="sv2#area11#page48#gtu16.UserCtxParam" target="sv2#area11#page48#inu31#su162#rcond60.userOID"/>
       </Link>
     </GetUnit>
-    <IndexUnit gr:x="12" gr:y="121" id="sv2#area11#page48#inu31" name="Lista Ordini" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" linkOrder="sv2#area11#page48#inu31#ln17">
+    <IndexUnit gr:x="12" gr:y="121" id="sv2#area11#page48#inu31" name="Lista Ordini" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 ent9#att57" linkOrder="sv2#area11#page48#inu31#ln17 sv2#area11#page48#inu31#ln380">
       <Selector id="sv2#area11#page48#inu31#su162" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv2#area11#page48#inu31#su162#acond19" name="AttCondition19" predicate="neq" booleanOperator="or" implied="true" attributes="ent9#att41" value="carrello"/>
         <RelationshipRoleCondition id="sv2#area11#page48#inu31#su162#rcond60" name="RoleCondition60" predicate="in" implied="false" role="rel19#role38"/>
       </Selector>
       <Link id="sv2#area11#page48#inu31#ln17" name="Dettagli" to="sv2#area11#page71#mdu7" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowUseTitle="false" ajaxWindowUseLinkAsTitle="true" ajaxWindowWidth="500" ajaxWindowHeight="250" ajaxWindowClosable="true" ajaxWindowModal="true"/>
       <SortAttribute attribute="ent9#att36" order="descending"/>
+      <Link id="sv2#area11#page48#inu31#ln380" name="Annulla Ordine" to="sv2#area11#opg3#seu4" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid>
@@ -28,6 +29,7 @@
           <layout:Attribute attribute="ent9#att41"/>
           <layout:Attribute attribute="ent9#att57"/>
           <layout:Link link="sv2#area11#page48#inu31#ln17"/>
+          <layout:Link link="sv2#area11#page48#inu31#ln380"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
