@@ -1,0 +1,47 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1926" gr:y="340" id="sv2#area8#page68" name="Modifica Quantit&#224;" layout:pageLayout="ShirtShopStyle/Basic">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="111" id="sv2#area8#page68#enu27" name="Modifica carrello" linkOrder="sv2#area8#page68#enu27#ln427">
+      <Field id="sv2#area8#page68#enu27#fld113" name="Quantit&#224;" type="integer" modifiable="true" preloaded="true"/>
+      <Link id="sv2#area8#page68#enu27#ln427" name="Salva" to="sv2#area8#mathu1" type="normal" validate="true">
+        <LinkParameter id="sv2#area8#page68#enu27#ln427#par754" name="Quantit&#224;_quantita" source="sv2#area8#page68#enu27#fld113" target="sv2#area8#mathu1#mathv1"/>
+        <LinkParameter id="sv2#area8#page68#enu27#ln427#par757" name="Quantit&#224;_PASSING" source="sv2#area8#page68#enu27#fld113" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="9" gr:y="0" id="sv2#area8#page68#seu77" name="RigaOrdine" entity="ent8">
+      <Selector id="sv2#area8#page68#seu77#su195" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#page68#seu77#su195#kcond128" name="KeyCondition128" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area8#page68#seu77#ln425" name="Link425" to="sv2#area8#page68#enu27" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page68#seu77#ln425#par751" name="quantita_Quantit&#224;" source="ent8#att33Array" target="sv2#area8#page68#enu27#fld113_slot"/>
+      </Link>
+      <Link id="sv2#area8#page68#seu77#ln426" name="Link426" to="sv2#area8#mfu18" type="transport" validate="true" gr:bendpoints="-75,45,-76,-198;-75,150,-76,-93">
+        <LinkParameter id="sv2#area8#page68#seu77#ln426#par752" name="oid_KeyCondition129 [oid]" source="ent8#att31Array" target="sv2#area8#mfu18#su196#kcond129.ent8#att31"/>
+      </Link>
+      <Link id="sv2#area8#page68#seu77#ln428" name="Link428" to="sv2#area8#mathu1" type="transport" validate="true" gr:bendpoints="113,31,-38,-176">
+        <LinkParameter id="sv2#area8#page68#seu77#ln428#par755" name="prezzoSingolo_prezzounitario" source="ent8#att32Array" target="sv2#area8#mathu1#mathv2"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area8#page68#enu27">
+          <layout:Field field="sv2#area8#page68#enu27#fld113"/>
+          <layout:Link link="sv2#area8#page68#enu27#ln427"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
