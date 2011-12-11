@@ -1,13 +1,13 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area12#page50" name="Sommario Ordini" localized="false">
   <ContentUnits>
-    <IndexUnit gr:x="130" gr:y="0" id="sv3#area12#page50#inu26" name="Ordini in gestione" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37" linkOrder="sv3#area12#page50#inu26#ln266">
+    <IndexUnit gr:x="114" gr:y="140" id="sv3#area12#page50#inu26" name="Ordini in gestione" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37" linkOrder="sv3#area12#page50#inu26#ln266">
       <Selector id="sv3#area12#page50#inu26#su130" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv3#area12#page50#inu26#su130#acond7" name="stato" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="in-stampa"/>
         <RelationshipRoleCondition id="sv3#area12#page50#inu26#su130#rcond48" name="stampatore" predicate="in" implied="false" role="rel20#role40"/>
       </Selector>
       <Link id="sv3#area12#page50#inu26#ln266" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
-    <GetUnit gr:x="0" gr:y="0" id="sv3#area12#page50#gtu6" name="utente" contextParameters="UserCtxParam">
+    <GetUnit gr:x="0" gr:y="46" id="sv3#area12#page50#gtu6" name="utente" contextParameters="UserCtxParam">
       <Link id="sv3#area12#page50#gtu6#ln249" name="Link249" to="sv3#area12#page50#inu26" type="transport" validate="true">
         <LinkParameter id="sv3#area12#page50#gtu6#ln249#par31" name="UserCtxParam.oid_stampatore [oid]" source="sv3#area12#page50#gtu6.UserCtxParam" target="sv3#area12#page50#inu26#su130#rcond48.userOID"/>
       </Link>
@@ -18,27 +18,27 @@
         <LinkParameter id="sv3#area12#page50#gtu6#ln329#par541" name="UserCtxParam.oid_RoleCondition2 [oid]" source="sv3#area12#page50#gtu6.UserCtxParam" target="sv3#area12#page50#inu28#su153#rcond2.userOID"/>
       </Link>
     </GetUnit>
-    <IndexUnit gr:x="0" gr:y="120" id="sv3#area12#page50#inu27" name="Nuovi ordini" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36" linkOrder="sv3#area12#page50#inu27#ln259">
+    <IndexUnit gr:x="4" gr:y="150" id="sv3#area12#page50#inu27" name="Nuovi ordini" entity="ent9" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36" linkOrder="sv3#area12#page50#inu27#ln259">
       <Selector id="sv3#area12#page50#inu27#su131" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv3#area12#page50#inu27#su131#acond12" name="stato" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="da-gestire"/>
       </Selector>
       <Link id="sv3#area12#page50#inu27#ln259" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true"/>
     </IndexUnit>
-    <IndexUnit gr:x="296" gr:y="156" id="sv3#area12#page50#inu28" name="Ordini evasi" entity="ent9" linkOrder="sv3#area12#page50#inu28#ln282" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37 ent9#att38 ent9#att57">
-      <Link id="sv3#area12#page50#inu28#ln282" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-96,103,183,-81"/>
+    <IndexUnit gr:x="314" gr:y="90" id="sv3#area12#page50#inu28" name="Ordini evasi" entity="ent9" linkOrder="sv3#area12#page50#inu28#ln282" displayAttributes="ent9#att35 rel19#role37.ent10#att43 rel19#role37.ent10#att44 ent9#att36 ent9#att37 ent9#att38 ent9#att57">
+      <Link id="sv3#area12#page50#inu28#ln282" name="dettagli" to="sv3#area12#page51#dau14" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-3,145,296,-145"/>
       <Selector id="sv3#area12#page50#inu28#su153" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv3#area12#page50#inu28#su153#acond18" name="stato" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="evaso"/>
         <RelationshipRoleCondition id="sv3#area12#page50#inu28#su153#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel20#role40"/>
       </Selector>
     </IndexUnit>
-    <ScrollerUnit gr:x="176" gr:y="136" id="sv3#area12#page50#scu1" name="Ordini evasi" useCountQuery="false" entity="ent9" linkOrder="sv3#area12#page50#scu1#ln19" blockFactor="5">
+    <ScrollerUnit gr:x="184" gr:y="0" id="sv3#area12#page50#scu1" name="Ordini evasi" useCountQuery="false" entity="ent9" linkOrder="sv3#area12#page50#scu1#ln19" blockFactor="5">
       <Link id="sv3#area12#page50#scu1#ln19" name="Link19" to="sv3#area12#page50#inu28" automaticCoupling="true" type="automatic" validate="true"/>
       <Selector id="sv3#area12#page50#scu1#su142" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#area12#page50#scu1#su142#rcond47" name="RoleCondition47" predicate="in" implied="false" role="rel20#role40"/>
         <AttributesCondition id="sv3#area12#page50#scu1#su142#acond15" name="AttCondition15" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="evaso"/>
       </Selector>
     </ScrollerUnit>
-    <ModuleInstanceUnit gr:x="346" gr:y="36" id="sv3#area12#page50#miu28" name="Novit&#224;" moduleId="mov1#mpkg3#ctm4" linkOrder="sv3#area12#page50#miu28#ln328">
+    <ModuleInstanceUnit gr:x="244" gr:y="190" id="sv3#area12#page50#miu28" name="Novit&#224;" moduleId="mov1#mpkg3#ctm4" linkOrder="sv3#area12#page50#miu28#ln328">
       <Link id="sv3#area12#page50#miu28#ln328" name="dettagli" to="sv3#area12#page51#dau14" type="normal" validate="true" codeRef="mov1#mpkg3#ctm4#ocu4">
         <LinkParameter id="sv3#area12#page50#miu28#ln328#par540" name="ordine_oid_KeyCondition78 [oid]" source="mov1#mpkg3#ctm4#ocu4#ocp15" target="sv3#area12#page51#dau14#su133#kcond78.ent9#att35"/>
       </Link>

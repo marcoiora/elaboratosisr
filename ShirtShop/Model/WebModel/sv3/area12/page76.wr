@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area12#page76" name="Dettagli stampe" gr:x="360" gr:y="350" ajaxEnabled="true" layout:pageLayout="WRDefault/Empty">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area12#page76" name="Dettagli stampe" gr:x="368" gr:y="404" ajaxEnabled="true" layout:pageLayout="WRDefault/Empty">
   <ContentUnits>
     <DataUnit id="sv3#area12#page76#dau38" name="Stampa Fronte" gr:x="0" gr:y="0" entity="ent7" displayAttributes="ent7#att29 rel11#role21.ent6#att23 rel11#role21.ent6#att25 rel11#role21.ent6#att26 rel11#role21.ent6#att27">
       <Selector id="sv3#area12#page76#dau38#su177" defaultPolicy="fill" booleanOperator="and">

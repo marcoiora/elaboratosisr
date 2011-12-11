@@ -304,8 +304,7 @@
       <db:JoinColumn attribute="ent6#att22" name="stampa_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w" showSQL="true">
-  </db:Database>
+  <db:Database id="db2" name="mysql" type="MySQL (InnoDB)" url="jdbc:mysql://localhost:3306/shirtshop" username="shirtshop" cryptedPassword="true" password="c2hpcnRzaG9w" showSQL="true"/>
   <Entity gr:x="870" gr:y="580" id="ent16" name="ColoreSesso" duration="volatile" attributeOrder="ent16#att64 ent16#att65 ent16#att66 ent16#att67">
     <Attribute id="ent16#att64" key="true" name="oid" type="integer"/>
     <Attribute id="ent16#att65" name="colore_oid" type="integer"/>
