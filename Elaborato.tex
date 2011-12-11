@@ -1732,6 +1732,12 @@ Descrizione dei principali oggetti informativi individuati duranti l'analisi dei
 	\end{longtable}
 \end{center}
 
+L'entità Ordine, così come Riga Ordine, rappresenta sia il concetto di carrello, ovvere l'insieme delle
+configurazioni salvate dal cliente prima dalla conferma dello stesso, sia di ordine, ovvere l'insieme
+delle configurazione inviate dal cliente che compaiono poi nell'iter lavorativo dello stampatore per
+essere elaborate.\\
+La distinzione tra i due concetti si realizza nell'applicazione con l'uso dell'attributo ""Stato"".
+
 \subsection{Pagina}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
@@ -2097,13 +2103,15 @@ In figura 2.3 si riporta il diagramma-ER che rappresenta il sotto-schema di Inte
 Il sotto-schema di Accesso comprende le entità e le relazioni che permettono di accedere, filtrare, 
 consultare le entità core.\\
 Nel nostro caso per quanto riguarda l'accesso all'entità \textit{Maglietta} abbiamo considerato come
-entità di accesso \textit{Colore}, \textit{Sesso}, \textit{Taglia} e \textit{Template}.\\
-Si può invece accedere all'entità \textit{Stampa} tramite \textit{Template} \textit{Tema}.\\
+entità di accesso \textit{Colore}, \textit{Sesso}, \textit{Taglia} e \textit{Template}. E' stata 
+considerata, inoltre, entità di accesso la stessa \textit{Maglietta} in quanto è possibile per l'utente finale 
+accedere alla stessa tramite filtri sugli attributi \textit{Tipo di Collo}, \textit{Tipo di Manica} 
+e \textit{Materiale}. Le entità Colore, Sesso e Taglia sono state estrapolate come entità distinte, 
+a differenza dei tre attributi appena considerati, perchè, innanzitutto, la relazione che le lega 
+alla Maglietta è di tipo molti a molti e, inoltre, sono utilizzate per la configurazione delle magliette
+da parte dei clienti.\\
+Si può invece accedere all'entità \textit{Stampa} tramite \textit{Template} e \textit{Tema}.\\
 \textit{Ordine} e \textit{Pagina} sono entità d'accesso per se stesse.\\
-È interessante notare che questo sotto-schema non rappresenta in maniera esaustiva le possibilità 
-di accesso alle entità core: ad esempio, \textit{Maglietta} può essere considerata anche entità d'accesso
-per se stessa, in quanto si prevedono filtri di consultazione basati su attributi interni di questa
-entità, come il materiale, il tipo di collo e il tipo di maniche.\\
 In figura 2.4 si riporta il diagramma-ER che rappresenta il sotto-schema di Accesso.
 \begin{center}
 	\includegraphics[height=17cm]{Immagini/Accesso.png}
@@ -2361,5 +2369,27 @@ WebML.
 
 \newpage
 \section{Progettazione Dettagliata}
+Nella progettazione dettagliata dell'Ipertesto ogni area viene suddivisa in pagine e ad ognuna vengono
+attribuiti porzioni di contenuto e funzioni dell'area che la include. Per ogni pagina viene, inoltre, 
+definita la visibilità:
+\begin{itemize}
+	\item \textbf{H}: Home page
+	\item \textbf{D}: Default
+	\item \textbf{L}: Landmark
+	\item \textbf{I}: Pagina Interna
+\end{itemize}
+Per ogni site-view verrà mostrato lo schema generale dell'ipertesto e poi si andranno ad analizzare 
+una ad una le aree contenute.\\
+E' necessario precisare alcune particolarità, comuni a più site view, emerse durante l'analisi:
+\begin{itemize}
+	\item si è deciso di gestire gli OK-link, link che vengono seguiti in caso di fallimento nella 
+	gestione degli errori sulle operazioni con il database, con un'unica pagina creata in ogni site
+	view.
+	\item qualora, per motivi grafici, non ci sia la possibilità di mostrare il percorso completo di
+	un link che esce da un'area verso un'altra, si mostrerà esplicitamente l'area di destinazione di
+	ogni link.
+\end{itemize}
+
+\subsection{Site View Pubblica}
 
 \end{document}
