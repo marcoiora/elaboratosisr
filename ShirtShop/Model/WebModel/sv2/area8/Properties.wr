@@ -189,5 +189,25 @@
         <LinkParameter id="sv2#area8#miu47#oln151#par667" name="oid_stampa_oid" source="mov1#mpkg2#hym6#okcu4#ocp19" target="sv2#area8#page42#enu20#fld31_slot"/>
       </OKLink>
     </ModuleInstanceUnit>
+    <DeleteUnit gr:x="1916" gr:y="210" id="sv2#area8#dlu15" name="elimina riga" entity="ent8">
+      <Selector id="sv2#area8#dlu15#su194" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#dlu15#su194#kcond127" name="KeyCondition127" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area8#dlu15#oln165" name="OKLink165" to="sv2#area8#page39" automaticCoupling="true"/>
+    </DeleteUnit>
+    <ModifyUnit gr:x="1926" gr:y="620" id="sv2#area8#mfu18" name="Modifica Riga Ordine" entity="ent8">
+      <Selector id="sv2#area8#mfu18#su196" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area8#mfu18#su196#kcond129" name="KeyCondition129" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area8#mfu18#oln173" name="OKLink173" to="sv2#area8#page39" automaticCoupling="true" gr:bendpoints="-90,-75,223,243;-118,-133,195,185"/>
+    </ModifyUnit>
+    <MathUnit gr:x="2106" gr:y="590" id="sv2#area8#mathu1" name="*" resultType="float" defaultExpression="prezzounitario * quantita">
+      <MathVariable id="sv2#area8#mathu1#mathv1" name="quantita"/>
+      <MathVariable id="sv2#area8#mathu1#mathv2" name="prezzounitario"/>
+      <OKLink id="sv2#area8#mathu1#oln175" name="OKLink175" to="sv2#area8#mfu18">
+        <LinkParameter id="sv2#area8#mathu1#oln175#par756" name="Result_prezzoTotale" source="result" target="sv2#area8#mfu18.ent8#att34"/>
+        <LinkParameter id="sv2#area8#mathu1#oln175#par758" name="Quantit&#224;_PASSING_quantita" sourceLinkParameter="sv2#area8#page68#enu27#ln427#par757" target="sv2#area8#mfu18.ent8#att33"/>
+      </OKLink>
+    </MathUnit>
   </OperationUnits>
 </Area>

@@ -5,7 +5,15 @@
       <Link id="sv2#area8#page39#mssu4#ln34" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-260,-1,362,-941;-304,-118,318,-1058"/>
       <Message xml:space="preserve">Cosa vuoi fare ora?</Message>
     </MultiMessageUnit>
-    <ModuleInstanceUnit id="sv2#area8#page39#miu18" name="Visualizza Carrello" gr:x="58" gr:y="170" moduleId="mov1#mpkg2#ctm1"/>
+    <ModuleInstanceUnit id="sv2#area8#page39#miu18" name="Visualizza Carrello" gr:x="58" gr:y="170" moduleId="mov1#mpkg2#ctm1" linkOrder="sv2#area8#page39#miu18#ln411 sv2#area8#page39#miu18#ln424">
+      <Link id="sv2#area8#page39#miu18#ln411" name="Link411" to="sv2#area8#dlu15" type="normal" validate="true" codeRef="mov1#mpkg2#ctm1#ocu8" gr:bendpoints="65,-75,-228,102">
+        <LinkParameter id="sv2#area8#page39#miu18#ln411#par759" name="rigaordine_oid_KeyCondition127 [oid]" source="mov1#mpkg2#ctm1#ocu8#ocp23" target="sv2#area8#dlu15#su194#kcond127.ent8#att31"/>
+      </Link>
+      <Link id="sv2#area8#page39#miu18#ln424" name="Link424" to="sv2#area8#page68#seu77" type="normal" validate="true" codeRef="mov1#mpkg2#ctm1#ocu10">
+        <LinkParameter id="sv2#area8#page39#miu18#ln424#par749" name="rigaordine_oid_PASSING" source="mov1#mpkg2#ctm1#ocu10#ocp24" passing="true"/>
+        <LinkParameter id="sv2#area8#page39#miu18#ln424#par750" name="rigaordine_oid_KeyCondition128 [oid]" source="mov1#mpkg2#ctm1#ocu10#ocp24" target="sv2#area8#page68#seu77#su195#kcond128.ent8#att31"/>
+      </Link>
+    </ModuleInstanceUnit>
     <SelectorUnit gr:x="140" gr:y="2" id="sv2#area8#page39#seu63" name="Num. articoli" entity="ent9" distinctAttributes="count(rel18#role35.ent8#att31)">
       <Selector id="sv2#area8#page39#seu63#su8" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#area8#page39#seu63#su8#kcond101" name="KeyCondition101" predicate="in" implied="false"/>
@@ -24,7 +32,10 @@
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
-        <layout:Unit unitId="sv2#area8#page39#miu18" layout:unitVisibilityCondition="sv2#area8#page39#cexpr3"/>
+        <layout:Unit unitId="sv2#area8#page39#miu18" layout:unitVisibilityCondition="sv2#area8#page39#cexpr3">
+          <layout:Link link="sv2#area8#page39#miu18#ln411"/>
+          <layout:Link link="sv2#area8#page39#miu18#ln424"/>
+        </layout:Unit>
         <layout:Unit unitId="sv2#area8#page39#mssu4" layout:unitVisibilityCondition="sv2#area8#page39#cexpr3">
           <layout:Link link="sv2#area8#page39#mssu4#ln252"/>
           <layout:Link link="sv2#area8#page39#mssu4#ln34"/>
