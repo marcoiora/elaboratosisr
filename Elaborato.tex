@@ -2489,6 +2489,79 @@ L'Area \textbf{Prodotti} contiene più pagine.
 
 \newpage
 \subsection{Site View Stampatore}
+\begin{center}
+	\includegraphics[height=15cm]{Immagini/SiteViewStampatore.png}\\
+	\textit{Fig. 3.2: Site View Stampatore}
+\end{center}
+
+\subsubsection{Pagina Home Page}
+\begin{center}
+	\includegraphics[height=5cm]{Immagini/SiteViewStampatoreHomePage.png}\\
+	\textit{Fig. 3.2.1: Pagina Home Page Stampatore}
+\end{center}
+Si è deciso di non creare un'area apposita come Home Page, ma di avere come Default della site view
+Stampatore solo una pagina di benvenuto con funzione di ""smistamento"".
+
+\subsubsection{Area Gestione Ordini}
+\begin{center}
+	\includegraphics[height=19cm]{Immagini/SiteViewStampatoreGestioneOrdini.png}\\
+	\textit{Fig. 3.2.2: Area Gestione Ordini}
+\end{center}
+L'Area \textbf{Gestione Ordini} contiene quattro pagine: \textit{Sommario Ordini}, \textit{Dettaglio
+Ordine}, \textit{Dettagli Stampe} e \textit{Conferma Spedizione}.
+\begin{itemize}
+	\item \textit{Sommario Ordini} è la pagina in cui sono presenti l'elenco degli ordini presi in
+	gestione dallo stampatore che si è loggato, gli ordini evasi (quindi affidati al corriere) dallo
+	stesso stampatore e l'elenco dei nuovi ordini non ancora presi in gestione da nessuno stampatore.\\
+	Da ognuno degli elenchi è possibile visualizzare il dettaglio di ogni singolo ordine tramite un 
+	link che si dirige alla pagina \textit{Dettaglio Ordine}.\\
+	Il modulo che viene richiamato da questa pagina, \underline{Novità}, permette allo stampatore,
+	al primo accesso alla pagina di vedere le novità dall'ultimo suo login, quindi, ad esempio, nuovi
+	ordini inseriti dai clienti, etc:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/ModuloNovita.png}\\
+		\textit{Fig. 3.2.2-A: Modulo Novità}
+	\end{center}
+	\item Nella pagina \textit{Dettaglio Ordine} è possibile visualizzare i dettagli di un ordine 
+	comprese le singole righe d'ordine. Lo stampatore ha la possibilità da questa pagina di prendere
+	in carico un'ordine o di evaderlo se ha concluso la lavorazione.\\
+	Se l'ordine viene preso in carico, verrà aggiornata la lista degli ordini e nessun altro 
+	stampatore potrà occuparsi dello stesso ordine. Il modulo che gestisce la presa in carico di un 
+	ordine è \underline{Presa in Carico}:
+	\begin{center}
+		\includegraphics[height=6cm]{Immagini/ModuloPrendiInCarico.png}\\
+		\textit{Fig. 3.2.2-B: Modulo Presa in Carico di un Ordine}
+	\end{center}
+	In questo modulo viene modificato lo stato dell'ordine da 'da-gestire' a 'in-stampa' e ne viene
+	salvata l'ora di presa in carico dell'ordine.\\
+	Se invece l'ordine viene evaso si passa alla pagina \textit{Conferma Spedizione}.
+	\item Nella pagina \textit{Dettagli Stampe} è possibile visualizzare i dettagli delle stampe di
+	ogni maglietta inserita nell'ordine.
+	\item La pagina \textit{Conferma Spedizione} permette allo stampatore di vedere i dati del cliente
+	al quale spedire la merce, per poter, ad esempio, stampare l'indirizzo di destinazione sul pacco,
+	e gli permette di inserire il numero di tracking o l'URL dell'ordine che gli è stato comunicato 
+	dal corriere in modo che il cliente possa monitorare il viaggio del suo ordine.\\
+	Il modulo che gestisce l'evasione dell'ordine è \underline{Evadi Ordine}:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/ModuloEvadiOrdine.png}\\
+		\textit{Fig. 3.2.2-C: Modulo di Evasione di un Ordine}
+	\end{center}
+	Anche in questo modulo viene modificato lo stato dell'ordine da 'in-stampa' a 'evaso' e ne viene 
+	salvata l'ora di evasione.
+\end{itemize}
+
+\subsubsection{Area Gestione Account}
+\begin{center}
+	\includegraphics[height=15cm]{Immagini/SiteViewStampatoreGestioneAccount.png}\\
+	\textit{Fig. 3.2.3: Area Gestione Account Stampatore}
+\end{center}
+L'Area \textbf{Gestione Account} contiene due pagine:
+\begin{itemize}
+	\item \textit{Il tuo profilo} in cui lo stampatore può visualizzare i suoi dati, quali username, 
+	e-mail e numero di matricola.
+	\item \textit{Modifica dati profilo} in cui lo stampatore potrà modificare, tramite form, la sua 
+	password e la sua e-mail.
+\end{itemize}
 
 \newpage
 \subsection{Site View Amministrazione}
