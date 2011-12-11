@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="353" gr:y="183" id="sv3#page49" name="Home Stampatore">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="590" gr:y="-510" id="sv3#page49" name="Home Stampatore">
   <ContentUnits>
     <MultiMessageUnit gr:x="-1" gr:y="-1" id="sv3#page49#mssu8" name="Benvenuto Stampatore">
       <Message xml:space="preserve">Benvenuto nell'area riservata allo Stampatore.

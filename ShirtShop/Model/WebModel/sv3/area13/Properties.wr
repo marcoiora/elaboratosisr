@@ -1,13 +1,13 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="580" gr:y="-180" id="sv3#area13" name="Gestione Account" landmark="true" defaultPage="sv3#area13#page58">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="450" gr:y="-990" id="sv3#area13" name="Gestione Account" landmark="true" defaultPage="sv3#area13#page58">
   <OperationUnits>
-    <ModifyUnit gr:x="252" gr:y="202" id="sv3#area13#mfu15" name="modifica profilo" entity="ent12">
+    <ModifyUnit gr:x="182" gr:y="292" id="sv3#area13#mfu15" name="modifica profilo" entity="ent12">
       <Selector id="sv3#area13#mfu15#su141" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area13#mfu15#su141#kcond96" name="KeyCondition96" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv3#area13#mfu15#oln119" name="OKLink119" to="sv3#area13#page58" automaticCoupling="true"/>
       <KOLink id="sv3#area13#mfu15#kln65" name="KOLink65" to="sv3#area13#page59" automaticCoupling="true"/>
     </ModifyUnit>
-    <GetUnit gr:x="262" gr:y="82" id="sv3#area13#gtu21" name="stampatore" contextParameters="UserCtxParam">
+    <GetUnit gr:x="222" gr:y="172" id="sv3#area13#gtu21" name="stampatore" contextParameters="UserCtxParam">
       <Link id="sv3#area13#gtu21#ln318" name="Link318" to="sv3#area13#mfu15" type="transport" validate="true">
         <LinkParameter id="sv3#area13#gtu21#ln318#par521" name="UserCtxParam.oid_KeyCondition96 [oid]" source="sv3#area13#gtu21.UserCtxParam" target="sv3#area13#mfu15#su141#kcond96.userOID"/>
       </Link>

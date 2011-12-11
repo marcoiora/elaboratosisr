@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="2" gr:y="334" id="sv3#area12#page51" name="Dettaglio Ordine" localized="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="10" gr:y="388" id="sv3#area12#page51" name="Dettaglio Ordine" localized="false">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="0" id="sv3#area12#page51#dau14" name="Dettaglio Ordine" entity="ent9" displayAttributes="ent9#att35 ent9#att36 ent9#att37 ent9#att38 ent9#att39 ent9#att40 ent9#att41 rel19#role37.ent10#att43 rel19#role37.ent10#att44 rel19#role37.ent10#att45 rel19#role37.ent10#att56 rel19#role37.ent10#att55 rel19#role37.email ent9#att57">
       <Selector id="sv3#area12#page51#dau14#su133" defaultPolicy="fill" booleanOperator="and">

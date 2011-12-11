@@ -2157,7 +2157,6 @@ La progettazione dell'ipertesto è costituita da due fasi sequenziali, descritte 
 		sotto-schemi di ipertesto
 	\end{itemize}
 \end{enumerate}
-\newpage
 
 \section{Progettazione Coarse}
 Durante la progettazione Coarse sono state seguite le tre fasi principali sopra indicate, per ogni 
@@ -2243,80 +2242,89 @@ WebML.
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\multirow{3}{*}{Area \textbf{Home Page}} & Core (Pagina)\\
-		& Access (Template)\\
-		& Create (Cliente)\\
+		Area \textbf{Home Page} & \begin{description} \item Core (Pagina)
+		\item Access (Template)
+		\item Create (Cliente)
+		\end{description}\\
 		\hline
-		\multirow{4}{*}{Area \textbf{Prodotti}} & Core (Maglietta, Foto)\\
-		& Core (Stampa)\\
-		& Access (Maglietta, Template, Sesso, Taglia, Colore, Maglietta[Manica, Collo, Materiale])\\
-		& Access (Stampa, Temi, Template)\\
+		Area \textbf{Prodotti} & \begin{description} \item Core (Maglietta, Foto)
+		\item Core (Stampa)
+		\item Access (Maglietta, Template, Sesso, Taglia, Colore, Maglietta[Manica, Collo, Materiale])
+		\item Access (Stampa, Temi, Template)
+		\end{description}\\
 		\hline
-		\multirow{2}{*}{Area \textbf{Informazioni}} & Core (Pagina)\\
-		& Access (Pagina, Pagina)\\
+		Area \textbf{Informazioni} & \begin{description} \item Core (Pagina)
+		\item Access (Pagina, Pagina)
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
+\newpage
 
 \subsubsection{Site View Cliente}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\multirow{19}{*}{Area \textbf{WebMarket}} & Core (Maglietta, Foto)\\
-		& Core (Stampa)\\
-		& Core (Ordine, RigaOrdine)\\
-		& Access (Maglietta, Template, Sesso, Taglia, Colore, Maglietta[Manica, Collo, Materiale])\\
-		& Access (Stampa, Temi, Template)\\
-		& Interconnection (Configurazione2Maglietta)\\
-		& Interconnection (Configurazione2StampaFronte)\\
-		& Interconnection (Configurazione2StampaRetro)\\
-		& Interconnection (RigaOrdine2Configurazione)\\
-		& Modify (RigaOrdine)\\
-		& Modify (Ordine)\\
-		& Delete (RigaOrdine)\\
-		& Delete (Configurazione)\\
-		& Connect (Configurazione2StampaFronte)\\
-		& Connect (Configurazione2StampaRetro)\\
-		& Create\&Connect (Configurazione, Configurazione2Maglietta)\\
-		& Create\&Connect (Stampa, Cliente)\\
-		& Create\&Connect (RigaOrdine, RigaOrdine2Configurazione, Ordine2RigaOrdine)\\
-		& Create\&Connect (Ordine, Ordine2Cliente)\\
+		Area \textbf{WebMarket} & \begin{description} \item Core (Maglietta, Foto)
+		\item Core (Stampa)
+		\item Core (Ordine, RigaOrdine)
+		\item Access (Maglietta, Template, Sesso, Taglia, Colore, Maglietta[Manica, Collo, Materiale])
+		\item Access (Stampa, Temi, Template)
+		\item Interconnection (Configurazione2Maglietta)
+		\item Interconnection (Configurazione2StampaFronte)
+		\item Interconnection (Configurazione2StampaRetro)
+		\item Interconnection (RigaOrdine2Configurazione)
+		\item Modify (RigaOrdine)
+		\item Modify (Ordine)
+		\item Delete (RigaOrdine)
+		\item Delete (Configurazione)
+		\item Connect (Configurazione2StampaFronte)
+		\item Connect (Configurazione2StampaRetro)
+		\item Create\&Connect (Configurazione, Configurazione2Maglietta)
+		\item Create\&Connect (Stampa, Cliente)
+		\item Create\&Connect (RigaOrdine, RigaOrdine2Configurazione, Ordine2RigaOrdine)
+		\item Create\&Connect (Ordine, Ordine2Cliente)
+		\end{description}\\
 		\hline
-		\multirow{2}{*}{Area \textbf{Informazione}} & Core (Pagina)\\
-		& Access (Pagina, Pagina)\\
+		Area \textbf{Informazione} & \begin{description} \item Core (Pagina)
+		\item Access (Pagina, Pagina)
+		\end{description}\\
 		\hline
-		\multirow{11}{*}{Area \textbf{Ordini}} & Core (Ordine, RigaOrdine)\\
-		& Core (Maglietta)\\
-		& Core (Stampa)\\
-		& Access (Ordine, Ordine)\\
-		& Interconnection (Configurazione2Maglietta)\\
-		& Interconnection (Configurazione2StampaFronte)\\
-		& Interconnection (Configurazione2StampaRetro)\\
-		& Interconnection (RigaOrdine2Configurazione)\\
-		& Delete (Ordine)\\
-		& Delete (RigaOrdine)\\
-		& Delete (Configurazione)\\
+		Area \textbf{Ordini} & \begin{description} \item Core (Ordine, RigaOrdine)
+		\item Core (Maglietta)
+		\item Core (Stampa)
+		\item Access (Ordine, Ordine)
+		\item Interconnection (Configurazione2Maglietta)
+		\item Interconnection (Configurazione2StampaFronte)
+		\item Interconnection (Configurazione2StampaRetro)
+		\item Interconnection (RigaOrdine2Configurazione)
+		\item Delete (Ordine)
+		\item Delete (RigaOrdine)
+		\item Delete (Configurazione)
+		\end{description}\\
 		\hline
-		\multirow{1}{*}{Area \textbf{Gestione Account}} & Modify(Cliente)\\
+		Area \textbf{Gestione Account} & Modify(Cliente)\\
 		\hline
 	\end{longtable}
 \end{center}
+\newpage
 
 \subsubsection{Site View Stampatore}
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\multirow{9}{*}{Area \textbf{Gestione Ordini}} & Core (Ordine, RigaOrdine)\\
-		& Core (Maglietta)\\
-		& Core (Stampa)\\
-		& Access (Ordine, Ordine)\\
-		& Interconnection (Configurazione2Maglietta)\\
-		& Interconnection (Configurazione2StampaFronte)\\
-		& Interconnection (Configurazione2StampaRetro)\\
-		& Interconnection (RigaOrdine2Configurazione)\\
-		& Modify (Ordine)\\
+		Area \textbf{Gestione Ordini} & \begin{description} \item Core (Ordine, RigaOrdine)
+		\item Core (Maglietta)
+		\item Core (Stampa)
+		\item Access (Ordine, Ordine)
+		\item Interconnection (Configurazione2Maglietta)
+		\item Interconnection (Configurazione2StampaFronte)
+		\item Interconnection (Configurazione2StampaRetro)
+		\item Interconnection (RigaOrdine2Configurazione)
+		\item Modify (Ordine)
+		\end{description}\\
 		\hline
-		\multirow{1}{*}{Area \textbf{Gestione Account}}	& Modify(Stampatore)\\
+		Area \textbf{Gestione Account}	& Modify(Stampatore)\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -2325,44 +2333,48 @@ WebML.
 \begin{center}
 	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
-		\multirow{6}{*}{Area \textbf{Gestione Accounts}} & Modify (Cliente)\\
-		& Modify (Stampatore)\\
-		& Delete (Cliente)\\
-		& Delete (Stampatore)\\
-		& Create (Cliente)\\
-		& Create (Stampatore)\\
+		Area \textbf{Gestione Accounts} & \begin{description} \item Modify (Cliente)
+		\item Modify (Stampatore)
+		\item Delete (Cliente)
+		\item Delete (Stampatore)
+		\item Create (Cliente)
+		\item Create (Stampatore)
+		\end{description}\\
 		\hline
-		\multirow{5}{*}{Area \textbf{Gestione Informazioni}} & Core (Pagina)\\
-		& Access (Pagina)\\
-		& Modify (Pagina)\\
-		& Delete (Pagina)\\
-		& Create (Pagina)\\
+		Area \textbf{Gestione Informazioni} & \begin{description} \item Core (Pagina)
+		\item Access (Pagina)
+		\item Modify (Pagina)
+		\item Delete (Pagina)
+		\item Create (Pagina)
+		\end{description}\\
 		\hline
-		\multirow{16}{*}{Area \textbf{Gestione Prodotti}} & Core (Maglietta, Foto)\\
-		& Core (Stampa)\\
-		& Modify (Maglietta)\\
-		& Modify (Stampa)\\
-		& Modify (Template)\\
-		& Delete (Maglietta)\\
-		& Delete (Stampa)\\
-		& Delete (Template)\\
-		& Delete (Foto)\\
-		& Create\&Connect (Maglietta, Maglietta2Foto, Maglietta2Colore, Maglietta2Sesso, Maglietta2Taglia)\\
-		& Create\&Connect (Stampa, Tema2Stampa)\\
-		& Create\&Connect (Template, Template2StampaFronte, Template2StampaRetro)\\
-		& Create (Taglia)\\
-		& Create (Sesso)\\
-		& Create (Colore)\\
-		& Create (Tema)\\
+		Area \textbf{Gestione Prodotti} & \begin{description} \item Core (Maglietta, Foto)
+		\item Core (Stampa)
+		\item Modify (Maglietta)
+		\item Modify (Stampa)
+		\item Modify (Template)
+		\item Delete (Maglietta)
+		\item Delete (Stampa)
+		\item Delete (Template)
+		\item Delete (Foto)
+		\item Create\&Connect (Maglietta, Maglietta2Foto, Maglietta2Colore, Maglietta2Sesso, Maglietta2Taglia)
+		\item Create\&Connect (Stampa, Tema2Stampa)
+		\item Create\&Connect (Template, Template2StampaFronte, Template2StampaRetro)
+		\item Create (Taglia)
+		\item Create (Sesso)
+		\item Create (Colore)
+		\item Create (Tema)
+		\end{description}\\
 		\hline
-		\multirow{8}{*}{Area \textbf{Gestione Archivio Ordini}}	& Core(Ordine, RigaOrdine)\\
-		& Core (Maglietta)\\
-		& Core (Stampa)\\
-		& Access (Ordine, Ordine)\\
-		& Interconnection (Configurazione2Maglietta)\\
-		& Interconnection (Configurazione2StampaFronte)\\
-		& Interconnection (Configurazione2StampaRetro)\\
-		& Interconnection (RigaOrdine2Configurazione)\\
+		Area \textbf{Gestione Archivio Ordini}	& \begin{description} \item Core(Ordine, RigaOrdine)
+		\item Core (Maglietta)
+		\item Core (Stampa)
+		\item Access (Ordine, Ordine)
+		\item Interconnection (Configurazione2Maglietta)
+		\item Interconnection (Configurazione2StampaFronte)
+		\item Interconnection (Configurazione2StampaRetro)
+		\item Interconnection (RigaOrdine2Configurazione)
+		\end{description}\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -2391,5 +2403,166 @@ E' necessario precisare alcune particolarità, comuni a più site view, emerse dur
 \end{itemize}
 
 \subsection{Site View Pubblica}
+\begin{center}
+	\includegraphics[height=19cm]{Immagini/SiteViewPubblica.png}\\
+	\textit{Fig. 3.1: Site View Pubblica}
+\end{center}
 
+\subsubsection{Area Home Page}
+\begin{center}
+	\includegraphics[height=10cm]{Immagini/SiteViewPubblicaHomePage.png}\\
+	\textit{Fig. 3.2.1: Area HomePage}
+\end{center}
+L'Area \textbf{Home} contiene tre pagine: \textit{HomePage}, \textit{Registrazione} e \textit{Complimenti
+per la Registrazione}.\\
+\begin{itemize} 
+	\item La \textit{HomePage} è la prima pagina che viene visualizzata dal visitatore nell'accesso al sito. 
+	In essa sono presenti le informazioni inserite dall'amministratore dedicate alla Home Page, l'elenco 
+	delle proposte di magliette personalizzate offerte dal sito e la form per loggarsi al sito come 
+	amministratore, cliente registrato o stampatore, e quindi accedere alla site view relativa.\\
+	Dall'elenco delle proposte si può accedere all'area prodotti per visualizzare il dettaglio delle stesse.
+	\item \textit{Registrazione} contiene un form che il visitatore può compilare se desidera accedere al sito
+	come cliente registrato. Se la registrazione va a buon fine l'utente viene rediretto ad una pagina 
+	che ne conferma il successo, e questa è la pagina \textit{Complimenti per la Registrazione}, altrimenti
+	alla pagina di errore.
+\end{itemize}
+
+\subsubsection{Area Informazioni}
+\begin{center}
+	\includegraphics[height=6cm]{Immagini/SiteViewPubblicaInformazioni.png}\\
+	\textit{Fig. 3.2.2: Area Informazioni}
+\end{center}
+L'Area \textit{Informazioni} contiene il riferimo al modulo \underline{Informazioni}:
+\begin{center}
+	\includegraphics[height=4cm]{Immagini/ModuloInformazioni.png}\\
+	\textit{Fig. 3.1.2-A: Modulo Informazioni}
+\end{center}
+Il modulo contiene una pagina \textit{Informazioni} che contiene l'elenco di tutte le informazioni 
+inserite e si può accedere al Dettaglio di ogni Informazione.\\
+E' stato deciso di creare un modulo apposito per la visualizzazione delle informazioni in quanto in 
+comune anche all'utente registrato. Questo evita la duplicazione del codice.
+
+\subsubsection{Area Prodotti}
+\begin{center}
+	\includegraphics[height=10cm]{Immagini/SiteViewPubblicaProdotti.png}\\
+	\textit{Fig. 3.1.3: Area Prodotti}
+\end{center}
+L'Area \textbf{Prodotti} contiene più pagine. 
+\begin{itemize}
+	\item Il visitatore, quando accede a quest'area visualizza la pagina \textit{I nostri Prodotti} 
+	che contiene i link hai cataloghi dei prodotti venduti dal sito, più un messaggio di benvenuto nell'area.\\
+	\item Per visualizzare il catalogo delle magliette si accede alla relativa pagina \textit{Catalogo Magliette}
+	che contiene il modulo \underline{CatalogoMagliette}:
+	\begin{center}
+		\includegraphics[height=10cm]{Immagini/ModuloCatalogoMagliett.png}\\
+		\textit{Fig. 3.1.3-A: Modulo CatalogoMagliette}
+	\end{center}
+	Questo modulo mostra l'elenco delle magliette e i possibili accesso ad esse: vengono visualizzati i 
+	colori, le taglie e i sessi disponibili, e i tipo di manica, collo e materiale tra i quali filtrare 
+	per la scelte delle magliette.\\
+	Dall'elenco delle magliette si può accedere alla pagina \textit{Dettaglio Maglietta} in cui è 
+	possibile visualizzare i dettagli di ogni singola maglietta, compresa la foto.
+	\item Per invece la visualizzazione del catalogo delle stampe, si accede alla pagina \textit{Catalogo Stampe}
+	che contiene il modulo \underline{CatalogoStampe}:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/ModuloCatalogoStampe.png}\\
+		\textit{Fig. 3.1.3-B: Modulo CatalogoStampe}
+	\end{center}
+	Questo modulo mostra l'elenco delle stampe e i temi nei quali esse sono suddivise.\\
+	Vengono visualizzate tutte le stampe inserite dall'amministratore e inoltre quelle che sono state
+	inserite dal cliente stesso, ma solamente le sue.
+	Dall'elenco delle stampe si può accedere alla pagina \textit{Dettaglio Stampa} in cui è 
+	possibile visualizzare i dettagli di ogni singola stampa.
+	\item Per visualizzare infine le proposte di magliette si accede alla pagina \textit{Le nostre
+	Proposte} che contiene il modulo \underline{ElencoProposteSenzaInattive}:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/ModuloProposte.png}\\
+		\textit{Fig. 3.1.3-C: Modulo Proposte}
+	\end{center}
+	Dall'elenco delle proposte si può accedere alla pagina \textit{Dettaglio Proposta} in cui è possibile
+	visualizzare i dettagli di ogni singola proposta, compresa foto, stampa sul fronte e stampa sul 
+	retro.
+\end{itemize}
+
+\newpage
+\subsection{Site View Cliente}
+
+\newpage
+\subsection{Site View Stampatore}
+\begin{center}
+	\includegraphics[height=15cm]{Immagini/SiteViewStampatore.png}\\
+	\textit{Fig. 3.2: Site View Stampatore}
+\end{center}
+
+\subsubsection{Pagina Home Page}
+\begin{center}
+	\includegraphics[height=5cm]{Immagini/SiteViewStampatoreHomePage.png}\\
+	\textit{Fig. 3.2.1: Pagina Home Page Stampatore}
+\end{center}
+Si è deciso di non creare un'area apposita come Home Page, ma di avere come Default della site view
+Stampatore solo una pagina di benvenuto con funzione di ""smistamento"".
+
+\subsubsection{Area Gestione Ordini}
+\begin{center}
+	\includegraphics[height=19cm]{Immagini/SiteViewStampatoreGestioneOrdini.png}\\
+	\textit{Fig. 3.2.2: Area Gestione Ordini}
+\end{center}
+L'Area \textbf{Gestione Ordini} contiene quattro pagine: \textit{Sommario Ordini}, \textit{Dettaglio
+Ordine}, \textit{Dettagli Stampe} e \textit{Conferma Spedizione}.
+\begin{itemize}
+	\item \textit{Sommario Ordini} è la pagina in cui sono presenti l'elenco degli ordini presi in
+	gestione dallo stampatore che si è loggato, gli ordini evasi (quindi affidati al corriere) dallo
+	stesso stampatore e l'elenco dei nuovi ordini non ancora presi in gestione da nessuno stampatore.\\
+	Da ognuno degli elenchi è possibile visualizzare il dettaglio di ogni singolo ordine tramite un 
+	link che si dirige alla pagina \textit{Dettaglio Ordine}.\\
+	Il modulo che viene richiamato da questa pagina, \underline{Novità}, permette allo stampatore,
+	al primo accesso alla pagina di vedere le novità dall'ultimo suo login, quindi, ad esempio, nuovi
+	ordini inseriti dai clienti, etc:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/ModuloNovita.png}\\
+		\textit{Fig. 3.2.2-A: Modulo Novità}
+	\end{center}
+	\item Nella pagina \textit{Dettaglio Ordine} è possibile visualizzare i dettagli di un ordine 
+	comprese le singole righe d'ordine. Lo stampatore ha la possibilità da questa pagina di prendere
+	in carico un'ordine o di evaderlo se ha concluso la lavorazione.\\
+	Se l'ordine viene preso in carico, verrà aggiornata la lista degli ordini e nessun altro 
+	stampatore potrà occuparsi dello stesso ordine. Il modulo che gestisce la presa in carico di un 
+	ordine è \underline{Presa in Carico}:
+	\begin{center}
+		\includegraphics[height=6cm]{Immagini/ModuloPrendiInCarico.png}\\
+		\textit{Fig. 3.2.2-B: Modulo Presa in Carico di un Ordine}
+	\end{center}
+	In questo modulo viene modificato lo stato dell'ordine da 'da-gestire' a 'in-stampa' e ne viene
+	salvata l'ora di presa in carico dell'ordine.\\
+	Se invece l'ordine viene evaso si passa alla pagina \textit{Conferma Spedizione}.
+	\item Nella pagina \textit{Dettagli Stampe} è possibile visualizzare i dettagli delle stampe di
+	ogni maglietta inserita nell'ordine.
+	\item La pagina \textit{Conferma Spedizione} permette allo stampatore di vedere i dati del cliente
+	al quale spedire la merce, per poter, ad esempio, stampare l'indirizzo di destinazione sul pacco,
+	e gli permette di inserire il numero di tracking o l'URL dell'ordine che gli è stato comunicato 
+	dal corriere in modo che il cliente possa monitorare il viaggio del suo ordine.\\
+	Il modulo che gestisce l'evasione dell'ordine è \underline{Evadi Ordine}:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/ModuloEvadiOrdine.png}\\
+		\textit{Fig. 3.2.2-C: Modulo di Evasione di un Ordine}
+	\end{center}
+	Anche in questo modulo viene modificato lo stato dell'ordine da 'in-stampa' a 'evaso' e ne viene 
+	salvata l'ora di evasione.
+\end{itemize}
+
+\subsubsection{Area Gestione Account}
+\begin{center}
+	\includegraphics[height=15cm]{Immagini/SiteViewStampatoreGestioneAccount.png}\\
+	\textit{Fig. 3.2.3: Area Gestione Account Stampatore}
+\end{center}
+L'Area \textbf{Gestione Account} contiene due pagine:
+\begin{itemize}
+	\item \textit{Il tuo profilo} in cui lo stampatore può visualizzare i suoi dati, quali username, 
+	e-mail e numero di matricola.
+	\item \textit{Modifica dati profilo} in cui lo stampatore potrà modificare, tramite form, la sua 
+	password e la sua e-mail.
+\end{itemize}
+
+\newpage
+\subsection{Site View Amministrazione}
 \end{document}

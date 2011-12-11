@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="3" gr:y="0" id="sv3#area13#page58" name="Il tuo profilo">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area13#page58" name="Il tuo profilo">
   <ContentUnits>
     <DataUnit gr:x="114" gr:y="0" id="sv3#area13#page58#dau20" name="Stampatore" entity="ent12" displayAttributes="userName email ent12#att11" linkOrder="sv3#area13#page58#dau20#ln311">
       <Selector id="sv3#area13#page58#dau20#su140" defaultPolicy="fill" booleanOperator="and">
