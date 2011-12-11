@@ -70,6 +70,9 @@
         <LinkParameter id="sv2#area8#page40#seu51#ln225#par356" name="oid_maglietta_oid" source="ent1#att1Array" target="sv2#area8#stu2.ctx1"/>
       </Link>
       <Link id="sv2#area8#page40#seu51#ln274" name="Link274" to="sv2#area8#page40#dau16" type="transport" validate="true" automaticCoupling="true"/>
+      <Link id="sv2#area8#page40#seu51#ln403" name="Link403" to="sv2#area8#stu10" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page40#seu51#ln403#par544" name="$$NULL$$_configurazione_oid" sourceValue="null" target="sv2#area8#stu10.ctx2"/>
+      </Link>
     </SelectorUnit>
     <DataUnit gr:x="331" gr:y="3" id="sv2#area8#page40#dau16" name="Foto" entity="ent5" displayAttributes="ent5#att21">
       <Selector id="sv2#area8#page40#dau16#su116" defaultPolicy="fill" booleanOperator="and">
