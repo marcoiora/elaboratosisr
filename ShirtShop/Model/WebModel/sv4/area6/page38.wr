@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1510" gr:y="1794" id="sv4#area6#page38" name="Cambia stampa retro" linkOrder="sv4#area6#page38#ln210">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1520" gr:y="1823" id="sv4#area6#page38" name="Cambia stampa retro" linkOrder="sv4#area6#page38#ln210">
   <ContentUnits>
     <IndexUnit gr:x="-1" gr:y="-1" id="sv4#area6#page38#inu24" name="Stampe" entity="ent6" linkOrder="sv4#area6#page38#inu24#ln206" displayAttributes="ent6#att23 ent6#att25">
       <Link id="sv4#area6#page38#inu24#ln206" name="seleziona" to="sv4#area6#mfu6" type="normal" validate="true">
@@ -32,7 +32,7 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv4#area6#page38#ln210" name="Rimuovi Stampa Retro" to="sv4#area6#mfu7" type="normal" validate="true">
+  <Link id="sv4#area6#page38#ln210" name="Rimuovi Stampa Retro" to="sv4#area6#mfu7" type="normal" validate="true" gr:bendpoints="-103,85,416,72;-228,86,291,73;-266,144,253,131;-517,143,-1,136">
     <LinkParameter id="sv4#area6#page38#ln210#par396" name="$$NULL$$_Stampa.oid(TemplateToStampaRetro)" sourceValue="$$NULL$$" target="sv4#area6#mfu7.rel23#role45.ent6#att22"/>
   </Link>
 </Page>

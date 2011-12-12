@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page36" name="Dettaglio Proposta" gr:x="1053" gr:y="1154" linkOrder="sv4#area6#page36#ln219 sv4#area6#page36#ln237">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area6#page36" name="Dettaglio Proposta" gr:x="1061" gr:y="1190" linkOrder="sv4#area6#page36#ln219 sv4#area6#page36#ln237">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page36#enu15" name="Modifica dati" gr:x="297" gr:y="134" linkOrder="sv4#area6#page36#enu15#ln200 sv4#area6#page36#enu15#ln201 sv4#area6#page36#enu15#ln202 sv4#area6#page36#enu15#ln238">
       <Field id="sv4#area6#page36#enu15#fld69" name="Nome" type="string" modifiable="true" preloaded="true"/>
@@ -13,8 +13,8 @@
       <Field id="sv4#area6#page36#enu15#fld77" name="Attiva" type="boolean" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page36#enu15#fld79" name="Dimensione stampa fronte" type="float" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page36#enu15#fld81" name="Dimensione stampa retro" type="float" modifiable="true" preloaded="true"/>
-      <Link id="sv4#area6#page36#enu15#ln200" name="Manica" to="sv4#area6#page28#inu12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="182,-244,110,538"/>
-      <Link id="sv4#area6#page36#enu15#ln201" name="Materiale" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="208,-238,922,594;174,-646,888,186"/>
+      <Link id="sv4#area6#page36#enu15#ln200" name="Manica" to="sv4#area6#page28#inu12" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="85,-143,245,706;40,-276,200,573;12,-564,172,285"/>
+      <Link id="sv4#area6#page36#enu15#ln201" name="Materiale" to="sv4#area6#page31#inu15" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="208,-238,922,594;199,-756,955,93;-413,-757,343,92"/>
       <Link id="sv4#area6#page36#enu15#ln202" name="Collo" to="sv4#area6#page30#inu14" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-182,66,612,168"/>
       <Link id="sv4#area6#page36#enu15#ln238" name="Salva" to="sv4#area6#miu14" type="normal" validate="true">
         <LinkParameter id="sv4#area6#page36#enu15#ln238#par423" name="Collo_collo" source="sv4#area6#page36#enu15#fld72" target="sv4#area6#miu14.mov1#mpkg1#opm7#icu7#icp50"/>
@@ -62,7 +62,7 @@
       <Link id="sv4#area6#page36#seu35#ln197" name="Link197" to="sv4#area6#page36#dau12" type="transport" validate="true" gr:bendpoints="-60,80,-193,-160;-57,188,-190,-52;75,189,-58,-51">
         <LinkParameter id="sv4#area6#page36#seu35#ln197#par380" name="TemplateToStampaRetro.oid_KeyCondition72 [oid]" source="rel23#role45_ent6#att22Array" target="sv4#area6#page36#dau12#su106#kcond72.ent6#att22"/>
       </Link>
-      <Link id="sv4#area6#page36#seu35#ln198" name="Link198" to="sv4#area6#stu4" type="transport" validate="true">
+      <Link id="sv4#area6#page36#seu35#ln198" name="Link198" to="sv4#area6#stu4" type="transport" validate="true" gr:bendpoints="-183,-26,60,96">
         <LinkParameter id="sv4#area6#page36#seu35#ln198#par382" name="oid_template_oid" source="ent1#att1Array" target="sv4#area6#stu4.ctx4"/>
       </Link>
       <Link id="sv4#area6#page36#seu35#ln236" name="Link236" to="sv4#area6#miu13" type="transport" validate="true">
@@ -205,4 +205,7 @@
   <Link id="sv4#area6#page36#ln237" name="Elimina Proposta" to="sv4#area6#miu13" automaticCoupling="true" type="normal" validate="true"/>
   <Link id="sv4#area6#page36#ln240" name="Modifica Stampa Fronte" to="sv4#area6#page37" type="normal" automaticCoupling="true" validate="true"/>
   <Link id="sv4#area6#page36#ln241" name="Modifica Stampa Retro" to="sv4#area6#page38" type="normal" automaticCoupling="true" validate="true"/>
+  <Link id="sv4#area6#page36#ln403" name="Nuovo Sesso" to="sv4#area6#miu52" type="normal" automaticCoupling="true" validate="true"/>
+  <Link id="sv4#area6#page36#ln417" name="Nuova Taglia" to="sv4#area6#miu53" type="normal" automaticCoupling="true" validate="true"/>
+  <Link id="sv4#area6#page36#ln429" name="Nuovo Colore" to="sv4#area6#miu54" type="normal" automaticCoupling="true" validate="true"/>
 </Page>

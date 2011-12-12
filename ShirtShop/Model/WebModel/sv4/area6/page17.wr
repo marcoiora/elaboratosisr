@@ -1,9 +1,9 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="95" gr:y="716" id="sv4#area6#page17" name="Aggiungi Fotografie">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="60" gr:y="683" id="sv4#area6#page17" name="Aggiungi Fotografie">
   <ContentUnits>
     <EntryUnit gr:x="188" gr:y="4" id="sv4#area6#page17#enu6" name="Inserisci Fotografia" linkOrder="sv4#area6#page17#enu6#ln85 sv4#area6#page17#enu6#ln409 sv4#area6#page17#enu6#ln419" fieldOrder="sv4#area6#page17#enu6#sfld13 sv4#area6#page17#enu6#fld17 sv4#area6#page17#enu6#fld24">
       <Field id="sv4#area6#page17#enu6#fld17" name="Fotografia" type="blob" modifiable="true" contentType="image"/>
       <Field id="sv4#area6#page17#enu6#fld24" name="Commento" type="text" modifiable="true" contentType="text/html"/>
-      <Link id="sv4#area6#page17#enu6#ln85" name="Fine" to="sv4#area6#page24" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="78,-380,-562,210;350,-380,-290,210"/>
+      <Link id="sv4#area6#page17#enu6#ln85" name="Fine" to="sv4#area6#page24" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="228,-235,-310,395;234,-311,-304,319"/>
       <SelectionField id="sv4#area6#page17#enu6#sfld13" name="Colore e Sesso" type="string"/>
       <Link id="sv4#area6#page17#enu6#ln409" name="Salva e Fine" to="sv4#area6#seu84" type="normal" validate="true">
         <LinkParameter id="sv4#area6#page17#enu6#ln409#par682" name="Colore e Sesso_KeyCondition124 [oid]" source="sv4#area6#page17#enu6#sfld13" target="sv4#area6#seu84#su187#kcond124.ent16#att64"/>

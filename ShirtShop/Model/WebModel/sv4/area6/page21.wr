@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="703" gr:y="777" id="sv4#area6#page21" name="Dettaglio Stampa" linkOrder="sv4#area6#page21#ln102 sv4#area6#page21#ln145">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="711" gr:y="813" id="sv4#area6#page21" name="Dettaglio Stampa" linkOrder="sv4#area6#page21#ln102 sv4#area6#page21#ln145">
   <ContentUnits>
-    <EntryUnit id="sv4#area6#page21#enu11" name="Dettaglio Stampa" ajaxEnableExpandedLinks="true" gr:x="117" gr:y="111" linkOrder="sv4#area6#page21#enu11#ln143">
+    <EntryUnit id="sv4#area6#page21#enu11" name="Dettaglio Stampa" ajaxEnableExpandedLinks="true" gr:x="173" gr:y="114" linkOrder="sv4#area6#page21#enu11#ln143">
       <Field id="sv4#area6#page21#enu11#fld42" name="Nome" type="string" modifiable="true" preloaded="true"/>
       <Field id="sv4#area6#page21#enu11#fld43" name="Descrizione" type="text" modifiable="true" contentType="text/html" preloaded="true"/>
       <MultiSelectionField id="sv4#area6#page21#enu11#msfld8" name="Tema" type="string"/>
@@ -54,7 +54,7 @@
       <Link id="sv4#area6#page21#seu12#ln142" name="Link142" to="sv4#area6#miu7" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page21#seu12#ln142#par258" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu7.mov1#mpkg1#opm8#icu8#icp64"/>
       </Link>
-      <Link id="sv4#area6#page21#seu12#ln144" name="Link144" to="sv4#area6#miu8" type="transport" validate="true">
+      <Link id="sv4#area6#page21#seu12#ln144" name="Link144" to="sv4#area6#miu8" type="transport" validate="true" gr:bendpoints="78,120,-126,-114">
         <LinkParameter id="sv4#area6#page21#seu12#ln144#par266" name="oid_oid" source="ent6#att22Array" target="sv4#area6#miu8.mov1#mpkg1#opm11#icu12#icp70"/>
       </Link>
     </SelectorUnit>
