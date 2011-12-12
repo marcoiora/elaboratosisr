@@ -18,6 +18,9 @@
         <LinkParameter id="sv2#area8#page44#seu53#ln289#par449" name="TemplateToStampaFronte.oid_Stampa.oid(ConfigurazioneToStampaFronte)" source="rel22#role43_ent6#att22Array" target="sv2#area8#cru13.rel11#role21.ent6#att22"/>
         <LinkParameter id="sv2#area8#page44#seu53#ln289#par450" name="TemplateToStampaRetro.oid_Stampa.oid(ConfigurazioneToStampaRetro)" source="rel23#role45_ent6#att22Array" target="sv2#area8#cru13.rel12#role23.ent6#att22"/>
       </Link>
+      <Link id="sv2#area8#page44#seu53#ln340" name="Link340" to="sv2#area8#stu11" type="transport" validate="true">
+        <LinkParameter id="sv2#area8#page44#seu53#ln340#par211" name="$$NULL$$_configurazione_oid" sourceValue="null" target="sv2#area8#stu11.ctx2"/>
+      </Link>
     </SelectorUnit>
     <SelectorUnit id="sv2#area8#page44#seu54" name="Sessi" gr:x="0" gr:y="110" entity="ent4">
       <Selector id="sv2#area8#page44#seu54#su119" defaultPolicy="fill" booleanOperator="and">

@@ -209,5 +209,7 @@
         <LinkParameter id="sv2#area8#mathu1#oln175#par758" name="Quantit&#224;_PASSING_quantita" sourceLinkParameter="sv2#area8#page68#enu27#ln427#par757" target="sv2#area8#mfu18.ent8#att33"/>
       </OKLink>
     </MathUnit>
+    <SetUnit id="sv2#area8#stu10" contextParameters="ctx2" gr:x="691" gr:y="636" name="reset configurazione"/>
+    <SetUnit id="sv2#area8#stu11" contextParameters="ctx2" gr:x="96" gr:y="470" name="reset configurazione"/>
   </OperationUnits>
 </Area>

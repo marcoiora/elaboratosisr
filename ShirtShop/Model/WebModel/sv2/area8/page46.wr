@@ -11,7 +11,7 @@
     </MultiMessageUnit>
     <MultiMessageUnit gr:x="0" gr:y="91" id="sv2#area8#page46#mssu2" name="Errori"/>
     <ModuleInstanceUnit gr:x="50" gr:y="0" id="sv2#area8#page46#miu16" name="Visualizza Carrello" moduleId="mov1#mpkg2#ctm1">
-      <Link id="sv2#area8#page46#miu16#ln254" to="sv2#area8#page46#mssu1" type="transport" validate="true" name="Link234">
+      <Link id="sv2#area8#page46#miu16#ln254" to="sv2#area8#page46#mssu1" type="transport" validate="true" name="Link234" codeRef="mov1#mpkg2#ctm1#ocu1">
         <LinkParameter id="sv2#area8#page46#miu16#ln254#par67" source="mov1#mpkg2#ctm1#ocu1#ocp1" name="ordine_oid_PASSING" passing="true"/>
       </Link>
     </ModuleInstanceUnit>
