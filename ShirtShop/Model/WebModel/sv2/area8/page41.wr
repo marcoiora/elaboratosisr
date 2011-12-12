@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="906" gr:y="1160" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1000" gr:y="960" id="sv2#area8#page41" name="Step 2 - Personalizzazione Anteriore">
   <ContentUnits>
     <EntryUnit gr:x="204" gr:y="84" id="sv2#area8#page41#enu19" linkOrder="sv2#area8#page41#enu19#ln229 sv2#area8#page41#enu19#ln264" fieldOrder="sv2#area8#page41#enu19#fld38 sv2#area8#page41#enu19#fld30" name="Stampa sul fronte">
       <Field id="sv2#area8#page41#enu19#fld29" name="stampa_oid" type="integer" modifiable="true" preloaded="true" hidden="true"/>
@@ -13,11 +13,11 @@
         <LinkParameter id="sv2#area8#page41#enu19#ln229#par306" name="stampa_oid_Stampa.oid(ConfigurazioneToStampaFronte)" source="sv2#area8#page41#enu19#fld29" target="sv2#area8#mfu3.rel11#role21.ent6#att22"/>
       </Link>
       <Field id="sv2#area8#page41#enu19#fld38" name="Stampa selezionata" type="string" modifiable="false" preloaded="true" ajaxEventEnabled="false" ajaxEventType="blur"/>
-      <Link id="sv2#area8#page41#enu19#ln264" name="Nessuna Stampa" to="sv2#area8#seu52" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area8#page41#enu19#ln264" name="Nessuna Stampa" to="sv2#area8#seu52" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-184,98,430,64;-328,52,286,18"/>
     </EntryUnit>
     <MultiMessageUnit gr:x="344" gr:y="144" id="sv2#area8#page41#mssu7" linkOrder="sv2#area8#page41#mssu7#ln234">
       <Message xml:space="preserve">Non trovi una stampa che ti si addica?</Message>
-      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#miu39" type="normal" validate="true"/>
+      <Link id="sv2#area8#page41#mssu7#ln234" name="Carica la tua stampa personalizzata!" to="sv2#area8#miu39" type="normal" validate="true" gr:bendpoints="100,-88,140,174;100,-238,140,24"/>
     </MultiMessageUnit>
     <ModuleInstanceUnit id="sv2#area8#page41#miu32" name="StatoPersonalizzazione" gr:x="315" gr:y="4" moduleId="mov1#mpkg2#ctm4"/>
     <MultiMessageUnit id="sv2#area8#page41#mssu18" name="Step di Personalizzazione Stampa Anteriore" gr:x="0" gr:y="0">

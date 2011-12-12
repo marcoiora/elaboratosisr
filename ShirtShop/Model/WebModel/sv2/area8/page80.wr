@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page80" name="Catalogo Stampe" landmark="true" gr:x="234" gr:y="1998">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page80" name="Catalogo Stampe" landmark="true" gr:x="50" gr:y="1560">
   <ContentUnits>
     <ModuleInstanceUnit id="sv2#area8#page80#miu45" name="CatalogoStampeInstance" linkOrder="sv2#area8#page80#miu45#ln397" gr:x="0" gr:y="0" moduleId="mov1#mpkg4#ctm3">
       <Link id="sv2#area8#page80#miu45#ln397" name="Dettaglio stampa" to="sv2#area8#page81#dau43" type="normal" validate="true">

@@ -1,8 +1,8 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1544" gr:y="514" id="sv2#area8#page46" name="Procedi all'acquisto (conferma)">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1530" gr:y="350" id="sv2#area8#page46" name="Procedi all'acquisto (conferma)">
   <ContentUnits>
     <MultiMessageUnit gr:x="224" gr:y="24" id="sv2#area8#page46#mssu1" name="Avviso" linkOrder="sv2#area8#page46#mssu1#ln36 sv2#area8#page46#mssu1#ln232">
       <Message xml:space="preserve">Si conferma l'acquisto?</Message>
-      <Link id="sv2#area8#page46#mssu1#ln36" name="Annulla" to="sv2#area8#page39" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-25,-171,234,145">
+      <Link id="sv2#area8#page46#mssu1#ln36" name="Annulla" to="sv2#area8#page39" automaticCoupling="true" type="normal" validate="true">
         <Comment xml:space="preserve">No</Comment>
       </Link>
       <Link id="sv2#area8#page46#mssu1#ln232" name="Conferma" to="sv2#area8#tmu1" type="normal" validate="true">

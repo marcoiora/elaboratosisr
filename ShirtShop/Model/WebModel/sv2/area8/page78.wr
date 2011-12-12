@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page78" name="Dettaglio Maglietta" gr:x="1184" gr:y="208">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page78" name="Dettaglio Maglietta" gr:x="1240" gr:y="10">
   <ContentUnits>
     <DataUnit id="sv2#area8#page78#dau35" name="Maglietta" gr:x="0" gr:y="0" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8 ent1#att9" entity="ent1">
       <Selector id="sv2#area8#page78#dau35#su171" defaultPolicy="fill" booleanOperator="and">
@@ -15,7 +15,7 @@
       </Selector>
     </MultiDataUnit>
     <NoOpContentUnit gr:x="4" gr:y="125" id="sv2#area8#page78#gctu1" name="Compra" linkOrder="sv2#area8#page78#gctu1#ln385">
-      <Link id="sv2#area8#page78#gctu1#ln385" name="Compra" to="sv2#area8#page40#seu51" type="normal" validate="true">
+      <Link id="sv2#area8#page78#gctu1#ln385" name="Compra" to="sv2#area8#page40#seu51" type="normal" validate="true" gr:bendpoints="-120,130,400,-130">
         <LinkParameter id="sv2#area8#page78#gctu1#ln385#par620" name="oid_PASSING_KeyCondition69 [oid]" sourceLinkParameter="sv2#area8#page78#dau35#ln386#par615" target="sv2#area8#page40#seu51#su114#kcond69.ent1#att1"/>
       </Link>
     </NoOpContentUnit>

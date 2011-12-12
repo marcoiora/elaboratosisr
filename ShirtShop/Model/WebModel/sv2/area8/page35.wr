@@ -1,7 +1,7 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1076" gr:y="60" id="sv2#area8#page35" name="Catalogo Magliette" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1050" gr:y="10" id="sv2#area8#page35" name="Catalogo Magliette" landmark="true">
   <ContentUnits>
     <ModuleInstanceUnit gr:x="0" gr:y="-1" id="sv2#area8#page35#miu43" name="Catalogo Magliette" moduleId="mov1#mpkg4#ctm2" linkOrder="sv2#area8#page35#miu43#ln378 sv2#area8#page35#miu43#ln384">
-      <Link id="sv2#area8#page35#miu43#ln378" name="Link378" to="sv2#area8#page40#seu51" type="normal" validate="true" codeRef="mov1#mpkg4#ctm2#ocu7">
+      <Link id="sv2#area8#page35#miu43#ln378" name="Link378" to="sv2#area8#page40#seu51" type="normal" validate="true" codeRef="mov1#mpkg4#ctm2#ocu7" gr:bendpoints="-60,236,296,-142">
         <LinkParameter id="sv2#area8#page35#miu43#ln378#par516" name="oid_KeyCondition69 [oid]" source="mov1#mpkg4#ctm2#ocu7#ocp18" target="sv2#area8#page40#seu51#su114#kcond69.ent1#att1"/>
       </Link>
       <Link id="sv2#area8#page35#miu43#ln384" name="Link379" to="sv2#area8#page78#dau35" codeRef="mov1#mpkg4#ctm2#ocu2" type="normal" validate="true">

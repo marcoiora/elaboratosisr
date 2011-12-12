@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1926" gr:y="340" id="sv2#area8#page68" name="Modifica Quantit&#224;" layout:pageLayout="ShirtShopStyle/Basic">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1740" gr:y="730" id="sv2#area8#page68" name="Modifica Quantit&#224;" layout:pageLayout="ShirtShopStyle/Basic">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="111" id="sv2#area8#page68#enu27" name="Modifica carrello" linkOrder="sv2#area8#page68#enu27#ln427">
       <Field id="sv2#area8#page68#enu27#fld113" name="Quantit&#224;" type="integer" modifiable="true" preloaded="true"/>
@@ -14,10 +14,10 @@
       <Link id="sv2#area8#page68#seu77#ln425" name="Link425" to="sv2#area8#page68#enu27" type="transport" validate="true">
         <LinkParameter id="sv2#area8#page68#seu77#ln425#par751" name="quantita_Quantit&#224;" source="ent8#att33Array" target="sv2#area8#page68#enu27#fld113_slot"/>
       </Link>
-      <Link id="sv2#area8#page68#seu77#ln426" name="Link426" to="sv2#area8#mfu18" type="transport" validate="true" gr:bendpoints="-75,45,-76,-198;-75,150,-76,-93">
+      <Link id="sv2#area8#page68#seu77#ln426" name="Link426" to="sv2#area8#mfu18" type="transport" validate="true" gr:bendpoints="-88,60,32,-284;-82,252,38,-92">
         <LinkParameter id="sv2#area8#page68#seu77#ln426#par752" name="oid_KeyCondition129 [oid]" source="ent8#att31Array" target="sv2#area8#mfu18#su196#kcond129.ent8#att31"/>
       </Link>
-      <Link id="sv2#area8#page68#seu77#ln428" name="Link428" to="sv2#area8#mathu1" type="transport" validate="true" gr:bendpoints="113,31,-38,-176">
+      <Link id="sv2#area8#page68#seu77#ln428" name="Link428" to="sv2#area8#mathu1" type="transport" validate="true" gr:bendpoints="90,72,36,-216">
         <LinkParameter id="sv2#area8#page68#seu77#ln428#par755" name="prezzoSingolo_prezzounitario" source="ent8#att32Array" target="sv2#area8#mathu1#mathv2"/>
       </Link>
     </SelectorUnit>

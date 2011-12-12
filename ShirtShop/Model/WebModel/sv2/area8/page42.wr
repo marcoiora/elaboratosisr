@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page42" name="Step 3 - Personalizzazione Posteriore" gr:x="866" gr:y="1684">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page42" name="Step 3 - Personalizzazione Posteriore" gr:x="880" gr:y="1330">
   <ContentUnits>
     <EntryUnit id="sv2#area8#page42#enu20" gr:x="173" gr:y="22" linkOrder="sv2#area8#page42#enu20#ln244 sv2#area8#page42#enu20#ln265" name="Stampa sul retro" fieldOrder="sv2#area8#page42#enu20#fld39 sv2#area8#page42#enu20#fld32">
       <Field id="sv2#area8#page42#enu20#fld31" name="stampa_oid" type="integer" modifiable="true" preloaded="true" hidden="true"/>

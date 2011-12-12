@@ -2486,6 +2486,74 @@ L'Area \textbf{Prodotti} contiene più pagine.
 
 \newpage
 \subsection{Site View Cliente}
+\begin{center}
+	\includegraphics[height=19cm]{Immagini/SiteViewCliente.png}\\
+	\textit{Fig. 3.2: Site View Cliente}
+\end{center}
+
+\subsubsection{Pagina Home Cliente}
+\begin{center}
+	\includegraphics[height=5cm]{Immagini/SiteViewClienteHomeCliente.png}\\
+	\textit{Fig. 3.2.1: Pagina Home Cliente}
+\end{center}
+Si è deciso di non creare un'area apposita come Home Page, ma di avere come Default della site view
+Cliente solo una pagina.\\ 
+Oltre ad un messaggio di benvenuto, la pagina contiene il modulo per la 
+visualizzazione delle proposte \underline{MostraPropostePerClienti}:
+\begin{center}
+	\includegraphics[height=5cm]{Immagini/ModuloMostraPropostePerClienti.png}\\
+	\textit{Fig. 3.2.1-A: Modulo per la visualizzazione delle proposte}
+\end{center}
+Da questo modulo due link portano all'Area \textbf{Web Market}, uno per la visualizzazione dei dettagli
+di una proposta e l'altro per l'acquisto della stessa.\\
+Nella pagina \textbf{Home Cliente} è presente anche il modulo \underline{Novità}:
+\begin{center}
+	\includegraphics[height=5cm]{Immagini/ModuloNovitaCliente.png}\\
+	\textit{Fig. 3.2.1-B: Modulo per la visualizzazione delle novità degli ordini}
+\end{center}
+Questo modulo permette al cliente, al primo accesso alla pagina di vedere le novità dall'ultimo suo 
+login, quindi, ad esempio, se i suoi ordini sono stati presi in carico o evasi.
+
+\subsubsection{Area Web Market}
+\begin{center}
+	\includegraphics[height=15cm]{Immagini/SiteViewClienteWebMarket.png}\\
+	\textit{Fig. 3.2.3: Area Web Market}
+\end{center}
+L'Area \textbf{Web Market} contiene le pagine necessarie al cliente per la personalizzazione e l'acquisto
+di una maglietta.
+\begin{itemize}
+	\item \textit{I nostri Prodotti} mostra un messaggio di benvenuto nell'area e link ai cataloghi
+	dei prodotti offerti: \textit{Catalogo Magliette}, \textit{Catalogo Stampe} e \textit{Proposte 
+	da ShirtShop}
+	\item \textit{Catalogo Magliette} è la pagina in cui è presente l'elenco delle magliette disponibili
+	visualizzabili e i filtri per la consultazione tramite il modulo \underline{CatalogoMagliette}, 
+	lo stesso utilizzato nell'Area \textbf{Pubblica}.\\
+	Poichè, in questo caso è presente l'id di un cliente loggato, oltre al link per visualizzare i 
+	dettagli della maglietta che porta alla pagina \textit{Dettaglio Maglietta}, compare il link per
+	l'acquisto della stessa che porta alla pagina \textit{Step 1 - Caratteristiche}.
+	\item \textit{Dettaglio Magliette} è la pagina da cui è possibile visualizzare tutti i dettagli 
+	di una maglietta, comprese le foto. Inoltre vi è un link per l'acquisto della maglietta che porta
+	alla pagina \textit{Step 1 - Caratteristiche}
+	\item Nella pagina \textit{Step 1 - Caratteristiche} il cliente potrà configurare la maglietta 
+	scelta, colore, taglia e sesso. Dalla scelta effettuata verrà mostrata la foto per colore e sesso
+	scelto.\\
+	Vengono sempre visualizzate le informazioni generali della maglietta che si vuole acquistare,
+	quali tipo di manica, di collo, materiale, prezzo e nome, grazie al modulo \underline{StatoPersonalizzazione}:
+	\begin{center}
+		\includegraphics[height=4cm]{Immagini/ModuloStatoPersonalizzazione.png}\\
+		\textit{Fig. 3.2.3-A: Modulo Stato della Personalizzazione}
+	\end{center}
+	In questo, come nei successivi step della personalizzazione di una maglietta, è presente un 
+	messaggio che informa l'utente sul punto in cui si trova durante la configurazione.\\
+	Da questa pagina, l'utente può confermare la configurazione scelta e procedere, tramite un link, 
+	alla creazione della configurazione. Viene valutata la possibilità di inserire stampe sulla maglietta
+	scelta fronte e/o retro. Se la maglietta non risulta stampabile ne sul fronte, ne sul retro, 
+	il cliente viene rediretto alla pagina \textit{Step 4 - Aggiungi al carrello}. Altrimenti se è 
+	stampabile sul fronte viene indirizzato alla pagina \textit{Step 2 - Personalizzazione Anteriore}, 
+	se è stampabile sul retro alla pagina \textit{Step 3 - Personalizzazione Posteriore}.
+	\item \textit{Step 2 - Personalizzazione Anteriore}
+	
+\end{itemize}
 
 \newpage
 \subsection{Site View Stampatore}

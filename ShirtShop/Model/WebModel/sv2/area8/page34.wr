@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="344" gr:y="158" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="350" gr:y="60" id="sv2#area8#page34" name="Proposte da ShirtShop" landmark="true">
   <ContentUnits>
     <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#area8#page34#miu30" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#area8#page34#miu30#ln393 sv2#area8#page34#miu30#ln366">
       <Link id="sv2#area8#page34#miu30#ln366" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6">
