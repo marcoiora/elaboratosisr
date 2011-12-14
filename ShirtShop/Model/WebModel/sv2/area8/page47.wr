@@ -1,7 +1,7 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1340" gr:y="670" id="sv2#area8#page47" name="TrasformaInOrdine">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1340" gr:y="670" id="sv2#area8#page47" name="Trasforma In Ordine">
   <ContentUnits>
     <MultiMessageUnit id="sv2#area8#page47#mssu6" name="Messaggio" gr:x="19" gr:y="19" linkOrder="sv2#area8#page47#mssu6#ln251 sv2#area8#page47#mssu6#ln253">
-      <Link id="sv2#area8#page47#mssu6#ln251" name="Torna alla home page" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="418,-6,702,-572;746,-142,1030,-708"/>
+      <Link id="sv2#area8#page47#mssu6#ln251" name="Torna al Web Market" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="418,-6,702,-572;746,-142,1030,-708"/>
       <Link id="sv2#area8#page47#mssu6#ln253" name="Visualizza i miei ordini" to="sv2#area11" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="452,-92,-962,456"/>
     </MultiMessageUnit>
   </ContentUnits>

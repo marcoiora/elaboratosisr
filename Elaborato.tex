@@ -2411,7 +2411,7 @@ E' necessario precisare alcune particolarità, comuni a più site view, emerse dur
 \subsubsection{Area Home Page}
 \begin{center}
 	\includegraphics[height=10cm]{Immagini/SiteViewPubblicaHomePage.png}\\
-	\textit{Fig. 3.2.1: Area HomePage}
+	\textit{Fig. 3.1.1: Area HomePage}
 \end{center}
 L'Area \textbf{Home} contiene tre pagine: \textit{HomePage}, \textit{Registrazione} e \textit{Complimenti
 per la Registrazione}.\\
@@ -2430,7 +2430,7 @@ per la Registrazione}.\\
 \subsubsection{Area Informazioni}
 \begin{center}
 	\includegraphics[height=6cm]{Immagini/SiteViewPubblicaInformazioni.png}\\
-	\textit{Fig. 3.2.2: Area Informazioni}
+	\textit{Fig. 3.1.2: Area Informazioni}
 \end{center}
 L'Area \textit{Informazioni} contiene il riferimo al modulo \underline{Informazioni}:
 \begin{center}
@@ -2525,20 +2525,24 @@ di una maglietta.
 	\item \textit{I nostri Prodotti} mostra un messaggio di benvenuto nell'area e link ai cataloghi
 	dei prodotti offerti: \textit{Catalogo Magliette}, \textit{Catalogo Stampe} e \textit{Proposte 
 	da ShirtShop}
+	
 	\item \textit{Catalogo Magliette} è la pagina in cui è presente l'elenco delle magliette disponibili
-	visualizzabili e i filtri per la consultazione tramite il modulo \underline{CatalogoMagliette}, 
+	e i filtri per la consultazione, realizzato tramite il modulo \underline{CatalogoMagliette}, 
 	lo stesso utilizzato nell'Area \textbf{Pubblica}.\\
 	Poichè, in questo caso è presente l'id di un cliente loggato, oltre al link per visualizzare i 
 	dettagli della maglietta che porta alla pagina \textit{Dettaglio Maglietta}, compare il link per
 	l'acquisto della stessa che porta alla pagina \textit{Step 1 - Caratteristiche}.
+	
 	\item \textit{Dettaglio Magliette} è la pagina da cui è possibile visualizzare tutti i dettagli 
 	di una maglietta, comprese le foto. Inoltre vi è un link per l'acquisto della maglietta che porta
 	alla pagina \textit{Step 1 - Caratteristiche}
+	
 	\item Nella pagina \textit{Step 1 - Caratteristiche} il cliente potrà configurare la maglietta 
-	scelta, colore, taglia e sesso. Dalla scelta effettuata verrà mostrata la foto per colore e sesso
-	scelto.\\
+	scelta, colore, taglia e sesso. Dalla scelta effettuata verrà mostrata la foto per la configurazione
+	colore e sesso scelta.\\
 	Vengono sempre visualizzate le informazioni generali della maglietta che si vuole acquistare,
-	quali tipo di manica, di collo, materiale, prezzo e nome, grazie al modulo \underline{StatoPersonalizzazione}:
+	quali tipo di manica, di collo, materiale, prezzo e nome, grazie al modulo \underline{StatoPersonalizzazione}
+	presente in ogni step della configurazione:
 	\begin{center}
 		\includegraphics[height=4cm]{Immagini/ModuloStatoPersonalizzazione.png}\\
 		\textit{Fig. 3.2.3-A: Modulo Stato della Personalizzazione}
@@ -2546,14 +2550,149 @@ di una maglietta.
 	In questo, come nei successivi step della personalizzazione di una maglietta, è presente un 
 	messaggio che informa l'utente sul punto in cui si trova durante la configurazione.\\
 	Da questa pagina, l'utente può confermare la configurazione scelta e procedere, tramite un link, 
-	alla creazione della configurazione. Viene valutata la possibilità di inserire stampe sulla maglietta
-	scelta fronte e/o retro. Se la maglietta non risulta stampabile ne sul fronte, ne sul retro, 
+	al completamento della configurazione. Viene valutata la possibilità di inserire stampe sulla maglietta
+	scelta, fronte e/o retro. Se la maglietta non risulta stampabile ne sul fronte, ne sul retro, 
 	il cliente viene rediretto alla pagina \textit{Step 4 - Aggiungi al carrello}. Altrimenti se è 
 	stampabile sul fronte viene indirizzato alla pagina \textit{Step 2 - Personalizzazione Anteriore}, 
-	se è stampabile sul retro alla pagina \textit{Step 3 - Personalizzazione Posteriore}.
-	\item \textit{Step 2 - Personalizzazione Anteriore}
+	se è stampabile anche o solo sul retro invece viene reindirizzato alla pagina \textit{Step 3 - 
+	Personalizzazione Posteriore}.
 	
+	\item \textit{Step 2 - Personalizzazione Anteriore}, esattamente come \textit{Step 3 - Personalizzazione
+	Posteriore}, è una pagina che propone le stampe disponibili fra cui scegliere tramite il modulo
+	\underline{CatalogoStampeSelezione}:
+	\begin{center}
+		\includegraphics[height=4cm]{Immagini/ModuloCatalogoStampeSelezione.png}\\
+		\textit{Fig. 3.2.3-B: Modulo del catalogo delle stampe da selezionare per la personalizzazione}
+	\end{center}
+	Tramite questo modulo il cliente può vedere anche le eventuali stampe personali che aveva aggiunto
+	in precedenza e i dettagli di ogni stampa.\\
+	L'utente sceglie la stampa e le dimensione che vuole abbia sulla maglietta in percentuale (scelta
+	tra 0 e 1).\\
+	Se l'utente vuole stampare sulla maglietta scelta una sua stampa personale, ha la possibilità di 
+	aggiungerla grazie al modulo \underline{Carica Stampa} \underline {Personalizzata}:
+	\begin{center}
+		\includegraphics[height=3cm]{Immagini/ModuloCaricaStampaPersonalizzata.png}\\
+		\textit{Fig. 3.2.3-C: Modulo per il caricamente di una stampa da parte di un cliente}
+	\end{center}
+	L'utente carica la stampa ad alta risoluzione, pronta quindi per la stampa. Il modulo automaticamente
+	crea un'anteprima della stampa caricata.\\
+	Vengono salvati i dati della stampa scelta, sia nel caso di stampa caricata dall'utente che quando 
+	è stata scelta dall'elenco proposto dal sito.
+	
+	\item \textit{Step 3 - Personalizzazione Posteriore}, come detto, è l'equivalente della personalizzazione
+	di una stampa anteriore.
+	
+	\item Nella pagina \textit{Step 4 - Aggiungi al carrello} viene riproposto un riassunto delle 
+	scelte effettuate dal cliente riguardo la maglietta e la/e eventuale/i stampa/e.\\
+	Viene quindi chiesta la quantità di magliette così personalizzate che si vuole acquistare.\\
+	Una volta decisa la quantità tramite il link 'Aggiungi!', tramite il modulo \underline{Crea o 
+	recupera Carrello} è possibile creare un nuovo carrello o verificare se ne esiste già uno ed aggiungere
+	la nuova configurazione a carrello:
+	\begin{center}
+		\includegraphics[height=8cm]{Immagini/ModuloCreaCaricaCarrello.png}\\
+		\textit{Fig. 3.2.3-D: Modulo per la creazione o il recupero del carrello}
+	\end{center}
+	Il cliente viene indirizzato alla pagina \textit{Carrello}.
+	
+	\item La pagina \textit{Carrello} permette la visualizzazione delle righe d'ordine di un carrello.
+	Il modulo predispo a questo scopo è \underline{VisualizzaCarrello}:
+	\begin{center}
+		\includegraphics[height=4cm]{Immagini/ModuloVisualizzaCarrello.png}\\
+		\textit{Fig. 3.2.3-E: Modulo per la visualizzazione del carrello}
+	\end{center}
+	E' possibile vedere, inoltre, il totale del carrello e cancellare o modificare (in quantità ordinata)
+	le righe dell'ordine andando sulla pagina \textit{Modifica Quantità}.\\
+	Da qui l'utente può continuare a fare acquisti o confermare il carrello facendolo diventare un 
+	ordine (con conferma due volte della volontà di ordinare essendo reindirizzato alla pagina \textit{
+	Procedi all'acquisto (conferma)}.\\
+	Se viene nuovamente confermato l'ordine si passa alla pagina \textit{Trasforma In Ordine}, dove un 
+	messaggio comunicherà l'accettazione dell'ordine.
+	
+	\item La pagina \textit{Modifica Quantità} permette la modifica della quantità di una riga d'ordine,
+	viene ricalcolato il prezzo con la nuova quantità e si ritorna alla pagina del carrello con le 
+	nuove quantità.
+	
+	\item \textit{Trasforma In Ordine} inoltre ha due link uno per tornare alla pagina di web market
+	e l'altro per visualizzare i propri ordini effettuati e quindi indirizzato all'area \textbf{I 
+	Miei Ordini}.
+	
+	\item \textit{Catalogo Stampe} è la pagina in cui è presente l'elenco delle stampe disponibili
+	e il filtro sul tema per la consultazione, realizzato tramite il modulo \underline{CatalogoStampe}, 
+	lo stesso utilizzato nell'Area \textbf{Pubblica}.\\
+	Poichè, in questo caso è presente l'id di un cliente loggato, compaiono anche le stampe inserite 
+	dallo stesso cliente. Un link permette di visualizzare i dettagli della stampa e porta alla pagina
+	\textit{Dettaglio Stampa}.
+	
+	\item \textit{Dettaglio Stampe} è la pagina da cui è possibile visualizzare tutti i dettagli 
+	di una Stampa, compresa la foto di anteprima. Inoltre vi è un link per visualizzare le proposte
+	che sono state realizzate con questa foto. Cliccando su questo link si viene rediretti alla pagina
+	\textit{Proposte con questa stampa} in cui sono visualizzate le proposte attive che hanno la stampa
+	selezionata o un messaggio se non ve ne sono. Da quest'ultima pagina è possibile visualizzare i 
+	dettagli della proposta o acquistare la proposta.\\
+	Nel primo caso vado nella pagina \textit{Dettagli Proposta}, nel secondo nella pagina di configurazione
+	del template: \textit{Step 1 - Caratteristiche} (diversa da quella di configurazione maglietta).
+	
+	\item \textit{Proposte da ShirShop} è la pagina di visualizzazione delle proposte offerte dal sito.\\
+	Le proposte sono magliette già associate a una o due stampe, per le quali l'utente può scegliere 
+	la taglia, il colore e il sesso fra quelli disponibili della proposta.\\
+	Questo viene realizzato tramite il modulo \underline{MostraPropostePerClienti}, già visto nella
+	pagina di home del cliente.\\
+	Da ogni proposta partono due link: un diretto alla pagina \textit{Dettaglio Proposta} per visualizzare
+	i dettagli della proposta selezionata, l'altro per l'acquisto della proposta diretto alla pagina
+	\textit{Step 1 - Caratteristiche}.
+	
+	\item La pagina \textit{Dettaglio Proposta} è la pagina da cui è possibile visualizzare tutti i 
+	dettagli di una Proposta comprese le immagini delle stampe associate e dalla proposta stessa. 
+	Vi è un link che porta alla	pagina \textit{Step 1 - Caratteristiche} per l'acquisto della proposta.
+	
+	\item \textit{Step 1 - Caratteristiche} funziona esattamente come la configurazione di una maglietta:
+	il cliente scegli la taglia, il sesso e il colore fra quelli disponibili. Non dovrà più scegliere
+	le stampe perchè già associate.\\
+	Viene quindi creata una configurazione e richiesto all'utente se vuole aggiungerla al carrello. 
+	Come visto per la configurazione di una maglietta, viene creato un nuovo carrello o aggiunta la 
+	configurazione della proposta ad un carrello che già esisteva dell'utente e si viene indirizzati
+	quindi alla pagina del carrello e si procede come già descritto.
 \end{itemize}
+
+\subsubsection{Area Informazioni}
+\begin{center}
+	\includegraphics[height=4cm]{Immagini/SiteViewClienteInformazioni.png}\\
+	\textit{Fig. 3.2.4: Area Informazioni}
+\end{center}
+L'Area \textit{Informazioni} contiene il riferimo al modulo \underline{Informazioni} visto nell'Area 
+\textbf{Pubblica}.
+
+\subsubsection{Area Gestione Account}
+\begin{center}
+	\includegraphics[height=10cm]{Immagini/SiteViewClienteGestioneAccount.png}\\
+	\textit{Fig. 3.2.5: Area Gestione Account Cliente}
+\end{center}
+L'Area \textbf{Gestione Account} contiene due pagine:
+\begin{itemize}
+	\item \textit{Il tuo profilo} in cui il cliente può visualizzare i suoi dati, quali nome, cognome,
+	indirizzo, e-mail, numero di telefono, codice fiscale, username e password.
+	\item \textit{Modifica dati profilo} in cui il cliente potrà modificare, tramite form, i suoi dati
+	tranne lo username.
+\end{itemize}
+
+\subsubsection{Area I Miei Ordini}
+\begin{center}
+	\includegraphics[height=8cm]{Immagini/SiteViewClienteOrdini.png}\\
+	\textit{Fig. 3.2.6: Area Gestione degli ordini del Cliente}
+\end{center}
+L'Area \textit{I Miei Ordini} contiene due pagine:
+\begin{itemize}
+	\item \textit{I miei ordini} in cui il cliente può vedere gli ordini che ha effettuato: ogni riga 
+	mostra i dati di un ordine quali id dell'ordine, data e ora di conferma, data e ora di presa in 
+	carico dell'ordine da parte di uno stampatore, data e ora di spedizione cioè quando l'ordine è stato 
+	affidato al corriere, prezzo totale dell'ordine, spese di spedizione, stato dell'ordine, numero 
+	di tracking se l'ordine è stato affidato al corriere per poterlo rintracciare.\\
+	Inoltre ci sono due link: uno per i dettagli del singolo ordine, l'altro per annullare l'ordine.
+	\item \textit{Dettagli Ordine} mostra le righe d'ordine, quindi i prodotti acquistati e le loro 
+	quantità.
+\end{itemize}
+Un ordine è possibile che venga annullato dal cliente se non è ancora stato preso in carico da nessuno
+stampatore, quindi solo quando è nello stato 'da-gestire'.
 
 \newpage
 \subsection{Site View Stampatore}
