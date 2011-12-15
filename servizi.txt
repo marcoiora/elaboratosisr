@@ -1,15 +1,15 @@
-- servizio lista tutte le proposte:
+- servizio lista tutte le proposte: (piccy)
 	- out: nome
 	- out: prezzo
 	- out: link al dettaglio
 
-- servizio lista nuovi ordini:
+- servizio lista nuovi ordini: (marco)
 	- in: da quando (timestamp)
 	- out: id-ordine
 	- out: data di conferma
 	- out: sommario ordine oppure dettagglio ordine (righe -> configurazioni -> magliette -> stampe)
 	
-- servizio presa in carico ordine:
+- servizio presa in carico ordine: (roberta)
 	- in: id dell'ordine
 	- in: id_stampatore
 	- out: ok o non ok
