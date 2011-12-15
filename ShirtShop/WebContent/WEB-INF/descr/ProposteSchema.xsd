@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.webml.org/webservices/wsdl/products">
+	<xsd:complexType name="PropostaType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Template">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="1" maxOccurs="1" name="nome" type="xsd:string" />
+						<xsd:element minOccurs="1" maxOccurs="1" name="descrizione" type="xsd:string" />
+						<xsd:element minOccurs="1" maxOccurs="1" name="prezzo" type="xsd:float" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
