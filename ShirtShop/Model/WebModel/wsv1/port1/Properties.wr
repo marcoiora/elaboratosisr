@@ -2,11 +2,19 @@
   <OperationUnits>
     <SolicitUnit id="wsv1#port1#slu1" name="getListaProposte" invocationStyle="REST">
       <OKLink id="wsv1#port1#slu1#oln179" name="OKLink179" to="wsv1#port1#xou1" automaticCoupling="true"/>
-      <KOLink id="wsv1#port1#slu1#kln73" name="KOLink73" to="wsv1#port1#eru1" automaticCoupling="true"/>
+      <KOLink id="wsv1#port1#slu1#kln73" name="KOLink73" to="wsv1#port1#eru1">
+        <LinkParameter id="wsv1#port1#slu1#kln73#par545" name="Exception_Fault Exception" source="exception" target="wsv1#port1#eru1.faultException"/>
+        <LinkParameter id="wsv1#port1#slu1#kln73#par553" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port1#eru1.faultMessage"/>
+      </KOLink>
     </SolicitUnit>
     <XMLOutUnit gr:x="150" gr:y="0" id="wsv1#port1#xou1" name="Extract" oldDocStyle="false">
-      <OKLink id="wsv1#port1#xou1#oln180" name="OKLink180" to="wsv1#port1#rsu1" automaticCoupling="true"/>
-      <KOLink id="wsv1#port1#xou1#kln74" name="KOLink74" to="wsv1#port1#eru1" automaticCoupling="true"/>
+      <OKLink id="wsv1#port1#xou1#oln180" name="OKLink180" to="wsv1#port1#rsu1">
+        <LinkParameter id="wsv1#port1#xou1#oln180#par593" name="Output XML Document_InfoProposte" source="xmlDocument" target="wsv1#port1#rsu1.wsv1#port1#rsu1#rsp1"/>
+      </OKLink>
+      <KOLink id="wsv1#port1#xou1#kln74" name="KOLink74" to="wsv1#port1#eru1">
+        <LinkParameter id="wsv1#port1#xou1#kln74#par554" name="Exception_Fault Exception" source="exception" target="wsv1#port1#eru1.faultException"/>
+        <LinkParameter id="wsv1#port1#xou1#kln74#par555" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port1#eru1.faultMessage"/>
+      </KOLink>
       <XMLOutEntity id="wsv1#port1#xou1#xoe1" name="Proposte" useNames="true" entity="ent13" exportedAttributes="ent1#att2 ent1#att3 ent1#att9">
         <Selector id="wsv1#port1#xou1#xoe1#su192" defaultPolicy="fill" booleanOperator="and">
           <AttributesCondition id="wsv1#port1#xou1#xoe1#su192#acond24" name="Non inattive" predicate="neq" booleanOperator="or" implied="false" value="false" attributes="ent1#att10"/>
@@ -15,7 +23,10 @@
       </XMLOutEntity>
     </XMLOutUnit>
     <ResponseUnit gr:x="260" gr:y="0" id="wsv1#port1#rsu1" name="getListaProposteResponse">
-      <KOLink id="wsv1#port1#rsu1#kln75" name="KOLink75" to="wsv1#port1#eru1" automaticCoupling="true"/>
+      <KOLink id="wsv1#port1#rsu1#kln75" name="KOLink75" to="wsv1#port1#eru1">
+        <LinkParameter id="wsv1#port1#rsu1#kln75#par556" name="Exception_Fault Exception" source="exception" target="wsv1#port1#eru1.faultException"/>
+        <LinkParameter id="wsv1#port1#rsu1#kln75#par592" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port1#eru1.faultMessage"/>
+      </KOLink>
       <ResponseParameter id="wsv1#port1#rsu1#rsp1" name="InfoProposte" xmlSchema="WEB-INF/descr/ProposteSchema.xsd" type="PropostaType[ComplexType]"/>
     </ResponseUnit>
     <ErrorResponseUnit gr:x="130" gr:y="110" id="wsv1#port1#eru1" name="ErrorResponse"/>
