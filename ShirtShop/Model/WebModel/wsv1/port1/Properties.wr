@@ -1,4 +1,4 @@
-<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="50" gr:y="70" id="wsv1#port1" name="ListaProposte">
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="10" id="wsv1#port1" name="ListaProposte">
   <OperationUnits>
     <SolicitUnit id="wsv1#port1#slu1" name="getListaProposte" invocationStyle="REST">
       <OKLink id="wsv1#port1#slu1#oln179" name="OKLink179" to="wsv1#port1#xou1" automaticCoupling="true"/>
