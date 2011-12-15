@@ -1,0 +1,15 @@
+- servizio lista tutte le proposte:
+	- out: nome
+	- out: prezzo
+	- out: link al dettaglio
+
+- servizio lista nuovi ordini:
+	- in: da quando (timestamp)
+	- out: id-ordine
+	- out: data di conferma
+	- out: sommario ordine oppure dettagglio ordine (righe -> configurazioni -> magliette -> stampe)
+	
+- servizio presa in carico ordine:
+	- in: id dell'ordine
+	- in: id_stampatore
+	- out: ok o non ok
