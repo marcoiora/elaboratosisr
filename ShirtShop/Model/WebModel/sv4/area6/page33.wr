@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="240" gr:y="1445" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln63">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="200" gr:y="1383" id="sv4#area6#page33" name="Dettaglio Maglietta" linkOrder="sv4#area6#page33#ln63 sv4#area6#page33#ln227 sv4#area6#page33#ln23 sv4#area6#page33#ln375">
   <ContentUnits>
     <EntryUnit id="sv4#area6#page33#enu10" name="Modifica dati" gr:x="283" gr:y="134" linkOrder="sv4#area6#page33#enu10#ln137 sv4#area6#page33#enu10#ln138 sv4#area6#page33#enu10#ln139 sv4#area6#page33#enu10#ln48">
       <Field id="sv4#area6#page33#enu10#fld49" name="Nome" type="string" modifiable="true" preloaded="true"/>
@@ -12,16 +12,16 @@
       <MultiSelectionField id="sv4#area6#page33#enu10#msfld13" name="Taglie disponibili" type="string"/>
       <MultiSelectionField id="sv4#area6#page33#enu10#msfld14" name="Sessi disponibili" type="string"/>
       <MultiSelectionField id="sv4#area6#page33#enu10#msfld15" name="Colori disponibili" type="string"/>
-      <Link id="sv4#area6#page33#enu10#ln137" name="manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="482,-532,-418,540;494,-854,-406,218">
+      <Link id="sv4#area6#page33#enu10#ln137" name="manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="500,-550,-167,590;507,-890,-160,250">
         <LinkParameter id="sv4#area6#page33#enu10#ln137#par43" name="Manica_manica" source="sv4#area6#page33#enu10#fld51" target="sv4#area6#page28#inu12#su24#acond1"/>
       </Link>
-      <Link id="sv4#area6#page33#enu10#ln138" name="materiale" to="sv4#area6#page31#inu15" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-124,-572,-238,550;-48,-998,-162,124">
+      <Link id="sv4#area6#page33#enu10#ln138" name="materiale" to="sv4#area6#page31#inu15" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15" gr:bendpoints="-14,-77,-133,965;-16,-260,-135,782;-124,-572,-238,550;-48,-998,-162,124">
         <LinkParameter id="sv4#area6#page33#enu10#ln138#par46" name="Materiale_materiale" source="sv4#area6#page33#enu10#fld55" target="sv4#area6#page31#inu15#su26#acond4"/>
       </Link>
       <Link id="sv4#area6#page33#enu10#ln139" name="collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="116,-146,82,246">
         <LinkParameter id="sv4#area6#page33#enu10#ln139#par47" name="Collo_collo" source="sv4#area6#page33#enu10#fld52" target="sv4#area6#page30#inu14#su25#acond2"/>
       </Link>
-      <Link id="sv4#area6#page33#enu10#ln48" name="Salva" to="sv4#area6#miu2" type="normal" validate="true" gr:bendpoints="-212,-102,128,430">
+      <Link id="sv4#area6#page33#enu10#ln48" name="Salva" to="sv4#area6#miu2" type="normal" validate="true" gr:bendpoints="-206,-102,144,371;-346,-377,4,96">
         <LinkParameter id="sv4#area6#page33#enu10#ln48#par152" name="Collo_collo" source="sv4#area6#page33#enu10#fld52" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp79"/>
         <LinkParameter id="sv4#area6#page33#enu10#ln48#par153" name="Colori disponibili_colori" source="sv4#area6#page33#enu10#msfld15" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp76"/>
         <LinkParameter id="sv4#area6#page33#enu10#ln48#par154" name="Descrizione_descrizione" source="sv4#area6#page33#enu10#fld50" target="sv4#area6#miu2.mov1#mpkg1#opm12#icu13#icp75"/>
@@ -57,14 +57,14 @@
       <Link id="sv4#area6#page33#seu16#ln129" name="Link129" to="sv4#area6#page33#seu18" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#area6#page33#seu16#ln133" name="Link133" to="sv4#area6#page33#seu19" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#area6#page33#seu16#ln135" name="Link135" to="sv4#area6#page33#seu22" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv4#area6#page33#seu16#ln140" name="Link140" to="sv4#area6#page33#inu23" type="transport" validate="true" gr:bendpoints="-74,19,13,-221;-48,128,-52,-132;-48,229,-52,-31">
+      <Link id="sv4#area6#page33#seu16#ln140" name="Link140" to="sv4#area6#page33#inu23" type="transport" validate="true" gr:bendpoints="-74,19,13,-221;-48,128,-52,-132;-119,168,-34,-72">
         <LinkParameter id="sv4#area6#page33#seu16#ln140#par199" name="oid_maglietta [oid]" source="ent1#att1Array" target="sv4#area6#page33#inu23#su66#rcond31.ent1#att1"/>
         <LinkParameter id="sv4#area6#page33#seu16#ln140#par200" name="oid_PASSING" source="ent1#att1Array" passing="true"/>
       </Link>
       <Link id="sv4#area6#page33#seu16#ln51" name="Link51" to="sv4#area6#stu1" type="transport" validate="true" gr:bendpoints="-36,-122,192,104">
         <LinkParameter id="sv4#area6#page33#seu16#ln51#par204" name="oid_maglietta_oid" source="ent1#att1Array" target="sv4#area6#stu1.ctx1"/>
       </Link>
-      <Link id="sv4#area6#page33#seu16#ln75" name="Link75" to="sv4#area6#miu3" type="transport" validate="true">
+      <Link id="sv4#area6#page33#seu16#ln75" name="Link75" to="sv4#area6#miu3" type="transport" validate="true" gr:bendpoints="-40,-103,229,53">
         <LinkParameter id="sv4#area6#page33#seu16#ln75#par223" name="oid_oid" source="ent1#att1Array" target="sv4#area6#miu3.mov1#mpkg1#opm9#icu10#icp68"/>
       </Link>
     </SelectorUnit>
@@ -126,7 +126,7 @@
       <Link id="sv4#area6#page33#gtu4#ln60" name="Link60" to="sv4#area6#page33#seu16" type="transport" validate="true">
         <LinkParameter id="sv4#area6#page33#gtu4#ln60#par212" name="maglietta_oid_KeyCondition28 [oid]" source="sv4#area6#page33#gtu4.ctx1" target="sv4#area6#page33#seu16#su61#kcond28.ent1#att1"/>
       </Link>
-      <Link id="sv4#area6#page33#gtu4#ln420" name="Link420" to="sv4#area6#page33#miu34" type="transport" validate="true">
+      <Link id="sv4#area6#page33#gtu4#ln420" name="Link420" to="sv4#area6#page33#miu34" type="transport" validate="true" gr:bendpoints="62,276,-107,-51">
         <LinkParameter id="sv4#area6#page33#gtu4#ln420#par711" name="maglietta_oid_maglietta_oid" source="sv4#area6#page33#gtu4.ctx1" target="sv4#area6#page33#miu34.mov1#mpkg1#opm3#icu19#icp5"/>
       </Link>
     </GetUnit>
@@ -140,8 +140,8 @@
         <KeyCondition id="sv4#area6#page33#seu87#su190#kcond126" name="KeyCondition126" predicate="in" implied="false"/>
       </Selector>
     </SelectorUnit>
-    <NoOpContentUnit gr:x="452" gr:y="393" id="sv4#area6#page33#gctu11" name="Aggiungi Fotografia" linkOrder="sv4#area6#page33#gctu11#ln422">
-      <Link id="sv4#area6#page33#gctu11#ln422" name="Aggiungi fotografia" to="sv4#area6#page17" type="normal" automaticCoupling="true" validate="true"/>
+    <NoOpContentUnit gr:x="414" gr:y="174" id="sv4#area6#page33#gctu11" name="Aggiungi Fotografia" linkOrder="sv4#area6#page33#gctu11#ln422">
+      <Link id="sv4#area6#page33#gctu11#ln422" name="Aggiungi fotografia" to="sv4#area6#page17" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-63,-231,401,576;-131,-259,333,548"/>
     </NoOpContentUnit>
   </ContentUnits>
   <layout:Grid>
@@ -191,5 +191,5 @@
   </ConditionExpression>
   <Link id="sv4#area6#page33#ln23" name="Nuovo Sesso" to="sv4#area6#miu49" type="normal" automaticCoupling="true" validate="true"/>
   <Link id="sv4#area6#page33#ln227" name="Nuova Taglia" to="sv4#area6#miu50" type="normal" automaticCoupling="true" validate="true"/>
-  <Link id="sv4#area6#page33#ln375" name="Nuovo Colore" to="sv4#area6#miu51" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="60,-310,-136,25"/>
+  <Link id="sv4#area6#page33#ln375" name="Nuovo Colore" to="sv4#area6#miu51" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-176,-307,20,64"/>
 </Page>

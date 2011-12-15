@@ -1,16 +1,16 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area8#page64" name="I nostri Prodotti">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="14" gr:y="0" id="sv2#area8#page64" name="I nostri Prodotti">
   <ContentUnits>
     <MultiMessageUnit id="sv2#area8#page64#mssu15" name="I cataloghi dei nostri Prodotti" gr:x="6" gr:y="0">
       <Message xml:space="preserve">Benvenuto nel Catalogo dei Prodotti di SHIRTSHOP!      Seguendo i link  qui sotto potrai visualizzare le proposte dedicate a te, il nostro catalogo di Magliette e di Stampe. Sar&#224; inoltre possibile creare la tua configurazione di Magliette ed acquistarla.</Message>
     </MultiMessageUnit>
     <NoOpContentUnit gr:x="0" gr:y="74" id="sv2#area8#page64#gctu8" name="Catalogo Magliette" linkOrder="sv2#area8#page64#gctu8#ln14">
-      <Link id="sv2#area8#page64#gctu8#ln14" name="Catalogo Magliette" to="sv2#area8#page35" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="931,-88,-64,-131"/>
+      <Link id="sv2#area8#page64#gctu8#ln14" name="Catalogo Magliette" to="sv2#area8#page35" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="210,-58,-826,10;317,-109,-757,-91;996,-132,-110,-64"/>
     </NoOpContentUnit>
     <NoOpContentUnit gr:x="160" gr:y="114" id="sv2#area8#page64#gctu9" name="Proposte" linkOrder="sv2#area8#page64#gctu9#ln32">
       <Link id="sv2#area8#page64#gctu9#ln32" name="Le nostre Proposte" to="sv2#area8#page34" automaticCoupling="true" type="normal" validate="true"/>
     </NoOpContentUnit>
     <NoOpContentUnit gr:x="0" gr:y="154" id="sv2#area8#page64#gctu10" name="Catalogo Stampe" linkOrder="sv2#area8#page64#gctu10#ln223">
-      <Link id="sv2#area8#page64#gctu10#ln223" name="Catalogo Stampe" to="sv2#area8#page80" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-11,932,-266,-907"/>
+      <Link id="sv2#area8#page64#gctu10#ln223" name="Catalogo Stampe" to="sv2#area8#page80" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-86,38,-142,-1364;-94,374,-150,-1028;74,738,-180,-1102;118,956,62,-446;128,1158,72,-244"/>
     </NoOpContentUnit>
   </ContentUnits>
   <layout:Grid>

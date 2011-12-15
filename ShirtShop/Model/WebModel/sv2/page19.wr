@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-70" gr:y="140" id="sv2#page19" name="Home Cliente" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-1070" gr:y="-2850" id="sv2#page19" name="Home Cliente" landmark="true">
   <ContentUnits>
     <MultiMessageUnit gr:x="137" gr:y="10" id="sv2#page19#mssu9" name="Benvenuto Cliente">
       <Message xml:space="preserve">Benvenuto nell'area riservata al Cliente.
@@ -6,7 +6,7 @@ Attraverso i link sulla pagina potrai creare nuove magliette attraverso il WebMa
     </MultiMessageUnit>
     <ModuleInstanceUnit gr:x="163" gr:y="82" id="sv2#page19#miu26" name="Novit&#224;" moduleId="mov1#mpkg2#ctm5"/>
     <ModuleInstanceUnit gr:x="0" gr:y="0" id="sv2#page19#miu38" name="Proposte" moduleId="mov1#mpkg2#ctm7" linkOrder="sv2#page19#miu38#ln367 sv2#page19#miu38#ln394">
-      <Link id="sv2#page19#miu38#ln367" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6">
+      <Link id="sv2#page19#miu38#ln367" name="Compra" to="sv2#area8#page44#seu53" type="normal" validate="true" codeRef="mov1#mpkg2#ctm7#ocu6" gr:bendpoints="-136,388,254,-190">
         <LinkParameter id="sv2#page19#miu38#ln367#par591" name="oid_proposta_selezionata_KeyCondition80 [oid]" source="mov1#mpkg2#ctm7#ocu6#ocp17" target="sv2#area8#page44#seu53#su118#kcond80.ent1#att1"/>
       </Link>
       <Link id="sv2#page19#miu38#ln394" name="Dettagli" to="sv2#area8#page79#dau36" codeRef="mov1#mpkg2#ctm7#ocu5" type="normal" validate="true">

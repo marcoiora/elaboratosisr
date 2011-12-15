@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page45" name="Step 2 - Aggiungi al carrello" gr:x="334" gr:y="935">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area8#page45" name="Step 2 - Aggiungi al carrello" gr:x="190" gr:y="880">
   <ContentUnits>
     <DataUnit id="sv2#area8#page45#dau18" name="La tua maglietta" gr:x="144" gr:y="4" entity="ent7" displayAll="true">
       <Selector id="sv2#area8#page45#dau18#su123" defaultPolicy="fill" booleanOperator="and">
@@ -20,7 +20,7 @@
         <LinkParameter id="sv2#area8#page45#enu12#ln292#par453" name="Quantit&#224;_quantita" source="sv2#area8#page45#enu12#fld40" target="sv2#area8#cru15.ent8#att33"/>
       </Link>
       <Link id="sv2#area8#page45#enu12#ln293" name="Aggiungi!" to="sv2#area8#miu12" type="normal" automaticCoupling="true" validate="true"/>
-      <Link id="sv2#area8#page45#enu12#ln294" name="Link269" to="sv2#area8#scu3" type="transport" validate="true" gr:bendpoints="-107,95,-444,-228;-104,360,-441,37;108,360,-229,37">
+      <Link id="sv2#area8#page45#enu12#ln294" name="Link269" to="sv2#area8#scu3" type="transport" validate="true" gr:bendpoints="-34,214,-308,-276;74,438,-200,-52">
         <LinkParameter id="sv2#area8#page45#enu12#ln294#par454" name="Quantit&#224;_quantita" source="sv2#area8#page45#enu12#fld40" target="sv2#area8#scu3.quantita"/>
       </Link>
     </EntryUnit>

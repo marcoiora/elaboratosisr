@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="836" gr:y="460" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="720" gr:y="380" id="sv2#area8#page40" name="Step 1 - Caratteristiche">
   <ContentUnits>
     <SelectorUnit gr:x="105" gr:y="94" id="sv2#area8#page40#seu44" name="Sessi" entity="ent4">
       <Selector id="sv2#area8#page40#seu44#su17" defaultPolicy="fill" booleanOperator="and">
@@ -43,7 +43,7 @@
           <MandatoryValidationRule id="sv2#area8#page40#enu18#sfld9#mnd10" name="Mandatory10" errorMessage="Scegli il Colore"/>
         </VRules>
       </SelectionField>
-      <Link id="sv2#area8#page40#enu18#ln50" name="Conferma" to="sv2#area8#cru3" type="normal" validate="true">
+      <Link id="sv2#area8#page40#enu18#ln50" name="Conferma" to="sv2#area8#cru3" type="normal" validate="true" gr:bendpoints="-16,172,118,-170">
         <LinkParameter id="sv2#area8#page40#enu18#ln50#par219" name="Ed il colore_Colore.oid(ConfigurazioneToColore)" source="sv2#area8#page40#enu18#sfld9" target="sv2#area8#cru3.rel16#role31.ent2#att12"/>
         <LinkParameter id="sv2#area8#page40#enu18#ln50#par285" name="Scegli il sesso_Sesso.oid(ConfigurazioneToSesso)" source="sv2#area8#page40#enu18#sfld3" target="sv2#area8#cru3.rel14#role27.ent4#att17"/>
         <LinkParameter id="sv2#area8#page40#enu18#ln50#par286" name="La taglia_Taglia.oid(ConfigurazioneToTaglia)" source="sv2#area8#page40#enu18#sfld4" target="sv2#area8#cru3.rel15#role29.ent3#att15"/>

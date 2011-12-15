@@ -1,7 +1,7 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="430" gr:y="455" id="sv4#area6#page29" name="Gestione Stampe" landmark="true" linkOrder="sv4#area6#page29#ln76">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="390" gr:y="413" id="sv4#area6#page29" name="Gestione Stampe" landmark="true" linkOrder="sv4#area6#page29#ln76">
   <ContentUnits>
     <IndexUnit id="sv4#area6#page29#inu18" name="Stampe" gr:x="0" gr:y="0" entity="ent6" displayAttributes="ent6#att23 ent6#att49" linkOrder="sv4#area6#page29#inu18#ln116">
-      <Link id="sv4#area6#page29#inu18#ln116" name="dettagli" to="sv4#area6#page21#seu12" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#area6#page29#inu18#ln116" name="dettagli" to="sv4#area6#page21#seu12" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="100,113,-258,-294;206,180,-152,-227"/>
     </IndexUnit>
   </ContentUnits>
   <layout:Grid>

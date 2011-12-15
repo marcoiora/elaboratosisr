@@ -1,15 +1,15 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1494" gr:y="168" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1550" gr:y="0" id="sv2#area8#page39" name="Carrello" landmark="true" localized="false">
   <ContentUnits>
     <MultiMessageUnit gr:x="276" gr:y="133" id="sv2#area8#page39#mssu4" linkOrder="sv2#area8#page39#mssu4#ln252 sv2#area8#page39#mssu4#ln34">
-      <Link id="sv2#area8#page39#mssu4#ln252" name="Conferma l'ordine" to="sv2#area8#page46#miu16" type="normal" validate="true" gr:bendpoints="10,247,-43,-250"/>
-      <Link id="sv2#area8#page39#mssu4#ln34" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-260,-1,362,-941;-304,-118,318,-1058"/>
+      <Link id="sv2#area8#page39#mssu4#ln252" name="Conferma l'ordine" to="sv2#area8#page46#miu16" type="normal" validate="true" gr:bendpoints="-66,128,144,-116"/>
+      <Link id="sv2#area8#page39#mssu4#ln34" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-336,-8,498,-842;-372,-190,462,-1024"/>
       <Message xml:space="preserve">Cosa vuoi fare ora?</Message>
     </MultiMessageUnit>
     <ModuleInstanceUnit id="sv2#area8#page39#miu18" name="Visualizza Carrello" gr:x="58" gr:y="170" moduleId="mov1#mpkg2#ctm1" linkOrder="sv2#area8#page39#miu18#ln411 sv2#area8#page39#miu18#ln424">
       <Link id="sv2#area8#page39#miu18#ln411" name="Link411" to="sv2#area8#dlu15" type="normal" validate="true" codeRef="mov1#mpkg2#ctm1#ocu8" gr:bendpoints="65,-75,-228,102">
         <LinkParameter id="sv2#area8#page39#miu18#ln411#par759" name="rigaordine_oid_KeyCondition127 [oid]" source="mov1#mpkg2#ctm1#ocu8#ocp23" target="sv2#area8#dlu15#su194#kcond127.ent8#att31"/>
       </Link>
-      <Link id="sv2#area8#page39#miu18#ln424" name="Link424" to="sv2#area8#page68#seu77" type="normal" validate="true" codeRef="mov1#mpkg2#ctm1#ocu10">
+      <Link id="sv2#area8#page39#miu18#ln424" name="Link424" to="sv2#area8#page68#seu77" type="normal" validate="true" codeRef="mov1#mpkg2#ctm1#ocu10" gr:bendpoints="206,98,82,-470;236,244,112,-324">
         <LinkParameter id="sv2#area8#page39#miu18#ln424#par749" name="rigaordine_oid_PASSING" source="mov1#mpkg2#ctm1#ocu10#ocp24" passing="true"/>
         <LinkParameter id="sv2#area8#page39#miu18#ln424#par750" name="rigaordine_oid_KeyCondition128 [oid]" source="mov1#mpkg2#ctm1#ocu10#ocp24" target="sv2#area8#page68#seu77#su195#kcond128.ent8#att31"/>
       </Link>
@@ -21,7 +21,7 @@
     </SelectorUnit>
     <MultiMessageUnit gr:x="10" gr:y="90" id="sv2#area8#page39#mssu14" linkOrder="sv2#area8#page39#mssu14#ln17">
       <Message xml:space="preserve">Il carrello &#232; vuoto.</Message>
-      <Link id="sv2#area8#page39#mssu14#ln17" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-98,-98,407,-1068"/>
+      <Link id="sv2#area8#page39#mssu14#ln17" name="Continua gli acquisti" to="sv2#area8" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-60,-44,508,-920;-72,-76,496,-952;-82,-146,486,-1022"/>
     </MultiMessageUnit>
     <ModuleInstanceUnit id="sv2#area8#page39#miu43" name="Carrello" gr:x="0" gr:y="0" moduleId="mov1#mpkg2#opm13">
       <Link id="sv2#area8#page39#miu43#ln381" name="Link381" to="sv2#area8#page39#seu63" type="transport" validate="true">

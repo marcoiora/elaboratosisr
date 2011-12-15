@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="310" gr:y="155" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true" linkOrder="sv4#area6#page25#ln7 sv4#area6#page25#ln316 sv4#area6#page25#ln321">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="270" gr:y="130" id="sv4#area6#page25" name="Nuova Maglietta" ajaxEnabled="true" linkOrder="sv4#area6#page25#ln7 sv4#area6#page25#ln316 sv4#area6#page25#ln321">
   <ContentUnits>
     <EntryUnit gr:x="82" gr:y="122" id="sv4#area6#page25#enu5" name="Inserisci dati maglietta" linkOrder="sv4#area6#page25#enu5#ln35 sv4#area6#page25#enu5#ln38 sv4#area6#page25#enu5#ln42 sv4#area6#page25#enu5#ln43">
       <Field id="sv4#area6#page25#enu5#fld15" name="Nome" type="string" modifiable="true"/>
@@ -26,10 +26,10 @@
         <LinkParameter id="sv4#area6#page25#enu5#ln35#par195" name="Permetti Stampa Retro_stampabileRetro" source="sv4#area6#page25#enu5#fld21" target="sv4#area6#miu1.mov1#mpkg1#opm12#icu13#icp82"/>
         <LinkParameter id="sv4#area6#page25#enu5#ln35#par196" name="Taglie disponibili_taglie" source="sv4#area6#page25#enu5#msfld1" target="sv4#area6#miu1.mov1#mpkg1#opm12#icu13#icp72"/>
       </Link>
-      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="645,-32,-362,-261;787,102,-220,-127">
+      <Link id="sv4#area6#page25#enu5#ln38" name="Manica" to="sv4#area6#page28#inu12" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page28#inu12" gr:bendpoints="489,193,-523,-40">
         <LinkParameter id="sv4#area6#page25#enu5#ln38#par59" name="Manica_manica" source="sv4#area6#page25#enu5#fld18" target="sv4#area6#page28#inu12#su24#acond1"/>
       </Link>
-      <Link id="sv4#area6#page25#enu5#ln42" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-120,86,-260,-824;-138,166,-278,-744;26,506,-114,-404">
+      <Link id="sv4#area6#page25#enu5#ln42" name="Collo" to="sv4#area6#page30#inu14" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page30#inu14" gr:bendpoints="-120,86,-260,-824;-138,166,-278,-744;26,506,-114,-404;136,740,-58,-231">
         <LinkParameter id="sv4#area6#page25#enu5#ln42#par61" name="Collo_collo" source="sv4#area6#page25#enu5#fld19" target="sv4#area6#page30#inu14#su25#acond2"/>
       </Link>
       <Link id="sv4#area6#page25#enu5#ln43" name="Materiale" to="sv4#area6#page31#inu15" type="normal" validate="true" ajaxEnabled="true" ajaxComputedUnits="sv4#area6#page31#inu15">
