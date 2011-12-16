@@ -12,7 +12,9 @@
       <Selector id="mov1#mpkg3#ctm4#inu2#su152" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="mov1#mpkg3#ctm4#inu2#su152#acond17" name="AttCondition17" predicate="gteq" booleanOperator="or" implied="false" attributes="ent9#att36"/>
       </Selector>
-      <Link id="mov1#mpkg3#ctm4#inu2#ln327" name="dettagli" to="mov1#mpkg3#ctm4#ocu4" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="mov1#mpkg3#ctm4#inu2#ln327" name="dettagli" to="mov1#mpkg3#ctm4#ocu4" type="normal" validate="true">
+        <LinkParameter id="mov1#mpkg3#ctm4#inu2#ln327#par592" name="oid_ordine_oid" source="data[].ent9#att35" target="mov1#mpkg3#ctm4#ocu4#ocp15"/>
+      </Link>
     </IndexUnit>
     <OutputCollectorUnit gr:x="605" gr:y="102" id="mov1#mpkg3#ctm4#ocu4" name="ordine_oid">
       <OutputCollectorParameter id="mov1#mpkg3#ctm4#ocu4#ocp15" name="ordine_oid"/>

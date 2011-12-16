@@ -1,0 +1,34 @@
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="570" gr:y="60" id="wsv1#port3" name="Ordini">
+  <OperationUnits>
+    <SolicitUnit id="wsv1#port3#slu3" name="getNuoviOrdini" invocationStyle="REST" gr:x="0" gr:y="0" nsURI="http://www.webml.org/webservices/wsdl/products">
+      <SolicitParameter id="wsv1#port3#slu3#slp3" name="sincewhen" type="dateTime[SimpleType]"/>
+      <KOLink id="wsv1#port3#slu3#kln80" name="KOLink80" to="wsv1#port3#eru3" automaticCoupling="true"/>
+      <OKLink id="wsv1#port3#slu3#oln186" name="OKLink186" to="wsv1#port3#scu4">
+        <LinkParameter id="wsv1#port3#slu3#oln186#par594" name="sincewhen (Array)_ingresso" source="map(wsv1#port3#slu3#slp3)" target="wsv1#port3#scu4.ingresso"/>
+      </OKLink>
+    </SolicitUnit>
+    <XMLOutUnit gr:x="160" gr:y="0" id="wsv1#port3#xou2" name="Ordine" oldDocStyle="false">
+      <XMLOutEntity id="wsv1#port3#xou2#xoe2" name="Ordine" useNames="true" entity="ent9" exportedAttributes="ent9#att35 ent9#att36">
+        <SortAttribute attribute="ent9#att35" order="ascending"/>
+        <Selector id="wsv1#port3#xou2#xoe2#su198" defaultPolicy="fill" booleanOperator="and">
+          <AttributesCondition id="wsv1#port3#xou2#xoe2#su198#acond28" name="sincedata" predicate="gteq" booleanOperator="or" implied="false" attributes="ent9#att36"/>
+          <AttributesCondition id="wsv1#port3#xou2#xoe2#su198#acond29" name="da gestire" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="da-gestire"/>
+        </Selector>
+      </XMLOutEntity>
+      <OKLink id="wsv1#port3#xou2#oln185" name="OKLink185" to="wsv1#port3#rsu3">
+        <LinkParameter id="wsv1#port3#xou2#oln185#par629" name="Output XML Document_Ordini" source="xmlDocument" target="wsv1#port3#rsu3.wsv1#port3#rsu3#rsp3"/>
+      </OKLink>
+      <KOLink id="wsv1#port3#xou2#kln77" name="KOLink77" to="wsv1#port3#eru3" automaticCoupling="true"/>
+    </XMLOutUnit>
+    <ResponseUnit gr:x="300" gr:y="0" id="wsv1#port3#rsu3" name="getNuoviOrdiniResponse" nsURI="http://www.webml.org/webservices/wsdl/products">
+      <KOLink id="wsv1#port3#rsu3#kln81" name="KOLink81" to="wsv1#port3#eru3" automaticCoupling="true"/>
+      <ResponseParameter id="wsv1#port3#rsu3#rsp3" name="Ordini" xmlSchema="WEB-INF/descr/OrdiniSchema.xsd" type="OrdiniType[ComplexType]"/>
+    </ResponseUnit>
+    <ErrorResponseUnit gr:x="160" gr:y="150" id="wsv1#port3#eru3" name="ErrorResponseUnit3"/>
+    <ScriptUnit gr:x="0" gr:y="150" id="wsv1#port3#scu4" name="string-to-timestamp" script="WEB-INF/descr/string-to-timestamp.groovy">
+      <OKLink id="wsv1#port3#scu4#oln187" name="OKLink187" to="wsv1#port3#xou2">
+        <LinkParameter id="wsv1#port3#scu4#oln187#par630" name="result_sincedata" source="result(result)" target="wsv1#port3#xou2#xoe2#su198#acond28"/>
+      </OKLink>
+    </ScriptUnit>
+  </OperationUnits>
+</Port>

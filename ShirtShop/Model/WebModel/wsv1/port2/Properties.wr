@@ -1,4 +1,4 @@
-<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="70" gr:y="240" id="wsv1#port2" name="PresaInCaricoOrdine">
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="240" id="wsv1#port2" name="PresaInCaricoOrdine">
   <OperationUnits>
     <SolicitUnit id="wsv1#port2#slu2" name="getOrdine" invocationStyle="REST" customDescriptor="false" protected="false" gr:x="0" gr:y="0">
       <SolicitParameter id="wsv1#port2#slu2#slp1" name="OIDOrdine" type="int[SimpleType]"/>
