@@ -1,4 +1,4 @@
-<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="570" gr:y="60" id="wsv1#port3" name="Ordini">
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="640" gr:y="10" id="wsv1#port3" name="Ordini">
   <OperationUnits>
     <SolicitUnit id="wsv1#port3#slu3" name="getNuoviOrdini" invocationStyle="REST" gr:x="0" gr:y="0" nsURI="http://www.webml.org/webservices/wsdl/products">
       <SolicitParameter id="wsv1#port3#slu3#slp3" name="sincewhen" type="dateTime[SimpleType]"/>
@@ -30,5 +30,27 @@
         <LinkParameter id="wsv1#port3#scu4#oln187#par630" name="result_sincedata" source="result(result)" target="wsv1#port3#xou2#xoe2#su198#acond28"/>
       </OKLink>
     </ScriptUnit>
+    <SolicitUnit id="wsv1#port3#slu4" name="PrendiInCarico" protected="false" customDescriptor="false" gr:x="0" gr:y="240" invocationStyle="REST">
+      <SolicitParameter id="wsv1#port3#slu4#slp4" name="OIDOrdine" type="int[SimpleType]"/>
+      <SolicitParameter id="wsv1#port3#slu4#slp5" name="OIDStampatore" type="int[SimpleType]"/>
+      <KOLink id="wsv1#port3#slu4#kln82" name="KOLink76" to="wsv1#port3#eru4" automaticCoupling="true"/>
+      <OKLink id="wsv1#port3#slu4#oln182" name="OKLink183" to="wsv1#port3#miu56">
+        <LinkParameter id="wsv1#port3#slu4#oln182#par593" name="OIDOrdine (Array)_ordine_oid" source="map(wsv1#port3#slu4#slp4)" target="wsv1#port3#miu56.mov1#mpkg3#opm1#icu2#icp1"/>
+        <LinkParameter id="wsv1#port3#slu4#oln182#par634" name="OIDStampatore (Array)_stampatore_oid" source="map(wsv1#port3#slu4#slp5)" target="wsv1#port3#miu56.mov1#mpkg3#opm1#icu2#icp2"/>
+      </OKLink>
+    </SolicitUnit>
+    <ResponseUnit id="wsv1#port3#rsu4" name="PrendiInCaricoResponse" gr:x="340" gr:y="240">
+      <KOLink id="wsv1#port3#rsu4#kln83" name="KOLink78" to="wsv1#port3#eru4" automaticCoupling="true"/>
+      <ResponseParameter id="wsv1#port3#rsu4#rsp4" name="OK" type="boolean[SimpleType]"/>
+    </ResponseUnit>
+    <ModuleInstanceUnit id="wsv1#port3#miu56" name="PrendiInCarico" gr:x="160" gr:y="240" moduleId="mov1#mpkg3#opm1">
+      <OKLink id="wsv1#port3#miu56#oln188" name="OKLink184" to="wsv1#port3#rsu4">
+        <LinkParameter id="wsv1#port3#miu56#oln188#par635" name="true_OK" target="wsv1#port3#rsu4.wsv1#port3#rsu4#rsp4" sourceValue="true"/>
+      </OKLink>
+      <KOLink id="wsv1#port3#miu56#kln84" name="KOLink79" to="wsv1#port3#rsu4" gr:bendpoints="105,30,-125,37">
+        <LinkParameter id="wsv1#port3#miu56#kln84#par636" name="false_OK" target="wsv1#port3#rsu4.wsv1#port3#rsu4#rsp4" sourceValue="false"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ErrorResponseUnit id="wsv1#port3#eru4" name="ErrorResponse" gr:x="130" gr:y="390"/>
   </OperationUnits>
 </Port>

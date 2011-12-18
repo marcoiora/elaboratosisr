@@ -3234,5 +3234,76 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 	\item Torna alla Home Page cliccando sul relativo link nella barra del menù
 	\item Esegue il Logout cliccando sul relativo link nella barra del menù
 \end{enumerate}
+\newpage
 
+\chapter{Servizi}
+\newpage
+
+\section{Descrizione dei Servizi implementati}
+\subsection{Servizio 1: Visualizzazione della lista di tutte le proposte}
+Questo servizio è pensato per fornire l'accesso ai dati delle proposte a siti esterni di partner che 
+vogliano fare da vetrina al nostro sito.\\
+Lo scopo è di esportare il catalogo delle proposte. In \textit{input} non vi è alcun parametro, mentre
+in \textit{output} si fornisce un elenco strutturato secondo il seguente schema XML:\\
+	\begin{center}
+		\includegraphics[height=6cm]{Immagini/Servizi/SchemaXML1.jpg}\\
+	\end{center}
+Si riporta il progetto WebRatio del servizio:
+	\begin{center}
+		\includegraphics[height=5cm]{Immagini/Servizi/ListaProposte.png}\\
+	\end{center}
+Lo script groovy ""urlTemplate"" è utilizzato per costruire l'url HTTP per accedere alla pagina di 
+dettaglio della proposta.\\
+Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione REST):
+	\begin{center}
+		\includegraphics[height=8cm]{Immagini/Servizi/OutputXML1.jpg}\\
+	\end{center}
+\newpage
+
+\subsection{Servizio 2: Visualizzazione della lista dei nuovi ordini aggiunti}
+Questo servizio è pensato per due diverse modalità di utilizzo da parte degli stampatori:
+\begin{itemize}
+	\item da smartphone, palmare o altro dispositivo mobile con applicazione specializzata, permette 
+	la visualizzazione dei nuovi ordini da gestire.
+	\item da sistemi ERP già integrati nel flusso di lavoro, permette di ottenere le informazioni dei
+	nuovi ordini e di integrarle ai dati già gestiti dal sistema.
+\end{itemize}
+Lo scopo è quindi l'estrazione dei dati e delle informazioni dei nuovi ordini. In \textit{input} si 
+richiede come datetime l'istante in cui è stato effettuato l'ultimo controllo. In \textit{output} 
+verranno forniti gli ordini non ancora presi in gestione inseriti da tale data. Si fornisce un elenco
+strutturato secondo il seguente schema XML:
+	\begin{center}
+		\includegraphics[height=6cm]{Immagini/Servizi/SchemaXML2.jpg}\\
+	\end{center}
+Di seguito si riporta il progetto WebRatio del servizio:
+	\begin{center}
+		\includegraphics[height=10cm]{Immagini/Servizi/OrdineNuoviOrdini.png}\\
+	\end{center}
+Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione REST):
+	\begin{center}
+		\includegraphics[height=7cm]{Immagini/Servizi/OutputXML2.jpg}\\
+	\end{center}
+Un utilizzo consigliato di questo servizio è che dalle applicazioni client venga invocato periodicamente
+per notificare allo stampatore l'arrivo di nuovi ordini da gestire.
+\newpage
+
+\subsection{Servizio 3: Presa in carico di un ordine}
+Questo servizio è pensato per permettere ai stampatore di poter prendere in carico un ordine e come 
+il precedente servizio può essere implementato in due diversi modi:
+\begin{itemize}
+	\item da smartphone, palmare o altro dispositivo mobile con applicazione specializzata
+	\item da sistemi ERP integrati nel flusso di lavoro 
+\end{itemize}
+Lo scopo è di poter effettuare l'operazione di cambio di stato di un ordine da parte di uno stampatore.
+In \textit{input} si richiede OID dell'ordine che si vuole prendere in carico e OID dello stampatore 
+che lo richiede. In \textit{output} si otterrà una risposta true se l'operazione è andata a buon fine, 
+altrimenti false. Essendo la risposta un tipo semplice (boolean) non è stato realizzato lo schema XML.\\
+Di seguito si riporta il progetto WebRatio del servizio:
+	\begin{center}
+		\includegraphics[height=10cm]{Immagini/Servizi/OrdinePrendiInCarico.png}\\
+	\end{center}
+Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione REST):
+	\begin{center}
+		\includegraphics[height=2cm]{Immagini/Servizi/OutputXML3.jpg}\\
+	\end{center}
 \end{document}
