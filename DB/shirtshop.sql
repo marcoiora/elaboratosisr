@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 25 nov, 2011 at 10:57 AM
+-- Generato il: 21 dic, 2011 at 11:19 PM
 -- Versione MySQL: 5.1.41
 -- Versione PHP: 5.3.5
 
@@ -16,227 +16,115 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `shirtshop`
+-- Database: 'shirtshop'
 --
 
--- --------------------------------------------------------
-
 --
--- Struttura della tabella `cliente`
+-- Dump dei dati per la tabella 'cliente'
 --
 
-CREATE TABLE IF NOT EXISTS `cliente` (
-  `user_oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `cognome` varchar(255) DEFAULT NULL,
-  `indirizzo` varchar(255) DEFAULT NULL,
-  `isactive` bit(1) DEFAULT NULL,
-  `telefono` varchar(255) DEFAULT NULL,
-  `codicefiscale` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`user_oid`),
-  KEY `fk_cliente_user` (`user_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `cliente`
---
-
-INSERT INTO `cliente` (`user_oid`, `nome`, `cognome`, `indirizzo`, `isactive`, `telefono`, `codicefiscale`) VALUES
+INSERT INTO cliente (user_oid, nome, cognome, indirizzo, isactive, telefono, codicefiscale) VALUES
 (1, 'Mario', 'Rossi', 'Corso G. Garibaldi, 1000, Roma', b'1', '0987654321', 'MRARSS66V89OL'),
-(4, 'Marco', 'Iora', 'Vicolo delle corti 10 Tignale', b'1', '1223444589', 'IOR7788H9928K'),
+(4, 'Marco', 'Iora', 'Vicolo delle corti 10 Tignale', b'1', '1223444589', 'IOR7788H9928KSSS'),
 (5, 'Roberta', 'Lorenzi', 'Vicolo delle corti 10 Tignale', b'1', '9300202099', 'LRNRRT81B66D940Z'),
-(6, 'Andrea', 'Piccinelli', 'via valiga, boh', b'1', '123467789990', 'PCCGG89K897L'),
 (8, 'Giulio', 'Verdi', 'Via Roma, 45 Roma', b'1', '73299929002', 'GLIVRD44G88J789O'),
 (9, 'Massimo', 'Bianchi', 'Via Napoleone, 67 Milano', b'1', '90238293829', 'MSSBNC89H87K987U'),
-(10, 'Rosalba', 'Mazzini', 'Via dei Pini, 5 Borgosatollo (BS)', b'1', '832998382', 'RSLMZZ79B77H870L');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `colore`
---
-
-CREATE TABLE IF NOT EXISTS `colore` (
-  `oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `valoreesadecimale` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(10, 'Rosalba', 'Mazzini', 'Via dei Pini, 5 Borgosatollo (BS)', b'1', '832998382', 'RSLMZZ79B77H870L'),
+(11, 'Paolo', 'Rossi', 'Via dei Pini, 78 Mantova', b'0', '892938298329', 'PLARSS89B06T946G'),
+(12, 'Pierino', 'La Peste', 'Via dei Rospi 15 Bolzano', b'1', '9209308923', 'PRNLPS66T07N980J');
 
 --
--- Dump dei dati per la tabella `colore`
+-- Dump dei dati per la tabella 'colore'
 --
 
-INSERT INTO `colore` (`oid`, `nome`, `valoreesadecimale`) VALUES
-(1, 'rosso', 'ff0000'),
-(2, 'verde', '00ff00'),
-(3, 'blu', '0000ff');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `configurazione`
---
-
-CREATE TABLE IF NOT EXISTS `configurazione` (
-  `oid` int(11) NOT NULL,
-  `dimensionefronte` double DEFAULT NULL,
-  `dimensioneretro` double DEFAULT NULL,
-  `stampa_oid` int(11) DEFAULT NULL,
-  `stampa_oid_2` int(11) DEFAULT NULL,
-  `maglietta_oid` int(11) DEFAULT NULL,
-  `sesso_oid` int(11) DEFAULT NULL,
-  `taglia_oid` int(11) DEFAULT NULL,
-  `colore_oid` int(11) DEFAULT NULL,
-  `rigaordine_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_configurazione_stampa_2` (`stampa_oid`),
-  KEY `fk_configurazione_stampa` (`stampa_oid_2`),
-  KEY `fk_configurazione_maglietta` (`maglietta_oid`),
-  KEY `fk_configurazione_sesso` (`sesso_oid`),
-  KEY `fk_configurazione_taglia` (`taglia_oid`),
-  KEY `fk_configurazione_colore` (`colore_oid`),
-  KEY `fk_configurazione_rigaordine` (`rigaordine_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO colore (oid, nome, valoreesadecimale) VALUES
+(1, 'Rosso', 'ff0000'),
+(2, 'Verde', '00ff00'),
+(3, 'Blu', '0000ff'),
+(4, 'Violaceo', '6181FF'),
+(5, 'Bianco', 'FFFFFF'),
+(6, 'Giallo', 'FFFF00'),
+(7, 'Arancione', ''),
+(8, 'Nero', '00000');
 
 --
--- Dump dei dati per la tabella `configurazione`
+-- Dump dei dati per la tabella 'configurazione'
 --
 
-INSERT INTO `configurazione` (`oid`, `dimensionefronte`, `dimensioneretro`, `stampa_oid`, `stampa_oid_2`, `maglietta_oid`, `sesso_oid`, `taglia_oid`, `colore_oid`, `rigaordine_oid`) VALUES
-(1, NULL, NULL, NULL, NULL, 1, 1, 2, 1, NULL),
+INSERT INTO configurazione (oid, dimensionefronte, dimensioneretro, stampa_oid, stampa_oid_2, maglietta_oid, sesso_oid, taglia_oid, colore_oid, rigaordine_oid) VALUES
 (2, NULL, 1, NULL, 1, 2, 1, 2, 3, 1),
 (3, NULL, 1, NULL, 2, 2, 1, 2, 2, 2),
 (4, 0.5, 1, 1, 1, 1, 2, 2, 2, 3),
-(5, 1, NULL, 1, NULL, 1, 1, 2, 1, 4);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `foto`
---
-
-CREATE TABLE IF NOT EXISTS `foto` (
-  `oid` int(11) NOT NULL,
-  `commento` longtext,
-  `immagine` varchar(255) DEFAULT NULL,
-  `maglietta_oid` int(11) DEFAULT NULL,
-  `colore_oid` int(11) DEFAULT NULL,
-  `sesso_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_foto_maglietta` (`maglietta_oid`),
-  KEY `fk_foto_colore` (`colore_oid`),
-  KEY `fk_foto_sesso` (`sesso_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(5, 1, NULL, 1, NULL, 1, 1, 2, 1, 4),
+(18, NULL, 1, NULL, 7, 2, 1, 2, 3, 6),
+(20, 1, 1, 9, 10, 1, 1, 2, 1, 8),
+(35, NULL, 1, NULL, 4, 2, 1, 2, 3, 10),
+(37, 1, NULL, 4, NULL, 4, NULL, NULL, NULL, NULL),
+(53, 1, NULL, 11, NULL, 8, NULL, NULL, NULL, NULL),
+(54, 1, NULL, 4, NULL, 4, NULL, NULL, NULL, NULL),
+(55, NULL, NULL, NULL, NULL, 2, 1, 2, 3, NULL),
+(56, NULL, 1, NULL, 6, 2, 1, 2, 3, 14),
+(57, 1, NULL, 4, NULL, 4, NULL, NULL, NULL, 15),
+(58, 1, NULL, 11, NULL, 8, NULL, NULL, NULL, 16),
+(59, 1, NULL, 6, NULL, 7, NULL, NULL, NULL, NULL),
+(60, 1, NULL, 13, NULL, 9, NULL, NULL, NULL, 17),
+(61, 1, NULL, 6, NULL, 7, NULL, NULL, NULL, 18);
 
 --
--- Dump dei dati per la tabella `foto`
+-- Dump dei dati per la tabella 'foto'
 --
 
-INSERT INTO `foto` (`oid`, `commento`, `immagine`, `maglietta_oid`, `colore_oid`, `sesso_oid`) VALUES
+INSERT INTO foto (oid, commento, immagine, maglietta_oid, colore_oid, sesso_oid) VALUES
 (1, '<p>\r\n	Polo L569 Colore Rosso</p>\r\n', 'upload/ent5/1/polorossa.jpg', 2, 1, 1),
 (2, '<p>\r\n	Polo L569 Colore Verde</p>\r\n', 'upload/ent5/1/poloverde.jpg', 2, 2, 1),
 (3, '<p>\r\n	Polo L569 Colore Blu</p>\r\n', 'upload/ent5/1/polo-blu_27-1.jpg', 2, 3, 1),
 (4, '<p>\r\n	T-shirt da Uomo Manica Lunga</p>\r\n', 'upload/ent5/1/t-shirt-jersey-manica-lunga-blu-1.jpg', 1, NULL, 1),
 (5, '<p>\r\n	Canotta da Uomo Rossa</p>\r\n', 'upload/ent5/1/f61098b_0000.jpg', 3, 1, 1),
 (6, '<p>\r\n	T-Shirt Manica Lunga Rossa Guru con Margherita</p>\r\n', 'upload/ent5/1/GuruRossa.JPG', 4, 1, 1),
-(7, '<p>\r\n	T-shirt Manica Lunga con Margherita Guru</p>\r\n', 'upload/ent5/1/bluguru.png', 4, 3, 1);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `group`
---
-
-CREATE TABLE IF NOT EXISTS `group` (
-  `oid` int(11) NOT NULL,
-  `groupname` varchar(255) DEFAULT NULL,
-  `module_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_group_module` (`module_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(7, '<p>\r\n	T-shirt Manica Lunga con Margherita Guru</p>\r\n', 'upload/ent5/1/bluguru.png', 4, 3, 1),
+(11, '<p>\r\n	Titti&amp;Silvestro T-shirt per bambina rossa</p>\r\n', 'upload/ent5/1/BimbaTitti.jpg', 6, 1, 3),
+(13, '<p>\r\n	Maglietta bimba bianca con sorriso</p>\r\n', 'upload/ent5/1/54264_C1000_A_pdt.jpg', 7, 5, 3),
+(14, '<p>\r\n	Maglietta Spongebob Donna</p>\r\n', 'upload/ent5/1/maglietta_spongebob_donna_tc_123.jpg', 8, 6, 2),
+(15, '<p>\r\n	Maglietta di Spongebob per Uomo Bianca.</p>\r\n', 'upload/ent5/1/Spongebob bianca.jpeg', 9, 5, 1),
+(16, '<p>\r\n	Maglietta di Spongebob per Uomo Gialla</p>\r\n', 'upload/ent5/1/spongebobGialla.jpg', 9, 6, 1);
 
 --
--- Dump dei dati per la tabella `group`
+-- Dump dei dati per la tabella 'group'
 --
 
-INSERT INTO `group` (`oid`, `groupname`, `module_oid`) VALUES
+INSERT INTO group (oid, groupname, module_oid) VALUES
 (1, 'Clienti', 2),
 (2, 'Stampatori', 3),
 (3, 'Amministratori', 4);
 
--- --------------------------------------------------------
-
 --
--- Struttura della tabella `group_module`
+-- Dump dei dati per la tabella 'group_module'
 --
 
-CREATE TABLE IF NOT EXISTS `group_module` (
-  `group_oid` int(11) NOT NULL,
-  `module_oid` int(11) NOT NULL,
-  PRIMARY KEY (`group_oid`,`module_oid`),
-  KEY `fk_group_module_group` (`group_oid`),
-  KEY `fk_group_module_module` (`module_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `group_module`
---
-
-INSERT INTO `group_module` (`group_oid`, `module_oid`) VALUES
+INSERT INTO group_module (group_oid, module_oid) VALUES
 (1, 2),
 (2, 3),
 (3, 4);
 
--- --------------------------------------------------------
-
 --
--- Struttura della tabella `maglietta`
+-- Dump dei dati per la tabella 'maglietta'
 --
 
-CREATE TABLE IF NOT EXISTS `maglietta` (
-  `oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `descrizione` longtext,
-  `manica` varchar(255) DEFAULT NULL,
-  `collo` varchar(255) DEFAULT NULL,
-  `stampabilefronte` bit(1) DEFAULT NULL,
-  `stampabileretro` bit(1) DEFAULT NULL,
-  `materiale` varchar(255) DEFAULT NULL,
-  `prezzo` double DEFAULT NULL,
-  `isactive` bit(1) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `maglietta`
---
-
-INSERT INTO `maglietta` (`oid`, `nome`, `descrizione`, `manica`, `collo`, `stampabilefronte`, `stampabileretro`, `materiale`, `prezzo`, `isactive`) VALUES
+INSERT INTO maglietta (oid, nome, descrizione, manica, collo, stampabilefronte, stampabileretro, materiale, prezzo, isactive) VALUES
 (1, 'T-Shirt Regular', '<ul>\r\n	<li>\r\n		T-Shirt Regular Manica Lunga&nbsp;(61-038-0) disponible anche per Donna&nbsp;(61-266-0) e Bambino (61-007-0)</li>\r\n	<li>\r\n		Collo con costina in cotone/Lycra&reg;&nbsp;e&nbsp;fettuccia interna</li>\r\n	<li>\r\n		Filato Belcoro&reg; per una maggiore&nbsp;morbidezza e per un processo di stampa&nbsp;piu&rsquo; pulito</li>\r\n	<li>\r\n		Tessitura compatta per una migliore&nbsp;stampabilita</li>\r\n</ul>\r\n', 'Lunga', 'Girocollo', b'1', b'1', 'Cotone', 12.9, b'1'),
 (2, 'Polo L569', '<p>\r\n	&nbsp;</p>\r\n<div>\r\n	La linea di polo in cotone 569 &egrave; conveniente ma di ottima qualit&agrave;</div>\r\n<div>\r\n	La qualit&agrave; di questo cotone ring spun supera di gran lunga lo standard di questa fascia di&nbsp;prezzo.</div>\r\n<ul>\r\n	<li>\r\n		Nastro di rinforzo per massima durata e comfort</li>\r\n	<li>\r\n		Spacchetti per comoda vestibilit&agrave;</li>\r\n	<li>\r\n		Giromanica in costina 1x1</li>\r\n	<li>\r\n		Cuciture della spalla rinforzate</li>\r\n	<li>\r\n		Orlo a 2 aghi per la massima stabilit&agrave;</li>\r\n	<li>\r\n		Bottone di ricambio nella cucitura del fianco</li>\r\n	<li>\r\n		XS disponibile in French Navy e White</li>\r\n</ul>\r\n<div>\r\n	<em><strong>Tessuto</strong></em></div>\r\n<div>\r\n	Piquet 100% cotone ring spun</div>\r\n<div>\r\n	Peso: Colori: 200g/m&sup2;, White: 195g/m&sup2;</div>\r\n<div>\r\n	&nbsp;</div>\r\n<div>\r\n	<div>\r\n		<strong>Decorator Note</strong></div>\r\n	<div>\r\n		La qualit&agrave; di fattura e del tessuto permette eccezionali risultati di personalizzazione nella categoria di prodotto a prezzo&nbsp;competitivo</div>\r\n</div>\r\n', 'Lunga', 'Polo', b'0', b'1', 'Cotone', 15.9, b'1'),
 (3, 'Canotta Uomo', '<p>\r\n	&nbsp;</p>\r\n<ul>\r\n	<li>\r\n		Bordo su collo e giromanica dello stesso&nbsp;tessuto del corpo</li>\r\n	<li>\r\n		Filato Belcoro&reg; per una maggiore&nbsp;morbidezza e per un processo di stampa&nbsp;piu&rsquo; pulito</li>\r\n	<li>\r\n		Tessitura compatta per una migliore&nbsp;stampabilita</li>\r\n</ul>\r\n', 'Senza Manica', 'Girocollo', b'1', b'1', 'Cotone', 6.9, b'1'),
-(4, 'Guru', '<p>\r\n	Nuova proposta con Guru. Fantastica maglietta in caldo cotone con splendida margherita sul davanti.</p>\r\n', 'Lunga', 'Girocollo', b'0', b'0', 'Cotone', 25.9, b'1');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `maglietta_colore`
---
-
-CREATE TABLE IF NOT EXISTS `maglietta_colore` (
-  `maglietta_oid` int(11) NOT NULL,
-  `colore_oid` int(11) NOT NULL,
-  PRIMARY KEY (`maglietta_oid`,`colore_oid`),
-  KEY `fk_maglietta_colore_maglietta` (`maglietta_oid`),
-  KEY `fk_maglietta_colore_colore` (`colore_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 'Guru', '<p>\r\n	Nuova proposta con Guru. Fantastica maglietta in caldo cotone con splendida margherita sul davanti.</p>\r\n<p>\r\n	Istruzioni per il lavaggio:</p>\r\n<div style="opacity:0.75;">\r\n	<a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Lavatrice, lavaggio a freddo" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/10.gif" title="Lavatrice, lavaggio a freddo" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non candeggiare" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/41.gif" title="Non candeggiare" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non riporre in asciugatrice" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/52.gif" title="Non riporre in asciugatrice" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Stirare, asciugare a basse temperature" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/65.gif" title="Stirare, asciugare a basse temperature" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non lavare a secco" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/70.gif" title="Non lavare a secco" /></a></div>', 'Lunga', 'Girocollo', b'0', b'0', 'Cotone', 25.9, b'0'),
+(6, 'Titti&Silvestro_T-shirt', '<p>\r\n	T-Shirt adatta per la tua bambina in morbido cotone 100% e molto confortevole. Lavabile in lavatrice a 40&deg;.</p>\r\n<p>\r\n	Il favoloso e un p&ograve; sfortunato gatto Silvestro e l&#39;amorevole canarino Titti accompagneranno sempre tua figlia.</p>\r\n', 'Corta', 'Girocollo', b'0', b'0', 'Cotone', 15.9, b'0'),
+(7, 'Astrotop', '<div>\r\nDeliziosa questa maglietta per i nostri tesori! Da collezionare in tutti i colori della stagione!\r\n</div>\r\n<div>\r\nLa Maglietta ASTROTOP, girocollo, maniche lunghe, bottoni a pressione sul retro, stampa.\r\n</div>\r\n<p>\r\n	Istruzioni per il lavaggio:</p>\r\n<div style="opacity:0.75;">\r\n	<a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Lavatrice, lavaggio a freddo" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/10.gif" title="Lavatrice, lavaggio a freddo" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non candeggiare" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/41.gif" title="Non candeggiare" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non riporre in asciugatrice" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/52.gif" title="Non riporre in asciugatrice" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Stirare, asciugare a basse temperature" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/65.gif" title="Stirare, asciugare a basse temperature" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non lavare a secco" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/70.gif" title="Non lavare a secco" /></a></div>', 'Lunga', 'Girocollo', b'0', b'0', 'Cotone', 9.9, b'0'),
+(8, 'Spongeb ', '<p>\r\n	ShirtShop ti offre il meglio del meglio. Questa fantastica proposta è caratterizzata da ottime rifiniture sia per la stampa che per le cuciture.</p>\r\n<div>100% Cotone Morbido TOP CLASS 170 g/m2</div>\r\n<p>\r\n	Istruzioni per il lavaggio:</p>\r\n<div style="opacity:0.75;">\r\n	<a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Lavatrice, lavaggio a freddo" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/10.gif" title="Lavatrice, lavaggio a freddo" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non candeggiare" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/41.gif" title="Non candeggiare" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non riporre in asciugatrice" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/52.gif" title="Non riporre in asciugatrice" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Stirare, asciugare a basse temperature" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/65.gif" title="Stirare, asciugare a basse temperature" /></a> <a href="http://www.emp-online.it/bin/shop.php?prog=shop&amp;mid=&amp;article=203941&amp;funktion=PRODUCTINFO&amp;bildrub=&amp;product=Spongebob:%20Bikini%20Bottom&amp;tc=EMPTY#measure_laundry"><img alt="Non lavare a secco" border="0" class="laundry" src="http://acfrg.com/layout/other/laundry/70.gif" title="Non lavare a secco" /></a></div>\r\n<p> Prodotto ufficiale e originale</p>\r\n<p> PREZZO ECCEZZIONALE!!!!</p>\r\n', 'Corta', 'Girocollo', b'0', b'0', 'Cotone', 24.9, b'0'),
+(9, 'Spongebob ti sorride', '<p>\r\n	Maglietta originale di Spongebob.</p>\r\n<p>\r\n	Caratteristiche principali della maglietta:</p>\r\n<ul>\r\n	<li>\r\n		Collo con fettuccia per un maggiore comfort</li>\r\n	<li>\r\n		Filato Belcoro&reg; per maggiore morbidezza e processo di stampa piu&rsquo; pulito</li>\r\n</ul>\r\n<p>\r\n	Tessuto:<br />\r\n	100% cotone, Filato Belcoro&reg;</p>\r\n<p>\r\n	Peso:<br />\r\n	Bianco &ndash; 185gr/mq<br />\r\n	Colorato &ndash; 195gr/mq</p>\r\n', 'Corta', 'Girocollo', b'0', b'0', 'Cotone', 25.9, b'1');
 
 --
--- Dump dei dati per la tabella `maglietta_colore`
+-- Dump dei dati per la tabella 'maglietta_colore'
 --
 
-INSERT INTO `maglietta_colore` (`maglietta_oid`, `colore_oid`) VALUES
+INSERT INTO maglietta_colore (maglietta_oid, colore_oid) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -245,52 +133,35 @@ INSERT INTO `maglietta_colore` (`maglietta_oid`, `colore_oid`) VALUES
 (2, 3),
 (3, 1),
 (4, 1),
-(4, 3);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `maglietta_sesso`
---
-
-CREATE TABLE IF NOT EXISTS `maglietta_sesso` (
-  `maglietta_oid` int(11) NOT NULL,
-  `sesso_oid` int(11) NOT NULL,
-  PRIMARY KEY (`maglietta_oid`,`sesso_oid`),
-  KEY `fk_maglietta_sesso_maglietta` (`maglietta_oid`),
-  KEY `fk_maglietta_sesso_sesso` (`sesso_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 3),
+(4, 6),
+(6, 1),
+(7, 5),
+(8, 6),
+(9, 5),
+(9, 6);
 
 --
--- Dump dei dati per la tabella `maglietta_sesso`
+-- Dump dei dati per la tabella 'maglietta_sesso'
 --
 
-INSERT INTO `maglietta_sesso` (`maglietta_oid`, `sesso_oid`) VALUES
+INSERT INTO maglietta_sesso (maglietta_oid, sesso_oid) VALUES
 (1, 1),
 (1, 2),
 (2, 1),
 (3, 1),
-(4, 1);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `maglietta_taglia`
---
-
-CREATE TABLE IF NOT EXISTS `maglietta_taglia` (
-  `maglietta_oid` int(11) NOT NULL,
-  `taglia_oid` int(11) NOT NULL,
-  PRIMARY KEY (`maglietta_oid`,`taglia_oid`),
-  KEY `fk_maglietta_taglia_maglietta` (`maglietta_oid`),
-  KEY `fk_maglietta_taglia_taglia` (`taglia_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 1),
+(6, 3),
+(7, 3),
+(7, 4),
+(8, 2),
+(9, 1);
 
 --
--- Dump dei dati per la tabella `maglietta_taglia`
+-- Dump dei dati per la tabella 'maglietta_taglia'
 --
 
-INSERT INTO `maglietta_taglia` (`maglietta_oid`, `taglia_oid`) VALUES
+INSERT INTO maglietta_taglia (maglietta_oid, taglia_oid) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -302,451 +173,212 @@ INSERT INTO `maglietta_taglia` (`maglietta_oid`, `taglia_oid`) VALUES
 (3, 3),
 (4, 1),
 (4, 2),
-(4, 3);
-
--- --------------------------------------------------------
+(4, 3),
+(6, 1),
+(6, 2),
+(6, 3),
+(6, 4),
+(7, 1),
+(7, 2),
+(7, 3),
+(7, 4),
+(8, 1),
+(8, 2),
+(8, 3),
+(9, 1),
+(9, 2),
+(9, 3),
+(9, 4);
 
 --
--- Struttura della tabella `module`
+-- Dump dei dati per la tabella 'module'
 --
 
-CREATE TABLE IF NOT EXISTS `module` (
-  `oid` int(11) NOT NULL,
-  `moduleid` varchar(255) DEFAULT NULL,
-  `modulename` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `module`
---
-
-INSERT INTO `module` (`oid`, `moduleid`, `modulename`) VALUES
+INSERT INTO module (oid, moduleid, modulename) VALUES
 (1, 'sv1', 'Pubblica'),
 (2, 'sv2', 'Cliente'),
 (3, 'sv3', 'Stampatore'),
 (4, 'sv4', 'Amministrazione');
 
--- --------------------------------------------------------
-
 --
--- Struttura della tabella `ordine`
+-- Dump dei dati per la tabella 'ordine'
 --
 
-CREATE TABLE IF NOT EXISTS `ordine` (
-  `oid` int(11) NOT NULL,
-  `dataoraconferma` datetime DEFAULT NULL,
-  `dataorapresaincarico` datetime DEFAULT NULL,
-  `dataoraspedizione` datetime DEFAULT NULL,
-  `spesespedizione` double DEFAULT NULL,
-  `stato` varchar(255) DEFAULT NULL,
-  `cliente_oid` int(11) DEFAULT NULL,
-  `stampatore_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_ordine_cliente` (`cliente_oid`),
-  KEY `fk_ordine_stampatore` (`stampatore_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO ordine (oid, dataoraconferma, dataorapresaincarico, dataoraspedizione, spesespedizione, stato, tracking, cliente_oid, stampatore_oid) VALUES
+(1, '2011-11-24 14:55:41', '2011-12-05 17:59:48', NULL, 9.9, 'in-stampa', NULL, 4, 2),
+(2, '2011-11-24 15:23:10', '2011-12-01 22:49:47', '2011-12-05 17:58:41', 9.9, 'evaso', '38829JJ9', 5, 2),
+(5, '2011-12-01 23:18:46', '2011-12-15 21:22:23', NULL, 9.9, 'in-stampa', NULL, 5, 2),
+(7, '2011-12-01 23:28:21', '2011-12-18 15:05:13', NULL, 9.9, 'in-stampa', NULL, 10, 2),
+(9, '2011-12-04 22:12:47', NULL, NULL, 9.9, 'da-gestire', NULL, 4, NULL),
+(10, '2011-12-17 21:46:06', '2011-12-17 22:11:22', '2011-12-17 22:27:03', 9.9, 'evaso', '09NL01AB', 5, 2),
+(11, '2011-12-15 22:24:20', '2011-12-15 22:27:52', NULL, 9.9, 'in-stampa', NULL, 4, 2),
+(12, '2011-12-15 22:16:05', NULL, NULL, 9.9, 'da-gestire', NULL, 1, NULL),
+(13, '2011-12-15 22:22:02', NULL, NULL, 9.9, 'da-gestire', NULL, 10, NULL),
+(14, '2011-12-17 23:00:11', '2011-12-17 23:03:20', NULL, 9.9, 'in-stampa', NULL, 5, 2);
 
 --
--- Dump dei dati per la tabella `ordine`
+-- Dump dei dati per la tabella 'ordine_prezzototale_view'
 --
 
-INSERT INTO `ordine` (`oid`, `dataoraconferma`, `dataorapresaincarico`, `dataoraspedizione`, `spesespedizione`, `stato`, `cliente_oid`, `stampatore_oid`) VALUES
-(1, '2011-11-24 14:55:41', NULL, NULL, NULL, 'da-gestire', 4, NULL),
-(2, '2011-11-24 15:23:10', NULL, NULL, NULL, 'da-gestire', 5, NULL);
-
--- --------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS `rigaordine` (
-  `oid` int(11) NOT NULL,
-  `prezzosingolo` double DEFAULT NULL,
-  `quantita` varchar(255) DEFAULT NULL,
-  `prezzototale` double DEFAULT NULL,
-  `ordine_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_rigaordine_ordine` (`ordine_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
+INSERT INTO ordine_prezzototale_view (oid, der_attr) VALUES
+(1, 40.8),
+(2, 462.6),
+(5, 35.8),
+(7, 42.8),
+(9, 34.7),
+(10, 61.7),
+(11, 30.3),
+(12, 61.7),
+(13, 84.6),
+(14, 19.8);
 
 --
--- Struttura della tabella `ordine_prezzototale_view`
+-- Dump dei dati per la tabella 'pagina'
 --
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`shirtshop`@`%` SQL SECURITY DEFINER VIEW `shirtshop`.`ordine_prezzototale_view` AS select `al1`.`oid` AS `oid`,sum(`al2`.`prezzototale`) AS `der_attr` from (`shirtshop`.`ordine` `al1` left join `shirtshop`.`rigaordine` `al2` on((`al1`.`oid` = `al2`.`ordine_oid`))) group by `al1`.`oid`;
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `pagina`
---
-
-CREATE TABLE IF NOT EXISTS `pagina` (
-  `oid` int(11) NOT NULL,
-  `titolo` varchar(255) DEFAULT NULL,
-  `testohtml` longtext,
-  `home` bit(1) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO pagina (oid, titolo, testohtml, home) VALUES
+(1, 'ShirtShop WebMarket', '<p>\r\n	<b style="color: rgb(0, 0, 0); font-family: arial, verdana, helvetica, sans-serif; font-size: 13px; text-align: -webkit-center; ">Creare online t-shirt personalizzate non &egrave; mai stato cos&igrave; semplice:</b>\r\n<br/>\r\nscegli il modello e il colore, aggiungi un&#39;immagine fra quelle in archivio o carica un&#39;immagine tua.</p>\r\n<p>\r\nCerchi una nuova idea regalo oppure vuoi acquistare una t-shirt disegnata dai nostri designer?<br/>\r\nVisita la nostra gallery: abbiamo a disposizione un vasto elenco di grafiche pronte per essere indossate!</p>\r\n', b'1'),
+(2, 'Contatti', '<p>\r\n	Numero di telefono: 0782882 88882</p>\r\n<p>\r\n	Indirizzo:&nbsp;&nbsp; Via dei Pioli, 26 Brescia</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Chiama il nostro call-center al numero verde: 800 800 431</p>\r\n<p>\r\n	<br />\r\n	&nbsp;</p>\r\n', b'0'),
+(3, 'Informazioni di spedizione', '<p>\r\n	Tutte le nostre spedizioni verranno recapitate tramite l&#39;azienda &quot;FastShipping&quot;.</p>\r\n<div class="tab_content" id="tab2" style="display: block;">\r\n	<p>\r\n		<strong>Tempi indicativi di consegna</strong><br />\r\n		La consegna si effettua dal luned&igrave; al venerd&igrave; nei seguenti tempi medi:</p>\r\n	<table border="0">\r\n		<tbody>\r\n			<tr>\r\n				<td>\r\n					<strong>Destinazioni</strong></td>\r\n				<td>\r\n					<strong>Tempi medi di consegna</strong></td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<strong>Paesi Unione Europea</strong> (principali localit&agrave;)</td>\r\n				<td>\r\n					<strong>2 giorni lavorativi</strong>, oltre quello di spedizione</td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<strong>Paesi Extra Unione Europea</strong> (principali localit&agrave;)</td>\r\n				<td>\r\n					<strong>2/3 giorni lavorativi</strong>, oltre quello di spedizione, (salvo formalit&agrave; doganali)</td>\r\n			</tr>\r\n			<tr>\r\n				<td>\r\n					<strong>Resto del mondo</strong><br />\r\n					(principali localit&agrave;)</td>\r\n				<td>\r\n					<strong>3/4 giorni lavorativi</strong>, oltre quello di spedizione, (salvo formalit&agrave; doganali)</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n	I giorni festivi e il sabato non sono computati nei tempi di consegna.\r\n	<p>\r\n		Sono previsti <strong>due tentativi di consegna gratuiti</strong>, di cui il secondo concordato con il destinatario.</p>\r\n	<p>\r\n		Per maggiori informazioni chiama il <strong>numero verde</strong> <strong>800.000.001</strong> (dal luned&igrave; al sabato, ore 8-20).</p>\r\n</div>\r\n<p>\r\n	Il costo per la spedizione, indipendentemente dal quantitativo di merce acquistata, &egrave; pari a <strong>9.90 euro</strong>.</p>\r\n', b'0');
 
 --
--- Dump dei dati per la tabella `pagina`
+-- Dump dei dati per la tabella 'rigaordine'
 --
 
-INSERT INTO `pagina` (`oid`, `titolo`, `testohtml`, `home`) VALUES
-(1, 'ShirtShop WebMarket', '<p>\r\n	<b style="color: rgb(0, 0, 0); font-family: arial, verdana, helvetica, sans-serif; font-size: 13px; text-align: -webkit-center; ">Creare online </b><b style="color: rgb(0, 0, 0); font-family: arial, verdana, helvetica, sans-serif; font-size: 13px; text-align: -webkit-center; ">t-shirt personalizzate</b>&nbsp;non &egrave; mai stato cos&igrave; semplice:<br style="color: rgb(0, 0, 0); font-family: arial, verdana, helvetica, sans-serif; font-size: 13px; text-align: -webkit-center; " />\r\n	scegli il modello e il colore, aggiungi un&#39;immagine fra quelle in archivio o carica un&#39;immagine tua.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Cerchi una nuova idea oppure vuoi acquistare una t-shirt disegnata dai nostri designer?</p>\r\n<p>\r\n	Visita la nostra gallery: abbiamo a disposizione un vasto elenco di grafiche pronte per essere indossate!</p>\r\n', b'1');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `rigaordine`
---
-
---
--- Dump dei dati per la tabella `rigaordine`
---
-
-INSERT INTO `rigaordine` (`oid`, `prezzosingolo`, `quantita`, `prezzototale`, `ordine_oid`) VALUES
+INSERT INTO rigaordine (oid, prezzosingolo, quantita, prezzototale, ordine_oid) VALUES
 (1, 30.9, '1', 30.9, 1),
 (2, 26.8, '3', 80.4, 2),
 (3, 35.4, '5', 177, 2),
-(4, 27.9, '7', 195.3, 2);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `sesso`
---
-
-CREATE TABLE IF NOT EXISTS `sesso` (
-  `oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 27.9, '7', 195.3, 2),
+(6, 25.9, '1', 25.9, 5),
+(8, 32.9, '1', 32.9, 7),
+(10, 24.8, '1', 24.8, 9),
+(14, 20.4, '1', 20.4, 11),
+(15, 25.9, '2', 51.8, 12),
+(16, 24.9, '3', 74.7, 13),
+(17, 25.9, '2', 51.8, 10),
+(18, 9.9, '1', 9.9, 14);
 
 --
--- Dump dei dati per la tabella `sesso`
+-- Dump dei dati per la tabella 'sesso'
 --
 
-INSERT INTO `sesso` (`oid`, `nome`) VALUES
-(1, 'Male'),
-(2, 'Female');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `stampa`
---
-
-CREATE TABLE IF NOT EXISTS `stampa` (
-  `oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `descrizione` longtext,
-  `anteprima` varchar(255) DEFAULT NULL,
-  `immaginehd` varchar(255) DEFAULT NULL,
-  `prezzobase` double DEFAULT NULL,
-  `isactive` bit(1) DEFAULT NULL,
-  `cliente_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_stampa_cliente` (`cliente_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO sesso (oid, nome) VALUES
+(1, 'Uomo'),
+(2, 'Donna'),
+(3, 'Bambina'),
+(4, 'Bambino'),
+(5, 'Neonato'),
+(6, 'Neonata');
 
 --
--- Dump dei dati per la tabella `stampa`
+-- Dump dei dati per la tabella 'stampa'
 --
 
-INSERT INTO `stampa` (`oid`, `nome`, `descrizione`, `anteprima`, `immaginehd`, `prezzobase`, `isactive`, `cliente_oid`) VALUES
-(1, 'Babbo Natale', '<p>\r\n	&nbsp;</p>\r\n<div>\r\n	BABBO NATALE HA: IL BERRETTO ROSSO, LA BARBA E I BAFFI BIANCHI, LA CINTURA NERA, IL VESTITO ROSSO, I BORDI DEL VESTITO DI PELLICCIA BIANCA, I BOTTONI NERI,</div>\r\n<div>\r\n	GLI STIVALI MARRONI, I GUANTI COLORATI.</div>\r\n<div>\r\n	&egrave; &nbsp;BUONO BABBO NATALE E PORTA DONI A TUTTI I BAMBINI DEL MONDO.</div>\r\n', 'upload/ent6/1/immagini_babbo_natalePic.gif', 'upload/ent6/1/immagini_babbo_natale.gif', 15, b'1', NULL),
-(2, 'Coniglio', '<p>\r\n	Il Coniglio Bianco si pu&ograve; considerare un araldo&nbsp;della Regina di cuori, &egrave; proprio lui che apre i cortei annunciando la corte e che presiede al processo al Fante di cuori.</p>\r\n<p>\r\n	&Egrave; un coniglio bipede di colore bianco con gli occhi rosa.&nbsp;Porta un panciotto nel quale tiene un orologio da tasca</p>\r\n', 'upload/ent6/1/coniglio03Pic.jpg', 'upload/ent6/1/coniglio03.jpg', 10.9, b'1', NULL),
-(3, 'Zucca', '<p>\r\n	&nbsp;</p>\r\n<h2 style="font-size: 13px; font-style: italic; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; ">\r\n	La zucca &egrave; una tipica verdura autunnale.&nbsp;<br />\r\n	In cucina la zucca per il sapore che tende al dolce &egrave; adatta alla preparazione di piatti dolci e salati, e anche a mostarde e marmellate. Utile per chi segue un regime alimentare poco calorico. Ha propriet&agrave; diuretiche e depurative.</h2>\r\n', 'upload/ent6/1/zucca_halloweenPic.jpg', 'upload/ent6/1/zucca_halloween.jpg', 13.4, b'1', NULL),
-(4, 'Margherita', '<p>\r\n	&nbsp;</p>\r\n<div>\r\n	La margherita ha fatto in modo che la mia azienda si strutturasse. Adesso tendiamo ad identificarci con il nome Guru pi&ugrave; che con il fiore che, diventato piccolissimo, &egrave; solo un&rsquo;appendice grafica del logo</div>\r\n<p>\r\n	&nbsp;</p>\r\n', 'upload/ent6/1/margherita-guruPic.jpg', 'upload/ent6/1/margherita-guru.jpg', 8.9, b'1', NULL);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `stampatore`
---
-
-CREATE TABLE IF NOT EXISTS `stampatore` (
-  `user_oid` int(11) NOT NULL,
-  `matricola` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`user_oid`),
-  KEY `fk_stampatore_user` (`user_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO stampa (oid, nome, descrizione, anteprima, immaginehd, prezzobase, isactive, cliente_oid) VALUES
+(1, 'Babbo Natale', '<div>\r\nBabbo Natale ha: il berretto rosso, la barba e i baffi bianchi, la cintura nera, il vestito rosso.<br/>\r\nUn divertente Babbo Natale per le tue magliette invernali. Ottime per un caldo regalo natalizio.</div>\r\n<div>\r\nBABBO NATALE PORTA DONI A TUTTI I BAMBINI DEL MONDO.</div>\r\n', 'upload/ent6/1/immagini_babbo_natalePic.gif', 'upload/ent6/1/immagini_babbo_natale.gif', 15, b'1', NULL),
+(2, 'Coniglio', '<p>\r\n	Il Coniglio Bianco si pu&ograve; considerare un araldo&nbsp;della Regina di cuori, &egrave; proprio lui che apre i cortei annunciando la corte e che presiede al processo al Fante di cuori.</p>\r\n<p>\r\n	&Egrave; un coniglio bipede di colore bianco con gli occhi rosa.&nbsp;Porta un panciotto nel quale tiene un orologio da tasca</p>\r\n', 'upload/ent6/1/ConiglioPic.jpg', 'upload/ent6/1/Coniglio.jpg', 10.9, b'1', NULL),
+(3, 'Zucca', '<p>\r\n	La zucca &egrave; una tipica verdura autunnale<br />\r\n	Questa zucca render&agrave; l&#39; Halloween dei tuoi bambini ancora pi&ugrave; divertente!!!</p>\r\n', 'upload/ent6/1/bambini_zuccaPic.gif', 'upload/ent6/1/bambini_zucca.gif', 25, b'1', NULL),
+(4, 'Margherita', '<p>\r\n	Si dice abbia facolt&agrave; profetiche. Gli innamorati la sfogliano per sapere se il loro amore &egrave; ricambiato.</p>\r\n<div style="overflow: hidden; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); text-align: left; text-decoration: none; border: medium none;">\r\n	&nbsp;</div>\r\n<div style="overflow: hidden; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); text-align: left; text-decoration: none; border: medium none;">\r\n	E&rsquo; il simbolo della semplicit&agrave;, freschezza e purezza.</div>\r\n<p>\r\n	&nbsp;</p>\r\n', 'upload/ent6/1/margherita-guruPic.jpg', 'upload/ent6/1/margherita-guru.jpg', 8.9, b'1', NULL),
+(5, 'Titti&Silvestro', '<p>\r\n	Nonostante le diffuse voci che vorrebbero Titti di sesso femminile, &egrave; dimostrato che il personaggio sia sempre stato maschio; cosa confermata anche da Titti stesso nella serie animata I misteri di Titti e Silvestro, e in parecchi fumetti della Warner. D&#39;altro canto, la sua specie &egrave; ambigua; rappresentato come un giovane canarino domestico dalle lunghe ciglia, pi&ugrave; consone ad un classico personaggio femminile.</p>\r\n<p>\r\n	Silvestro &egrave; invece un gatto che si vuole mangiare Titti.</p>\r\n', 'upload/ent6/1/titti595Picc.jpg', 'upload/ent6/1/titti595.jpg', 8.7, b'0', NULL),
+(6, 'Sorriso', '<p>\r\n	Un bellissimo sorriso per la tua maglietta!</p>\r\n<p>\r\n	...ci vogliono settantadue muscoli per fare il broncio ma solo dodici per sorridere. Provaci per una volta. (Mordecai Richler)</p>\r\n', 'upload/ent6/1/SorrisoPic.jpg', 'upload/ent6/1/Sorriso.jpg', 4.5, b'1', NULL),
+(7, 'Sole', '<p>\r\n	Quando il sole splende, non ti curar della luna.</p>\r\n', 'upload/ent6/1/solePic.png', 'upload/ent6/1/sole.png', 10, b'1', 5),
+(8, 'Gatto e Luna', '<p>\r\n	Gatto e Luna molto suggestivi.</p>\r\n<p>\r\n	Il gatto lecca i raggi di luna nella scodella pensando siano latte.</p>\r\n', 'upload/ent6/1/gatto-e-lunaPic.jpg', 'upload/ent6/1/gatto-e-luna.jpg', 10, b'1', 4),
+(9, 'Diciassette', '<p>\r\n	Dicono che 17 porta sfiga, ma questo perter&agrave; a tutti coloro che lo indossano una fortuna sfacciata!</p>\r\n', 'upload/ent6/2/600px-Alabama_17.svg.png', 'upload/ent6/1/600px-Alabama_17.svg.png', 10, b'1', 10),
+(10, 'Gatto17', '<p>\r\n	Venerd&igrave; 17 Gatto</p>\r\n', NULL, 'upload/ent6/1/venerdì 17_gatto nero.jpg', 10, b'1', 10),
+(11, 'Spongebob', '<p>\r\n	<b></b>SpongeBob SquarePants: &egrave; una spugna di mare, sempre allegra e felice. Lavora al Krusty Krab, una paninoteca sottomarina, dove cucina i Krabby Patty, i panini pi&ugrave; gustosi dell&#39;Oceano. Abita nella citt&agrave; di Bikini Bottom e la sua casa &egrave; un ananas. I suoi hobby sono andare a caccia di meduse, fare bolle di sapone ed allenarsi con la sua amica Sandy nel karate). Cerca ogni settimana di prendere la patente, ma non ci riesce mai.</p>\r\n', 'upload/ent6/1/spongebob_1Pic.jpg', 'upload/ent6/1/spongebob_1.jpg', 15.9, b'0', NULL),
+(13, 'Smile Spongebob', '<p>\r\n	<strong>T-shirt Cartoni Animati Spongebob, originale.</strong></p>\r\n<p>\r\n	Originale e simmpatico faccione di un grande amico come Spongebob</p>\r\n', 'upload/ent6/2/SmileSpongebobPic.jpg', 'upload/ent6/2/SmileSpongebob.jpg', 9.9, b'0', NULL);
 
 --
--- Dump dei dati per la tabella `stampatore`
+-- Dump dei dati per la tabella 'stampatore'
 --
 
-INSERT INTO `stampatore` (`user_oid`, `matricola`) VALUES
+INSERT INTO stampatore (user_oid, matricola) VALUES
 (2, 'P42L000'),
-(7, 'P56Q095');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `taglia`
---
-
-CREATE TABLE IF NOT EXISTS `taglia` (
-  `oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(7, 'P56Q095'),
+(13, 'PY89J000');
 
 --
--- Dump dei dati per la tabella `taglia`
+-- Dump dei dati per la tabella 'taglia'
 --
 
-INSERT INTO `taglia` (`oid`, `nome`) VALUES
+INSERT INTO taglia (oid, nome) VALUES
 (1, 'Small'),
 (2, 'Medium'),
-(3, 'Large');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `tema`
---
-
-CREATE TABLE IF NOT EXISTS `tema` (
-  `oid` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(3, 'Large'),
+(4, 'Extra Large'),
+(5, 'Extra Small'),
+(6, 'Extra Extra Large');
 
 --
--- Dump dei dati per la tabella `tema`
+-- Dump dei dati per la tabella 'tema'
 --
 
-INSERT INTO `tema` (`oid`, `nome`) VALUES
-(1, 'natale'),
-(2, 'pasqua'),
-(3, 'halloween'),
-(4, 'animali'),
-(5, 'Natura');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `tema_stampa`
---
-
-CREATE TABLE IF NOT EXISTS `tema_stampa` (
-  `tema_oid` int(11) NOT NULL,
-  `stampa_oid` int(11) NOT NULL,
-  PRIMARY KEY (`tema_oid`,`stampa_oid`),
-  KEY `fk_tema_stampa_tema` (`tema_oid`),
-  KEY `fk_tema_stampa_stampa` (`stampa_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO tema (oid, nome) VALUES
+(1, 'Natale'),
+(2, 'Pasqua'),
+(3, 'Halloween'),
+(4, 'Animali'),
+(5, 'Natura'),
+(6, 'Varie Bimbi'),
+(7, 'Cartoons');
 
 --
--- Dump dei dati per la tabella `tema_stampa`
+-- Dump dei dati per la tabella 'tema_stampa'
 --
 
-INSERT INTO `tema_stampa` (`tema_oid`, `stampa_oid`) VALUES
+INSERT INTO tema_stampa (tema_oid, stampa_oid) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
+(3, 9),
 (4, 2),
-(5, 4);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `template`
---
-
-CREATE TABLE IF NOT EXISTS `template` (
-  `maglietta_oid` int(11) NOT NULL,
-  `dimensionefronte` double DEFAULT NULL,
-  `dimensioneretro` double DEFAULT NULL,
-  `stampa_oid` int(11) DEFAULT NULL,
-  `stampa_oid_2` int(11) DEFAULT NULL,
-  PRIMARY KEY (`maglietta_oid`),
-  KEY `fk_template_stampa` (`stampa_oid`),
-  KEY `fk_template_stampa_2` (`stampa_oid_2`),
-  KEY `fk_template_maglietta` (`maglietta_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 5),
+(4, 8),
+(5, 4),
+(5, 7),
+(6, 6),
+(7, 5),
+(7, 11),
+(7, 13);
 
 --
--- Dump dei dati per la tabella `template`
+-- Dump dei dati per la tabella 'template'
 --
 
-INSERT INTO `template` (`maglietta_oid`, `dimensionefronte`, `dimensioneretro`, `stampa_oid`, `stampa_oid_2`) VALUES
-(4, 1, NULL, 4, NULL);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `oid` int(11) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `group_oid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`oid`),
-  KEY `fk_user_group` (`group_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO template (maglietta_oid, dimensionefronte, dimensioneretro, stampa_oid, stampa_oid_2) VALUES
+(4, 1, NULL, 4, NULL),
+(6, NULL, 0.5, NULL, 5),
+(7, 1, NULL, 6, NULL),
+(8, 1, NULL, 11, NULL),
+(9, 1, NULL, 13, NULL);
 
 --
--- Dump dei dati per la tabella `user`
+-- Dump dei dati per la tabella 'user'
 --
 
-INSERT INTO `user` (`oid`, `username`, `password`, `email`, `group_oid`) VALUES
-(1, 'cliente', 'cliente', 'cliente@example.com', 1),
-(2, 'P42L000', 'stampatore', 'stampatore@example.com', 2),
-(3, 'amministratore', 'amministratore', 'amministratore@example.com', 3),
-(4, 'marco', 'marco', 'marco.iora@gmail.com', 1),
-(5, 'roberta', 'roberta', 'roberta.lorenzi@gmail.com', 1),
-(6, 'piccy', 'piccy', 'piccy@qui.la', 1),
-(7, 'P56Q095', 'stampatore01', '56@qwer.ty', 2),
-(8, 'giulio', 'giulio', 'giulio.verdi@miamail.com', 1),
-(9, 'massimo', 'massimo', 'massimo.bianchi@mailmia.it', 1),
-(10, 'rosalba', 'rosalba', 'rosalba.mazzini@gmail.com', 1);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `user_group`
---
-
-CREATE TABLE IF NOT EXISTS `user_group` (
-  `user_oid` int(11) NOT NULL,
-  `group_oid` int(11) NOT NULL,
-  PRIMARY KEY (`user_oid`,`group_oid`),
-  KEY `fk_user_group_user` (`user_oid`),
-  KEY `fk_user_group_group` (`group_oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO user (oid, username, password, email, lastcheck, group_oid) VALUES
+(1, 'cliente', 'cliente', 'cliente@example.com', '2011-12-15 22:07:32', 1),
+(2, 'P42L000', 'stampatore', 'stampatore@example.com', '2011-12-17 23:03:20', 2),
+(3, 'amministratore', 'amministratore', 'amministratore@example.com', NULL, 3),
+(4, 'marco', 'marco', 'marco.iora@gmail.com', '2011-12-15 22:23:40', 1),
+(5, 'roberta', 'roberta', 'roberta.lorenzi@gmail.com', '2011-12-17 23:03:40', 1),
+(7, 'P56Q095', 'stampatore01', '56@qwer.ty', NULL, 2),
+(8, 'giulio', 'giulio', 'giulio.verdi@miamail.com', '2011-12-05 15:31:04', 1),
+(9, 'massimo', 'massimo', 'massimo.bianchi@mailmia.it', NULL, 1),
+(10, 'rosalba', 'rosalba', 'rosalba.mazzini@gmail.com', '2011-12-15 22:21:45', 1),
+(11, 'paolo', 'paolino10', 'rossi.paolo@gmail.com', NULL, 1),
+(12, 'pierino', 'pierino01', 'pierino.lapeste@gmail.com', NULL, 1),
+(13, 'PY89J000', 'stampatore01', 'py89j000@shirtshop.com', NULL, 2);
 
 --
--- Dump dei dati per la tabella `user_group`
+-- Dump dei dati per la tabella 'user_group'
 --
 
-INSERT INTO `user_group` (`user_oid`, `group_oid`) VALUES
+INSERT INTO user_group (user_oid, group_oid) VALUES
 (1, 1),
 (2, 2),
 (3, 3);
-
---
--- Limiti per le tabelle scaricate
---
-
---
--- Limiti per la tabella `cliente`
---
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `fk_cliente_user` FOREIGN KEY (`user_oid`) REFERENCES `user` (`oid`);
-
---
--- Limiti per la tabella `configurazione`
---
-ALTER TABLE `configurazione`
-  ADD CONSTRAINT `fk_configurazione_colore` FOREIGN KEY (`colore_oid`) REFERENCES `colore` (`oid`),
-  ADD CONSTRAINT `fk_configurazione_maglietta` FOREIGN KEY (`maglietta_oid`) REFERENCES `maglietta` (`oid`),
-  ADD CONSTRAINT `fk_configurazione_rigaordine` FOREIGN KEY (`rigaordine_oid`) REFERENCES `rigaordine` (`oid`),
-  ADD CONSTRAINT `fk_configurazione_sesso` FOREIGN KEY (`sesso_oid`) REFERENCES `sesso` (`oid`),
-  ADD CONSTRAINT `fk_configurazione_stampa` FOREIGN KEY (`stampa_oid_2`) REFERENCES `stampa` (`oid`),
-  ADD CONSTRAINT `fk_configurazione_stampa_2` FOREIGN KEY (`stampa_oid`) REFERENCES `stampa` (`oid`),
-  ADD CONSTRAINT `fk_configurazione_taglia` FOREIGN KEY (`taglia_oid`) REFERENCES `taglia` (`oid`);
-
---
--- Limiti per la tabella `foto`
---
-ALTER TABLE `foto`
-  ADD CONSTRAINT `fk_foto_colore` FOREIGN KEY (`colore_oid`) REFERENCES `colore` (`oid`),
-  ADD CONSTRAINT `fk_foto_maglietta` FOREIGN KEY (`maglietta_oid`) REFERENCES `maglietta` (`oid`),
-  ADD CONSTRAINT `fk_foto_sesso` FOREIGN KEY (`sesso_oid`) REFERENCES `sesso` (`oid`);
-
---
--- Limiti per la tabella `group`
---
-ALTER TABLE `group`
-  ADD CONSTRAINT `fk_group_module` FOREIGN KEY (`module_oid`) REFERENCES `module` (`oid`);
-
---
--- Limiti per la tabella `group_module`
---
-ALTER TABLE `group_module`
-  ADD CONSTRAINT `fk_group_module_group` FOREIGN KEY (`group_oid`) REFERENCES `group` (`oid`),
-  ADD CONSTRAINT `fk_group_module_module` FOREIGN KEY (`module_oid`) REFERENCES `module` (`oid`);
-
---
--- Limiti per la tabella `maglietta_colore`
---
-ALTER TABLE `maglietta_colore`
-  ADD CONSTRAINT `fk_maglietta_colore_colore` FOREIGN KEY (`colore_oid`) REFERENCES `colore` (`oid`),
-  ADD CONSTRAINT `fk_maglietta_colore_maglietta` FOREIGN KEY (`maglietta_oid`) REFERENCES `maglietta` (`oid`);
-
---
--- Limiti per la tabella `maglietta_sesso`
---
-ALTER TABLE `maglietta_sesso`
-  ADD CONSTRAINT `fk_maglietta_sesso_maglietta` FOREIGN KEY (`maglietta_oid`) REFERENCES `maglietta` (`oid`),
-  ADD CONSTRAINT `fk_maglietta_sesso_sesso` FOREIGN KEY (`sesso_oid`) REFERENCES `sesso` (`oid`);
-
---
--- Limiti per la tabella `maglietta_taglia`
---
-ALTER TABLE `maglietta_taglia`
-  ADD CONSTRAINT `fk_maglietta_taglia_maglietta` FOREIGN KEY (`maglietta_oid`) REFERENCES `maglietta` (`oid`),
-  ADD CONSTRAINT `fk_maglietta_taglia_taglia` FOREIGN KEY (`taglia_oid`) REFERENCES `taglia` (`oid`);
-
---
--- Limiti per la tabella `ordine`
---
-ALTER TABLE `ordine`
-  ADD CONSTRAINT `fk_ordine_cliente` FOREIGN KEY (`cliente_oid`) REFERENCES `cliente` (`user_oid`),
-  ADD CONSTRAINT `fk_ordine_stampatore` FOREIGN KEY (`stampatore_oid`) REFERENCES `stampatore` (`user_oid`);
-
---
--- Limiti per la tabella `rigaordine`
---
-ALTER TABLE `rigaordine`
-  ADD CONSTRAINT `fk_rigaordine_ordine` FOREIGN KEY (`ordine_oid`) REFERENCES `ordine` (`oid`);
-
---
--- Limiti per la tabella `stampa`
---
-ALTER TABLE `stampa`
-  ADD CONSTRAINT `fk_stampa_cliente` FOREIGN KEY (`cliente_oid`) REFERENCES `cliente` (`user_oid`);
-
---
--- Limiti per la tabella `stampatore`
---
-ALTER TABLE `stampatore`
-  ADD CONSTRAINT `fk_stampatore_user` FOREIGN KEY (`user_oid`) REFERENCES `user` (`oid`);
-
---
--- Limiti per la tabella `tema_stampa`
---
-ALTER TABLE `tema_stampa`
-  ADD CONSTRAINT `fk_tema_stampa_stampa` FOREIGN KEY (`stampa_oid`) REFERENCES `stampa` (`oid`),
-  ADD CONSTRAINT `fk_tema_stampa_tema` FOREIGN KEY (`tema_oid`) REFERENCES `tema` (`oid`);
-
---
--- Limiti per la tabella `template`
---
-ALTER TABLE `template`
-  ADD CONSTRAINT `fk_template_maglietta` FOREIGN KEY (`maglietta_oid`) REFERENCES `maglietta` (`oid`),
-  ADD CONSTRAINT `fk_template_stampa` FOREIGN KEY (`stampa_oid`) REFERENCES `stampa` (`oid`),
-  ADD CONSTRAINT `fk_template_stampa_2` FOREIGN KEY (`stampa_oid_2`) REFERENCES `stampa` (`oid`);
-
---
--- Limiti per la tabella `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `fk_user_group` FOREIGN KEY (`group_oid`) REFERENCES `group` (`oid`);
-
---
--- Limiti per la tabella `user_group`
---
-ALTER TABLE `user_group`
-  ADD CONSTRAINT `fk_user_group_group` FOREIGN KEY (`group_oid`) REFERENCES `group` (`oid`),
-  ADD CONSTRAINT `fk_user_group_user` FOREIGN KEY (`user_oid`) REFERENCES `user` (`oid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
