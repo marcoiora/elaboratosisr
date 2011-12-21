@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<<<<<<< HEAD
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://shirtshop.com/Servizi/Ordini">
+		<xsd:element name="Ordini">
+			<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" maxOccurs="unbounded" name="Ordine">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element minOccurs="1" maxOccurs="1" name="oid" type="xsd:int" />
+							<xsd:element minOccurs="1" maxOccurs="1" name="dataOraConferma" type="xsd:dateTime" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+=======
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.webml.org/webservices/wsdl/products">
+	<xsd:complexType name="OrdiniType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Ordine">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" maxOccurs="unbounded" name="Instance">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element minOccurs="1" maxOccurs="1" name="oid" type="xsd:int" />
+									<xsd:element minOccurs="1" maxOccurs="1" name="dataOraConferma" 
+									type="xsd:dateTime" />
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+>>>>>>> origin/master
+</xsd:schema>

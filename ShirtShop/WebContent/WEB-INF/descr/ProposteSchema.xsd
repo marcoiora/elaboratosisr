@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.webml.org/webservices/wsdl/products">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.webml.org/webservices/wsdl/products">
 	<xsd:complexType name="PropostaType">
 		<xsd:sequence>
 			<xsd:element minOccurs="0" maxOccurs="unbounded" name="ListaTemplate">
