@@ -5,8 +5,10 @@ import java.text.SimpleDateFormat
 
 import java.util.*;
 
+println ingresso;
+
 data = ingresso.substring(0, 10);
-ora = ingresso.substring(11);
+ora = ingresso.substring(11,19);
 
 println data;
 println ora;

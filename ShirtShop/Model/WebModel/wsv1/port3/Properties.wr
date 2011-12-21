@@ -1,8 +1,11 @@
-<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="570" gr:y="60" id="wsv1#port3" name="Ordini">
+<Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="620" gr:y="30" id="wsv1#port3" name="Ordini">
   <OperationUnits>
-    <SolicitUnit id="wsv1#port3#slu3" name="getNuoviOrdini" invocationStyle="REST" gr:x="0" gr:y="0" nsURI="http://www.webml.org/webservices/wsdl/products">
+    <SolicitUnit id="wsv1#port3#slu3" name="getNuoviOrdini" invocationStyle="SOAP XML" gr:x="0" gr:y="0" nsURI="http://shirtshop.com/Servizi/Ordini">
       <SolicitParameter id="wsv1#port3#slu3#slp3" name="sincewhen" type="dateTime[SimpleType]"/>
-      <KOLink id="wsv1#port3#slu3#kln80" name="KOLink80" to="wsv1#port3#eru3" automaticCoupling="true"/>
+      <KOLink id="wsv1#port3#slu3#kln80" name="KOLink80" to="wsv1#port3#eru3">
+        <LinkParameter id="wsv1#port3#slu3#kln80#par642" name="Exception_Fault Exception" source="exception" target="wsv1#port3#eru3.faultException"/>
+        <LinkParameter id="wsv1#port3#slu3#kln80#par643" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port3#eru3.faultMessage"/>
+      </KOLink>
       <OKLink id="wsv1#port3#slu3#oln186" name="OKLink186" to="wsv1#port3#scu4">
         <LinkParameter id="wsv1#port3#slu3#oln186#par594" name="sincewhen (Array)_ingresso" source="map(wsv1#port3#slu3#slp3)" target="wsv1#port3#scu4.ingresso"/>
       </OKLink>
@@ -15,14 +18,20 @@
           <AttributesCondition id="wsv1#port3#xou2#xoe2#su198#acond29" name="da gestire" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att41" value="da-gestire"/>
         </Selector>
       </XMLOutEntity>
-      <OKLink id="wsv1#port3#xou2#oln185" name="OKLink185" to="wsv1#port3#rsu3">
-        <LinkParameter id="wsv1#port3#xou2#oln185#par629" name="Output XML Document_Ordini" source="xmlDocument" target="wsv1#port3#rsu3.wsv1#port3#rsu3#rsp3"/>
+      <OKLink id="wsv1#port3#xou2#oln185" name="OKLink185" to="wsv1#port3#adu1">
+        <LinkParameter id="wsv1#port3#xou2#oln185#par593" name="Output XML Document_Input XML Document" source="xmlDocument" target="wsv1#port3#adu1.inputDocument"/>
       </OKLink>
-      <KOLink id="wsv1#port3#xou2#kln77" name="KOLink77" to="wsv1#port3#eru3" automaticCoupling="true"/>
+      <KOLink id="wsv1#port3#xou2#kln77" name="KOLink77" to="wsv1#port3#eru3">
+        <LinkParameter id="wsv1#port3#xou2#kln77#par640" name="Exception_Fault Exception" source="exception" target="wsv1#port3#eru3.faultException"/>
+        <LinkParameter id="wsv1#port3#xou2#kln77#par641" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port3#eru3.faultMessage"/>
+      </KOLink>
     </XMLOutUnit>
-    <ResponseUnit gr:x="300" gr:y="0" id="wsv1#port3#rsu3" name="getNuoviOrdiniResponse" nsURI="http://www.webml.org/webservices/wsdl/products">
-      <KOLink id="wsv1#port3#rsu3#kln81" name="KOLink81" to="wsv1#port3#eru3" automaticCoupling="true"/>
-      <ResponseParameter id="wsv1#port3#rsu3#rsp3" name="Ordini" xmlSchema="WEB-INF/descr/OrdiniSchema.xsd" type="OrdiniType[ComplexType]"/>
+    <ResponseUnit gr:x="390" gr:y="0" id="wsv1#port3#rsu3" name="getNuoviOrdiniResponse" nsURI="http://shirtshop.com/Servizi/Ordini">
+      <KOLink id="wsv1#port3#rsu3#kln81" name="KOLink81" to="wsv1#port3#eru3">
+        <LinkParameter id="wsv1#port3#rsu3#kln81#par636" name="Exception_Fault Exception" source="exception" target="wsv1#port3#eru3.faultException"/>
+        <LinkParameter id="wsv1#port3#rsu3#kln81#par639" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port3#eru3.faultMessage"/>
+      </KOLink>
+      <ResponseParameter id="wsv1#port3#rsu3#rsp3" name="Ordini" xmlSchema="WEB-INF/descr/OrdiniSchema.xsd" type="Ordini[Element]"/>
     </ResponseUnit>
     <ErrorResponseUnit gr:x="160" gr:y="150" id="wsv1#port3#eru3" name="ErrorResponseUnit3"/>
     <ScriptUnit gr:x="0" gr:y="150" id="wsv1#port3#scu4" name="string-to-timestamp" script="WEB-INF/descr/string-to-timestamp.groovy">
@@ -30,5 +39,14 @@
         <LinkParameter id="wsv1#port3#scu4#oln187#par630" name="result_sincedata" source="result(result)" target="wsv1#port3#xou2#xoe2#su198#acond28"/>
       </OKLink>
     </ScriptUnit>
+    <AdapterUnit gr:x="270" gr:y="0" id="wsv1#port3#adu1" name="tranform" xslFile="WEB-INF/descr/ordine.xsl">
+      <OKLink id="wsv1#port3#adu1#oln182" name="OKLink182" to="wsv1#port3#rsu3">
+        <LinkParameter id="wsv1#port3#adu1#oln182#par629" name="Output XML Document_Ordini" source="xmlDocument" target="wsv1#port3#rsu3.wsv1#port3#rsu3#rsp3"/>
+      </OKLink>
+      <KOLink id="wsv1#port3#adu1#kln82" name="KOLink82" to="wsv1#port3#eru3">
+        <LinkParameter id="wsv1#port3#adu1#kln82#par634" name="Exception_Fault Exception" source="exception" target="wsv1#port3#eru3.faultException"/>
+        <LinkParameter id="wsv1#port3#adu1#kln82#par635" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port3#eru3.faultMessage"/>
+      </KOLink>
+    </AdapterUnit>
   </OperationUnits>
 </Port>
