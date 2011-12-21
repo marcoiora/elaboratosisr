@@ -1,7 +1,7 @@
 <HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="310" gr:y="260" id="mov1#mpkg1#hym5" name="Nuovo Sesso">
   <OperationUnits>
-    <OKCollectorUnit id="mov1#mpkg1#hym5#okcu6" name="OK Collector" gr:x="594" gr:y="0"/>
-    <CreateUnit id="mov1#mpkg1#hym5#cru21" name="Salva Sesso" gr:x="420" gr:y="40" entity="ent4">
+    <OKCollectorUnit id="mov1#mpkg1#hym5#okcu6" name="OK Collector" gr:x="330" gr:y="-30"/>
+    <CreateUnit id="mov1#mpkg1#hym5#cru21" name="Salva Sesso" gr:x="310" gr:y="80" entity="ent4">
       <OKLink id="mov1#mpkg1#hym5#cru21#oln128" name="OKLink123" to="mov1#mpkg1#hym5#okcu6"/>
     </CreateUnit>
     <InputCollectorUnit id="mov1#mpkg1#hym5#icu14" name="Input Collector" gr:x="0" gr:y="67">

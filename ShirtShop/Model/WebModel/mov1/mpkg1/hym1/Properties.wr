@@ -1,9 +1,9 @@
 <HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#hym1" name="Nuovo Tema" gr:x="142" gr:y="122">
   <OperationUnits>
-    <InputCollectorUnit id="mov1#mpkg1#hym1#icu9" name="Input Collector" gr:x="0" gr:y="200">
+    <InputCollectorUnit id="mov1#mpkg1#hym1#icu9" name="Input Collector" gr:x="130" gr:y="160">
       <OKLink id="mov1#mpkg1#hym1#icu9#oln27" name="Nuovo Tema" to="mov1#mpkg1#hym1#page20"/>
     </InputCollectorUnit>
-    <OKCollectorUnit id="mov1#mpkg1#hym1#okcu10" name="OK Collector4" gr:x="720" gr:y="0"/>
+    <OKCollectorUnit id="mov1#mpkg1#hym1#okcu10" name="OK Collector4" gr:x="480" gr:y="10"/>
     <CreateUnit id="mov1#mpkg1#hym1#cru9" name="Salva Tema" gr:x="320" gr:y="0" entity="ent14">
       <OKLink id="mov1#mpkg1#hym1#cru9#oln28" name="OKLink40" to="mov1#mpkg1#hym1#okcu10"/>
     </CreateUnit>

@@ -3,8 +3,8 @@
     <InputCollectorUnit gr:x="0" gr:y="67" id="mov1#mpkg1#hym2#icu4" name="Input Collector">
       <OKLink id="mov1#mpkg1#hym2#icu4#oln121" name="OKLink121" to="mov1#mpkg1#hym2#page10" automaticCoupling="true"/>
     </InputCollectorUnit>
-    <OKCollectorUnit gr:x="594" gr:y="0" id="mov1#mpkg1#hym2#okcu3" name="OK Collector"/>
-    <CreateUnit gr:x="420" gr:y="40" id="mov1#mpkg1#hym2#cru19" name="Salva Colore" entity="ent2">
+    <OKCollectorUnit gr:x="330" gr:y="-50" id="mov1#mpkg1#hym2#okcu3" name="OK Collector"/>
+    <CreateUnit gr:x="310" gr:y="100" id="mov1#mpkg1#hym2#cru19" name="Salva Colore" entity="ent2">
       <OKLink id="mov1#mpkg1#hym2#cru19#oln123" name="OKLink123" to="mov1#mpkg1#hym2#okcu3"/>
     </CreateUnit>
   </OperationUnits>

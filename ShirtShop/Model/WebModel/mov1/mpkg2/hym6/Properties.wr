@@ -1,9 +1,9 @@
 <HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="428" id="mov1#mpkg2#hym6" name="Carica Stampa Personalizzata">
   <OperationUnits>
-    <InputCollectorUnit gr:x="100" gr:y="120" id="mov1#mpkg2#hym6#icu18" name="Input Collector">
+    <InputCollectorUnit gr:x="310" gr:y="260" id="mov1#mpkg2#hym6#icu18" name="Input Collector">
       <OKLink id="mov1#mpkg2#hym6#icu18#oln144" to="mov1#mpkg2#hym6#page65" validate="true" name="Carica la tua stampa personalizzata!"/>
     </InputCollectorUnit>
-    <OKCollectorUnit gr:x="960" gr:y="120" id="mov1#mpkg2#hym6#okcu4" name="OK Collector4">
+    <OKCollectorUnit gr:x="700" gr:y="-30" id="mov1#mpkg2#hym6#okcu4" name="OK Collector4">
       <OutputCollectorParameter id="mov1#mpkg2#hym6#okcu4#ocp19" name="oid"/>
       <OutputCollectorParameter id="mov1#mpkg2#hym6#okcu4#ocp20" name="nome_PASSING_Stampa selezionata"/>
     </OKCollectorUnit>

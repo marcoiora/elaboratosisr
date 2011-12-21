@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg1#hym4#page62" name="Nuova Taglia" gr:x="220" gr:y="37">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg1#hym4#page62" name="Nuova Taglia" gr:x="150" gr:y="40">
   <ContentUnits>
     <EntryUnit id="mov1#mpkg1#hym4#page62#enu28" name="Nuova Taglia" linkOrder="mov1#mpkg1#hym4#page62#enu28#ln16" gr:x="0" gr:y="0">
       <Link id="mov1#mpkg1#hym4#page62#enu28#ln16" name="Salva" to="mov1#mpkg1#hym4#cru20" type="normal" validate="true">

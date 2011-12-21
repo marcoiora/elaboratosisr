@@ -1,12 +1,12 @@
 <ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="8" gr:y="68" id="mov1#mpkg2#ctm1" name="VisualizzaCarrello">
   <ContentUnits>
-    <InputCollectorUnit gr:x="0" gr:y="262" id="mov1#mpkg2#ctm1#icu1" name="Input Collector">
+    <InputCollectorUnit gr:x="160" gr:y="10" id="mov1#mpkg2#ctm1#icu1" name="Input Collector">
       <Link id="mov1#mpkg2#ctm1#icu1#ln249" type="transport" to="mov1#mpkg2#ctm1#miu17"/>
     </InputCollectorUnit>
-    <OutputCollectorUnit gr:x="859" gr:y="0" id="mov1#mpkg2#ctm1#ocu1" name="Output Collector1">
+    <OutputCollectorUnit gr:x="500" gr:y="-20" id="mov1#mpkg2#ctm1#ocu1" name="Output Collector1">
       <OutputCollectorParameter id="mov1#mpkg2#ctm1#ocu1#ocp1" name="ordine_oid"/>
     </OutputCollectorUnit>
-    <MultiMessageUnit id="mov1#mpkg2#ctm1#mssu5" name="Totale" gr:x="400" gr:y="230"/>
+    <MultiMessageUnit id="mov1#mpkg2#ctm1#mssu5" name="Totale" gr:x="310" gr:y="230"/>
     <SelectorUnit id="mov1#mpkg2#ctm1#seu58" name="Totale Ordine" gr:x="300" gr:y="111" entity="ent9" distinctAttributes="ent9#att39">
       <Selector id="mov1#mpkg2#ctm1#seu58#su130" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="mov1#mpkg2#ctm1#seu58#su130#kcond78" name="oid" predicate="in" implied="false"/>
@@ -29,7 +29,7 @@
         <LinkParameter id="mov1#mpkg2#ctm1#miu17#ln276#par348" source="mov1#mpkg2#opm13#okcu16#ocp12" name="ordine_oid_PASSING" target="mov1#mpkg2#ctm1#ocu1#ocp1"/>
       </Link>
     </ModuleInstanceUnit>
-    <MultiMessageUnit gr:x="494" gr:y="241" id="mov1#mpkg2#ctm1#mssu3" name="Spese di spedizione"/>
+    <MultiMessageUnit gr:x="430" gr:y="230" id="mov1#mpkg2#ctm1#mssu3" name="Spese di spedizione"/>
     <IndexUnit id="mov1#mpkg2#ctm1#inu7" entity="ent8" displayAttributes="rel17#role33.rel13#role25.ent1#att2 rel17#role33.rel14#role27.ent4#att18 rel17#role33.rel15#role29.ent3#att16 rel17#role33.rel16#role31.ent2#att13 rel17#role33.rel11#role21.ent6#att23 rel17#role33.rel12#role23.ent6#att23 ent8#att32 ent8#att33 ent8#att34" name="Prodotti in carrello" gr:x="500" gr:y="100" linkOrder="mov1#mpkg2#ctm1#inu7#ln404 mov1#mpkg2#ctm1#inu7#ln405">
       <Selector id="mov1#mpkg2#ctm1#inu7#su193" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="mov1#mpkg2#ctm1#inu7#su193#rcond75" role="rel18#role35" predicate="in" implied="false" name="carrello"/>
@@ -41,10 +41,10 @@
         <LinkParameter id="mov1#mpkg2#ctm1#inu7#ln405#par546" name="oid_rigaordine_oid" source="data[].ent8#att31" target="mov1#mpkg2#ctm1#ocu10#ocp24"/>
       </Link>
     </IndexUnit>
-    <OutputCollectorUnit gr:x="730" gr:y="60" id="mov1#mpkg2#ctm1#ocu8" name="elimina riga">
+    <OutputCollectorUnit gr:x="670" gr:y="60" id="mov1#mpkg2#ctm1#ocu8" name="elimina riga">
       <OutputCollectorParameter id="mov1#mpkg2#ctm1#ocu8#ocp23" name="rigaordine_oid"/>
     </OutputCollectorUnit>
-    <OutputCollectorUnit gr:x="734" gr:y="193" id="mov1#mpkg2#ctm1#ocu10" name="modifica">
+    <OutputCollectorUnit gr:x="670" gr:y="190" id="mov1#mpkg2#ctm1#ocu10" name="modifica">
       <OutputCollectorParameter id="mov1#mpkg2#ctm1#ocu10#ocp24" name="rigaordine_oid"/>
     </OutputCollectorUnit>
   </ContentUnits>

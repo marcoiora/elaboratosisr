@@ -1,11 +1,11 @@
 <ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="4" gr:y="258" id="mov1#mpkg2#ctm4" name="StatoPersonalizzazione">
   <ContentUnits>
-    <GetUnit gr:x="3" gr:y="0" id="mov1#mpkg2#ctm4#gtu27" name="Maglietta" contextParameters="ctx1">
+    <GetUnit gr:x="710" gr:y="-160" id="mov1#mpkg2#ctm4#gtu27" name="Maglietta" contextParameters="ctx1">
       <Link id="mov1#mpkg2#ctm4#gtu27#ln345" name="Link345" to="mov1#mpkg2#ctm4#dau28" type="transport" validate="true">
         <LinkParameter id="mov1#mpkg2#ctm4#gtu27#ln345#par557" name="maglietta_oid_KeyCondition107 [oid]" source="mov1#mpkg2#ctm4#gtu27.ctx1" target="mov1#mpkg2#ctm4#dau28#su155#kcond107.ent1#att1"/>
       </Link>
     </GetUnit>
-    <DataUnit gr:x="0" gr:y="120" id="mov1#mpkg2#ctm4#dau28" name="Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att5 ent1#att8 ent1#att9">
+    <DataUnit gr:x="707" gr:y="-40" id="mov1#mpkg2#ctm4#dau28" name="Maglietta" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att5 ent1#att8 ent1#att9">
       <Selector id="mov1#mpkg2#ctm4#dau28#su155" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="mov1#mpkg2#ctm4#dau28#su155#kcond107" name="KeyCondition107" predicate="in" implied="false"/>
       </Selector>
@@ -52,7 +52,7 @@
         <RelationshipRoleCondition id="mov1#mpkg2#ctm4#dau34#su161#rcond54" name="RoleCondition49" predicate="in" implied="false" role="rel14#role27"/>
       </Selector>
     </DataUnit>
-    <MultiMessageUnit gr:x="-230" gr:y="-10" id="mov1#mpkg2#ctm4#mssu11" name="Stato della personalizzazione">
+    <MultiMessageUnit gr:x="140" gr:y="-140" id="mov1#mpkg2#ctm4#mssu11" name="Stato della personalizzazione">
       <Message xml:space="preserve">Qui sotto puoi visualizzare cosa hai gi&#224; personalizzato sulla tua maglietta.</Message>
     </MultiMessageUnit>
   </ContentUnits>

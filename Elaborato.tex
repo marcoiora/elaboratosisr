@@ -2158,13 +2158,14 @@ La progettazione dell'ipertesto è costituita da due fasi sequenziali, descritte 
 		sotto-schemi di ipertesto
 	\end{itemize}
 \end{enumerate}
+\newpage
 
 \section{Progettazione Coarse}
-Durante la progettazione Coarse sono state seguite le tre fasi principali sopra indicate, per ogni 
+Durante la progettazione Coarse sono state seguite le tre fasi principali sopra indicate per ogni 
 site view precedentemente individuata: individuazione delle aree, definizione della loro visibilità 
 e specifica dei contenuti di ogni area.
 
-\subsection{Individuazione delle aree e definiziona delle visibilità delle aree}
+\subsection{Individuazione delle aree e definizione delle visibilità delle aree}
 Rifacendoci alla precedente analisi, riportiamo di nuovo le aree individuate per ogni site view con 
 la definizione della loro visibilità.\\
 Per la visibilità delle aree verrà utilizzata la seguente notazione:
@@ -2201,8 +2202,9 @@ Per la visibilità delle aree verrà utilizzata la seguente notazione:
 	\end{longtable}
 \end{center}
 Si noti che nella Site View Cliente non vi è alcuna area di Default. Si avrà, come Default della Site
-View, solo una pagina di Benvenuto con funzione di ""smistamento"", senza quindi la necessità di creare
+View, una pagina di benvenuto con funzione di ``smistamento'', senza quindi la necessità di creare
 un'area apposita. 
+\newpage
 
 \subsubsection{Site View Stampatore}
 \begin{center}
@@ -2215,7 +2217,7 @@ un'area apposita.
 	\end{longtable}
 \end{center}
 Si noti che anche nella Site View Stampatore non vi è alcuna area di Default. Si avrà, come Default della Site
-View, solo una pagina di Benvenuto con funzione di ""smistamento"", senza quindi la necessità di creare
+View, una pagina di benvenuto con funzione di ``smistamento'', senza quindi la necessità di creare
 un'area apposita. 
 
 \subsubsection{Site View Amministrazione}
@@ -2233,7 +2235,7 @@ un'area apposita.
 	\end{longtable}
 \end{center}
 Si noti che anche nella Site View Amministrazione non vi è alcuna area di Default. Si avrà, come Default della Site
-View, solo una pagina di Benvenuto con funzione di ""smistamento"", senza quindi la necessità di creare
+View, una pagina di benvenuto con funzione di ``smistamento'', senza quindi la necessità di creare
 un'area apposita. 
 
 \subsection{Specifica dei contenuti di ogni area} 
@@ -2260,11 +2262,10 @@ WebML.
 		\hline
 	\end{longtable}
 \end{center}
-\newpage
 
 \subsubsection{Site View Cliente}
 \begin{center}
-	\begin{longtable}{|l|p{0.8\columnwidth}|}
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
 		\hline
 		Area \textbf{WebMarket} & \begin{description} \item Core (Maglietta, Foto)
 		\item Core (Stampa)
@@ -2274,6 +2275,13 @@ WebML.
 		\item Interconnection (Maglietta, RigaOrdine, Configurazione2Maglietta, Configurazione2RigaOrdine)
 		\item Interconnection (StampaFronte, RigaOrdine, Configurazione2StampaFronte, Configurazione2RigaOrdine)
 		\item Interconnection (StampaRetro, RigaOrdine, Configurazione2RigaOrdine, Configurazione2StampaRetro)
+		\end{description}\\
+		\hline
+	\end{longtable}
+\newpage
+	\begin{longtable}{|l|p{0.7\columnwidth}|}
+		\hline
+		& \begin{description} 		
 		\item Create\&Connect (Configurazione, Configurazione2Maglietta)
 		\item Create\&Connect (Stampa, Stampa2Cliente)
 		\item Create\&Connect (Ordine, Ordine2Cliente)
@@ -2286,8 +2294,7 @@ WebML.
 		\item Modify (RigaOrdine)
 		\item Modify (Ordine)
 		\item Delete (RigaOrdine)
-		\item Delete (Configurazione)
-		
+		\item Delete (Configurazione)		
 		\end{description}\\
 		\hline
 		Area \textbf{Informazione} & \begin{description} \item Core (Pagina)
@@ -2335,7 +2342,7 @@ WebML.
 
 \subsubsection{Site View Amministrazione}
 \begin{center}
-	\begin{longtable}{|l|p{0.7\columnwidth}|}
+	\begin{longtable}{|l|p{0.6\columnwidth}|}
 		\hline
 		Area \textbf{Gestione Accounts} & \begin{description} \item Modify (Cliente)
 		\item Modify (Stampatore)
@@ -2394,11 +2401,11 @@ definita la visibilità:
 	\item \textbf{L}: Landmark
 	\item \textbf{I}: Pagina Interna
 \end{itemize}
-Per ogni site-view verrà mostrato lo schema generale dell'ipertesto e poi si andranno ad analizzare 
+Per ogni site view verrà mostrato lo schema generale dell'ipertesto e poi si andranno ad analizzare 
 una ad una le aree contenute.\\
 E' necessario precisare alcune particolarità, comuni a più site view, emerse durante l'analisi:
 \begin{itemize}
-	\item si è deciso di gestire gli OK-link, link che vengono seguiti in caso di fallimento nella 
+	\item si è deciso di gestire gli KO-link, link che vengono seguiti in caso di fallimento nella 
 	gestione degli errori sulle operazioni con il database, con un'unica pagina creata in ogni site
 	view.
 	\item qualora, per motivi grafici, non ci sia la possibilità di mostrare il percorso completo di
@@ -2417,7 +2424,7 @@ E' necessario precisare alcune particolarità, comuni a più site view, emerse dur
 	\includegraphics[height=10cm]{Immagini/SiteViewPubblicaHomePage.png}\\
 	\textit{Fig. 3.1.1: Area HomePage}
 \end{center}
-L'Area \textbf{Home} contiene tre pagine: \textit{HomePage}, \textit{Registrazione} e \textit{Complimenti
+L'Area \textbf{Home Page} contiene tre pagine: \textit{HomePage}, \textit{Registrazione} e \textit{Complimenti
 per la Registrazione}.\\
 \begin{itemize} 
 	\item La \textit{HomePage} è la prima pagina che viene visualizzata dal visitatore nell'accesso al sito. 
@@ -2426,9 +2433,9 @@ per la Registrazione}.\\
 	amministratore, cliente registrato o stampatore, e quindi accedere alla site view relativa.\\
 	Dall'elenco delle proposte si può accedere all'area prodotti per visualizzare il dettaglio delle stesse.
 	\item \textit{Registrazione} contiene un form che il visitatore può compilare se desidera accedere al sito
-	come cliente registrato. Se la registrazione va a buon fine l'utente viene rediretto ad una pagina 
-	che ne conferma il successo, e questa è la pagina \textit{Complimenti per la Registrazione}, altrimenti
-	alla pagina di errore.
+	come cliente registrato, amministratore o stampatore. Se la registrazione va a buon fine, l'utente
+	viene rediretto ad una pagina che ne conferma il successo, pagina 
+	\textit{Complimenti per la Registrazione}, altrimenti alla pagina di errore.
 \end{itemize}
 
 \subsubsection{Area Informazioni}
@@ -2454,22 +2461,22 @@ comune anche all'utente registrato. Questo evita la duplicazione del codice.
 L'Area \textbf{Prodotti} contiene più pagine. 
 \begin{itemize}
 	\item Il visitatore, quando accede a quest'area visualizza la pagina \textit{I nostri Prodotti} 
-	che contiene i link hai cataloghi dei prodotti venduti dal sito, più un messaggio di benvenuto nell'area.\\
+	che contiene i link ai cataloghi dei prodotti venduti dal sito, più un messaggio di benvenuto nell'area.\\
 	\item Per visualizzare il catalogo delle magliette si accede alla relativa pagina \textit{Catalogo Magliette}
 	che contiene il modulo \underline{CatalogoMagliette}:
 	\begin{center}
 		\includegraphics[height=10cm]{Immagini/ModuloCatalogoMagliett.png}\\
 		\textit{Fig. 3.1.3-A: Modulo CatalogoMagliette}
 	\end{center}
-	Questo modulo mostra l'elenco delle magliette e i possibili accesso ad esse: vengono visualizzati i 
-	colori, le taglie e i sessi disponibili, e i tipo di manica, collo e materiale tra i quali filtrare 
+	Questo modulo mostra l'elenco delle magliette e i possibili accessi ad esse: vengono visualizzati i 
+	colori, le taglie e i sessi disponibili, e i tipo di manica, collo e materiale, tra i quali filtrare, 
 	per la scelte delle magliette.\\
 	Dall'elenco delle magliette si può accedere alla pagina \textit{Dettaglio Maglietta} in cui è 
 	possibile visualizzare i dettagli di ogni singola maglietta, compresa la foto.
-	\item Per invece la visualizzazione del catalogo delle stampe, si accede alla pagina \textit{Catalogo Stampe}
+	\item Per la visualizzazione del catalogo delle stampe, si accede alla pagina \textit{Catalogo Stampe}
 	che contiene il modulo \underline{CatalogoStampe}:
 	\begin{center}
-		\includegraphics[height=5cm]{Immagini/ModuloCatalogoStampe.png}\\
+		\includegraphics[height=8cm]{Immagini/ModuloCatalogoStampe.png}\\
 		\textit{Fig. 3.1.3-B: Modulo CatalogoStampe}
 	\end{center}
 	Questo modulo mostra l'elenco delle stampe e i temi nei quali esse sono suddivise.\\
@@ -2480,7 +2487,7 @@ L'Area \textbf{Prodotti} contiene più pagine.
 	\item Per visualizzare infine le proposte di magliette si accede alla pagina \textit{Le nostre
 	Proposte} che contiene il modulo \underline{ElencoProposteSenzaInattive}:
 	\begin{center}
-		\includegraphics[height=5cm]{Immagini/ModuloProposte.png}\\
+		\includegraphics[height=6cm]{Immagini/ModuloProposte.png}\\
 		\textit{Fig. 3.1.3-C: Modulo Proposte}
 	\end{center}
 	Dall'elenco delle proposte si può accedere alla pagina \textit{Dettaglio Proposta} in cui è possibile
@@ -2505,14 +2512,14 @@ Cliente solo una pagina.\\
 Oltre ad un messaggio di benvenuto, la pagina contiene il modulo per la 
 visualizzazione delle proposte \underline{MostraPropostePerClienti}:
 \begin{center}
-	\includegraphics[height=5cm]{Immagini/ModuloMostraPropostePerClienti.png}\\
+	\includegraphics[height=6cm]{Immagini/ModuloMostraPropostePerClienti.png}\\
 	\textit{Fig. 3.2.1-A: Modulo per la visualizzazione delle proposte}
 \end{center}
 Da questo modulo due link portano all'Area \textbf{Web Market}, uno per la visualizzazione dei dettagli
 di una proposta e l'altro per l'acquisto della stessa.\\
 Nella pagina \textbf{Home Cliente} è presente anche il modulo \underline{Novità}:
 \begin{center}
-	\includegraphics[height=5cm]{Immagini/ModuloNovitaCliente.png}\\
+	\includegraphics[height=6cm]{Immagini/ModuloNovitaCliente.png}\\
 	\textit{Fig. 3.2.1-B: Modulo per la visualizzazione delle novità degli ordini}
 \end{center}
 Questo modulo permette al cliente, al primo accesso alla pagina di vedere le novità dall'ultimo suo 
@@ -2526,7 +2533,7 @@ login, quindi, ad esempio, se i suoi ordini sono stati presi in carico o evasi.
 L'Area \textbf{Web Market} contiene le pagine necessarie al cliente per la personalizzazione e l'acquisto
 di una maglietta.
 \begin{itemize}
-	\item \textit{I nostri Prodotti} mostra un messaggio di benvenuto nell'area e link ai cataloghi
+	\item \textit{I nostri Prodotti} mostra un messaggio di benvenuto nell'area e i link ai cataloghi
 	dei prodotti offerti: \textit{Catalogo Magliette}, \textit{Catalogo Stampe} e \textit{Proposte 
 	da ShirtShop}
 	
@@ -2542,30 +2549,31 @@ di una maglietta.
 	alla pagina \textit{Step 1 - Caratteristiche}
 	
 	\item Nella pagina \textit{Step 1 - Caratteristiche} il cliente potrà configurare la maglietta 
-	scelta, colore, taglia e sesso. Dalla scelta effettuata verrà mostrata la foto per la configurazione
-	colore e sesso scelta.\\
+	scelta, il colore, la taglia e il sesso. Dalla scelta effettuata verrà mostrata la foto per la configurazione
+	colore e sesso indicata.\\
 	Vengono sempre visualizzate le informazioni generali della maglietta che si vuole acquistare,
 	quali tipo di manica, di collo, materiale, prezzo e nome, grazie al modulo \underline{StatoPersonalizzazione}
 	presente in ogni step della configurazione:
 	\begin{center}
-		\includegraphics[height=4cm]{Immagini/ModuloStatoPersonalizzazione.png}\\
+		\includegraphics[height=9cm]{Immagini/ModuloStatoPersonalizzazione.png}\\
 		\textit{Fig. 3.2.3-A: Modulo Stato della Personalizzazione}
 	\end{center}
 	In questo, come nei successivi step della personalizzazione di una maglietta, è presente un 
-	messaggio che informa l'utente sul punto in cui si trova durante la configurazione.\\
-	Da questa pagina, l'utente può confermare la configurazione scelta e procedere, tramite un link, 
-	al completamento della configurazione. Viene valutata la possibilità di inserire stampe sulla maglietta
-	scelta, fronte e/o retro. Se la maglietta non risulta stampabile ne sul fronte, ne sul retro, 
-	il cliente viene rediretto alla pagina \textit{Step 4 - Aggiungi al carrello}. Altrimenti se è 
-	stampabile sul fronte viene indirizzato alla pagina \textit{Step 2 - Personalizzazione Anteriore}, 
-	se è stampabile anche o solo sul retro invece viene reindirizzato alla pagina \textit{Step 3 - 
-	Personalizzazione Posteriore}.
+	messaggio che informa l'utente sul punto in cui si trova durante la configurazione (in questo caso
+	la Multi Message Unit Step di Caratteristiche Maglietta.\\
+	Da questa pagina, \textit{Step 1 - Caratteristiche}, l'utente può confermare la configurazione 
+	scelta e procedere, tramite un link, al completamento della configurazione. Viene valutata la 
+	possibilità di inserire stampe sulla maglietta scelta, fronte e/o retro. Se la maglietta non risulta 
+	stampabile ne' sul fronte, ne' sul retro, il cliente viene rediretto alla pagina 
+	\textit{Step 4 - Aggiungi al carrello}. Altrimenti se è stampabile sul fronte viene indirizzato 
+	alla pagina \textit{Step 2 - Personalizzazione Anteriore}, se è stampabile anche o solo sul retro 
+	invece viene reindirizzato alla pagina \textit{Step 3 - Personalizzazione Posteriore}.
 	
 	\item \textit{Step 2 - Personalizzazione Anteriore}, esattamente come \textit{Step 3 - Personalizzazione
 	Posteriore}, è una pagina che propone le stampe disponibili fra cui scegliere tramite il modulo
 	\underline{CatalogoStampeSelezione}:
 	\begin{center}
-		\includegraphics[height=4cm]{Immagini/ModuloCatalogoStampeSelezione.png}\\
+		\includegraphics[height=7cm]{Immagini/ModuloCatalogoStampeSelezione.png}\\
 		\textit{Fig. 3.2.3-B: Modulo del catalogo delle stampe da selezionare per la personalizzazione}
 	\end{center}
 	Tramite questo modulo il cliente può vedere anche le eventuali stampe personali che aveva aggiunto
@@ -2575,7 +2583,7 @@ di una maglietta.
 	Se l'utente vuole stampare sulla maglietta scelta una sua stampa personale, ha la possibilità di 
 	aggiungerla grazie al modulo \underline{Carica Stampa} \underline {Personalizzata}:
 	\begin{center}
-		\includegraphics[height=3cm]{Immagini/ModuloCaricaStampaPersonalizzata.png}\\
+		\includegraphics[height=8cm]{Immagini/ModuloCaricaStampaPersonalizzata.png}\\
 		\textit{Fig. 3.2.3-C: Modulo per il caricamente di una stampa da parte di un cliente}
 	\end{center}
 	L'utente carica la stampa ad alta risoluzione, pronta quindi per la stampa. Il modulo automaticamente
@@ -2589,9 +2597,9 @@ di una maglietta.
 	\item Nella pagina \textit{Step 4 - Aggiungi al carrello} viene riproposto un riassunto delle 
 	scelte effettuate dal cliente riguardo la maglietta e la/e eventuale/i stampa/e.\\
 	Viene quindi chiesta la quantità di magliette così personalizzate che si vuole acquistare.\\
-	Una volta decisa la quantità tramite il link 'Aggiungi!', tramite il modulo \underline{Crea o 
-	recupera Carrello} è possibile creare un nuovo carrello o verificare se ne esiste già uno ed aggiungere
-	la nuova configurazione a carrello:
+	Una volta decisa la quantità il link `Aggiungi!', tramite il modulo \underline{Crea o 
+	recupera Carrello}, crea un nuovo carrello o verifica se ne esiste già uno ed aggiunge
+	la nuova configurazione al carrello:
 	\begin{center}
 		\includegraphics[height=8cm]{Immagini/ModuloCreaCaricaCarrello.png}\\
 		\textit{Fig. 3.2.3-D: Modulo per la creazione o il recupero del carrello}
@@ -2599,48 +2607,51 @@ di una maglietta.
 	Il cliente viene indirizzato alla pagina \textit{Carrello}.
 	
 	\item La pagina \textit{Carrello} permette la visualizzazione delle righe d'ordine di un carrello.
-	Il modulo predispo a questo scopo è \underline{VisualizzaCarrello}:
+	Il modulo predisposto a questo scopo è \underline{VisualizzaCarrello}:
 	\begin{center}
-		\includegraphics[height=4cm]{Immagini/ModuloVisualizzaCarrello.png}\\
+		\includegraphics[height=6cm]{Immagini/ModuloVisualizzaCarrello.png}\\
 		\textit{Fig. 3.2.3-E: Modulo per la visualizzazione del carrello}
 	\end{center}
 	E' possibile vedere, inoltre, il totale del carrello e cancellare o modificare (in quantità ordinata)
 	le righe dell'ordine andando sulla pagina \textit{Modifica Quantità}.\\
-	Da qui l'utente può continuare a fare acquisti o confermare il carrello facendolo diventare un 
-	ordine (con conferma due volte della volontà di ordinare essendo reindirizzato alla pagina \textit{
-	Procedi all'acquisto (conferma)}.\\
+	Da questa pagina \textit{Carrello} l'utente può continuare a fare acquisti o confermare il carrello facendolo diventare un 
+	ordine, questo passaggio avviene con conferma della volontà di ordinare anche dalla pagina \textit{
+	Procedi all'acquisto (conferma)}).\\
 	Se viene nuovamente confermato l'ordine si passa alla pagina \textit{Trasforma In Ordine}, dove un 
 	messaggio comunicherà l'accettazione dell'ordine.
 	
-	\item La pagina \textit{Modifica Quantità} permette la modifica della quantità di una riga d'ordine,
-	viene ricalcolato il prezzo con la nuova quantità e si ritorna alla pagina del carrello con le 
-	nuove quantità.
+	\item La pagina \textit{Modifica Quantità} permette la modifica della quantità di una riga d'ordine:
+	qui viene ricalcolato il prezzo con la nuova quantità e si ritorna alla pagina del carrello con le 
+	nuove quantità e il nuovo totale ricalcolato.
 	
-	\item \textit{Trasforma In Ordine} inoltre ha due link uno per tornare alla pagina di web market
-	e l'altro per visualizzare i propri ordini effettuati e quindi indirizzato all'area \textbf{I 
-	Miei Ordini}.
+	\item \textit{Trasforma In Ordine}, oltre a comunicare tramite un messaggio l'accettazione dell'ordine
+	ha due link uno per tornare alla pagina di web market e l'altro per visualizzare i propri ordini
+	effettuati, in quest'ultimo caso l'utente viene indirizzato all'area \textbf{I Miei Ordini}.
 	
 	\item \textit{Catalogo Stampe} è la pagina in cui è presente l'elenco delle stampe disponibili
 	e il filtro sul tema per la consultazione, realizzato tramite il modulo \underline{CatalogoStampe}, 
 	lo stesso utilizzato nell'Area \textbf{Pubblica}.\\
 	Poichè, in questo caso è presente l'id di un cliente loggato, compaiono anche le stampe inserite 
-	dallo stesso cliente. Un link permette di visualizzare i dettagli della stampa e porta alla pagina
+	dallo stesso cliente.\\ Un link permette di visualizzare i dettagli della stampa e porta alla pagina
 	\textit{Dettaglio Stampa}.
 	
 	\item \textit{Dettaglio Stampe} è la pagina da cui è possibile visualizzare tutti i dettagli 
 	di una Stampa, compresa la foto di anteprima. Inoltre vi è un link per visualizzare le proposte
-	che sono state realizzate con questa foto. Cliccando su questo link si viene rediretti alla pagina
+	che sono state realizzate con questa stampa. Cliccando su quest'ultimo link si viene rediretti alla pagina
 	\textit{Proposte con questa stampa} in cui sono visualizzate le proposte attive che hanno la stampa
-	selezionata o un messaggio se non ve ne sono. Da quest'ultima pagina è possibile visualizzare i 
-	dettagli della proposta o acquistare la proposta.\\
-	Nel primo caso vado nella pagina \textit{Dettagli Proposta}, nel secondo nella pagina di configurazione
-	del template: \textit{Step 1 - Caratteristiche} (diversa da quella di configurazione maglietta).
-	
-	\item \textit{Proposte da ShirShop} è la pagina di visualizzazione delle proposte offerte dal sito.\\
+	selezionata o un messaggio se non ve ne sono.\\
+	Da quest'ultima pagina è possibile visualizzare i dettagli della proposta o acquistare la proposta stessa:
+	\begin{itemize}
+		\item Nel primo caso, visualizzazione dei dettagli della proposta, si viene diretti alla pagina 
+		\textit{Dettagli Proposta} 
+		\item Nel secondo caso, acquisto della proposta, si viene diretti alla pagina di configurazione
+		della proposta: \textit{Step 1 - Caratteristiche} (diversa da quella di configurazione maglietta).
+	\end{itemize}
+	\item \textit{Proposte da ShirtShop} è la pagina di visualizzazione delle proposte offerte dal sito.\\
 	Le proposte sono magliette già associate a una o due stampe, per le quali l'utente può scegliere 
 	la taglia, il colore e il sesso fra quelli disponibili della proposta.\\
 	Questo viene realizzato tramite il modulo \underline{MostraPropostePerClienti}, già visto nella
-	pagina di home del cliente.\\
+	pagina \textbf{Home Cliente}.\\
 	Da ogni proposta partono due link: un diretto alla pagina \textit{Dettaglio Proposta} per visualizzare
 	i dettagli della proposta selezionata, l'altro per l'acquisto della proposta diretto alla pagina
 	\textit{Step 1 - Caratteristiche}.
@@ -2650,21 +2661,23 @@ di una maglietta.
 	Vi è un link che porta alla	pagina \textit{Step 1 - Caratteristiche} per l'acquisto della proposta.
 	
 	\item \textit{Step 1 - Caratteristiche} funziona esattamente come la configurazione di una maglietta:
-	il cliente scegli la taglia, il sesso e il colore fra quelli disponibili. Non dovrà più scegliere
+	il cliente sceglie la taglia, il sesso e il colore fra quelli disponibili. Non dovrà più scegliere
 	le stampe perchè già associate.\\
-	Viene quindi creata una configurazione e richiesto all'utente se vuole aggiungerla al carrello. 
+	Viene quindi creata una configurazione e chiesto all'utente se vuole aggiungerla al carrello. 
 	Come visto per la configurazione di una maglietta, viene creato un nuovo carrello o aggiunta la 
 	configurazione della proposta ad un carrello che già esisteva dell'utente e si viene indirizzati
 	quindi alla pagina del carrello e si procede come già descritto.
 \end{itemize}
+\newpage
 
 \subsubsection{Area Informazioni}
 \begin{center}
 	\includegraphics[height=4cm]{Immagini/SiteViewClienteInformazioni.png}\\
 	\textit{Fig. 3.2.4: Area Informazioni}
 \end{center}
-L'Area \textit{Informazioni} contiene il riferimo al modulo \underline{Informazioni} visto nell'Area 
+L'Area \textit{Informazioni} contiene il riferimento al modulo \underline{Informazioni} visto nell'Area 
 \textbf{Pubblica}.
+\newpage
 
 \subsubsection{Area Gestione Account}
 \begin{center}
@@ -2696,7 +2709,7 @@ L'Area \textit{I Miei Ordini} contiene due pagine:
 	quantità.
 \end{itemize}
 Un ordine è possibile che venga annullato dal cliente se non è ancora stato preso in carico da nessuno
-stampatore, quindi solo quando è nello stato 'da-gestire'.
+stampatore, quindi solo quando è nello stato `da-gestire'.
 
 \newpage
 \subsection{Site View Stampatore}
@@ -2711,7 +2724,7 @@ stampatore, quindi solo quando è nello stato 'da-gestire'.
 	\textit{Fig. 3.3.1: Pagina Home Page Stampatore}
 \end{center}
 Si è deciso di non creare un'area apposita come Home Page, ma di avere come Default della site view
-Stampatore solo una pagina di benvenuto con funzione di ""smistamento"".
+Stampatore solo una pagina di benvenuto con funzione di ``smistamento''.
 
 \subsubsection{Area Gestione Ordini}
 \begin{center}
@@ -2725,16 +2738,16 @@ Ordine}, \textit{Dettagli Stampe} e \textit{Conferma Spedizione}.
 	gestione dallo stampatore che si è loggato, gli ordini evasi (quindi affidati al corriere) dallo
 	stesso stampatore e l'elenco dei nuovi ordini non ancora presi in gestione da nessuno stampatore.\\
 	Da ognuno degli elenchi è possibile visualizzare il dettaglio di ogni singolo ordine tramite un 
-	link che si dirige alla pagina \textit{Dettaglio Ordine}.\\
+	link alla pagina \textit{Dettaglio Ordine}.\\
 	Il modulo che viene richiamato da questa pagina, \underline{Novità}, permette allo stampatore,
-	al primo accesso alla pagina di vedere le novità dall'ultimo suo login, quindi, ad esempio, nuovi
-	ordini inseriti dai clienti, etc:
+	al primo accesso alla pagina, di vedere le novità dall'ultimo suo login, quindi, ad esempio, nuovi
+	ordini inseriti dai clienti:
 	\begin{center}
 		\includegraphics[height=5cm]{Immagini/ModuloNovita.png}\\
 		\textit{Fig. 3.3.2-A: Modulo Novità}
 	\end{center}
 	\item Nella pagina \textit{Dettaglio Ordine} è possibile visualizzare i dettagli di un ordine 
-	comprese le singole righe d'ordine. Lo stampatore ha la possibilità da questa pagina di prendere
+	comprese le singole righe d'ordine. Lo stampatore ha la possibilità, da questa pagina, di prendere
 	in carico un'ordine o di evaderlo se ha concluso la lavorazione.\\
 	Se l'ordine viene preso in carico, verrà aggiornata la lista degli ordini e nessun altro 
 	stampatore potrà occuparsi dello stesso ordine. Il modulo che gestisce la presa in carico di un 
@@ -2743,7 +2756,7 @@ Ordine}, \textit{Dettagli Stampe} e \textit{Conferma Spedizione}.
 		\includegraphics[height=6cm]{Immagini/ModuloPrendiInCarico.png}\\
 		\textit{Fig. 3.3.2-B: Modulo Presa in Carico di un Ordine}
 	\end{center}
-	In questo modulo viene modificato lo stato dell'ordine da 'da-gestire' a 'in-stampa' e ne viene
+	In questo modulo viene modificato lo stato dell'ordine da `da-gestire' a `in-stampa' e ne viene
 	salvata l'ora di presa in carico dell'ordine.\\
 	Se invece l'ordine viene evaso si passa alla pagina \textit{Conferma Spedizione}.
 	\item Nella pagina \textit{Dettagli Stampe} è possibile visualizzare i dettagli delle stampe di
@@ -2757,13 +2770,13 @@ Ordine}, \textit{Dettagli Stampe} e \textit{Conferma Spedizione}.
 		\includegraphics[height=5cm]{Immagini/ModuloEvadiOrdine.png}\\
 		\textit{Fig. 3.3.2-C: Modulo di Evasione di un Ordine}
 	\end{center}
-	Anche in questo modulo viene modificato lo stato dell'ordine da 'in-stampa' a 'evaso' e ne viene 
+	Anche in questo modulo viene modificato lo stato dell'ordine da `in-stampa' a `evaso' e ne viene 
 	salvata l'ora di evasione.
 \end{itemize}
 
 \subsubsection{Area Gestione Account}
 \begin{center}
-	\includegraphics[height=15cm]{Immagini/SiteViewStampatoreGestioneAccount.png}\\
+	\includegraphics[height=12cm]{Immagini/SiteViewStampatoreGestioneAccount.png}\\
 	\textit{Fig. 3.3.3: Area Gestione Account Stampatore}
 \end{center}
 L'Area \textbf{Gestione Account} contiene due pagine:
@@ -2794,18 +2807,18 @@ come Default della site view Amministrazione solo una pagina di benvenuto.
 	\includegraphics[height=15cm]{Immagini/SiteViewAmministrazioneGestioneAccount.png}\\
 	\textit{Fig. 3.4.2: Area di Gestione Account}
 \end{center}
-L'Area \textbf{Gestione Account} contiene diverse pagine necessarie all'amministratore per gestire
+L'Area \textbf{Gestione Accounts} contiene diverse pagine necessarie all'amministratore per gestire
 gli accounts dei clienti e degli stampatori. La gestione prevede la creazione di nuovi account, la 
 modifica o la cancellazione di account esistenti.
 \begin{itemize}
-	\item La pagina \textit{Account Disponibili} da la possibilità all'amministratore di visualizzare 
+	\item La pagina \textit{Accounts Disponibili} da la possibilità all'amministratore di visualizzare 
 	l'elenco degli accounts dei clienti e quello degli stampatori esistenti. Da ognuno degli elenchi
-	partono dei link per la modificare dell'account e per cancellarlo.
+	partono dei link, uno per la modifica dell'account e l'altro per cancellarlo.
 	\item \textit{Modifica Cliente} è la pagina in cui un form da la possibilità all'amministratore
 	di modificare tutti i dati dell'account di un cliente e di attivare o meno questo account.
 	\item \textit{Modifica Stampatore} è la pagina, analoga a quella di modifica dell'account cliente,
 	in cui l'amministratore può modificare i dati dello stampatore.
-	\item \textit{Cancella Cliente} mostra i dati dell'account che si vuole cancellare con un ulteriore
+	\item \textit{Cancella Cliente} mostra i dati dell'account del cliente che si vuole cancellare con un ulteriore
 	link di conferma della cancellazione.
 	\item \textit{Cancella Stampatore}, analoga alla pagina di cancellazione di un account cliente, 
 	mostra i dati dell'account dello stampatore che si vuole cancellare con un ulteriore
@@ -2860,7 +2873,7 @@ L'Area \textbf{Gestione Prodotti} contiene le pagine necessarie per la realizzaz
 offerti dal sito: magliette, stampe e proposte.
 \begin{itemize}
 	\item La pagina \textit{Gestione Prodotti} permette la visualizzazione degli elenchi dei prodotti
-	già inseriti, quali magliette, stampe e le proposte. Da ogni elenco è possibile visualizzare il 
+	già inseriti, quali magliette, stampe e proposte. Da ogni elenco è possibile visualizzare il 
 	dettaglio del prodotto inserito andando, rispettivamente, alla pagina \textit{Dettaglio Maglietta},
 	\textit{Dettaglio Stampa} e \textit{Dettaglio Proposta} tramite un link.\\
 	Inoltre dalla pagina stessa tre link permettono all'amministratore di inserire nuove magliette, 
@@ -2874,7 +2887,7 @@ offerti dal sito: magliette, stampe e proposte.
 		\item cambiare i dati del form
 		\item aggiungere un nuovo sesso, tramite l'apposito link che rimanda al modulo \underline{Nuovo Sesso}:
 		\begin{center}
-			\includegraphics[height=2cm]{Immagini/ModuloNuovoSesso.png}\\
+			\includegraphics[height=5cm]{Immagini/ModuloNuovoSesso.png}\\
 			\textit{Fig. 3.4.5-A: Modulo per l'inserimento di un nuovo Sesso}
 		\end{center}
 		Si viene reindirizzati alla pagina in cui è possibile, tramite form, inserire la dicitura del
@@ -2882,13 +2895,13 @@ offerti dal sito: magliette, stampe e proposte.
 		\item aggiungere una nuova taglia per la maglietta, tramite un link che rimanda al modulo
 		\underline{Nuova Taglia}:
 		\begin{center}
-			\includegraphics[height=2cm]{Immagini/ModuloNuovaTaglia.png}\\
+			\includegraphics[height=5cm]{Immagini/ModuloNuovaTaglia.png}\\
 			\textit{Fig. 3.4.5-B: Modulo per l'inserimento di una nuova Taglia}
 		\end{center}
 		\item aggiungere un nuovo colore per la maglietta, tramite un link che rimanda al modulo
 		\underline{Nuovo Colore}:
 		\begin{center}
-			\includegraphics[height=2cm]{Immagini/ModuloNuovoColore.png}\\
+			\includegraphics[height=6cm]{Immagini/ModuloNuovoColore.png}\\
 			\textit{Fig. 3.4.5-C: Modulo per l'inserimento di un nuovo Colore}
 		\end{center}
 		Tramite un form è possibile inserire il nome del colore e il suo valore in esadecimale.
@@ -2897,14 +2910,14 @@ offerti dal sito: magliette, stampe e proposte.
 		\textit{Aggiungi Fotografie}. Le combinazioni di colore e sesso sono gestite dal modulo 
 		\underline{CreaCombinazioniColoreSesso}:
 		\begin{center}
-			\includegraphics[height=10cm]{Immagini/ModuloCreaCombinazioniColoreSesso.png}\\
+			\includegraphics[height=15cm]{Immagini/ModuloCreaCombinazioniColoreSesso.png}\\
 			\textit{Fig. 3.4.5-D: Modulo che crea le combinazioni tra colore e sesso}
 		\end{center}
 	\end{itemize}
 	Una volta apportate le modifiche desiderate alla maglietta, il tutto viene salvato tramite il 
 	modulo \underline{Salva Maglietta}:
 	\begin{center}
-		\includegraphics[height=8cm]{Immagini/ModuloSalvaMaglietta.png}\\
+		\includegraphics[height=17cm]{Immagini/ModuloSalvaMaglietta.png}\\
 		\textit{Fig. 3.4.5-E: Modulo per il salvataggio della maglietta}
 	\end{center}
 	Questo stesso modulo è utilizzato per il salvataggio di una maglietta dopo la modifica, sia per 
@@ -2915,7 +2928,7 @@ offerti dal sito: magliette, stampe e proposte.
 	o eliminare direttamente l'intera maglietta, se possibile. Quest'ultima operazione è gestita tramite il modulo
 	\underline{Elimina Maglietta}:
 	\begin{center}
-		\includegraphics[height=10cm]{Immagini/ModuloEliminaMaglietta.png}\\
+		\includegraphics[height=17cm]{Immagini/ModuloEliminaMaglietta.png}\\
 		\textit{Fig. 3.4.5-F: Modulo per l'eliminazione di una maglietta}
 	\end{center}
 	Dopo l'eliminazione o il salvataggio di una maglietta si viene reindirizzati alla pagina \textit{
@@ -2927,7 +2940,7 @@ offerti dal sito: magliette, stampe e proposte.
 	
 	\item La pagina \textit{Gestione Magliette} mostra l'elenco delle magliette inserite dall'amministratore.
 	Da questa pagina è possibile, tramite appositi link, visualizzare il dettaglio della maglietta, 
-	quindi andare alla pagina \textit{Dettaglio Maglietta} o inserire una nuova maglietta andando
+	quindi andare alla pagina \textit{Dettaglio Maglietta}, o inserire una nuova maglietta andando
 	alla pagina \textit{Nuova Maglietta}.
 	
 	\item Nella pagina \textit{Nuova Maglietta} è possibile inserire una nuova maglietta, inserendo 
@@ -2954,7 +2967,7 @@ offerti dal sito: magliette, stampe e proposte.
 		\item aggiungere un nuovo tema tramite l'apposito link che rimanda al modulo \underline{Nuovo
 		Tema}:
 		\begin{center}
-			\includegraphics[height=4cm]{Immagini/ModuloNuovoTema.png}\\
+			\includegraphics[height=5cm]{Immagini/ModuloNuovoTema.png}\\
 			\textit{Fig. 3.4.5-G: Modulo per l'inserimento di un nuovo Tema per le stampe}
 		\end{center}
 		I nuovi temi inseriti saranno a disposizioni di tutte le altre stampe inserite o ancora da 
@@ -2963,15 +2976,15 @@ offerti dal sito: magliette, stampe e proposte.
 	Una volta apportate le modifiche alla stampa, queste vengono salvate tramite il modulo \underline{
 	Salva Stampa}:
 	\begin{center}
-		\includegraphics[height=9cm]{Immagini/ModuloSalvaStampa.png}\\
+		\includegraphics[height=10cm]{Immagini/ModuloSalvaStampa.png}\\
 		\textit{Fig. 3.4.5-H: Modulo per il salvataggio di una stampa}
 	\end{center}
-	Questo stesso modulo è utilizzato per il salvataggio di una stampa dopo la modifica, sia per 
+	Questo stesso modulo è utilizzato sia per il salvataggio di una stampa dopo la modifica, sia per 
 	il salvataggio di una nuova stampa inserita dall'amministratore.\\
 	E' possibile inoltre eliminare l'intera stampa, se possibile. Quest'ultima operazione è gestita 
 	tramite il modulo \underline{Elimina Stampa}:
 	\begin{center}
-		\includegraphics[height=7cm]{Immagini/ModuloEliminaStampa.png}\\
+		\includegraphics[height=16cm]{Immagini/ModuloEliminaStampa.png}\\
 		\textit{Fig. 3.4.5-I: Modulo per l'eliminazione di una stampa}
 	\end{center}
 	Dopo l'eliminazione o il salvataggio di una stampa si viene reindirizzati alla pagina \textit{
@@ -2979,7 +2992,7 @@ offerti dal sito: magliette, stampe e proposte.
 	
 	\item La pagina \textit{Gestione Stampe} mostra l'elenco delle stampe inserite dall'amministratore.
 	Da questa pagina è possibile, tramite appositi link, visualizzare il dettaglio della stampa, 
-	quindi andare alla pagina \textit{Dettaglio Stampa} o inserire una nuova Stampa andando
+	quindi andare alla pagina \textit{Dettaglio Stampa}, o inserire una nuova Stampa andando
 	alla pagina \textit{Nuova Stampa}.
 	
 	\item Nella pagina \textit{Nuova Stampa} è possibile inserire una nuova stampa, inserendo i dati
@@ -3007,7 +3020,7 @@ offerti dal sito: magliette, stampe e proposte.
 	Una volta apportate le modifiche desiderate alla proposta, il tutto viene salvato tramite il 
 	modulo \underline{Salva Template}:
 	\begin{center}
-		\includegraphics[height=8cm]{Immagini/ModuloSalvaProposta.png}\\
+		\includegraphics[height=15cm]{Immagini/ModuloSalvaProposta.png}\\
 		\textit{Fig. 3.4.5-L: Modulo per il salvataggio della proposta}
 	\end{center}
 	Questo stesso modulo è utilizzato per il salvataggio di una proposta dopo la modifica, sia per 
@@ -3017,7 +3030,7 @@ offerti dal sito: magliette, stampe e proposte.
 	E' possibile eliminare direttamente l'intera proposta, se possibile. Quest'ultima operazione è 
 	gestita tramite il modulo \underline{Elimina Template}:
 	\begin{center}
-		\includegraphics[height=10cm]{Immagini/ModuloEliminaProposta.png}\\
+		\includegraphics[height=15cm]{Immagini/ModuloEliminaProposta.png}\\
 		\textit{Fig. 3.4.5-M: Modulo per l'eliminazione di una proposta}
 	\end{center}
 	Dopo l'eliminazione o il salvataggio di una proposta si viene reindirizzati alla pagina \textit{
@@ -3052,7 +3065,7 @@ offerti dal sito: magliette, stampe e proposte.
 \newpage
 
 \section{Introduzione}
-In seguito vengono riportati degli esempi di utilizzo del sito completo che implicherà i seguenti passi:\\
+In seguito vengono riportati degli esempi di utilizzo del sito completo che comprende i seguenti passi:\\
 \begin{itemize}
 	\item L'utente visto come Amministratore del sito inserisce una nuova proposta, costituita da una
 	nuova stampa solo per la proposta, e quindi non visibile a tutti i clienti, e da una nuova maglietta.
@@ -3063,8 +3076,8 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 	\item Si farà vedere che dalla pagina di sommario degli ordini dello stampatore, al primo accesso,
 	viene mostrato come news il nuovo ordine giunto.
 	\item Anche nella pagina dell'utente registrato viene mostrato il cambio di stato del proprio 
-	ordine, sia da quando passa dallo stato da-gestire a in-gestione, sia quando passa da in-gestione
-	a evaso.
+	ordine, sia da quando passa dallo stato `da-gestire' a `in-gestione', sia quando passa da `in-gestione'
+	a `evaso'.
 \end{itemize}
 \newpage
 
@@ -3080,7 +3093,7 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 		\begin{center}
 			\includegraphics[height=5cm]{Screenshot/HomePageAmministratore.jpg}\\
 		\end{center}
-	\item Entra nella sezione ""Gestione Prodotti"" $\Rightarrow$ ""Gestione Stampe""
+	\item Entra nella sezione ``Gestione Prodotti'' $\Rightarrow$ ``Gestione Stampe''
 		\begin{center}
 			\includegraphics[height=4.5cm]{Screenshot/EntraStampe.jpg}\\
 		\end{center}
@@ -3095,15 +3108,17 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 		\end{center}
 	Ha inserito tutti i dati richiesti dalla stampa, le immagini e ha deciso che la stampa non possa
 	essere visibile a tutti.
-	\item Entra nella sezione ""Gestione Prodotti"" $\Rightarrow$ ""Gestione Proposte""
+	\item Entra nella sezione ``Gestione Prodotti'' $\Rightarrow$ ``Gestione Proposte''
 		\begin{center}
 			\includegraphics[height=5cm]{Screenshot/EntraProposte.jpg}\\
 		\end{center}
 	\item Dal link \textit{Nuova Proposta} in alto a destra, inserisce tutti i dati della proposta 
 	riguardo la maglietta e aggiunge la stampa precedentemente inserita.
 		\begin{center}
-			\includegraphics[height=1cm]{Screenshot/NuovaPropostaLink.jpg}\\
+			\includegraphics[height=1.5cm]{Screenshot/NuovaPropostaLink.jpg}\\
 		\end{center}
+		Lo screenshot seguente della pagina di inserimento dei dati della proposta viene suddivisa in due parti
+		per motivi di impaginazione.
 		\begin{center}
 			\includegraphics[height=12cm]{Screenshot/InserisciProposta1.jpg}\\
 		\end{center}
@@ -3117,7 +3132,7 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 	Le foto inserite nel nostro caso saranno due: basate su colore e sesso scelti.\\
 	Dopo l'inserimento delle foto l'amministratore vede l'elenco delle proposte che ha inserito. Può
 	attivare la proposta appena inserita andando sui dettagli della stessa e modificando tale dato. 
-	E' stato scelto di salvare la maglietta nello stato ""non attiva"" in modo che l'amministratore 
+	E' stato scelto di salvare la maglietta/proposta nello stato ``non attiva'' in modo che l'amministratore 
 	possare inserire una proposta salvando anche a metà dell'inserimento stesso.
 	\item Torna alla Home Page cliccando sul link nella barra del menù \textit{Home Amministratore}
 	\item Esegue il Logout cliccando sul relativo link nella barra del menù
@@ -3131,7 +3146,7 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 		\begin{center}
 			\includegraphics[height=17cm]{Screenshot/VisualizzaProposteHome.jpg}\\
 		\end{center}
-	\item Per vedere i dettagli della proposta entra nella sezione ""Prodotti"" $\Rightarrow$ ""Le nostre Proposte""
+	\item Per vedere i dettagli della proposta entra nella sezione ``Prodotti'' $\Rightarrow$ ``Le nostre Proposte''
 	e clicca sul link \textit{Dettaglio}. Viene mostrata la descrizione della proposta con prezzo, 
 	tipo di manica, tipo di collo e materiale, la stampa allegata e le foto della proposta stessa.
 		\begin{center}
@@ -3157,8 +3172,8 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 			\includegraphics[height=5cm]{Screenshot/LoginCliente.jpg}\\
 		\end{center}
 	\item Accede alla propria Home Page
-	\item La proposta può essere visualizzata o acquistata entrando nella sezione ""Web Market"" 
-	$\Rightarrow$ ""Proposte da ShirtShop"" nella sezione o direttamente dalla Home Page
+	\item La proposta può essere visualizzata o acquistata entrando nella sezione ``Web Market''
+	$\Rightarrow$ ``Proposte da ShirtShop'' nella sezione o direttamente dalla Home Page
 		\begin{center}
 			\includegraphics[height=5cm]{Screenshot/LinkWebMarketProposte.jpg}\\
 		\end{center}
@@ -3187,7 +3202,7 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 	\item Clicca sul link \textit{Conferma l'ordine} e l'ordine viene confermato, dopo aver confermato
 	per una seconda volta la decisione. Se clicca sul link \textit{Continua gli acquisti},
 	potrà aggiungere ulteriori magliette e/o proposte al suo carrello
-	\item Visualizza un messaggio di ""Ordine accettato"".
+	\item Visualizza un messaggio di ``Ordine accettato''.
 		\begin{center}
 			\includegraphics[height=3cm]{Screenshot/OrdineAccettato.jpg}\\
 		\end{center}
@@ -3204,7 +3219,7 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 			\includegraphics[height=5cm]{Screenshot/LoginStampatore.jpg}\\
 		\end{center}
 	\item Accede alla propria Home Page
-	\item Entra nella sezione ""Gestione Ordini"" e viene mostrato un sommario degli ordini
+	\item Entra nella sezione ``Gestione Ordini'' e viene mostrato un sommario degli ordini
 		\begin{center}
 			\includegraphics[height=6cm]{Screenshot/SommarioOrdini.jpg}\\
 		\end{center}
@@ -3221,7 +3236,7 @@ In seguito vengono riportati degli esempi di utilizzo del sito completo che impl
 			\includegraphics[height=8cm]{Screenshot/RitornoSommarioOrdini.jpg}\\
 		\end{center}
 	Nella pagina del cliente che ha effettuato l'ordine compare una news, visualizzabile al primo 
-	accesso, in cui viene mostrato il cambio di stato da 'da-gestire' a 'in-gestione'
+	accesso, in cui viene mostrato il cambio di stato da `da-gestire' a `in-gestione'
 		
 	\item Una volta che ha eseguito la lavorazione, inserisce il Tracking Number ed evade l'ordine.
 		\begin{center}
@@ -3255,7 +3270,7 @@ Si riporta il progetto WebRatio del servizio:
 	\begin{center}
 		\includegraphics[height=5cm]{Immagini/Servizi/ListaProposte.png}\\
 	\end{center}
-Lo script groovy ""urlTemplate"" è utilizzato per costruire l'url HTTP per accedere alla pagina di 
+Lo script groovy ``urlTemplate'' è utilizzato per costruire l'url HTTP per accedere alla pagina di 
 dettaglio della proposta.\\
 Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione REST):
 	\begin{center}
@@ -3272,11 +3287,11 @@ Questo servizio è pensato per due diverse modalità di utilizzo da parte degli st
 	nuovi ordini e di integrarle ai dati già gestiti dal sistema.
 \end{itemize}
 Lo scopo è quindi l'estrazione dei dati e delle informazioni dei nuovi ordini. In \textit{input} si 
-richiede come datetime l'istante in cui è stato effettuato l'ultimo controllo. In \textit{output} 
+richiede come dateTime l'istante in cui è stato effettuato l'ultimo controllo. In \textit{output} 
 verranno forniti gli ordini non ancora presi in gestione inseriti da tale data. Si fornisce un elenco
 strutturato secondo il seguente schema XML:
 	\begin{center}
-		\includegraphics[height=6cm]{Immagini/Servizi/SchemaXML2.jpg}\\
+		\includegraphics[height=7cm]{Immagini/Servizi/SchemaXML2.jpg}\\
 	\end{center}
 Di seguito si riporta il progetto WebRatio del servizio:
 	\begin{center}
@@ -3284,14 +3299,14 @@ Di seguito si riporta il progetto WebRatio del servizio:
 	\end{center}
 Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione REST):
 	\begin{center}
-		\includegraphics[height=7cm]{Immagini/Servizi/OutputXML2.jpg}\\
+		\includegraphics[height=8cm]{Immagini/Servizi/OutputXML2.jpg}\\
 	\end{center}
 Un utilizzo consigliato di questo servizio è che dalle applicazioni client venga invocato periodicamente
 per notificare allo stampatore l'arrivo di nuovi ordini da gestire.
 \newpage
 
 \subsection{Servizio 3: Presa in carico di un ordine}
-Questo servizio è pensato per permettere ai stampatore di poter prendere in carico un ordine e come 
+Questo servizio è pensato per permettere allo stampatore di poter prendere in carico un ordine e come 
 il precedente servizio può essere implementato in due diversi modi:
 \begin{itemize}
 	\item da smartphone, palmare o altro dispositivo mobile con applicazione specializzata
@@ -3307,6 +3322,6 @@ Di seguito si riporta il progetto WebRatio del servizio:
 	\end{center}
 Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione REST):
 	\begin{center}
-		\includegraphics[height=2cm]{Immagini/Servizi/OutputXML3.jpg}\\
+		\includegraphics[height=2.5cm]{Immagini/Servizi/OutputXML3.jpg}\\
 	\end{center}
 \end{document}
