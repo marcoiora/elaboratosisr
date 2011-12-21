@@ -5,7 +5,7 @@ body,td {font-family: "Trebuchet MS", sans-serif; font-size: 13px;}
 td, th {border: 1px solid #888;padding: 10px;}
 .descrizione {width: 60%;}
 table {border-collapse:separate; width: 800px;}
-th {background-color: #35f;color: white;font-size: 16px;text-shadow:1px 1px 1px #568F23;border:1px solid #93CE37;
+th {color: white;font-size: 16px;text-shadow:1px 1px 1px #568F23;border:1px solid #93CE37;
 border-bottom:3px solid #9ED929;
     background-color:#9DD929;
     background:-webkit-gradient(
