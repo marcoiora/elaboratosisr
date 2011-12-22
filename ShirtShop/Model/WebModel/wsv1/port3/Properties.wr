@@ -48,7 +48,7 @@
         <LinkParameter id="wsv1#port3#adu1#kln82#par635" name="Error Message_Fault Message" source="errorMessage" target="wsv1#port3#eru3.faultMessage"/>
       </KOLink>
     </AdapterUnit>
-    <SolicitUnit id="wsv1#port3#slu4" name="PrendiInCarico" protected="false" customDescriptor="false" gr:x="0" gr:y="240" invocationStyle="REST">
+    <SolicitUnit id="wsv1#port3#slu4" name="PrendiInCarico" protected="false" customDescriptor="false" gr:x="0" gr:y="240" invocationStyle="SOAP XML">
       <SolicitParameter id="wsv1#port3#slu4#slp4" name="OIDOrdine" type="int[SimpleType]"/>
       <SolicitParameter id="wsv1#port3#slu4#slp5" name="OIDStampatore" type="int[SimpleType]"/>
       <KOLink id="wsv1#port3#slu4#kln82" name="KOLink76" to="wsv1#port3#eru4" automaticCoupling="true"/>
