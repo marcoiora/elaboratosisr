@@ -1,6 +1,6 @@
 <Port xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="10" id="wsv1#port1" name="ListaProposte">
   <OperationUnits>
-    <SolicitUnit id="wsv1#port1#slu1" name="getListaProposte" invocationStyle="REST" gr:x="0" gr:y="0">
+    <SolicitUnit id="wsv1#port1#slu1" name="getListaProposte" invocationStyle="SOAP XML" gr:x="0" gr:y="0" nsURI="http://www.webml.org/webservices/wsdl/products">
       <OKLink id="wsv1#port1#slu1#oln179" name="OKLink179" to="wsv1#port1#xou1" automaticCoupling="true"/>
       <KOLink id="wsv1#port1#slu1#kln73" name="KOLink73" to="wsv1#port1#eru1">
         <LinkParameter id="wsv1#port1#slu1#kln73#par545" name="Exception_Fault Exception" source="exception" target="wsv1#port1#eru1.faultException"/>
