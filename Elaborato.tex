@@ -3324,4 +3324,23 @@ Riportiamo un esempio di output XML del servizio (ottenuto mediante invocazione 
 	\begin{center}
 		\includegraphics[height=2.5cm]{Immagini/Servizi/OutputXML3.jpg}\\
 	\end{center}
+	
+\section{Client di esempio}
+\subsection{Client Stampatore}
+Per verificare il corretto funzionamento del servizio è stato implementato un client java swing.
+
+L'applicazione è pensata per lo stampatore che non vuole controllare manualmente la sezione del sito a lui dedicata.
+
+Il client mostra all'utente l'elenco degli ordini ancora da gestire (riportando la data di conferma dell'ordine) e
+permette, previa selezione, di prenderne in carico uno senza dover accedere al portale web.
+
+L'elenco degli ordini viene aggiornato automaticamente invocando il servizio descritto in \textit{Servizio 2: Visualizzazione della lista dei nuovi ordini aggiunti} periodicamente a intervalli regolari di dieci secondi.
+
+L'operazione di presa in carico viene eseguita sfruttando il servizio descritto in \textit{Servizio 3: Presa in carico di un ordine}.
+
+Di seguito si riporta una schermata dell'applicazione di esempio.
+\begin{center}
+	\includegraphics[height=4cm]{Screenshot/StampatoreClient.jpg}\\
+\end{center}
+
 \end{document}
