@@ -1,6 +1,10 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.datepicker-it.js"></script>
 </head>
 <body>
 
@@ -42,8 +46,57 @@ foreach ($listaProposte as $row) {
 echo "</tbody></table>";
 
 // Servizio 2
+?>
+<h2>Ultimi ordini</h2>
+<p>Dalla data: <input type="text" id="datepicker" value="<?php echo date("d/m/Y") ?>"></p>
+<script>
+function ajaxGetUltimiOrdini() {
+    $.getJSON("ajax.php", {
+        'data': $("#datepicker").val(),
+        "service": "getNuoviOrdini"
+    }, function(json) {
+        if (! json.Ordine) return;
 
-$url = $base_url;
+        $("#tblUltimiOrdini tbody").empty();
+        for (var i = 0; i < json.Ordine.length; i++) {
+            var ord = json.Ordine[i];
+            var dataOra = ord.dataOraConferma.replace("T",' ');
+            dataOra = dataOra.substr(0,dataOra.lastIndexOf('.'));
+            console.log(ord);
+            $("#tblUltimiOrdini tbody").append(
+                $("<tr />").append(
+                    $("<td />").html(ord.oid).after(
+                        $("<td />").html(dataOra)
+                    )
+                )
+            );
+            //dataOraConferma
+            //oid
+        }
+    });
+}
+
+$(function() {
+    $.datepicker.setDefaults( $.datepicker.regional[ "it" ] );
+    $("#datepicker" ).datepicker({
+        dateFormat: "dd/mm/yy",
+        onSelect: ajaxGetUltimiOrdini
+    });
+    ajaxGetUltimiOrdini();
+});
+</script>
+<table id="tblUltimiOrdini">
+    <thead>
+        <tr>
+            <th>ID Ordine</th>
+            <th>Data/ora conferma</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<?php
 
 
 ?>
