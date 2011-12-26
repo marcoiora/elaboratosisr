@@ -25,6 +25,14 @@ catch (SoapFault $e) {
     var_dump($e);
 }
 
+/*
+ Problema: se restituisce solo un elemento, non viene restituito un array di un
+ elemento, ma l'elemento stesso.
+*/
+if (!is_array($listaProposte)) {
+    $listaProposte = array($listaProposte);
+}
+
 echo "<table>";
 echo "<thead><tr>";
 echo "<th>Nome</th>";
