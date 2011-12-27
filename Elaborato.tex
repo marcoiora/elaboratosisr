@@ -3344,4 +3344,30 @@ Di seguito si riporta una schermata dell'applicazione di esempio.
 	\includegraphics[height=4cm]{Screenshot/StampatoreClient.jpg}\\
 \end{center}
 
+
+\subsection{Client PHP}
+Oltre al client java swing, è stato realizzato un altro client in PHP per testare il \textit{Servizio 1: Visualizzazione della lista di tutte le proposte} e il \textit{Servizio 2: Visualizzazione della lista dei nuovi ordini aggiunti}.\\
+
+Lo scopo di questo semplice client è principalmente quello di mostrare l'interoperabilità tra due piattaforme differenti come java (usato da WebRatio) e PHP (utilizzato dalla maggior parte dei siti web attuali), e i risultati si sono rivelati soddisfacenti.\\
+
+Per questo prototipo sono state utilizzate le librerie standard SOAP presenti nelle distribuzioni di PHP, che con poche istruzioni consentono una comoda e nativa gestione delle chiamate remote e dei dati.\\
+
+Per quanto riguarda il servizio della visualizzazione delle proposte, un uso possibile potrebbe essere quello di mostrare tale lista in un altro sito esterno che raccolga proposte aggregate da vari produttori, consentendo al consumatore una visualizzazione centralizzata di varie offerte.\\
+
+Di seguito è riportata una schermata di questa funzionalità in azione.
+\begin{center}
+	\includegraphics[height=3.3cm]{Screenshot/PHPVisualizzaProposte.jpg}\\
+\end{center}
+
+Per il servizio della visualizzazione della lista di nuovi ordini aggiunti, potrebbe essere inserito in una applicazione web che mostri una dashboard di riepilogo all'utente stampatore, magari integrata in un'applicazione per smartphone o tablet.\\
+
+Nella realizzazione viene mostrato un calendario e su selezione viene fatta una richiesta AJAX al backend PHP, il quale dinamicamente fa la richiesta SOAP e restituisce i dati in formato JSON al client JavaScript. Anche in questo caso è interessante sottolineare la semplicità con cui i dati vengono trasportati ed utilizzati, questa volta con un ulteriore livello di interoperabilità: l'applicazione JavaScript lato client.\\
+
+Di seguito vengono mostrate due schermate del client di esempio.
+\begin{center}
+	\includegraphics[height=5cm]{Screenshot/PHPCalendario.png}\\
+	\includegraphics[height=5cm]{Screenshot/PHPNuoviOrdini.png}\\
+\end{center}
+
+
 \end{document}
